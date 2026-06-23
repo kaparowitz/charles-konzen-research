@@ -1,0 +1,416 @@
+/* Shared styles for the seven child profile pages
+   Linked from /children/*.html
+   ---------------------------------------------------------------- */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Iowan Old Style', Georgia, 'Times New Roman', serif; background:#f6f1e7; color:#2c2620; line-height:1.55; }
+::selection { background:#d8b366; color:#1f1a14; }
+a { color:#8a6420; text-decoration:none; border-bottom:1px dotted #c9a76a; }
+a:hover { color:#74420f; border-bottom-color:#8a6420; }
+
+header.child-hero { background:linear-gradient(135deg, #1f1a14 0%, #3a2f1e 100%); color:#f6f1e7; padding:1.6rem 1.5rem 1.4rem; border-bottom:4px double #d8b366; }
+header.child-hero .crumbs { font-size:0.82rem; color:#c8b896; margin-bottom:0.4rem; }
+header.child-hero .crumbs a { color:#d8b366; border-bottom:none; }
+header.child-hero h1 { color:#f6f1e7; font-size:2.0rem; line-height:1.2; }
+header.child-hero .sub { color:#e8dfc8; font-style:italic; margin-top:0.3rem; font-size:1.0rem; }
+header.child-hero .lifespan { display:inline-block; margin-top:0.7rem; font-size:0.85rem; letter-spacing:0.04em; padding:3px 10px; border-radius:3px; background:rgba(212,160,23,0.18); color:#d8b366; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 1.6rem 1.4rem 4rem; }
+
+.section { margin-bottom: 1.8rem; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:1.0rem 1.2rem; }
+.section h2 { color: var(--brand-dark); border-bottom:1px solid #c9a76a; padding-bottom:0.4rem; margin-bottom:0.8rem; font-size:1.3rem; font-weight:600; }
+.section h3 { color:#4a3a22; font-size:1.05rem; margin:0.8rem 0 0.4rem; }
+.section p { margin-bottom:0.7rem; }
+.section .small { font-size:0.85rem; color:#6a5a42; }
+
+.kv { width:100%; border-collapse:collapse; }
+.kv td { padding:0.45rem 0.7rem; vertical-align:top; border-bottom:1px solid #ede4d0; font-size:0.95rem; }
+.kv td:first-child { width:32%; color:#5a4a32; font-weight:600; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; padding-top:0.55rem; }
+.kv tr:last-child td { border-bottom:none; }
+
+.evidence-card { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border:1px solid #d8b366; border-left:5px solid #d8b366; border-radius:4px; padding:0.9rem 1.1rem; margin:0.6rem 0; }
+.evidence-card h3 { color: var(--brand-dark); margin-top:0; }
+
+.surname-pill { display:inline-block; padding:1px 9px; border-radius:3px; font-family:'SF Mono',Menlo,Consolas,monospace; font-size:0.88em; background:#ede4d0; color:#3a2f1e; font-weight:600; letter-spacing:0.04em; }
+
+a.fsn { color:#4a3a22; text-decoration:none; border-bottom:1px dotted #c9a76a; background:rgba(212,160,23,0.06); padding:0 2px; border-radius:2px; transition:all 0.15s; white-space:nowrap; }
+a.fsn:hover { background:#d8b366; color:#1f1a14; border-bottom-color:#d8b366; }
+a.fsn.pid { background: rgba(74,118,200,0.12); }
+a.fsn.pid:hover { background: #4a76c8; color: #fff; }
+a.fsn.pid::after { content: '↗'; color: #4a76c8; font-size:0.75em; margin-left:2px; vertical-align:super; }
+
+/* Family tree -------------------------------------------------------- */
+.tree .sib a { border-bottom:none; color:#3a2f1e; }
+.tree .sib a:hover { color:#74420f; }
+/* Sponsors list ------------------------------------------------------ */
+.sponsors { list-style:none; padding-left:0; margin:0.4rem 0 0; }
+.sponsors li { padding:0.4rem 0.6rem; border-left:3px solid #c9a76a; background:#f6ebd2; margin-bottom:0.35rem; border-radius:0 3px 3px 0; font-size:0.92rem; }
+.sponsors li strong { color:#3a2f1e; }
+.sponsors li .role { display:inline-block; font-size: 0.76rem; color:#fff; background:#8a6420; padding:1px 6px; border-radius:2px; margin-right:0.35rem; letter-spacing:0.04em; }
+
+footer.back-nav { margin-top:2rem; text-align:center; padding:1rem; }
+footer.back-nav a { display:inline-block; padding:0.5rem 1rem; background:#2c2620; color:#d8b366; border:1px solid #d8b366; border-radius:3px; font-weight:600; letter-spacing:0.04em; border-bottom:none; margin: 0 0.3rem; }
+footer.back-nav a:hover { background:#d8b366; color:#1f1a14; }
+
+@media (max-width: 640px) {
+  header.child-hero h1 { font-size:1.5rem; }
+  }
+
+
+@media print {
+  header.fam-hero, header.cw-hero, header.ca-hero, header.im-hero, header.ge-hero, header.src-hero,
+  footer.back-nav, .crumbs, details.research-log:not([open]) > .log-body { display:none !important; }
+  details.research-log > .log-body { display:block !important; }
+  body { background:#fff !important; color:#000 !important; font-size:11pt; }
+  a { color:#000 !important; text-decoration:none !important; border-bottom:none !important; }
+  a[href^="http"]::after { content:" (" attr(href) ")"; font-size:9pt; color:#666; }
+  .summary-card, .card, table.kv { background:#fff !important; border:1px solid #999 !important; page-break-inside:avoid; }
+  h1, h2, h3, h4 { page-break-after:avoid; }
+  img, svg { max-width:100% !important; page-break-inside:avoid; }
+}
+
+
+
+/* ============================================================
+   Theme override · added 3 May 2026 design pass
+   Pulls in tokens from /assets/theme.css and applies them.
+   Overrides are scoped to keep section identity while unifying chrome.
+   ============================================================ */
+
+/* Typography hierarchy — sharper 1.25× scale */
+h1 { font-size: var(--type-h1); line-height: 1.2; font-weight: 700; }
+h2 { font-size: var(--type-h2); line-height: 1.25; font-weight: 700; }
+h3 { font-size: var(--type-h3); line-height: 1.3;  font-weight: 700; }
+h4 { font-size: var(--type-h4); line-height: 1.35; font-weight: 700; }
+
+/* Link contrast fix — darken from #c9a76a to #a88a4a (AA-3:1 on cream) */
+a { border-bottom-color: var(--border-medium); }
+a.fsn { background: rgba(212,160,23,0.08); }
+a.fsn.pid { background: rgba(74,118,200,0.12); }
+
+/* Body text contrast — darken italic captions from #6a5a42 to #4a3a22 (AA on cream) */
+.meta, .small em, em.note, p.small, .ev-body p { color: var(--text-meta); }
+
+/* Standardize border-left widths: cards 3px, tiles 4px, banners/heroes 5px */
+.card, .summary-card { border-left-width: var(--bl-card) !important; }
+.cw-tile, .ca-tile, .im-tile, .ge-tile, .schrader-tile,
+.person-card, .child-card, .doc-card, .actor-card,
+.cw-tile.keystone, .ca-tile.keystone,
+header.fam-hero, header.cw-hero, header.ca-hero, header.im-hero, header.ge-hero, header.src-hero, header.up-hero {
+  border-left-width: 0;
+}
+
+/* Unified hover transition for all clickable surfaces */
+.cw-tile, .ca-tile, .im-tile, .ge-tile, .schrader-tile,
+.person-card, .child-card, .doc-card, .actor-card,
+.tree .sib, a.parent-card, a.entry, a.chart-link {
+  transition: var(--transition);
+}
+.cw-tile:hover, .ca-tile:hover, .im-tile:hover, .ge-tile:hover,
+.schrader-tile:hover, .person-card:hover, .child-card:hover,
+.doc-card:hover, .actor-card:hover, .tree .sib:hover, a.parent-card:hover {
+  transform: var(--hover-lift);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Specialize the gold — only brand surfaces use it now.
+   "Open" status was using gold (conflict). Switch to amber. */
+.summary-card.open { border-color: var(--status-open); }
+.summary-card.open h2 { border-bottom-color: var(--status-open); }
+.summary-card .card-pill.open { background: var(--status-open); color: #1f1a14; }
+.badge.open { background: var(--status-open); color: #1f1a14; }
+
+/* Section accent for Charles in America: switch from gold to amber/copper
+   to differentiate from brand */
+.ca-tile, .ca-tile.primary { border-left-color: var(--section-charles); }
+.ca-tile:hover { border-left-color: var(--section-charles-d); background: var(--section-charles-t); }
+.ca-tile-eyebrow { color: var(--section-charles-d); }
+.ca-tile:hover .ca-tile-title { color: var(--section-charles-d); }
+
+/* Active-tab indicator strengthening (only relevant on main index) */
+nav.tabs button.active {
+  background: rgba(212,160,23,0.18);
+  border-bottom: 3px solid var(--brand) !important;
+}
+
+/* Konze-status banner consistency */
+.konze-status-banner {
+  background: linear-gradient(140deg, var(--status-open-t), #fef3d6) !important;
+  border-color: var(--status-open) !important;
+  border-left-color: var(--status-open) !important;
+}
+
+/* ============================================================
+   .family-tree — focal-candidate hierarchical tree
+   (matches family_pages/_shared.css; added May 2026)
+   ============================================================ */
+.family-tree { display:flex; flex-direction:column; align-items:center; align-items:safe center; gap:0; margin:1rem auto; padding:0.6rem 0.4rem; overflow-x:auto; }
+.ft-gen-label { font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.08em; color:#8a6420; font-weight:700; margin-bottom:0.3rem; text-align:center; }
+.ft-couple-card, .ft-person-card { width:240px; box-sizing:border-box; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:all 0.15s; }
+.ft-couple-card:hover, .ft-person-card:hover { box-shadow:0 2px 10px rgba(0,0,0,0.16); transform:translateY(-1px); }
+.ft-couple-card { display:flex; flex-direction:column; border:2px solid #b48a3a; border-radius:6px; background:#fff8e8; overflow:hidden; }
+.ft-couple-card.ft-subject { border-color:#d8b366; box-shadow:0 2px 8px rgba(212,160,23,0.30); border-width:2.5px; }
+.ft-couple-card a.ft-person { display:block; padding:0.5rem 0.7rem; text-decoration:none; color:#2c2620; transition:background 0.15s; border:none; border-radius:0; max-width:none; min-width:0; background:transparent; }
+.ft-couple-card a.ft-person:hover { background:rgba(212,160,23,0.12); }
+.ft-couple-card a.ft-person.ft-female { background:rgba(200,74,118,0.05); }
+.ft-couple-card a.ft-person.ft-female:hover { background:rgba(200,74,118,0.14); }
+.ft-couple-card .ft-marriage-bar { background:#f4ecd5; text-align:center; font-size:0.72rem; font-style:italic; color:#5a4a32; padding:0.18rem 0.4rem; border-top:1px solid #c9a76a; border-bottom:1px solid #c9a76a; }
+.ft-person-card { display:block; border:2px solid #4a76c8; border-radius:6px; background:#eef3fa; text-decoration:none; color:#2c2620; padding:0.5rem 0.7rem; }
+.ft-person-card.ft-female { border-color:#c84a76; background:#fbeef3; }
+.ft-person-card.ft-subject { border-color:#d8b366; background:#fff8e8; box-shadow:0 2px 8px rgba(212,160,23,0.30); border-width:2.5px; }
+.ft-person-card.ft-died-young { border-color:#8a4a4a; background:#fbeef3; opacity:0.85; }
+.family-tree .ft-name { font-weight:700; font-size:0.9rem; color:#1f1a14; line-height:1.25; text-align:center; }
+.family-tree .ft-name.ft-name-tight { font-size:0.78rem; }
+.family-tree .ft-detail { font-size:0.72rem; color:#6a5a42; font-style:italic; margin-top:0.1rem; line-height:1.3; }
+.family-tree .ft-pid { display:inline-block; margin-top:0.18rem; font-size: 0.72rem; font-weight:700; color:#4a76c8; font-family:Menlo, Consolas, monospace; }
+.ft-couple-card a.ft-person.ft-female .ft-pid { color:#c84a76; }
+.ft-person-card.ft-female .ft-pid { color:#c84a76; }
+.family-tree .ft-trunk { width:2px; height:1.4rem; background:#8a6420; }
+.ft-descend-group { display:flex; flex-direction:column; align-items:center; }
+.ft-children-frame { display:flex; flex-direction:column; align-items:center; width:fit-content; max-width:100%; --ft-card-width:240px; }
+.ft-children-frame.compact { --ft-card-width:200px; }
+.ft-sibling-bar { height:2px; background:#8a6420; width:calc(100% - var(--ft-card-width)); }
+.ft-children-frame.single-child .ft-sibling-bar { display:none; }
+.ft-children-frame .ft-children-row { display:flex; flex-wrap:nowrap; align-items:stretch; justify-content:center; gap:1rem; }
+.ft-child { display:flex; flex-direction:column; align-items:center; }
+.ft-child > .ft-trunk { margin-top:0; flex:0 0 auto; }
+.ft-child > .ft-person-card { flex:1 1 auto; }
+.ft-children-frame.single-child .ft-child > .ft-trunk { display:none; }
+.ft-multi-marriage-stack { display:flex; flex-direction:column; gap:1.6rem; align-items:center; margin-top:0.6rem; }
+.ft-marriage-branch-fs { border:1px dashed #c9a76a; border-radius:6px; padding:0.8rem 1rem; background:#fffaf0; width:100%; max-width:1100px; }
+.ft-children-frame.compact .ft-person-card { width:200px; }
+.ft-children-frame.compact .ft-children-row { gap:0.7rem; }
+.family-tree .ft-bd, .family-tree .ft-dd { font-size:0.76rem; color:#5a4a32; line-height:1.3; margin:0.06rem 0 0; }
+.family-tree .ft-bd::before { content:"b. "; font-weight:600; color:#6a5a42; }
+.family-tree .ft-dd::before { content:"d. "; font-weight:600; color:#6a5a42; }
+.ft-marriage-branch-fs > h4 { font-size:0.78rem; color: var(--brand-dark); margin:0 0 0.6rem; text-align:center; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
+
+
+/* Wide-row wrapping for trees with many children — added May 2026 */
+.ft-marriage-branch-fs { max-width:100% !important; overflow-x:auto; }
+.ft-marriage-branch-fs .family-tree { overflow-x:visible; min-width:fit-content; }
+/* Sized so a full 7-sibling row fits the ~1017px section width:
+   7×136px + 6×0.4rem gaps ≈ 990px. Updated May 2026 to stop the
+   end cards being clipped. */
+.ft-children-frame.compact .ft-person-card { width:136px; }
+.ft-children-frame.compact .ft-children-row { flex-wrap:nowrap; gap:0.4rem; }
+.ft-children-frame.compact { --ft-card-width:136px; }
+
+
+/* ============================================================
+   .summary-card — "★ At a Glance" tile, child profiles.
+   Mirrors family_pages/_shared.css. Added 8 May 2026.
+   ============================================================ */
+.summary-card { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border:2px solid #d8b366; border-radius:6px; padding:1.2rem 1.4rem; margin-bottom:1.4rem; }
+.summary-card.open { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border-color:#d8b366; }
+.summary-card h2 { font-size:1.18rem; color: var(--brand-dark); margin-bottom:0.6rem; padding-bottom:0.3rem; border-bottom:1px solid #c9a76a; }
+.summary-card .card-pill { display:inline-block; font-size: 0.76rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:0.18rem 0.55rem; border-radius:3px; vertical-align:middle; margin-bottom:0.4rem; }
+.summary-card .card-pill.open { background:#d8b366; color:#1f1a14; }
+.summary-card .bottom-line { font-size:1rem; color:#3a2f1e; line-height:1.5; margin-bottom:0.6rem; }
+.summary-card .bottom-line strong { color:#1f1a14; }
+.summary-card .charles-link { background:rgba(212,160,23,0.12); border-left:3px solid #d8b366; padding:0.5rem 0.7rem; margin:0.6rem 0; font-size:0.92rem; color:#3a2f1e; line-height:1.45; border-radius:0 3px 3px 0; }
+.summary-card .charles-link strong { color:#8a6420; font-weight:700; }
+.summary-card .quick-facts { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.5rem; margin-top:0.6rem; }
+.summary-card .qf { background:#fffdf6; border:1px solid #d8c8a8; border-radius:3px; padding:0.4rem 0.6rem; font-size:0.84rem; }
+.summary-card .qf .qf-label { font-size: 0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#8a6420; font-weight:700; display:block; margin-bottom:0.1rem; }
+.summary-card .qf .qf-value { color:#3a2f1e; line-height:1.35; }
+
+/* ============================================================
+   Dark-mode overrides for the children section
+   Added 10 May 2026 — make every hardcoded light box darken
+   when html has theme-dark (or no theme-light) class.
+   ============================================================ */
+:root.theme-dark .section,
+:root:not(.theme-light) .section {
+  background: var(--bg-card, #24201a) !important;
+  background-image: none !important;
+  border-color: var(--border-medium, #6a5a40) !important;
+  color: var(--text-body, #e8dfc8) !important;
+}
+:root.theme-dark .section h2,
+:root:not(.theme-light) .section h2 {
+  color: var(--brand-light, #f1cf85) !important;
+  border-bottom-color: var(--border-medium, #6a5a40) !important;
+}
+:root.theme-dark .section h3,
+:root:not(.theme-light) .section h3 {
+  color: var(--text-heading, #f1cf85) !important;
+}
+:root.theme-dark .section p,
+:root:not(.theme-light) .section p {
+  color: var(--text-body, #e8dfc8) !important;
+}
+:root.theme-dark .section .small,
+:root:not(.theme-light) .section .small {
+  color: var(--text-muted, #b89c70) !important;
+}
+
+:root.theme-dark .kv td,
+:root:not(.theme-light) .kv td {
+  border-bottom-color: var(--border-medium, #6a5a40) !important;
+  color: var(--text-body, #e8dfc8) !important;
+}
+:root.theme-dark .kv td:first-child,
+:root:not(.theme-light) .kv td:first-child {
+  color: var(--brand-light, #f1cf85) !important;
+}
+
+:root.theme-dark .evidence-card,
+:root:not(.theme-light) .evidence-card {
+  background: var(--bg-card-tint, #2c261d) !important;
+  background-image: none !important;
+  border-color: var(--brand, #d8b366) !important;
+  border-left-color: var(--brand, #d8b366) !important;
+  color: var(--text-body, #e8dfc8) !important;
+}
+:root.theme-dark .evidence-card h3,
+:root:not(.theme-light) .evidence-card h3 {
+  color: var(--brand-light, #f1cf85) !important;
+}
+
+:root.theme-dark .sponsors li,
+:root:not(.theme-light) .sponsors li {
+  background: var(--bg-card-tint, #2c261d) !important;
+  border-left-color: var(--brand-dark, #8a6a40) !important;
+  color: var(--text-body, #e8dfc8) !important;
+}
+:root.theme-dark .sponsors li strong,
+:root:not(.theme-light) .sponsors li strong {
+  color: var(--text-heading, #f1cf85) !important;
+}
+
+:root.theme-dark .ft-couple-card,
+:root:not(.theme-light) .ft-couple-card {
+  background: var(--bg-card-tint, #2c261d) !important;
+  border-color: var(--border-medium, #6a5a40) !important;
+}
+:root.theme-dark .ft-couple-card.ft-subject,
+:root:not(.theme-light) .ft-couple-card.ft-subject {
+  background: var(--bg-elevated, #2a2519) !important;
+  border-color: var(--brand, #d8b366) !important;
+}
+:root.theme-dark .ft-couple-card a.ft-person,
+:root:not(.theme-light) .ft-couple-card a.ft-person {
+  color: var(--text-body, #e8dfc8) !important;
+}
+:root.theme-dark .ft-couple-card .ft-marriage-bar,
+:root:not(.theme-light) .ft-couple-card .ft-marriage-bar {
+  background: var(--bg-card, #24201a) !important;
+  color: var(--text-muted, #b89c70) !important;
+  border-color: var(--border-medium, #6a5a40) !important;
+}
+:root.theme-dark .ft-person-card,
+:root:not(.theme-light) .ft-person-card {
+  background: var(--bg-card-tint, #2c261d) !important;
+  border-color: #4a76c8 !important;
+  color: var(--text-body, #e8dfc8) !important;
+}
+:root.theme-dark .ft-person-card.ft-female,
+:root:not(.theme-light) .ft-person-card.ft-female {
+  background: #2c1c24 !important;
+  border-color: #c84a76 !important;
+}
+:root.theme-dark .ft-person-card.ft-subject,
+:root:not(.theme-light) .ft-person-card.ft-subject {
+  background: var(--bg-elevated, #2a2519) !important;
+  border-color: var(--brand, #d8b366) !important;
+}
+:root.theme-dark .ft-person-card.ft-died-young,
+:root:not(.theme-light) .ft-person-card.ft-died-young {
+  background: #2a1818 !important;
+  border-color: #8a4a4a !important;
+}
+:root.theme-dark .family-tree .ft-name,
+:root:not(.theme-light) .family-tree .ft-name {
+  color: var(--text-heading, #f1cf85) !important;
+}
+:root.theme-dark .family-tree .ft-bd,
+:root:not(.theme-light) .family-tree .ft-bd,
+:root.theme-dark .family-tree .ft-dd,
+:root:not(.theme-light) .family-tree .ft-dd,
+:root.theme-dark .family-tree .ft-detail,
+:root:not(.theme-light) .family-tree .ft-detail {
+  color: var(--text-muted, #b89c70) !important;
+}
+:root.theme-dark .ft-marriage-branch-fs,
+:root:not(.theme-light) .ft-marriage-branch-fs {
+  background: var(--bg-card, #24201a) !important;
+  background-image: none !important;
+  border-color: var(--border-medium, #6a5a40) !important;
+}
+:root.theme-dark .ft-marriage-branch-fs > h4,
+:root:not(.theme-light) .ft-marriage-branch-fs > h4 {
+  color: var(--brand-light, #f1cf85) !important;
+}
+
+:root.theme-dark .summary-card,
+:root:not(.theme-light) .summary-card {
+  background: var(--bg-card, #24201a) !important;
+  background-image: none !important;
+  border-color: var(--brand, #d8b366) !important;
+  color: var(--text-body, #e8dfc8) !important;
+}
+:root.theme-dark .summary-card h2,
+:root:not(.theme-light) .summary-card h2 {
+  color: var(--brand-light, #f1cf85) !important;
+  border-bottom-color: var(--border-medium, #6a5a40) !important;
+}
+:root.theme-dark .summary-card .bottom-line,
+:root:not(.theme-light) .summary-card .bottom-line {
+  color: var(--text-body, #e8dfc8) !important;
+}
+:root.theme-dark .summary-card .bottom-line strong,
+:root:not(.theme-light) .summary-card .bottom-line strong {
+  color: var(--text-heading, #f1cf85) !important;
+}
+:root.theme-dark .summary-card .charles-link,
+:root:not(.theme-light) .summary-card .charles-link {
+  background: var(--bg-card-tint, #2c261d) !important;
+  color: var(--text-body, #e8dfc8) !important;
+  border-left-color: var(--brand, #d8b366) !important;
+}
+:root.theme-dark .summary-card .charles-link strong,
+:root:not(.theme-light) .summary-card .charles-link strong {
+  color: var(--brand-light, #f1cf85) !important;
+}
+:root.theme-dark .summary-card .qf,
+:root:not(.theme-light) .summary-card .qf {
+  background: var(--bg-card-tint, #2c261d) !important;
+  border-color: var(--border-medium, #6a5a40) !important;
+}
+:root.theme-dark .summary-card .qf .qf-label,
+:root:not(.theme-light) .summary-card .qf .qf-label {
+  color: var(--brand-light, #f1cf85) !important;
+}
+:root.theme-dark .summary-card .qf .qf-value,
+:root:not(.theme-light) .summary-card .qf .qf-value {
+  color: var(--text-body, #e8dfc8) !important;
+}
+
+:root.theme-dark .surname-pill,
+:root:not(.theme-light) .surname-pill {
+  background: #1f1a14 !important;
+  color: #d8b366 !important;
+}
+
+/* BEGIN-DARK-MODE-BODY-OVERRIDE */
+/* ============================================================
+   Dark-mode body override — updated 11 May 2026 (robust fallback)
+   ============================================================
+   The body rule earlier in this file hardcodes background:#f6f1e7
+   (cream). We override with `:root:not(.theme-light)` so the page
+   renders DARK whenever the user is in dark mode OR when the theme
+   init script fails to run (e.g., scripts blocked on file:// URLs).
+   The only way to get cream is to explicitly toggle to light, which
+   adds the .theme-light class.
+   ------------------------------------------------------------ */
+:root:not(.theme-light) body,
+:root.theme-dark body {
+  background: #1a1612 !important;
+  color: #e8dfc8 !important;
+}
+:root:not(.theme-light) a,
+:root.theme-dark a { color: #e6c47a; }
+:root:not(.theme-light) a:hover,
+:root.theme-dark a:hover { color: #fadea0; }
+/* END-DARK-MODE-BODY-OVERRIDE */

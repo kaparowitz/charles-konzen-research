@@ -1,0 +1,88 @@
+# Wikidata QuickStatements — Charles Konzen
+# ----------------------------------------------------------------------
+# Paste this into https://quickstatements.toolforge.org/#/batch
+# (you must be logged in to Wikidata).  It creates a new item for
+# Charles Konzen and one for the Charles Research project, with
+# their cross-link.  Lines starting with # are comments.
+#
+# After running, replace PLACEHOLDER-WIKIDATA-Q-ID in:
+#   - index.html       (JSON-LD #charles sameAs array)
+#   - abstract.html    (if you add a #charles JSON-LD block here)
+#   - any /people/ pages that should reference the Wikidata Q-ID
+# with the Q-number QuickStatements assigns to the new item (visible in
+# the QS run log and in the URL of the created item).
+#
+# Properties used (Wikidata stable IDs):
+#   P31  : instance of
+#   P21  : sex or gender
+#   P19  : place of birth
+#   P569 : date of birth
+#   P20  : place of death
+#   P570 : date of death
+#   P27  : country of citizenship
+#   P106 : occupation
+#   P607 : conflict
+#   P241 : military branch
+#   P973 : described at URL
+#   P953 : full text URL
+#   P1343: described by source
+#   P407 : language of work or name
+#   P742 : pseudonym
+#   P1559: name in native language
+# ----------------------------------------------------------------------
+
+CREATE
+LAST	Len	"Charles Konzen"
+LAST	Den	"Hessian-born American Civil War sergeant (1835–1903), subject of the Charles Research project"
+LAST	Lde	"Charles Konzen"
+LAST	Dde	"hessisch-amerikanischer Bürgerkriegssergeant (1835–1903)"
+LAST	Aen	"Charles Gannsen"
+LAST	Aen	"Charles Johnson Sr."
+LAST	Aen	"Karl Konzen"
+LAST	Aen	"Charles Konsen"
+LAST	Aen	"Charles Conson"
+LAST	P31	Q5
+LAST	P21	Q6581097
+LAST	P569	+1835-01-26T00:00:00Z/11
+LAST	P19	Q252006   # Hesse-Kassel (Electorate of Hesse) — verify on QS preview
+LAST	P570	+1903-12-19T00:00:00Z/11
+LAST	P20	Q38022    # St. Louis, Missouri
+LAST	P27	Q43287	S854	"https://charles-research.netlify.app/abstract.html"   # German Confederation
+LAST	P27	Q30	S854	"https://charles-research.netlify.app/abstract.html"   # United States
+LAST	P106	Q4991371   # soldier
+LAST	P607	Q8676      # American Civil War
+LAST	P241	Q4192    # Union Army (verify the artillery item)
+LAST	P973	"https://charles-research.netlify.app/"
+LAST	P953	"https://charles-research.netlify.app/abstract.html"
+LAST	P1343	"https://charles-research.netlify.app/bibliography.html"
+
+# ----------------------------------------------------------------------
+# Project item — the research investigation itself
+# ----------------------------------------------------------------------
+CREATE
+LAST	Len	"Charles Research: A Genealogical Investigation"
+LAST	Den	"transatlantic genealogical investigation into Charles Konzen (1835–1903), compiled by Jed Johnson with Peter Schräder"
+LAST	Lde	"Charles-Forschung"
+LAST	Dde	"transatlantische genealogische Untersuchung zu Charles Konzen (1835–1903)"
+LAST	P31	Q43177      # research project (verify on QS preview)
+LAST	P407	Q1860       # English
+LAST	P407	Q188        # German (the /de/ pages)
+LAST	P953	"https://charles-research.netlify.app/"
+LAST	P973	"https://charles-research.netlify.app/abstract.html"
+# Once the Zenodo DOI is minted, append:
+# LAST	P356	"10.5281/zenodo.XXXXXXX"
+
+# ----------------------------------------------------------------------
+# Notes on cross-linking
+# ----------------------------------------------------------------------
+# After the two CREATE blocks succeed and you have Q-IDs back from QS:
+#   - On the Charles Konzen item: add P1343 (described by source) -> the
+#     project Q-ID, with reference URL = the Abstract page.
+#   - On the project item: add P921 (main subject) -> the Charles Konzen
+#     Q-ID.
+# Both can be added in a follow-up QS batch:
+#
+# Q-CHARLES	P1343	Q-PROJECT	S854	"https://charles-research.netlify.app/abstract.html"
+# Q-PROJECT	P921	Q-CHARLES
+#
+# (Replace Q-CHARLES and Q-PROJECT with the real Q-IDs.)

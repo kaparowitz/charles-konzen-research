@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Occupation Across the Records — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/occupation-records.html">
+<link rel="stylesheet" href="assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<meta name="description" content="Every record that states Charles's occupation, from the 1862 enlistment to the 1903 death certificate — farmer, railway conductor and driver, cotton-press worker, and watchman — each sourced and ranked by genealogical confidence, plus the records that recorded no occupation at all.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Occupation Across the Records — Charles Research">
+<meta property="og:description" content="Farmer → railway conductor/driver → cotton-press worker → watchman: Charles's stated occupation in every record, 1862–1903, sourced and ranked.">
+<meta property="og:url" content="https://charles-research.netlify.app/occupation-records.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.bd-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.bd-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.bd-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.bd-hero h1 { color: var(--text-on-dark); font-size: 2.2rem; letter-spacing: 0.02em; max-width: 880px; }
+  header.bd-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 800px; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  h2 { font-size: 1.45rem; color: var(--text-primary); margin: 2.4rem 0 0.8rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.1rem; color: var(--text-primary); margin: 1.4rem 0 0.3rem; }
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.07rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.4rem; }
+
+  .summary-strip {
+    background: var(--bg-card-tint); border: 1px solid var(--border-medium); border-radius: 4px;
+    padding: 0.9rem 1.1rem; margin: 1.2rem 0 1.8rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.8rem;
+  }
+  .summary-strip .stat { text-align: center; }
+  .summary-strip .stat .num { font-size: 1.7rem; font-weight: 700; color: var(--brand-dark); display: block; line-height: 1.05; }
+  .summary-strip .stat .lab { font-size: 0.76rem; color: var(--text-meta); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
+
+  .callout { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 4px solid var(--brand); border-radius: 4px; padding: 1rem 1.2rem; margin: 1.4rem 0; }
+  .callout.verify { border-left-color: var(--status-active, #b48a3a); background: linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); }
+  .callout .ttl { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.4rem; }
+
+  table.bd { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.6rem 0 1.2rem; }
+  table.bd thead tr { background: var(--bg-card-tint); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-meta); }
+  table.bd th, table.bd td { padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); }
+  table.bd tbody tr:nth-child(even) td { background: var(--bg-card); }
+  table.bd .rec { font-weight: 700; color: var(--text-strong); white-space: nowrap; }
+  table.bd .occ { font-weight: 700; color: var(--text-strong); }
+  table.bd .num { font-weight: 700; color: var(--brand-dark); text-align: center; font-family: var(--font-mono); width: 2rem; }
+  table.bd .src { font-size: 0.82rem; color: var(--text-meta); }
+
+  .pill { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+  .pill.high { background: #5a8a4a; color: #fff; }
+  .pill.mod  { background: #d4a017; color: #2c2620; }
+  .pill.low  { background: #b48a3a; color: #2c2620; }
+  .pill.none { background: #9a5a4a; color: #fff; }
+  .gtag { display: block; margin-top: 0.35rem; font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-meta); text-transform: none; letter-spacing: 0; line-height: 1.3; }
+
+  html.theme-dark table.bd .num,
+  html.theme-dark .summary-strip .stat .num,
+  html.theme-dark .callout .ttl,
+  html.theme-dark .sie .box h4 { color: #e8cd8a; }
+  html.theme-dark .gtag { color: #b9a98a; }
+
+  .sie { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; margin: 1rem 0 1.2rem; }
+  .sie .box { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 3px solid var(--brand); border-radius: 4px; padding: 0.8rem 1rem; }
+  .sie .box h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brand-dark); margin: 0 0 0.3rem; }
+  .sie .box p { font-size: 0.88rem; margin: 0; }
+
+  .arc { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem; margin: 0.8rem 0 1.4rem; font-size: 0.92rem; }
+  .arc .step { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 4px; padding: 0.35rem 0.7rem; font-weight: 700; color: var(--text-strong); }
+  .arc .sep { color: var(--brand-dark); font-weight: 700; }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.bd-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.bd-hero h1, header.bd-hero .sub, header.bd-hero .crumbs, header.bd-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+    .pill { border: 1px solid #000; color: #000 !important; background: none !important; }
+  }
+</style>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/occupation-records.html#article",
+  "headline": "Occupation Across the Records",
+  "description": "Every record that states Charles's occupation, 1862–1903, sourced and ranked by genealogical confidence.",
+  "datePublished": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "url": "https://charles-research.netlify.app/occupation-records.html",
+  "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+  "about": { "@id": "https://charles-research.netlify.app/#charles" },
+  "inLanguage": "en-US"
+}
+</script>
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="occupation-records.html" role="menuitem">Occupation across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="bd-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; Occupation Across the Records</div>
+  <h1>Charles's Occupation Across the Records</h1>
+  <div class="sub">From a Hessian farmer's son to a St.&nbsp;Louis watchman — every record that names a trade, 1862 to 1903, sourced and ranked by genealogical confidence, with the records that left the occupation field blank noted alongside.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">Unlike Charles's <a href="birthdate-records.html">birth date</a> — which no living informant ever witnessed — his occupation is something he and his household knew firsthand. These records therefore carry <strong>primary</strong> information about the trade, and read as a coherent working life rather than a set of conflicts: a brief agricultural self-description on enlistment, then two decades of St.&nbsp;Louis wage work, ending as a watchman.</p>
+
+<div class="summary-strip">
+  <div class="stat"><span class="num">9</span><span class="lab">records naming a trade</span></div>
+  <div class="stat"><span class="num">1862&ndash;1903</span><span class="lab">span of the record</span></div>
+  <div class="stat"><span class="num">5</span><span class="lab">distinct occupations</span></div>
+  <div class="stat"><span class="num">Watchman</span><span class="lab">final &amp; most-corroborated</span></div>
+</div>
+
+<div class="arc" aria-label="Occupation arc">
+  <span class="step">Farmer · 1862</span><span class="sep">→</span>
+  <span class="step">Railway conductor / driver · 1871–76</span><span class="sep">→</span>
+  <span class="step">Cotton-press worker · 1880</span><span class="sep">→</span>
+  <span class="step">Watchman · 1887–1903</span>
+</div>
+
+<h2 id="standard">How these are rated</h2>
+<p>The confidence ratings follow the same evidence-analysis model used elsewhere on the site — the <strong>Source · Information · Evidence</strong> framework with the <strong>Genealogical Proof Standard</strong> (see <a href="methodology.html#confidence">methodology</a>). One point distinguishes this page from the birth-date page: because Charles (or his household) reported these trades from firsthand knowledge, every entry below is <strong>primary, direct</strong> information about the occupation. They differ mainly in source type (a contemporaneous directory or census vs. a benefit-claim declaration) and in how well they corroborate one another.</p>
+
+<div class="sie">
+  <div class="box"><h4>Source</h4><p>Is it an <span class="ev-original">original</span> contemporaneous record (directory, census, certificate) or a <span class="ev-derivative">derivative</span> (a later abstract or compiled card)?</p></div>
+  <div class="box"><h4>Information</h4><p>Is the trade reported by someone with <span class="ev-primary">firsthand</span> knowledge (Charles, his household) or <span class="ev-secondary">second-hand</span> (a survivor, post-mortem)?</p></div>
+  <div class="box"><h4>Evidence</h4><p>Here, always <span class="ev-direct">direct</span> — each record states an occupation outright rather than implying one.</p></div>
+</div>
+
+<h2 id="table">Every record that states an occupation</h2>
+
+<table class="bd">
+  <thead>
+    <tr><th>#</th><th>Record</th><th>Occupation as stated</th><th>Source (Doc / file)</th><th>Confidence</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="num">1</td>
+      <td class="rec">2 Dec 1862<br>Civil War enlistment</td>
+      <td class="occ">Farmer</td>
+      <td class="src">Regimental Descriptive Book card ("L. Charles Gannsen," age 23, occupation <em>Farmer</em>) — <a href="evidence/card-2-civil-war-enlistment.html">Evidence Card 2</a> · <a href="sources/military-record.html">military record (Doc O)</a>. <span class="src"><strong>Examine firsthand:</strong> NARA M405 Compiled Service Record, file G11-422819443E (Fold3 / FamilySearch).</span></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-derivative">Derivative</span> source · <span class="ev-primary">1&deg; info</span> (self) · <span class="ev-direct">direct</span> — sole agricultural term; may be a nominal default</span></td>
+    </tr>
+    <tr>
+      <td class="num">2</td>
+      <td class="rec">1871<br>Edwards' City Directory</td>
+      <td class="occ">Conductor, St.&nbsp;Louis R.R.</td>
+      <td class="src">Edwards' Directory 1871, p.&nbsp;352 — "Johnson, Charles, conductor, St.&nbsp;Louis R.R., r. 718 Gate." See <a href="charles_america/st-louis-residences.html">address chronology</a>.</td>
+      <td><span class="pill high">High</span><span class="gtag"><span class="ev-original">Original</span> source · <span class="ev-primary">1&deg; info</span> (self/household) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">3</td>
+      <td class="rec">1872&ndash;73<br>City Directory</td>
+      <td class="occ">Conductor</td>
+      <td class="src">"Johnson Charles, conductor, r. 718 Gate" — <a href="charles_america/st-louis-residences.html">address chronology</a> (<a href="https://www.familysearch.org/ark:/61903/3:1:3QHK-XQZY-TLHN?view=fullText&amp;keywords=718+Gate&amp;lang=en" target="_blank" rel="noopener noreferrer">FamilySearch record ↗</a>).</td>
+      <td><span class="pill high">High</span><span class="gtag"><span class="ev-original">Original</span> source · <span class="ev-primary">1&deg; info</span> · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">4</td>
+      <td class="rec">1874<br>City Directory</td>
+      <td class="occ">Driver <span style="font-weight:400;">(as <em>Konsen</em>)</span></td>
+      <td class="src">"Konsen Charles, driver, r. 718 Gate" — the <em>Konsen</em> spelling matching the 1875 baptism. <a href="charles_america/st-louis-residences.html">Address chronology</a> (<a href="https://www.familysearch.org/ark:/61903/3:1:3QHK-LQZY-B4P9?view=fullText&amp;keywords=718+Gate&amp;lang=en" target="_blank" rel="noopener noreferrer">FamilySearch record ↗</a>).</td>
+      <td><span class="pill high">High</span><span class="gtag"><span class="ev-original">Original</span> source · <span class="ev-primary">1&deg; info</span> · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">5</td>
+      <td class="rec">1876<br>City Directory</td>
+      <td class="occ">Driver <span style="font-weight:400;">(as <em>Gonson</em>)</span></td>
+      <td class="src">"Gonson Charles, driver, 718 Gate" — the <em>Gonson</em> spelling matching the 1880 census. <a href="charles_america/st-louis-residences.html">Address chronology</a>.</td>
+      <td><span class="pill high">High</span><span class="gtag"><span class="ev-original">Original</span> source · <span class="ev-primary">1&deg; info</span> · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">6</td>
+      <td class="rec">1880<br>U.S. Federal Census</td>
+      <td class="occ">Cotton-press worker</td>
+      <td class="src">1880 census, 1534 Jackson St. — "Charles Gonson, 39, cotton-press worker" (Doc&nbsp;D), ED&nbsp;137, sheet&nbsp;4D, dwelling&nbsp;15, family&nbsp;37. See <a href="charles_america/life-timeline.html">life timeline</a>.</td>
+      <td><span class="pill high">High</span><span class="gtag"><span class="ev-original">Original</span> source · <span class="ev-primary">1&deg; info</span> (household) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">7</td>
+      <td class="rec">1887&ndash;88<br>City Directory</td>
+      <td class="occ">Watch[man]</td>
+      <td class="src">"Johnson Charles, watch, r. rear 2407 DeKalb" — anglicised again, mid-life, in the watchman years. See <a href="surname-records.html">surname across the records</a>.</td>
+      <td><span class="pill high">High</span><span class="gtag"><span class="ev-original">Original</span> source · <span class="ev-primary">1&deg; info</span> · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">8</td>
+      <td class="rec">1890&ndash;91<br>Pension declaration</td>
+      <td class="occ">Saloon-keeper <span style="font-weight:400;">(occupation "since leaving the service")</span></td>
+      <td class="src">Pension file F41-523680269E — claimant's sworn declaration: occupation since discharge "that of a Saloon-keeper"; elsewhere declares himself "unable to earn a support by manual labor" (rupture, hearing loss). <a href="sources/pension-file.html">Pension file</a>.</td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> source · <span class="ev-primary">1&deg; info</span> (self) · <span class="ev-direct">direct</span> — single mention, benefit-claim context; not corroborated elsewhere</span></td>
+    </tr>
+    <tr>
+      <td class="num">9</td>
+      <td class="rec">17 Dec 1903<br>Death certificate</td>
+      <td class="occ">Watchman</td>
+      <td class="src">City of St.&nbsp;Louis Certificate of Death no.&nbsp;10619 (Doc&nbsp;A) — occupation <em>watchman</em>, age 69, 40 yrs in U.S. <a href="sources/death-certificate.html">Death certificate page</a>.</td>
+      <td><span class="pill high">High</span><span class="gtag"><span class="ev-original">Original</span> source · <span class="ev-secondary">2&deg; info</span> (survivor, post-mortem) · <span class="ev-direct">direct</span> — corroborates the 1887&ndash;88 directory</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="blank">Records that recorded no occupation</h2>
+<p>Two records that <em>could</em> have carried a trade did not — worth noting so the silence isn't mistaken for a missing document:</p>
+<table class="bd">
+  <thead><tr><th>Record</th><th>Occupation field</th><th>Note</th></tr></thead>
+  <tbody>
+    <tr><td class="rec">7 Jan 1866<br>St.&nbsp;Marcus marriage register</td><td><span class="pill none">none recorded</span></td><td class="src">The marriage entry ("Carl Gonnson") records origin but no occupation.</td></tr>
+    <tr><td class="rec">1900<br>U.S. Federal Census</td><td><span class="pill none">none recorded</span></td><td class="src">Charles a boarder in the Peter Kuhn household, 170 Sidney St.; the occupation field carries no trade for him.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="gaps">Before 1862 — the German trade, still unknown</h2>
+<p>No record yet states Charles's pre-emigration occupation. The two that would — the <a href="research_logs/hessian-stammrolle.html">Hessian Stammrolle</a> (military levy roll, which records a man's trade at age 20, ~1855) and the <a href="research_logs/1859-passenger-manifest.html">1859 emigration manifest</a> — have not been found. The 1862 "Farmer" is therefore the earliest occupation of record, and the only one pointing to the land; every later record describes urban wage work.</p>
+
+<h2 id="reading">Reading the arc</h2>
+<p>Taken together the records trace a recognisable immigrant working life: a young man who called himself a <strong>farmer</strong> at enlistment, then — after the war and marriage — strings of St.&nbsp;Louis wage jobs, first on the street railway (<strong>conductor</strong>, then <strong>driver</strong>, 1871&ndash;76), then in a <strong>cotton press</strong> (1880), and finally the steady, lower-exertion role of <strong>watchman</strong>, which is the most consistent thread of all: it appears in the 1887&ndash;88 directory and again on the 1903 death certificate, sixteen years apart.</p>
+<div class="callout">
+  <div class="ttl">Two tensions worth flagging</div>
+  <p style="margin:0 0 0.5rem; font-size:0.93rem;"><strong>Farmer vs. the rest.</strong> The 1862 "Farmer" is the lone agricultural descriptor and the term underlying the <a href="origin-records.html">Freundburg / Deisel origin</a> discussion; it may be a genuine pre-emigration trade or a nominal default on an enlistment card. The pre-1862 records that would settle it remain unfound.</p>
+  <p style="margin:0; font-size:0.93rem;"><strong>Saloon-keeper vs. watchman.</strong> The pension's one-off "saloon-keeper" sits oddly against the watchman record on either side of it. It may reflect a short-lived venture, an interim trade, or the notary's gloss; held <span class="pill mod">Moderate</span> pending corroboration.</p>
+</div>
+
+<h2 id="related">Related pages</h2>
+<ul>
+  <li><a href="birthdate-records.html">Birth date across the records</a></li>
+  <li><a href="surname-records.html">Surname across the records</a></li>
+  <li><a href="origin-records.html">Origin across the records</a></li>
+  <li><a href="sources/death-certificate.html">Death certificate (no. 10619) — the "watchman" field</a></li>
+  <li><a href="charles_america/st-louis-residences.html">Address chronology — directory listings in full</a></li>
+  <li><a href="claims-dashboard.html">Claims dashboard</a></li>
+</ul>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="start.html">Start here</a> · <a href="claims-dashboard.html">Claims Dashboard</a> · <a href="sources/index.html">Sources</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

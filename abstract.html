@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Abstract — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/abstract.html">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/abstract.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/abstract.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/abstract.html">
+<link rel="stylesheet" href="assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<meta name="description" content="A one-page formal academic abstract of the Charles Konzen genealogical investigation: question, method, evidence, working conclusion, and gaps.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Abstract — Charles Research">
+<meta property="og:description" content="The investigation in one page: question, method, evidence, working conclusion, and gaps. Citation-formatted, print-ready.">
+<meta property="og:url" content="https://charles-research.netlify.app/abstract.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/abstract.png">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.7; }
+
+  header.ab-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.ab-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.ab-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.ab-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; }
+  header.ab-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+
+  /* Article-style layout — tighter measure for readable academic prose */
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  .meta-strip {
+    background: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-radius: 4px;
+    padding: 0.8rem 1rem;
+    margin: 0 0 2rem;
+    font-size: 0.86rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1.2rem;
+    align-items: baseline;
+  }
+  .meta-strip dt { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--brand-dark); font-weight: 700; }
+  .meta-strip dd { color: var(--text-strong); }
+
+  h2 {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brand-dark);
+    margin: 2.2rem 0 0.8rem;
+    border-bottom: 1px solid var(--border-medium);
+    padding-bottom: 0.3rem;
+  }
+
+  /* First paragraph after each heading gets a small caps lead-in */
+  h2 + p::first-line { font-variant: small-caps; letter-spacing: 0.04em; }
+
+  p { margin-bottom: 0.85rem; text-align: justify; hyphens: auto; }
+  p.indent { text-indent: 1.4em; margin-bottom: 0.4rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+
+  ol.refs { list-style: none; padding: 0; counter-reset: ref; font-size: 0.9rem; }
+  ol.refs li { counter-increment: ref; padding: 0.4rem 0 0.4rem 2.4rem; position: relative; line-height: 1.55; border-bottom: 1px dotted var(--border-light); }
+  ol.refs li::before {
+    content: counter(ref);
+    position: absolute; left: 0; top: 0.4rem;
+    font-family: var(--font-mono); font-size: 0.78rem;
+    background: var(--brand); color: var(--text-primary);
+    width: 1.7em; padding: 0 0.2em; text-align: center;
+    border-radius: 2px;
+  }
+  sup.fn {
+    font-size: 0.7em;
+    color: var(--brand-dark);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  sup.fn a { color: var(--brand-dark); border-bottom: none; }
+
+  blockquote {
+    margin: 0.6rem 0 0.8rem 0;
+    padding: 0.4rem 0 0.4rem 1.1rem;
+    border-left: 3px solid var(--border-medium);
+    color: var(--text-meta);
+    font-style: italic;
+    font-size: 0.96rem;
+  }
+
+  .key-finding {
+    background: linear-gradient(140deg, #fffaee, #fef3d6);
+    border: 1px solid var(--brand);
+    border-left: 4px solid var(--brand);
+    border-radius: 4px;
+    padding: 0.85rem 1.05rem;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+  }
+  .key-finding strong { color: var(--brand-dark); }
+
+  .keywords {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin: 1rem 0 0;
+    padding: 0.6rem 0.85rem;
+    background: var(--bg-card-tint);
+    border-radius: 3px;
+  }
+  .keywords strong { color: var(--text-strong); font-style: normal; }
+
+  footer.site-foot {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    @page { size: A4; margin: 18mm 18mm 22mm; }
+    @page :first { margin-top: 14mm; }
+    html, body { background: #fff !important; color: #000 !important; font-size: 10.5pt; line-height: 1.42; }
+    header.ab-hero { background: none !important; color: #000; border-bottom: 1.5pt solid #444; padding: 0 0 6pt; margin-bottom: 8pt; }
+    header.ab-hero .crumbs { display: none; }
+    header.ab-hero h1, header.ab-hero .sub { color: #000 !important; }
+    header.ab-hero h1 { font-size: 18pt; line-height: 1.18; margin-bottom: 4pt; }
+    header.ab-hero .sub { font-size: 9.5pt; }
+    main { max-width: none; padding: 0; }
+    a { color: #000; border-bottom: none; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 7.5pt; color: #555; }
+    .key-finding, .keywords, .meta-strip { background: none !important; border-left-width: 1.5pt; padding: 4pt 8pt; }
+    sup.fn a { color: #000; }
+    h2 { font-size: 11pt; margin-top: 10pt; margin-bottom: 4pt; page-break-after: avoid; }
+    h3 { font-size: 10.5pt; page-break-after: avoid; }
+    p, li { orphans: 3; widows: 3; }
+    /* Hide injected nav, footer, cite widget — let the page stand alone in print */
+    nav.site-nav-shared, footer.site-foot-shared, .site-foot-shared, .cite-widget,
+    nav.tabs, .skip-link, .search-fab, footer.site-foot { display: none !important; }
+    /* Footnotes in print */
+    .footnotes, ol.footnotes { font-size: 8.5pt; border-top: 0.5pt solid #888; padding-top: 4pt; margin-top: 10pt; }
+  }
+</style>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/abstract.html#article",
+  "headline": "Charles Research — Abstract",
+  "description": "Formal one-page abstract of the Charles Konzen genealogical investigation: question, method, evidence, working conclusion, and gaps.",
+  "datePublished": "2026-03-29",
+  "dateModified": "2026-06-21",
+  "url": "https://charles-research.netlify.app/abstract.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<style id="dark-mode-emergency">
+/* Inlined safeguards — guaranteed to load with the HTML, not cached separately */
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light) section.page div[style*="linear-gradient"],
+  html:not(.theme-light) section.page a[style*="linear-gradient"],
+  html:not(.theme-light) section.page figure[style*="linear-gradient"],
+  html:not(.theme-light) section.page section[style*="linear-gradient"] {
+    background-color: #24201a !important;
+    background-image: none !important;
+    border-color: #6a5a40 !important;
+    color: #f6efe2 !important;
+  }
+  html:not(.theme-light) section.page div[style*="linear-gradient"] *,
+  html:not(.theme-light) section.page a[style*="linear-gradient"] *,
+  html:not(.theme-light) section.page figure[style*="linear-gradient"] *,
+  html:not(.theme-light) section.page section[style*="linear-gradient"] * {
+    color: #f6efe2 !important;
+    background-image: none !important;
+  }
+  html:not(.theme-light) section.page div[style*="linear-gradient"] strong,
+  html:not(.theme-light) section.page a[style*="linear-gradient"] strong,
+  html:not(.theme-light) section.page figure[style*="linear-gradient"] strong {
+    color: #fadea0 !important;
+  }
+}
+html.theme-dark section.page div[style*="linear-gradient"],
+html.theme-dark section.page a[style*="linear-gradient"],
+html.theme-dark section.page figure[style*="linear-gradient"],
+html.theme-dark section.page section[style*="linear-gradient"] {
+  background-color: #24201a !important;
+  background-image: none !important;
+  border-color: #6a5a40 !important;
+  color: #f6efe2 !important;
+}
+html.theme-dark section.page div[style*="linear-gradient"] *,
+html.theme-dark section.page a[style*="linear-gradient"] *,
+html.theme-dark section.page figure[style*="linear-gradient"] *,
+html.theme-dark section.page section[style*="linear-gradient"] * {
+  color: #f6efe2 !important;
+  background-image: none !important;
+}
+html.theme-dark section.page div[style*="linear-gradient"] strong,
+html.theme-dark section.page a[style*="linear-gradient"] strong,
+html.theme-dark section.page figure[style*="linear-gradient"] strong {
+  color: #fadea0 !important;
+}
+</style>
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Abstract"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="ab-hero cinema-section-hero">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; Abstract</div>
+  <h1>Abstract</h1>
+  <div class="sub">A formal one-page summary of the investigation — question, method, evidence, working conclusion, and acknowledged gaps. Print-ready; designed for citation in academic and genealogical work.</div>
+  <div class="ab-actions" style="margin-top:0.8rem; display:flex; flex-wrap:wrap; gap:0.5rem; font-size:0.86rem;">
+    <a href="abstract.pdf" style="display:inline-block; padding:5px 12px; background:var(--brand); color:var(--text-strong); border:1px solid var(--brand-dark); border-radius:3px; font-weight:700; letter-spacing:0.04em; border-bottom:none; text-decoration:none;">⤓ Download PDF</a>
+    <a href="methodology.html" style="display:inline-block; padding:5px 12px; background:transparent; color:var(--text-on-dark); border:1px solid var(--brand); border-radius:3px; font-weight:600; letter-spacing:0.04em; border-bottom:none; text-decoration:none;">Methodology →</a>
+  </div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<dl class="meta-strip">
+  <dt>Subject</dt><dd>Charles Konzen (also recorded in U.S. records as Gannsen, Gonsen, Konsen, Jansen, Conson, Johnson) — 26 January 1835 – 16 December 1903<sup><a href="index.html#doc-crosswalk" title="Death-date sources: parish burial register (Doc N) reads 16 Dec; death certificate (Doc A) reads 17 Dec — 1-day source discrepancy, see Doc A–O crosswalk and errata #er-2026-05-17-death-burial." style="text-decoration:none; color:var(--brand);">†</a></sup>.</dd>
+  <dt>Compiled by</dt><dd>Jed Johnson, with Peter Schräder of <a class="glossary-link" href="glossary.html#g-trendelburg" title="Glossary: Trendelburg">Trendelburg</a> as German genealogist.</dd>
+  <dt>Period of investigation</dt><dd>March 2026 – present (active). Foundation work 2017–2020.</dd>
+  <dt>Last updated</dt><dd><time datetime="2026-06-21">21 June 2026</time></dd>
+  <dt>Citation</dt><dd>See <a href="methodology.html#how-to-cite">Methodology · How to cite</a></dd>
+</dl>
+
+<h2>Question</h2>
+
+<p>This study investigates the German origin of <strong>Charles</strong> &mdash; the man recorded across his U.S. records under nine surname spellings (Gonnson, Gansen, Gonsen, Konsen, Gonson, Jansen, Konzen, <em>Gannsen</em>, and Conson &mdash; the <em>Gannsen</em> his own holograph, on the 1862 enlistment and again in the 1895 city directory), and whose German surname is itself one of the two questions at issue &mdash; a Hessian-born sergeant of Battery B, 2nd Missouri Light Artillery, who emigrated to the United States in 1859, served in the Union Army from his enlistment at St. Louis on 2 December 1862 to December 1865, married Auguste Kreichelt at St. Marcus German Evangelical Church in St. Louis on 7 January 1866, fathered seven children documented in the parish register between 1866 and 1880, was awarded a federal pension for war-onset rheumatism in 1891, and died in St. Louis on 16 December 1903 (per the St. Marcus parish burial register #3393 — Doc&nbsp;N in the <a href="index.html#doc-crosswalk">Doc A–O crosswalk</a>; the death certificate Doc&nbsp;A records 17 Dec — a 1-day discrepancy <em>recorded, not formally resolved</em>; the project adopts the parish burial register's date as its working anchor and logs the variance on the <a href="index.html#doc-crosswalk">Doc A–O crosswalk</a>, per <a href="errata.html#er-2026-05-17-death-burial">errata · 17 May 2026 · death &amp; burial</a>) and was buried at Old Saint Marcus Cemetery 19 December 1903.<sup class="fn"><a href="#ref-1">1</a></sup> Two questions structure the investigation: <em>what was Charles's German surname before its multiple American renderings</em>, and <em>which Hessian parish recorded his baptism</em>?</p>
+
+<h2>Method</h2>
+
+<p>The investigation is conducted in alignment with the Board for Certification of Genealogists' <a class="glossary-link" href="glossary.html#g-genealogical-proof-standard" title="Glossary: Genealogical Proof Standard">Genealogical Proof Standard</a> — reasonably exhaustive research; complete and accurate citations; analysis and correlation of the collected information; resolution of conflicting evidence; soundly reasoned written conclusion — with one documented residual gap (the German baptismal entry remains unrecovered), so the surname conclusion is held in the project's <em>Working</em> state rather than promoted to <em>Confirmed</em>.<sup class="fn"><a href="#ref-2">2</a></sup> Source-rating taxonomy, transcription conventions, and naming conventions are codified on the project's <a href="methodology.html">Methodology page</a>.</p>
+
+<p>Primary research draws on three archival classes. <em>U.S. military and pension records</em>: the <a class="glossary-link" href="glossary.html#g-compiled-service-record" title="Glossary: Compiled Service Record">Compiled Service Record</a> (<a class="glossary-link" href="glossary.html#g-nara" title="Glossary: NARA">NARA</a> M405, file G11-422819443E) and full Pension File (F41-523680269E), obtained as mail-order packets from the National Archives (full citation block: <a href="bibliography.html#military">Bibliography §1</a>).<sup class="fn"><a href="#ref-3">3</a></sup> <em>German parish records</em>: digitised <a class="glossary-link" href="glossary.html#kirchenbuch" title="Glossary: Kirchenbücher">Kirchenbücher</a> of Trendelburg, <a class="glossary-link" href="glossary.html#g-deisel" title="Glossary: Deisel">Deisel</a>, Friedrichsfeld, Helmarshausen, Hofgeismar, and the surrounding <a class="glossary-link" href="glossary.html#g-churhessen" title="Glossary: Churhessen">Churhessen</a> parishes, accessed via Archion.de (per-volume listing in <a href="bibliography.html#parish">Bibliography §2</a>); emigration permits (<a class="glossary-link" href="glossary.html#g-auswanderer-beleg" title="Glossary: Auswanderer-Belege">Auswanderer-Belege</a>) and <a class="glossary-link" href="glossary.html#g-stammrolle" title="Glossary: Stammrollen">Stammrollen</a> via Hessisches Staatsarchiv Marburg through Arcinsys and <a class="glossary-link" href="glossary.html#g-lagis" title="Glossary: LAGIS">LAGIS</a>.<sup class="fn"><a href="#ref-4">4</a></sup> <em>U.S. vital, immigration, and census records</em>: FamilySearch.org, Ancestry.com, and Find a Grave. Field research and <a class="glossary-link" href="glossary.html#g-stammtafel" title="Glossary: Stammtafel">Stammtafel</a> construction in the Trendelburg-area parish complex was undertaken by Peter Schräder.</p>
+
+<p style="font-size:0.9rem; color:var(--text-meta); font-style:italic;">Transcription provenance: German-language quotations in this abstract are working transcriptions by Peter Schräder from the Archion-imaged registers, cross-checked against Archion's <a class="glossary-link" href="glossary.html#g-htr" title="Glossary: HTR">HTR</a> output by the author. Per the transcription conventions on the <a href="methodology.html">Methodology page</a>, original-language quotations are italicised inside double quotes; bracketed editorial insertions denote uncertain readings. A full <a href="methodology.html#sources">Archion citation audit</a> on 21 June 2026 re-opened every cited register in the Archion viewer and confirmed each Seite/image locator against the original manuscript page — all 19 registers with a checkable anchor (≈25 anchor reads across baptism, marriage, and burial sections) validated, with zero genuine citation errors; the keystone Card 1 Kontze/Contze entries additionally carry one-click Archion image permalinks (image links inline below).</p>
+
+<h2>Evidence — surname trail</h2>
+
+<p>Charles's surname was recorded in <strong>nine distinct spellings</strong> across his American records (1862–1896): his own holograph form, <em>Gannsen</em>, he signed on the 1862 enlistment and his 1890–91 pension declarations, and it recurs in the 1895 Gould’s St. Louis city directory (“Gannsen Charles, watchmaker, r. rear 2407 DeKalb”). The other eight forms are independent scribal phonetic captures by at least five different scribes between 1866 and 1896: <em>Gonnson</em> (1866 St. Marcus marriage register, Pastor Wall), <em>Gansen</em> (1870 St. Marcus baptism of Katherine, Pastor Braschler), <em>Gonsen</em> (1872 St. Marcus baptism of Auguste, Pastor Braschler), <em>Konsen</em> (1875 St. Marcus baptism of Erwin Carl, Pastor Hoffmann), <em>Gonson</em> (1880 U.S. Federal Census, 1534 Jackson St., enumerator unknown), <em>Jansen</em> (1881 St. Marcus baptism of Bertha, Pastor Nollau), <em>Konzen</em> (1890 death record of daughter Auguste, reading "Auguste Somers geb Konzen" &mdash; the single American attestation of the full Hessian z-form documented in the Trendelburg parish; the 17 May 2026 re-reading that reversed an earlier Konzen→Konsen pass is logged in <a href="errata.html#er-2026-05-17-konzen-1890">errata · 17 May 2026 · 1890 Konzen reading</a>), and <em>Conson</em> (1896 St. Marcus death record of wife Auguste, Pastor Eilt Heeren Eilts, with Charles himself as the surviving informant).<sup class="fn"><a href="#ref-5">5</a></sup></p>
+
+<p>Five of the nine distinct spellings (Gonnson, Gonsen, Konsen, Gonson, Conson) collapse to one spoken root, differing only in the voicing of the initial consonant &mdash; the [ˈkɔn.sən] forms (Konsen, Conson) and their voiced [ˈɡɔn.sən] variants (Gonnson, Gonsen, Gonson). The two <em>-en</em>-preserving Hessian-form attestations &mdash; <em>Konsen</em> 1875 (Pastor Hoffmann's phonetic rendering) and <em>Konzen</em> 1890 (the Hessian z-form) &mdash; recur at a fifteen-year interval by two different scribes, establishing the Hessian <em>-en</em> suffix as continuously in family use through 1890. The remaining variants (Gansen 1870, Jansen 1881) are best explained as scribal mishearings &mdash; Pastor Braschler's recording of the same family in 1870 and 1872 with two different vowels (Gansen / Gonsen) provides direct evidence that the spelling reflected Charles's own pronunciation, not the pastor's preference. The same forms recur independently in the contemporaneous <strong>St. Louis city directories</strong>, where the surname was supplied by Charles or his household to the canvasser rather than a pastor: the <strong>1874 directory's <em>Konsen</em></strong> ("Konsen Charles, driver") matches Pastor Hoffmann's 1875 baptism rendering a year <em>before</em> it, and the <strong>1876 directory's <em>Gonson</em></strong> matches the 1880 census form four years before it — two non-ecclesiastical scribes capturing the same spellings the church registers did, which strengthens the inference that the variation tracks Charles's own pronunciation across independent record streams (he also appears as his signed legal <em>Gannsen</em> in the 1895 directory, and under the Anglicised <em>Johnson</em> in his 1871–73 and 1887 directory years). The full directory-by-directory ledger is on <a href="surname-records.html">Surname across the records</a>.</p>
+
+<p><strong>The spelling tracked the context.</strong> The <em>earliest</em> recorded form is his own signed <em>Gannsen</em> on the 1862 enlistment, and it is the form that recurs on every record that touched the federal government — the <strong>21 October 1868 St. Louis naturalization</strong>, the <strong>1890–91 pension</strong> declarations, and the <strong>1900 admission to the Danville National Home for Disabled Volunteer Soldiers</strong> (entered as &ldquo;Gannson,&rdquo; a clerk's vowel away) — because each was tied by law back to the &ldquo;Gannsen&rdquo; of his Battery B muster record. A methodological view that weights the earliest attestation as potentially the most faithful reading would, on that basis, favour <em>Gannsen</em>; the project notes this but treats it as <em>to be determined</em>, not settled. The homeland <em>-en</em> forms (the [ˈkɔn.sən]&nbsp;/&nbsp;[ˈɡɔn.sən] cluster) appear most often across the St. Marcus parish registers but are not confined to church use — they also surface in the <strong>1880 census</strong> (<em>Gonson</em>) and the <strong>1874 / 1876 city directories</strong> (<em>Konsen</em>, <em>Gonson</em>). The Americanised <strong>Johnson</strong>, the family's eventual settled surname, first appears (on present evidence) around <strong>1871</strong> in the city directories of his streetcar-conductor years, decades before the death records. Charles, in short, used whichever rendering the setting called for — the locked legal <em>Gannsen</em> on government paperwork, the homeland <em>-en</em> forms at the font and in everyday records, and <em>Johnson</em> where assimilation invited it — so the American surname history is a record of context as much as of sound.</p>
+
+<div class="key-finding">
+  <strong>Surname conclusion (May 2026)</strong> &nbsp;<span style="display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:2px 8px; border-radius:3px; background:#d4a017; color:#2c2620; vertical-align:middle;">★ Working</span><strong>:</strong> Charles's German-side surname is most likely <strong>Konzen</strong> &mdash; the Kontzen-family form documented in the Trendelburg parish complex of Churhessen, and the form that appears directly on the 1890 American death record of Charles's daughter Auguste ("Auguste Somers geb Konzen"). Eight of the nine American spellings reach this form via regular German-American transcription shifts (initial K voicing to G; <em>tz</em>-affricate softening to <em>s</em>; terminal <em>-en</em> Anglicising to <em>-on</em> only in the 1866 and 1896 records); the 1890 Konzen attestation alone carries it directly. The conclusion is held in the project's <em>Working</em> state per the <a href="methodology.html#confidence">source-rating taxonomy</a> &mdash; promotion to <em>Confirmed</em> requires recovery of the specific German baptismal entry (see <a href="open-questions.html">Open Questions, Priority 1</a>; the surname's promotion history, including the 4 May 2026 first-promotion entry, is logged in <a href="errata.html#er-2026-05-04">errata · 4 May 2026</a>).
+</div>
+
+<h2>Evidence — geographic placement</h2>
+
+<p>Two records, written by different scribes, in different languages, four years apart, anchor the geographic search. The 1862 Civil War enlistment register gives the place of birth as <em>"Freundburg, <a class="glossary-link" href="glossary.html#g-kurhessen" title="Glossary: Kurhessen">Kurhessen</a>"</em> — a place that does not exist; phonetic analysis points to <strong>Trendelburg</strong> as the most probable reading — the German <em>Tr-</em> cluster heard as English <em>Fr-</em> and the meaningless syllable <em>-endel-</em> normalised to the familiar German <em>Freund-</em> ("friend"). This decoding is a <strong>proposed reading, not a confirmed identification</strong>: &ldquo;Freundburg&rdquo; <em>could</em> be Trendelburg, but no record states the equivalence outright, and competing decodings remain on the table (below).<sup class="fn"><a href="#ref-6">6</a></sup> The 1866 St. Marcus marriage register reads <em>"aus Deisse, <a class="glossary-link" href="glossary.html#g-kreis" title="Glossary: Kreis">Kreis</a> Cassel, Churhessen"</em> — the village of Deisel, ~5 km south of Trendelburg in the same <a class="glossary-link" href="glossary.html#g-kirchenkreis" title="Glossary: Kirchenkreis">Kirchenkreis</a> Hofgeismar. Either record alone would be ambiguous; together they bound the answer to a 5 km × 5 km square inside the Hofgeismar district. Both town-readings are <strong>phonetic interpretations, not recorded facts</strong>; the competing readings — AncestryProGenealogists's eliminated <em>Freudenberg/Schierstein</em> and <em>Dies/Diez</em>, and James Gunnis's still-open <em>Dissen / Grifte</em> alternative — are weighed and ranked on <a href="origin-records.html#interpretations">Origin across the records</a>.</p>
+
+<p>The Trendelburg parish registers document the surname pool from which Charles is most likely to derive. The name stands there from 1773: the <strong>26 November 1773 marriage</strong> (Kirchenbuch 220096, Seite 288) records Johann Henrich Kontzen, eldest son of Philipp Kontzen (Rathsverwandter); and a 1795 baptism in Johann Friedrich Kontzen's family names his late father Andreas Kontzen (I) (220096, Seiten 90–91, <a href="https://www.archion.de/p/a2b7e3d85e/" target="_blank" rel="noopener noreferrer">image 1029</a>). The <strong>220096 burial register (1773–1818)</strong> then records three <em>Kontze</em> / <em>Contze</em> entries read firsthand at the manuscript page — Arnold Philipp Kontze, buried 1780 (Seite 361, <a href="https://www.archion.de/p/c46384b636/" target="_blank" rel="noopener noreferrer">image 1178</a>); Herr Andreas Contze, buried 1800 (Seite 396, <a href="https://www.archion.de/p/80330dec4e/" target="_blank" rel="noopener noreferrer">image 1196</a>); and the infant Johannes, son of Johann Christoph Contze, buried 1808 (Seite 414, <a href="https://www.archion.de/p/e4864bd394/" target="_blank" rel="noopener noreferrer">image 1205</a>). A parish-internal cross-reference note <em>"siehe auch K. Contze, Cortze, Cordes, Contz"</em> establishes that the parish itself treated the K-, C-, and -en variants as orthographically interchangeable.<sup class="fn"><a href="#ref-7">7</a></sup> Register 220108 (Trendelburg <a class="glossary-link" href="glossary.html#g-taufe" title="Glossary: Taufen">Taufen</a> 1830–1863) preserves an alphabetical index entry "Konze, Johann Friedrich Wilhelm — Seite 243" (the cited page is <a href="https://www.archion.de/p/f01b45954d/" target="_blank" rel="noopener noreferrer">image 1623</a>) — the first Konze father-surname baptism confirmed in post-1831 Trendelburg.</p>
+
+<h2>Eliminations</h2>
+
+<p><strong>Sixteen</strong> candidate Hessian families were investigated — the Konze / Kontzen pool, the Quentin, Herwig, Grandjot, Branson/Frisse, Person, Lucas, Janson, Köster, Hund, Steitz and Bonhagen lines, and (prompted by a Jewish Y-DNA signal) the Gans families of Meimbressen and Deisel and the Stern / Kleeberg line. Two analytic filters — birth-year window (b. 26 January 1835 ± a few weeks) and surname / parish congruence with the U.S. surname trail — eliminated all but the Trendelburg / Friedrichsfeld Konze pool. Eliminated parishes include Deisel itself (no Konze fathers in the right window; three "geb. Konzen" mothers attested 1828–1829 but no candidate male b. 1835), Helmarshausen (full-index search returned no Konze-pool male b. ~1835), Sielen, Schöneberg, Hümme, both Hofgeismar parishes, and the Mainz Andreas Konze line. Two undigitised Lutheran registers — <a href="towns/heisebeck.html">Heisebeck</a> (pre-1845) and <a href="towns/schoeneberg.html">Schöneberg</a> (pre-1822) — at the Landeskirchliches Archiv Kassel remain the project's substantive open candidates. A multi-register illegitimacy scan of January 1835 across Trendelburg, Friedrichsfeld, Helmarshausen, and Hofgeismar surfaced no candidate child.<sup class="fn"><a href="#ref-8">8</a></sup> Per-parish search scope, dates walked, and the specific contradicting record that closed each lead are catalogued on the <a href="negative-results.html#parishes">negative-results audit · Hessian parish registers searched</a>; the U.S.-side searches that ruled out competing immigrant Konzes appear at <a href="negative-results.html#us-records">negative-results · U.S.-side negative searches</a>.</p>
+
+<p>In <strong>June 2026 the search was widened beyond the Konze surname pool.</strong> The Hofgeismar-area <em>confirmation</em> registers — which list every confirmand's birth date and father — were read for <strong>any boy named Carl / Karl born 1833–1841 under any surname and either confession</strong>. The classes read (Helmarshausen, Sielen, Hümme; Deisel and Trendelburg queued for AI transcription) yielded several local boys named Carl, but <strong>none with a Konze- or *n-s-n-type surname</strong> — strengthening the inference that Charles's birth parish is not among the already-digitised Hofgeismar registers, and pointing the remaining work to the not-yet-digitised on-site tier (Heisebeck, pre-1822 Schöneberg, Liebenau) and the Tier-3 parishes (Dissen, Grifte, Gudensberg). Full coverage, with the key search terms, is on <a href="search-coverage.html">Parish search coverage</a>.</p>
+
+<p>A June 2026 reconciliation against the collaborative <strong>FamilySearch shared Family Tree</strong> — which holds an independently register-sourced reconstruction of the entire Trendelburg / Deisel Konze clan — corroborated the project's hand-built family framework (the Andreas Kontze "Küster" line, the 1795 Andreas × Hofeditz household, and the Schildknecht branch all confirmed and dated) and sharpened the candidate picture by negative evidence. Running every documented Konze male of Charles's own generation through the searchable German death and emigration indexes, all but one are fully accounted for in Germany — they stayed, married, and died in the parish complex. The one apparent exception with a fitting given name, <strong>Carl Wilhelm Konze</strong> (b. 15 September 1831, Trendelburg), was surfaced and then <em>eliminated</em>: he is documented dying at Trendelburg on 30 October 1869, having married locally. The single Konze male of the cohort who leaves <em>no</em> adult German footprint at all — no death or marriage record under any indexed variant — is <strong>Justus Ernst Konze</strong> (b. 14 November 1829, Friedrichsfeld; son of Andreas Kontze 1795 × Maria Sophia Hofeditz), untraced after his 1843 Trendelburg confirmation. Two cautions weigh firmly against reading this as Charles, however. First, Justus Ernst was born in <strong>November 1829 — roughly five to six years before Charles's stated 26 January 1835</strong>, placing him <em>outside</em> the birth window the U.S. records describe; on age alone the likelihood that he is Charles is <strong>low</strong>. Second, an exhaustive search for an emigration record — U.S. passenger lists, the Mainz emigration register, and the LAGIS Kurhessen <em>Auswanderer</em> index — turned up <strong>nothing</strong> for him, so the positive evidence one would want for the emigration hypothesis is also absent. His standing is therefore only that of the one cohort member not yet affirmatively excluded — <em>not</em> a strong match — and the conclusion remains an inference to the Konze surname pool rather than to a confirmed individual. The two decisive, still-open tests are both offline: a page-by-page read of the un-indexed Stammen burial register (Archion 220072, where two of his siblings died) and an individual emigration / release file in <a class="glossary-link" href="glossary.html#g-stammrolle" title="Glossary: Hessisches Staatsarchiv Marburg">HStAM</a> Bestand 180 Hofgeismar. This negative-evidence finding is logged in full on the <a href="negative-results.html#families">negative-results audit · candidate families</a>.</p>
+
+<h2>Sponsorship pattern — corroborating "immigrated alone"</h2>
+
+<p>Across seven baptisms at St. Marcus over the 1866–1880 window — <strong>and the four witnesses at the 1866 marriage itself</strong> — <strong>not a single named sponsor or witness is a documented blood relative of Charles</strong> (his wedding witnesses were his Battery B comrade Adam Herweck and St. Louis friends; <em>high</em> confidence none is his blood kin — see <a href="sponsor-reconciliation.html">Sponsor reconciliation</a>). Every kin sponsor traces to Auguste's Kreichelt-Albrecht-Pillmann-Mincke side. German-Lutheran baptism sponsorship in this period was structurally a kin-default convention; the asymmetry across Charles's seven baptisms is consistent with Charles having no German blood family accessible by mail or in person between 1866 and 1880, corroborating the working hypothesis that he immigrated alone in 1859 and never re-established contact close enough to bring kin to the baptismal font.<sup class="fn"><a href="#ref-9">9</a></sup> A complementary line of corroboration runs through the 1891 pension award: the seven affidavits collected by Claim Agent Fred. W. Fout in 1889–1891 form a coordinated mutual-aid filing run through one Light Artillery alumni network; the narrative phrasings recur word-for-word across affidavits, identifying the agent's drafting hand.<sup class="fn"><a href="#ref-10">10</a></sup></p>
+
+<h2 id="consolidated-proof-argument">Consolidated proof argument</h2>
+
+<p>No single record names Charles's parents or his parish, so the origin conclusion cannot be a <em>proof statement</em> resting on direct evidence. It is offered instead as a <strong>proof argument</strong> in the sense set out in the <a href="methodology.html#proof">Methodology</a>: a chain of independent evidence items that, taken together, point to one answer — with the competing explanation (coincidence) weighed explicitly rather than assumed away.</p>
+
+<p><strong>Link 1 — the surname (independent of geography).</strong> Charles's nine American spellings collapse phonetically to a single root: an initial <em>G</em>&nbsp;/&nbsp;<em>K</em>, a back vowel, and an <em>–n–s–n</em> ending (see <a href="surname-records.html">Surname across the records</a>). The Hessian surname family that satisfies every one of those phonetic constraints <em>and</em> is documented in the candidate region is <strong>Konze / Kontzen / Contzen</strong>. This link is derived purely from the sound of his name, with no reference to where he said he was born.</p>
+
+<p><strong>Link 2 — the place, by two independent attestations.</strong> Two different U.S. records, written by two different scribes years apart, each record Charles's stated origin: the <strong>1862 enlistment</strong> (information he supplied himself) reads &ldquo;<em>Freundburg, Kurhessen</em>,&rdquo; and the <strong>1866 marriage register</strong> reads &ldquo;<em>Deisse, Kreis Cassel, Churhessen</em>.&rdquo; Decoded phonetically, &ldquo;Freundburg&rdquo; resolves to <strong>Trendelburg</strong> and &ldquo;Deisse&rdquo; to <strong>Deisel</strong> — neighbouring villages within the same Kreis Hofgeismar of the former Hesse-Kassel, roughly five kilometres apart. Two independent place-attestations converging on one small district is itself a non-trivial result, since they share no scribe, no document, and no date.</p>
+
+<p><strong>Link 3 — the convergence of two independent streams.</strong> The Konze surname pool of Link 1 is documented to be <em>concentrated</em> in precisely the Trendelburg&nbsp;/ Friedrichsfeld&nbsp;/ Deisel parish complex that the place-name decodings of Link 2 independently point to. The surname evidence (from the sound of his name) and the geographic evidence (from his stated birthplace) are methodologically independent, yet they meet in the same handful of parishes.</p>
+
+<p><strong>Weighing the alternative — coincidence.</strong> The load-bearing question is whether an <em>–n–s–n</em>-surnamed man from a place that decodes to Trendelburg&nbsp;/ Deisel could be unrelated to the Konze pool there purely by chance. Three considerations argue against that: the Konze surname is regionally <em>concentrated</em> rather than ubiquitous, so its co-location with the decoded place is not what one would expect at random; the two place-attestations are themselves independent; and a systematic sweep of the surrounding digitised registers (see <a href="negative-results.html">Negative results</a> and <a href="search-coverage.html">Parish search coverage</a>) has surfaced no competing surname-and-place fit. The convergence is therefore most simply explained by Charles belonging to the Trendelburg-area Konze pool. The residual chance that an independent surname match and an independent place decoding coincide is real but small — and it is exactly the reason the conclusion is held at <em>Working</em> rather than promoted to <em>Confirmed</em>.</p>
+
+<p><strong>What the eliminations and the DNA do and do not add.</strong> Every <em>specific</em> Konze family tested as Charles's parents has been eliminated or left inconclusive (Peter Schräder's verdict, 12 April 2026), so the argument supports an inference to the surname <em>pool</em>, not to a named couple. The Y-DNA is consistent with a German paternal origin but confirms neither the parish nor the surname, and it opens a separate deep-paternal question rather than closing the documentary one (see <a href="dna.html">DNA evidence</a>). DNA thus neither completes the chain nor breaks it.</p>
+
+<h2>Working conclusion</h2>
+
+<p>On the strength of the argument above, Charles Konzen — recorded across his American records under nine distinct spellings — most likely descends from the <strong>Trendelburg / Friedrichsfeld Konze</strong> branch of the Hofgeismar parish complex, in the former Electorate of Hesse-Kassel (Churhessen). The conclusion is held in the project's <em>Working</em> state pending recovery of the specific German baptismal entry, which has not yet been located in any digitised parish register. Every specific Konze family examined as Charles's parents has been eliminated or left inconclusive (Peter Schräder's verdict, 12 April 2026); the conclusion is therefore an inference to the Trendelburg-area Konze surname <em>pool</em>, not to a confirmed individual family. The convergent evidence supporting this conclusion is documented in the project's <a href="index.html#evidence">Key Evidence Card 1</a> and visualised in the <a href="visualize.html">Visualize hub</a>.</p>
+
+<h2>Open questions</h2>
+
+<p>The conclusion is not promoted to <em>Confirmed</em> because four primary sources remain unrecovered: <em>(i)</em> Charles's specific German baptismal entry; <em>(ii)</em> his 1859 trans-Atlantic passenger manifest; <em>(iii)</em> the Hessian Auswanderer-Beleg or unfiled-departure record; and <em>(iv)</em> the Stammrolle entry for the 1855 conscription class. Each is documented with its last-attempted date and the conditions under which it would resolve on the project's <a href="open-questions.html">Open Questions</a> page. Following the June 2026 candidate reconciliation, the two highest-value remaining tests are both <em>offline</em>: a page-by-page read of the un-indexed Stammen burial register (Archion 220072, ~1843–1875) and an individual emigration / release-from-citizenship file in HStAM Bestand 180 Hofgeismar — together they would either record Justus Ernst Konze's German death (closing the leading line of the hypothesis) or harden the "emigrated under a new surname" reading.</p>
+
+<p class="keywords"><strong>Keywords:</strong> Charles Konzen, Charles Gannsen, Charles Johnson Sr., Trendelburg, Deisel, Friedrichsfeld, Konze, Kontzen, Contzen, Hesse-Kassel, Churhessen, Kurhessen, Battery B 2nd Missouri Light Artillery, St. Marcus Evangelical Church, Old Saint Marcus Cemetery, German immigration 1859, Civil War pension, Auswanderer-Beleg, Genealogical Proof Standard.</p>
+
+<h2>Notes &amp; references</h2>
+
+<ol class="refs">
+  <li id="ref-1">Birth date 26 January 1835: the day and month derive from the St. Marcus parish burial register (#3393) and the pension-file age statements, and the year is corroborated by the 1880 census (age 45) and the 1900 census (b.&nbsp;Jan 1835). These are independent documents but not independent <em>information</em> &mdash; each reports Charles's own (or his household's) testimony, so together they establish the consistency of his self-reported birth date rather than confirm it against a second, independent informant. The 1862 enlistment register records an age of 23, which back-calculates to ~1839 &mdash; a discrepancy typical of self-reported military-enrolment ages, and the reason the enlistment is not counted as an attestation of the 1835 date. Death date 16 December 1903 per the St. Marcus parish burial register #3393 (Doc&nbsp;N); the St. Louis death certificate (Doc&nbsp;A, no. 10619) records 17 December 1903, age 69 &mdash; a 1-day source discrepancy logged on the <a href="index.html#doc-crosswalk">Doc A&ndash;O crosswalk</a>. Age 68 calculated from canonical 1835 birth; last residence 168 Sidney Street; cause of death stomach cancer. Buried three days after recorded death, 19 December 1903, Old Saint Marcus Cemetery, St. Louis. A St. Louis city directory (Gould's 1895) lists Charles as a watchmaker living at the rear of 2407 DeKalb alongside a son, "Charles Gannsen, jr." (laborer), at the same address — a residential and household lead newly confirmed in the record image June 2026. See <a href="charles_america/life-timeline.html">Life Timeline</a> for the full chronology.</li>
+  <li id="ref-2">Board for Certification of Genealogists, <em>Genealogy Standards</em>, 2nd ed. (Nashville: Ancestry, 2019), §1–§71. Methodology details on this site at <a href="methodology.html">/methodology.html</a>.</li>
+  <li id="ref-3">Compiled Service Record of Charles Gannsen, Pvt./Sgt., Battery B, 2nd Missouri Light Artillery (Union); record group 94, M405, file G11-422819443E; National Archives and Records Administration, Washington, D.C.; mail-order packet received May 2026. Full Pension File F41-523680269E. See <a href="sources/nara-service-record-packet.html">Sources › NARA</a>.</li>
+  <li id="ref-4">Archion.de digital register IDs cited inline include 220096 (Trendelburg burials), 220108 (Trendelburg Taufen 1830–1863), 218842 and 218824 (Deisel), 218959 (Friedrichsfeld), and Helmarshausen index volumes. Hessisches Staatsarchiv Marburg holdings accessed via Arcinsys (Auswanderer-Belege) and LAGIS (regional records).</li>
+  <li id="ref-5">For the full convergent-evidence argument and per-rendering scribal context, see <a href="index.html#evidence">Key Evidence Card 1</a>; for the visual surname trail, <a href="visualize.html">Visualize hub</a>; for the linguistic / phonetic analysis, <a href="germany/konzen-puzzle.html">germany/konzen-puzzle.html</a>.</li>
+  <li id="ref-6">Phonetic decoding originally proposed by Peter Schräder (correspondence with author, 26 February 2026; reaffirmed 6 May 2026). See <a href="research_logs/freundburg-kurhessen.html">Research log: Freundburg, Kurhessen</a>.</li>
+  <li id="ref-7">Trendelburg ev. <a class="glossary-link" href="glossary.html#g-pfarramt" title="Glossary: Pfarramt">Pfarramt</a>, <a class="glossary-link" href="glossary.html#g-bestattung" title="Glossary: Bestattungsregister">Bestattungsregister</a> 220096, K-section index, transcribed Session 11 (April 2026); the parish-internal cross-reference note "<em>siehe auch K. Contze, Cortze, Cordes, Contz</em>" appears in the burial-index alphabetical apparatus. See <span>Session note</span>.</li>
+  <li id="ref-8">Multi-register illegitimacy scan: Sessions 17, 20, 21, 24 (April 2026). Logged on the candidate-funnel diagram and on <a href="open-questions.html">Open Questions</a>.</li>
+  <li id="ref-9">For the structural-convention argument and the comparative analysis of Carl Kreichelt's ten-baptism sponsor pool, see <a href="index.html#charles">Charles in America</a>. The "immigrated alone" reading dovetails with the illegal-emigration-to-avoid-Kurfürst-conscription hypothesis (Schräder × Johnson, 18 December 2025).</li>
+  <li id="ref-10">The Pension Mutual-Aid Network thematic essay at <a href="themes/pension-mutual-aid.html">/themes/pension-mutual-aid.html</a>. Of the six personal witnesses now identified, four were Missouri Light Artillery veterans.</li>
+</ol>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="index.html">Home</a> · <a href="abstract.html">Abstract</a> · <a href="methodology.html">Methodology</a> · <a href="open-questions.html">Open Questions</a> · <a href="changelog.html">Changelog</a> · <a href="visualize.html">Visualize</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

@@ -1,0 +1,87 @@
+{
+  "title": "Charles Research: A Genealogical Investigation",
+  "description": "<p>A multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835–1903), Hessian-born sergeant of Battery B, 2nd Missouri Light Artillery, and his Trendelburg / Deisel family origins in Churhessen.</p><p>The deposit comprises the project's primary deliverables (Abstract, Methodology, Bibliography, Errata, Open Questions, Claims Dashboard, evidence cards, surname-trail analysis, and the Schräder correspondence) packaged from the canonical site at <a href=\"https://charles-research.netlify.app/\">charles-research.netlify.app</a>. The investigation follows the Board for Certification of Genealogists' Genealogical Proof Standard and uses an explicit four-state confidence taxonomy (Confirmed / Working / Open / Eliminated).</p><p>v1.1.0 (May 2026) adds the single-page <em>Claims Dashboard</em> consolidating every load-bearing claim with confidence pill, primary source, and falsification condition; a worked-example methodological section disentangling the five (probably six) distinct Andreas Kon(t)ze identities of the Trendelburg–Deisel records 1718–1830; a Doc A–O crosswalk anchoring the 1-day Doc-A/N death-date discrepancy; and a pre-deploy maintenance harness (canonical-claim guard + internal-link audit + rebuildable search index) that closes the propagation-cascade bug class at the build step.</p><p>Compiled by Jed Johnson with Peter Schräder of Trendelburg as German genealogist.</p>",
+  "creators": [
+    {
+      "name": "Johnson, Jed",
+      "affiliation": "Independent researcher",
+      "orcid": "PLACEHOLDER-ORCID-JED"
+    },
+    {
+      "name": "Schräder, Peter",
+      "affiliation": "Independent genealogist (Trendelburg, Hesse, Germany)",
+      "orcid": "PLACEHOLDER-ORCID-PETER"
+    }
+  ],
+  "keywords": [
+    "Charles Konzen",
+    "Kontzen",
+    "Konze",
+    "Konsen",
+    "Gannsen",
+    "Trendelburg",
+    "Deisel",
+    "Churhessen",
+    "Kurhessen",
+    "Hesse-Kassel",
+    "Hofgeismar",
+    "Friedrichsfeld",
+    "Helmarshausen",
+    "Bremen emigration",
+    "St. Louis",
+    "St. Marcus Evangelical Church",
+    "Battery B",
+    "2nd Missouri Light Artillery",
+    "Civil War pension",
+    "Genealogical Proof Standard",
+    "transatlantic genealogy",
+    "German-American genealogy",
+    "Archion",
+    "LAGIS",
+    "Arcinsys",
+    "claims dashboard",
+    "audit trail",
+    "Genealogical Proof Standard"
+  ],
+  "license": "CC-BY-NC-SA-4.0",
+  "upload_type": "publication",
+  "publication_type": "report",
+  "communities": [
+    { "identifier": "genealogy" }
+  ],
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "relation": "isDerivedFrom",
+      "identifier": "https://charles-research.netlify.app/",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://charles-research.netlify.app/abstract.html",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://charles-research.netlify.app/methodology.html",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://charles-research.netlify.app/claims-dashboard.html",
+      "resource_type": "publication-other"
+    },
+    {
+      "relation": "isDocumentedBy",
+      "identifier": "https://charles-research.netlify.app/errata.html",
+      "resource_type": "publication-other"
+    }
+  ],
+  "version": "1.1.0",
+  "publication_date": "2026-05-29",
+  "subjects": [
+    { "term": "Genealogy", "identifier": "http://id.loc.gov/authorities/subjects/sh85053995", "scheme": "url" },
+    { "term": "Hesse-Kassel (Germany)", "identifier": "http://id.loc.gov/authorities/subjects/sh85060567", "scheme": "url" }
+  ],
+  "notes": "ORCID identifiers are placeholders pending mint at orcid.org/register; the deposit metadata will be re-uploaded once both authors have iDs."
+}

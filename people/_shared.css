@@ -1,0 +1,341 @@
+/* Shared styles for the primary-source viewer pages
+   Linked from /sources/*.html
+   ------------------------------------------------------------- */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Iowan Old Style', Georgia, 'Times New Roman', serif; background:#f6f1e7; color:#2c2620; line-height:1.55; }
+::selection { background:#d8b366; color:#1f1a14; }
+a { color:#8a6420; text-decoration:none; border-bottom:1px dotted #c9a76a; }
+a:hover { color:#74420f; border-bottom-color:#8a6420; }
+
+header.src-hero { background:linear-gradient(135deg, #1f1a14 0%, #3a2f1e 100%); color:#f6f1e7; padding:1.6rem 1.5rem 1.4rem; border-bottom:4px double #d8b366; }
+header.src-hero .crumbs { font-size:0.82rem; color:#c8b896; margin-bottom:0.4rem; }
+header.src-hero .crumbs a { color:#d8b366; border-bottom:none; }
+header.src-hero h1 { color:#f6f1e7; font-size:1.9rem; line-height:1.2; }
+header.src-hero .sub { color:#e8dfc8; font-style:italic; margin-top:0.3rem; font-size:0.95rem; }
+header.src-hero .meta-row { margin-top:0.7rem; display:flex; flex-wrap:wrap; gap:0.4rem; align-items:center; }
+header.src-hero .pill { display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:3px 10px; border-radius:3px; background:rgba(212,160,23,0.18); color:#d8b366; }
+header.src-hero .pill.primary { background:#d8b366; color:#1f1a14; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 1.6rem 1.4rem 4rem; }
+
+.section { margin-bottom: 1.6rem; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:1rem 1.2rem; }
+.section h2 { color: var(--brand-dark); border-bottom:1px solid #c9a76a; padding-bottom:0.4rem; margin-bottom:0.8rem; font-size:1.25rem; font-weight:600; }
+.section h3 { color:#4a3a22; font-size:1.05rem; margin:0.8rem 0 0.4rem; }
+.section p { margin-bottom:0.7rem; }
+.section .small { font-size:0.85rem; color:#6a5a42; }
+.section ul, .section ol { padding-left:1.4rem; margin:0.4rem 0 0.8rem; }
+.section li { margin-bottom:0.25rem; }
+
+.kv { width:100%; border-collapse:collapse; }
+.kv td { padding:0.45rem 0.7rem; vertical-align:top; border-bottom:1px solid #ede4d0; font-size:0.95rem; }
+.kv td:first-child { width:32%; color:#5a4a32; font-weight:600; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; padding-top:0.55rem; }
+.kv tr:last-child td { border-bottom:none; }
+
+/* PDF / image embed wrapper.
+   Default: "wide" mode breaks out of main's max-width:1100px constraint and uses ~96vw of the
+   viewport, giving the PDF plugin room to render at a readable size before the user even
+   touches the zoom.
+
+   The user-driven zoom controls below set --embed-zoom (a CSS custom property) on the wrapper.
+   At >1.0 the embed itself overflows the wrapper — wrapper has overflow:auto, so horizontal
+   AND vertical scroll bars appear, and the user can pan around the zoomed page. */
+.embed-wrap {
+  --embed-zoom: 1;
+  background:#1f1a14;
+  padding:0.6rem;
+  border-radius:4px;
+  width:96vw;
+  max-width:1800px;
+  position:relative;
+  left:50%;
+  transform:translateX(-50%);
+  margin:0.6rem auto;
+  overflow:auto;
+  scrollbar-color:#d8b366 #2c2620;
+  scrollbar-width:thin;
+}
+/* Image-only viewers (single-page PDFs rendered as images, etc.) keep the in-column width. */
+.embed-wrap.narrow { width:100%; max-width:none; left:auto; transform:none; }
+.embed-wrap .embed-frame {
+  /* Embed pixel size scales with --embed-zoom. At 1.0 it fills the wrapper exactly; at 2.0 it
+     becomes twice as wide as the wrapper, triggering horizontal scroll. */
+  width: calc(100% * var(--embed-zoom));
+  min-width: calc(100% * var(--embed-zoom));
+  height: calc(92vh * var(--embed-zoom));
+  min-height: calc(760px * var(--embed-zoom));
+  border:none;
+  background:#fff;
+  border-radius:3px;
+  display:block;
+}
+.embed-wrap.image-frame { padding:0.4rem; }
+.embed-wrap img { display:block; max-width:100%; height:auto; margin:0 auto; border-radius:3px; }
+.embed-fallback { font-size:0.85rem; color:#c8b896; margin-top:0.5rem; text-align:center; padding:0.4rem; }
+.embed-fallback a { color:#d8b366; }
+/* Controls toolbar that sits below the embed: open-fullscreen, download, etc. */
+.embed-controls { display:flex; flex-wrap:wrap; gap:0.5rem; margin:0.5rem auto 0; align-items:center; justify-content:center; max-width:1800px; }
+.embed-controls a, .embed-controls button { display:inline-block; padding:0.35rem 0.8rem; background:#2c2620; color:#d8b366; border:1px solid #d8b366; border-radius:3px; font-size:0.82rem; font-family:inherit; cursor:pointer; text-decoration:none; transition:all 0.15s; }
+.embed-controls a:hover, .embed-controls button:hover { background:#d8b366; color:#1f1a14; }
+.embed-controls button.active { background:#d8b366; color:#1f1a14; font-weight:700; }
+.embed-controls .label { color:#5a4a32; font-size:0.78rem; font-style:italic; padding-right:0.3rem; }
+.embed-controls .zoom-group { display:inline-flex; gap:0; border:1px solid #d8b366; border-radius:3px; overflow:hidden; }
+.embed-controls .zoom-group button { border:none; border-radius:0; padding:0.35rem 0.65rem; }
+.embed-controls .zoom-group button + button { border-left:1px solid rgba(212,160,23,0.3); }
+.embed-controls .zoom-readout { display:inline-block; padding:0.35rem 0.6rem; color:#5a4a32; font-size:0.82rem; font-family:'SF Mono',Menlo,Consolas,monospace; min-width:3.4rem; text-align:center; }
+
+.transcription { background:#fffaf0; padding:1rem 1.2rem; border-left:4px solid #4a76c8; border-radius:0 4px 4px 0; }
+.transcription pre { font-family:'SF Mono',Menlo,Consolas,monospace; font-size:0.84rem; line-height:1.6; white-space:pre-wrap; word-wrap:break-word; color:#2c2620; background:#f6ebd2; padding:0.8rem 1rem; border-radius:3px; overflow-x:auto; }
+
+/* Page-by-page transcription blocks (used on the pension file viewer) */
+.page-toolbar { display:flex; flex-wrap:wrap; gap:0.4rem; margin:0.6rem 0 1rem; padding:0.6rem 0.8rem; background:#ede4d0; border:1px solid #d8c8a8; border-radius:4px; font-size:0.78rem; align-items:center; }
+.page-toolbar strong { color:#5a4a32; margin-right:0.3rem; }
+.page-toolbar a { display:inline-block; padding:2px 7px; background:#fffaf0; border:1px solid #c9a76a; border-radius:3px; color:#5a4a32; text-decoration:none; font-family:'SF Mono',Menlo,Consolas,monospace; font-weight:600; }
+.page-toolbar a:hover { background:#d8b366; color:#1f1a14; border-color:#8a6420; }
+.page-toolbar button { padding:2px 7px; background:#2c2620; color:#d8b366; border:1px solid #d8b366; border-radius:3px; font-family:inherit; font-size:0.78rem; cursor:pointer; }
+.page-toolbar button:hover { background:#d8b366; color:#1f1a14; }
+
+.page-block { margin: 0.7rem 0; border:1px solid #d8c8a8; border-radius:4px; background:#fffaf0; overflow:hidden; scroll-margin-top: 70px; }
+.page-block > summary { cursor:pointer; padding:0.6rem 0.9rem; background:linear-gradient(140deg, #f6ebd2, #ede4d0); border-bottom:1px solid transparent; font-weight:600; color:#3a2f1e; list-style:none; user-select:none; }
+.page-block[open] > summary { border-bottom-color:#d8c8a8; }
+.page-block > summary::-webkit-details-marker { display:none; }
+.page-block > summary::before { content:"▸"; color:#8a6420; font-weight:700; transition:transform 0.15s ease; display:inline-block; margin-right:0.45rem; }
+.page-block[open] > summary::before { transform:rotate(90deg); }
+.page-block > summary .page-num { display:inline-block; min-width:2.4rem; text-align:center; padding:1px 6px; background:#8a6420; color:#fff; border-radius:3px; font-family:'SF Mono',Menlo,Consolas,monospace; font-size:0.78rem; margin-right:0.5rem; vertical-align:middle; }
+.page-block > summary .page-type { color:#5a4a32; font-weight:500; font-style:italic; font-size:0.92rem; }
+.page-block .page-body { padding:0.8rem 1rem 1rem; }
+.page-block .page-body dl.page-meta { display:grid; grid-template-columns: max-content 1fr; gap:0.25rem 0.8rem; margin-bottom:0.6rem; font-size:0.84rem; }
+.page-block .page-body dl.page-meta dt { color:#5a4a32; font-weight:700; font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.04em; padding-top:0.15rem; }
+.page-block .page-body dl.page-meta dd { color:#2c2620; }
+.page-block .page-body .body-text { background:#f6ebd2; border-left:3px solid #c9a76a; padding:0.7rem 0.9rem; margin:0.4rem 0; font-size:0.88rem; line-height:1.6; border-radius:0 3px 3px 0; white-space:pre-wrap; font-family: 'Iowan Old Style', Georgia, 'Times New Roman', serif; }
+.page-block .page-body .editor-note { font-size:0.8rem; color:#6a5a42; font-style:italic; margin-top:0.5rem; padding:0.3rem 0.5rem 0.3rem 0.7rem; border-left:2px solid #d8b366; background:rgba(212,160,23,0.06); border-radius:0 3px 3px 0; }
+.page-block .page-body .editor-note::before { content:"Editor's note: "; font-weight:700; color:#8a6420; font-style:normal; }
+.page-block .page-body .uncertain, .page-block .page-body em.unc { color:#8a6420; font-style:italic; }
+
+.evidence-card { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border:1px solid #d8b366; border-left:5px solid #d8b366; border-radius:4px; padding:0.9rem 1.1rem; margin:0.6rem 0; }
+.evidence-card h3 { color: var(--brand-dark); margin-top:0; }
+
+a.fsn { color:#4a3a22; text-decoration:none; border-bottom:1px dotted #c9a76a; background:rgba(212,160,23,0.06); padding:0 2px; border-radius:2px; transition:all 0.15s; white-space:nowrap; }
+a.fsn:hover { background:#d8b366; color:#1f1a14; border-bottom-color:#d8b366; }
+
+footer.back-nav { margin-top:2rem; text-align:center; padding:1rem; }
+footer.back-nav a { display:inline-block; padding:0.5rem 1rem; background:#2c2620; color:#d8b366; border:1px solid #d8b366; border-radius:3px; font-weight:600; letter-spacing:0.04em; border-bottom:none; margin: 0 0.3rem; }
+footer.back-nav a:hover { background:#d8b366; color:#1f1a14; }
+
+@media (max-width: 640px) {
+  header.src-hero h1 { font-size:1.4rem; }
+  .embed-wrap { width:98vw; }
+  .embed-wrap .embed-frame { height:75vh; min-height:480px; }
+}
+
+
+/* Scope-of-record pill — tags person profiles where the surviving documentary record is brief */
+header.src-hero .pill.scope-limited { background: rgba(200,122,48,0.22); color: #c87a30; border: 1px solid rgba(200,122,48,0.4); }
+.section.limited-record-note { background: linear-gradient(140deg, #fbf3ef, #f6ebd2); border: 1px solid #c9a76a; border-left: 4px solid #c87a30; }
+
+
+@media print {
+  header.fam-hero, header.cw-hero, header.ca-hero, header.im-hero, header.ge-hero, header.src-hero,
+  footer.back-nav, .crumbs, details.research-log:not([open]) > .log-body { display:none !important; }
+  details.research-log > .log-body { display:block !important; }
+  body { background:#fff !important; color:#000 !important; font-size:11pt; }
+  a { color:#000 !important; text-decoration:none !important; border-bottom:none !important; }
+  a[href^="http"]::after { content:" (" attr(href) ")"; font-size:9pt; color:#666; }
+  .summary-card, .card, table.kv { background:#fff !important; border:1px solid #999 !important; page-break-inside:avoid; }
+  h1, h2, h3, h4 { page-break-after:avoid; }
+  img, svg { max-width:100% !important; page-break-inside:avoid; }
+}
+
+
+
+/* ============================================================
+   Theme override · added 3 May 2026 design pass
+   Pulls in tokens from /assets/theme.css and applies them.
+   Overrides are scoped to keep section identity while unifying chrome.
+   ============================================================ */
+
+/* Typography hierarchy — sharper 1.25× scale */
+h1 { font-size: var(--type-h1); line-height: 1.2; font-weight: 700; }
+h2 { font-size: var(--type-h2); line-height: 1.25; font-weight: 700; }
+h3 { font-size: var(--type-h3); line-height: 1.3;  font-weight: 700; }
+h4 { font-size: var(--type-h4); line-height: 1.35; font-weight: 700; }
+
+/* Link contrast fix — darken from #c9a76a to #a88a4a (AA-3:1 on cream) */
+a { border-bottom-color: var(--border-medium); }
+a.fsn { background: rgba(212,160,23,0.08); }
+a.fsn.pid { background: rgba(74,118,200,0.12); }
+
+/* Body text contrast — darken italic captions from #6a5a42 to #4a3a22 (AA on cream) */
+.meta, .small em, em.note, p.small, .ev-body p { color: var(--text-meta); }
+
+/* Standardize border-left widths: cards 3px, tiles 4px, banners/heroes 5px */
+.card, .summary-card { border-left-width: var(--bl-card) !important; }
+.cw-tile, .ca-tile, .im-tile, .ge-tile, .schrader-tile,
+.person-card, .child-card, .doc-card, .actor-card,
+.cw-tile.keystone, .ca-tile.keystone,
+header.fam-hero, header.cw-hero, header.ca-hero, header.im-hero, header.ge-hero, header.src-hero, header.up-hero {
+  border-left-width: 0;
+}
+
+/* Unified hover transition for all clickable surfaces */
+.cw-tile, .ca-tile, .im-tile, .ge-tile, .schrader-tile,
+.person-card, .child-card, .doc-card, .actor-card,
+.tree .sib, a.parent-card, a.entry, a.chart-link {
+  transition: var(--transition);
+}
+.cw-tile:hover, .ca-tile:hover, .im-tile:hover, .ge-tile:hover,
+.schrader-tile:hover, .person-card:hover, .child-card:hover,
+.doc-card:hover, .actor-card:hover, .tree .sib:hover, a.parent-card:hover {
+  transform: var(--hover-lift);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Specialize the gold — only brand surfaces use it now.
+   "Open" status was using gold (conflict). Switch to amber. */
+.summary-card.open { border-color: var(--status-open); }
+.summary-card.open h2 { border-bottom-color: var(--status-open); }
+.summary-card .card-pill.open { background: var(--status-open); color: #1f1a14; }
+.badge.open { background: var(--status-open); color: #1f1a14; }
+
+/* Section accent for Charles in America: switch from gold to amber/copper
+   to differentiate from brand */
+.ca-tile, .ca-tile.primary { border-left-color: var(--section-charles); }
+.ca-tile:hover { border-left-color: var(--section-charles-d); background: var(--section-charles-t); }
+.ca-tile-eyebrow { color: var(--section-charles-d); }
+.ca-tile:hover .ca-tile-title { color: var(--section-charles-d); }
+
+/* Active-tab indicator strengthening (only relevant on main index) */
+nav.tabs button.active {
+  background: rgba(212,160,23,0.18);
+  border-bottom: 3px solid var(--brand) !important;
+}
+
+/* Konze-status banner consistency */
+.konze-status-banner {
+  background: linear-gradient(140deg, var(--status-open-t), #fef3d6) !important;
+  border-color: var(--status-open) !important;
+  border-left-color: var(--status-open) !important;
+}
+
+
+/* ============================================================
+   .family-tree — focal-candidate hierarchical tree
+   (matches family_pages/_shared.css; added May 2026)
+   ============================================================ */
+.family-tree { display:flex; flex-direction:column; align-items:center; gap:0; margin:1rem auto; padding:0.6rem 0; overflow-x:auto; }
+.ft-gen-label { font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.08em; color:#8a6420; font-weight:700; margin-bottom:0.3rem; text-align:center; }
+.ft-couple-card, .ft-person-card { width:240px; box-sizing:border-box; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:all 0.15s; }
+.ft-couple-card:hover, .ft-person-card:hover { box-shadow:0 2px 10px rgba(0,0,0,0.16); transform:translateY(-1px); }
+.ft-couple-card { display:flex; flex-direction:column; border:2px solid #b48a3a; border-radius:6px; background:#fff8e8; overflow:hidden; }
+.ft-couple-card.ft-subject { border-color:#d8b366; box-shadow:0 2px 8px rgba(212,160,23,0.30); border-width:2.5px; }
+.ft-couple-card a.ft-person { display:block; padding:0.5rem 0.7rem; text-decoration:none; color:#2c2620; transition:background 0.15s; border:none; border-radius:0; max-width:none; min-width:0; background:transparent; }
+.ft-couple-card a.ft-person:hover { background:rgba(212,160,23,0.12); }
+.ft-couple-card a.ft-person.ft-female { background:rgba(200,74,118,0.05); }
+.ft-couple-card a.ft-person.ft-female:hover { background:rgba(200,74,118,0.14); }
+.ft-couple-card .ft-marriage-bar { background:#f4ecd5; text-align:center; font-size:0.72rem; font-style:italic; color:#5a4a32; padding:0.18rem 0.4rem; border-top:1px solid #c9a76a; border-bottom:1px solid #c9a76a; }
+.ft-person-card { display:block; border:2px solid #4a76c8; border-radius:6px; background:#eef3fa; text-decoration:none; color:#2c2620; padding:0.5rem 0.7rem; }
+.ft-person-card.ft-female { border-color:#c84a76; background:#fbeef3; }
+.ft-person-card.ft-subject { border-color:#d8b366; background:#fff8e8; box-shadow:0 2px 8px rgba(212,160,23,0.30); border-width:2.5px; }
+.ft-person-card.ft-died-young { border-color:#8a4a4a; background:#fbeef3; opacity:0.85; }
+.family-tree .ft-name { font-weight:700; font-size:0.9rem; color:#1f1a14; line-height:1.25; text-align:center; }
+.family-tree .ft-name.ft-name-tight { font-size:0.78rem; }
+.family-tree .ft-detail { font-size:0.72rem; color:#6a5a42; font-style:italic; margin-top:0.1rem; line-height:1.3; }
+.family-tree .ft-pid { display:inline-block; margin-top:0.18rem; font-size: 0.72rem; font-weight:700; color:#4a76c8; font-family:Menlo, Consolas, monospace; }
+.ft-couple-card a.ft-person.ft-female .ft-pid { color:#c84a76; }
+.ft-person-card.ft-female .ft-pid { color:#c84a76; }
+.family-tree .ft-trunk { width:2px; height:1.4rem; background:#8a6420; }
+.ft-descend-group { display:flex; flex-direction:column; align-items:center; }
+.ft-children-frame { display:flex; flex-direction:column; align-items:center; width:fit-content; max-width:100%; --ft-card-width:240px; }
+.ft-children-frame.compact { --ft-card-width:200px; }
+.ft-sibling-bar { height:2px; background:#8a6420; width:calc(100% - var(--ft-card-width)); }
+.ft-children-frame.single-child .ft-sibling-bar { display:none; }
+.ft-children-frame .ft-children-row { display:flex; flex-wrap:nowrap; align-items:stretch; justify-content:center; gap:1rem; }
+.ft-child { display:flex; flex-direction:column; align-items:center; }
+.ft-child > .ft-trunk { margin-top:0; flex:0 0 auto; }
+.ft-child > .ft-person-card { flex:1 1 auto; }
+.ft-children-frame.single-child .ft-child > .ft-trunk { display:none; }
+.ft-multi-marriage-stack { display:flex; flex-direction:column; gap:1.6rem; align-items:center; margin-top:0.6rem; }
+.ft-marriage-branch-fs { border:1px dashed #c9a76a; border-radius:6px; padding:0.8rem 1rem; background:#fffaf0; width:100%; max-width:1100px; }
+.ft-children-frame.compact .ft-person-card { width:200px; }
+.ft-children-frame.compact .ft-children-row { gap:0.7rem; }
+.family-tree .ft-bd, .family-tree .ft-dd { font-size:0.76rem; color:#5a4a32; line-height:1.3; margin:0.06rem 0 0; }
+.family-tree .ft-bd::before { content:"b. "; font-weight:600; color:#6a5a42; }
+.family-tree .ft-dd::before { content:"d. "; font-weight:600; color:#6a5a42; }
+.ft-marriage-branch-fs > h4 { font-size:0.78rem; color: var(--brand-dark); margin:0 0 0.6rem; text-align:center; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
+
+/* Wide-row wrapping for trees with many children — added May 2026 */
+.ft-marriage-branch-fs { max-width:100% !important; overflow-x:auto; }
+.ft-marriage-branch-fs .family-tree { overflow-x:visible; min-width:fit-content; }
+.ft-children-frame.compact .ft-person-card { width:170px; }
+.ft-children-frame.compact { --ft-card-width:170px; }
+.ft-children-frame.wide-wrap .ft-children-row { flex-wrap:wrap; justify-content:center; gap:0.5rem; }
+.ft-children-frame.wide-wrap .ft-person-card { width:160px; }
+.ft-children-frame.wide-wrap { --ft-card-width:160px; }
+.ft-children-frame.wide-wrap .ft-sibling-bar { display:none; }
+.ft-children-frame.wide-wrap .ft-child > .ft-trunk { display:none; }
+
+
+/* ============================================================
+   .baptism-thumbs — sponsor pages, "Where this sponsor appears
+   in the parish register" tile. Added 7 May 2026.
+   ============================================================ */
+.baptism-thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 1.1rem; margin-top: 0.6rem; }
+.baptism-thumb { margin: 0; background: #fff; border: 1px solid #d8c8a8; border-radius: 4px; padding: 0.6rem; }
+.baptism-thumb a { display: block; border-bottom: none; }
+.baptism-thumb img { width: 100%; height: auto; max-height: 320px; object-fit: cover; object-position: center top; border: 1px solid #d8c8a8; border-radius: 2px; cursor: zoom-in; }
+.baptism-thumb figcaption { margin-top: 0.55rem; font-size: 0.86rem; color: #4a3a22; line-height: 1.4; }
+.baptism-thumb figcaption .baptism-date { font-weight: 700; color: #8a6420; display: block; margin-bottom: 0.2rem; }
+.baptism-thumb figcaption .baptism-cite { font-size: 0.78rem; color: #6a5a42; font-style: italic; display: block; margin-top: 0.25rem; }
+@media (max-width: 700px) { .baptism-thumbs { grid-template-columns: 1fr; } }
+
+
+/* ============================================================
+   .summary-card — "★ At a Glance" tile, person profiles.
+   Mirrors family_pages/_shared.css so people pages render the
+   summary card with the same visual language. Added 8 May 2026.
+   ============================================================ */
+.summary-card { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border:2px solid #d8b366; border-radius:6px; padding:1.2rem 1.4rem; margin-bottom:1.4rem; }
+.summary-card.eliminated { background:linear-gradient(140deg, #fbeef3, #f0d8d8); border-color:#8a4a4a; }
+.summary-card.open { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border-color:#d8b366; }
+.summary-card.active { background:linear-gradient(140deg, #f4f0fb, #e0d8f0); border-color:#8a7ac0; }
+.summary-card h2 { font-size:1.18rem; color: var(--brand-dark); margin-bottom:0.6rem; padding-bottom:0.3rem; border-bottom:1px solid #c9a76a; }
+.summary-card.eliminated h2 { color:#8a4a4a; border-color:#c9a4a4; }
+.summary-card.active h2 { color:#5a4a8a; border-color:#a89cc0; }
+.summary-card .card-pill { display:inline-block; font-size: 0.76rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:0.18rem 0.55rem; border-radius:3px; vertical-align:middle; margin-bottom:0.4rem; }
+.summary-card .card-pill.eliminated { background:#8a4a4a; color:#fff; }
+.summary-card .card-pill.open { background:#d8b366; color:#1f1a14; }
+.summary-card .card-pill.active { background:#8a7ac0; color:#fff; }
+.summary-card .bottom-line { font-size:1rem; color:#3a2f1e; line-height:1.5; margin-bottom:0.6rem; }
+.summary-card .bottom-line strong { color:#1f1a14; }
+.summary-card .charles-link { background:rgba(212,160,23,0.12); border-left:3px solid #d8b366; padding:0.5rem 0.7rem; margin:0.6rem 0; font-size:0.92rem; color:#3a2f1e; line-height:1.45; border-radius:0 3px 3px 0; }
+.summary-card.eliminated .charles-link { background:rgba(138,74,74,0.1); border-color:#8a4a4a; }
+.summary-card.active .charles-link { background:rgba(138,122,192,0.1); border-color:#8a7ac0; }
+.summary-card .charles-link strong { color:#8a6420; font-weight:700; }
+.summary-card.eliminated .charles-link strong { color:#8a4a4a; }
+.summary-card.active .charles-link strong { color:#5a4a8a; }
+.summary-card .quick-facts { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.5rem; margin-top:0.6rem; }
+.summary-card .qf { background:#fffdf6; border:1px solid #d8c8a8; border-radius:3px; padding:0.4rem 0.6rem; font-size:0.84rem; }
+.summary-card .qf .qf-label { font-size: 0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#8a6420; font-weight:700; display:block; margin-bottom:0.1rem; }
+.summary-card .qf .qf-value { color:#3a2f1e; line-height:1.35; }
+
+/* BEGIN-DARK-MODE-BODY-OVERRIDE */
+/* ============================================================
+   Dark-mode body override — updated 11 May 2026 (robust fallback)
+   ============================================================
+   The body rule earlier in this file hardcodes background:#f6f1e7
+   (cream). We override with `:root:not(.theme-light)` so the page
+   renders DARK whenever the user is in dark mode OR when the theme
+   init script fails to run (e.g., scripts blocked on file:// URLs).
+   The only way to get cream is to explicitly toggle to light, which
+   adds the .theme-light class.
+   ------------------------------------------------------------ */
+:root:not(.theme-light) body,
+:root.theme-dark body {
+  background: #1a1612 !important;
+  color: #e8dfc8 !important;
+}
+:root:not(.theme-light) a,
+:root.theme-dark a { color: #e6c47a; }
+:root:not(.theme-light) a:hover,
+:root.theme-dark a:hover { color: #fadea0; }
+/* END-DARK-MODE-BODY-OVERRIDE */

@@ -1,0 +1,78 @@
+# ============================================================
+# Charles Konzen Research — git ignore rules
+# ============================================================
+# These directories and files are NOT committed.  They are either
+# private working artefacts, large binaries that don't belong in git,
+# or build output that the inject-* scripts regenerate idempotently.
+
+# Mac
+.DS_Store
+**/.DS_Store
+
+# Editor / OS
+*.bak
+*.tmp
+*.swp
+*~
+.vscode/
+.idea/
+
+# Pre-audit / pre-fix snapshots — kept on disk for one-time recovery
+_archive/
+_archive_pre_audit_fixes/
+_backup_originals/
+
+# Working drafts & session notes — noindex'd, not for the public repo
+notes/
+
+# Large primary-source PDFs — too big for git, kept locally
+*.pdf
+!abstract.pdf
+!methodology.pdf
+!errata.pdf
+!bibliography.pdf
+
+# Massive scan archives
+nara_pages/
+nara_ocr/
+
+# Working analysis docs
+session_notes_docx/
+*.docx
+!.zenodo.json
+
+# Working snapshots
+*.snapshot
+*.zip
+
+# Python build artefacts
+__pycache__/
+*.pyc
+.venv/
+
+# Netlify CLI state (if you ever run `netlify deploy`)
+.netlify/
+
+# Mirror directory and per-deploy zip artefacts (16 May 2026).
+_deploy_netlify/
+*.zip
+
+# Node dependencies (added during GitHub setup, June 2026)
+node_modules/
+
+# FUSE mount temporary artefacts — never commit these
+.fuse_hidden*
+
+# --- Private genealogy/DNA working data — contains third-party personal data, NEVER publish ---
+*.ged
+*Chromosome_Browser*
+*Family_Finder_Matches*
+*Y_DNA_Matches*
+STR_for_*
+*Shared DNA segments*
+autoclusters_*/
+
+# --- Software installers / backups / scratch — do not belong in the repo ---
+*.dmg
+*.gz
+*.last

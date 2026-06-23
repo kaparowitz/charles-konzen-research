@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>The Pension Mutual-Aid Network — Charles Research</title>
+<link rel="canonical" href="https://charles-research.netlify.app/themes/pension-mutual-aid.html">
+<link rel="stylesheet" href="../people/_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  /* Theme-specific styles */
+  .timeline { position:relative; margin:1rem 0 1.5rem; padding-left:1.4rem; border-left:3px solid #d8b366; }
+  .timeline .event { position:relative; margin-bottom:1.1rem; padding-left:0.4rem; }
+  .timeline .event::before { content:""; position:absolute; left:-1.85rem; top:0.35rem; width:0.85rem; height:0.85rem; border-radius:50%; background:#d8b366; border:2px solid #fffaf0; box-shadow:0 0 0 1px #8a6420; }
+  .timeline .event .when { font-family:'SF Mono',Menlo,Consolas,monospace; font-size:0.82rem; color:#8a6420; font-weight:700; letter-spacing:0.03em; }
+  .timeline .event .what { display:block; margin-top:0.15rem; }
+  .timeline .event.gannsen::before { background:#a3441f; box-shadow:0 0 0 1px #6a2a10; }
+  .timeline .event.legal::before { background:#4a76c8; box-shadow:0 0 0 1px #2a4a8a; }
+
+  .actor-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.8rem; margin:0.6rem 0 1rem; }
+  .actor-card { background:#fffaf0; border:1px solid #d8b366; border-left:5px solid #d8b366; border-radius:4px; padding:0.8rem 0.9rem; }
+  .actor-card .who { font-weight:700; color:#3a2f1e; font-size:1.02rem; }
+  .actor-card .role { font-size:0.78rem; color:#8a6420; text-transform:uppercase; letter-spacing:0.05em; margin-top:0.1rem; font-weight:700; }
+  .actor-card .what { font-size:0.88rem; color:#5a4a32; margin-top:0.4rem; line-height:1.5; }
+  .actor-card.civilian { border-color:#4a76c8; border-left-color:#4a76c8; }
+  .actor-card.civilian .role { color:#2a4a8a; }
+  .actor-card.agent { border-color:#a3441f; border-left-color:#a3441f; background:linear-gradient(140deg, #fffaf0, #fde8e0); }
+  .actor-card.agent .role { color:#6a2a10; }
+
+  .pull { background:linear-gradient(140deg, #f6ebd2, #ede4d0); border-left:5px solid #d8b366; padding:0.9rem 1.1rem; margin:0.8rem 0; font-style:italic; color:#3a2f1e; border-radius:0 4px 4px 0; }
+  .pull strong { font-style:normal; color:#8a6420; }
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Charles Research">
+  <meta property="og:title" content="The Pension Mutual-Aid Network — Charles Research">
+  <meta property="og:description" content="How Charles and his St. Louis circle worked the 1890 Dependent and Disability Pension Act together">
+  <meta property="og:url" content="https://charles-research.netlify.app/themes/pension-mutual-aid.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Pension Mutual-Aid Network — Charles Research">
+  <meta name="twitter:description" content="How Charles and his St. Louis circle worked the 1890 Dependent and Disability Pension Act together">
+  <meta name="description" content="How Charles and his St. Louis circle worked the 1890 Dependent and Disability Pension Act together">
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Themes",
+      "item": "https://charles-research.netlify.app/themes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Pension Mutual Aid"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/themes/pension-mutual-aid.html#article",
+  "headline": "The Pension Mutual-Aid Network",
+  "url": "https://charles-research.netlify.app/themes/pension-mutual-aid.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17",
+  "description": "How Charles and his St. Louis circle worked the 1890 Dependent and Disability Pension Act together"
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="src-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html">← Charles Research</a> &nbsp;/&nbsp; Themes &nbsp;/&nbsp; The Pension Mutual-Aid Network</div>
+  <h1>The Pension Mutual-Aid Network</h1>
+  <div class="sub">How Charles and his St. Louis circle worked the 1890 Dependent and Disability Pension Act together</div>
+  <div class="meta-row">
+    <span class="pill primary">THEMATIC</span>
+    <span class="pill">1889 – 1891</span>
+    <span class="pill">7 affidavits · 5 witnesses · 1 claim agent</span>
+  </div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="section">
+  <h2>The pattern</h2>
+  <p>Charles Gannsen's 1891 pension award was not the work of one man working through paperwork alone. It was the product of a <strong>cross-city mutual-aid network</strong> of St. Louis Civil War veterans and civilian neighbors who knew each other through Battery B service, post-war workplaces, and the German Lutheran / Evangelical parish circle — spanning <em>both</em> halves of the city. Charles himself lived on the south side at 2408 DeKalb (Kosciusko) by 1890; only Theodore Gottlob (next door at 2409 DeKalb) was a literal neighbor. The other 1891 declaration witnesses — Hebbeler at 916 N. 6th, Thurbecker at 638 N. 7th, Niemeier at 1300 N. 9th — were all on the <em>north side</em> in the historic Hyde Park / Bremen / Old North St. Louis German corridor. The network was held together by long-term Battery B and parish ties, not address. Five separate witnesses swore seven affidavits across an eighteen-month window in 1890-91, all funneled through a single U.S. Claim Agent — Fred. W. Fout — and notarized by the same handful of St. Louis notaries.</p>
+  <p>The names recur on each other's pension files in this same period. Several of the witnesses filed their <em>own</em> pensions in the same 1889-1891 window in which they testified for Charles. The pattern is not coincidence; it is the fingerprint of a working network.</p>
+</section>
+
+<section class="section">
+  <h2>Why 1889–1891? The legal trigger</h2>
+  <p>The <strong>Dependent and Disability Pension Act of 27 June 1890</strong> changed federal Civil War pension eligibility in a way that suddenly made it worth filing. Before 1890, a Union veteran had to prove that his disability was <em>service-connected</em> — that the rheumatism, hernia, or hearing loss originated in his time in uniform. That was a high evidentiary bar requiring contemporaneous medical records the typical Missouri private had never possessed.</p>
+  <p>The 1890 Act swept that aside. <strong>Any</strong> permanent disability that prevented a veteran from earning a support by manual labor now qualified, regardless of when or how it was contracted. A veteran's word, supported by neighbor and comrade affidavits, was enough.</p>
+  <p>The result was a national surge in pension applications — by some estimates, the number of pensioners on the federal rolls roughly doubled in the five years after passage — and a small army of claim agents, notaries, and circuits of mutually-witnessing veterans appeared in every major Union city to handle the load. <strong>St. Louis, with its dense Union veteran population from the early-war Missouri regiments, was a particular hot spot.</strong></p>
+  <div class="pull">
+    Charles's pension file is a snapshot of this surge. Every affidavit in it is dated <strong>after 27 June 1890</strong>. The earliest filing — May 1891 — is just inside the window in which most St. Louis Battery B alumni were quietly putting their own pension paperwork together.
+  </div>
+</section>
+
+<section class="section">
+  <h2>The actors</h2>
+
+  <div class="actor-grid">
+    <div class="actor-card agent">
+      <div class="who">Fred. W. Fout</div>
+      <div class="role">U.S. Claim Agent · St. Louis</div>
+      <div class="what">Filed Charles's claim. Likely identified the available Battery B comrades in the city, drafted the affidavits in the right legal language ("heavy cannonading at New Madrid," "rupture from heavy lifting"), and shepherded the package through the Pension Bureau. The connective tissue.</div>
+    </div>
+    <div class="actor-card">
+      <div class="who"><a href="../people/august-derr.html">August Derr</a></div>
+      <div class="role">1st Sgt., Co. B, 2nd MO Light Artillery</div>
+      <div class="what">Charles's own NCO at New Madrid. Filed his own pension <strong>24 May 1889</strong> — well ahead of the 1890 Act, but updated under it. Swore <strong>two affidavits</strong> for Charles: 29 Sept and 14 May 1891 — one on rupture, one on hearing loss + rheumatism.</div>
+    </div>
+    <div class="actor-card">
+      <div class="who"><a href="../people/christian-meyer.html">Christian Meyer</a></div>
+      <div class="role">Pvt., Co. B, 2nd MO Light Artillery</div>
+      <div class="what">Battery B private, fellow gun-crew member. Reconnected with Charles at his residence "nearly three years ago" — i.e. ~1888, exactly when the pension organizing began. Swore <strong>3 May 1891</strong>; corroborated Derr on cannonading and exposure narrative. Teamster in the 1880 census.</div>
+    </div>
+    <div class="actor-card">
+      <div class="who"><a href="../people/henry-stoll.html">Henry Stoll</a></div>
+      <div class="role">Pvt., Co. L, 2nd MO Light Artillery + 1st U.S.R.C. Cav.</div>
+      <div class="what">Sister-battery comrade in the same regiment as Charles. Swiss-born; long-time St. Louis neighbor. Witness to Charles's post-war disability progression as a regimental peer.</div>
+    </div>
+    <div class="actor-card">
+      <div class="who"><a href="../people/michael-nolan.html">Michael Nolan</a></div>
+      <div class="role">Pvt., Co. F, 1st MO Light Artillery</div>
+      <div class="what">Adjacent-regiment veteran. Enlisted April 1861 (Sumter month). Co-worker of Charles since 1867 — likely on the St. Louis railroad. Swore in October 1891. The civilian-style affidavit describes time lost from work — exactly what the 1890 Act required.</div>
+    </div>
+    <div class="actor-card civilian">
+      <div class="who"><a href="../people/henry-niemeier.html">Henry Niemeier</a></div>
+      <div class="role">Civilian neighbor · 26-year acquaintance</div>
+      <div class="what">Westphalian-born St. Louis sawmill worker. Met Charles in 1865, the year of his Civil War discharge. Swore <strong>15 October 1891</strong> — the longest-tenure civilian acquaintance affidavit in the file. Crucial because his testimony placed the hearing loss <em>already</em> at first acquaintance.</div>
+    </div>
+    <div class="actor-card">
+      <div class="who"><a href="../people/theodore-gottlob.html">Theodore Gottlob Sr.</a> ⚜</div>
+      <div class="role">Sgt., Co. A, 9th Illinois Infantry · 1861-1864</div>
+      <div class="what"><strong>★ Identified as Civil War veteran 3 May 2026 late evening.</strong> Westphalian-born; enlisted Alton, IL on 19 April 1861 — 4 days after Lincoln's call for volunteers, 90-day militia. Re-enlisted 25 July 1861, Cairo, IL, as Sergeant for 3-year term; saw Vicksburg; discharged 20 Aug 1864, Springfield, IL. Pension $15/month for <strong>rheumatism "since the war"</strong> — the same primary disability Charles claimed. NHDVS Leavenworth admission 1893. <strong>Co-witness with Hitzelberger on Charles's 1890 Pension Declaration</strong>; the declaration-witness pair was both Union-veteran-credentialed, not just neighbor-credentialed. Also Jed's 2nd great-grandfather — see profile.</div>
+    </div>
+    <div class="actor-card open-id">
+      <div class="who"><a href="../people/john-heitzenberger.html">John Heitzenberger</a> = a Hitzelberger</div>
+      <div class="role">Pension Declaration co-witness · 1890 (surname-family ID)</div>
+      <div class="what">Pennsylvania-Maryland-German Hitzelberger (clerk's "Heitzenberger" was a misreading). Co-witnessed Charles's 1890 Pension Declaration alongside Theodore Gottlob. Lived at <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=2412+Arsenal+St+St+Louis+MO" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">2412 Arsenal Street</a> (south side). Specific individual identity still open between A. J. Hitzelberger and a brother / brother-in-law. <em>Civil War service status unknown</em> — none of the documented Hitzelberger Civil War records (Joseph K. of 13th MD Inf., d. Ft. McHenry 1865; Capt. George of 1797 Lancaster PA militia) match.</div>
+    </div>
+  </div>
+  <p style="margin-top:0.6rem; color:#5a4a32; font-style:italic;">Now <strong>seven personal witnesses</strong> identified, of whom <strong>five (potentially six) are confirmed Civil War veterans</strong>: August Derr (Battery B 1st Sgt.), Christian Meyer (Battery B Pvt.), Henry Stoll (Battery L of 2nd MO Light Artillery), Michael Nolan (Co. F 1st MO Light Artillery), and now Theodore Gottlob (Co. A 9th Illinois Infantry Sgt.) — plus the still-open Hitzelberger. Only Henry Niemeier is firmly civilian.</p>
+</section>
+
+<section class="section">
+  <h2>The timeline</h2>
+  <div class="timeline">
+    <div class="event legal">
+      <span class="when">27 June 1890</span>
+      <span class="what"><strong>Dependent and Disability Pension Act</strong> signed by President Benjamin Harrison. Eligibility no longer requires service-connected origin of disability.</span>
+    </div>
+    <div class="event">
+      <span class="when">24 May 1889</span>
+      <span class="what">August Derr files his own pension claim in Missouri (under the still-restrictive 1879 Arrears Act regime). Establishes the playbook within the Battery B circle.</span>
+    </div>
+    <div class="event gannsen">
+      <span class="when">~1888</span>
+      <span class="what">Christian Meyer reconnects with Charles at Charles's residence — "nearly three years ago" before his May 1891 affidavit. Witness preparation begins informally.</span>
+    </div>
+    <div class="event gannsen">
+      <span class="when">3 May 1891</span>
+      <span class="what">Christian Meyer swears General Affidavit (<a href="../sources/pension-file.html#p22">Page 22</a>) — heavy cannonading at New Madrid, rheumatism from exposure. Notary: Theo. W. Boutje Jr.</span>
+    </div>
+    <div class="event gannsen">
+      <span class="when">14 May 1891</span>
+      <span class="what">August Derr swears second affidavit (<a href="../sources/pension-file.html#p26">Page 26</a>) — corroborates Meyer on cannonading + exposure; identifies himself as "1st Sergt. of same Co." Notary: Theo. W. Boutje Jr.</span>
+    </div>
+    <div class="event gannsen">
+      <span class="when">29 Sept 1891</span>
+      <span class="what">August Derr swears first affidavit (<a href="../sources/pension-file.html#p24">Page 24</a>) — rupture from heavy lifting at New Madrid.</span>
+    </div>
+    <div class="event gannsen">
+      <span class="when">15 Oct 1891</span>
+      <span class="what">Henry Niemeier swears 26-year civilian acquaintance affidavit (<a href="../sources/pension-file.html#p20">Page 20</a>). Filed by Fred. W. Fout, U.S. Claim Agent.</span>
+    </div>
+    <div class="event gannsen">
+      <span class="when">October 1891</span>
+      <span class="what">Michael Nolan swears co-worker affidavit (<a href="../sources/pension-file.html#p18">Page 18</a>) — time lost from work. Filed by Fred. W. Fout. Notary: Fred. W. Fritz Jr.</span>
+    </div>
+    <div class="event legal">
+      <span class="when">November 1891</span>
+      <span class="what">Charles awarded <strong>$12.00 / month</strong> pension by the Pension Bureau on the strength of the assembled affidavits — about <strong>$425–435 / month in 2026 dollars</strong> (≈$5,100/year, roughly 30% of a common laborer's annual income at the time). Drawn for ~12 years until his death in December 1903; total drawn ≈$1,728 in 1891–1903 dollars (≈$62,000 in 2026 equivalent).</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>The mechanics: how a claim agent ran the operation</h2>
+  <p>Fred. W. Fout — the U.S. Claim Agent listed on Charles's filings — operated in St. Louis as one of dozens of similar agents nationally. The agent's role was three-part:</p>
+  <ol style="margin:0.4rem 0 0.8rem 1.4rem;">
+    <li><strong>Identify the witnesses.</strong> Locate surviving Battery B and adjacent-regiment comrades still living in St. Louis. Cross-reference local directory listings, GAR post rolls, and word-of-mouth in the German parishes. The fact that Charles's Battery B 1st Sergeant (Derr), a fellow Battery B private (Meyer), and a Battery L regimental comrade (Stoll) all happened to live within a few miles of each other in St. Louis was not luck — it was a community-wide post-war settlement pattern of which the agent was professionally aware.</li>
+    <li><strong>Frame the affidavits.</strong> The Pension Bureau wanted very specific phrasings. "Heavy cannonading at New Madrid in September 1863." "Rupture from heavy lifting." "Exposure resulting in rheumatism." The actor-card affidavits in Charles's file all use this exact language because the agent drafted it; the witnesses signed off and added a few personal details. Compare Meyer's wording (Page 22) and Derr's wording (Page 26): the structural similarity is unmistakable.</li>
+    <li><strong>Notarize and submit.</strong> St. Louis notaries Theo. W. Boutje Jr. and Fred. W. Fritz Jr. recur across the file. They are part of the operation. The agent files the package with the Bureau, follows up on Bureau correspondence, takes a contingency fee on the awarded pension.</li>
+  </ol>
+  <p>This mode of operation was so widespread by 1891 that it generated a backlash: the 1893 Pension Bureau under Hoke Smith began aggressively challenging "claim agent" cases as fraudulent, and several thousand pensions were briefly suspended pending re-examination. Charles's pension survived this scrutiny intact, suggesting the underlying disability evidence was sound.</p>
+</section>
+
+<section class="section">
+  <h2>What this changes about reading the pension file</h2>
+  <p>Reading Charles's pension file as a <strong>collection of seven independent depositions</strong> — the way a casual reader might — overstates the testimonial diversity. Reading it as a <strong>coordinated mutual-aid filing</strong> — which is what it was — sharpens the reader's understanding in three ways:</p>
+  <ol style="margin:0.4rem 0 0.8rem 1.4rem;">
+    <li><strong>The shared language is not corroboration; it's coordination.</strong> Identical phrasings between Meyer and Derr should not be read as two independent witnesses converging on the same facts — they reflect the agent drafting both affidavits.</li>
+    <li><strong>The strongest evidence is in what's <em>not</em> shared.</strong> Niemeier's "already hard of hearing in 1865" — a date <em>before</em> any of the soldier witnesses had reconnected with Charles in St. Louis — is the single strongest unprompted corroboration of the New Madrid cannonading hypothesis, because it's the one detail that doesn't fit a rehearsed narrative.</li>
+    <li><strong>The witness selection itself reveals Charles's social network.</strong> Five Civil War veterans (four 2nd MO Light Artillery, one 1st MO Light Artillery), one civilian neighbor of 26 years' standing, and a workplace co-worker of 24 years' standing — that is the structure of Charles's mature St. Louis life as understood by the man who knew it best, his claim agent.</li>
+  </ol>
+</section>
+
+<section class="section">
+  <h2>The bigger picture: artillery alumni in post-war St. Louis</h2>
+  <p>Four of the six witnesses are Missouri Light Artillery veterans. This is not an accident of friendship; it reflects a specific feature of how the artillery arm of the Union service worked.</p>
+  <p>Light Artillery batteries in the Civil War were small (typically 80-150 men), tight-knit units in which a private served at close quarters with the same gun crew for years. Survival required cooperation in a way infantry company life did not. Artillery batteries also recruited from urban populations more than rural ones — drawing the literate, mechanically-skilled tradesmen and immigrants who could handle ordnance. After the war, those men tended to settle <em>back into the same urban districts</em> from which they had been recruited. St. Louis Battery B's post-war census of survivors, in the city's German immigrant neighborhoods, is the natural sediment of that pattern.</p>
+  <p>By 1891, the city's Light Artillery alumni community was thick enough that a claim agent could assemble the right witnesses for a Battery B pension claim within an afternoon's work — and the witnesses themselves had been quietly looking out for each other for the previous twenty-five years.</p>
+</section>
+
+<section class="section">
+  <h2>Cross-references</h2>
+  <ul style="padding-left:1.2rem;">
+    <li><a href="../people/august-derr.html">August Derr</a> · 1st Sergeant, Co. B, 2nd MO Light Artillery</li>
+    <li><a href="../people/christian-meyer.html">Christian Meyer</a> · Pvt., Co. B, 2nd MO Light Artillery</li>
+    <li><a href="../people/henry-stoll.html">Henry Stoll</a> · Pvt., Co. L, 2nd MO Light Artillery</li>
+    <li><a href="../people/michael-nolan.html">Michael Nolan</a> · Pvt., Co. F, 1st MO Light Artillery</li>
+    <li><a href="../people/henry-niemeier.html">Henry Niemeier</a> · 26-year civilian acquaintance · St. Louis sawmill worker</li>
+    <li><a href="../sources/pension-file.html">→ Full pension file viewer (F41-523680269E)</a></li>
+    <li><a href="../index.html#civilwar">→ Civil War tab on the main site</a></li>
+  </ul>
+</section>
+
+<footer class="back-nav">
+  <a href="../index.html">← Site home</a>
+  <a href="../people/index.html">People who knew Charles →</a>
+</footer>
+
+</main>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

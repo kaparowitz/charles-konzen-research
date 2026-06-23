@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Kontze / Konze / Contzen Family Tree — Trendelburg & Deisel</title>
+<meta name="description" content="Visual family tree of the Kontze / Konze / Contzen surname pool in the Trendelburg and Deisel parishes of Churhessen. Searched April–May 2026 against Charles Konzen's 26 January 1835 birth window — no candidate baptism found; the tree is retained as the project's reconstruction of the Konze surname pool.">
+<link rel="canonical" href="https://charles-research.netlify.app/Kontze_Family_Tree_Graphic.html">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Georgia', 'Times New Roman', serif; background: #faf8f5; color: #2c2c2c; padding: 20px; }
+  h1 { text-align: center; font-size: 22px; margin-bottom: 4px; color: #3a3a3a; }
+  .subtitle { text-align: center; font-size: 13px; color: #777; margin-bottom: 20px; }
+  .legend { display: flex; justify-content: center; gap: 24px; margin-bottom: 24px; font-size: 12px; flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-box { width: 16px; height: 16px; border-radius: 3px; border: 1px solid #999; }
+  .tree-container { overflow-x: auto; padding: 10px; }
+  svg { display: block; margin: 0 auto; }
+
+  .person-box { cursor: default; }
+  .person-box rect { rx: 6; ry: 6; stroke-width: 1.5; }
+  .male rect { fill: #e8f0fe; stroke: #4a76c8; }
+  .female rect { fill: #fde8ef; stroke: #c84a76; }
+  .unknown rect { fill: #f0eee8; stroke: #8a8070; }
+  .candidate rect { fill: #fff3cd; stroke: #d8b366; stroke-width: 2.5; stroke-dasharray: 6,3; }
+
+  .person-name { font-weight: bold; font-size: 11px; fill: #2c2c2c; }
+  .person-dates { font-size: 9.5px; fill: #666; }
+  .person-detail { font-size: 9px; fill: #888; font-style: italic; }
+  .person-question { font-size: 11px; fill: #d8b366; font-weight: bold; }
+
+  .marriage-line { stroke: #666; stroke-width: 1.5; }
+  .descent-line { stroke: #999; stroke-width: 1; }
+  .marriage-label { font-size: 8.5px; fill: #888; }
+
+  .section-label { font-size: 13px; fill: #555; font-weight: bold; }
+  .gen-label { font-size: 10px; fill: #aaa; font-style: italic; }
+  .note { font-size: 9px; fill: #b8860b; }
+
+  .footer { text-align: center; margin-top: 20px; font-size: 11px; color: #999; }
+
+  /* Helper classes for SVG text that previously used hardcoded inline fills.
+     Light defaults here, dark-mode overrides further below. */
+  .panel-text       { fill: #555; }
+  .panel-text-muted { fill: #888; font-style: italic; }
+  .panel-header     { fill: #8b6914; font-weight: bold; }
+  .panel-accent     { fill: #6a9e4a; font-weight: bold; }
+  .status-eliminated { fill: #c00; }
+
+  /* ===================== DARK MODE OVERRIDES ===================== */
+  /* The page imports dark-mode.css and the theme-toggle init sets
+     <html class="theme-dark"> at boot. Everything below re-paints text
+     and box fills so the tree stays legible against a dark background. */
+
+  html.theme-dark body            { background: #1f1a14; color: #e8dbb5; }
+  html.theme-dark h1              { color: #f4e2b0; }
+  html.theme-dark .subtitle       { color: #c8b896; }
+  html.theme-dark .subtitle a     { color: #d8b366; }
+  html.theme-dark .subtitle strong { color: #f4e2b0; }
+  html.theme-dark .legend         { color: #c8b896; }
+  html.theme-dark .legend-box     { border-color: #8a7a4a; }
+  html.theme-dark .footer         { color: #a89a76; }
+
+  /* Top-of-page status banner */
+  html.theme-dark aside           { color: #e8dbb5 !important;
+                                    background: rgba(216,179,102,0.10) !important;
+                                    border-color: #8a7a4a !important; }
+  html.theme-dark aside strong    { color: #f4e2b0 !important; }
+  html.theme-dark aside em        { color: #f4e2b0 !important; }
+  html.theme-dark aside a         { color: #d8b366 !important; }
+
+  /* SVG person-box rect fills — dark equivalents matching the original palette */
+  html.theme-dark .male rect      { fill: #1c2638; stroke: #6a8ad8; }
+  html.theme-dark .female rect    { fill: #36202a; stroke: #d86a8a; }
+  html.theme-dark .unknown rect   { fill: #2a261e; stroke: #8a7a4a; }
+  html.theme-dark .candidate rect { fill: #2c2516; stroke: #d8b366; }
+
+  /* SVG text — !important so they win over any inline fill:#XXX styles */
+  html.theme-dark .person-name     { fill: #f4e2b0 !important; }
+  html.theme-dark .person-dates    { fill: #c8b896 !important; }
+  html.theme-dark .person-detail   { fill: #a89a76 !important; }
+  html.theme-dark .person-question { fill: #d8b366 !important; }
+  html.theme-dark .gen-label       { fill: #8a7a4a !important; }
+  html.theme-dark .section-label   { fill: #c8b896 !important; }
+  html.theme-dark .marriage-label  { fill: #a89a76 !important; }
+  html.theme-dark .marriage-line   { stroke: #a89a76; }
+  html.theme-dark .descent-line    { stroke: #6a5e3e; }
+  html.theme-dark .note            { fill: #d8b366 !important; }
+
+  /* Side-panel text helpers in dark mode */
+  html.theme-dark .panel-text        { fill: #c8b896 !important; }
+  html.theme-dark .panel-text-muted  { fill: #a89a76 !important; }
+  html.theme-dark .panel-header      { fill: #d8b366 !important; }
+  html.theme-dark .panel-accent      { fill: #8ec47a !important; }
+  html.theme-dark .status-eliminated { fill: #e88a5a !important; }
+
+  /* Dark-mode equivalents for the two light-fill rect "islands" so they
+     don't read as bright cards on a dark page. We target by inline fill. */
+  html.theme-dark rect[fill="#fff3cd"] { fill: #2c2516 !important; }
+  html.theme-dark rect[fill="#fffde8"] { fill: #2c2516 !important; }
+  html.theme-dark rect[fill="#fbeae5"] { fill: #3a1c18 !important; }
+  /* The greyed Deisel boxes */
+  html.theme-dark rect[style*="#e0e0e0"] { fill: #2a261e !important; stroke: #6a5e3e !important; }
+
+  /* Legend swatches — dark-mode equivalents matching the SVG box palette above */
+  html.theme-dark .legend-box[style*="#e8f0fe"] { background-color: #1c2638 !important; border-color: #6a8ad8 !important; }
+  html.theme-dark .legend-box[style*="#fde8ef"] { background-color: #36202a !important; border-color: #d86a8a !important; }
+  html.theme-dark .legend-box[style*="#f0eee8"] { background-color: #2a261e !important; border-color: #8a7a4a !important; }
+  html.theme-dark .legend-box[style*="#fff3cd"] { background-color: #2c2516 !important; border-color: #d8b366 !important; }
+</style>
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kontze Family Tree Graphic"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/Kontze_Family_Tree_Graphic.html#article",
+  "headline": "Kontze / Konze / Contzen Family Tree — Trendelburg & Deisel",
+  "url": "https://charles-research.netlify.app/Kontze_Family_Tree_Graphic.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-25",
+  "description": "Visual family tree of the Kontze / Konze / Contzen surname pool in the Trendelburg and Deisel parishes of Churhessen. Searched April–May 2026 against Charles Konzen's 26 January 1835 birth window — no candidate baptism found; the tree is retained as the project's reconstruction of the Konze surname pool."
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+<meta property="og:url" content="https://charles-research.netlify.app/Kontze_Family_Tree_Graphic.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<h1>KONTZE / KONZE / CONTZEN FAMILY TREE</h1>
+<p class="subtitle">Trendelburg &amp; Deisel, <a class="glossary-link" href="glossary.html#g-kurhessen" title="Glossary: Kurhessen">Kurhessen</a> — Reconstructed from Archion Register 220096<br>
+Compiled 1 April 2026 · <strong>Searched against Charles's 26 January 1835 birth window — no candidate found</strong> (Sessions 18–50, April 2026; Peter Schräder verdict 12 April 2026)<br>
+Jed Johnson &amp; Peter Schräder · last updated 6 June 2026</p>
+
+<aside style="max-width:900px;margin:0 auto 1.4rem;border:1px solid #8a7a4a;background:rgba(138,122,74,0.10);padding:0.85rem 1.1rem;border-radius:6px;font-size:0.92rem;line-height:1.55;color:#3a2f1e;">
+<strong>Search complete — no Konze candidate identified.</strong> Between Sessions 18 and 50 of the April 2026 sprint, every documented Konze / Kontzen male in the Trendelburg parish complex (including the sons-of-Andreas window 1807–1818 that this tree's earlier "highest-priority research action" called for) was tested against Charles's 26 January 1835 birth window. Peter Schräder's verdict, 12 April 2026: <em>&ldquo;Charles is not a legitimate son of the Konze family.&rdquo;</em> The Entry 195 emergency-baptism candidate (Deisel KB 218842, January 1835) was also closed on 4 May 2026 when Peter re-read it as a Köster day-labourer's child, not a Konze (see <a href="sources/entry-195-baptism.html">Entry 195 source page</a>). This tree is retained as the project's <em>reconstruction of the Konze surname pool</em>; Charles is not a documented descendant of any branch shown.
+<br><br><strong>June 2026 update.</strong> A surname-distribution sweep confirmed the Konze pool is confined to one tight Diemel-valley cluster (Trendelburg · Deisel · Friedrichsfeld · Stammen · Hümme — all within ~4&nbsp;km), and a previously-undocumented <strong>Stammen</strong> Kontze household was found (Christian Ludwig Kontze × Anne Gertrud Temme, m. 1833; only child stillborn 1835 — shown below). For the full people-by-parish listing with FamilySearch IDs, see <a href="germany/konze-family-by-town.html"><strong>The Konze family, by town</strong></a>; for the geography, the <a href="germany/parish-map.html">Hessian parish map</a>.
+</aside>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-box" style="background:#e8f0fe;border-color:#4a76c8;"></div> Male</div>
+  <div class="legend-item"><div class="legend-box" style="background:#fde8ef;border-color:#c84a76;"></div> Female</div>
+  <div class="legend-item"><div class="legend-box" style="background:#f0eee8;border-color:#8a8070;"></div> Unknown/Uncertain</div>
+  <div class="legend-item"><div class="legend-box" style="background:#fff3cd;border-color:#d8b366;border-style:dashed;"></div> Candidate / Research Needed</div>
+</div>
+
+<div class="tree-container">
+<svg viewBox="0 0 1200 1100" width="1200" height="1100" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- GENERATION LABELS -->
+  <text x="15" y="60" class="gen-label">Gen -1</text>
+  <text x="15" y="200" class="gen-label">Gen 0</text>
+  <text x="15" y="420" class="gen-label">Gen 1</text>
+  <text x="15" y="680" class="gen-label">Gen 2</text>
+  <text x="15" y="920" class="gen-label">Gen 3</text>
+
+  <!-- ===== GENERATION -1: Johann Henrich I ===== -->
+  <g class="person-box male" transform="translate(200, 30)">
+    <rect width="200" height="55"/>
+    <text x="100" y="20" text-anchor="middle" class="person-name">Johann Henrich Kontze I</text>
+    <text x="100" y="33" text-anchor="middle" class="person-dates">b. ? — d. before Feb 1774</text>
+    <text x="100" y="45" text-anchor="middle" class="person-detail">Rathsverwandter, Trendelburg</text>
+  </g>
+
+  <!-- Descent line from JH I to Anna Margaretha -->
+  <line x1="300" y1="85" x2="300" y2="110" class="descent-line"/>
+  <g class="person-box female" transform="translate(200, 110)">
+    <rect width="200" height="45"/>
+    <text x="100" y="18" text-anchor="middle" class="person-name">Anna Margaretha Kontze</text>
+    <text x="100" y="32" text-anchor="middle" class="person-dates">m. David Lotz, 17 Feb 1774</text>
+  </g>
+
+  <!-- ===== GENERATION 0: Arnold Philipp ===== -->
+  <g class="person-box male" transform="translate(470, 175)">
+    <rect width="220" height="55"/>
+    <text x="110" y="20" text-anchor="middle" class="person-name">Arnold Philipp Kontze</text>
+    <text x="110" y="33" text-anchor="middle" class="person-dates">b. ? — d. before Nov 1780</text>
+    <text x="110" y="45" text-anchor="middle" class="person-detail">Rathsverwandter, Trendelburg</text>
+  </g>
+
+  <!-- Note: relationship between JH I and Arnold Philipp -->
+  <line x1="400" y1="60" x2="470" y2="200" class="descent-line" stroke-dasharray="4,4" stroke="#aaa"/>
+  <text x="415" y="135" class="note">Relationship unknown</text>
+
+  <!-- Descent lines from Arnold Philipp to his sons -->
+  <line x1="520" y1="230" x2="520" y2="270" class="descent-line"/>
+  <line x1="660" y1="230" x2="660" y2="270" class="descent-line"/>
+  <line x1="520" y1="270" x2="660" y2="270" class="descent-line"/>
+
+  <!-- Branch lines down -->
+  <line x1="520" y1="270" x2="520" y2="290" class="descent-line"/>
+  <line x1="660" y1="270" x2="660" y2="290" class="descent-line"/>
+
+  <text x="520" y="285" text-anchor="middle" class="person-detail" style="fill:#555;">1st son</text>
+  <text x="660" y="285" text-anchor="middle" class="person-detail" style="fill:#555;">2nd son</text>
+
+  <!-- Half-brother line to Andreas the Elder -->
+  <line x1="690" y1="200" x2="900" y2="200" class="descent-line" stroke-dasharray="4,4" stroke="#aaa"/>
+  <text x="790" y="190" text-anchor="middle" class="note">"half-brother"</text>
+
+  <!-- Andreas the Elder (Stammen) -->
+  <g class="person-box male" transform="translate(860, 175)">
+    <rect width="200" height="55"/>
+    <text x="100" y="20" text-anchor="middle" class="person-name">Andreas Kontze "the Elder"</text>
+    <text x="100" y="33" text-anchor="middle" class="person-dates">b. ? — d. before Mar 1807</text>
+    <text x="100" y="45" text-anchor="middle" class="person-detail">Bürger u. Ackermann, Stammen</text>
+  </g>
+  <!-- Wife of Andreas Elder -->
+  <line x1="960" y1="230" x2="960" y2="250" class="marriage-line"/>
+  <text x="975" y="247" class="marriage-label">m. ?</text>
+  <g class="person-box female" transform="translate(860, 255)">
+    <rect width="200" height="50"/>
+    <text x="100" y="18" text-anchor="middle" class="person-name">Anna Christina née Contzen</text>
+    <text x="100" y="31" text-anchor="middle" class="person-dates">b. ~1735 — d. 9 Mar 1807</text>
+    <text x="100" y="43" text-anchor="middle" class="person-detail">buried Trendelburg, age ~72</text>
+  </g>
+
+  <!-- ===== GENERATION 1: Johann Henrich II ===== -->
+  <g class="person-box male" transform="translate(370, 300)">
+    <rect width="200" height="55"/>
+    <text x="100" y="20" text-anchor="middle" class="person-name">Johann Henrich Kontze II</text>
+    <text x="100" y="33" text-anchor="middle" class="person-dates">b. ? — d. Apr 1801–Mar 1807</text>
+    <text x="100" y="45" text-anchor="middle" class="person-detail">Bürger u. Ackermann, Trendelburg</text>
+  </g>
+
+  <!-- Wife 1 of JH II -->
+  <line x1="370" y1="328" x2="280" y2="328" class="marriage-line"/>
+  <text x="325" y="322" class="marriage-label">m. 26 Nov 1773</text>
+  <g class="person-box female" transform="translate(80, 305)">
+    <rect width="200" height="45"/>
+    <text x="100" y="18" text-anchor="middle" class="person-name">Martha Elisabetha</text>
+    <text x="100" y="32" text-anchor="middle" class="person-dates">d. before Dec 1783</text>
+  </g>
+
+  <!-- Wife 2 of JH II -->
+  <line x1="470" y1="355" x2="470" y2="380" class="marriage-line"/>
+  <text x="485" y="375" class="marriage-label">m. 5 Dec 1783</text>
+  <g class="person-box female" transform="translate(370, 385)">
+    <rect width="210" height="50"/>
+    <text x="105" y="18" text-anchor="middle" class="person-name">Anna Catharina née Asthermann</text>
+    <text x="105" y="31" text-anchor="middle" class="person-dates">father: Conrad Asthermann</text>
+    <text x="105" y="43" text-anchor="middle" class="person-detail">from Ehr[?]schütz</text>
+  </g>
+
+  <!-- Johannes Kontze -->
+  <g class="person-box male" transform="translate(620, 300)">
+    <rect width="200" height="55"/>
+    <text x="100" y="20" text-anchor="middle" class="person-name">Johannes Kontze</text>
+    <text x="100" y="33" text-anchor="middle" class="person-dates">b. ? — d. before 1806 (widower)</text>
+    <text x="100" y="45" text-anchor="middle" class="person-detail">Ackermann, Trendelburg</text>
+  </g>
+
+  <!-- Wife 1 of Johannes -->
+  <line x1="720" y1="355" x2="720" y2="380" class="marriage-line"/>
+  <text x="735" y="375" class="marriage-label">m. 30 Nov 1780</text>
+  <g class="person-box female" transform="translate(620, 385)">
+    <rect width="210" height="50"/>
+    <text x="105" y="18" text-anchor="middle" class="person-name">Anna Margaretha née Thiele</text>
+    <text x="105" y="31" text-anchor="middle" class="person-dates">father: Johannes Thiele</text>
+    <text x="105" y="43" text-anchor="middle" class="person-detail">Ackermann of DEISEL</text>
+  </g>
+
+  <!-- Wife 2 of Johannes (noted) -->
+  <g class="person-box female" transform="translate(620, 445)">
+    <rect width="210" height="40"/>
+    <text x="105" y="16" text-anchor="middle" class="person-name">Maria Elisabeth née Grosbernd</text>
+    <text x="105" y="30" text-anchor="middle" class="person-dates">m. 12 Jan 1806 (2nd wife)</text>
+  </g>
+
+  <!-- Descent from JH II + Anna Catharina to Andreas -->
+  <line x1="475" y1="435" x2="475" y2="520" class="descent-line"/>
+
+  <!-- Descent from Johannes to Anna Catharina (daughter) -->
+  <line x1="720" y1="485" x2="720" y2="520" class="descent-line"/>
+  <g class="person-box female" transform="translate(620, 520)">
+    <rect width="200" height="45"/>
+    <text x="100" y="18" text-anchor="middle" class="person-name">Anna Catharina Kontze</text>
+    <text x="100" y="32" text-anchor="middle" class="person-dates">m. Joh. George Doenges, 1808</text>
+  </g>
+
+  <!-- ===== GENERATION 2: Andreas Kontze ===== -->
+  <g class="person-box male" transform="translate(280, 530)">
+    <rect width="210" height="60"/>
+    <text x="105" y="18" text-anchor="middle" class="person-name">Andreas Kontze</text>
+    <text x="105" y="31" text-anchor="middle" class="person-dates">bap. 9 Mar 1787 — d. 13 Oct 1830</text>
+    <text x="105" y="43" text-anchor="middle" class="person-detail">Confirmed Easter 1801, Trendelburg</text>
+    <text x="105" y="54" text-anchor="middle" class="person-detail">Bürger u. Ackermann</text>
+  </g>
+
+  <!-- Wife 1: Wilhelmina Hofedietz -->
+  <line x1="385" y1="590" x2="385" y2="620" class="marriage-line"/>
+  <text x="400" y="615" class="marriage-label">m. 8 Mar 1807</text>
+  <g class="person-box female" transform="translate(280, 625)">
+    <rect width="210" height="50"/>
+    <text x="105" y="18" text-anchor="middle" class="person-name">Wilhelmina née Hofedietz</text>
+    <text x="105" y="31" text-anchor="middle" class="person-dates">father: Johannes Hofedietz (late)</text>
+    <text x="105" y="43" text-anchor="middle" class="person-detail">Trendelburg</text>
+  </g>
+
+  <!-- Wife 2: Anna Christina Heidt -->
+  <line x1="280" y1="560" x2="120" y2="560" class="marriage-line"/>
+  <text x="200" y="553" class="marriage-label">m. 5 Jun 1818</text>
+  <g class="person-box female" transform="translate(10, 540)">
+    <rect width="210" height="55"/>
+    <text x="105" y="18" text-anchor="middle" class="person-name">Anna Christina née Heidt</text>
+    <text x="105" y="31" text-anchor="middle" class="person-dates">b. 14 Dec 1774 — d. 27 Oct 1846</text>
+    <text x="105" y="43" text-anchor="middle" class="person-detail">3rd marriage; previously Herwig, Hofmann</text>
+  </g>
+
+  <!-- Children of Andreas + Wilhelmina -->
+  <line x1="385" y1="675" x2="385" y2="700" class="descent-line"/>
+  <line x1="200" y1="700" x2="740" y2="700" class="descent-line"/>
+
+  <!-- Daughters -->
+  <line x1="200" y1="700" x2="200" y2="720" class="descent-line"/>
+  <g class="person-box female" transform="translate(120, 720)">
+    <rect width="160" height="45"/>
+    <text x="80" y="18" text-anchor="middle" class="person-name">Anna Christine</text>
+    <text x="80" y="32" text-anchor="middle" class="person-dates">b. c. 1798–1803</text>
+  </g>
+
+  <line x1="370" y1="700" x2="370" y2="720" class="descent-line"/>
+  <g class="person-box female" transform="translate(290, 720)">
+    <rect width="160" height="45"/>
+    <text x="80" y="18" text-anchor="middle" class="person-name">Christine Wilhelmine</text>
+    <text x="80" y="32" text-anchor="middle" class="person-dates">b. c. 1805</text>
+  </g>
+
+  <line x1="540" y1="700" x2="540" y2="720" class="descent-line"/>
+  <g class="person-box female" transform="translate(460, 720)">
+    <rect width="160" height="45"/>
+    <text x="80" y="18" text-anchor="middle" class="person-name">Maria Wilhelmine</text>
+    <text x="80" y="32" text-anchor="middle" class="person-dates">b. 22 Apr 1807</text>
+  </g>
+
+  <!-- Sons-1808-1817 window: searched, no Charles candidate -->
+  <line x1="700" y1="700" x2="700" y2="720" class="descent-line"/>
+  <g class="person-box unknown" transform="translate(620, 720)">
+    <rect width="180" height="55"/>
+    <text x="90" y="18" text-anchor="middle" class="person-name" style="fill:#555;">Sons, 1808–1817</text>
+    <text x="90" y="33" text-anchor="middle" class="person-dates">window searched on Archion</text>
+    <text x="90" y="46" text-anchor="middle" class="person-detail" style="fill:#a3441f;">no Charles candidate (Apr 2026)</text>
+  </g>
+
+  <!-- GENERATION 3: Charles searched against this tree — not found -->
+
+  <!-- Documented illegit daughter of Anna Christina Heidt: Charlotte Herwig (Herwig line eliminated 3 May 2026) -->
+  <line x1="115" y1="595" x2="115" y2="810" class="descent-line" stroke="#c84a76"/>
+  <text x="125" y="770" class="note" style="fill:#c84a76;">illegit. daughter of Anna Christina</text>
+
+  <g class="person-box female" transform="translate(10, 810)">
+    <rect width="210" height="55"/>
+    <text x="105" y="18" text-anchor="middle" class="person-name">Charlotte Herwig</text>
+    <text x="105" y="31" text-anchor="middle" class="person-dates">b. 3 Apr 1812 — d. ?</text>
+    <text x="105" y="43" text-anchor="middle" class="person-detail" style="fill:#a3441f;">Herwig line eliminated 3 May 2026</text>
+  </g>
+
+  <!-- Charles searched against this tree — not found -->
+  <g transform="translate(490, 820)">
+    <rect width="320" height="80" rx="6" fill="#fbeae5" stroke="#c84a4a" stroke-width="1.6"/>
+    <text x="160" y="22" text-anchor="middle" class="status-eliminated" style="font-weight:700;font-size:11.5px;letter-spacing:0.03em;">CHARLES GANNSEN — NOT IN THIS TREE</text>
+    <text x="160" y="40" text-anchor="middle" class="panel-text" style="font-size:9.5px;">b. 26 Jan 1835 · d. 1903 St. Louis, Missouri</text>
+    <text x="160" y="56" text-anchor="middle" class="panel-text" style="font-size:9.5px;">All Konze candidates eliminated or inconclusive</text>
+    <text x="160" y="70" text-anchor="middle" class="panel-text-muted" style="font-size:9px;">Schräder verdict, 12 Apr 2026 (Sessions 18–50)</text>
+  </g>
+
+  <!-- SECTION: DEISEL KONZE (separate line) -->
+  <rect x="850" y="430" width="320" height="200" rx="8" fill="none" stroke="#999" stroke-dasharray="6,3"/>
+  <text x="1010" y="450" text-anchor="middle" class="section-label">DEISEL KONZE LINE</text>
+  <text x="1010" y="465" text-anchor="middle" class="person-detail">(Separate family — all eliminated)</text>
+
+  <g class="person-box male" transform="translate(880, 475)">
+    <rect width="200" height="45" style="fill:#e0e0e0;stroke:#999;"/>
+    <text x="100" y="17" text-anchor="middle" class="person-name" style="fill:#888;">Joh. Henrich Kontze (Deisel)</text>
+    <text x="100" y="32" text-anchor="middle" class="person-dates">b. ~1747 — resident Deisel by 1770</text>
+  </g>
+
+  <line x1="980" y1="520" x2="980" y2="540" class="descent-line" stroke="#ccc"/>
+  <g class="person-box male" transform="translate(880, 540)">
+    <rect width="200" height="45" style="fill:#e0e0e0;stroke:#999;"/>
+    <text x="100" y="17" text-anchor="middle" class="person-name" style="fill:#888;">Andreas Konze (Deisel)</text>
+    <text x="100" y="32" text-anchor="middle" class="person-dates">b. ~1799 — d. 24 Feb 1828, age 29</text>
+  </g>
+  <text x="1010" y="603" text-anchor="middle" class="status-eliminated" style="font-size:10px;font-style:italic;">ALL DEISEL DESCENDANTS ELIMINATED</text>
+
+  <!-- HOFEDIETZ-GRANDJOT LINK -->
+  <rect x="850" y="640" width="320" height="105" rx="8" fill="none" stroke="#6a9e4a" stroke-dasharray="6,3"/>
+  <text x="1010" y="660" text-anchor="middle" class="panel-accent" style="font-size:13px;">HOFEDIETZ–GRANDJOT LINK</text>
+
+  <g transform="translate(865, 670)">
+    <text x="0" y="12" class="panel-text" style="font-size:9.5px;">Wilhelmina Hofedietz → m. Andreas Kontze (1807)</text>
+    <text x="0" y="26" class="panel-text" style="font-size:9.5px;">Marie Wilhelmine Hofeditz (b.1784) → Grandjot family</text>
+    <text x="0" y="40" class="panel-text" style="font-size:9.5px;">Catharine Elisabeth Grandjot → m. Johannes Herwig (1827)</text>
+    <text x="0" y="56" class="panel-accent" style="font-size:10px;">KONTZE ↔ HOFEDIETZ ↔ GRANDJOT ↔ HERWIG</text>
+  </g>
+
+  <!-- SURNAME NOTE -->
+  <rect x="850" y="760" width="320" height="95" rx="8" fill="#fffde8" stroke="#d8b366"/>
+  <text x="1010" y="780" text-anchor="middle" class="panel-header" style="font-size:13px;">SURNAME EVOLUTION</text>
+  <g transform="translate(865, 790)">
+    <text x="0" y="12" class="panel-text" style="font-size:10px;">Kontze / Contze → Gontze (dialect)</text>
+    <text x="0" y="26" class="panel-text" style="font-size:10px;">→ Gonnson (Am. clerk) → Gannsen</text>
+    <text x="0" y="40" class="panel-text" style="font-size:10px;">→ Johnson ("son of Johann")</text>
+    <text x="0" y="54" class="panel-text-muted" style="font-size:10px;">Or: Deisel Hausname "Gans" → Gannsen</text>
+  </g>
+
+  <!-- Research status: search complete -->
+  <rect x="10" y="920" width="1180" height="60" rx="6" fill="#fbeae5" stroke="#c84a4a"/>
+  <text x="600" y="942" text-anchor="middle" class="status-eliminated" style="font-size:12px;font-weight:bold;letter-spacing:0.06em;">★ SEARCH COMPLETE — NO KONZE CANDIDATE FOUND</text>
+  <text x="600" y="960" text-anchor="middle" class="panel-text" style="font-size:11px;">Every Konze / Kontzen male in this tree was tested against Charles's 26 January 1835 birth date (Sessions 18–50, April 2026).</text>
+  <text x="600" y="974" text-anchor="middle" class="panel-text-muted" style="font-size:10px;">Peter Schräder verdict, 12 April 2026: "Charles is not a legitimate son of the Konze family." Entry 195 closed 4 May 2026 (Köster, not Konze; see Entry 195 source page).</text>
+
+  <!-- STAMMEN / GOTTSBÜREN BRANCH — newly documented June 2026 -->
+  <rect x="10" y="994" width="1180" height="98" rx="6" fill="#fffde8" stroke="#d8b366"/>
+  <text x="600" y="1014" text-anchor="middle" class="panel-header" style="font-size:12px;letter-spacing:0.04em;">STAMMEN / GOTTSBÜREN BRANCH — newly documented, June 2026 (a distinct line; not Charles)</text>
+  <text x="600" y="1033" text-anchor="middle" class="panel-text" style="font-size:10px;">Christian Ludwig Kontze (Tagelöhner, b. ~1806; reputedly b. Gottsbüren — but Gottsbüren's registers hold no Kontze, so an in-migrant) × Anne Gertrud née Temme of Stammen · married 9 June 1833.</text>
+  <text x="600" y="1049" text-anchor="middle" class="panel-text" style="font-size:10px;">Only Stammen child: a stillborn son (b./bur. 14–16 March 1835). The couple left Stammen after 1835 (destination unknown — possible emigration).</text>
+  <text x="600" y="1065" text-anchor="middle" class="panel-text-muted" style="font-size:9.5px;">His father: a separate Andreas Kontze × Marie Elisabeth née Garland (both d. by 1833) — home parish unknown. Full people-by-parish listing + FamilySearch IDs: "The Konze family, by town."</text>
+
+</svg>
+</div>
+
+<p class="footer">Kontze/Konze/Contzen Family Tree — Trendelburg &amp; Deisel, Kurhessen<br>
+Reconstructed from Archion Register 220096 (KB 1773–1818) and associated research<br>
+Compiled 1 April 2026; searched against Charles's birth window April–May 2026 (Sessions 18–50; Schräder verdict 12 April 2026; Entry 195 retraction 4 May 2026) — no Konze candidate found · last updated 6 June 2026<br>
+Jed Johnson (jedsjohnson@gmail.com) in collaboration with Peter Schräder</p>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

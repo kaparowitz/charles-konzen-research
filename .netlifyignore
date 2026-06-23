@@ -1,0 +1,78 @@
+# Files / directories Netlify should not deploy.
+_archive/
+_archive_pre_audit_fixes/
+_backup_originals/
+_recovery_20260608/
+node_modules/
+package.json
+package-lock.json
+.DS_Store
+**/.DS_Store
+**/*.bak
+**/*.swp
+build_*.js
+
+# Manual-deploy bundles produced by deploy.sh (kept for drag-and-drop).
+# These live at the repo root after `bash deploy.sh` falls through to
+# the manual-zip branch; without this, a 100+ MB zip ends up in the
+# next `netlify deploy --dir=.` upload and breaks the build.
+# (Found in the 9 May 2026 audit: charles-konzen-deploy.zip = 145 MB
+# in the publish dir, well above Netlify's per-file ceiling.)
+*.zip
+*.snapshot
+
+# Added 16 May 2026: the dual-deploy mirror (1.6GB shadow site) and
+# private working-drafts directory. _deploy_netlify is being removed
+# entirely; notes/ stays but must not be deployed.
+_deploy_netlify/
+notes/
+
+# Archival originals — kept in source repo for provenance, not deployed.
+# (16 May 2026 image-hygiene pass — these duplicate or have superseded
+# smaller versions that pages actually reference.)
+**/*_original.jpg
+**/_originals/
+
+# Standalone large source file not referenced from any HTML page.
+# (16 May 2026)
+peter_charts/584FCF3B-FE18-4756-9FFD-A2665DE6378D.jpg
+
+# Internal dev / author-side pages — not for public deploy.
+# (17 May 2026 audit pass.)
+styleguide.html
+peter_charts_download_checklist.html
+
+# Added 29 May 2026 (page-weight audit): ~300MB of files that ship to
+# production but are not referenced by any deployed HTML page.
+#   - *.pgm: 40 uncompressed NARA page scans (~285MB) in nara_pages/;
+#     PGM does not render in browsers and no page links to them
+#     (the .png siblings in nara_pages/ ARE used and stay).
+#   - *.dmg: the BetterDisplay app installer (19MB) in peter_charts/.
+**/*.pgm
+**/*.dmg
+
+# Added June 2026 (page-weight sweep): re-download duplicate artifacts —
+# files Chrome auto-suffixed " (1)/(2)/(3)/(4)" when re-saved. 19 files,
+# ~28 MB, none referenced by any deployed page. Kept in the repo for
+# provenance; excluded from the public deploy.
+**/* (1).*
+**/* (2).*
+**/* (3).*
+**/* (4).*
+
+# Redundant unreferenced WebP copies of NARA page scans (~8 MB). Each has a
+# .png/.pgm sibling and no deployed page references nara_pages/. (June 2026)
+nara_pages/*.webp
+
+# Added June 2026 (site-evaluation cleanup): editor/FUSE temp handles and
+# dated manual backups must never deploy. *.bak was already covered; these
+# add the *.backup_<timestamp> form and the macOS .fuse_hidden* handles that
+# accumulate from deleted-but-open files in content directories.
+**/*.backup_*
+**/.fuse_hidden*
+
+# Added 22 Jun 2026 (weekly maintenance pass): unreferenced root-level exact
+# duplicate of civilwar/New_Madrid_Civil_War_Driving_Tour.pdf (identical md5
+# ddbb0dab…; 6.5 MB). The canonical copy is referenced from
+# civilwar/new-madrid.html; this root re-save is referenced by nothing.
+new madrid.pdf

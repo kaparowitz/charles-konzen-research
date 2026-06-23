@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Parish Search Coverage — German Confirmation Registers — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/search-coverage.html">
+<link rel="stylesheet" href="assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<meta name="description" content="A scannable record of which Hessian parish confirmation registers have been searched for Charles's birth — the June 2026 'any Carl, 1833–1841, surname open' sweep across the Kirchenkreis Hofgeismar. Parish, register, window, method, and result, plus what remains for the on-site trip.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Parish Search Coverage — German Confirmation Registers — Charles Research">
+<meta property="og:description" content="What's been searched, and what hasn't: the widened confirmation-register sweep for a boy named Carl born 1833–1841 in the Hofgeismar parishes.">
+<meta property="og:url" content="https://charles-research.netlify.app/search-coverage.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.bd-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.bd-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.bd-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.bd-hero h1 { color: var(--text-on-dark); font-size: 2.2rem; letter-spacing: 0.02em; max-width: 880px; }
+  header.bd-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 820px; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  h2 { font-size: 1.45rem; color: var(--text-primary); margin: 2.4rem 0 0.8rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.1rem; color: var(--text-primary); margin: 1.4rem 0 0.3rem; }
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.07rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.4rem; }
+
+  .summary-strip {
+    background: var(--bg-card-tint); border: 1px solid var(--border-medium); border-radius: 4px;
+    padding: 0.9rem 1.1rem; margin: 1.2rem 0 1.8rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.8rem;
+  }
+  .summary-strip .stat { text-align: center; }
+  .summary-strip .stat .num { font-size: 1.7rem; font-weight: 700; color: var(--brand-dark); display: block; line-height: 1.05; }
+  .summary-strip .stat .lab { font-size: 0.76rem; color: var(--text-meta); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
+
+  /* Key-search-terms slip — the at-a-glance "what to type" box */
+  .searchkey { border: 1px solid var(--brand); border-radius: 6px; background: linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); padding: 1rem 1.2rem 1.1rem; margin: 1.4rem 0 1.6rem; }
+  .searchkey > .ttl { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.7rem; }
+  .searchkey .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.9rem 1.2rem; }
+  .searchkey .f .k { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); font-weight: 700; }
+  .searchkey .f .v { font-size: 1.12rem; font-weight: 700; color: var(--text-strong); line-height: 1.2; margin-top: 0.1rem; }
+  .searchkey .f .note { font-size: 0.82rem; color: var(--text-meta); margin-top: 0.15rem; }
+  .searchkey .f .v em { font-style: normal; font-family: var(--font-mono); font-size: 0.95rem; color: var(--brand-dark); }
+  .searchkey .where { margin-top: 0.85rem; padding-top: 0.7rem; border-top: 1px solid var(--border-light); font-size: 0.9rem; }
+  .searchkey .where strong { color: var(--text-strong); }
+  html.theme-dark .searchkey > .ttl,
+  html.theme-dark .searchkey .f .v em { color: #e8cd8a; }
+
+  .callout { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 4px solid var(--brand); border-radius: 4px; padding: 1rem 1.2rem; margin: 1.4rem 0; }
+  .callout.verify { border-left-color: var(--status-active, #b48a3a); background: linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); }
+  .callout .ttl { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.4rem; }
+
+  table.bd { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.6rem 0 1.2rem; }
+  table.bd thead tr { background: var(--bg-card-tint); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-meta); }
+  table.bd th, table.bd td { padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); }
+  table.bd tbody tr:nth-child(even) td { background: var(--bg-card); }
+  table.bd .rec { font-weight: 700; color: var(--text-strong); white-space: nowrap; }
+  table.bd .src { font-size: 0.82rem; color: var(--text-meta); }
+  table.bd code { font-family: var(--font-mono); font-size: 0.82rem; }
+
+  .pill { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+  /* result pills — white text on mid-tone fills so they read in both light and dark */
+  .pill.r-clear { background: #5a8a4a; color: #fff; }   /* searched — no Carl in window */
+  .pill.r-carl  { background: #9a6a26; color: #fff; }   /* a Carl found, but non-matching surname */
+  .pill.r-part  { background: #b07d1a; color: #fff; }   /* partially searched */
+  .pill.r-queue { background: #3f6079; color: #fff; }   /* AI transcription queued */
+  .pill.r-todo  { background: #6d6256; color: #fff; }   /* not yet searched */
+
+  .legend { display: flex; flex-wrap: wrap; gap: 0.6rem 1.1rem; font-size: 0.84rem; color: var(--text-meta); margin: 0.4rem 0 1rem; }
+  .legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+  .sie { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; margin: 1rem 0 1.2rem; }
+  .sie .box { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 3px solid var(--brand); border-radius: 4px; padding: 0.8rem 1rem; }
+  .sie .box h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brand-dark); margin: 0 0 0.3rem; }
+  .sie .box p { font-size: 0.88rem; margin: 0; }
+
+  ol.rank { list-style: none; counter-reset: r; padding: 0; margin: 0.6rem 0; }
+  ol.rank > li { counter-increment: r; position: relative; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 4px; padding: 0.9rem 1.1rem 0.9rem 3rem; margin-bottom: 0.8rem; }
+  ol.rank > li::before { content: counter(r); position: absolute; left: 0.85rem; top: 0.9rem; font-weight: 700; font-size: 1.2rem; color: var(--brand-dark); font-family: var(--font-mono); }
+  ol.rank h3 { margin: 0 0 0.25rem; display: flex; gap: 0.5rem; align-items: baseline; flex-wrap: wrap; }
+  ol.rank p { margin: 0.2rem 0 0; font-size: 0.93rem; }
+
+  /* Dark-mode: lighten the gold accent numbers/labels for readability
+     (links and pills already carry their own contrast). */
+  html.theme-dark table.bd .num,
+  html.theme-dark .summary-strip .stat .num,
+  html.theme-dark .callout .ttl,
+  html.theme-dark .sie .box h4,
+  html.theme-dark ol.rank > li::before { color: #e8cd8a; }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.bd-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.bd-hero h1, header.bd-hero .sub, header.bd-hero .crumbs, header.bd-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+    .pill { border: 1px solid #000; color: #000 !important; background: none !important; }
+  }
+</style>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/search-coverage.html#article",
+  "headline": "Parish Search Coverage — German Confirmation Registers",
+  "description": "A scannable record of which Hessian parish confirmation registers have been searched for Charles's birth, with window, method, and result.",
+  "datePublished": "2026-06-20",
+  "dateModified": "2026-06-22",
+  "url": "https://charles-research.netlify.app/search-coverage.html",
+  "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+  "about": { "@id": "https://charles-research.netlify.app/#charles" },
+  "author": [
+    { "@type": "Person", "name": "Jed Johnson" },
+    { "@type": "Person", "name": "Peter Schräder" }
+  ],
+  "publisher": { "@type": "Person", "name": "Jed Johnson", "url": "https://charles-research.netlify.app/about.html" },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="bd-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; Parish Search Coverage</div>
+  <h1>Parish Search Coverage — German Confirmation Registers</h1>
+  <div class="sub">What has been searched for Charles's birth in the Hessian parishes, and what has not. The June 2026 <em>widened</em> sweep: any boy named Carl, born 1833&ndash;1841, surname open &mdash; read straight off the confirmation registers.</div>
+</header>
+
+<!-- BEGIN-INJECTED-SKIP-ANCHOR --><a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a><!-- END-INJECTED-SKIP-ANCHOR -->
+<main>
+
+<p class="lede">A conclusion is only as strong as the searches behind it. This page is the at-a-glance ledger for the 2026 confirmation-register sweep across the Kirchenkreis Hofgeismar &mdash; one row per parish, with the register searched, the birth window covered, the method, and the result. It is the companion to the longer-running <a href="negative-results.html">negative-results audit</a> (which logs the earlier Konze-focused baptism searches) and feeds the GPS test of <em>reasonably exhaustive research.</em></p>
+
+<div class="searchkey">
+  <div class="ttl">Key search terms &mdash; what to look for</div>
+  <div class="grid">
+    <div class="f">
+      <div class="k">First name</div>
+      <div class="v">Carl / Karl</div>
+      <div class="note">the German form of Charles &mdash; the anchor of the search.</div>
+    </div>
+    <div class="f">
+      <div class="k">Surname</div>
+      <div class="v">Open &mdash; any</div>
+      <div class="note">especially endings heard as <em>*n&middot;s&middot;n</em>: Gansen, Ganssen, Gonsen, Gonson, Hansen, Jansen, Konzen&hellip; &middot; legitimate <em>or</em> illegitimate. <a href="surname-records.html">Why these spellings &rarr;</a></div>
+    </div>
+    <div class="f">
+      <div class="k">Birth window</div>
+      <div class="v">1833&ndash;1841</div>
+      <div class="note">core 1834&ndash;1838 &middot; working anchor <strong>26 Jan 1835</strong>.</div>
+    </div>
+    <div class="f">
+      <div class="k">Confession</div>
+      <div class="v">Both</div>
+      <div class="note">Lutheran <em>and</em> Reformed, wherever a parish kept both books.</div>
+    </div>
+  </div>
+  <div class="where">Where it surfaces: a child born 1833&ndash;1841 appears in the <strong>1847&ndash;1855 confirmation classes</strong> of the <strong>Kreis Hofgeismar</strong> parishes (around Trendelburg / Deisel) &mdash; regardless of baptism parish or surname.</div>
+</div>
+
+<div class="summary-strip">
+  <div class="stat"><span class="num">8</span><span class="lab">parishes in this sweep</span></div>
+  <div class="stat"><span class="num">3</span><span class="lab">boys named Carl found in window</span></div>
+  <div class="stat"><span class="num">0</span><span class="lab">with a Konze / *n-s-n surname</span></div>
+  <div class="stat"><span class="num">1833&ndash;1841</span><span class="lab">birth window searched</span></div>
+</div>
+
+<h2 id="what">What this sweep was looking for</h2>
+
+<p>The earlier searches (logged in the <a href="negative-results.html">negative-results audit</a>) filtered on the <strong>surname</strong> &mdash; they looked for a <em>Konze</em>-family child, and outside the core parishes they narrowed to roughly January&ndash;February 1835. A <a href="negative-results.html">negative-results re-audit</a> exposed two blind spots in that approach, so this sweep deliberately widened all four criteria:</p>
+
+<div class="sie">
+  <div class="box"><h4>Given name is the anchor</h4><p>Any <strong>Carl / Karl</strong> (the German form of Charles) &mdash; not a surname. Charles named a son Charles, and put &ldquo;Charles&rdquo; in a grandson's name, so the forename is the thread.</p></div>
+  <div class="box"><h4>Surname open</h4><p>Any surname, <strong>especially endings that could be heard as <em>*n&middot;s&middot;n</em></strong> (Gansen, Ganssen, Gonsen, Gonson, Hansen, Jansen, Konzen&hellip;), legitimate <em>or</em> illegitimate.</p></div>
+  <div class="box"><h4>Full window</h4><p>Birth <strong>1833&ndash;1841</strong> (core 1834&ndash;1838). The U.S. records scatter Charles's birth across these years; 26&nbsp;Jan&nbsp;1835 is the working anchor, not the boundary. <span class="src">See <a href="birthdate-records.html">Birth date across the records</a>.</span></p></div>
+  <div class="box"><h4>Both confessions</h4><p>Lutheran <em>and</em> Reformed registers wherever a parish kept both &mdash; Kurhessen was split between the two.</p></div>
+</div>
+
+<div class="callout">
+  <div class="ttl">Why confirmations, not baptisms</div>
+  <p style="margin:0; font-size:0.9rem;">Confirmation registers are a fast filter: each class lists every ~13&ndash;15-year-old by <strong>name, birth date, and father</strong>. A child born 1833&ndash;1841 surfaces in the <strong>1847&ndash;1855 confirmation classes</strong> regardless of which parish baptised him or what his surname was &mdash; so one class-list does the work of scanning years of scattered baptisms. This sweep reads the confirmation books; the baptism registers remain the deeper Tier described on <a href="open-questions.html">Open Questions</a>.</p>
+</div>
+
+<h2 id="coverage">Coverage &mdash; one row per parish</h2>
+<p style="font-size:0.92rem;color:var(--text-meta);">Each parish below now also carries this row on its own <strong>parish research log</strong> (reachable from the <a href="germany/parish-map.html">Hessian parish map</a>), folded in beside that parish&rsquo;s Archion source citations &mdash; so the confirmation-sweep result lives next to the rest of that parish&rsquo;s evidence. This page remains the at-a-glance, cross-parish ledger.</p>
+
+<div class="legend">
+  <span><span class="pill r-clear">Searched</span> read; no Carl in window</span>
+  <span><span class="pill r-carl">Carl found</span> a Carl, but non-matching surname</span>
+  <span><span class="pill r-part">Partial</span> some classes read, others outstanding</span>
+  <span><span class="pill r-queue">Queued</span> AI transcription requested</span>
+  <span><span class="pill r-todo">Not yet</span> located but unread</span>
+</div>
+
+<table class="bd">
+  <thead>
+    <tr><th>Parish</th><th>Register searched</th><th>Classes read / window</th><th>Result</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="rec">Helmarshausen<br><a class="src" style="font-weight:400;" href="germany/helmarshausen-research-log.html">Parish research log &rarr;</a></td>
+      <td>Konfirmationen 1831&ndash;1903 <br><span class="src">Archion reg. <a href="https://www.archion.de/de/viewer/churchRegister/219208" target="_blank" rel="noopener noreferrer"><code>219208</code> &#x2197;</a></span></td>
+      <td>1848 &amp; 1849 classes read in full <br><span class="src">births ~1834&ndash;1836</span></td>
+      <td><span class="pill r-part">Partial</span><span class="pill r-carl">Carl found</span><br><span class="src">Carl Julius <strong>Bringemann</strong>, b. 1836 (father Johannes, farmer). 1847 + 1850&ndash;55 classes still to read.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Hümme<br><a class="src" style="font-weight:400;" href="germany/huemme-research-log.html">Parish research log &rarr;</a></td>
+      <td>Konfirmationen 1831&ndash;1934 <br><span class="src">Archion reg. <a href="https://www.archion.de/de/viewer/churchRegister/219529" target="_blank" rel="noopener noreferrer"><code>219529</code> &#x2197;</a></span></td>
+      <td>1848 &amp; 1849 classes read <br><span class="src">births ~1834&ndash;1835</span></td>
+      <td><span class="pill r-part">Partial</span><span class="pill r-carl">Carl found</span><br><span class="src">Carl Wilhelm <strong>Wilmes</strong>, b. 12 Mar 1834 (father David, day-labourer). 1850&ndash;51 still to read.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Sielen<br><a class="src" style="font-weight:400;" href="germany/sielen-research-log.html">Parish research log &rarr;</a></td>
+      <td>Konfirmationen 1831&ndash;1974 <br><span class="src">Archion reg. <a href="https://www.archion.de/de/viewer/churchRegister/220039" target="_blank" rel="noopener noreferrer"><code>220039</code> &#x2197;</a></span></td>
+      <td>1849 class read in full <br><span class="src">births ~1835</span></td>
+      <td><span class="pill r-part">Partial</span><br><span class="src">1849 class: <strong>no Carl.</strong> A &ldquo;Carl Ludwig&rdquo; appears in a mid-1840s class (surname / birth-year unverified). 1847&ndash;48 + 1850&ndash;52 still to read.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Deisel<br><a class="src" style="font-weight:400;" href="germany/deisel-research-log.html">Parish research log &rarr;</a></td>
+      <td>Konfirmationen 1831&ndash;1926 <br><span class="src">Archion reg. <a href="https://www.archion.de/de/viewer/churchRegister/218836" target="_blank" rel="noopener noreferrer"><code>218836</code> &#x2197;</a></span></td>
+      <td>core 1847&ndash;1853 classes <br><span class="src">births ~1833&ndash;1839</span></td>
+      <td><span class="pill r-clear">Searched</span> <span class="pill r-queue">Queued</span><br><span class="src"><strong>Baptisms 1834&ndash;1841 already searched</strong> for the Gonnson / Johnson surname forms (AncestryPro 2020) &mdash; none present; two Konze candidates surfaced and ruled out (<a href="negative-results.html#parishes">negative results</a>). For the widened <em>any-Carl</em> confirmation pass, AI transcription is requested on the core pages (images 946&ndash;948), awaiting processing. The &ldquo;Deisse&rdquo; toponym &mdash; a priority parish.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Trendelburg<br><a class="src" style="font-weight:400;" href="germany/trendelburg-research-log.html">Parish research log &rarr;</a></td>
+      <td>Konfirmationen 1831&ndash;1914 <br><span class="src">Archion reg. <a href="https://www.archion.de/de/viewer/churchRegister/220102" target="_blank" rel="noopener noreferrer"><code>220102</code> &#x2197;</a></span></td>
+      <td>core 1847&ndash;1850 classes <br><span class="src">births ~1833&ndash;1836</span></td>
+      <td><span class="pill r-queue">Queued</span><br><span class="src">AI transcription requested (images 2259&ndash;2261); awaiting processing. Deisel's mother church.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Friedrichsfeld<br><a class="src" style="font-weight:400;" href="germany/friedrichsfeld-research-log.html">Parish research log &rarr;</a></td>
+      <td><span class="src">No standalone register (colonist filial)</span></td>
+      <td>&mdash;</td>
+      <td><span class="pill r-clear">Covered</span><br><span class="src">Its confirmands appear in the Deisel / Trendelburg mother-church books above &mdash; covered there.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Schöneberg<br><a class="src" style="font-weight:400;" href="germany/schoeneberg-research-log.html">Parish research log &rarr;</a></td>
+      <td>Kirchenbuch 1822&ndash;1857 <span class="src">(mixed volume)</span> <br><span class="src">Archion reg. <a href="https://www.archion.de/de/viewer/churchRegister/220009" target="_blank" rel="noopener noreferrer"><code>220009</code> &#x2197;</a></span></td>
+      <td><span class="src">confirmation section within the volume</span></td>
+      <td><span class="pill r-todo">Not yet</span><br><span class="src">No standalone confirmation book before 1927; the 1847&ndash;55 confirmations sit inside this mixed <em>prose</em> volume &mdash; located but not yet read (prose defeats the quick name-scan; better read on-site).</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Hofgeismar (town)<br><a class="src" style="font-weight:400;" href="germany/hofgeismar-research-log.html">Parish research log &rarr;</a></td>
+      <td><span class="src">Altstädter + Neustädter parishes</span></td>
+      <td>&mdash;</td>
+      <td><span class="pill r-todo">Not yet</span><br><span class="src">Deprioritised: the town's classes are very large and its surname pool is urban &mdash; low odds for an <em>*n-s-n</em> Carl. Flagged for a focused later pass.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Freudenberg <span class="src">(Schierstein, Rhine)</span><br><a class="src" style="font-weight:400;" href="germany/schierstein-research-log.html">Parish research log &rarr;</a></td>
+      <td><span class="src">parish baptism index &mdash; <em>outside</em> the Hofgeismar core</span></td>
+      <td><span class="src">1830s baptisms</span></td>
+      <td><span class="pill r-clear">Searched</span><br><span class="src">The alternative &ldquo;Freundburg → Freudenberg&rdquo; reading (~160 mi SW of Deisel). Baptism index searched &mdash; no candidate; the reading is <strong>eliminated</strong> (AncestryPro 2020). See <a href="origin-records.html#interpretations">interpretations</a>.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Gudensberg <span class="src">(Tier-3 &mdash; James's &ldquo;Deissen&rdquo;)</span><br><a class="src" style="font-weight:400;" href="germany/gudensberg-research-log.html">Parish research log &rarr;</a></td>
+      <td>Konfirmationen 1831&ndash;1873 <br><span class="src">Archion reg. <a href="https://www.archion.de/de/viewer/churchRegister/244437" target="_blank" rel="noopener noreferrer"><code>244437</code> &#x2197;</a></span></td>
+      <td>1848&ndash;1854 read; 1855 to a Kurrent reader <br><span class="src">births ~1833&ndash;1840</span></td>
+      <td><span class="pill r-part">Searched</span><span class="pill r-carl">Carls found</span><br><span class="src"><strong>Classes 1848 through 1854 read boy-by-boy &mdash; births ~1833&ndash;1840, Charles's entire realistic window plus margin. The forename Carl recurs &mdash; Carl Schäfer (1849), Carl Wilhelm Tiltner (1850), Carl Werner Jungeut (1852), plus middle-name Carls &mdash; but never on an <em>*n-s-n</em> / Konze surname, and no 26-Jan-1835 Carl.</strong> Because Dissen &amp; Grifte children were confirmed here (&ldquo;Amt Gudensberg&rdquo;), this register also covers those filials' births 1833&ndash;1840. Only 1855 (births 1840&ndash;41, 5&ndash;6 yrs younger than any record Charles gave) remains. The only one of James Gunnis's three &ldquo;Deissen&rdquo; candidates with an online confirmation book for the window.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Dissen <span class="src">(Tier-3 &mdash; James's &ldquo;Deissen&rdquo;)</span><br><a class="src" style="font-weight:400;" href="germany/dissen-research-log.html">Parish research log &rarr;</a></td>
+      <td><span class="src">Mixed Kirchenbuch 1773&ndash;1841 (ends 1841); Taufen 1830&ndash;1924; no Konf. book for the window</span></td>
+      <td>Jan&ndash;Feb 1835 baptisms read <br><span class="src">reg. <a href="https://www.archion.de/de/viewer/churchRegister/253403" target="_blank" rel="noopener noreferrer"><code>253403</code> &#x2197;</a> · &ldquo;Abt. Gudensberg&rdquo;</span></td>
+      <td><span class="pill r-part">Partial</span><br><span class="src">No confirmation book for 1847&ndash;55 (confirmations kept at Gudensberg, above). <strong>Baptisms for the exact window read: Jan&ndash;Feb 1835 births = Jacob Lange, Heinrich Langermann, Johannes Götting, Martin Jung, Joh. Heinrich Momberg &mdash; no male Carl.</strong> 1834 &amp; 1836&ndash;41 baptisms still to scan.</span></td>
+    </tr>
+    <tr>
+      <td class="rec">Grifte <span class="src">(Tier-3 &mdash; James's &ldquo;Deissen&rdquo;)</span><br><a class="src" style="font-weight:400;" href="germany/grifte-research-log.html">Parish research log &rarr;</a></td>
+      <td><span class="src">Mixed Kirchenbuch 1773&ndash;1841 (ends 1841); Nebenkirchenbuch 1857&ndash;76; Taufen 1830&ndash;1883</span></td>
+      <td>1834&ndash;May 1835 baptisms read <br><span class="src">reg. <a href="https://www.archion.de/de/viewer/churchRegister/253444" target="_blank" rel="noopener noreferrer"><code>253444</code> &#x2197;</a> · &ldquo;Amt Gudensberg&rdquo;</span></td>
+      <td><span class="pill r-part">Partial</span><br><span class="src">No confirmation book for 1847&ndash;55 (confirmations kept at Gudensberg). <strong>Baptisms for the window read: late 1834 + 1835 to May &mdash; no male Carl, and <em>no January-1835 baptism at all</em> (the year's first birth is Feb 12 1835), so no 26-Jan-1835 child here.</strong> 1836&ndash;41 still to scan.</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size:0.84rem; color:var(--text-meta);">Archive: Landeskirchliches Archiv der Evangelischen Kirche von Kurhessen-Waldeck, via <a href="https://www.archion.de/" target="_blank" rel="noopener noreferrer">Archion</a>. Each register link opens the digitised book in the Archion viewer (a subscription is required to view images).</p>
+
+<h2 id="carls">The boys named Carl that turned up</h2>
+
+<p>The forename <em>Carl</em> is common in these villages &mdash; which is the point. The given name does not narrow the field; the <strong>surname</strong> is the discriminator, and none of the Carls found carries a surname resembling Charles's American names (Gannsen / Gonson / Konzen) or an <em>*n-s-n</em> ending:</p>
+
+<ol class="rank">
+  <li>
+    <h3>Carl Wilhelm Wilmes &mdash; Hümme, b. 12 March 1834 <span class="pill r-carl">non-matching surname</span></h3>
+    <p>Read clearly off the &ldquo;Geburts Jahr und Tag&rdquo; column of the 1849 class. Father David Wilmes, a day-labourer; mother Margarethe Elisabeth née Tille. Squarely in the window, but the surname is <strong>Wilmes</strong>.</p>
+  </li>
+  <li>
+    <h3>Carl Julius Bringemann &mdash; Helmarshausen, b. 1836 <span class="pill r-carl">non-matching surname</span></h3>
+    <p>From the 1849 class; father Johannes Bringemann, a farmer. In the window, but <strong>Bringemann</strong> is a local family with several confirmands in the same book.</p>
+  </li>
+  <li>
+    <h3>Carl Wilhelm Tiltner &mdash; Gudensberg, b. 1836 <span class="pill r-carl">non-matching surname</span></h3>
+    <p>The single Carl in Gudensberg's 1850 class (boys 1&ndash;20, read in full); father Daniel, a master mason. In the window, but the surname reads <strong>Tiltner</strong> &mdash; nothing like an <em>*n-s-n</em> ending. This was the most probative class to read for a boy born 26 Jan 1835, and it yields no Konze-type Carl.</p>
+  </li>
+  <li>
+    <h3>Carl Schäfer &mdash; Gudensberg, b. 1835 <span class="pill r-carl">non-matching surname</span></h3>
+    <p>The one primary Carl in Gudensberg's 1849 class (entry 9 of ~33 boys); born 1835, the canonical year. Surname <strong>Schäfer</strong> &mdash; again not an <em>*n-s-n</em> ending. Two further classes (1850, 1851) carried only middle-name Carls (Friedrich Carl Hildebrand, Philipp Carl Junge).</p>
+  </li>
+  <li>
+    <h3>&ldquo;Carl Ludwig&rdquo; &mdash; Sielen, mid-1840s class <span class="pill r-todo">unverified</span></h3>
+    <p>A boy named Carl Ludwig in a Sielen class; the surname read tentatively as <em>Dößler</em> and the birth-year is <strong>not verified</strong> (see the method note below). Recorded so it can be re-checked, not relied on.</p>
+  </li>
+</ol>
+
+<div class="callout verify">
+  <div class="ttl">Method &amp; reliability &mdash; read this before trusting a row</div>
+  <p>The registers were read in Archion's high-resolution viewer. Two limits shape how far the by-eye reads can be trusted:</p>
+  <p>&bull; <strong>The given name is reliable; the exact birth year is not.</strong> Distinguishing <em>Carl</em> from <em>Johann</em> or <em>Conrad</em> in Kurrent script is dependable, so &ldquo;is there a boy named Carl in this class?&rdquo; is a sound result. Reading the <em>year</em> numerals is not &mdash; a calibration slip of several years was caught and corrected mid-search at Sielen. Exact birth dates here should be confirmed against the AI transcription or by a Kurrent reader.</p>
+  <p>&bull; <strong>Surnames in Kurrent warrant a second eye.</strong> Given names and dates read more cleanly than surnames; any surname above is a best reading, not a certified transcription.</p>
+  <p>For these reasons the precise page-maps (register, image, class) are kept in the project's working log and are best handed to <a href="index.html#schrader">Peter Schräder</a> (Kurrent specialist) or read on the September archive trip, rather than treated as final from the by-eye pass alone.</p>
+</div>
+
+<h2 id="reading">What the sweep means so far</h2>
+
+<p>Across the tabular confirmation books actually read &mdash; <strong>Helmarshausen, Hümme, Sielen, and now Gudensberg</strong>, all covering the class where a boy born in the mid-1830s would be confirmed &mdash; the result is consistent: <strong>the name Carl appears, but never on a Konze-type or <em>*n-s-n</em> surname, and Sielen's 1849 class had no Carl at all.</strong> Gudensberg matters because it was the strongest of James Gunnis's three &ldquo;Deissen&rdquo; candidates and the only one with an online confirmation book for the window; its 1850 class (the exact cohort for a 26 Jan 1835 birth) was read boy-by-boy and produced one Carl on the wrong surname. That is a meaningful negative across all four parishes. It points away from these already-digitised parishes and back toward the registers that are <em>not</em> online, plus the Dissen/Grifte baptism scans &mdash; the natural work for an on-site visit.</p>
+
+<h2 id="open">What remains &mdash; the gaps this sweep does not close</h2>
+
+<div class="sie">
+  <div class="box"><h4>Queued, awaiting transcription</h4><p>Deisel (<code>218836</code>) and Trendelburg (<code>220102</code>) core classes &mdash; the two highest-priority books &mdash; are queued for AI transcription and need a return visit once processed.</p></div>
+  <div class="box"><h4>Tabular classes still to read</h4><p>Gudensberg 1848&ndash;49 &amp; 1851&ndash;55 (<code>244437</code>); Helmarshausen 1847 &amp; 1850&ndash;55; Sielen 1847&ndash;48 &amp; 1850&ndash;52; Hümme 1850&ndash;51. All located; eye-readable in the viewer.</p></div>
+  <div class="box"><h4>Tier-3 baptism scans</h4><p>Dissen (<code>253403</code>) and Grifte (<code>253444</code>) have <em>no</em> confirmation book for the window; their baptisms are online instead. The <strong>core 1834&ndash;1835 window is read &mdash; no male Carl, and Grifte records no January-1835 birth at all.</strong> Remaining: Dissen 1834 + both parishes 1836&ndash;1841.</p></div>
+  <div class="box"><h4>Prose / mixed volumes</h4><p>Schöneberg's 1847&ndash;55 confirmations sit inside a mixed prose Kirchenbuch (<code>220009</code>); better read on-site than scanned by name.</p></div>
+  <div class="box"><h4>Not digitised &mdash; the on-site Tier</h4><p>Heisebeck (pre-1845), Liebenau (1835), and Schöneberg (pre-1822) are not on Archion &mdash; core targets for the archive trip. (The Tier-3 &ldquo;Deissen&rdquo; parishes Dissen, Grifte &amp; Gudensberg turned out to <em>be</em> on Archion &mdash; now mapped and partly read above.) See <a href="open-questions.html">Open Questions</a>.</p></div>
+</div>
+
+<p style="margin-top:1.4rem; padding:0.8rem 1rem; background:var(--bg-card-tint); border-left:4px solid var(--brand); border-radius:3px; font-size:0.95rem;"><strong>Related.</strong> Everything searched on one screen is <a href="negative-results.html#coverage-glance">Research completed at a glance</a> (36 parishes · 16 families · Peter Schräder's database queries), within the full <a href="negative-results.html">negative-results audit</a>; the <em>surname</em> spellings these classes are matched against are on <a href="surname-records.html">Surname across the records</a> and the place-name <em>interpretations</em> on <a href="origin-records.html#interpretations">Origin across the records</a>; the conflicting U.S. birth figures driving the 1833&ndash;1841 window are on <a href="birthdate-records.html">Birth date across the records</a>; the standing questions and on-site Tier are on <a href="open-questions.html">Open Questions</a>.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="index.html">Home</a> · <a href="negative-results.html">Negative-results audit</a> · <a href="birthdate-records.html">Birth date across the records</a> · <a href="open-questions.html">Open Questions</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>About this project — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/about.html">
+<link rel="stylesheet" href="assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<meta name="description" content="Who runs the Charles Research project, why, how to get in touch, and how to cite the work.">
+<meta name="author" content="Jed Johnson with Peter Schräder and James Gunnis">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="About this project — Charles Research">
+<meta property="og:description" content="A descendant-driven, source-rigorous transatlantic genealogy investigation. Who, why, how to cite, how to contribute.">
+<meta property="og:url" content="https://charles-research.netlify.app/about.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/about.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About this project — Charles Research">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/about.png">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.65; }
+
+  header.about-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.4rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.about-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.about-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.about-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; }
+  header.about-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  h2 {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brand-dark);
+    margin: 2rem 0 0.7rem;
+    border-bottom: 1px solid var(--border-medium);
+    padding-bottom: 0.3rem;
+  }
+
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+
+  .lede { font-size: 1.06rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.6rem; }
+
+  .bio-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 5px;
+    padding: 1rem 1.2rem;
+    margin: 0.6rem 0 1rem;
+  }
+  .bio-card h3 { font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.2rem; border: none; padding: 0; }
+  .bio-card .role { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.5rem; }
+  .bio-card p { font-size: 0.95rem; }
+  .bio-card .contact-row {
+    margin-top: 0.6rem;
+    padding-top: 0.5rem;
+    border-top: 1px dotted var(--border-medium);
+    font-size: 0.86rem;
+    color: var(--text-meta);
+  }
+
+  .citation-box {
+    background: var(--bg-card-tint, #fffaee);
+    border: 1px solid var(--border-medium);
+    border-left: 4px solid #4a76c8;
+    border-radius: 4px;
+    padding: 0.9rem 1.1rem;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+  }
+  .citation-box code {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    color: var(--text-primary);
+    background: #fff;
+    padding: 0.6rem 0.8rem;
+    border-radius: 3px;
+    margin: 0.4rem 0;
+    border: 1px solid var(--border-light);
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  .citation-box .lbl { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; }
+
+  .interests-list {
+    background: #fff8e8;
+    border: 1px solid var(--brand);
+    border-left: 4px solid #c87a30;
+    border-radius: 4px;
+    padding: 0.85rem 1.1rem;
+    margin: 0.6rem 0 1rem;
+    font-size: 0.92rem;
+  }
+  .interests-list strong { color: var(--brand-dark); }
+
+  @media print {
+    header.about-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.about-hero h1, header.about-hero .sub, header.about-hero .crumbs a { color: #000 !important; }
+    a { color: #000; border-bottom: none; }
+    .bio-card, .citation-box, .interests-list { background: none; border-left-width: 2px; }
+  }
+
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<!-- JSON-LD AboutPage + Person + Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://charles-research.netlify.app/about.html#aboutpage",
+      "name": "About — Charles Research",
+      "url": "https://charles-research.netlify.app/about.html",
+      "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+      "description": "Author biographies, contact, declared interests, and citation guidance for the Charles Research project."
+    },
+    {
+      "@type": "Person",
+      "@id": "https://charles-research.netlify.app/about.html#jed",
+      "name": "Jed Johnson",
+      "jobTitle": "Project lead and primary author",
+      "email": "mailto:jedsjohnson@gmail.com"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://charles-research.netlify.app/about.html#peter",
+      "name": "Peter Schräder",
+      "jobTitle": "Genealogist (Trendelburg, Hesse, Germany)",
+      "address": { "@type": "PostalAddress", "addressLocality": "Trendelburg", "addressCountry": "DE" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://charles-research.netlify.app/about.html#jim",
+      "name": "James Gunnis",
+      "jobTitle": "Consulting genealogist"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://charles-research.netlify.app/about.html#schmidt",
+      "name": "Paul A. Schmidt",
+      "jobTitle": "Professional genealogist, AncestryProGenealogists (2020)"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://charles-research.netlify.app/about.html#podoll",
+      "name": "Brian A. Podoll",
+      "jobTitle": "Professional genealogist, AncestryProGenealogists (2020)"
+    }
+  ]
+}
+</script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About this project"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/about.html#article",
+  "headline": "About this project",
+  "url": "https://charles-research.netlify.app/about.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "name": "James Gunnis",
+      "jobTitle": "Consulting genealogist"
+    },
+    {
+      "@type": "Person",
+      "name": "Paul A. Schmidt",
+      "jobTitle": "Professional genealogist, AncestryProGenealogists (2020)"
+    },
+    {
+      "@type": "Person",
+      "name": "Brian A. Podoll",
+      "jobTitle": "Professional genealogist, AncestryProGenealogists (2020)"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-29",
+  "version": "1.1.0",
+  "description": "Who runs the Charles Research project, why, how to get in touch, and how to cite the work."
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+</head>
+<body class="cine-typography">
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700;" onfocus="this.style.left=&#39;8px&#39;;this.style.top=&#39;8px&#39;;" onblur="this.style.left=&#39;-999px&#39;;">Skip to main content</a>
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="about-hero cinema-section-hero">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; About this project</div>
+  <h1>About this project</h1>
+  <div class="sub">Who runs it, why, how to contact us, and how to cite the work.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">This is a descendant-led, source-rigorous transatlantic genealogy investigation. It is not affiliated with any university or genealogical society. All sources are listed; all conclusions are held in the project&rsquo;s explicit Confirmed / Working / Open / Eliminated taxonomy.</p>
+
+<h2 id="authors">Authors &amp; contributors</h2>
+
+<div class="bio-card">
+  <div class="role">Project lead</div>
+  <h3>Jed Johnson</h3>
+  <p>Great-great-grandson of Charles Konzen / Charles Gannsen / Charles Johnson Sr. Initiated the current investigation in August 2025 after the September-2025 discovery of the Charles Sr. portrait by descendant Maximilian J. Responsible for site authorship, the surname-trail analysis, and the U.S.-side records work (NARA, Fold3, FamilySearch, Ancestry, Find a Grave, St. Marcus parish records).</p>
+  <div class="contact-row">
+    Contact: <a href="mailto:jedsjohnson@gmail.com">jedsjohnson@gmail.com</a> &middot; corrections, descendant submissions, and primary-source leads are all welcome &mdash; see <a href="contribute.html">how to contribute</a>.<br>
+    ORCID: pending mint <span class="meta" style="font-size:0.78rem; color:var(--text-muted);">(see <a href="#orcid-pending">note</a>)</span>
+  </div>
+</div>
+
+<div class="bio-card" style="border-left-color:#4a76c8;">
+  <div class="role" style="color:#2a4a8a;">Research collaborator</div>
+  <h3>Peter Schr&auml;der</h3>
+  <p>Independent genealogist based in Trendelburg, Hesse, Germany. Conducts the German-side parish work for the project: <a class="glossary-link" href="glossary.html#g-stammtafel" title="Glossary: Stammtafel">Stammtafel</a> construction in the Trendelburg / Friedrichsfeld / Helmarshausen / Hofgeismar parish complex, Archion register transcription, <a class="glossary-link" href="glossary.html#g-auswanderer-beleg" title="Glossary: Auswanderer-Beleg">Auswanderer-Beleg</a> searches via Hessisches Staatsarchiv Marburg / Arcinsys / <a class="glossary-link" href="glossary.html#g-lagis" title="Glossary: LAGIS">LAGIS</a>. Originator of the &ldquo;Freundburg, <a class="glossary-link" href="glossary.html#g-kurhessen" title="Glossary: Kurhessen">Kurhessen</a>&rdquo; &rarr; <em>Trendelburg</em> phonetic decoding (correspondence with author, 26 February 2026; reaffirmed 6 May 2026).</p>
+  <div class="contact-row">
+    Correspondence is routed via Jed Johnson; please use the address above for first contact.<br>
+    ORCID: pending mint <span class="meta" style="font-size:0.78rem; color:var(--text-muted);">(see <a href="#orcid-pending">note</a>)</span>
+  </div>
+</div>
+
+<div class="bio-card" style="border-left-color:#3a7a4a;">
+  <div class="role" style="color:#2a6a3a;">Consulting genealogist</div>
+  <h3>James Gunnis</h3>
+  <p>Genealogist consulting on the project&rsquo;s German-origin search. Advises on search strategy across the Trendelburg / Deisel / <a class="glossary-link" href="glossary.html#g-kreis" title="Glossary: Kreis Hofgeismar">Kreis Hofgeismar</a> parish complex and is undertaking <strong>on-site archive research in Hesse</strong> for the registers that are <em>not</em> digitised on <a href="https://www.archion.de/" target="_blank" rel="noopener noreferrer">Archion</a> and can only be read in person &mdash; the not-yet-online tier flagged on <a href="search-coverage.html#open">Parish search coverage</a> and <a href="open-questions.html">Open Questions</a> (Heisebeck pre-1845, Liebenau 1835, Sch&ouml;neberg pre-1822, and the wider Kreis-Kassel parishes). Connected with the project through Ancestry (member &ldquo;milfordshores&rdquo;).</p>
+  <div class="contact-row">
+    Correspondence is routed via Jed Johnson; please use the address above for first contact.
+  </div>
+</div>
+
+<div class="bio-card" style="border-left-color:#8a6f63;">
+  <div class="role" style="color:#6e574b;">Commissioned researchers &mdash; AncestryProGenealogists (2020)</div>
+  <h3>Paul A. Schmidt &amp; Brian A. Podoll</h3>
+  <p>Professional genealogists who conducted the original <strong>February&ndash;June 2020</strong> commissioned Hesse research &mdash; the AncestryProGenealogists Research Journal that opened the investigation. They proposed the <strong>Deisel</strong> reading of the marriage record&rsquo;s &ldquo;Deisse,&rdquo; searched the Deisel baptisms (1834&ndash;1841) for the Gonnson / Johnson surname forms, surfaced and ruled out two Konze candidates, and dismissed the Freudenberg / Schierstein reading of &ldquo;Freundburg.&rdquo;</p>
+  <div class="contact-row">
+    Engagement completed 2020; the investigation has been carried forward by the researchers above.
+  </div>
+</div>
+
+<p id="orcid-pending" class="meta" style="font-size:0.82rem; color:var(--text-muted); margin-top:0.4rem;">
+  <strong>ORCID identifiers</strong> are placeholders pending mint. Both authors will register at <a href="https://orcid.org/register" target="_blank" rel="noopener">orcid.org/register</a> and the IDs will be search-replaced through the JSON-LD, this page, and the Zenodo deposit.
+</p>
+
+<h2 id="why">Why this site exists</h2>
+
+<p>Charles never named his exact German parish on any U.S. record. The closest he came was &ldquo;<em>Deisse, Kreis Cassel, <a class="glossary-link" href="glossary.html#g-churhessen" title="Glossary: Churhessen">Churhessen</a></em>&rdquo; on his 1866 marriage register &mdash; phonetically the village of Deisel, in the <a class="glossary-link" href="glossary.html#g-kreis" title="Glossary: Kreis Hofgeismar">Kreis Hofgeismar</a> of the former Electorate of Hesse-Kassel. The specific German baptismal entry recording his birth has never been recovered, despite multi-year searches across every digitised parish register in the surrounding 5&nbsp;km &times; 5&nbsp;km area.</p>
+
+<p>This site exists to (a) make the existing evidence base auditable to other researchers, (b) document each candidate parish that has been searched and what was searched there, and (c) hold open a public locus where descendants can find and contribute to the work. The site replaces ad-hoc PDFs and email threads with a citable, versioned, permanent record.</p>
+
+<h2 id="declared-interests">Declared interests</h2>
+
+<div class="interests-list">
+  <p><strong>Family relationship.</strong> Jed Johnson is a direct descendant of Charles. Where evidence is ambiguous the site notes the ambiguity in the surrounding text rather than collapsing it; the project&rsquo;s working / confirmed / open / eliminated taxonomy is intended to insulate against the descendant&rsquo;s natural pressure toward a tidy answer.</p>
+  <p><strong>Research compensation.</strong> Peter Schr&auml;der is a paid genealogist; his German-side work has been compensated by Jed Johnson on a per-project basis since November 2025.</p>
+  <p><strong>Funding.</strong> No external funding. Archion subscriptions, NARA mail-order fees, and other primary-source costs are paid out of pocket by Jed Johnson.</p>
+</div>
+
+<h2 id="how-to-cite">How to cite this site</h2>
+
+<div class="citation-box">
+  <span class="lbl">Recommended &mdash; NGSQ-style</span>
+<code>Johnson, Jed, with Peter Schr&auml;der and James Gunnis. "Charles Research: A Genealogical Investigation."
+Version 1.1.0, last modified 29 May 2026. https://charles-research.netlify.app/.
+Accessed [DATE OF ACCESS].</code>
+  <span class="lbl">Chicago author-date</span>
+<code>Johnson, Jed, with Peter Schr&auml;der and James Gunnis. 2026. "Charles Research: A Genealogical
+Investigation." Version 1.1.0. Accessed [DATE]. https://charles-research.netlify.app/.</code>
+  <span class="lbl">Plain prose</span>
+<code>Charles Research (v1.1.0, 29 May 2026), by Jed Johnson with Peter Schr&auml;der and James Gunnis,
+accessed [DATE], at https://charles-research.netlify.app/.</code>
+</div>
+
+<p>For the formal one-page summary suitable for footnoting in a journal article, cite the <a href="abstract.html">Abstract</a>. For specific evidence claims, cite the relevant <a href="evidence/index.html">Key Evidence card</a> by its number and date; the <a href="claims-dashboard.html">Claims Dashboard</a> is the canonical inventory of project-level claims with their evidence status. A persistent DOI for the project is in progress (see Zenodo deposit, planned May 2026).</p>
+
+<h2 id="version">Version &amp; updates</h2>
+
+<p>This site is a working document; it changes as the investigation advances. The most recent meaningful update is recorded on the <a href="changelog.html">Changelog</a> and broadcast via the <a href="feed.xml">Atom feed</a>. The current release is <strong>v1.1.0</strong> (<time datetime="2026-05-29">29 May 2026</time>), which adds the <a href="claims-dashboard.html">Claims Dashboard</a>, the Andreas Konze disentanglement section, the Doc&nbsp;A–O crosswalk, and the maintenance harness (canon guard + broken-link check) wired into the deploy gate. The earlier v1.0.0 audit-fix pass that introduced this About page, the shared navigation, and the per-section static pages was completed on 8 May 2026.</p>
+
+<h2 id="rights">Licence</h2>
+
+<p>Text and analysis on this site are licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0</a>. Primary-source images (parish-register scans, NARA pension-file pages, photographs) are reproduced under the rights of the holding archive and remain subject to those archives&rsquo; terms; please contact the holding archive directly for re-use of those images.</p>
+
+</main>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

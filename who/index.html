@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Everyone in the Story — Charles Research</title>
+<link rel="canonical" href="https://charles-research.netlify.app/who/">
+<meta name="description" content="A unified index of every named person in the Charles Gannsen investigation: the immediate Gannsen-Kreichelt family, the seven children, the eleven witnesses who knew Charles in St. Louis, and the candidate-family subjects of the German-side search.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../people/_shared.css?v=20260517-darkfix">
+<style>
+  body { background:#f6f1e7; }
+  main { max-width:1100px; margin:0 auto; padding:1.6rem 1.4rem 4rem; }
+
+  .index-controls {
+    display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
+    background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px;
+    padding:0.7rem 0.9rem; margin-bottom:1.2rem;
+    position:sticky; top:0; z-index:10;
+    box-shadow:0 1px 4px rgba(0,0,0,0.06);
+  }
+  .index-controls label { font-size:0.78rem; color:#5a4a32; font-weight:600; text-transform:uppercase; letter-spacing:0.04em; }
+  #filter-input {
+    flex:1; min-width:200px;
+    font-family:inherit; font-size:0.95rem;
+    padding:0.4rem 0.7rem;
+    background:#fff; border:1px solid #c9a76a; border-radius:3px;
+    color:#2c2620;
+  }
+  #filter-input:focus { outline:none; border-color:#d8b366; box-shadow:0 0 0 3px rgba(212,160,23,0.18); }
+  .filter-chips { display:flex; flex-wrap:wrap; gap:0.3rem; }
+  .filter-chip {
+    font-family:inherit;
+    font-size:0.75rem; font-weight:600;
+    padding:0.32rem 0.7rem;
+    background:#fffaf0; color:#5a4a32;
+    border:1px solid #c9a76a; border-radius:3px;
+    cursor:pointer; transition:all 0.12s;
+  }
+  .filter-chip:hover { background:#f6ebd2; }
+  .filter-chip.active { background:#d8b366; color:#1f1a14; border-color:#8a6420; }
+  #count-readout { font-size:0.78rem; color:#6a5a42; font-style:italic; margin-left:auto; }
+
+  .person-section {
+    margin-bottom:1.4rem; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px;
+    padding:0.9rem 1.1rem;
+  }
+  .person-section > h2 { color:#1f1a14; font-size:1.2rem; margin:0 0 0.4rem; padding-bottom:0.35rem; border-bottom:1px solid #c9a76a; }
+  .person-section > .section-blurb { font-size:0.9rem; color:#5a4a32; margin-bottom:0.6rem; }
+
+  ul.person-list { list-style:none; padding-left:0; margin:0; }
+  ul.person-list li {
+    display:grid;
+    grid-template-columns: minmax(180px, 220px) minmax(150px, 180px) 1fr;
+    gap:0.7rem;
+    padding:0.55rem 0.5rem;
+    border-bottom:1px solid #ede4d0;
+    font-size:0.92rem;
+    align-items:start;
+  }
+  ul.person-list li:last-child { border-bottom:none; }
+  ul.person-list li .name { font-weight:700; color:#2c2620; padding-top:0.05rem; }
+  ul.person-list li .name a { border-bottom:none; }
+  ul.person-list li .name a:hover { color:#74420f; }
+  ul.person-list li .role-tag {
+    display:inline-block;
+    font-size: 0.72rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.05em;
+    padding:3px 7px; border-radius:3px;
+    background:#ede4d0; color:#5a4a32;
+    white-space:normal;
+    line-height:1.3;
+    word-break:break-word;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  ul.person-list li .role-tag.battery { background:#c84a4a; color:#fff; }
+  ul.person-list li .role-tag.witness { background:#d8b366; color:#1f1a14; }
+  ul.person-list li .role-tag.family { background:#5a8a4a; color:#fff; }
+  ul.person-list li .role-tag.child { background:#8a7ac0; color:#fff; }
+  ul.person-list li .role-tag.candidate { background:#7a6a4a; color:#fff; }
+  ul.person-list li .role-tag.eliminated { background:#8a4a4a; color:#fff; }
+  ul.person-list li .role-tag.open { background:#d8b366; color:#1f1a14; }
+  ul.person-list li .role-tag.active { background:#8a7ac0; color:#fff; }
+  ul.person-list li .role-tag.physician { background:#3a5a8a; color:#fff; }
+  ul.person-list li .desc { color:#4a3a22; font-size:0.88rem; line-height:1.45; }
+  ul.person-list li .desc a { color:#8a6420; }
+
+  ul.person-list li.hidden { display:none; }
+  .person-section.empty { display:none; }
+
+  .ancestor-star { color:#d8b366; font-weight:900; }
+
+  @media (max-width: 720px) {
+    ul.person-list li { grid-template-columns: 1fr; gap:0.2rem; padding:0.6rem 0.3rem; }
+    ul.person-list li .role-tag { justify-self:start; }
+  }
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ============================================================
+     Dark-mode overrides — added 10 May 2026.
+     Every hardcoded light box on this page darkens when html
+     has theme-dark (or no theme-light) class.
+     ============================================================ */
+  :root.theme-dark .index-controls,
+  :root:not(.theme-light) .index-controls {
+    background: var(--bg-card, #24201a) !important;
+    border-color: var(--border-medium, #6a5a40) !important;
+  }
+  :root.theme-dark .index-controls label,
+  :root:not(.theme-light) .index-controls label {
+    color: var(--brand-light, #f1cf85) !important;
+  }
+  :root.theme-dark #filter-input,
+  :root:not(.theme-light) #filter-input {
+    background: var(--bg-card-tint, #2c261d) !important;
+    border-color: var(--border-medium, #6a5a40) !important;
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root.theme-dark #filter-input::placeholder,
+  :root:not(.theme-light) #filter-input::placeholder {
+    color: var(--text-muted, #b89c70) !important;
+  }
+  :root.theme-dark .filter-chip,
+  :root:not(.theme-light) .filter-chip {
+    background: var(--bg-card-tint, #2c261d) !important;
+    color: var(--text-body, #e8dfc8) !important;
+    border-color: var(--border-medium, #6a5a40) !important;
+  }
+  :root.theme-dark .filter-chip:hover,
+  :root:not(.theme-light) .filter-chip:hover {
+    background: var(--bg-elevated, #2a2519) !important;
+    border-color: var(--brand, #d8b366) !important;
+  }
+  :root.theme-dark .filter-chip.active,
+  :root:not(.theme-light) .filter-chip.active {
+    background: var(--brand, #d8b366) !important;
+    color: #1f1a14 !important;
+    border-color: var(--brand-dark, #8a6420) !important;
+  }
+  :root.theme-dark #count-readout,
+  :root:not(.theme-light) #count-readout {
+    color: var(--text-muted, #b89c70) !important;
+  }
+
+  :root.theme-dark .person-section,
+  :root:not(.theme-light) .person-section {
+    background: var(--bg-card, #24201a) !important;
+    border-color: var(--border-medium, #6a5a40) !important;
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root.theme-dark .person-section > h2,
+  :root:not(.theme-light) .person-section > h2 {
+    color: var(--text-heading, #f1cf85) !important;
+    border-bottom-color: var(--border-medium, #6a5a40) !important;
+  }
+  :root.theme-dark .person-section > .section-blurb,
+  :root:not(.theme-light) .person-section > .section-blurb {
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root.theme-dark ul.person-list li,
+  :root:not(.theme-light) ul.person-list li {
+    border-bottom-color: var(--border-medium, #6a5a40) !important;
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root.theme-dark ul.person-list li .name,
+  :root:not(.theme-light) ul.person-list li .name {
+    color: var(--text-heading, #f1cf85) !important;
+  }
+  :root.theme-dark ul.person-list li .name a,
+  :root:not(.theme-light) ul.person-list li .name a {
+    color: var(--brand-light, #f1cf85) !important;
+  }
+  :root.theme-dark ul.person-list li .desc,
+  :root:not(.theme-light) ul.person-list li .desc {
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root.theme-dark ul.person-list li .desc a,
+  :root:not(.theme-light) ul.person-list li .desc a {
+    color: var(--brand-light, #f1cf85) !important;
+  }
+  /* The default role-tag has a light-cream background; the colored variants
+     (battery / witness / family / child / candidate / physician etc.) keep
+     their saturated brand colors — those already read on dark. */
+  :root.theme-dark ul.person-list li .role-tag,
+  :root:not(.theme-light) ul.person-list li .role-tag {
+    background: var(--bg-card-tint, #2c261d) !important;
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root.theme-dark ul.person-list li .role-tag.battery,
+  :root:not(.theme-light) ul.person-list li .role-tag.battery { background: #c84a4a !important; color: #fff !important; }
+  :root.theme-dark ul.person-list li .role-tag.witness,
+  :root:not(.theme-light) ul.person-list li .role-tag.witness { background: #d8b366 !important; color: #1f1a14 !important; }
+  :root.theme-dark ul.person-list li .role-tag.family,
+  :root:not(.theme-light) ul.person-list li .role-tag.family { background: #5a8a4a !important; color: #fff !important; }
+  :root.theme-dark ul.person-list li .role-tag.child,
+  :root:not(.theme-light) ul.person-list li .role-tag.child { background: #8a7ac0 !important; color: #fff !important; }
+  :root.theme-dark ul.person-list li .role-tag.candidate,
+  :root:not(.theme-light) ul.person-list li .role-tag.candidate { background: #7a6a4a !important; color: #fff !important; }
+  :root.theme-dark ul.person-list li .role-tag.eliminated,
+  :root:not(.theme-light) ul.person-list li .role-tag.eliminated { background: #8a4a4a !important; color: #fff !important; }
+  :root.theme-dark ul.person-list li .role-tag.open,
+  :root:not(.theme-light) ul.person-list li .role-tag.open { background: #d8b366 !important; color: #1f1a14 !important; }
+  :root.theme-dark ul.person-list li .role-tag.active,
+  :root:not(.theme-light) ul.person-list li .role-tag.active { background: #8a7ac0 !important; color: #fff !important; }
+  :root.theme-dark ul.person-list li .role-tag.physician,
+  :root:not(.theme-light) ul.person-list li .role-tag.physician { background: #3a5a8a !important; color: #fff !important; }
+  </style>
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/who/index.html#article",
+  "headline": "Everyone in the Story",
+  "url": "https://charles-research.netlify.app/who/index.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17",
+  "description": "A unified index of every named person in the Charles Gannsen investigation: the immediate Gannsen-Kreichelt family, the seven children, the eleven witnesses who knew Charles in St. Louis, and the candidate-family subjects of the German-side search."
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+<meta property="og:url" content="https://charles-research.netlify.app/who/index.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="src-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html">← Charles Research</a> &nbsp;/&nbsp; Everyone in the Story</div>
+  <h1>Everyone in the Story</h1>
+  <div class="sub">A single index of every named person in the investigation — the Gannsen-Kreichelt family, Charles's seven children, the eleven St. Louis witnesses, and the candidate-family subjects of the German-side search</div>
+  <div class="meta-row">
+    <span class="pill primary">~80 people · 5 categories · linkable to canonical profiles</span>
+  </div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<div class="index-controls" role="search">
+  <label for="filter-input">Filter</label>
+  <input id="filter-input" type="search" placeholder="Type a name, place, or keyword…" autocomplete="off">
+  <div class="filter-chips" id="filter-chips">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="immediate">Immediate family</button>
+    <button class="filter-chip" data-filter="children">Children</button>
+    <button class="filter-chip" data-filter="witnesses">Witnesses</button>
+    <button class="filter-chip" data-filter="candidates">Candidate families</button>
+    <button class="filter-chip" data-filter="schrader">Schräder charts</button>
+  </div>
+  <span id="count-readout">— people shown</span>
+</div>
+
+<!-- ============ IMMEDIATE FAMILY ============ -->
+<section class="person-section" data-cat="immediate">
+  <h2>Charles &amp; the Gannsen-Kreichelt household</h2>
+  <p class="section-blurb">Charles, his wife Auguste, and her immediate Kreichelt family in St. Louis. The Kreichelts converged with the Gannsens twice over: Auguste's father and brother both served in Battery B alongside Charles before the 1866 wedding.</p>
+  <ul class="person-list">
+    <li>
+      <span class="name">Charles Gannsen</span>
+      <span><span class="role-tag">Subject</span></span>
+      <span class="desc">b. 26 January 1835, Hesse-Cassel · d. 16 December 1903<sup><a href="../index.html#doc-crosswalk" title="Death-date sources: parish burial register (Doc N) reads 16 Dec; death certificate (Doc A) reads 17 Dec — 1-day source discrepancy, see Doc A–O crosswalk and errata #er-2026-05-17-death-burial." style="text-decoration:none; color:var(--brand);">†</a></sup>, St. Louis. Civil War sergeant, Battery B 2nd Missouri Light Artillery. Married Auguste Kreichelt 7 January 1866. <a href="../index.html#charles">→ Charles in America tab</a></span>
+    </li>
+    <li>
+      <span class="name">Auguste Kreichelt</span>
+      <span><span class="role-tag family">Wife</span></span>
+      <span class="desc">Charles's wife. Married at St. Marcus German Evangelical Church 7 January 1866 — eighteen days after his discharge. Mother of seven. FamilySearch <a class="fsn pid" href="https://www.familysearch.org/tree/person/details/LZKV-9F5" target="_blank" rel="noopener noreferrer">LZKV-9F5</a></span>
+    </li>
+    <li>
+      <span class="name">Georg Kreichelt</span>
+      <span><span class="role-tag family">Father-in-law</span></span>
+      <span class="desc">Auguste's father. Battery B veteran. Walks his daughter down the aisle on 7 January 1866. <a href="../index.html#civilwar">→ Civil War tab</a></span>
+    </li>
+    <li>
+      <span class="name">August Kreichelt</span>
+      <span><span class="role-tag family">Brother-in-law</span></span>
+      <span class="desc">Auguste's brother. Battery B veteran. Sponsors Erwin Carl Konsen's 1875 baptism — the surviving Hesse-spelling of the family name.</span>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ THE SEVEN CHILDREN ============ -->
+<section class="person-section" data-cat="children">
+  <h2>The seven children</h2>
+  <p class="section-blurb">Each baptized at St. Marcus German Evangelical Church, St. Louis. Across the seven baptisms the surname spelling drifted through five distinct baptism-register renderings (Gonnson, Gansen, Gonsen, Jansen, Konsen) — the children's-baptism subset of the <a href="../index.html#card1">nine-attestation surname trail</a> that is one of the central pieces of evidence in the surname-variant theory. <a href="../children/index.html">→ Open the Children index</a></p>
+  <ul class="person-list">
+    <li>
+      <span class="name">Friedrich Wilhelm Gonnson</span>
+      <span><span class="role-tag child">Child 1</span></span>
+      <span class="desc">1866–1867. Named for the deposed Elector of Hesse. Died in infancy. <a href="../children/friedrich-wilhelm.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Maria Josephine Gonnson</span>
+      <span><span class="role-tag child">Child 2</span></span>
+      <span class="desc">1868–1890. Died at age 22. <a href="../children/josephine-maria.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Friedrike Catharina Caroline Amalia Gansen</span>
+      <span><span class="role-tag child">Child 3</span></span>
+      <span class="desc">1870–1949. Later "Kate Ruddy". <a href="../children/katherine-carolina.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Auguste Gonsen</span>
+      <span><span class="role-tag child">Child 4</span></span>
+      <span class="desc">1872–1890. Died at age 18. <a href="../children/auguste.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Louise Jansen</span>
+      <span><span class="role-tag child">Child 5</span></span>
+      <span class="desc">1873–1947. Later "Louise Foster". <a href="../children/louise.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Erwin Carl Konsen <span class="ancestor-star">★</span></span>
+      <span><span class="role-tag child">Child 6</span></span>
+      <span class="desc">1875–1950. Later "Charles Johnson Jr." — the surname-preservation evidence. A key child for the German-side investigation: his baptism preserves "Konsen", the closest <em>phonetic</em> American capture to "Konze" (the verbatim Hesse-parish form Konzen appears in his sister Auguste's 1890 death record, as re-read in May 2026). <a href="../children/erwin-carl-konsen.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Bertha Jansen</span>
+      <span><span class="role-tag child">Child 7</span></span>
+      <span class="desc">1880–1959. Baptism surname &ldquo;Jansen&rdquo;; later recorded as &ldquo;Bertha Johnson.&rdquo;<a href="../children/bertha.html">→ Profile</a></span>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ ELEVEN WITNESSES + PHYSICIAN ============ -->
+<section class="person-section" data-cat="witnesses">
+  <h2>People who knew Charles in St. Louis</h2>
+  <p class="section-blurb">Eleven men who swore an affidavit, witnessed a signature, or stood as wedding sponsor for Charles between his Civil War enlistment in 1862 and the Pension Bureau's 1898 family-roster reply — plus his first treating physician. <a href="../people/index.html">→ Open the People index</a></p>
+  <ul class="person-list">
+    <li>
+      <span class="name">Adam Herweck</span>
+      <span><span class="role-tag battery">Battery B · Sgt</span></span>
+      <span class="desc">Senior groomsman at Charles's 1866 wedding. Recruited Charles into Co. B in November–December 1862. Same rank trajectory as Charles. b. 1831 Lampertheim, Hessen. <a href="../people/adam-herweck.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">August Derr</span>
+      <span><span class="role-tag battery">Battery B · 1st Sgt</span></span>
+      <span class="desc">Charles's direct NCO during the 1863 New Madrid station. Two affidavits in 1891. <a href="../people/august-derr.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Christian Meyer</span>
+      <span><span class="role-tag battery">Battery B · Pvt</span></span>
+      <span class="desc">May 1891 affidavit on cannonading and exposure at New Madrid. <a href="../people/christian-meyer.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Henry Niemeier</span>
+      <span><span class="role-tag witness">Pension witness</span></span>
+      <span class="desc">26 years' acquaintance with Charles (since 1865). October 1891 affidavit on deafness and rheumatism. 1300 N. 9th Street. <a href="../people/henry-niemeier.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Henry Stoll</span>
+      <span><span class="role-tag witness">Pension witness</span></span>
+      <span class="desc">Knew Charles since 1867. 29 September 1890 affidavit. 1232 S. 3rd Street. <a href="../people/henry-stoll.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Michael Nolan</span>
+      <span><span class="role-tag witness">Co-worker witness</span></span>
+      <span class="desc">Worked alongside Charles since 1867. October affidavit on rheumatism flare-ups and continuous rupture. <a href="../people/michael-nolan.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Theodore Gottlob Sr. <span class="ancestor-star">★</span></span>
+      <span><span class="role-tag witness">Neighbor · ancestor</span></span>
+      <span class="desc">Charles's next-door neighbor at <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=2409+DeKalb+St+St+Louis+MO" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">2409 DeKalb</a>. 1890 declaration witness. <strong>Jed Johnson's direct ancestor</strong> (FamilySearch <a class="fsn pid" href="https://www.familysearch.org/tree/person/details/KG17-D3H" target="_blank" rel="noopener noreferrer">KG17-D3H</a>). Two ancestral lines converge on the same DeKalb Street block in 1890. <a href="../people/theodore-gottlob.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">John Heitzenberger</span>
+      <span><span class="role-tag witness">Declaration witness</span></span>
+      <span class="desc">Co-witness with Theodore Gottlob on the 1890 detailed declaration. <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=2412+Arsenal+St+St+Louis+MO" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">2412 Arsenal Street</a>. <a href="../people/john-heitzenberger.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">John Hebbeler</span>
+      <span><span class="role-tag witness">Declaration witness</span></span>
+      <span class="desc">Witness on the 9 February 1891 Declaration. 20-year acquaintance. 916 N. 6th Street. <a href="../people/john-hebbeler.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">John P. Thurbecker</span>
+      <span><span class="role-tag witness">Declaration witness</span></span>
+      <span class="desc">Co-witness with John Hebbeler on the 9 February 1891 Declaration. 638 N. 7th Street. <a href="../people/john-thurbecker.html">→ Profile</a></span>
+    </li>
+    <li>
+      <span class="name">Dr. Charles Hess</span>
+      <span><span class="role-tag physician">Physician</span></span>
+      <span class="desc">Charles's first post-war treating physician. Treated him for the rupture and rheumatism after the 1865 discharge. <a href="../people/dr-charles-hess.html">→ Profile</a></span>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ CANDIDATE FAMILIES (German side) ============ -->
+<section class="person-section" data-cat="candidates">
+  <h2>Candidate families investigated (German side)</h2>
+  <p class="section-blurb">Twenty family lines investigated as possible identities for Charles's German parentage. Most have been eliminated through Archion parish-register searches and Schräder cross-checks; three remain open.</p>
+  <ul class="person-list">
+    <li>
+      <span class="name">Stern / Sterne / Kleeburg</span>
+      <span><span class="role-tag active">Active</span></span>
+      <span class="desc">Hofgeismar Jewish families — a candidate line explored under the Jewish-paternal-line inquiry, a thread the project set aside in May 2026. <a href="../family_pages/fam-stern.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Konze / Kontze / Konzen</span>
+      <span><span class="role-tag open">Open</span></span>
+      <span class="desc">Trendelburg &amp; Deisel · Hofgeismar Kirchenkreis. The Konzen surname <em>pool</em> is the project's Working conclusion (May 2026); the specific Konze father / baptism remains Open (Peter Schräder's 12 April 2026 verdict: not a legitimate Konze son). <a href="../family_pages/fam-konze.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Hildebrand</span>
+      <span><span class="role-tag open">Open</span></span>
+      <span class="desc">Deisel · Heisebeck · maternal Konze line + chain migration. <a href="../family_pages/fam-hildebrand.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Naming-variant theory</span>
+      <span><span class="role-tag open">Methodology</span></span>
+      <span class="desc">Toeppe → Deppe · Trendelburg → Freundburg. Methodological framework for surname-spelling drift. <a href="../family_pages/fam-naming.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Other Hessian Jewish families</span>
+      <span><span class="role-tag open">Open</span></span>
+      <span class="desc">Trendelburg · Eberschütz · Hofgeismar — broader sweep tied to the now set-aside Jewish-paternal-line inquiry. <a href="../family_pages/fam-other-jewish.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Bonhagen / Bodenhausen</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Deisel · pastor's-shorthand surname theory. <a href="../family_pages/fam-bonhagen.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Branson / Brahsuhn / Frisse / Bauer</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Wehrden / Schönhagen / Amelunxen / Werden. <a href="../family_pages/fam-branson.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">"Carolina Philippine" hypothesis</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Herwig daughter · early working hypothesis. <a href="../family_pages/fam-carolina.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Gans / Segelbaum (Jewish)</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Meimbressen / Grebenstein · Hofgeismar Kirchenkreis. <a href="../family_pages/fam-gans-jewish.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Gans / Lippoldsberg (Christian)</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Lippoldsberg → married into Deisel. Johann Daniel × Karoline Haake. <a href="../family_pages/fam-gans-lipp.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Grandjot</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Schöneberg · Carlsdorf · French Huguenot. <a href="../family_pages/fam-grandjot.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Herwig</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Trendelburg → Massachusetts (1854). <a href="../family_pages/fam-herwig.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Hofeditz</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Konze in-laws · Trendelburg / Deisel. <a href="../family_pages/fam-hofeditz.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Hund</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Trendelburg · baptism #125. <a href="../family_pages/fam-hund.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Janson</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Hofgeismar (adjacent Deisel). <a href="../family_pages/fam-janson.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Köster &amp; Schildknecht</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Konze daughters who married out · Deisel. <a href="../family_pages/fam-koster.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Lucas</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Trendelburg · February 1835 · illegitimate. <a href="../family_pages/fam-lucas.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Person / "French Count"</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Wehrden · French aristocratic-origin theory · Bad Nauheim probate. <a href="../family_pages/fam-person.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">Quentin</span>
+      <span><span class="role-tag eliminated">Eliminated (mostly)</span></span>
+      <span class="desc">Hofgeismar Kirchenkreis · Hunter / Mayor lineage. <em>Reactivated 1 May 2026 with the Cincinnati 1860 Eliza Quentin lead — see "What's new" on Overview tab.</em> <a href="../family_pages/fam-quentin.html">→ Family page</a></span>
+    </li>
+    <li>
+      <span class="name">"Karl"-firstname Deisel emigrants (Steitz)</span>
+      <span><span class="role-tag eliminated">Eliminated</span></span>
+      <span class="desc">Steitz · Hartmann · Meier Meierhof · Karl Heere — process of elimination. <a href="../family_pages/fam-steitz.html">→ Family page</a></span>
+    </li>
+  </ul>
+</section>
+
+<!-- ============ PETER SCHRÄDER'S CHARTS ============ -->
+<section class="person-section" data-cat="schrader">
+  <h2>Peter Schräder's chart subjects</h2>
+  <p class="section-blurb">Six compiled-chart subjects sent by German genealogist Peter Schräder during the February–April 2026 correspondence. Each chart is a single-source reference for the named family or topic.</p>
+  <ul class="person-list">
+    <li>
+      <span class="name">Bonhagen Family chart</span>
+      <span><span class="role-tag candidate">Schräder chart</span></span>
+      <span class="desc">Ludwig Bonhagen × Katharina Elisabeth Leimbach, Deisel. Nine children incl. Wilhelm Heinrich (b. 24 Jan 1835). <a href="../sources/peter-bonhagen.html">→ Chart viewer</a></span>
+    </li>
+    <li>
+      <span class="name">Person Family chart</span>
+      <span><span class="role-tag candidate">Schräder chart</span></span>
+      <span class="desc">Wehrden line — investigated under the French aristocratic-origin theory. <a href="../sources/peter-person.html">→ Chart viewer</a></span>
+    </li>
+    <li>
+      <span class="name">Haake / Haacke Family chart</span>
+      <span><span class="role-tag candidate">Schräder chart</span></span>
+      <span class="desc">Margin family — Johann Daniel Gans's wife was a Haake. <a href="../sources/peter-haake.html">→ Chart viewer</a></span>
+    </li>
+    <li>
+      <span class="name">Gans Family in Meimbressen chart</span>
+      <span><span class="role-tag candidate">Schräder chart</span></span>
+      <span class="desc">Meimbressen / Grebenstein — Hofgeismar Kirchenkreis. <a href="../sources/peter-gans-meimbressen.html">→ Chart viewer</a></span>
+    </li>
+    <li>
+      <span class="name">Jewish Citizens of Trendelburg, 1740</span>
+      <span><span class="role-tag candidate">Schräder chart</span></span>
+      <span class="desc">Earliest documented Jewish residents of Trendelburg — documented for the now set-aside Jewish-paternal-line inquiry. <a href="../sources/peter-jewish-citizen-1740.html">→ Chart viewer</a></span>
+    </li>
+    <li>
+      <span class="name">Jewish Graveyard at Trendelburg</span>
+      <span><span class="role-tag candidate">Schräder chart</span></span>
+      <span class="desc">Identified gravestones at the Trendelburg Jewish cemetery. <a href="../sources/peter-friedhof-trendelburg.html">→ Chart viewer</a></span>
+    </li>
+  </ul>
+</section>
+
+<footer class="back-nav">
+  <a href="../index.html">← Site home</a>
+  <a href="../people/index.html">People who knew Charles</a>
+  <a href="../children/index.html">The Seven Children</a>
+  <a href="../sources/pension-file.html">Pension File viewer</a>
+</footer>
+
+</main>
+
+<script>
+  // Filter & search
+  const input = document.getElementById('filter-input');
+  const chips = document.querySelectorAll('.filter-chip');
+  const sections = document.querySelectorAll('.person-section');
+  const allItems = document.querySelectorAll('ul.person-list li');
+  const countReadout = document.getElementById('count-readout');
+  let activeCategory = 'all';
+  let activeQuery = '';
+
+  function applyFilter() {
+    const q = activeQuery.trim().toLowerCase();
+    let shown = 0;
+    sections.forEach(sec => {
+      const cat = sec.dataset.cat;
+      const catVisible = (activeCategory === 'all' || activeCategory === cat);
+      let anyShown = false;
+      sec.querySelectorAll('li').forEach(li => {
+        let visible = catVisible;
+        if (visible && q) {
+          visible = li.textContent.toLowerCase().includes(q);
+        }
+        li.classList.toggle('hidden', !visible);
+        if (visible) { anyShown = true; shown++; }
+      });
+      sec.classList.toggle('empty', !anyShown);
+    });
+    countReadout.textContent = shown + ' people shown';
+  }
+
+  input.addEventListener('input', e => { activeQuery = e.target.value; applyFilter(); });
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeCategory = chip.dataset.filter;
+      applyFilter();
+    });
+  });
+
+  applyFilter();
+</script>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

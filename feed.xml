@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US">
+  <title>Charles Research</title>
+  <subtitle>A genealogical investigation by Jed Johnson with Peter Schräder — every significant finding, transcription, identification, and structural change.</subtitle>
+  <link href="https://charles-research.netlify.app/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://charles-research.netlify.app/" rel="alternate" type="text/html"/>
+  <id>https://charles-research.netlify.app/</id>
+  <updated>2026-05-17T00:00:00Z</updated>
+  <icon>https://charles-research.netlify.app/favicon.svg</icon>
+  <logo>https://charles-research.netlify.app/assets/figures/og-card.svg</logo>
+  <rights>© Jed Johnson, 2025–2026. Underlying research facts are public domain. Original prose all rights reserved.</rights>
+  <author>
+    <name>Jed Johnson</name>
+  </author>
+  <contributor>
+    <name>Peter Schräder</name>
+  </contributor>
+
+  <entry>
+    <title>Audit-fix pass — content reconciliation, SPA static mirrors, SEO/a11y/perf sweep</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-17:audit-fix-pass</id>
+    <updated>2026-05-17T00:00:00Z</updated>
+    <published>2026-05-17T00:00:00Z</published>
+    <category term="structure"/>
+    <category term="cleanup"/>
+    <summary type="html">A multi-phase reconciliation pass following the May 16 site audit: surname trail standardised to "seven distinct American spellings across eight independent attestations"; 1880 census Jansen/Nollau conflation corrected (Jansen is the 1880 baptism by Pastor Nollau; the census recorded Gonson); the 6 children pages' "geb Konzen" propagated to "geb Konsen" per the May 2026 errata; bibliography pension-affiant list corrected (7 affiants, Herweck moved to wedding witness); abstract's "13 candidate families" propagated across the site; 12 SPA tab redirect stubs replaced with real static pages carrying per-page Article JSON-LD and OG cards; 149 pages gained BreadcrumbList JSON-LD; ImageMagick re-encoded the portrait to WebP (1.6 MB → 344 KB); all imgs gained width/height + lazy-loading; 1.6 GB _deploy_netlify mirror removed; sitemap pollution (assets/* entries, redirect-stub canonicals) cleaned. The Reference dropdown split into Reference (researcher) + About (descendant) groups, propagated across all 173 standalone pages. Mobile nav now scrolls horizontally instead of wrapping to three rows.</summary>
+  </entry>
+
+  <entry>
+    <title>Site rebuild pass — Methodology, Abstract, FAQ, Bibliography, Visualize hub, four new graphics</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-07:rebuild</id>
+    <updated>2026-05-07T22:00:00Z</updated>
+    <published>2026-05-07T18:00:00Z</published>
+    <category term="structure"/>
+    <summary type="html">A site-wide professionalisation pass: dedicated Methodology and Open Questions pages, a formal Abstract and Bibliography, a reader-friendly FAQ, a Visualize hub with four hand-built diagrams (life timeline, surname trail, candidate funnel, Hessian parish map with Leaflet), a Hesse-Kassel regional context essay, plus 404 page, sitemap.xml, robots.txt, JSON-LD, and a print stylesheet.</summary>
+  </entry>
+
+  <entry>
+    <title>★★★ Project conclusion — Charles's surname is concluded as KONZEN</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-04:konzen-conclusion</id>
+    <updated>2026-05-04T23:30:00Z</updated>
+    <published>2026-05-04T23:30:00Z</published>
+    <category term="confirmed"/>
+    <category term="major"/>
+    <summary type="html">Following Auguste Kreichelt's 1896 St. Marcus death record reading "Auguste Conson" — recorded by Pastor Eilt Heeren Eilts with Charles himself as the surviving informant — the project assembles a six-distinct-rendering surname-trail across five independent scribes. Project convention going forward: "Charles Konzen" for German-side identity; "Charles Gannsen / Johnson" for U.S.-life references. See Card 1 of Key Evidence for the full convergent-evidence argument.</summary>
+  </entry>
+
+  <entry>
+    <title>★★★ Daughter Auguste's 1890 death record reads "Auguste Somers geb Konsen"</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-05:konsen-attestation-2</id>
+    <updated>2026-05-05T12:00:00Z</updated>
+    <published>2026-05-05T12:00:00Z</published>
+    <category term="confirmed"/>
+    <summary type="html">Re-examination of the 1890 death record (FamilySearch L5N2-M8Y) confirms the primary-entry line reads Konsen — the same Hessian -en form Pastor Hoffmann recorded for Erwin Carl on his 1875 St. Marcus baptism. Konsen is now attested twice, fifteen years apart, by two different scribes — strengthening the linguistic-time-capsule reading.</summary>
+  </entry>
+
+  <entry>
+    <title>1870 U.S. Census search for Charles &amp; Auguste — household not located</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-04:1870-census-not-found</id>
+    <updated>2026-05-04T20:00:00Z</updated>
+    <published>2026-05-04T20:00:00Z</published>
+    <category term="not-found"/>
+    <summary type="html">A targeted 1870 census sweep ran in three passes: located Georg Kreichelt's household at St. Louis Ward 03 (mistranscribed as "Reichel"); walked 10 consecutive census images around the Kreichelts (~80 households) without locating Charles &amp; Auguste. Strongest hypothesis: the household was missed by the 1870 enumerator during the address change between 1518 South 7th Street (1865-1869) and 718 Gates Avenue (1871).</summary>
+  </entry>
+
+  <entry>
+    <title>★★ Johannes Grandjot's 1855 emigration documented end-to-end</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-04:grandjot-1855</id>
+    <updated>2026-05-04T15:00:00Z</updated>
+    <published>2026-05-04T15:00:00Z</published>
+    <category term="confirmed"/>
+    <summary type="html">Carl Ludwig Grandjot's elder brother Johannes Grandjot (b. 14 Sep 1828 Schöneberg) — known from Peter's chart as the only emigrant of the four Grandjot brothers — has both sides of his Atlantic crossing now corroborated. Bremen → NYC, 25 September 1855, traveling with wife Lisette.</summary>
+  </entry>
+
+  <entry>
+    <title>★★★ Carl Louis Herwig located in the U.S. — married Catherine Sharda 6 Oct 1855 Plymouth, Massachusetts</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-03:herwig-plymouth</id>
+    <updated>2026-05-03T22:00:00Z</updated>
+    <published>2026-05-03T22:00:00Z</published>
+    <category term="confirmed"/>
+    <summary type="html">Pivoting from the groom side to the bride side cracked open the long-cold Carl Louis Herwig trail. A direct search for his FS-recorded wife Catherine Sharda returned a 6 October 1855 Plymouth, MA marriage record indexed in two independent Ancestry collections. Marriage age 24 in October 1855 places groom's birth in November 1830 — Carl Louis was born 27 Nov 1830 Trendelburg.</summary>
+  </entry>
+
+  <entry>
+    <title>★★★★ Theodore Gottlob Sr. confirmed as Civil War veteran — Sgt., Co. A, 9th Illinois Infantry</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-03:gottlob-veteran</id>
+    <updated>2026-05-03T21:00:00Z</updated>
+    <published>2026-05-03T21:00:00Z</published>
+    <category term="confirmed"/>
+    <summary type="html">The cryptic "1893 Leavenworth Kansas" event on Theodore Gottlob's profile is his admission to the National Home for Disabled Volunteer Soldiers. Two enlistments documented. Pension $15/month for rheumatism "since the war" — same primary disability as Charles. Adds Theodore as the sixth confirmed Civil War veteran in Charles's pension witness pool.</summary>
+  </entry>
+
+  <entry>
+    <title>★★★★ Cemetery cross-reference — Charles AND Jacob Reck both buried at Old Saint Marcus</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-03:reck-cemetery</id>
+    <updated>2026-05-03T19:00:00Z</updated>
+    <published>2026-05-03T19:00:00Z</published>
+    <category term="confirmed"/>
+    <summary type="html">Jacob Reck — husband of the open-ID 1868 baptism sponsor Josephine "von Delian" — confirmed buried at Old Saint Marcus Cemetery per Find a Grave Memorial #249141012 with a German Westliche Post obituary (30 May 1898). Charles is also buried there (Burial #3393, 19 Dec 1903) — five years apart, in the same parish-circle cemetery.</summary>
+  </entry>
+
+  <entry>
+    <title>★★ New themed essay — The Pension Mutual-Aid Network</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-03:pension-mutual-aid</id>
+    <updated>2026-05-03T17:00:00Z</updated>
+    <published>2026-05-03T17:00:00Z</published>
+    <category term="confirmed"/>
+    <summary type="html">Charles's 1891 pension award reads as a coordinated mutual-aid filing run by Claim Agent Fred. W. Fout. Of the six personal witnesses, four were Missouri Light Artillery veterans. Narrative phrasings recur word-for-word across affidavits — a fingerprint of the agent's drafting hand.</summary>
+  </entry>
+
+  <entry>
+    <title>★★★ Firstborn timeline pinned to the day — 20 June 1866 birth · 23 June 1866 Elector deposed · 2 September 1866 christening</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-03:elector-baptism</id>
+    <updated>2026-05-03T14:00:00Z</updated>
+    <published>2026-05-03T14:00:00Z</published>
+    <category term="confirmed"/>
+    <summary type="html">Friedrich Wilhelm Gonnson's exact dates confirmed: born 20 June 1866, christened 2 September 1866. The Elector Friedrich Wilhelm I was transferred as a prisoner to Stettin on 23 June 1866 — three days after the baby was born. Sponsors Friedrich Wilhelm Pillmann and Wilhelmina Ebeling formed a matched pair that registered the deposed Elector's name in the German-Evangelical record at the precise moment the Electorate ceased to exist.</summary>
+  </entry>
+
+  <entry>
+    <title>★★★ Sponsor pattern strongly suggests Charles immigrated alone</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-05" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-05-02:immigrated-alone</id>
+    <updated>2026-05-02T12:00:00Z</updated>
+    <published>2026-05-02T12:00:00Z</published>
+    <category term="working"/>
+    <summary type="html">Across the seven Charles &amp; Auguste baptisms at St. Marcus (1866–1880), not a single named sponsor is a documented blood relative of Charles. Every kin sponsor traces to Auguste's Kreichelt-Albrecht-Pillmann-Mincke side. The structural-convention reading is hard to escape: Charles likely immigrated alone in 1859, leaving German family behind.</summary>
+  </entry>
+
+  <entry>
+    <title>★ Trendelburg Register 220108 alphabetical index — Konze, Johann Friedrich Wilhelm — Seite 243</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2026-04" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2026-04-17:trendelburg-seite-243</id>
+    <updated>2026-04-17T12:00:00Z</updated>
+    <published>2026-04-17T12:00:00Z</published>
+    <category term="confirmed"/>
+    <summary type="html">The first Konze father-surname baptism confirmed in post-1831 Trendelburg. The "243" is a Seite page number; Session 20 is executing the Seite 243 transcription. Image-to-Seite ratio for Register 220108 fully documented (image = 1375 + option).</summary>
+  </entry>
+
+  <entry>
+    <title>★★★ Charles Sr. portrait recovered — Louis Roth studio, ca. 1896–1903</title>
+    <link href="https://charles-research.netlify.app/changelog.html#2025" rel="alternate" type="text/html"/>
+    <id>tag:charles-research.netlify.app,2025-09-21:portrait</id>
+    <updated>2025-09-21T12:00:00Z</updated>
+    <published>2025-09-21T12:00:00Z</published>
+    <category term="confirmed"/>
+    <summary type="html">Discovered by descendant Maximilian J. in a moving box in Independence, MO, while hanging family photos. Shared with Jed Johnson via email 18 September 2025; historical context (studio operated 1890–1907; photograph dated between Auguste's 1896 death and Charles's 1903 death) established 21 September 2025. The first known photograph of Charles.</summary>
+  </entry>
+
+</feed>

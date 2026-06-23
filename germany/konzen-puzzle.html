@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>The KONZEN Puzzle — Charles Konzen</title>
+<link rel="canonical" href="https://charles-research.netlify.app/germany/konzen-puzzle.html">
+<link rel="stylesheet" href="_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  /* Inherit needed styles for SVG/maps/timeline from main site */
+  .map-svg-wrap { overflow-x:auto; border:1px solid var(--border-light, #d8c8a8); border-radius:4px; background:var(--bg-card-tint, #f1f3e8); padding:0.5rem; margin:0.8rem 0; }
+  .map-svg-wrap svg { display:block; max-width:100%; height:auto; }
+  .grid-2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:0.8rem; }
+  .card { background:var(--bg-card, #fffaf0); border:1px solid var(--border-light, #d8c8a8); border-left:4px solid #4a6e34; border-radius:4px; padding:0.9rem 1.1rem; margin-bottom:0.8rem; color:var(--text-body, #2c2620); }
+  .card h3, .card h4 { color:var(--text-strong, #3a2f1e); margin-top:0; margin-bottom:0.4rem; padding:0; border:none; }
+  .card.confirmed { border-left-color:#4a6e34; }
+  .card.hypothesis { border-left-color:#d8b366; background:var(--bg-card-tint, #fffaee); }
+  .card.accent { background:var(--bg-card, #fffaf0); border:1px solid #4a6e34; border-left:4px solid #4a6e34; }
+  /* Dark-mode overrides for the inline cards above (handles toggle-to-dark on light OS) */
+  :root.theme-dark .map-svg-wrap { background:var(--bg-card-tint, #2c261d); border-color:var(--border-medium, #6a5a40); }
+  :root.theme-dark .card { background:var(--bg-card, #24201a); border-color:var(--border-medium, #6a5a40); color:var(--text-body, #e8dfc8); }
+  :root.theme-dark .card h3, :root.theme-dark .card h4 { color:var(--text-heading, #f1cf85); }
+  :root.theme-dark .card.hypothesis { background:var(--bg-card-tint, #2c261d); }
+  :root.theme-dark .card.accent { background:var(--bg-card, #24201a); }
+  .badge { display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:3px 10px; border-radius:3px; }
+  .badge.confirmed { background:#4a6e34; color:#fff; }
+  .badge.hypothesis { background:#d8b366; color:#1f1a14; }
+  .badge.context { background:#2c4a1c; color:#fff; }
+  .pl-list-tight { padding-left:1.4rem; }
+  .pl-list-tight li { margin-bottom:0.3rem; font-size:0.92rem; line-height:1.5; }
+  .small { font-size:0.85rem; }
+  .mt-tight { margin-top:0.4rem; }
+  .mb-0 { margin-bottom:0; }
+  .fsn { background:rgba(212,160,23,0.08); padding:0 2px; border-radius:2px; }
+  .fsn.pid { background:rgba(74,118,200,0.12); }
+  /* Hesse political timeline */
+  .hesse-timeline { display:flex; flex-direction:column; gap:0.7rem; margin:0.8rem 0; }
+  .ht-row { display:grid; grid-template-columns:130px 110px 1fr; gap:0.8rem; background:var(--bg-card, #fffaf0); border:1px solid var(--border-light, #d8c8a8); border-radius:6px; padding:0.7rem 1rem; align-items:start; }
+  .ht-row.pivot { border-left:4px solid #c84a4a; }
+  .ht-flag { display:flex; flex-direction:column; align-items:center; }
+  .ht-flag img { width:120px; height:auto; border:1px solid #6a5a42; }
+  .ht-flag-cap { font-size:0.72rem; color:var(--text-meta, #5a4a32); text-align:center; margin-top:0.25rem; line-height:1.25; }
+  .ht-when { font-family:'SF Mono',Menlo,Consolas,monospace; font-size:0.82rem; color:#2c4a1c; font-weight:700; padding-top:0.2rem; }
+  .ht-body h4 { font-size:1.05rem; margin:0 0 0.3rem; padding:0; border:none; color:var(--text-strong, #3a2f1e); }
+  .ht-body h5 { font-size:0.9rem; margin:0 0 0.3rem; }
+  .ht-body p { margin:0 0 0.4rem; }
+  .ht-links { font-size:0.78rem; color:var(--text-meta, #6a5a42); }
+  :root.theme-dark .ht-row { background:var(--bg-card, #24201a); border-color:var(--border-medium, #6a5a40); }
+  :root.theme-dark .ht-when { color:var(--brand-light, #b8e0a4); }
+  :root.theme-dark .ht-body h4 { color:var(--text-heading, #f1cf85); }
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Charles Research">
+  <meta property="og:title" content="The KONZEN Puzzle — Charles Konzen">
+  <meta property="og:description" content="The 1890 St. Marcus death record of Charles's daughter Auguste reads KONZEN — the single American attestation of the full Hessian z-form documented in the Trendelburg parish complex since 1773. The 1875 Konsen baptism is its phonetic-s sibling. Together the two records bracket the surname trail with K-initial forms, fifteen years apart.">
+  <meta property="og:url" content="https://charles-research.netlify.app/germany/konzen-puzzle.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/germany.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/germany.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The KONZEN Puzzle — Charles Konzen">
+  <meta name="twitter:description" content="The 1890 St. Marcus death record of Charles's daughter Auguste reads KONZEN — the single American attestation of the full Hessian z-form documented in the Trendelburg parish complex since 1773.">
+  <meta name="description" content="The 1890 St. Marcus death record of Charles's daughter Auguste reads KONZEN — the single American attestation of the full Hessian z-form documented in the Trendelburg parish complex since 1773. The 1875 Konsen baptism is its phonetic-s sibling. Together the two records bracket the surname trail with K-initial forms, fifteen years apart.">
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<style id="dark-boxes-override">
+  /* Box backgrounds — dark-mode override v6 (10 May 2026). Only applies in dark mode;
+     light mode users see the page's original cream cards. */
+  :root:not(.theme-light) .summary-card, :root.theme-dark .summary-card,
+  :root:not(.theme-light) .child-card, :root.theme-dark .child-card,
+  :root:not(.theme-light) .child-card.accent, :root.theme-dark .child-card.accent,
+  :root:not(.theme-light) .child-card.died-young, :root.theme-dark .child-card.died-young,
+  :root:not(.theme-light) .friedrich-callout, :root.theme-dark .friedrich-callout,
+  :root:not(.theme-light) .card, :root.theme-dark .card,
+  :root:not(.theme-light) .card.accent, :root.theme-dark .card.accent,
+  :root:not(.theme-light) .hypothesis, :root.theme-dark .hypothesis,
+  :root:not(.theme-light) .ht-row, :root.theme-dark .ht-row,
+  :root:not(.theme-light) .tab-open-q, :root.theme-dark .tab-open-q,
+  :root:not(.theme-light) .map-legend, :root.theme-dark .map-legend,
+  :root:not(.theme-light) .ge-map-legend, :root.theme-dark .ge-map-legend,
+  :root:not(.theme-light) .ge-contribute, :root.theme-dark .ge-contribute,
+  :root:not(.theme-light) .ge-pullquote, :root.theme-dark .ge-pullquote,
+  :root:not(.theme-light) .ge-surname-card, :root.theme-dark .ge-surname-card,
+  :root:not(.theme-light) .ge-visit-card, :root.theme-dark .ge-visit-card,
+  :root:not(.theme-light) .ge-metrics, :root.theme-dark .ge-metrics,
+  :root:not(.theme-light) .ge-hook, :root.theme-dark .ge-hook,
+  :root:not(.theme-light) .konze-status-banner, :root.theme-dark .konze-status-banner,
+  :root:not(.theme-light) .konzen-tag, :root.theme-dark .konzen-tag,
+  :root:not(.theme-light) .embed-frame, :root.theme-dark .embed-frame,
+  :root:not(.theme-light) .tl-event, :root.theme-dark .tl-event,
+  :root:not(.theme-light) .tl-event.life, :root.theme-dark .tl-event.life,
+  :root:not(.theme-light) .tl-event.context, :root.theme-dark .tl-event.context,
+  :root:not(.theme-light) .person-card, :root.theme-dark .person-card,
+  :root:not(.theme-light) .actor-card, :root.theme-dark .actor-card,
+  :root:not(.theme-light) .doc-card, :root.theme-dark .doc-card,
+  :root:not(.theme-light) .witness-card, :root.theme-dark .witness-card,
+  :root:not(.theme-light) .posting-card, :root.theme-dark .posting-card,
+  :root:not(.theme-light) .cw-summary-card, :root.theme-dark .cw-summary-card,
+  :root:not(.theme-light) .cw-callout, :root.theme-dark .cw-callout {
+    background: var(--bg-card, #24201a) !important;
+    background-image: none !important;
+    border-color: var(--border-light, #6a5a40) !important;
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root:not(.theme-light) .ge-asof, :root.theme-dark .ge-asof,
+  :root:not(.theme-light) .cite-inline, :root.theme-dark .cite-inline {
+    background: var(--bg-card-tint, #2c261d) !important;
+    color: var(--brand-light, #f1cf85) !important;
+    border-color: var(--border-medium, #6a5a40) !important;
+  }
+  :root:not(.theme-light) .child-card:hover, :root.theme-dark .child-card:hover,
+  :root:not(.theme-light) .cw-tile:hover, :root.theme-dark .cw-tile:hover,
+  :root:not(.theme-light) .tl-event:hover, :root.theme-dark .tl-event:hover,
+  :root:not(.theme-light) .card:hover, :root.theme-dark .card:hover,
+  :root:not(.theme-light) .person-card:hover, :root.theme-dark .person-card:hover {
+    background: var(--bg-card-tint, #2c261d) !important;
+    background-image: none !important;
+  }
+  :root:not(.theme-light) .summary-card .stats .stat, :root.theme-dark .summary-card .stats .stat {
+    background: rgba(0, 0, 0, 0.25) !important;
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root:not(.theme-light) .summary-card *, :root.theme-dark .summary-card *,
+  :root:not(.theme-light) .child-card *, :root.theme-dark .child-card *,
+  :root:not(.theme-light) .friedrich-callout *, :root.theme-dark .friedrich-callout *,
+  :root:not(.theme-light) .card *, :root.theme-dark .card *,
+  :root:not(.theme-light) .hypothesis *, :root.theme-dark .hypothesis *,
+  :root:not(.theme-light) .ht-row *, :root.theme-dark .ht-row *,
+  :root:not(.theme-light) .tab-open-q *, :root.theme-dark .tab-open-q *,
+  :root:not(.theme-light) .map-legend *:not(.swatch), :root.theme-dark .map-legend *:not(.swatch),
+  :root:not(.theme-light) .ge-map-legend *:not(.swatch), :root.theme-dark .ge-map-legend *:not(.swatch),
+  :root:not(.theme-light) .ge-contribute *, :root.theme-dark .ge-contribute *,
+  :root:not(.theme-light) .ge-pullquote *, :root.theme-dark .ge-pullquote *,
+  :root:not(.theme-light) .ge-surname-card *, :root.theme-dark .ge-surname-card *,
+  :root:not(.theme-light) .ge-visit-card *, :root.theme-dark .ge-visit-card *,
+  :root:not(.theme-light) .ge-metrics *, :root.theme-dark .ge-metrics *,
+  :root:not(.theme-light) .ge-hook *, :root.theme-dark .ge-hook *,
+  :root:not(.theme-light) .konze-status-banner *, :root.theme-dark .konze-status-banner *,
+  :root:not(.theme-light) .embed-frame *, :root.theme-dark .embed-frame *,
+  :root:not(.theme-light) .tl-event *, :root.theme-dark .tl-event *,
+  :root:not(.theme-light) .person-card *, :root.theme-dark .person-card *,
+  :root:not(.theme-light) .witness-card *, :root.theme-dark .witness-card *,
+  :root:not(.theme-light) .posting-card *, :root.theme-dark .posting-card *,
+  :root:not(.theme-light) .cw-summary-card *, :root.theme-dark .cw-summary-card *,
+  :root:not(.theme-light) .cw-callout *, :root.theme-dark .cw-callout * {
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root:not(.theme-light) .hessian-original-cap, :root.theme-dark .hessian-original-cap {
+    background: var(--bg-card-tint, #2c261d) !important;
+    color: var(--text-body, #e8dfc8) !important;
+  }
+  :root:not(.theme-light) .summary-card h2, :root:not(.theme-light) .summary-card h3, :root:not(.theme-light) .summary-card h4, :root:not(.theme-light) .summary-card strong,
+  :root.theme-dark .summary-card h2, :root.theme-dark .summary-card h3, :root.theme-dark .summary-card h4, :root.theme-dark .summary-card strong,
+  :root:not(.theme-light) .child-card strong, :root.theme-dark .child-card strong,
+  :root:not(.theme-light) .friedrich-callout strong, :root.theme-dark .friedrich-callout strong,
+  :root:not(.theme-light) .card strong, :root.theme-dark .card strong,
+  :root:not(.theme-light) .card h2, :root:not(.theme-light) .card h3, :root:not(.theme-light) .card h4,
+  :root.theme-dark .card h2, :root.theme-dark .card h3, :root.theme-dark .card h4,
+  :root:not(.theme-light) .hypothesis strong, :root.theme-dark .hypothesis strong,
+  :root:not(.theme-light) .ge-metrics .num, :root.theme-dark .ge-metrics .num,
+  :root:not(.theme-light) .ge-pullquote strong, :root.theme-dark .ge-pullquote strong,
+  :root:not(.theme-light) .konze-status-banner strong, :root.theme-dark .konze-status-banner strong,
+  :root:not(.theme-light) .tl-event strong, :root.theme-dark .tl-event strong,
+  :root:not(.theme-light) .tl-event .when, :root.theme-dark .tl-event .when,
+  :root:not(.theme-light) .person-card h2, :root:not(.theme-light) .person-card h3, :root:not(.theme-light) .person-card h4, :root:not(.theme-light) .person-card strong,
+  :root.theme-dark .person-card h2, :root.theme-dark .person-card h3, :root.theme-dark .person-card h4, :root.theme-dark .person-card strong,
+  :root:not(.theme-light) .witness-card strong, :root.theme-dark .witness-card strong,
+  :root:not(.theme-light) .posting-card strong, :root.theme-dark .posting-card strong,
+  :root:not(.theme-light) .cw-summary-card strong, :root.theme-dark .cw-summary-card strong,
+  :root:not(.theme-light) .cw-callout strong, :root.theme-dark .cw-callout strong {
+    color: var(--text-heading, #f1cf85) !important;
+  }
+  :root:not(.theme-light) .summary-card a, :root.theme-dark .summary-card a,
+  :root:not(.theme-light) .child-card a, :root.theme-dark .child-card a,
+  :root:not(.theme-light) .friedrich-callout a, :root.theme-dark .friedrich-callout a,
+  :root:not(.theme-light) .card a, :root.theme-dark .card a,
+  :root:not(.theme-light) .hypothesis a, :root.theme-dark .hypothesis a,
+  :root:not(.theme-light) .tab-open-q a, :root.theme-dark .tab-open-q a,
+  :root:not(.theme-light) .tl-event a, :root.theme-dark .tl-event a,
+  :root:not(.theme-light) .ge-contribute a, :root.theme-dark .ge-contribute a,
+  :root:not(.theme-light) .ge-surname-card a, :root.theme-dark .ge-surname-card a,
+  :root:not(.theme-light) .ge-visit-card a, :root.theme-dark .ge-visit-card a,
+  :root:not(.theme-light) .ge-pullquote a, :root.theme-dark .ge-pullquote a,
+  :root:not(.theme-light) .konze-status-banner a, :root.theme-dark .konze-status-banner a,
+  :root:not(.theme-light) .person-card a, :root.theme-dark .person-card a,
+  :root:not(.theme-light) .witness-card a, :root.theme-dark .witness-card a,
+  :root:not(.theme-light) .posting-card a, :root.theme-dark .posting-card a,
+  :root:not(.theme-light) .cw-summary-card a, :root.theme-dark .cw-summary-card a,
+  :root:not(.theme-light) .cw-callout a, :root.theme-dark .cw-callout a {
+    color: var(--brand-light, #f1cf85) !important;
+  }
+  /* Inline-style light bgs — dark mode only */
+  :root:not(.theme-light) [style*="background:#fffaf0"], :root.theme-dark [style*="background:#fffaf0"],
+  :root:not(.theme-light) [style*="background: #fffaf0"], :root.theme-dark [style*="background: #fffaf0"],
+  :root:not(.theme-light) [style*="background:#fff4d8"], :root.theme-dark [style*="background:#fff4d8"],
+  :root:not(.theme-light) [style*="background:#fbeef3"], :root.theme-dark [style*="background:#fbeef3"],
+  :root:not(.theme-light) [style*="background: #faeee5"], :root.theme-dark [style*="background: #faeee5"],
+  :root:not(.theme-light) [style*="background:#fff8e8"], :root.theme-dark [style*="background:#fff8e8"],
+  :root:not(.theme-light) [style*="background:#fffaee"], :root.theme-dark [style*="background:#fffaee"],
+  :root:not(.theme-light) [style*="background:#fdf"], :root.theme-dark [style*="background:#fdf"],
+  :root:not(.theme-light) [style*="background:#fef"], :root.theme-dark [style*="background:#fef"],
+  :root:not(.theme-light) [style*="linear-gradient(140deg, #fffaee"], :root.theme-dark [style*="linear-gradient(140deg, #fffaee"],
+  :root:not(.theme-light) [style*="linear-gradient(140deg, #fffaf0"], :root.theme-dark [style*="linear-gradient(140deg, #fffaf0"],
+  :root:not(.theme-light) [style*="linear-gradient(140deg, #fbf3ef"], :root.theme-dark [style*="linear-gradient(140deg, #fbf3ef"],
+  :root:not(.theme-light) [style*="linear-gradient(140deg, #fdf"], :root.theme-dark [style*="linear-gradient(140deg, #fdf"] {
+    background: var(--bg-card, #24201a) !important;
+    background-image: none !important;
+    color: var(--text-body, #e8dfc8) !important;
+    border-color: var(--border-light, #6a5a40) !important;
+  }
+</style>
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/germany/konzen-puzzle.html#article",
+  "headline": "The Konsen / Konzen / Kontzen surname puzzle — Charles Research",
+  "description": "The nine attested American renderings of Charles's surname and how they triangulate to Konzen in the Trendelburg parish complex.",
+  "datePublished": "2026-04-15",
+  "dateModified": "2026-05-12",
+  "url": "https://charles-research.netlify.app/germany/konzen-puzzle.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Germany & Origins",
+      "item": "https://charles-research.netlify.app/germany/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Konzen Puzzle"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="ge-hero cinema-section-hero" data-tone="hesse">
+  <div class="crumbs"><a href="../index.html#germany">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#germany">Germany &amp; Origins</a> &nbsp;/&nbsp; The KONZEN Puzzle</div>
+  <h1>The KONZEN Puzzle</h1>
+  <div class="sub">The 1890 St. Marcus death record of Charles's daughter Auguste carries the full Hessian z-form <em>Konzen</em> &mdash; the only American attestation of the spelling documented in the Trendelburg parish complex since 1773. The 1875 son's baptism reads <em>Konsen</em>, its phonetic-s sibling. Two K-initial records bracket the surname trail, 15 years apart.</div>
+  <div class="meta-row"><span class="badge battery">GERMANY &amp; ORIGINS</span><span class="date">Surname preservation · two records · 15 years apart</span></div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<style>
+  /* ============ KONSEN-PUZZLE STYLES — added 10 May 2026 ============ */
+  .puzzle-toc {
+    background: var(--bg-card-tint, #f6ebd2);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-left: 4px solid var(--brand-dark, #d8b366);
+    border-radius: 4px;
+    padding: 0.7rem 0.9rem;
+    margin: 0.8rem 0 1.4rem;
+    font-size: 0.86rem;
+  }
+  .puzzle-toc .toc-label {
+    display: inline-block;
+    font-family: var(--font-ui, Inter, sans-serif);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-dark, #8a6420);
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+  .puzzle-toc ol { display:inline; padding:0; margin:0; counter-reset:item; }
+  .puzzle-toc ol li { display:inline; margin-right:0.6rem; }
+  .puzzle-toc ol li a { color: var(--brand-dark, #8a6420); border-bottom: 1px dotted var(--brand-dark, #d8b366); }
+  .puzzle-toc ol li a:hover { color: var(--brand, #d8b366); border-bottom-color: var(--brand, #d8b366); }
+  /* Vertical-list variant — May 2026 redesign */
+  .puzzle-toc ol.puzzle-toc-list { display: block; padding: 0.4rem 0 0.1rem 1.6rem; margin: 0.4rem 0 0; list-style: decimal; }
+  .puzzle-toc ol.puzzle-toc-list li { display: list-item; margin: 0.25rem 0; font-size: 0.96rem; line-height: 1.55; }
+  .puzzle-toc ol.puzzle-toc-list li a { border-bottom: 1px dotted var(--brand-dark, #d8b366); padding-bottom: 1px; }
+  :root.theme-dark .puzzle-toc { background: var(--bg-elevated, #2a2519); border-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .puzzle-toc .toc-label { color: var(--brand-light, #fadea0); }
+  :root.theme-dark .puzzle-toc ol li a { color: var(--brand-light, #fadea0); border-bottom-color: var(--brand-dark, #d8b366); }
+
+  /* ============ NEW — quick-metrics bar (May 2026) ============ */
+  .puzzle-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.55rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .puzzle-metrics .kp-metric {
+    display: block;
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-left: 4px solid #4a6e34;
+    border-radius: 5px;
+    padding: 0.8rem 0.7rem;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  }
+  .puzzle-metrics .kp-metric:hover {
+    transform: translateY(-2px);
+    border-color: #d8b366;
+    box-shadow: 0 4px 10px rgba(74, 110, 52, 0.18);
+  }
+  .puzzle-metrics .kp-metric .num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.05;
+    color: #2c5a1c;
+  }
+  .puzzle-metrics .kp-metric .lbl {
+    font-size: 0.84rem;
+    line-height: 1.35;
+    margin-top: 0.3rem;
+    color: var(--text-body, #3a2f1e);
+  }
+  :root.theme-dark .puzzle-metrics .kp-metric,
+  :root:not(.theme-light) .puzzle-metrics .kp-metric {
+    background: var(--bg-card, #24201a);
+    border-color: var(--border-medium, #6a5a40);
+    border-left-color: #6cb060;
+  }
+  :root.theme-dark .puzzle-metrics .kp-metric .num,
+  :root:not(.theme-light) .puzzle-metrics .kp-metric .num {
+    color: #b8e0a4;
+  }
+  :root.theme-dark .puzzle-metrics .kp-metric .lbl,
+  :root:not(.theme-light) .puzzle-metrics .kp-metric .lbl {
+    color: var(--text-body, #e8dfc8);
+  }
+
+  /* ============ NEW — confidence snapshot (May 2026) ============ */
+  .puzzle-confidence {
+    background: var(--bg-card-tint, #f6ebd2);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-left: 4px solid var(--brand, #d8b366);
+    border-radius: 5px;
+    padding: 0.95rem 1.15rem;
+    margin: 1rem 0 1.2rem;
+  }
+  .puzzle-confidence .pc-title {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brand-dark, #8a6420);
+    margin: 0 0 0.4rem;
+    border: none;
+    padding: 0;
+  }
+  .puzzle-confidence .pc-note {
+    font-size: 0.82rem;
+    color: var(--text-meta, #6a5a42);
+    font-style: italic;
+    margin: 0 0 0.55rem;
+  }
+  .puzzle-confidence .pc-list {
+    margin: 0;
+    padding-left: 1.3rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+  .puzzle-confidence .pc-list li { margin-bottom: 0.4rem; }
+  .puzzle-confidence .pc-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 0.3rem;
+    vertical-align: middle;
+  }
+  .puzzle-confidence .pc-badge.confirmed { background: #5a8a4a; color: #fff; }
+  .puzzle-confidence .pc-badge.working   { background: #d4a017; color: #2c2620; }
+  :root.theme-dark .puzzle-confidence,
+  :root:not(.theme-light) .puzzle-confidence {
+    background: var(--bg-card, #24201a);
+    border-color: var(--border-medium, #6a5a40);
+    border-left-color: var(--brand, #d8b366);
+  }
+  :root.theme-dark .puzzle-confidence .pc-title,
+  :root:not(.theme-light) .puzzle-confidence .pc-title { color: var(--brand-light, #fadea0); }
+  :root.theme-dark .puzzle-confidence .pc-note,
+  :root:not(.theme-light) .puzzle-confidence .pc-note { color: var(--text-meta, #c8b896); }
+  :root.theme-dark .puzzle-confidence .pc-list,
+  :root:not(.theme-light) .puzzle-confidence .pc-list { color: var(--text-body, #e8dfc8); }
+  :root.theme-dark .puzzle-confidence .pc-list a,
+  :root:not(.theme-light) .puzzle-confidence .pc-list a { color: var(--brand-light, #fadea0); }
+
+  /* ============ NEW — section emblems (ge-wappen-row port) ============ */
+  .puzzle-wappen-row { display: flex; align-items: center; gap: 0.7rem; margin: 1.8rem 0 0.9rem; }
+  .puzzle-wappen { flex: 0 0 44px; width: 44px; height: 55px; }
+  .puzzle-wappen-row h3.mt-section,
+  .puzzle-wappen-row h3 { margin: 0 !important; padding-top: 0 !important; border-top: none !important; }
+
+  /* ============ NEW — fleuron divider ============ */
+  .puzzle-fleuron { display: block; margin: 1.4rem auto; text-align: center; color: var(--brand-dark, #d8b366); opacity: 0.7; }
+  .puzzle-fleuron svg { display: inline-block; width: min(360px, 60%); height: 14px; }
+  :root.theme-dark .puzzle-fleuron,
+  :root:not(.theme-light) .puzzle-fleuron { color: var(--brand-light, #d8b366); opacity: 0.55; }
+
+  .puzzle-headline {
+    text-align: center;
+    font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--brand-dark, #8a6420);
+    letter-spacing: 0.06em;
+    margin: 0.6rem 0 0.4rem;
+  }
+  :root.theme-dark .puzzle-headline { color: var(--brand-light, #fadea0); }
+
+  .puzzle-hero-img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-medium, #a88a4a);
+    border-radius: 4px;
+    margin: 0.7rem auto 0.5rem;
+    background: var(--bg-card, #fffaf0);
+  }
+  :root.theme-dark .puzzle-hero-img { background: var(--bg-card, #24201a); border-color: var(--border-medium, #6a5a40); }
+  .puzzle-hero-cap {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: var(--text-strong, #3a2f1e);
+    line-height: 1.45;
+    margin: 0.4rem auto 1rem;
+  }
+  :root.theme-dark .puzzle-hero-cap { color: var(--text-strong, #f4ead0); }
+
+  /* ============ SURNAME-RENDERING CHRONOLOGY ============ */
+  .surname-chronology {
+    margin: 0.8rem 0 0.6rem;
+    overflow-x: auto;
+  }
+  .surname-chronology table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .surname-chronology th, .surname-chronology td {
+    text-align: left;
+    padding: 0.5rem 0.7rem;
+    border-bottom: 1px solid var(--border-light, #d8c8a8);
+    vertical-align: top;
+  }
+  .surname-chronology th {
+    font-family: var(--font-ui, Inter, sans-serif);
+    font-size: 0.76rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-meta, #6a5a42);
+    font-weight: 700;
+    background: var(--bg-card-tint, #f6ebd2);
+  }
+  .surname-chronology td.surname { font-family: var(--font-mono, 'SF Mono', Menlo, monospace); font-weight: 700; color: var(--brand-dark, #8a6420); font-size: 0.95rem; }
+  .surname-chronology td.surname.cluster,
+  .surname-chronology td.surname.cluster strong,
+  .surname-chronology td.surname.cluster em,
+  .surname-chronology td.surname.cluster a { color: #3a6a2a; }
+  .surname-chronology tr.konzen-keystone > td { background: rgba(74, 138, 74, 0.12); }
+  .surname-chronology tr.konzen-keystone td.surname.cluster,
+  .surname-chronology tr.konzen-keystone td.surname.cluster strong,
+  .surname-chronology tr.konzen-keystone td.surname.cluster em { color: #2c5a1c; font-weight: 800; }
+  .surname-chronology tr.charles-speaker td { background: rgba(216, 179, 102, 0.08); }
+  .surname-chronology .speaker-flag { display: inline-block; padding: 0.05rem 0.4rem; background: rgba(74, 138, 74, 0.18); color: #3a6a2a; border-radius: 2px; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.04em; }
+  :root.theme-dark .surname-chronology th { background: var(--bg-elevated, #2a2519); color: var(--text-meta, #c8b896); border-bottom-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .surname-chronology td { border-bottom-color: var(--border-medium, #6a5a40); color: var(--text-body, #e8dfc8); }
+  :root.theme-dark .surname-chronology td.surname { color: var(--brand-light, #fadea0); }
+  :root.theme-dark .surname-chronology td.surname.cluster { color: #b8e0a4; }
+  :root.theme-dark .surname-chronology tr.charles-speaker td { background: rgba(216, 179, 102, 0.10); }
+  :root.theme-dark .surname-chronology .speaker-flag { background: rgba(108, 176, 96, 0.22); color: #b8e0a4; }
+
+  /* ============ PHONETIC CLUSTER ============ */
+  .phonetic-cluster {
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-left: 4px solid #4a8a4a;
+    border-radius: 4px;
+    padding: 0.95rem 1.15rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .phonetic-cluster h3 { color: var(--text-heading, #8a6420); font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif); font-weight: 600; margin: 0 0 0.4rem; }
+  .phonetic-cluster .ipa { font-family: var(--font-mono, 'SF Mono', Menlo, monospace); color: var(--brand-dark, #8a6420); font-weight: 700; }
+  .phonetic-cluster table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 0.5rem 0; }
+  .phonetic-cluster th, .phonetic-cluster td { text-align: left; padding: 0.4rem 0.7rem; border-bottom: 1px solid var(--border-light, #d8c8a8); }
+  .phonetic-cluster th { font-family: var(--font-ui, Inter, sans-serif); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-meta, #6a5a42); font-weight: 700; }
+  .phonetic-cluster .speaker-yes { color: #3a6a2a; font-weight: 700; }
+  .phonetic-cluster .speaker-no  { color: var(--text-meta, #6a5a42); font-style: italic; }
+  :root.theme-dark .phonetic-cluster { background: var(--bg-card, #24201a); border-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .phonetic-cluster h3 { color: var(--text-heading, #f1cf85); }
+  :root.theme-dark .phonetic-cluster .ipa { color: var(--brand-light, #fadea0); }
+  :root.theme-dark .phonetic-cluster th { color: var(--text-meta, #c8b896); border-bottom-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .phonetic-cluster td { color: var(--text-body, #e8dfc8); border-bottom-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .phonetic-cluster .speaker-yes { color: #b8e0a4; }
+  :root.theme-dark .phonetic-cluster .speaker-no  { color: var(--text-meta, #c8b896); }
+
+  /* ============ BRASCHLER SMOKING-GUN ============ */
+  .smoking-gun {
+    background: var(--status-civilwar-t, #faeee5);
+    border: 2px solid #c84a4a;
+    border-left: 5px solid #a84030;
+    border-radius: 5px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .smoking-gun .sg-eyebrow {
+    display: inline-block;
+    font-family: var(--font-ui, Inter, sans-serif);
+    font-size: 0.76rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #a84030;
+    margin-bottom: 0.35rem;
+  }
+  .smoking-gun h3 { margin: 0 0 0.4rem; font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif); color: #6a2820; }
+  .smoking-gun .vowel-shift {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin: 0.7rem 0;
+    flex-wrap: wrap;
+  }
+  .smoking-gun .vowel-pair {
+    text-align: center;
+    background: #fffaf0;
+    border: 1px solid #c84a4a;
+    border-radius: 4px;
+    padding: 0.5rem 0.9rem;
+    min-width: 130px;
+  }
+  .smoking-gun .vowel-pair .year { font-family: var(--font-mono, 'SF Mono', Menlo, monospace); font-size: 0.78rem; color: #6a2820; }
+  .smoking-gun .vowel-pair .surname { font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif); font-size: 1.5rem; font-weight: 700; color: #6a2820; }
+  .smoking-gun .vowel-pair .surname strong { background: #fff2c2; color: #6a2820; padding: 0 0.25rem; border-radius: 3px; }
+  .smoking-gun .vowel-arrow { font-size: 1.4rem; color: #a84030; }
+  :root.theme-dark .smoking-gun { background: var(--section-civilwar-t, #2c1f1c); border-color: #c84a4a; border-left-color: #f4a098; }
+  :root.theme-dark .smoking-gun .sg-eyebrow { color: #f4a098; }
+  :root.theme-dark .smoking-gun h3 { color: #f4a098; }
+  :root.theme-dark .smoking-gun .vowel-pair { background: var(--bg-deep, #0d0a06); color: #f4a098; }
+  :root.theme-dark .smoking-gun .vowel-pair .year { color: #f4a098; }
+  :root.theme-dark .smoking-gun .vowel-pair .surname { color: #f4a098; }
+  :root.theme-dark .smoking-gun .vowel-pair .surname strong { background: #4a2018; color: #f4a098; }
+  :root.theme-dark .smoking-gun .vowel-arrow { color: #f4a098; }
+
+  /* ============ HYPOTHESIS PANELS ============ */
+  .hypothesis-grid { display: grid; grid-template-columns: 1fr; gap: 0.8rem; margin: 0.6rem 0; }
+  .hypothesis-card {
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-left: 4px solid var(--brand-dark, #d8b366);
+    border-radius: 5px;
+    padding: 0.95rem 1.15rem;
+  }
+  .hypothesis-card h3 {
+    margin: 0 0 0.45rem;
+    font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+    color: var(--text-heading, #8a6420);
+    font-weight: 600;
+    font-size: 1.15rem;
+  }
+  .hypothesis-card .h-rank {
+    display: inline-block;
+    width: 1.7rem; height: 1.7rem;
+    border-radius: 50%;
+    background: var(--bg-elevated, #fffdf6);
+    border: 1.5px solid var(--brand-dark, #d8b366);
+    color: var(--brand-dark, #8a6420);
+    text-align: center;
+    line-height: 1.4rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+  .hypothesis-card .h-section {
+    margin: 0.5rem 0 0.3rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 0 3px 3px 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .hypothesis-card .h-section.for     { background: rgba(74, 138, 74, 0.10);  border-left: 3px solid #4a8a4a; }
+  .hypothesis-card .h-section.against { background: rgba(200, 88, 26, 0.10);  border-left: 3px solid #c8581a; }
+  .hypothesis-card .h-section.confirm { background: rgba(74, 118, 200, 0.08); border-left: 3px solid #4a76c8; }
+  .hypothesis-card .h-section .label {
+    font-family: var(--font-ui, Inter, sans-serif);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-right: 0.4rem;
+    display: inline-block;
+    margin-bottom: 0.15rem;
+  }
+  .hypothesis-card .h-section.for .label     { color: #3a6a2a; }
+  .hypothesis-card .h-section.against .label { color: #a3441f; }
+  .hypothesis-card .h-section.confirm .label { color: #2a4a8a; }
+  :root.theme-dark .hypothesis-card { background: var(--bg-card, #24201a); border-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .hypothesis-card h3 { color: var(--text-heading, #f1cf85); }
+  :root.theme-dark .hypothesis-card .h-rank { color: var(--brand-light, #fadea0); background: var(--bg-elevated, #2a2519); }
+  :root.theme-dark .hypothesis-card .h-section.for     { background: rgba(108, 176, 96, 0.12);  }
+  :root.theme-dark .hypothesis-card .h-section.against { background: rgba(232, 160, 80, 0.12);  }
+  :root.theme-dark .hypothesis-card .h-section.confirm { background: rgba(106, 138, 204, 0.12); }
+  :root.theme-dark .hypothesis-card .h-section.for .label     { color: #b8e0a4; }
+  :root.theme-dark .hypothesis-card .h-section.against .label { color: #f4b890; }
+  :root.theme-dark .hypothesis-card .h-section.confirm .label { color: #a8c0e0; }
+
+  /* ============ ANSWER-SOURCE LINKS ============ */
+  .answer-source-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.7rem; margin: 0.6rem 0; }
+  .answer-source-tile {
+    display: block;
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-left: 4px solid #c8581a;
+    border-radius: 4px;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .answer-source-tile:hover { background: var(--bg-elevated, #fffdf6); transform: translateY(-1px); }
+  .answer-source-tile h4 { margin: 0 0 0.3rem; color: var(--text-heading, #8a6420); font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif); font-weight: 600; }
+  .answer-source-tile p { margin: 0; font-size: 0.86rem; line-height: 1.5; color: var(--text-body, #3a2f1e); }
+  .answer-source-tile .resolves { display: inline-block; margin-top: 0.4rem; font-family: var(--font-ui, Inter, sans-serif); font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: #a3441f; }
+  :root.theme-dark .answer-source-tile { background: var(--bg-card, #24201a); border-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .answer-source-tile:hover { background: var(--bg-elevated, #2a2519); }
+  :root.theme-dark .answer-source-tile h4 { color: var(--text-heading, #f1cf85); }
+  :root.theme-dark .answer-source-tile p { color: var(--text-body, #e8dfc8); }
+  :root.theme-dark .answer-source-tile .resolves { color: #f4a098; }
+
+  /* (Legacy .puzzle-cross-link CSS rules removed May 2026 — replaced by .puzzle-deep-dives .kp-tile pattern in the footer block below.) */
+</style>
+
+<aside class="konze-status-banner" role="status">
+  <strong>⚠ Schräder verdict (12 Apr 2026 · updated 4 May 2026):</strong>
+  Charles is <em>not</em> a legitimate Konze son — only one Konze appears in the Deisel emigration list, and it is not Charles. On <strong>4 May 2026</strong>, the project's strongest single-record candidate &mdash; Entry 195 of Deisel KB 218842 &mdash; was also closed by Peter Schräder's Kurrent re-reading: the father is <em>Köster</em>, not Konze, and the child died unbaptized. This page exists because two American records (1875 St. Marcus baptism, 1890 daughter's death record) still carry the Hessian K-initial / -en-suffix surname forms <em>Konsen</em> and <em>Konzen</em>. <a href="../updates.html">→ changelog</a>
+</aside>
+<style>
+  .konze-status-banner {
+    background: linear-gradient(140deg, var(--bg-card-tint, #fffaee), var(--bg-elevated, #fef3d6));
+    border: 1px solid var(--brand-dark, #d8b366);
+    border-left: 4px solid var(--brand-dark, #d8b366);
+    border-radius: 4px;
+    padding: 0.55rem 0.9rem;
+    margin: 0 0 1rem;
+    font-size: 0.86rem;
+    line-height: 1.45;
+    color: var(--text-body, #2c2620);
+  }
+  .konze-status-banner strong { color: var(--brand-dark, #8a6420); }
+  .konze-status-banner a { color: var(--brand-dark, #8a6420); }
+  :root.theme-dark .konze-status-banner {
+    /* Hardcoded so the dark surface wins regardless of OS prefers-color-scheme.
+       Using var() here would resolve to the LIGHT cream defaults in theme.css
+       for users on a light OS who toggle dark via the FAB. */
+    background: linear-gradient(140deg, #2c261d, #1a1612);
+    border-color: #6a5a40;
+    border-left-color: #d8b366;
+    color: #e8dfc8;
+  }
+  :root.theme-dark .konze-status-banner strong { color: #fadea0; }
+  :root.theme-dark .konze-status-banner a { color: #fadea0; }
+</style>
+
+
+<!-- ============ NEW — family-reader plain-language lede (May 2026) ============ -->
+<section class="puzzle-family-lede" style="background: linear-gradient(140deg, var(--bg-card-tint, #fdf5d8), var(--bg-elevated, #f6ebd2)); border: 1px solid var(--brand, #d8b366); border-left: 5px solid var(--brand, #d8b366); border-radius: 6px; padding: 1.1rem 1.3rem; margin: 1.4rem 0 1.2rem;">
+  <p style="font-size: 1.08rem; line-height: 1.65; color: var(--text-strong, #1f1a14); margin: 0 0 0.6rem;"><strong>Working conclusion.</strong> Charles most likely derives from the <strong>Konze</strong> surname pool documented in the <strong>Trendelburg</strong> parish register (spelled <em>Konze / Kontze</em> there), in the territory Charles himself named on his 1866 St. Louis marriage record (&ldquo;Deisel, Churhessen&rdquo;). This is an inference to the surname pool, <em>not</em> to a confirmed family or individual — the specific relationship between Charles and the Trendelburg Kontzen line remains unknown (see the confidence section below). The family carried the name abroad in its spoken <em>-en</em> form, <strong>KONZEN</strong> &mdash; the dialectal inflection of <em>Konze</em> (&ldquo;geb. Konzen&rdquo; = née Konze) &mdash; which is the form every American record preserves. The 1890 St. Marcus death record of his daughter Auguste spells it with a <em>z</em>, the only American attestation of the full Hessian z-form.</p>
+  <p style="font-size: 0.96rem; line-height: 1.6; color: var(--text-body, #3a2f1e); margin: 0;"><strong>The puzzle</strong> is that the specific Hessian baptism record naming Charles himself has not been recovered. Three archival threads remain open and any one could surface the entry. The detailed argument and hypotheses below walk through the evidence chain and the candidates that have been eliminated.</p>
+</section>
+
+<!-- ============ NEW — quick-metrics bar (May 2026) ============ -->
+<div class="puzzle-metrics" aria-label="The Konzen puzzle at a glance">
+  <a class="kp-metric" href="#trail" title="Jump to the surname trail below"><div class="num">9</div><div class="lbl">American<br>spellings · 1866&ndash;1896</div></a>
+  <a class="kp-metric" href="#chronology" title="Jump to the chronology table below"><div class="num">5+</div><div class="lbl">independent<br>scribes</div></a>
+  <a class="kp-metric" href="#chronology" title="Jump to the chronology table below"><div class="num">9</div><div class="lbl">record<br>attestations</div></a>
+  <a class="kp-metric" href="#the-record" title="Jump to the two K-initial records above"><div class="num">30</div><div class="lbl">years<br>1866 to 1896</div></a>
+  <a class="kp-metric" href="#hypotheses" title="Jump to the six hypotheses below"><div class="num">6</div><div class="lbl">working<br>hypotheses</div></a>
+  <a class="kp-metric" href="#candidates" title="Jump to the candidate-path tree below"><div class="num">9</div><div class="lbl">Konze fathers<br>tested</div></a>
+</div>
+
+<nav class="puzzle-toc" aria-label="On this page">
+  <span class="toc-label">On this page</span>
+  <ol class="puzzle-toc-list">
+    <li><a href="#the-record" data-puzzle-toc>The two K-initial records &mdash; 1875 baptism &amp; 1890 death</a></li>
+    <li><a href="#trail" data-puzzle-toc>The surname trail &mdash; nine spellings, at least five scribes</a></li>
+    <li><a href="#chronology" data-puzzle-toc>Nine attestations &mdash; the chronology 1866&ndash;1896</a></li>
+    <li><a href="#phonetic" data-puzzle-toc>The phonetic cluster &mdash; one sound, nine spellings</a></li>
+    <li><a href="#hypotheses" data-puzzle-toc>Six hypotheses &mdash; the family-side relationship, plus an alternative-origin</a></li>
+    <li><a href="#candidates" data-puzzle-toc>The candidate-path tree &mdash; 11 Konze men tested</a></li>
+    <li><a href="#answer" data-puzzle-toc>Where the answer might come from</a></li>
+  </ol>
+</nav>
+<script>
+(function() {
+  // Smart-scroll for the puzzle TOC. The site's html { scroll-behavior: smooth } is
+  // intercepted by the tab system on this page; behavior:'instant' with a manual
+  // offset is the only reliable mode. Capture-phase so we run BEFORE the document
+  // a[href^="#"] handler.
+  function jumpToSection(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var top = el.getBoundingClientRect().top + window.scrollY - 20;
+    try { window.scrollTo({ top: top, behavior: 'instant' }); }
+    catch (e) {
+      var prev = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = 'auto';
+      window.scrollTo(0, top);
+      document.documentElement.style.scrollBehavior = prev;
+    }
+  }
+  function wire() {
+    var links = document.querySelectorAll('.puzzle-toc a[data-puzzle-toc], .puzzle-metrics a[href^="#"]');
+    links.forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var href = a.getAttribute('href') || '';
+        if (href.charAt(0) === '#') { e.preventDefault(); e.stopPropagation(); jumpToSection(href.slice(1)); }
+      }, true);
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', wire); } else { wire(); }
+})();
+</script>
+
+<!-- ============ 1. THE RECORDS ============ -->
+<div class="puzzle-fleuron" aria-hidden="true"><svg viewBox="0 0 400 14" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="0" y="6.5" width="160" height="1"/><rect x="240" y="6.5" width="160" height="1"/><circle cx="178" cy="7" r="1.6"/><circle cx="222" cy="7" r="1.6"/><path d="M200 1 L207 7 L200 13 L193 7 Z"/></g></svg></div>
+<div class="puzzle-wappen-row">
+  <svg class="puzzle-wappen" viewBox="0 0 80 100" role="img" aria-label="Two-record emblem — a shield bearing the years 1875 and 1890 above a Hessian K">
+    <path d="M4 3 L76 3 L76 56 Q76 82 40 96 Q4 82 4 56 Z" fill="#3a2f1e" stroke="#1a1612" stroke-width="1.6"/>
+    <rect x="4" y="22" width="72" height="2" fill="#f4e2b0" opacity="0.65"/>
+    <text x="22" y="38" text-anchor="middle" font-family="SF Mono, Menlo, monospace" font-size="9" font-weight="700" fill="#f4e2b0">1875</text>
+    <text x="58" y="38" text-anchor="middle" font-family="SF Mono, Menlo, monospace" font-size="9" font-weight="700" fill="#f4e2b0">1890</text>
+    <text x="40" y="74" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="32" font-weight="700" font-style="italic" fill="#f0c878">K</text>
+  </svg>
+  <h3 class="mt-section" id="the-record">The two K-initial records &mdash; 1875 baptism and 1890 death</h3>
+</div>
+
+<div class="card accent">
+  <p><strong>★ The headline record &mdash; the 1890 death entry.</strong> The St. Marcus death register entry for Charles's daughter Auguste records her maiden surname as:</p>
+  <p class="puzzle-headline">Auguste Somers geb KONZEN</p>
+  <p><strong>This is the single American record carrying the full Hessian z-form Konzen</strong> &mdash; the spelling documented continuously in the Trendelburg parish complex (Hofgeismar <a class="glossary-link" href="../glossary.html#g-kirchenkreis" title="Glossary: Kirchenkreis">Kirchenkreis</a>) since 1773. Maiden-name attestations on death records are among the most carefully captured forms in genealogical practice (used for cemetery / probate / inheritance verification); the May 2026 re-examination of the register image confirmed the reading as <em>Konzen</em> with a z, not <em>Konsen</em> with an s. The 1890 record is therefore the project's strongest single piece of American-side evidence pointing at the Hessian Kontzen / Konzen surname pool.</p>
+  <a href="../evidence_images/death_1890_auguste_konsen.webp" target="_blank" rel="noopener noreferrer">
+    <img class="puzzle-hero-img" src="../evidence_images/death_1890_auguste_konsen.webp" alt="St. Marcus death register, 1890, entry 1 (left page): 'Auguste Somers geb. Konzen' — the maiden surname recorded with the full Hessian z-form Konzen." loading="lazy" width="3577" height="2722">
+  </a>
+  <span class="puzzle-hero-cap">St. Marcus death register &middot; 1890, entry 1 (top of left page) &middot; <em>&ldquo;Auguste Somers geb. Konzen&rdquo;</em> &middot; the single American attestation of the full Hessian <em>z</em>-form &middot; <a href="../evidence_images/death_1890_auguste_konsen.webp" target="_blank" rel="noopener noreferrer">open full-size ↗</a></span>
+</div>
+
+<div class="card">
+  <p><strong>★ The keystone companion record &mdash; the 1875 baptism.</strong> Fifteen years earlier, the same parish (St. Marcus) recorded Charles's sixth child as:</p>
+  <p class="puzzle-headline">Erwin Carl KONSEN</p>
+  <p>Not <em>Gannsen</em>, not <em>Johnson</em>, not <em>Gonnson</em> &mdash; the closest American phonetic match to the Hessian cluster (Konze · Kontze · Kontzen · Contze · Konzen) attested in the Deisel and Trendelburg church books. A German-speaking Lutheran pastor (Julius Hoffmann, Swiss-born), baptizing the child of a German-speaking Lutheran family, used the surname they gave him at the font &mdash; spelled it with an <em>s</em> per his ear, but preserved the Hessian <em>K-</em> initial and <em>-en</em> suffix that the louder American renderings (Gannsen, Johnson) eventually shed. <strong>Strictly, "Konsen" with an s is not itself one of the five Hesse-attested spellings</strong> &mdash; no Trendelburg or Deisel parish register carries that exact form; it is the American phonetic capture closest to the documented Hessian cluster.</p>
+  <a href="../evidence_images/evidence_4_baptism.webp" target="_blank" rel="noopener noreferrer">
+    <img class="puzzle-hero-img" src="../evidence_images/evidence_4_baptism.webp" alt="St. Marcus baptism register entry 282 / 8854 — Erwin Carl Konsen — born 27 Aug 1875, baptized 3 Oct 1875, parents Carl Konsen and Auguste née Kreichelt, Pastor Julius Hoffmann." loading="lazy" width="1600" height="626">
+  </a>
+  <span class="puzzle-hero-cap">St. Marcus baptism register &middot; entry 282 (running №8854) &middot; <em>"Erwin Carl Konsen &middot; Eltern: Carl Konsen u. d. ihm Ehefrau Auguste geb. Kreichelt"</em> &middot; 27 Aug 1875 &middot; Pastor Julius Hoffmann &middot; <a href="../evidence_images/evidence_4_baptism.webp" target="_blank" rel="noopener noreferrer">open full-size ↗</a></span>
+  <p style="margin: 0.6rem 0 0;"><strong>Together the two K-initial records bracket the surname trail 15 years apart.</strong> The 1875 <em>Konsen</em> and the 1890 <em>Konzen</em> are two parallel orthographic variants of the same Hessian root, captured by two different scribes &mdash; <em>Konsen</em> with an s (Pastor Hoffmann's phonetic rendering at the baptism) and <em>Konzen</em> with a z (the death-register scribe writing what is, strictly, the documented Trendelburg spelling). Sixteen-plus years after Charles emigrated, his family was still calling itself something a German-speaking pastor recognised as a Hessian-cluster surname.</p>
+
+  <h4 style="margin:1.4rem 0 0.5rem; font-family:'Cormorant Garamond',Georgia,serif; font-size:1.18rem; color:var(--text-strong,#1f1a14);">The Hessian original &mdash; the <em>Kontze</em>/<em>Kontzin</em> spelling in the Trendelburg register itself</h4>
+  <p style="margin:0 0 0.7rem;">The American forms above trace back to a surname written, in the family's own parish, with the very <em>tz</em> cluster that an English ear later flattened to <em>nns</em> / <em>ns</em>. Here is that spelling in the <strong>Trendelburg confirmation register</strong> (KB 1773&ndash;1818, Archion 220096), in an entry from <strong>Easter 1786</strong> &mdash; a daughter recorded under the feminine form <em>Kontzin</em>, her father named with the masculine <em>Kontze</em>, both words underlined by the pastor:</p>
+  <figure style="margin:0 0 1rem; border:1px solid var(--rule,#d8cdb8); border-radius:6px; overflow:hidden; background:#f7f2e7;">
+    <a href="../evidence_images/konfirmation_1786_kontze_trendelburg.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the 1786 Trendelburg confirmation entry full-size">
+      <img src="../evidence_images/konfirmation_1786_kontze_trendelburg.jpg" alt="Trendelburg confirmation register, Easter 1786, entry 5: 'Anna Elisabeth Kontzin, Philipp Kontze ehl. Tochter, nat. d. 22. März 1772' — the surname written with the Hessian tz-cluster in both feminine (Kontzin) and masculine (Kontze) forms, both underlined." loading="lazy" style="display:block; width:100%; height:auto;">
+    </a>
+    <figcaption class="hessian-original-cap" style="padding:0.5rem 0.7rem; font-size:0.86rem; line-height:1.5; color:#3a2f1e; background:#efe7d6;">Trendelburg confirmation register &middot; <strong>Easter 1786</strong>, entry 5 &middot; <em>&ldquo;Anna Elisabeth <u>Kontzin</u>, Philipp <u>Kontze</u> ehl. Tochter, nat. d. 22. M&auml;rz 1772&rdquo;</em> &middot; the documented Hessian form, written with <em>tz</em>, that the American <em>Konzen</em> (1890) and <em>Konsen</em> (1875) renderings descend from. Source: Archion 220096, S.252 &middot; image 1109 &middot; <em>Session 97, June 2026</em>.</figcaption>
+  </figure>
+</div>
+
+<!-- ============ HIGHLIGHT — geographic convergence (June 2026) ============ -->
+<section class="puzzle-convergence" style="background: linear-gradient(140deg, #1f3a2a, #28503a); color:#f1ece0; border-radius:6px; padding:1.3rem 1.4rem; margin:1.2rem 0 1.4rem; box-shadow:0 3px 14px rgba(0,0,0,0.18);">
+  <div style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.09em; color:#b9d9c2; font-weight:700; margin-bottom:0.5rem;">★ The strongest argument that the name and place are right</div>
+  <p style="font-size:1.1rem; line-height:1.6; margin:0 0 0.7rem; font-weight:600;">The Konze surname doesn't merely <em>appear</em> in this area — it exists <strong>nowhere else around it.</strong></p>
+  <p style="font-size:0.98rem; line-height:1.65; margin:0 0 0.7rem; color:#e8e2d4;">A June 2026 surname-distribution sweep of <strong>29 parishes</strong> across two states and two confessions established that the entire Konze / Kontze / Kontzen / Contze / Konzen pool is confined to a <strong>single tight cluster in the Diemel valley — Trendelburg · Deisel · Friedrichsfeld · Stammen · Hümme, all within about 5&nbsp;km</strong>. Every surrounding parish — Grebenstein, Immenhausen, Helmarshausen, Hofgeismar, Sielen, Schöneberg, Bad Karlshafen, Gieselwerder, Veckerhagen, and the Catholic Westphalian parishes across the Weser — shows <strong>no Konze presence at all.</strong> <em>(One man, Christian Ludwig Kontze, gave nearby <strong>Gottsbüren</strong> as his birthplace in 1833 — but Gottsbüren's own registers are <strong>entirely Kontze-free</strong>: baptisms, marriages, and burials read across 1795–1833 contain no Kontze at all. The family lived, and died, elsewhere; the statement most likely reflects his mother's home village — the native Gottsbüren <em>Garland</em> family. Gottsbüren is a claimed-but-unconfirmed edge of the cluster, not a sixth documented village.)</em></p>
+  <p style="font-size:0.98rem; line-height:1.65; margin:0; color:#e8e2d4;">Charles named his origin <strong>twice, independently</strong> — &ldquo;<em>Deisse, Kreis Cassel, Churhessen</em>&rdquo; on his 1866 marriage record (= <strong>Deisel</strong>) and &ldquo;<em>Freundburg, Kurhessen</em>&rdquo; on his 1862 enlistment (decoded as <strong>Trendelburg</strong>). Both land <strong>squarely inside the only ~5&nbsp;km patch on the whole map where the surname occurs.</strong> Two self-reported place-names and the geographic footprint of a rare surname converging on the same five villages is powerful, independent corroboration that <strong>the name (Konzen) and the place (the Trendelburg–Deisel complex) are correct</strong> — even though the individual baptism is still missing. See the <a href="parish-map.html" style="color:#fadea0; text-decoration:underline;">Hessian parish map</a>, the <a href="konze-family-by-town.html" style="color:#fadea0; text-decoration:underline;">Konze family listed by town</a>, and the <a href="../changelog.html#cl-2026-06-06-konze-distribution" style="color:#fadea0; text-decoration:underline;">distribution-sweep log</a>.</p>
+</section>
+
+<!-- ============ NEW — confidence snapshot (May 2026) ============ -->
+<section class="puzzle-confidence" aria-label="Confidence at a glance">
+  <h2 class="pc-title">Confidence at a glance &middot; this page's load-bearing claims</h2>
+  <p class="pc-note">Per the project's <a href="../methodology.html#confidence">source-rating taxonomy</a>. Confirmed = primary source attached. Working = leading hypothesis pending a dispositive record.</p>
+  <ul class="pc-list">
+    <li><span class="pc-badge confirmed">✓ Confirmed</span> The <strong>1875 St. Marcus baptism</strong> records Charles's sixth child as <em>Erwin Carl Konsen</em> &mdash; running entry 8854, Pastor Julius Hoffmann. Original-image attached (Card 6).</li>
+    <li><span class="pc-badge confirmed">✓ Confirmed</span> The <strong>1890 St. Marcus death register</strong> entry for daughter Auguste reads <em>"Auguste Somers geb. Konzen"</em> with a <strong>z</strong> &mdash; the May 2026 re-examination of the register image confirms the reading is <em>Konzen</em>, not <em>Konsen</em>. Single American attestation of the full Hessian z-form.</li>
+    <li><span class="pc-badge confirmed">✓ Confirmed</span> The <strong>Schräder verdict</strong> (12 April 2026): only one Konze appears in the Deisel emigration list, and it is not Charles. Charles is therefore <em>not</em> a legitimate Konze son.</li>
+    <li><span class="pc-badge confirmed">✓ Confirmed</span> Of 8 distinct Konze/Kontzen men tested as possible father (Sessions 18&ndash;50, April 2026), <strong>6 are eliminated</strong> outright by date, sex, or death; <strong>2 remain inconclusive</strong> (a 9th card, the &ldquo;colonist,&rdquo; withdrawn 8 Jun 2026 as a misread of Andreas b. 1795); <strong>no Konze candidate stays open.</strong> <strong>Entry 195 of Deisel KB 218842 was closed on 4 May 2026</strong> by Peter Schräder's Kurrent re-reading: the father's surname is Köster (not Konze) and profession Tagelöhner (not Kaufmann), and the child received no first name &mdash; the field is <em>"männlich"</em>, the convention for an infant who died unbaptized. The prior "two Konze fathers in Deisel, Jan 1835" structural finding collapses to one (Andreas Konze, Ackermann of Entry 194) once Entry 195 is reattributed to a Köster family. See the <a href="../sources/entry-195-baptism.html">canonical Entry 195 source page</a>.</li>
+    <li><span class="pc-badge confirmed">✓ Confirmed</span> <strong>The Konze surname is geographically confined.</strong> A June 2026 distribution sweep of 29 parishes (two states, two confessions) found the Konze/Kontze pool only in one ~5&nbsp;km Diemel-valley cluster — <strong>Trendelburg · Deisel · Friedrichsfeld · Stammen · Hümme</strong> (plus Gottsbüren as one man's stated, unconfirmed birthplace) — with no presence in any surrounding parish. Charles's two independent self-reported origins (Deisel 1866; Trendelburg 1862) both fall inside that cluster &mdash; consistent with (though not proof of) the working Deisel / Trendelburg origin conclusion. <em>(Coverage note: cluster + four ring parishes index-verified; remaining ring parishes sampled/window-checked — see the <a href="../negative-results.html">audit</a>.)</em></li>
+    <li><span class="pc-badge working">★ Working</span> The relationship between Charles and the Trendelburg Kontzen line is <strong>still unknown</strong>. Six working hypotheses are evaluated below (five on the family-side relationship, one on a possible Rhineland origin); the leading three (illegitimate / step / maternal) all hinge on the undigitized <a href="../towns/heisebeck.html">Heisebeck</a> and pre-1822 <a href="../towns/schoeneberg.html">Schöneberg</a> registers.</li>
+  </ul>
+</section>
+
+<!-- ============ 2. SURNAME TRAIL ============ -->
+<div class="puzzle-fleuron" aria-hidden="true"><svg viewBox="0 0 400 14" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="0" y="6.5" width="160" height="1"/><rect x="240" y="6.5" width="160" height="1"/><circle cx="178" cy="7" r="1.6"/><circle cx="222" cy="7" r="1.6"/><path d="M200 1 L207 7 L200 13 L193 7 Z"/></g></svg></div>
+<div class="puzzle-wappen-row">
+  <svg class="puzzle-wappen" viewBox="0 0 80 100" role="img" aria-label="Surname-trail emblem — a shield with paired letters K and G">
+    <path d="M4 3 L76 3 L76 56 Q76 82 40 96 Q4 82 4 56 Z" fill="#3a2f1e" stroke="#1a1612" stroke-width="1.6"/>
+    <rect x="4" y="22" width="72" height="2" fill="#f4e2b0" opacity="0.65"/>
+    <text x="24" y="62" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="700" font-style="italic" fill="#f4e2b0">K</text>
+    <text x="40" y="55" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="14" fill="#d8b366">&#8596;</text>
+    <text x="56" y="62" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-weight="700" font-style="italic" fill="#f0c878">G</text>
+    <path d="M16 80 Q40 88 64 78" stroke="#f4e2b0" stroke-width="1.2" fill="none" opacity="0.7"/>
+  </svg>
+  <h3 class="mt-section" id="trail">The surname trail &mdash; nine American spellings, at least five scribes, thirty years</h3>
+</div>
+<p>The 1875 Konsen and 1890 Konzen records don't sit alone. <strong>Nine distinct American spellings</strong> of Charles's surname appear across the family's parish records 1866–1896, captured by at least five independent scribes. The figure below visualizes the entire trail — gold cluster members are auditorily identical [ˈkɔn.sən]; blue outliers are scribal mishearings; the 1890 <em>Konzen</em> is the bridge form carrying the documented Hessian z-spelling on American soil.</p>
+
+<p><strong>Context, not just sound, governed which spelling appeared.</strong> The parish renderings are one stream of a wider pattern. On every record that touched the federal government &mdash; the 1862 enlistment (signed), the 1868 St.&nbsp;Louis naturalization, the 1890&ndash;91 pension, and the 1900 Danville Soldiers&rsquo; Home admission (entered as &ldquo;Gannson&rdquo;) &mdash; the surname is locked to his legal <em>Gannsen</em>; the homeland <em>-en</em> forms appear most often at the font but also on the <strong>1880 census</strong> (<em>Gonson</em>) and in the <strong>1874&nbsp;/&nbsp;1876 city directories</strong> (<em>Konsen</em>, <em>Gonson</em>); and the Americanised <strong>Johnson</strong> first appears (on present evidence) about <strong>1871</strong>, in the directories of his streetcar-conductor years. <em>Gannsen</em> is also the <strong>earliest</strong> recorded form, and a genealogical heuristic favouring the earliest, first-person attestation would weight it &mdash; a live consideration the project holds <strong>to be determined</strong>, sitting alongside (not above) the ancestral-<em>Konzen</em> reading argued on this page, since the two answer different questions (his American <em>legal</em> name versus his German <em>birth</em> surname). The full record-by-record ledger is on <a href="../surname-records.html">Surname across the records</a>.</p>
+
+<figure class="surname-trail-figure">
+  <a class="surname-trail-zoom" href="../assets/figures/surname-trail.svg?v=20260601" target="_blank" rel="noopener noreferrer" aria-label="Open the surname trail diagram full-size in a new tab">
+    <img class="surname-trail-light" src="../assets/figures/surname-trail.svg?v=20260601" alt="Charles Konzen surname trail diagram, 1866–1896" style="width:100%; height:auto; max-width:100%;" loading="lazy" width="1240" height="680">
+    <img class="surname-trail-dark" src="../assets/figures/surname-trail-dark.svg?v=20260601" alt="Charles Konzen surname trail diagram, 1866–1896 (dark theme)" style="width:100%; height:auto; max-width:100%;" loading="lazy" width="1240" height="680">
+    <span class="surname-trail-expand" aria-hidden="true">⤢ Click to expand</span>
+  </a>
+  <figcaption class="surname-trail-cap">
+    <a href="../assets/figures/surname-trail.svg?v=20260601" target="_blank" rel="noopener noreferrer">Open full-size in a new tab ↗</a>
+  </figcaption>
+</figure>
+<style>
+  .surname-trail-figure {
+    margin: 0.6rem 0 1.2rem;
+    padding: 0.5rem;
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-radius: 4px;
+  }
+  :root.theme-dark .surname-trail-figure,
+  :root:not(.theme-light) .surname-trail-figure {
+    background: #24201a;
+    border-color: #6a5a40;
+  }
+  /* Light/dark variants of the surname-trail SVG. Both <img loading="lazy">s are loaded
+     but only one is shown based on the active theme — that way the dark
+     variant can keep its dark title strip + legend dark (a CSS filter
+     would invert them to light, which is wrong). */
+  .surname-trail-zoom img.surname-trail-light { display: block !important; }
+  .surname-trail-zoom img.surname-trail-dark  { display: none  !important; }
+  :root.theme-dark .surname-trail-zoom img.surname-trail-light,
+  :root:not(.theme-light) .surname-trail-zoom img.surname-trail-light { display: none  !important; }
+  :root.theme-dark .surname-trail-zoom img.surname-trail-dark,
+  :root:not(.theme-light) .surname-trail-zoom img.surname-trail-dark  { display: block !important; }
+  .surname-trail-zoom {
+    position: relative;
+    display: block;
+    border: none;
+    text-decoration: none;
+    cursor: zoom-in;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .surname-trail-zoom img { transition: transform 0.25s ease; }
+  .surname-trail-zoom:hover img { transform: scale(1.01); }
+  .surname-trail-expand {
+    position: absolute;
+    top: 8px; right: 8px;
+    background: rgba(28, 22, 16, 0.78);
+    color: #f6e6b8;
+    font-family: var(--font-serif);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 4px 9px;
+    border-radius: 3px;
+    opacity: 0;
+    transform: translateY(-2px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    pointer-events: none;
+  }
+  .surname-trail-zoom:hover .surname-trail-expand,
+  .surname-trail-zoom:focus-visible .surname-trail-expand {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .surname-trail-zoom:focus-visible {
+    outline: 2px solid var(--brand, #d8b366);
+    outline-offset: 2px;
+  }
+  .surname-trail-cap {
+    text-align: right;
+    font-size: 0.78rem;
+    margin-top: 0.35rem;
+    color: var(--text-meta, #6a5a42);
+  }
+  .surname-trail-cap a {
+    color: var(--brand-dark, #8a6420);
+    border-bottom: 1px dotted var(--brand-dark, #d8b366);
+    text-decoration: none;
+  }
+  :root.theme-dark .surname-trail-cap { color: #c8b896; }
+  :root.theme-dark .surname-trail-cap a { color: #fadea0; border-bottom-color: #d8b366; }
+</style>
+
+<!-- ============ 3. CHRONOLOGY ============ -->
+<div class="puzzle-fleuron" aria-hidden="true"><svg viewBox="0 0 400 14" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="0" y="6.5" width="160" height="1"/><rect x="240" y="6.5" width="160" height="1"/><circle cx="178" cy="7" r="1.6"/><circle cx="222" cy="7" r="1.6"/><path d="M200 1 L207 7 L200 13 L193 7 Z"/></g></svg></div>
+<div class="puzzle-wappen-row">
+  <svg class="puzzle-wappen" viewBox="0 0 80 100" role="img" aria-label="Chronology emblem — a shield with an open ledger and date marks">
+    <path d="M4 3 L76 3 L76 56 Q76 82 40 96 Q4 82 4 56 Z" fill="#3a2f1e" stroke="#1a1612" stroke-width="1.6"/>
+    <rect x="4" y="22" width="72" height="2" fill="#f4e2b0" opacity="0.65"/>
+    <!-- Open ledger -->
+    <path d="M18 50 L40 46 L62 50 L62 76 L40 72 L18 76 Z" fill="#f4e2b0" stroke="#1a1612" stroke-width="0.8"/>
+    <line x1="40" y1="46" x2="40" y2="72" stroke="#1a1612" stroke-width="0.6"/>
+    <line x1="22" y1="56" x2="36" y2="54" stroke="#3a2f1e" stroke-width="0.5"/>
+    <line x1="22" y1="61" x2="36" y2="59" stroke="#3a2f1e" stroke-width="0.5"/>
+    <line x1="22" y1="66" x2="36" y2="64" stroke="#3a2f1e" stroke-width="0.5"/>
+    <line x1="44" y1="54" x2="58" y2="56" stroke="#3a2f1e" stroke-width="0.5"/>
+    <line x1="44" y1="59" x2="58" y2="61" stroke="#3a2f1e" stroke-width="0.5"/>
+    <line x1="44" y1="64" x2="58" y2="66" stroke="#3a2f1e" stroke-width="0.5"/>
+    <text x="40" y="42" text-anchor="middle" font-family="SF Mono, Menlo, monospace" font-size="8" font-weight="700" fill="#d8b366">1866-1896</text>
+  </svg>
+  <h3 class="mt-section" id="chronology">Nine attestations &mdash; the surname chronology 1866–1896</h3>
+</div>
+<p>One row per record. Cluster members (the [ɔ]-vowel root forms — Gonnson, Gonsen, Konsen, Gonson, Conson) are highlighted in green; outliers (the [a]-vowel mishearings — Gansen, Jansen, Gannsen) in standard color. Rows where Charles himself was the documented informant are gold-shaded.</p>
+
+<!-- AUTOGEN:surname-chronology START — generated by scripts/build-surname-trail.py from data/surname-attestations.json. Do NOT hand-edit; edit the JSON and re-run the generator. -->
+<div class="surname-chronology">
+  <table>
+    <thead>
+      <tr>
+        <th>Year</th>
+        <th>Record</th>
+        <th>Surname recorded</th>
+        <th>Scribe</th>
+        <th>Charles speaks?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="charles-speaker">
+        <td>1866</td>
+        <td>St. Marcus marriage <span style="color:var(--text-meta);">(<a href="../index.html#evidence">Card 3</a>)</span></td>
+        <td class="surname cluster">Gonnson</td>
+        <td>Pastor G.W. Wall <em>(Württemberger)</em></td>
+        <td><span class="speaker-flag">YES &mdash; groom</span></td>
+      </tr>
+      <tr>
+        <td>1870</td>
+        <td>Daughter Katherine baptism</td>
+        <td class="surname">Gansen</td>
+        <td>Pastor Heinrich Braschler <em>(Swiss)</em></td>
+        <td>parent at child's font</td>
+      </tr>
+      <tr>
+        <td>1872</td>
+        <td>Daughter Auguste baptism</td>
+        <td class="surname cluster">Gonsen</td>
+        <td>Pastor Braschler <strong>again</strong></td>
+        <td>parent at child's font</td>
+      </tr>
+      <tr>
+        <td>1875</td>
+        <td>Son Erwin Carl baptism <strong>(this page)</strong> <span style="color:var(--text-meta);">(<a href="../index.html#evidence">Card 6</a>)</span></td>
+        <td class="surname cluster">Konsen</td>
+        <td>Pastor Julius Hoffmann</td>
+        <td>parent at child's font</td>
+      </tr>
+      <tr>
+        <td>1880</td>
+        <td>U.S. Federal Census &middot; 1534 Jackson St.</td>
+        <td class="surname cluster">Gonson</td>
+        <td>enumerator unknown</td>
+        <td>census &mdash; informant unrecorded</td>
+      </tr>
+      <tr>
+        <td>1881</td>
+        <td>Daughter Bertha baptism</td>
+        <td class="surname">Jansen</td>
+        <td>Pastor Johannes Nollau</td>
+        <td>parent at child's font</td>
+      </tr>
+      <tr class="konzen-keystone">
+        <td>1890</td>
+        <td>Daughter Auguste death record</td>
+        <td class="surname cluster"><strong>Konzen</strong> <em>(Hessian z-form)</em></td>
+        <td>Pastor L.G. Nollau or civil registrar</td>
+        <td>family informant</td>
+      </tr>
+      <tr>
+        <td>1895</td>
+        <td>St. Louis city directory (Gould's) &middot; r. rear 2407 DeKalb</td>
+        <td class="surname">Gannsen</td>
+        <td>Directory canvasser / compositor</td>
+        <td>directory listing &mdash; self-reported (probable)</td>
+      </tr>
+      <tr class="charles-speaker">
+        <td>1896</td>
+        <td>Wife Auguste death record &middot; St. Marcus</td>
+        <td class="surname cluster">Conson</td>
+        <td>Pastor Eilt Heeren Eilts</td>
+        <td><span class="speaker-flag">YES &mdash; surviving spouse</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- AUTOGEN:surname-chronology END -->
+
+<div class="card accent" style="margin-top:1rem;">
+  <h4>The 1895 directory — <em>Gannsen</em> enters the trail <span class="badge confirmed">Confirmed in-image</span></h4>
+  <p class="mb-0">The ninth attestation, added <strong>21 June 2026</strong>, comes not from a parish font but from a city directory. Gould's <em>St. Louis Directory</em> for 1895 lists <strong>&ldquo;Gannsen Charles, watch[maker], r. rear 2407 DeKalb&rdquo;</strong> &mdash; and, directly beneath, <strong>&ldquo;Gannsen Charles, jr., lab.&rdquo;</strong> at the same address, the first documentary trace of a <a href="../charles_america/st-louis-residences.html">son Charles Jr.</a> The entry was confirmed against the directory image (Gould's 1895, FamilySearch ark 3QHV-V38V-568N, image 268). It matters to the trail for three reasons. First, it is the only attestation of the project's namesake <em>Gannsen</em> form to fall <em>inside</em> the 1866&ndash;1896 window &mdash; the spelling otherwise appears earlier, on the 1862 enlistment and 1868 naturalization Charles signed himself. Second, it was supplied to a secular canvasser rather than a German-speaking pastor, yet still lands on the same <em>[a]</em>-vowel, G-stem outlier as the 1870 <em>Gansen</em> baptism &mdash; reinforcing that the variation tracks Charles's own speech across independent record streams, not any one scribe's ear. Third, it sits one address off the family's documented <em>2408 DeKalb &ldquo;rear&rdquo;</em> dwelling, anchoring the Gannsen household firmly in the Kosciusko neighbourhood. The full record-by-record ledger is on <a href="../surname-records.html">Surname across the records</a>.</p>
+</div>
+
+<!-- ============ 4. PHONETIC ============ -->
+<div class="puzzle-fleuron" aria-hidden="true"><svg viewBox="0 0 400 14" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="0" y="6.5" width="160" height="1"/><rect x="240" y="6.5" width="160" height="1"/><circle cx="178" cy="7" r="1.6"/><circle cx="222" cy="7" r="1.6"/><path d="M200 1 L207 7 L200 13 L193 7 Z"/></g></svg></div>
+<div class="puzzle-wappen-row">
+  <svg class="puzzle-wappen" viewBox="0 0 80 100" role="img" aria-label="Phonetic emblem — a shield with a sound-wave glyph and IPA bracket">
+    <path d="M4 3 L76 3 L76 56 Q76 82 40 96 Q4 82 4 56 Z" fill="#3a2f1e" stroke="#1a1612" stroke-width="1.6"/>
+    <rect x="4" y="22" width="72" height="2" fill="#f4e2b0" opacity="0.65"/>
+    <!-- Sound waves -->
+    <path d="M16 60 Q22 50 28 60 Q34 70 40 60 Q46 50 52 60 Q58 70 64 60" stroke="#f0c878" stroke-width="2" fill="none"/>
+    <text x="40" y="82" text-anchor="middle" font-family="SF Mono, Menlo, monospace" font-size="10" font-weight="700" fill="#f4e2b0">[ˈkɔn.sən]</text>
+  </svg>
+  <h3 class="mt-section" id="phonetic">The phonetic cluster &mdash; one sound, nine spellings</h3>
+</div>
+<div class="phonetic-cluster">
+  <h3>Six of nine attestations collapse to the same Hessian root to a hearer's ear</h3>
+  <p>To an English-speaking parish clerk hearing a German-speaker say his surname, the G-/K-/C- initial alternation is purely orthographic for the same velar consonant — and the G/K split is just a voicing slip on that one consonant. The middle <em>nns/ns/nz</em> cluster all reduces to [ns] in fast speech (the German <em>tz</em> affricate becomes a soft [ts] that an English ear typically captures as [s]). Terminal -en and -on are both unstressed schwa [ən]. <strong>The only material phonetic differences across all nine renderings are the vowel and the velar voicing.</strong> Six of the nine collapse to one Hessian root, differing only by the K/G velar voicing slip — three render as <span class="ipa">[ˈkɔn.sən]</span>, three as <span class="ipa">[ˈɡɔn.sən]</span>:</p>
+<!-- AUTOGEN:surname-phonetic START — generated by scripts/build-surname-trail.py from data/surname-attestations.json. Do NOT hand-edit; edit the JSON and re-run the generator. -->
+  <table>
+    <tr><th>Year</th><th>Rendering</th><th>IPA</th><th>Charles informant?</th></tr>
+    <tr><td>1866</td><td><strong>Gonnson</strong></td><td><span class="ipa">[ˈɡɔn.sən]</span></td><td><span class="speaker-yes">YES &mdash; groom at his own marriage</span></td></tr>
+    <tr><td>1872</td><td>Gonsen</td><td><span class="ipa">[ˈɡɔn.sən]</span></td><td><span class="speaker-no">probable (parent at child's baptism)</span></td></tr>
+    <tr><td>1875</td><td><strong>Konsen</strong></td><td><span class="ipa">[ˈkɔn.sən]</span></td><td><span class="speaker-no">probable (parent at child's baptism)</span></td></tr>
+    <tr><td>1880</td><td>Gonson</td><td><span class="ipa">[ˈɡɔn.sən]</span></td><td><span class="speaker-no">census enumerator</span></td></tr>
+    <tr><td>1890</td><td><strong>Konzen</strong> <em>(Hessian z-form)</em></td><td><span class="ipa">[ˈkɔn.tsən] / [ˈkɔn.sən]</span></td><td><span class="speaker-no">family informant at daughter's death</span></td></tr>
+    <tr><td>1896</td><td><strong>Conson</strong></td><td><span class="ipa">[ˈkɔn.sən]</span></td><td><span class="speaker-yes">YES &mdash; surviving spouse at wife's funeral</span></td></tr>
+  </table>
+<!-- AUTOGEN:surname-phonetic END -->
+  <p><strong>The bookend Charles-self-attestations (1866 marriage, 1896 wife's funeral) both capture an [ɔ]-vowel form.</strong> Across thirty years, every record where Charles himself was the documented informant gives a [ˈkɔn.sən]-style sound. The two outliers — <em>Gansen</em> 1870 and <em>Jansen</em> 1881, both with an [a]-vowel — were captured at children's baptisms, where the mother (Auguste Kreichelt, from Hannover) may have been the speaker, or the parish clerk simply heard the [ɔ] as [a]. <em>The clustering pattern points squarely to Charles consistently saying [ˈkɔn.sən] — the modern German pronunciation of <strong>Kontzen</strong> / <strong>Konzen</strong> minus the silent t.</em></p>
+</div>
+
+<!-- ============ 6. HYPOTHESES ============ -->
+<div class="puzzle-fleuron" aria-hidden="true"><svg viewBox="0 0 400 14" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="0" y="6.5" width="160" height="1"/><rect x="240" y="6.5" width="160" height="1"/><circle cx="178" cy="7" r="1.6"/><circle cx="222" cy="7" r="1.6"/><path d="M200 1 L207 7 L200 13 L193 7 Z"/></g></svg></div>
+<div class="puzzle-wappen-row">
+  <svg class="puzzle-wappen" viewBox="0 0 80 100" role="img" aria-label="Hypothesis emblem — a shield with six numbered dots">
+    <path d="M4 3 L76 3 L76 56 Q76 82 40 96 Q4 82 4 56 Z" fill="#3a2f1e" stroke="#1a1612" stroke-width="1.6"/>
+    <rect x="4" y="22" width="72" height="2" fill="#f4e2b0" opacity="0.65"/>
+    <!-- Six small numbered dots arranged in two rows of three -->
+    <circle cx="22" cy="44" r="6" fill="#f0c878"/><text x="22" y="48" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="9" font-weight="700" fill="#3a2f1e">1</text>
+    <circle cx="40" cy="44" r="6" fill="#f0c878"/><text x="40" y="48" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="9" font-weight="700" fill="#3a2f1e">2</text>
+    <circle cx="58" cy="44" r="6" fill="#f0c878"/><text x="58" y="48" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="9" font-weight="700" fill="#3a2f1e">3</text>
+    <circle cx="22" cy="62" r="6" fill="#f0c878"/><text x="22" y="66" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="9" font-weight="700" fill="#3a2f1e">4</text>
+    <circle cx="40" cy="62" r="6" fill="#f0c878"/><text x="40" y="66" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="9" font-weight="700" fill="#3a2f1e">5</text>
+    <circle cx="58" cy="62" r="6" fill="#f0c878"/><text x="58" y="66" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="9" font-weight="700" fill="#3a2f1e">6</text>
+    <text x="40" y="84" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" font-weight="700" fill="#f4e2b0" letter-spacing="0.1em">HYPOTHESES</text>
+  </svg>
+  <h3 class="mt-section" id="hypotheses">Six hypotheses for why the family said "Konsen" / "Konzen"</h3>
+</div>
+<p>If Charles is not a legitimate Konze son but the family kept calling itself Konsen, what's the relationship between Charles and the Trendelburg Kontzen line? Five working hypotheses address that question, ranked roughly by current plausibility &mdash; and a sixth steps back to ask whether the Hessian cluster is the right origin at all, given that a second, larger Konzen cluster exists in the Rhineland. Each is evaluated by what evidence supports it, what evidence weakens it, and what specific record would confirm it.</p>
+
+<div class="hypothesis-grid">
+
+  <div class="hypothesis-card">
+    <h3><span class="h-rank">1</span>Illegitimate-birth scenario &mdash; biological Konze child, no church-record entry</h3>
+    <p>Charles is biologically a Konze son, but his birth was illegitimate (out-of-wedlock or with a father who declined to acknowledge paternity), so it appears in the parish register under the <em>mother's</em> surname or in a discrete illegitimate-birth section, not as a legitimate Konze entry — which is exactly what Schräder's database check would have looked at.</p>
+    <div class="h-section for"><span class="label">For</span>The 1830s Hessian parish norms documented illegitimate births separately from legitimate baptisms, and a child raised in a Konze household but illegitimately born wouldn't appear in Schräder's "legitimate Konze sons" tally. Trendelburg-area illegitimate-baptism cohorts have already produced two Konze adjacencies (Lucas, Hund — both eliminated for other reasons).</div>
+    <div class="h-section against"><span class="label">Against</span>If illegitimate, Charles would typically be recorded under the mother's surname, not "Konze" — yet the American records consistently use the K-initial cluster. Counterargument: he could have <em>adopted</em> the Konze name later as the household's working surname.</div>
+    <div class="h-section confirm"><span class="label">What would confirm</span>An illegitimate-baptism entry in the Hofgeismar <a class="glossary-link" href="../glossary.html#g-kirchenkreis" title="Glossary: Kirchenkreis">Kirchenkreis</a> ~1834-1836 naming a Konze father (acknowledged or "vermutlich"). Most likely surfaces in the <a href="../towns/heisebeck.html"><strong>Heisebeck</strong></a> registers (currently undigitized — see the <a href="parish-map.html#open-leads">parish map's open leads</a>).</div>
+  </div>
+
+  <div class="hypothesis-card">
+    <h3><span class="h-rank">2</span>Step-relationship &mdash; raised in a Konze household, biologically distinct</h3>
+    <p>Charles's mother (or father) remarried into a Konze household after Charles was born to a different family. Charles grew up using Konze as his everyday surname even though his biological father was someone else.</p>
+    <div class="h-section for"><span class="label">For</span>Step-parent surname adoption was common in 19th-century rural Hessian villages, especially when the biological parent died young or the original father was unknown. The 1875 baptism's use of Konsen reflects what Charles called himself, not necessarily his birth surname.</div>
+    <div class="h-section against"><span class="label">Against</span>Step-relationships normally still leave a paper trail — the original baptism (under the birth surname) plus a step-parent's marriage record. Neither has surfaced under the Trendelburg-area Konze name.</div>
+    <div class="h-section confirm"><span class="label">What would confirm</span>A Hofgeismar-area marriage record showing a widowed Konze head-of-household marrying a woman with a small child not named Konze, ca. 1837–1845. <a href="parish-map.html#eliminated">Searchable in the post-1822 Schöneberg / Friedrichsfeld / Helmarshausen registers</a> &mdash; or the still-untouched pre-1822 Schöneberg.</div>
+  </div>
+
+  <div class="hypothesis-card">
+    <h3><span class="h-rank">3</span>Maternal-side surname &mdash; Hildebrand or other line, retained as identification</h3>
+    <p>Charles is biologically a Hildebrand or other Trendelburg-area family, and "Konsen" reflects a maternal-line connection (his mother was a Konze before her marriage; he kept her surname for some reason — illegitimacy, family preference, or local convention).</p>
+    <div class="h-section for"><span class="label">For</span>The Wilhelmine Hildebrand thread on Card 6 / Card 1 already identifies a probable maternal connection through Entry 195 (1835). Hessian villages did sometimes use the maternal surname for distinguishing branches when the paternal surname was common.</div>
+    <div class="h-section against"><span class="label">Against</span>Standard Hessian convention names the child after the legitimate father; maternal-surname adoption is more typical of illegitimate births (which collapses this hypothesis into #1).</div>
+    <div class="h-section confirm"><span class="label">What would confirm</span>A Hildebrand or other paternal baptism record naming a Konze mother. Most likely surfaces in <a href="../towns/heisebeck.html"><strong>Heisebeck</strong></a> (Wilhelmine Hildebrand's most likely home parish — see the <a href="parish-map.html#open-leads">parish map's open leads</a>).</div>
+  </div>
+
+  <div class="hypothesis-card">
+    <h3><span class="h-rank">4</span>Chosen name &mdash; adopted at conversion, emigration, or arrival</h3>
+    <p>Charles was born under a different surname entirely and adopted "Konze" / "Konsen" at some point — perhaps at a religious conversion, at emigration registration, or after arrival in St. Louis to fit into an existing local German-Lutheran community.</p>
+    <div class="h-section for"><span class="label">For</span>Name changes at emigration are well-documented in 19th-century German records — the 1859 emigrant cohort included men who used their <em>Hausname</em> (farm name) on the manifest rather than their birth surname. Could explain the absence of any matching Konze baptism.</div>
+    <div class="h-section against"><span class="label">Against</span>Even chosen surnames usually leave a paper trail in either the source community (the emigration register, the conversion record) or the destination church (the membership roll, a "name formerly known as" notation). None has surfaced.</div>
+    <div class="h-section confirm"><span class="label">What would confirm</span>A Hessian <a class="glossary-link" href="../glossary.html#g-auswanderer-beleg" title="Glossary: Auswanderer-Beleg">Auswanderer-Beleg</a> listing Charles under a non-Konze birth name with a "now known as" notation &mdash; one of the three records on the <a href="../index.html#immigration">Immigration tab's "what would resolve the gap" panel</a>. <strong>Note (8 Jun 2026):</strong> a St. Marcus membership roll was previously listed here as a route, but the church's complete FamilySearch/FHL inventory holds <em>no</em> pre-1866 membership record &mdash; the earliest communicant book is a <em>Register of Communion, 1877&ndash;1897</em> (FHL roll 1503035), which post-dates Charles's arrival by ~18 years and lists communicants by date, not birth-origin. That route is therefore closed.</div>
+  </div>
+
+  <div class="hypothesis-card">
+    <h3><span class="h-rank">5</span>Informal household / unrecovered fragment &mdash; the answer hasn't surfaced yet</h3>
+    <p>Charles's actual situation doesn't fit any of the documented categories above — a foster-relationship, an informal foster-cousin arrangement, a deliberate erasure of original family identity, or a fragment of his history we simply haven't recovered.</p>
+    <div class="h-section for"><span class="label">For</span>Honest acknowledgment of incompleteness. After 14 negative parish searches and the Schräder ruling, no clean explanation fits all the evidence; the data is consistent with multiple narratives.</div>
+    <div class="h-section against"><span class="label">Against</span>This is essentially a placeholder — it's true by construction (something we don't know is by definition outside the documented categories) but it isn't actionable.</div>
+    <div class="h-section confirm"><span class="label">What would confirm</span>By definition, any new evidence that reframes the puzzle. Most likely sources: an <em>Amerikabrief</em> (emigrant letter) in a Trendelburg-area family archive; an unidentified Charles-side affidavit in the pension file; or a familial tradition recovered from a Konsen / Konzen descendant.</div>
+  </div>
+
+  <div class="hypothesis-card">
+    <h3><span class="h-rank">6</span>Different-region origin &mdash; Charles came from the Rhineland/Eifel Konzen cluster, not Hessen</h3>
+    <p>Charles was not connected to the Trendelburg Kontze line at all. His surname traces instead to the <strong>separate, larger Konzen cluster in the Eifel / Aachen region</strong> of the Rhineland &mdash; where <em>Konzen</em>, the exact z-spelling on Auguste's 1890 death record, is native. Because the surname descends from the given name <em>Konrad</em> (via Kun(t)z + a diminutive), it is <strong>polygenetic</strong>: the Hessian and Rhineland clusters almost certainly arose independently, so the American <em>Konzen / Konsen</em> need not point to the Diemel valley at all.</p>
+    <div class="h-section for"><span class="label">For</span>A genuine, well-documented Konzen cluster exists ~200&nbsp;km west of Trendelburg: there is a village literally named <strong>Konzen</strong> (a district of Monschau in the Städteregion Aachen, an old royal court first recorded in 888), and the closely related form <strong>Conzen</strong> is heavily concentrated around Aachen. The z-form <em>Konzen</em> sits more naturally there than in Hessen, where the parish forms are <em>Konze / Kontze / Kontzen</em>. The June 2026 distribution sweep only covered parishes <em>ringing Trendelburg</em>, so it establishes local uniqueness, not national &mdash; it cannot rule out a distant origin cluster.</div>
+    <div class="h-section against"><span class="label">Against</span>Charles named his origin <strong>twice, independently, and both times in Hessen</strong> &mdash; &ldquo;Deisel, Churhessen&rdquo; (1866 marriage) and a place decoded as Trendelburg (1862 enlistment) &mdash; both inside the Diemel-valley cluster, neither anywhere near the Rhineland. A Rhineland origin would require both self-reports to be wrong. The Eifel / Aachen region is also strongly <strong>Catholic</strong>, whereas Charles's family was German-<strong>Lutheran</strong> (St. Marcus), which fits Kurhessen far better. This is why the hypothesis ranks last.</div>
+    <div class="h-section confirm"><span class="label">What would confirm</span>A baptism or birth record for Charles (b. ~26 Jan 1835) in the <strong>Monschau / Aachen-region Konzen parishes</strong>, or an emigration / enlistment document independently tying him to the Rhineland rather than Kurhessen. Conversely, any firm Hessian baptism naming him would close this out. See the <a href="konze-family-by-town.html">Konze family by town</a> and the <a href="../changelog.html#cl-2026-06-06-konze-distribution">distribution-sweep log</a> for the cluster data.</div>
+  </div>
+
+</div>
+
+<!-- ============ 6b. CANDIDATE-PATH TREE (NEW — May 2026) ============ -->
+<div class="puzzle-fleuron" aria-hidden="true"><svg viewBox="0 0 400 14" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="0" y="6.5" width="160" height="1"/><rect x="240" y="6.5" width="160" height="1"/><circle cx="178" cy="7" r="1.6"/><circle cx="222" cy="7" r="1.6"/><path d="M200 1 L207 7 L200 13 L193 7 Z"/></g></svg></div>
+<div class="puzzle-wappen-row">
+  <svg class="puzzle-wappen" viewBox="0 0 80 100" role="img" aria-label="Candidate-tree emblem — a shield with a branching tree and three verdict marks">
+    <path d="M4 3 L76 3 L76 56 Q76 82 40 96 Q4 82 4 56 Z" fill="#3a2f1e" stroke="#1a1612" stroke-width="1.6"/>
+    <rect x="4" y="22" width="72" height="2" fill="#f4e2b0" opacity="0.65"/>
+    <!-- Branching tree -->
+    <circle cx="40" cy="36" r="3" fill="#f4e2b0"/>
+    <line x1="40" y1="38" x2="28" y2="56" stroke="#f4e2b0" stroke-width="1"/>
+    <line x1="40" y1="38" x2="52" y2="56" stroke="#f4e2b0" stroke-width="1"/>
+    <!-- Verdict leaves: red ✗, amber ? -->
+    <circle cx="28" cy="60" r="6" fill="#c84a4a"/>
+    <text x="28" y="64" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#fff">×</text>
+    <circle cx="52" cy="60" r="6" fill="#d8b366"/>
+    <text x="52" y="64" text-anchor="middle" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#3a2f1e">?</text>
+    <text x="40" y="84" text-anchor="middle" font-family="Inter, sans-serif" font-size="6.5" font-weight="700" fill="#f4e2b0" letter-spacing="0.08em">9 CANDIDATES</text>
+  </svg>
+  <h3 class="mt-section" id="candidates">The candidate-path tree &mdash; nine Konze men tested</h3>
+</div>
+<p style="background: var(--bg-card-tint, #fdf5d8); border-left: 3px solid var(--brand, #d8b366); padding: 0.7rem 1rem; margin: 0.6rem 0 1.2rem; font-size: 0.95rem;"><strong>Reader's note &mdash;</strong> the chart labels &ldquo;Andreas Konze A / B / C&rdquo; below are <em>five (probably six) distinct men</em> who share the name Andreas Kon(t)ze across the Trendelburg and Deisel records 1718&ndash;1830. Peter Schräder's 3&ndash;5 April 2026 disentanglement separated their identities &mdash; see the <a href="../index.html#andreas-disentanglement">Andreas Konze disentanglement</a> for the worked example (burial-age statements, marriage-entry spouse names, and grandfather attribution that distinguish each).</p>
+
+<p>Of the six hypotheses above, four require a specific Konze/Kontzen man to be Charles's biological father (legitimate, illegitimate, step-, or maternal-line). Between Sessions 18 and 50 of the April 2026 sprint, every Konze/Kontzen male appearing in the Trendelburg parish complex (Hofgeismar Kirchenkreis), the Friedrichsfeld colony, and the Mainz emigrant cohort was tested against Charles's 26 January 1835 birth date. The chart below maps the <strong>eight distinct candidates</strong> by verdict &mdash; <strong>six eliminated outright</strong> (dates, sex, or death preclude paternity) and <strong>two inconclusive</strong> (paternity window open but no direct evidence); a ninth card, the &ldquo;[?]ard colonist,&rdquo; was <strong>withdrawn 8 June 2026</strong> as a misread of Andreas Konze (b. 1795). <strong>No Konze candidate remains open</strong>. The project's prior strongest single-record match &mdash; Entry 195 of Deisel KB 218842, formerly read as "Justus" Konze &mdash; was <strong>closed on 4 May 2026</strong> when Peter Schräder's Kurrent re-reading found the father's surname was <em>Köster</em>, not Konze, and the field previously transcribed as the child's first name actually reads <em>"männlich"</em> &mdash; the Lutheran parish convention for a baby who died unbaptized (see the <a href="../sources/entry-195-baptism.html">canonical Entry 195 source page</a>). The same re-reading also closed the prior "two Konze fathers in Deisel, Jan 1835" structural finding, which collapses to one (Andreas Konze, Ackermann of Entry 194 &mdash; already on the chart as eliminated through his son Ludwig Friedrich). Click the chart to open it full-size in a new tab.</p>
+
+<figure class="candidate-tree-figure" aria-labelledby="candidate-tree-cap">
+  <a class="candidate-tree-zoom" href="../assets/figures/konzen-candidate-tree.svg?v=20260608" target="_blank" rel="noopener noreferrer" aria-label="Open the candidate-path tree diagram full-size in a new tab">
+  <svg viewBox="0 0 1200 1100" xmlns="http://www.w3.org/2000/svg" role="img"
+       aria-label="Eight distinct Konze and Kontzen men tested as Charles's possible father. Six are eliminated — including Entry 195 of Deisel KB 218842, closed 4 May 2026 by Peter Schräder's Kurrent re-reading (father is Köster, not Konze; child died unbaptized). Two candidates remain inconclusive; a ninth card, the '[?]ard colonist,' was withdrawn 8 June 2026 as a misread of Andreas Konze (b. 1795). No open candidate remains.">
+    <defs>
+      <style>
+        .ct-bg-card { fill: var(--bg-card, #fffaf0); }
+        .ct-bg-page { fill: var(--bg-page, #f6f1e7); }
+        .ct-title { font: 700 26px 'Cormorant Garamond', Georgia, serif; fill: var(--text-strong, #3a2f1e); }
+        .ct-sub { font: italic 18.5px var(--font-serif); fill: var(--text-meta, #6a5a42); }
+        .ct-q-fill { fill: #3a2f1e; }
+        .ct-q-text { font: 700 16px 'Cormorant Garamond', Georgia, serif; fill: #f4e2b0; }
+        .ct-q-meta { font: 11px 'SF Mono', Menlo, Consolas, monospace; fill: #d8b366; letter-spacing: 0.08em; }
+        .ct-col-head { font: 700 18px 'Inter', sans-serif; letter-spacing: 0.12em; text-transform: uppercase; }
+        .ct-col-elim { fill: #a3441f; }
+        .ct-col-inc  { fill: #8a6420; }
+        .ct-col-open { fill: #2c5a1c; }
+        .ct-col-count { font: 700 15px 'SF Mono', Menlo, Consolas, monospace; letter-spacing: 0.05em; fill: var(--text-meta, #6a5a42); }
+        .ct-card-name { font: 700 19px 'Cormorant Garamond', Georgia, serif; fill: var(--text-strong, #2c2620); }
+        .ct-card-meta { font: italic 14.5px var(--font-serif); fill: var(--text-meta, #6a5a42); }
+        .ct-card-basis { font: 14.5px 'Inter', sans-serif; fill: var(--text-body, #3a2f1e); }
+        .ct-spine { stroke: var(--border-medium, #a88a4a); stroke-width: 1.4; fill: none; }
+        .ct-spine-elim { stroke: #c84a4a; }
+        .ct-spine-inc  { stroke: #d8b366; }
+        .ct-spine-open { stroke: #4a8a4a; }
+        .ct-card { stroke-width: 1.4; }
+        .ct-card-elim { fill: #fbeae5; stroke: #c84a4a; }
+        .ct-card-inc  { fill: #fdf5e0; stroke: #d8b366; }
+        .ct-card-open { fill: #ebf5e3; stroke: #4a8a4a; }
+        .ct-card-star { fill: #fff6c8; stroke: #c89a40; stroke-width: 2.2; }
+        .ct-star-halo { fill: #f0c878; opacity: 0.32; }
+        .ct-verdict-chip { font: 700 13.5px 'Inter', sans-serif; letter-spacing: 0.06em; text-transform: uppercase; }
+        .ct-verdict-elim { fill: #a3441f; }
+        .ct-verdict-inc  { fill: #8a6420; }
+        .ct-verdict-open { fill: #2c5a1c; }
+        :root.theme-dark .ct-title, :root:not(.theme-light) .ct-title { fill: #f1cf85; }
+        :root.theme-dark .ct-sub,   :root:not(.theme-light) .ct-sub   { fill: #c8b896; }
+        :root.theme-dark .ct-q-fill,:root:not(.theme-light) .ct-q-fill{ fill: #1a1612; }
+        :root.theme-dark .ct-col-elim,:root:not(.theme-light) .ct-col-elim{ fill: #f4a098; }
+        :root.theme-dark .ct-col-inc, :root:not(.theme-light) .ct-col-inc { fill: #fadea0; }
+        :root.theme-dark .ct-col-open,:root:not(.theme-light) .ct-col-open{ fill: #b8e0a4; }
+        :root.theme-dark .ct-col-count,:root:not(.theme-light) .ct-col-count{ fill: #c8b896; }
+        :root.theme-dark .ct-card-name,:root:not(.theme-light) .ct-card-name{ fill: #f4ead0; }
+        :root.theme-dark .ct-card-meta,:root:not(.theme-light) .ct-card-meta{ fill: #c8b896; }
+        :root.theme-dark .ct-card-basis,:root:not(.theme-light) .ct-card-basis{ fill: #e8dfc8; }
+        :root.theme-dark .ct-card-elim,:root:not(.theme-light) .ct-card-elim{ fill: #3a1e1a; stroke: #c84a4a; }
+        :root.theme-dark .ct-card-inc, :root:not(.theme-light) .ct-card-inc { fill: #2c2519; stroke: #d8b366; }
+        :root.theme-dark .ct-card-open,:root:not(.theme-light) .ct-card-open{ fill: #1f2a18; stroke: #6cb060; }
+        :root.theme-dark .ct-card-star,:root:not(.theme-light) .ct-card-star{ fill: #3a2f0e; stroke: #f0c878; }
+        :root.theme-dark .ct-verdict-elim,:root:not(.theme-light) .ct-verdict-elim{ fill: #f4a098; }
+        :root.theme-dark .ct-verdict-inc, :root:not(.theme-light) .ct-verdict-inc { fill: #fadea0; }
+        :root.theme-dark .ct-verdict-open,:root:not(.theme-light) .ct-verdict-open{ fill: #b8e0a4; }
+      </style>
+    </defs>
+
+    <!-- Root question pill -->
+    <rect class="ct-q-fill" x="370" y="30" width="460" height="68" rx="6"/>
+    <text class="ct-q-meta" x="600" y="52" text-anchor="middle">THE QUESTION · APRIL 2026 SCHRÄDER VERDICT</text>
+    <text class="ct-q-text" x="600" y="78" text-anchor="middle">Who fathered Charles? (b. 26 Jan 1835)</text>
+
+    <!-- Spines from question pill to the two column headers — columns centered at x=300 and x=900 -->
+    <path class="ct-spine ct-spine-elim" d="M 600 98 Q 600 130 300 130 L 300 168"/>
+    <path class="ct-spine ct-spine-inc"  d="M 600 98 Q 600 130 900 130 L 900 168"/>
+
+    <!-- Column headers -->
+    <text class="ct-col-head ct-col-elim" x="300" y="180" text-anchor="middle">✗ Eliminated</text>
+    <text class="ct-col-count"            x="300" y="200" text-anchor="middle">6 candidates · date, sex, or death preclude</text>
+    <text class="ct-col-head ct-col-inc"  x="900" y="180" text-anchor="middle">? Inconclusive</text>
+    <text class="ct-col-count"            x="900" y="200" text-anchor="middle">2 candidates · open paternity window</text>
+
+    <!-- ===== ELIMINATED column (6 cards), centered at x=300, cards x=120 to x=480 ===== -->
+    <g>
+      <rect class="ct-card ct-card-elim" x="120" y="220" width="360" height="104" rx="4"/>
+      <text class="ct-verdict-chip ct-verdict-elim" x="132" y="240">✗ ELIMINATED · DIED 1830</text>
+      <text class="ct-card-name" x="132" y="262">Andreas Konze "A"</text>
+      <text class="ct-card-meta" x="132" y="278">Trendelburg · b. 1787</text>
+      <text class="ct-card-basis" x="132" y="296">Died Oct 1830 — five years before</text>
+      <text class="ct-card-basis" x="132" y="310">Charles's 1835 birth.</text>
+    </g>
+    <g>
+      <rect class="ct-card ct-card-elim" x="120" y="340" width="360" height="104" rx="4"/>
+      <text class="ct-verdict-chip ct-verdict-elim" x="132" y="360">✗ ELIMINATED · WRONG GENERATION</text>
+      <text class="ct-card-name" x="132" y="382">Andreas Konze, Ackermann</text>
+      <text class="ct-card-meta" x="132" y="398">Deisel · b. ~1810</text>
+      <text class="ct-card-basis" x="132" y="416">Son Johannes (b. 1810, d. 1835)</text>
+      <text class="ct-card-basis" x="132" y="430">too young to be Charles.</text>
+    </g>
+    <g>
+      <rect class="ct-card ct-card-elim" x="120" y="460" width="360" height="104" rx="4"/>
+      <text class="ct-verdict-chip ct-verdict-elim" x="132" y="480">✗ ELIMINATED · TOO YOUNG</text>
+      <text class="ct-card-name" x="132" y="502">Karl Wilhelm Konze, Einlieger</text>
+      <text class="ct-card-meta" x="132" y="518">Trendelburg · b. 1831</text>
+      <text class="ct-card-basis" x="132" y="536">Only 4 yrs old in 1835 —</text>
+      <text class="ct-card-basis" x="132" y="550">could not father Charles.</text>
+    </g>
+    <g>
+      <rect class="ct-card ct-card-elim" x="120" y="580" width="360" height="104" rx="4"/>
+      <text class="ct-verdict-chip ct-verdict-elim" x="132" y="600">✗ ELIMINATED · TOO YOUNG</text>
+      <text class="ct-card-name" x="132" y="622">Joh. Christoph Konze, Schieferdecker</text>
+      <text class="ct-card-meta" x="132" y="638">Trendelburg · b. ~1825</text>
+      <text class="ct-card-basis" x="132" y="656">~10 yrs old in 1835 — too young</text>
+      <text class="ct-card-basis" x="132" y="670">to father Charles.</text>
+    </g>
+    <g>
+      <rect class="ct-card ct-card-elim" x="120" y="700" width="360" height="104" rx="4"/>
+      <text class="ct-verdict-chip ct-verdict-elim" x="132" y="720">✗ ELIMINATED · DIFFERENT CHILD</text>
+      <text class="ct-card-name" x="132" y="742">Ludwig Friedrich Konze</text>
+      <text class="ct-card-meta" x="132" y="758">Deisel · b. ~10 Jan 1835 (Entry 194)</text>
+      <text class="ct-card-basis" x="132" y="776">Baptized 18 Jan, ~2 wks before —</text>
+      <text class="ct-card-basis" x="132" y="790">a different child, not the father.</text>
+    </g>
+    <g>
+      <rect class="ct-card ct-card-elim" x="120" y="820" width="360" height="146" rx="4"/>
+      <text class="ct-verdict-chip ct-verdict-elim" x="132" y="840">✗ ELIMINATED · NOT EVEN A KONZE</text>
+      <text class="ct-card-name" x="132" y="862">Entry 195 — unnamed Köster infant</text>
+      <text class="ct-card-meta" x="132" y="878">Deisel KB 218842 · b. 20 Jan 1835</text>
+      <text class="ct-card-basis" x="132" y="898">Peter Schräder's Kurrent re-reading</text>
+      <text class="ct-card-basis" x="132" y="912">(4 May 2026): father is <tspan font-weight="700">Köster</tspan>, not</text>
+      <text class="ct-card-basis" x="132" y="926">Konze; child received no name; the</text>
+      <text class="ct-card-basis" x="132" y="940">field previously read as "Justus" is</text>
+      <text class="ct-card-basis" x="132" y="954"><tspan font-style="italic">"männlich"</tspan> — died unbaptized.</text>
+    </g>
+
+    <!-- ===== INCONCLUSIVE column (3 cards), centered at x=900, cards x=720 to x=1080 ===== -->
+    <g>
+      <rect class="ct-card ct-card-inc" x="720" y="220" width="360" height="104" rx="4"/>
+      <text class="ct-verdict-chip ct-verdict-inc" x="732" y="240">? INCONCLUSIVE</text>
+      <text class="ct-card-name" x="732" y="262">Andreas Konze "C"</text>
+      <text class="ct-card-meta" x="732" y="278">Trendelburg / Friedrichsfeld · b. 1795</text>
+      <text class="ct-card-basis" x="732" y="296">Disappeared 1835–43; died Mainz 1854.</text>
+      <text class="ct-card-basis" x="732" y="310">Children documented; no Charles.</text>
+    </g>
+    <g>
+      <rect class="ct-card ct-card-inc" x="720" y="340" width="360" height="104" rx="4"/>
+      <text class="ct-verdict-chip ct-verdict-inc" x="732" y="360">? INCONCLUSIVE</text>
+      <text class="ct-card-name" x="732" y="382">Carl Ludwig Konze, Ackerbürger</text>
+      <text class="ct-card-meta" x="732" y="398">Trendelburg · b. ~1800</text>
+      <text class="ct-card-basis" x="732" y="416">Father of Carl Wilhelm (1831). Window</text>
+      <text class="ct-card-basis" x="732" y="430">for Charles open; no parish record.</text>
+    </g>
+    <g>
+      <rect class="ct-card" x="720" y="460" width="360" height="104" rx="4" fill="#3a2f1e" opacity="0.045" stroke="#bbb1a0" stroke-width="1.2" stroke-dasharray="5 4"/>
+      <text class="ct-verdict-chip" x="732" y="480" fill="#8a7a5a">✓ WITHDRAWN · 8 JUN 2026</text>
+      <text class="ct-card-name" x="732" y="502" style="text-decoration:line-through;">[?]ard Kontze, Colonist</text>
+      <text class="ct-card-meta" x="732" y="520">A misread of Andreas "C" (above):</text>
+      <text class="ct-card-basis" x="732" y="538">Entry 28 = Maria Sabina Kontze (b. 1834),</text>
+      <text class="ct-card-basis" x="732" y="552">his infant daughter — no separate man.</text>
+    </g>
+
+    <!-- Footer band — well inside the 1200×1100 viewBox -->
+    <rect x="60" y="984" width="1080" height="106" rx="4" fill="#3a2f1e" opacity="0.06" stroke="#d8b366" stroke-width="1"/>
+    <text class="ct-title" x="600" y="1010" text-anchor="middle">Working position · updated June 2026</text>
+    <text class="ct-sub"   x="600" y="1034" text-anchor="middle">Of 8 distinct Konze men tested, 6 are eliminated and 2 remain inconclusive — none a confirmed match.</text>
+    <text class="ct-sub"   x="600" y="1056" text-anchor="middle">Entry 195 was closed (father Köster, not Konze); the "colonist" card is withdrawn as a misread of Andreas "C".</text>
+    <text class="ct-sub"   x="600" y="1078" text-anchor="middle">With the May 2026 Y-DNA result, the working position is now relationship, not paternity.</text>
+  </svg>
+  <span class="candidate-tree-expand" aria-hidden="true">⤢ Click to expand</span>
+  </a>
+  <figcaption id="candidate-tree-cap" class="candidate-tree-cap">
+    Eight distinct Konze/Kontzen men tested as Charles's possible father across Sessions 18&ndash;50 of the April 2026 sprint, with Entry 195 closed on 4 May 2026 and the &ldquo;[?]ard colonist&rdquo; card withdrawn 8 June 2026 as a misread of Andreas Konze (b. 1795 &mdash; the entry is his infant daughter Maria Sabina, 1834). Verdict colours: <strong class="ct-cap-elim">red</strong> = eliminated outright (date, sex, or death precludes paternity); <strong class="ct-cap-inc">amber</strong> = paternity window open, no direct evidence. <strong>No Konze candidate remains open</strong>. <strong>Entry 195 of Deisel KB 218842 was the project's strongest single-record date match until 4 May 2026</strong>, when Peter Schräder's Kurrent re-reading found that (i) the father's surname is <em>Köster</em>, not Konze, and his profession Tagelöhner, not Kaufmann; and (ii) what had been transcribed as the child's first name "Justus" actually reads <em>"männlich"</em> — the Lutheran convention for an infant who died without baptism. See the canonical <a href="../sources/entry-195-baptism.html">Entry 195 baptism source page</a> for the full Peter Schräder reading. <a href="../assets/figures/konzen-candidate-tree.svg?v=20260608" target="_blank" rel="noopener noreferrer">Open full-size in a new tab ↗</a>.
+  </figcaption>
+</figure>
+
+<p style="background: var(--bg-card-tint, #fdf5d8); border-left: 3px solid var(--brand, #d8b366); padding: 0.7rem 1rem; margin: 0.9rem 0 1.3rem; font-size: 0.95rem;"><strong>Since this chart &mdash; DNA evidence (30 May 2026):</strong> the <a href="../dna.html">Y-DNA result</a> places Charles's strict paternal line in a young Ashkenazi-Jewish subclade (I-Y38863; common ancestor ~1400&ndash;1450&nbsp;CE). This adds a constraint to the paternity question but <em>does not move any card above</em>. A medieval Jewish coalescence is equally consistent with Charles being a documented Lutheran Konze who carries a centuries-deep Jewish patriline, <em>or</em> with a more recent undocumented-paternity event &mdash; the two readings are not separable on current evidence (see <a href="../open-questions.html#paternal-origin">deep paternal origin</a>). The six eliminations remain hard date/sex/identity grounds; the two inconclusives remain open-window with no direct evidence. The DNA reframes the <em>context</em>, not the verdicts.</p>
+
+<section class="candidate-rosters" style="margin: 1.8rem 0 2rem;">
+  <h3 style="font-size:1.45rem; margin:0 0 0.3rem;">The wider candidate field</h3>
+  <p style="font-size:0.96rem; color:var(--text-meta,#6a5a42); font-style:italic; margin:0 0 1.1rem; max-width:64ch;"><strong>Updated 8 June 2026.</strong> Three rosters once sat behind the chart: the men who could be the partly-legible Friedrichsfeld colonist (A), the Konze women who could stand behind a Konze-surnamed child by the maternal line (B), and the Konze males weighed as Charles himself (C). Re-checking them against the project's own <em>complete</em> page-by-page Friedrichsfeld baptism search (9 April 2026) collapses A and B &mdash; both rested on a single misread entry that the complete search positively identifies as an Andreas-family record. Roster C narrows to one open name.</p>
+
+  <div style="background:var(--bg-card,#fffaf0); border:1px solid var(--border-light,#d8c8a8); border-left:4px solid var(--brand,#d8b366); border-radius:5px; padding:0.85rem 1.15rem; margin-bottom:1rem;">
+    <h4 style="margin:0 0 0.5rem; font-size:1.12rem;">A &middot; The &ldquo;[?]ard Kontze&rdquo; colonist &mdash; <span style="color:#a3441f;">resolved: spurious</span></h4>
+    <p style="font-size:0.93rem; margin:0 0 0.6rem;">This card came from Session 22's reading of an &ldquo;Entry 28&rdquo; baptism as <strong>Maria [Catharina] Kontze, daughter of &ldquo;[?]ard Kontze, Colonist, gebürtig von Friedrichsfeld, January 1835.&rdquo;</strong> The project's <em>complete</em> page-by-page Friedrichsfeld search (9 April 2026) reads that very entry cleanly and identifies it as something else entirely: <strong>Entry 28 = Maria <em>Sabina</em> Kontze, b. 10 January <em>1834</em> (d. 18 February 1834, aged 39 days), daughter of <em>Andreas</em> Kontze, Colonist, <em>gebürtig von Trendelburg</em>, &times; Maria Sophia née Hofeditz.</strong> Session 22's version is a four-way misread of that line &mdash; Sabina&rarr;Catharina, 1834&rarr;1835, Andreas&rarr;&ldquo;[?]ard,&rdquo; Trendelburg&rarr;Friedrichsfeld &mdash; misfiled to Seite 15 (which holds only an illegitimate <em>Dölfer</em> baptism). The 31 May 2026 live re-read independently confirmed that the <em>only</em> Kontze baptisms across 1832&ndash;1835 are Andreas's children.</p>
+    <p style="font-size:0.93rem; margin:0;"><strong>Verdict:</strong> there is no fourth &ldquo;-ard&rdquo; colonist; &ldquo;[?]ard&rdquo; is a garbled reading of <strong>Andreas Konze (b. 1795)</strong>, and the child is his infant daughter Maria Sabina. The card is <strong>retracted.</strong> The only residual loose end is a couple of 1833 leaves the Archion viewer would not render cleanly &mdash; a leaf-by-leaf check at the Landeskirchliches Archiv Kassel would make the retraction formal.</p>
+  </div>
+
+  <div style="background:var(--bg-card,#fffaf0); border:1px solid var(--border-light,#d8c8a8); border-left:4px solid var(--brand,#d8b366); border-radius:5px; padding:0.85rem 1.15rem; margin-bottom:1rem;">
+    <h4 style="margin:0 0 0.5rem; font-size:1.12rem;">B &middot; Konze women who could stand behind the child &mdash; <span style="color:#a3441f;">resolved: premise dissolved</span></h4>
+    <p style="font-size:0.93rem; margin:0 0 0.6rem;">This roster existed only because the Entry-28 mother's maiden name was thought to be an unread Konze surname (the live Archion viewer would not render that leaf on 31 May 2026). But the same 9 April 2026 complete search that resolves A also reads the mother cleanly: she is <strong>Maria Sophia née Hofeditz</strong>, Andreas Konze's second wife &mdash; <em>not</em> a Konze, and not illegible. No Konze woman &ldquo;stands behind&rdquo; this child, and the illegitimacy scenario that gave the roster its purpose does not apply here.</p>
+    <p style="font-size:0.93rem; margin:0 0 0.55rem;"><strong>Verdict:</strong> roster B is <strong>retracted</strong> as an artifact of the same misread. For completeness, the Konze women of childbearing age c.&nbsp;1835 &mdash; relevant only to a genuine future illegitimacy case elsewhere &mdash; remain on record: Anna Catharina Konze (b. 1810, marriage unrecorded), Wilhelmine Konze (b. 1811), Amalia née Konze (b. 1813, &times; Johannes Sasse), Anna Eufrosine née Konze (&rarr; Kuhlmann), and an unnamed <em>geb.</em> Konze (&rarr; Johann Paffe, 1838).</p>
+    <p style="font-size:0.88rem; color:var(--text-meta,#6a5a42); margin:0;">The other Andreas-family mothers were likewise Hofeditz, not Konze; the older married-out Konze women (Wilhelmine b.&nbsp;1800 &rarr; Köster/Schildknecht; Anna Christina b.&nbsp;1800 &rarr; Hofeditz) bore children under their husbands' surnames.</p>
+  </div>
+
+  <div style="background:var(--bg-card,#fffaf0); border:1px solid var(--border-light,#d8c8a8); border-left:4px solid var(--brand,#d8b366); border-radius:5px; padding:0.85rem 1.15rem;">
+    <h4 style="margin:0 0 0.5rem; font-size:1.12rem;">C &middot; Konze men weighed as Charles himself</h4>
+    <p style="font-size:0.93rem; margin:0 0 0.6rem;">Distinct from the chart above (which tests men as Charles's <em>father</em>), these are Konze males whose own identity was weighed as Charles (b. 26 Jan 1835). One re-flag this round: Heinrich Wilhelm moves to <em>eliminated</em>, leaving <strong>Justus Ernst the lone open name.</strong></p>
+    <ul style="font-size:0.93rem; margin:0; padding-left:1.25rem; line-height:1.5;">
+      <li><strong>Justus Ernst Konze (b. 14 Nov 1829)</strong> &mdash; son of Andreas (b. 1795) &times; Maria Sophia Hofeditz; the only surviving Andreas son with no death record, hence the residual candidate. Last German trace is his <strong>confirmation at Trendelburg, 4 June 1843</strong> (resident Friedrichsfeld, mother already deceased); the family then scattered 1843&ndash;46. His siblings Elisa Melusine (d. 1865) and Heinrich Wilhelm (d. 1858) resurface and die at <strong>Stammen</strong>, whose burial index has been read in full &mdash; and Justus Ernst is <em>not</em> among them, so he did not die there. No marriage, death, or emigration record has surfaced anywhere (the Mainz registers, where his father died, are negative). <strong style="color:#8a6420;">Open &mdash; but weak.</strong> Two facts pull against him: his birth year (1829) is six years off Charles's consistently-documented 26 Jan 1835, and the Ashkenazi Y-DNA can neither confirm nor break the link until a documented Konze male Y-tests. Best remaining leads: the Stammen marriage register (1830&ndash;1937) and the indexed Hamburg passenger lists (1850&ndash;55).</li>
+      <li><strong>Heinrich Wilhelm Konze (b. 12 Feb 1832)</strong> &mdash; Andreas's son. Once held inconclusive (&ldquo;untraced after the family vanished&rdquo;), but the marginal note on his own Friedrichsfeld baptism plus Peter Schräder's Stammtafel show he <strong>died 19 February 1858 in Germany</strong> (Stammen/Dannhausen, aged 25) &mdash; he never emigrated, so he cannot be a Charles who fought in the U.S. Civil War and died in St. Louis in 1903. <strong style="color:#a3441f;">Eliminated.</strong></li>
+      <li><strong>August Konze (b. 15 Oct 1834, d. 17 Oct 1834)</strong> &mdash; Andreas's son; died at two days. <strong style="color:#a3441f;">Eliminated.</strong></li>
+      <li><strong>Ludwig Friedrich Konze</strong> (Entry 194, b. early Jan 1835, Deisel) &mdash; right date, but a different child (baptised 18 Jan). <strong style="color:#a3441f;">Eliminated.</strong></li>
+      <li><strong>Entry 195 infant</strong> (b. ~20 Jan 1835, Gänsewinkel/Deisel) &mdash; the strongest single record until 4 May 2026, when Peter Schräder re-read the father as <em>Köster</em> (not Konze) and the child as having died unbaptised. <strong style="color:#a3441f;">Eliminated.</strong></li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .candidate-tree-figure {
+    margin: 1.1rem 0 1.4rem;
+    padding: 0.7rem;
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-radius: 6px;
+  }
+  .candidate-tree-figure svg { display: block; width: 100%; height: auto; max-width: 100%; }
+  /* Enlargeable wrapper — click to open the standalone SVG full-size, with a hover pill */
+  .candidate-tree-zoom {
+    position: relative;
+    display: block;
+    border: none;
+    text-decoration: none;
+    cursor: zoom-in;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .candidate-tree-zoom svg { transition: transform 0.25s ease; }
+  .candidate-tree-zoom:hover svg { transform: scale(1.005); }
+  .candidate-tree-zoom:focus-visible { outline: 2px solid var(--brand, #d8b366); outline-offset: 2px; }
+  .candidate-tree-expand {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: rgba(28, 22, 16, 0.82);
+    color: #f6e6b8;
+    font-family: var(--font-serif);
+    font-size: 0.84rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 5px 11px;
+    border-radius: 3px;
+    opacity: 0;
+    transform: translateY(-2px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    pointer-events: none;
+  }
+  .candidate-tree-zoom:hover .candidate-tree-expand,
+  .candidate-tree-zoom:focus-visible .candidate-tree-expand {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .candidate-tree-cap { font-size: 0.88rem; line-height: 1.55; color: var(--text-meta, #5a4a32); margin-top: 0.7rem; font-style: italic; padding: 0 0.4rem; }
+  .candidate-tree-cap .ct-cap-elim { color: #a3441f; }
+  .candidate-tree-cap .ct-cap-inc  { color: #8a6420; }
+  .candidate-tree-cap .ct-cap-open { color: #2c5a1c; }
+  :root.theme-dark .candidate-tree-figure, :root:not(.theme-light) .candidate-tree-figure {
+    background: #24201a;
+    border-color: #6a5a40;
+  }
+  :root.theme-dark .candidate-tree-cap, :root:not(.theme-light) .candidate-tree-cap {
+    color: #c8b896;
+  }
+  :root.theme-dark .candidate-tree-cap .ct-cap-elim, :root:not(.theme-light) .candidate-tree-cap .ct-cap-elim { color: #f4a098; }
+  :root.theme-dark .candidate-tree-cap .ct-cap-inc,  :root:not(.theme-light) .candidate-tree-cap .ct-cap-inc  { color: #fadea0; }
+  :root.theme-dark .candidate-tree-cap .ct-cap-open, :root:not(.theme-light) .candidate-tree-cap .ct-cap-open { color: #b8e0a4; }
+</style>
+
+<!-- ============ 7. ANSWER SOURCE ============ -->
+<div class="puzzle-fleuron" aria-hidden="true"><svg viewBox="0 0 400 14" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="0" y="6.5" width="160" height="1"/><rect x="240" y="6.5" width="160" height="1"/><circle cx="178" cy="7" r="1.6"/><circle cx="222" cy="7" r="1.6"/><path d="M200 1 L207 7 L200 13 L193 7 Z"/></g></svg></div>
+<div class="puzzle-wappen-row">
+  <svg class="puzzle-wappen" viewBox="0 0 80 100" role="img" aria-label="Action emblem — a shield with a magnifying glass over an open book">
+    <path d="M4 3 L76 3 L76 56 Q76 82 40 96 Q4 82 4 56 Z" fill="#3a2f1e" stroke="#1a1612" stroke-width="1.6"/>
+    <rect x="4" y="22" width="72" height="2" fill="#f4e2b0" opacity="0.65"/>
+    <!-- Open book -->
+    <path d="M14 60 L40 56 L66 60 L66 78 L40 74 L14 78 Z" fill="#f4e2b0" stroke="#1a1612" stroke-width="0.6"/>
+    <line x1="40" y1="56" x2="40" y2="74" stroke="#1a1612" stroke-width="0.5"/>
+    <!-- Magnifying glass -->
+    <circle cx="50" cy="46" r="8" stroke="#f0c878" stroke-width="2" fill="none"/>
+    <line x1="56" y1="52" x2="62" y2="60" stroke="#f0c878" stroke-width="2.2"/>
+  </svg>
+  <h3 class="mt-section" id="answer">Where the answer might come from</h3>
+</div>
+<p>Three concrete record-access actions, in order of likelihood, would test the hypotheses above:</p>
+
+<div class="answer-source-grid">
+  <a class="answer-source-tile" href="../towns/heisebeck.html">
+    <h4>Heisebeck baptism + marriage registers (~1808-1840)</h4>
+    <p>Currently undigitized. Held at the Landeskirchliches Archiv Kassel; access requires in-person visit, paid lookup, or direct parish inquiry. <strong>The single highest-priority open lead</strong> (see Towns open leads).</p>
+    <span class="resolves">→ Resolves H1 (illegitimate) · H2 (step) · H3 (maternal)</span>
+  </a>
+
+  <a class="answer-source-tile" href="../towns/schoeneberg.html">
+    <h4>Pre-1822 Schöneberg baptism + marriage registers</h4>
+    <p>Located at the Landeskirchliches Archiv Kassel in April 2026 (Session 66) but not yet examined. The pre-1822 volume covers the most likely Konze × Hildebrand marriage window.</p>
+    <span class="resolves">→ Resolves H2 (step) · H3 (maternal)</span>
+  </a>
+
+  <a class="answer-source-tile" href="../index.html#immigration">
+    <h4>Hessian Auswanderer-Beleg</h4>
+    <p>One of the three "what would resolve the gap" records on the Immigration tab — it would name Charles's home parish at registration. <em>(A St. Marcus pre-1866 membership roll was once listed here too, but no such record exists: the church's earliest communicant book is a Register of Communion, 1877–1897, ~18 years after Charles arrived — see hypothesis 4.)</em></p>
+    <span class="resolves">→ Resolves H4 (chosen-name)</span>
+  </a>
+</div>
+
+<aside class="konze-status-banner" role="note" style="margin-top:1.1rem;">
+  <strong>How to search this name.</strong> In the German registers, search the headword <strong>Konze</strong> &mdash; with its written variants <em>Kontze, Contze, Konz</em> and the feminine <em>Kontzin</em> &mdash; <em>not</em> the American <em>-en</em> form. The parish books file the surname under the bare root, so Archion / FamilySearch / Matricula indexes surface <em>Konze / Kontze</em> while a &ldquo;Konzen&rdquo; query largely misses them; a wildcard like <em>Kon*z*</em> catches scribal drift. Keep <strong>Konzen</strong> for the American records and descendant searches &mdash; it is the family's carried form, not the homeland headword. <em>(If the Rhineland origin of Hypothesis&nbsp;6 ever holds, reverse this and search <strong>Konzen</strong> in the Monschau / Aachen parishes.)</em>
+</aside>
+
+<!-- ============ CROSS-LINKS (refreshed May 2026) ============ -->
+<div class="puzzle-fleuron" aria-hidden="true"><svg viewBox="0 0 400 14" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><rect x="0" y="6.5" width="160" height="1"/><rect x="240" y="6.5" width="160" height="1"/><circle cx="178" cy="7" r="1.6"/><circle cx="222" cy="7" r="1.6"/><path d="M200 1 L207 7 L200 13 L193 7 Z"/></g></svg></div>
+<div class="puzzle-wappen-row">
+  <svg class="puzzle-wappen" viewBox="0 0 80 100" role="img" aria-label="Cross-links emblem — a shield with three interconnected nodes">
+    <path d="M4 3 L76 3 L76 56 Q76 82 40 96 Q4 82 4 56 Z" fill="#3a2f1e" stroke="#1a1612" stroke-width="1.6"/>
+    <rect x="4" y="22" width="72" height="2" fill="#f4e2b0" opacity="0.65"/>
+    <circle cx="40" cy="40" r="4" fill="#f0c878"/>
+    <circle cx="22" cy="64" r="4" fill="#f0c878"/>
+    <circle cx="58" cy="64" r="4" fill="#f0c878"/>
+    <line x1="40" y1="42" x2="24" y2="62" stroke="#f4e2b0" stroke-width="1"/>
+    <line x1="40" y1="42" x2="56" y2="62" stroke="#f4e2b0" stroke-width="1"/>
+    <line x1="24" y1="66" x2="56" y2="66" stroke="#f4e2b0" stroke-width="1"/>
+  </svg>
+  <h3 class="mt-section">Related on the rest of the site</h3>
+</div>
+<p>Four destination pages where this puzzle continues — the project's master conclusion, the keystone baptism card, the open parish-record leads, and the immigration-side records that could close hypothesis 4.</p>
+
+<div class="puzzle-deep-dives">
+  <a class="kp-tile" href="../index.html#evidence">
+    <div class="kp-tile-icon" aria-hidden="true">&#x2605;</div>
+    <div class="kp-tile-body">
+      <div class="kp-tile-eyebrow">Project conclusion · May 2026</div>
+      <h4 class="kp-tile-title">Card 1 &middot; Charles's surname — leading hypothesis: KONZEN</h4>
+      <p class="kp-tile-sub">The full convergent-evidence argument that Charles's German surname is most likely Konzen, the Hessian Kontzen-family form.</p>
+    </div>
+    <div class="kp-tile-arrow" aria-hidden="true">&rarr;</div>
+  </a>
+  <a class="kp-tile" href="../index.html#evidence">
+    <div class="kp-tile-icon" aria-hidden="true">&#x271D;</div>
+    <div class="kp-tile-body">
+      <div class="kp-tile-eyebrow">Keystone record · 1875</div>
+      <h4 class="kp-tile-title">Card 6 &middot; The Erwin Carl Konsen baptism</h4>
+      <p class="kp-tile-sub">The full evidence card with pastor-attribution table, surname-trail analysis, religion thread, and Trendelburg phonetic precedent.</p>
+    </div>
+    <div class="kp-tile-arrow" aria-hidden="true">&rarr;</div>
+  </a>
+  <a class="kp-tile" href="parish-map.html#open-leads">
+    <div class="kp-tile-icon" aria-hidden="true">&#x1F4DC;</div>
+    <div class="kp-tile-body">
+      <div class="kp-tile-eyebrow">Open access actions</div>
+      <h4 class="kp-tile-title">Parish map &middot; Open leads</h4>
+      <p class="kp-tile-sub">Heisebeck post-1831 baptisms and the pre-1822 Schöneberg volumes &mdash; undigitized registers at the Landeskirchliches Archiv Kassel that could close hypotheses 1, 2, and 3.</p>
+    </div>
+    <div class="kp-tile-arrow" aria-hidden="true">&rarr;</div>
+  </a>
+  <a class="kp-tile" href="../index.html#immigration">
+    <div class="kp-tile-icon" aria-hidden="true">&#x2693;</div>
+    <div class="kp-tile-body">
+      <div class="kp-tile-eyebrow">Immigration-side</div>
+      <h4 class="kp-tile-title">What would resolve the gap</h4>
+      <p class="kp-tile-sub">The Hessian Stammrolle, Bremen passenger list, and Auswanderer-Beleg &mdash; the records that could close hypothesis 4 (chosen name at emigration).</p>
+    </div>
+    <div class="kp-tile-arrow" aria-hidden="true">&rarr;</div>
+  </a>
+</div>
+
+<style>
+  /* ============ NEW — deep-dive tile grid (May 2026) ============ */
+  .puzzle-deep-dives {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.7rem;
+    margin: 0.8rem 0 1rem;
+  }
+  .puzzle-deep-dives .kp-tile {
+    display: grid;
+    grid-template-columns: 38px 1fr 20px;
+    align-items: start;
+    gap: 0.6rem;
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-left: 4px solid var(--brand-dark, #d8b366);
+    border-radius: 5px;
+    padding: 0.85rem 1rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  }
+  .puzzle-deep-dives .kp-tile:hover {
+    transform: translateY(-2px);
+    border-color: var(--brand, #d8b366);
+    box-shadow: 0 4px 14px rgba(138, 100, 32, 0.18);
+  }
+  .puzzle-deep-dives .kp-tile-icon { font-size: 1.7rem; line-height: 1; color: var(--brand-dark, #8a6420); }
+  .puzzle-deep-dives .kp-tile-body { min-width: 0; }
+  .puzzle-deep-dives .kp-tile-eyebrow {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-meta, #6a5a42);
+    font-weight: 700;
+    margin-bottom: 0.18rem;
+  }
+  .puzzle-deep-dives .kp-tile-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    margin: 0 0 0.28rem;
+    color: var(--brand-dark, #8a6420);
+    font-weight: 600;
+    font-size: 1.08rem;
+  }
+  .puzzle-deep-dives .kp-tile-sub {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--text-body, #3a2f1e);
+  }
+  .puzzle-deep-dives .kp-tile-arrow {
+    font-size: 1.1rem;
+    color: var(--brand-dark, #8a6420);
+    align-self: center;
+  }
+  :root.theme-dark .puzzle-deep-dives .kp-tile,
+  :root:not(.theme-light) .puzzle-deep-dives .kp-tile {
+    background: var(--bg-card, #24201a);
+    border-color: var(--border-medium, #6a5a40);
+    border-left-color: var(--brand-dark, #d8b366);
+  }
+  :root.theme-dark .puzzle-deep-dives .kp-tile-eyebrow,
+  :root:not(.theme-light) .puzzle-deep-dives .kp-tile-eyebrow { color: var(--text-meta, #c8b896); }
+  :root.theme-dark .puzzle-deep-dives .kp-tile-title,
+  :root:not(.theme-light) .puzzle-deep-dives .kp-tile-title { color: var(--brand-light, #fadea0); }
+  :root.theme-dark .puzzle-deep-dives .kp-tile-sub,
+  :root:not(.theme-light) .puzzle-deep-dives .kp-tile-sub { color: var(--text-body, #e8dfc8); }
+  :root.theme-dark .puzzle-deep-dives .kp-tile-icon,
+  :root:not(.theme-light) .puzzle-deep-dives .kp-tile-icon { color: var(--brand-light, #fadea0); }
+  :root.theme-dark .puzzle-deep-dives .kp-tile-arrow,
+  :root:not(.theme-light) .puzzle-deep-dives .kp-tile-arrow { color: var(--brand-light, #fadea0); }
+</style>
+
+</main>
+
+<footer class="back-nav">
+  <a href="../index.html#germany">↩ Back to Germany &amp; Origins on the main site</a>
+</footer>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

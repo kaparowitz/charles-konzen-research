@@ -1,0 +1,13 @@
+# Security and content-correction contact for charles-research.netlify.app
+# Per RFC 9116. This is a static research site with no user accounts,
+# no payment processing, and no personally-identifying data of living
+# people. Security-sensitive issues are unlikely; for any concern,
+# please use the contact route below.
+
+Contact: https://charles-research.netlify.app/methodology.html#corrections
+Expires: 2027-05-07T00:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://charles-research.netlify.app/.well-known/security.txt
+
+# For research corrections, factual disputes, or descendant-relations
+# questions, the same contact route is the right place to start.

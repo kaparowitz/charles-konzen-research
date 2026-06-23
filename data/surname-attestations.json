@@ -1,0 +1,89 @@
+{
+  "_comment": "SINGLE SOURCE OF TRUTH for the American surname trail. Every count, table row, and surname-list string on the site should derive from this file via scripts/surname_canon.py. Do NOT hand-edit the chronology/phonetic tables in germany/konzen-puzzle.html or the surname strings in scripts/build-evidence-cards.py — change them here and re-run scripts/build-surname-trail.py and scripts/build-evidence-cards.py. The deploy gate (scripts/check_canon.sh -> scripts/check_surname_canon.py) fails if any page drifts from this file.",
+  "canon": {
+    "year_first": 1866,
+    "year_last": 1896,
+    "span_years": 30,
+    "scribes_min": 5,
+    "scribes_note": "AT LEAST five — phrase it as 'at least five' (prose) or '5+' (metrics/SVG), never a bare 'five'. Named parish scribes are Wall (1866), Braschler (1870, 1872), Hoffmann (1875), Johannes Nollau (1881), L.G. Nollau-or-civil-registrar (1890), and Eilts (1896). That is six named hands; the count is held at 'at least five' because it is unresolved whether Johannes Nollau (1881) and L.G. Nollau (1890) are the same individual, and whether the 1890 entry is Nollau or a civil registrar. The 1880 census enumerator is unnamed and excluded. The 1895 St. Louis city-directory canvasser/compositor is a further non-parish hand, also excluded from the parish-scribe count; it does not change the 'at least five' figure."
+  },
+  "readings": {
+    "konsen_1875": "The 1875 St. Marcus baptism of son Erwin Carl reads Konsen (with s) — the closest American phonetic capture of the Hessian cluster, preserving the K-initial and -en suffix with only the tz collapsing to s.",
+    "konzen_1890": "The 1890 St. Marcus death record of daughter Auguste reads “Auguste Somers geb Konzen” (with z) — the single American attestation of the full Hessian z-form documented in the Trendelburg parish since 1773 (reading confirmed by the 17 May 2026 re-examination, reversing an earlier Konsen pass).",
+    "bracket": "Konsen (1875, with s) and Konzen (1890, with z) bracket the surname trail fifteen years apart — two parallel orthographic variants of one Hessian root, captured by two different scribes."
+  },
+  "attestations": [
+    {
+      "year": 1866, "spelling": "Gonnson", "spelling_suffix_html": "",
+      "record_html": "St. Marcus marriage <span style=\"color:var(--text-meta);\">(<a href=\"../index.html#evidence\">Card 3</a>)</span>",
+      "scribe_html": "Pastor G.W. Wall <em>(Württemberger)</em>",
+      "speaks_html": "YES &mdash; groom", "speaks_emph": true,
+      "ipa": "[ˈɡɔn.sən]", "vowel": "ɔ", "cluster": true, "row_class": "charles-speaker",
+      "phonetic_informant_html": "YES &mdash; groom at his own marriage", "phonetic_informant_yes": true
+    },
+    {
+      "year": 1870, "spelling": "Gansen", "spelling_suffix_html": "",
+      "record_html": "Daughter Katherine baptism",
+      "scribe_html": "Pastor Heinrich Braschler <em>(Swiss)</em>",
+      "speaks_html": "parent at child's font", "speaks_emph": false,
+      "ipa": "[ˈɡan.sən]", "vowel": "a", "cluster": false, "row_class": "",
+      "phonetic_informant_html": "", "phonetic_informant_yes": false
+    },
+    {
+      "year": 1872, "spelling": "Gonsen", "spelling_suffix_html": "",
+      "record_html": "Daughter Auguste baptism",
+      "scribe_html": "Pastor Braschler <strong>again</strong>",
+      "speaks_html": "parent at child's font", "speaks_emph": false,
+      "ipa": "[ˈɡɔn.sən]", "vowel": "ɔ", "cluster": true, "row_class": "",
+      "phonetic_informant_html": "probable (parent at child's baptism)", "phonetic_informant_yes": false
+    },
+    {
+      "year": 1875, "spelling": "Konsen", "spelling_suffix_html": "",
+      "record_html": "Son Erwin Carl baptism <strong>(this page)</strong> <span style=\"color:var(--text-meta);\">(<a href=\"../index.html#evidence\">Card 6</a>)</span>",
+      "scribe_html": "Pastor Julius Hoffmann",
+      "speaks_html": "parent at child's font", "speaks_emph": false,
+      "ipa": "[ˈkɔn.sən]", "vowel": "ɔ", "cluster": true, "row_class": "",
+      "phonetic_informant_html": "probable (parent at child's baptism)", "phonetic_informant_yes": false
+    },
+    {
+      "year": 1880, "spelling": "Gonson", "spelling_suffix_html": "",
+      "record_html": "U.S. Federal Census &middot; 1534 Jackson St.",
+      "scribe_html": "enumerator unknown",
+      "speaks_html": "census &mdash; informant unrecorded", "speaks_emph": false,
+      "ipa": "[ˈɡɔn.sən]", "vowel": "ɔ", "cluster": true, "row_class": "",
+      "phonetic_informant_html": "census enumerator", "phonetic_informant_yes": false
+    },
+    {
+      "year": 1881, "spelling": "Jansen", "spelling_suffix_html": "",
+      "record_html": "Daughter Bertha baptism",
+      "scribe_html": "Pastor Johannes Nollau",
+      "speaks_html": "parent at child's font", "speaks_emph": false,
+      "ipa": "[ˈjan.sən]", "vowel": "a", "cluster": false, "row_class": "",
+      "phonetic_informant_html": "", "phonetic_informant_yes": false
+    },
+    {
+      "year": 1890, "spelling": "Konzen", "spelling_suffix_html": " <em>(Hessian z-form)</em>",
+      "record_html": "Daughter Auguste death record",
+      "scribe_html": "Pastor L.G. Nollau or civil registrar",
+      "speaks_html": "family informant", "speaks_emph": false,
+      "ipa": "[ˈkɔn.tsən] / [ˈkɔn.sən]", "vowel": "ɔ", "cluster": true, "row_class": "konzen-keystone",
+      "phonetic_informant_html": "family informant at daughter's death", "phonetic_informant_yes": false
+    },
+    {
+      "year": 1895, "spelling": "Gannsen", "spelling_suffix_html": "",
+      "record_html": "St. Louis city directory (Gould's) &middot; r. rear 2407 DeKalb",
+      "scribe_html": "Directory canvasser / compositor",
+      "speaks_html": "directory listing &mdash; self-reported (probable)", "speaks_emph": false,
+      "ipa": "[ˈɡan.sən]", "vowel": "a", "cluster": false, "row_class": "",
+      "phonetic_informant_html": "", "phonetic_informant_yes": false
+    },
+    {
+      "year": 1896, "spelling": "Conson", "spelling_suffix_html": "",
+      "record_html": "Wife Auguste death record &middot; St. Marcus",
+      "scribe_html": "Pastor Eilt Heeren Eilts",
+      "speaks_html": "YES &mdash; surviving spouse", "speaks_emph": true,
+      "ipa": "[ˈkɔn.sən]", "vowel": "ɔ", "cluster": true, "row_class": "charles-speaker",
+      "phonetic_informant_html": "YES &mdash; surviving spouse at wife's funeral", "phonetic_informant_yes": true
+    }
+  ]
+}

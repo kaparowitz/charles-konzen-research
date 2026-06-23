@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Key Evidence — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/evidence/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<meta name="description" content="The high-leverage documents that drive the Charles Konzen investigation — surname trail, Civil War enlistment, marriage register, baptisms, pension file, and the 2017 NARA mail-order.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Key Evidence — Charles Research">
+<meta property="og:description" content="A small number of high-leverage documents drive the case — checkpoint by checkpoint.">
+<meta property="og:url" content="https://charles-research.netlify.app/evidence/">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/evidence.png">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.sec-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.sec-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.sec-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.sec-hero h1 { color: var(--text-on-dark); font-size: 2.2rem; }
+  header.sec-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 1.8rem 1.4rem 4rem; }
+  h2 { font-size: 1.4rem; color: var(--text-primary); margin: 1.8rem 0 0.6rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  p { margin-bottom: 0.8rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.05rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.4rem; max-width: 820px; }
+
+  .figure-embed { background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: 4px; padding: 0.5rem; margin: 0.8rem 0 1.2rem; }
+  .figure-embed object, .figure-embed img { display: block; width: 100%; height: auto; }
+  .figure-embed figcaption { padding: 0.4rem 0.5rem; font-size: 0.86rem; color: var(--text-meta); font-style: italic; }
+
+  .ev-grid { display: grid; grid-template-columns: 1fr; gap: 0.85rem; margin: 1rem 0 1.4rem; }
+  .ev-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 5px;
+    padding: 1rem 1.15rem;
+  }
+  .ev-card.major { border-left-color: var(--section-civilwar); border-left-width: 5px; background: linear-gradient(140deg, var(--bg-card), #fdf0eb); }
+  .ev-card .num { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.1em; color: var(--brand-dark); text-transform: uppercase; margin-bottom: 0.3rem; }
+  .ev-card h3 { font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.3rem; }
+  .ev-card .when { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+  .ev-card p { font-size: 0.93rem; margin-bottom: 0.5rem; }
+  .ev-card .links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .ev-card .links a { display: inline-block; padding: 0.25rem 0.6rem; background: var(--bg-card-tint); border: 1px solid var(--border-medium); border-radius: 3px; font-size: 0.82rem; color: var(--brand-dark); border-bottom: 1px solid var(--border-medium); }
+  .ev-card .links a:hover { background: var(--brand-tint); }
+
+  .full-link {
+    display: inline-block;
+    margin: 1rem 0 1.4rem;
+    padding: 0.6rem 1.1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-medium);
+    border-left: 4px solid var(--brand);
+    border-radius: 4px;
+    color: var(--text-strong);
+    font-size: 0.95rem;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-medium);
+  }
+  .full-link:hover { background: var(--brand-tint); }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.sec-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.sec-hero h1, header.sec-hero .sub, header.sec-hero .crumbs, header.sec-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+    .ev-card, .full-link, .figure-embed { background: none; border-left-width: 2px; }
+  }
+</style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/figures/inline-svgs.js?v=20260601-konzen2"></script>
+<script defer src="../assets/figure-lightbox.js"></script>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/evidence/#article",
+  "headline": "Key Evidence",
+  "url": "https://charles-research.netlify.app/evidence/",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-06-21",
+  "description": "The high-leverage documents that drive the Charles Konzen investigation — surname trail, Civil War enlistment, marriage register, baptisms, pension file, and the 2017 NARA mail-order."
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="cinema-section-hero" data-tone="default">
+  <div class="csh__inner">
+    <div class="csh__crumbs"><a href="../index.html">Charles Research</a> <span>/</span> Key Evidence</div>
+    <div class="csh__chapter">The Documentary Spine</div>
+    <h1>Key <em>Evidence</em></h1>
+    <p class="csh__sub">A small number of high-leverage documents drive the entire case. Each one is a checkpoint that either narrowed the search or opened a new one — from the 1866 marriage register to the 1875 baptism that preserved the homeland spelling.</p>
+    <div class="csh__meta">
+      <div><span class="k">Cards</span><span class="v">8 high-leverage documents</span></div>
+      <div><span class="k">Surname renderings</span><span class="v">9 distinct · 9 attestations</span></div>
+      <div><span class="k">Conclusion</span><span class="v">Konzen · May 2026</span></div>
+    </div>
+  </div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">Eight cards making the case for Konzen — Trendelburg, Civil War, marriage, baptisms, pension, surname trail. Each card opens the full case on the Key Evidence section.</p>
+
+<a class="full-link" href="../index.html#evidence"><strong>Open the Key Evidence section →</strong> &nbsp;<span style="color:var(--text-muted);">every document imaged, transcribed, and analysed.</span></a>
+
+<h2>The eight evidence cards · in chronological order</h2>
+
+<div class="ev-grid">
+
+  <article class="ev-card major">
+    <div class="num">Card 1 · Project conclusion</div>
+    <h3>Trendelburg burial register 220096 · K-section / Kontzen entries</h3>
+    <div class="when">1773–1818 · Trendelburg, Churhessen</div>
+    <p>The convergent-evidence basis for the May 2026 surname conclusion: <strong>KONZEN</strong>. Trendelburg parish surname-pool documented continuously from 1773; the parish-internal cross-reference note "<em>siehe auch K. Contze, Cortze, Cordes, Contz</em>" establishes orthographic interchangeability. The nine distinct American Charles-family renderings all converge on this German source.</p>
+    <div class="links">
+      <a href="../index.html#card1">Open full Card 1</a>
+      <a href="../germany/konzen-puzzle.html">The Konzen puzzle</a>
+      <a href="../abstract.html">Abstract</a>
+    </div>
+  </article>
+
+  <article class="ev-card">
+    <div class="num">Card 2 · 1st Kurhessen reference</div>
+    <h3>Civil War enlistment record</h3>
+    <div class="when">2 December 1862 · St. Louis</div>
+    <p>The first mention of a town and state anywhere in Charles's documentary record: <em>"Freundburg Kurhessen."</em> Peter Schräder's 26 February 2026 phonetic re-reading decoded "Freundburg" as a clerk's mishearing of <strong>Trendelburg</strong>. The foundational geographic anchor of the entire investigation.</p>
+    <div class="links">
+      <a href="../index.html#card2">Open full Card 2</a>
+      <a href="../research_logs/freundburg-kurhessen.html">Research log</a>
+      <a href="../civilwar/index.html">Civil War section</a>
+    </div>
+  </article>
+
+  <article class="ev-card">
+    <div class="num">Card 3 · Marriage register</div>
+    <h3>St. Marcus marriage register · Pastor Wall</h3>
+    <div class="when">7 January 1866 · St. Louis</div>
+    <p>Charles's own statement of origin: <em>"aus Deisse, Kreis Cassel, Churhessen"</em> — the village of Deisel inside the Electorate of Hesse-Kassel. Surname recorded as <em>Gonnson</em>. With Card 2's "Freundburg" decoding, this triangulates the answer to a 5×5 km square inside the Kreis Hofgeismar.</p>
+    <div class="links"><a href="../index.html#card3">Open full Card 3</a></div>
+  </article>
+
+  <article class="ev-card">
+    <div class="num">Card 4 · Baptisms</div>
+    <h3>Seven St. Marcus baptisms · 1866–1880</h3>
+    <div class="when">1866–1880 · St. Louis</div>
+    <p>Charles &amp; Auguste's seven children. The baptismal records carry the surname trail (Gonnson, Gansen, Gonsen, Konsen, Jansen) and the Pastor Braschler "smoking gun" pair (1870 vs 1872). Sponsor reconciliation across all seven baptisms reveals not a single Charles-side blood relative — the structural confirmation of "immigrated alone."</p>
+    <div class="links"><a href="../index.html#card4">Open full Card 4</a> <a href="../stories/9-alone.html">Story · Seven baptisms</a></div>
+  </article>
+
+  <article class="ev-card">
+    <div class="num">Card 5 · Naturalization</div>
+    <h3>U.S. Naturalization Record</h3>
+    <div class="when">post-1862 · St. Louis</div>
+    <p>Recorded May 2026. Adds a U.S.-side procedural confirmation of identity and place of origin.</p>
+    <div class="links"><a href="../index.html#card5">Open full Card 5</a> <a href="../sources/naturalization-record.html">Source page</a></div>
+  </article>
+
+  <article class="ev-card">
+    <div class="num">Card 6 · Konsen attestation</div>
+    <h3>1875 St. Marcus baptism — Erwin Carl Konsen</h3>
+    <div class="when">1875 · Pastor Hoffmann</div>
+    <p>The strongest direct surname link between Charles in St. Louis and the Konze line in Hesse: Pastor Hoffmann recorded his sixth child as <em>Erwin Carl Konsen</em>, preserving the German <em>-en</em> form. Fifteen years later, the 1890 St. Marcus death record of his daughter Auguste reads <em>Konzen</em> — the single American attestation of the full Hessian z-form documented in the Trendelburg parish since 1773. Two scribes, two parallel K-initial orthographic variants, both preserving the Hessian -en suffix.</p>
+    <div class="links"><a href="../index.html#card6">Open full Card 6</a> <a href="../stories/7-konsen.html">Story · Konsen twice</a></div>
+  </article>
+
+  <article class="ev-card">
+    <div class="num">Card 7 · Pension file</div>
+    <h3>Civil War Pension File F41-523680269E</h3>
+    <div class="when">1890–1903 · NARA</div>
+    <p>The richest U.S. document — birthdate, addresses, witnesses. <strong>No family-side affidavits</strong> — Charles emigrated alone. Page-by-page audit confirms: the pension file does not contain any Charles-self-stated birthplace declaration; its Kurhessen attribution is solely via the embedded 1862 service record.</p>
+    <div class="links"><a href="../index.html#card7">Open full Card 7</a> <a href="../sources/pension-file.html">Imaged source</a> <a href="../themes/pension-mutual-aid.html">Mutual-aid theme</a></div>
+  </article>
+
+  <article class="ev-card">
+    <div class="num">Card 8 · Wife's death record</div>
+    <h3>1896 St. Marcus death record · "Auguste Conson"</h3>
+    <div class="when">1896 · Pastor Eilt Heeren Eilts</div>
+    <p>The strongest single Charles-self-attestation of his surname. Charles, age 61, gave Auguste's name to Pastor Eilts at the funeral; Eilts wrote what he heard — the C-initial form (<em>Conson</em>) that ties straight back to the Trendelburg <em>Contzen</em> line.</p>
+    <div class="links"><a href="../index.html#card8">Open full Card 8</a> <a href="../stories/6-braschler.html">Story · Pastor speakers</a></div>
+  </article>
+
+</div>
+
+<h2>For researchers — the address chronology</h2>
+
+<div class="ev-grid">
+  <article class="ev-card" style="border-left-color: var(--section-civilwar);">
+    <div class="num">Researcher resource · directory-mined</div>
+    <h3>Charles's St. Louis addresses — 1865–1903, chronological &amp; sourced</h3>
+    <div class="when">Pension file + 1880/1900 censuses + St. Louis directories · updated June 2026</div>
+    <p>Every documented residence in chronological order, each with an outside link to verify it. A June 2026 FamilySearch Full-Text sweep of the St. Louis directories added two entries the project did not previously have: the <strong>1872–73</strong> and the <strong>1876</strong> "718 Gate" listings — the 1876 "<em>Gonson Charles, driver, 718 Gate</em>" entry (the <em>Gonson</em> spelling matching the 1880 census) <strong>extends that tenure to 1876</strong> and re-places the long-lost Gate Street at Carondelet Avenue near Pestalozzi (Benton Park). The sweep also pinned the 1895 "<em>Gannsen Charles, watch, r. rear 2407 DeKalb</em>" entry. Together with Charles's own handwritten pension address-letter (c. 1898) and the 1880/1900 federal censuses, this gives a fully-sourced residence timeline across 38 years.</p>
+    <div class="links">
+      <a href="../charles_america/st-louis-residences.html">Open the address chronology →</a>
+      <a href="https://www.familysearch.org/search/full-text/results?q.text=%22718%20Gate%22" target="_blank" rel="noopener noreferrer">Verify · "718 Gate"</a>
+      <a href="https://www.familysearch.org/search/full-text/results?q.text=Gannsen" target="_blank" rel="noopener noreferrer">Verify · "Gannsen"</a>
+      <a href="../research_logs/1870-census.html">1870-census log</a>
+    </div>
+  </article>
+</div>
+
+<h2>Evidence not found — open questions</h2>
+
+<p>Six high-priority records the project has searched for and not yet located: the German baptism, the 1859 manifest, the Auswanderer-Beleg, the Stammrolle, the 1860 census, the 1870 census. Each is documented with last-attempted date and what would resolve it. <a href="../open-questions.html">→ Open Questions</a></p>
+
+<p style="margin-top:2rem; font-size:0.92rem; color: var(--text-muted); font-style:italic;">For the project's source-rating and citation conventions, see <a href="../methodology.html">Methodology</a>. For the underlying primary-source images, see <a href="../sources/index.html">Sources</a>. For the full bibliography, see <a href="../bibliography.html">Bibliography</a>.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="../index.html">Home</a> · <a href="../abstract.html">Abstract</a> · <a href="../methodology.html">Methodology</a> · <a href="../bibliography.html">Bibliography</a> · <a href="../open-questions.html">Open Questions</a> · <a href="../visualize.html">Visualize</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Sponsor reconciliation — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/sponsor-reconciliation.html">
+<link rel="stylesheet" href="assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<meta name="description" content="A baptism-by-baptism sponsor audit for Charles Konzen × Auguste Kreichelt's seven children at St. Marcus, 1866–1881 — with each sponsor's documented kin relationship to Auguste and the explicit absence of any Charles-side blood relative.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Sponsor reconciliation — Charles Research">
+<meta property="og:description" content="Baptism-by-baptism sponsor audit: every named sponsor across the seven Gannsen baptisms 1866–1881, with documented kin relationship to Auguste — and zero documented Charles-side blood relatives.">
+<meta property="og:url" content="https://charles-research.netlify.app/sponsor-reconciliation.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/abstract.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.sr-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.sr-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.sr-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.sr-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; letter-spacing: 0.02em; }
+  header.sr-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+
+  h2 { font-size: 1.6rem; color: var(--text-primary); margin: 2.4rem 0 0.8rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.18rem; color: var(--text-strong); margin: 1.6rem 0 0.5rem; }
+
+  .lede { font-size: 1.06rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.6rem; line-height: 1.6; }
+
+  .sr-summary {
+    background: var(--bg-card-tint);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0 1.6rem;
+  }
+  .sr-summary .lbl { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.3rem; }
+
+  .sr-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.6rem; margin: 1rem 0 1.6rem; }
+  .sr-stat { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 4px; padding: 0.7rem 0.9rem; text-align: center; }
+  .sr-stat .num { font-size: 1.6rem; font-weight: 700; color: var(--brand-dark); font-family: var(--font-serif); display: block; }
+  .sr-stat .lbl { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); display: block; margin-top: 0.2rem; }
+
+  table.sr-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.6rem; font-size: 0.9rem; }
+  table.sr-table th, table.sr-table td { padding: 0.55rem 0.65rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); }
+  table.sr-table th { background: var(--bg-card-tint); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); white-space: nowrap; }
+  table.sr-table tr:nth-child(odd) td { background: var(--bg-card); }
+  table.sr-table .baptism { font-weight: 700; color: var(--text-strong); white-space: nowrap; }
+  table.sr-table .kin-aug { color: #5a8a4a; font-weight: 600; }
+  table.sr-table .kin-aff { color: #b48a3a; font-weight: 600; }
+  table.sr-table .kin-circ { color: #8a6420; font-weight: 600; }
+  table.sr-table .kin-none { color: #c84a4a; font-weight: 700; }
+  table.sr-table .fsn { font-family: var(--font-mono); font-size: 0.78em; color: var(--text-meta); }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 0.8rem 1.4rem; font-size: 0.85rem; margin: 0.4rem 0 1rem; padding: 0.6rem 0.9rem; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 4px; }
+  .legend .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 0.4rem; vertical-align: middle; }
+  .legend .sw.aug { background: #5a8a4a; }
+  .legend .sw.aff { background: #b48a3a; }
+  .legend .sw.circ { background: #8a6420; }
+  .legend .sw.none { background: #c84a4a; }
+
+  .callout {
+    background: var(--bg-card-tint);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 4px;
+    padding: 0.9rem 1.1rem;
+    margin: 1rem 0 1.4rem;
+  }
+  .callout .lbl { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.3rem; }
+  .callout.milestone { border-left-color: #c84a4a; }
+  .callout.milestone .lbl { color: #8a3030; }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    @page { size: A4; margin: 18mm 18mm 22mm; }
+    html, body { background: #fff !important; color: #000 !important; font-size: 10.5pt; line-height: 1.42; }
+    header.sr-hero { background: none !important; color: #000; border-bottom: 1.5pt solid #444; padding: 0 0 6pt; margin-bottom: 8pt; }
+    header.sr-hero .crumbs { display: none; }
+    header.sr-hero h1, header.sr-hero .sub { color: #000 !important; }
+    header.sr-hero h1 { font-size: 18pt; }
+    main { max-width: none; padding: 0; }
+    a { color: #000; border-bottom: none; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 7.5pt; color: #555; }
+    table.sr-table { font-size: 8.5pt; }
+    table.sr-table th { background: none !important; border-bottom: 1pt solid #444; }
+    h2 { font-size: 11pt; margin-top: 10pt; margin-bottom: 4pt; page-break-after: avoid; }
+    h3 { font-size: 10.5pt; page-break-after: avoid; }
+    p, li, tr { orphans: 3; widows: 3; }
+    nav.site-nav-shared, footer.site-foot-shared, .site-foot-shared, .cite-widget,
+    nav.tabs, .skip-link, .search-fab, footer.site-foot { display: none !important; }
+  }
+</style>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/sponsor-reconciliation.html#article",
+  "headline": "Sponsor reconciliation — Charles Research",
+  "description": "Baptism-by-baptism sponsor audit for the seven Gannsen children at St. Marcus 1866–1881, documenting each sponsor's kin relationship to Auguste and the absence of any Charles-side blood relative.",
+  "datePublished": "2026-05-17",
+  "dateModified": "2026-05-17",
+  "url": "https://charles-research.netlify.app/sponsor-reconciliation.html",
+  "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+  "author": [{ "@type": "Person", "name": "Jed Johnson" }],
+  "publisher": { "@type": "Person", "name": "Jed Johnson", "url": "https://charles-research.netlify.app/about.html" },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://charles-research.netlify.app/" },
+    { "@type": "ListItem", "position": 2, "name": "Sponsor reconciliation" }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="sr-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; Sponsor reconciliation</div>
+  <h1>Sponsor reconciliation</h1>
+  <div class="sub">A baptism-by-baptism audit of every named sponsor across the seven Gannsen children's baptisms at St. Marcus German Evangelical Church, St. Louis, 1866–1881 — plus the four 1866 wedding witnesses — with each person's documented kin relationship to Auguste Kreichelt, and the explicit absence of any documented Charles-side blood relative.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">The "immigrated alone" hypothesis on this site rests on a structural claim: across seven baptisms over fifteen years, not a single named sponsor is a documented blood relative of Charles. This page turns that narrative into an auditable artifact — one row per baptism × sponsor, with the kin link to Auguste named explicitly and the absence of a Charles-side link logged in every row.</p>
+
+<div class="sr-summary">
+  <span class="lbl">Thesis</span>
+  Across the seven Gannsen baptisms at St. Marcus (1866–1881), 17 distinct sponsorship slots were filled by 15 named individuals — two people came back to stand up at a later baptism, most prominently Auguste's father <a href="people/georg-kreichelt.html">Georg Kreichelt</a>, with the affinal in-law <a href="people/frederick-pillmann.html">Friedrich Pillmann</a> also recurring, which is why the 17 slots map to 15 distinct named individuals. Of those 15 individuals, <strong>every one is documented as a Kreichelt-side relative, in-law, or St. Louis parish-circle associate of Auguste's family</strong>. <strong>Zero</strong> are documented blood relatives of Charles. German-Lutheran baptism sponsorship in this period was structurally a kin-default convention; the asymmetry across all seven baptisms over fifteen years is consistent with Charles having no German blood family accessible by mail or in person between 1866 and 1880 — corroborating the working hypothesis that he immigrated alone in 1859 and never re-established contact close enough to bring kin to the baptismal font.
+</div>
+
+<div class="sr-stats">
+  <div class="sr-stat"><span class="num">7</span><span class="lbl">Baptisms</span></div>
+  <div class="sr-stat"><span class="num">17</span><span class="lbl">Sponsorship slots</span></div>
+  <div class="sr-stat"><span class="num">15</span><span class="lbl">Distinct sponsors</span></div>
+  <div class="sr-stat"><span class="num">0</span><span class="lbl">Charles-side blood relatives</span></div>
+  <div class="sr-stat"><span class="num">5</span><span class="lbl">Pastors</span></div>
+  <div class="sr-stat"><span class="num">15</span><span class="lbl">Years (1866–1881)</span></div>
+</div>
+
+<h2 id="legend">Legend</h2>
+
+<div class="legend">
+  <span><span class="sw aug"></span><strong class="kin-aug">Auguste-side blood</strong> — documented Kreichelt parent / sibling / aunt</span>
+  <span><span class="sw aff"></span><strong class="kin-aff">Auguste-side affinal</strong> — married into the Kreichelt-Albrecht-Pillmann-Mincke kin network</span>
+  <span><span class="sw circ"></span><strong class="kin-circ">St. Louis parish circle</strong> — Auguste's social orbit (St. Marcus neighbour / parish associate), no documented Charles-side link</span>
+  <span><span class="sw none"></span><strong class="kin-none">Charles-side</strong> — none documented across all seven baptisms</span>
+</div>
+
+<h2 id="audit">Per-baptism sponsor audit</h2>
+
+<table class="sr-table">
+  <thead>
+    <tr>
+      <th>Baptism</th>
+      <th>Surname<br>(parish clerk)</th>
+      <th>Sponsor</th>
+      <th>Relationship to Auguste</th>
+      <th>Relationship to Charles</th>
+      <th>FS PID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Friedrich Wilhelm 1866 -->
+    <tr>
+      <td class="baptism" rowspan="4">1 · <a href="children/friedrich-wilhelm.html">Friedrich Wilhelm</a><br><span style="font-weight:400; font-size:0.82em; color:var(--text-meta);">2 Sep 1866<br>Pastor Wall</span></td>
+      <td rowspan="4">Gonnson</td>
+      <td><a href="people/frederick-pillmann.html">Friedrich Wilhelm Pillmann</a></td>
+      <td><span class="kin-circ">St. Louis parish circle</span> — at this 1866 baptism unmarried; would marry into Albrecht family (sister of Kreichelt sister-in-law) 5 Apr 1870</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">L17N-8Q6</td>
+    </tr>
+    <tr>
+      <td><a href="people/wilhelmina-ebeling.html">Wilhelmine Ebeling Leue</a></td>
+      <td><span class="kin-circ">St. Louis parish circle</span> — Soulard/Lafayette-area senior German Lutheran neighbour during the 1518 South 7th Street residence</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">M6G9-FJR</td>
+    </tr>
+    <tr>
+      <td><a href="people/georg-kreichelt.html">Georg Andreas Kreichelt</a></td>
+      <td><span class="kin-aug">Father</span> — Auguste's father; also a Battery B veteran (Charles's father-in-law and senior comrade)</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">LZXC-NH9</td>
+    </tr>
+    <tr>
+      <td><a href="people/henriette-kreichelt.html">Louise Henriette (Weiss) Kreichelt</a></td>
+      <td><span class="kin-aug">Mother</span> — Auguste's mother; Charles's mother-in-law</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">LZXC-NG7</td>
+    </tr>
+
+    <!-- Maria Josephine 1868 -->
+    <tr>
+      <td class="baptism" rowspan="3">2 · <a href="children/josephine-maria.html">Maria Josephine</a><br><span style="font-weight:400; font-size:0.82em; color:var(--text-meta);">1868<br>Pastor Wall</span></td>
+      <td rowspan="3">Gonnson</td>
+      <td><a href="people/jacob-reck.html">Jacob Reck</a></td>
+      <td><span class="kin-circ">St. Louis parish circle</span> — Pfalz-born 1837 (Freinsheim, Bavaria), arrived NY Nov 1865; parish-circle bond formed in St. Louis, not a pre-emigration tie; buried Old St. Marcus alongside Charles</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">KLPB-52X</td>
+    </tr>
+    <tr>
+      <td><a href="people/josephine-von-delian.html">Josephine née von Delien</a></td>
+      <td><span class="kin-aff">In-law (Reck side)</span> — Jacob Reck's first wife; the child's middle name Josephine is her direct namesake</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">open</td>
+    </tr>
+    <tr>
+      <td><a href="people/georg-kreichelt.html">Georg Kreichelt</a></td>
+      <td><span class="kin-aug">Father</span> — solo appearance this baptism; second of three Gannsen sponsorships</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">LZXC-NH9</td>
+    </tr>
+
+    <!-- Katherine Carolina 1870 -->
+    <tr>
+      <td class="baptism" rowspan="4">3 · <a href="children/katherine-carolina.html">Katherine Carolina</a><br><span style="font-weight:400; font-size:0.82em; color:var(--text-meta);">1870<br>Pastor Braschler</span></td>
+      <td rowspan="4">Gansen</td>
+      <td><a href="people/frederick-pillmann.html">Friedrich Pillmann</a></td>
+      <td><span class="kin-aff">In-law (affinal)</span> — newly married to Fredericka Albrecht (Catharina Albrecht's sister) 5 Apr 1870, seven weeks before this baptism; the only person to sponsor two Gannsen baptisms</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">L17N-8Q6</td>
+    </tr>
+    <tr>
+      <td><a href="people/catharina-albrecht.html">Catharina Albrecht</a></td>
+      <td><span class="kin-aff">Affianced in-law</span> — engaged to Auguste's brother Carl Kreichelt; would marry him 5 Mar 1871; the child's middle name Catharina is her direct namesake</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">L5FV-3Z1</td>
+    </tr>
+    <tr>
+      <td><a href="people/carl-kreichelt.html">Carl Kreichelt</a></td>
+      <td><span class="kin-aug">Brother</span> — Auguste's brother (Clausthal-born 1846)</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">L5FW-5LD</td>
+    </tr>
+    <tr>
+      <td><a href="people/amalia-muenke.html">Amalia (Maria Emma "Mincke") Münke</a></td>
+      <td><span class="kin-aff">Sister-in-law</span> — wife of Auguste's brother August Kreichelt; already kin at the time; the child's middle name Amalia is her namesake</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">L52N-1PL</td>
+    </tr>
+
+    <!-- Auguste 1872 -->
+    <tr>
+      <td class="baptism" rowspan="3">4 · <a href="children/auguste.html">Auguste</a><br><span style="font-weight:400; font-size:0.82em; color:var(--text-meta);">23 Jun 1872<br>Pastor Braschler</span></td>
+      <td rowspan="3">Gonsen</td>
+      <td><a href="people/georg-kreichelt.html">Georg Kreichelt</a></td>
+      <td><span class="kin-aug">Father</span> — third Gannsen sponsorship; one of only two recurring sponsors across the seven-baptism series</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">LZXC-NH9</td>
+    </tr>
+    <tr>
+      <td><a href="people/henriette-kreichelt.html">Louise Kreichelt</a> (= Henriette)</td>
+      <td><span class="kin-aug">Mother</span> — Louise Friederike Henriette Weiss; recorded here under her formal first name "Louise"</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">LZXC-NG7</td>
+    </tr>
+    <tr>
+      <td><a href="people/august-kreichelt.html">August Kreichelt</a></td>
+      <td><span class="kin-aug">Brother</span> — Auguste's eldest brother; Battery B veteran (served alongside Charles); the child's first name Auguste is also a feminine echo of his "August"</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">L5FW-572</td>
+    </tr>
+
+    <!-- Louise 1873 -->
+    <tr>
+      <td class="baptism" rowspan="2">5 · <a href="children/louise.html">Louise</a><br><span style="font-weight:400; font-size:0.82em; color:var(--text-meta);">1873<br>Pastor Braschler</span></td>
+      <td rowspan="2">Gansen</td>
+      <td><a href="people/henriette-kreichelt.html">Louise Henriette Kreichelt</a></td>
+      <td><span class="kin-aug">Mother</span> — recorded here under her full formal name "Louise Henriette née Weis"; the child's name Louise is a direct namesake</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">LZXC-NG7</td>
+    </tr>
+    <tr>
+      <td><a href="people/bertha-barbara-kreichelt.html">Barbara ("Babette") Kreichelt</a></td>
+      <td><span class="kin-aug">Sister</span> — Auguste's youngest sister Bertha Barbara, then age 13; would sponsor again 1881</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">L5FH-BRP</td>
+    </tr>
+
+    <!-- Erwin Carl 1875 -->
+    <tr>
+      <td class="baptism" rowspan="2">6 · <a href="children/erwin-carl-konsen.html">Erwin Carl Konsen</a><br><span style="font-weight:400; font-size:0.82em; color:var(--text-meta);">27 Aug 1875<br>Pastor Hoffmann</span></td>
+      <td rowspan="2">Konsen</td>
+      <td><a href="people/erwin-spraul.html">Erwin Spraul</a></td>
+      <td><span class="kin-circ">St. Louis parish circle</span> — Baden-born ~1848; later Superintendent of the Anheuser-Busch Brewing Association; Soulard neighbour; the child's first name Erwin is a direct namesake</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">KLP1-N62</td>
+    </tr>
+    <tr>
+      <td>"The father of the child"</td>
+      <td colspan="2"><em>Charles himself, listed by the parish clerk as a co-sponsor.</em> An irregular self-sponsorship that doesn't establish a kin link in either direction. The two competing readings are catalogued on the child's <a href="children/erwin-carl-konsen.html">profile page</a>; neither posits a Charles-side blood relative.</td>
+      <td class="fsn">—</td>
+    </tr>
+
+    <!-- Bertha 1881 -->
+    <tr>
+      <td class="baptism">7 · <a href="children/bertha.html">Bertha</a><br><span style="font-weight:400; font-size:0.82em; color:var(--text-meta);">4 Sep 1881<br>Pastor Nollau</span></td>
+      <td>Jansen</td>
+      <td><a href="people/bertha-barbara-kreichelt.html">Bertha Barbara "Babette" Kreichelt</a></td>
+      <td><span class="kin-aug">Sister</span> — Auguste's youngest sister, then age 20; the child's name Bertha is a direct namesake; sole sponsor</td>
+      <td><span class="kin-none">— none documented —</span></td>
+      <td class="fsn">L5FH-BRP</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="summary">Distribution by category</h2>
+
+<table class="sr-table">
+  <thead>
+    <tr><th>Category</th><th>Sponsorship slots</th><th>Distinct individuals</th><th>Examples</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="kin-aug">Auguste-side blood</span></td>
+      <td>9 of 17</td>
+      <td>6 (Georg, Henriette/Louise, Carl, August, Babette ×2 baptisms, Auguste's sister Babette appears both at Louise's and Bertha's)</td>
+      <td>Parents (Georg, Henriette), siblings (Carl, August, Babette)</td>
+    </tr>
+    <tr>
+      <td><span class="kin-aff">Auguste-side affinal</span></td>
+      <td>4 of 17</td>
+      <td>4 (Friedrich Pillmann, Catharina Albrecht, Amalia Münke, Josephine von Delien)</td>
+      <td>In-laws or fianc&eacute;s of Auguste's siblings; Reck's wife</td>
+    </tr>
+    <tr>
+      <td><span class="kin-circ">St. Louis parish circle</span></td>
+      <td>3 of 17</td>
+      <td>4 (Wilhelmine Ebeling Leue, Jacob Reck, Erwin Spraul, plus the 1866 unmarried-yet Friedrich Pillmann reading)</td>
+      <td>Lutheran neighbours and parish-circle associates documented in St. Louis, not in Hesse</td>
+    </tr>
+    <tr>
+      <td><em>Father of the child (self)</em></td>
+      <td>1 of 17</td>
+      <td>—</td>
+      <td>Erwin Carl Konsen 1875 (irregular)</td>
+    </tr>
+    <tr style="background:#fdecec;">
+      <td><strong><span class="kin-none">Charles-side blood</span></strong></td>
+      <td><strong>0 of 17</strong></td>
+      <td><strong>0</strong></td>
+      <td><strong>None documented across any of the seven baptisms 1866–1881</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="witnesses">Wedding witnesses &mdash; the 1866 marriage</h2>
+
+<p>The same pattern holds at the wedding. The St.&nbsp;Marcus marriage register (7 January 1866, entry no.&nbsp;676; Pastor G.&nbsp;W. Wall) names four witnesses (<em>Zeugen</em>): <strong>Adam Herweck, Philipp Weber, Anna Goetz,</strong> and <strong>Sophie Lehm.</strong> As at the baptisms, the only documented blood kin in the room are <strong>Auguste's</strong> &mdash; her father Georg and brother August Kreichelt. Charles's side is represented not by a relative but by <strong>Adam Herweck</strong>, his Battery&nbsp;B comrade and likely recruiter (b. 16 July 1831, Lampertheim, Hessen; <a href="https://www.familysearch.org/tree/person/details/K4DW-PXM" target="_blank" rel="noopener noreferrer">FS&nbsp;K4DW-PXM</a>) &mdash; a fellow soldier, not kin. Weber, Goetz, and Lehm are St.&nbsp;Louis parish-circle names with no documented blood tie to Charles. So across the wedding <em>and</em> the seven baptisms, not one of the ~two dozen named sponsors and witnesses is a documented Charles-side relative.</p>
+
+<div class="callout">
+  <span class="lbl">AncestryProGenealogists (2020)</span>
+  <strong>This thread was opened by the original 2020 research.</strong> The AncestryProGenealogists journal's research plan named it explicitly &mdash; &ldquo;identify baptism sponsors for Charles's children <em>not obviously related to his wife</em>&rdquo; &mdash; and left it as follow-up work. The 2026 sponsor reconciliation above, and the witness review of the non-Kreichelt sponsors (e.g. Erwin Spraul on Doc&nbsp;K), executed that plan; the result is a documented <em>absence</em> of any Charles-side blood relative among sponsors or witnesses.
+</div>
+
+<h2 id="counterarguments">Counterarguments considered</h2>
+
+<div class="callout">
+  <span class="lbl">Counterargument 1</span>
+  <strong>"Maybe a Charles-side relative was present but recorded under an unfamiliar surname Charles didn't recognise."</strong> The seven St. Marcus baptismal registers identify each sponsor by name and, where applicable, by relationship; the project has cross-walked every named sponsor to a FamilySearch profile or to a documented Auguste-side kin link. No sponsor on any of the seven baptisms has been left without an identification that places them on Auguste's side or in the St. Louis parish circle. The hypothesis of a hidden Charles-side relative under a non-obvious surname is not supported by any documentary trace and would require positing an individual who left no other footprint in the project's 78+ research sessions across Trendelburg, Deisel, and St. Louis records.
+</div>
+
+<div class="callout">
+  <span class="lbl">Counterargument 2</span>
+  <strong>"Maybe Charles had Hessian relatives in St. Louis whom Auguste's clerks routinely passed over."</strong> Two of the seven baptisms (Erwin Carl 1875; Maria Josephine 1868) explicitly involve a non-Kreichelt sponsor — Erwin Spraul, Jacob &amp; Josephine Reck. These slots demonstrate that the family <em>did</em> reach outside the Kreichelt-Albrecht-Pillmann-Mincke kin network when it chose to. The absence of a single Charles-side person in any of those reaches — over fifteen years and across five pastors — is itself the structural evidence.
+</div>
+
+<div class="callout">
+  <span class="lbl">Counterargument 3</span>
+  <strong>"Maybe German baptismal sponsorship in 1860s–1870s St. Louis was no longer kin-default, in which case the absence of Charles-side kin is uninformative."</strong> Comparative work on the parallel Kreichelt-side baptisms is instructive: across the ten St. Marcus baptisms of Carl Kreichelt's children (Auguste's brother), the sponsor pool is similarly kin-default — Kreichelt parents, siblings, in-laws. The 1866–1880 St. Marcus parish was operating with the kin-default convention intact in the same congregation; the asymmetry across the seven Gannsen baptisms therefore reads as informative, not as a period-and-place artifact. The comparative analysis is on the <a href="index.html#charles">Charles in America</a> tab.
+</div>
+
+<h2 id="status">Confidence status</h2>
+
+<p>The structural "immigrated alone" reading is held in the project's <strong>Working</strong> state per the <a href="methodology.html#confidence">source-rating taxonomy</a>: the sponsorship pattern is convergent indirect evidence rather than a single dispositive record. Promotion to <strong>Confirmed</strong> would require a positive identification of Charles's German baptismal entry, his 1859 passenger manifest, or a Hessian <a class="glossary-link" href="glossary.html#g-auswanderer-beleg" title="Glossary: Auswanderer-Beleg">Auswanderer-Beleg</a> / <a class="glossary-link" href="glossary.html#g-stammrolle" title="Glossary: Stammrolle">Stammrolle</a> entry — any of which would directly establish whether Charles had surviving kin in Hesse and whether any of them ever joined him in America. Those four primary-source gaps are catalogued on <a href="open-questions.html">Open Questions</a>.</p>
+
+<div style="margin:0.9rem 0; padding:0.85rem 1.1rem; background:var(--bg-card-tint,#f6ebd2); border:1px solid var(--border-medium,#d8c8a8); border-left:5px solid var(--brand,#b8902f); border-radius:0 4px 4px 0; font-size:0.93rem;">
+  <strong>Confidence tag &mdash; how sure are we they aren't family?</strong>
+  <p style="margin:0.4rem 0 0;">That <em>no named sponsor or wedding witness is a documented Charles-side blood relative</em>: <strong style="color:#4a7a3a;">High</strong> &mdash; a documented absence across ~24 sponsor/witness slots, seven baptisms plus the 1866 marriage, 1866&ndash;1881, under five officiating pastors, every identified name tracing to Auguste's kin or the St.&nbsp;Louis / Battery&nbsp;B circle.</p>
+  <p style="margin:0.4rem 0 0;">That this proves <em>Charles had no kin who ever joined him in America</em>: <strong style="color:#a8741a;">Moderate &mdash; Working</strong> &mdash; convergent <em>indirect / negative</em> evidence, not a single dispositive record; a German baptism, the 1859 manifest, or a Hessian Beleg could still surface a relative.</p>
+</div>
+
+<h2 id="how-built">How this table was built</h2>
+
+<p>The sponsor identifications come from the seven children's individual profile pages (<a href="children/index.html">children/</a>), which in turn cite the St. Marcus baptism register entries by page and entry number plus the FamilySearch profile for each sponsor. Each kin-relationship-to-Auguste claim traces to a documented FamilySearch tree link or to a St. Louis civil-record citation; each absence-of-Charles-side-link claim is the absence of any such trace across the project's research sessions. Counterargument framing follows Mills, <em>Evidence Explained</em>, §1.31 on the structure of negative-evidence arguments.</p>
+
+<p><em>Last updated <time datetime="2026-05-17">17 May 2026</time>. This page is versioned in the site's <a href="changelog.html">changelog</a>.</em></p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="index.html">Home</a> · <a href="methodology.html">Methodology</a> · <a href="open-questions.html">Open Questions</a> · <a href="changelog.html">Changelog</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<meta name="robots" content="noindex, follow">
+<title>Style Guide — Charles Research</title>
+<link rel="canonical" href="https://charles-research.netlify.app/styleguide.html">
+<link rel="stylesheet" href="assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Style Guide — Charles Research">
+<meta property="og:description" content="The design system reference for the Charles Research site — palette, typography, components, status colors.">
+<meta name="description" content="Design system reference: palette, typography, status colors, components.">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height:1.55; }
+  a { color: var(--brand-dark); border-bottom:1px dotted var(--border-medium); }
+  a:hover { color: var(--brand); }
+
+  header.sg-hero { background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%); color: var(--text-on-dark); padding: 1.6rem 1.5rem; border-bottom: 5px solid var(--brand); }
+  header.sg-hero .crumbs { font-size:0.82rem; color: var(--text-on-dark-d); margin-bottom:0.4rem; }
+  header.sg-hero .crumbs a { color: var(--brand); border-bottom:none; }
+  header.sg-hero h1 { color: var(--text-on-dark); font-size: var(--type-h1); }
+  header.sg-hero .sub { color: var(--text-on-dark-d); font-style:italic; margin-top:0.3rem; }
+
+  main { max-width:1100px; margin:0 auto; padding:1.6rem 1.4rem 4rem; }
+  h2 { font-size: var(--type-h2); color: var(--text-strong); padding-bottom:0.3rem; border-bottom: 2px solid var(--border-medium); margin: 2rem 0 1rem; }
+  h3 { font-size: var(--type-h3); color: var(--text-primary); margin: 1.4rem 0 0.6rem; }
+  h4 { font-size: var(--type-h4); color: var(--text-strong); margin: 0.8rem 0 0.4rem; }
+  p  { margin-bottom: 0.8rem; }
+  code { font-family: var(--font-mono); font-size: 0.86em; background: var(--bg-card-tint); padding: 1px 5px; border-radius: 2px; color: var(--brand-dark); }
+
+  .swatch-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.8rem; margin: 0.6rem 0 1.4rem; }
+  .swatch { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 4px; overflow: hidden; }
+  .swatch-color { height: 60px; }
+  .swatch-meta { padding: 0.5rem 0.7rem; }
+  .swatch-name { font-weight: 700; color: var(--text-primary); font-size: 0.92rem; }
+  .swatch-var { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+  .swatch-hex { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-meta); }
+
+  .demo-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 1rem 1.2rem; margin-bottom: 1rem; }
+  .demo-card.summary { background: linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); border: 2px solid var(--brand); padding: 1.2rem 1.4rem; }
+  .demo-card.tile { display: flex; align-items: flex-start; gap: 0.8rem; border-left: var(--bl-tile) solid var(--section-civilwar); padding: 1rem 1.1rem; transition: var(--transition); cursor: pointer; }
+  .demo-card.tile:hover { background: var(--section-civilwar-t); transform: var(--hover-lift); box-shadow: var(--hover-shadow); }
+  .demo-card.tile .icon { font-size: 1.8rem; line-height: 1; }
+  .demo-card.tile .body { flex: 1; }
+  .demo-card.tile .eyebrow { font-size: 0.76rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--section-civilwar-d); font-weight: 700; }
+  .demo-card.tile .title { font-size: var(--type-h4); font-weight: 700; color: var(--text-primary); }
+  .demo-card.tile .sub { font-size: 0.85rem; color: var(--text-meta); margin-top: 0.2rem; }
+
+  .badge-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.6rem 0 1rem; }
+  .badge { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; color: #fff; }
+  .badge.confirmed { background: var(--status-confirmed); }
+  .badge.eliminated { background: var(--status-eliminated); }
+  .badge.open { background: var(--status-open); }
+  .badge.active { background: var(--status-active); }
+  .badge.context { background: var(--status-context); }
+
+  .typography-demo h1, .typography-demo h2, .typography-demo h3, .typography-demo h4 { border: none; padding: 0; }
+  .typography-demo > * + * { margin-top: 0.5rem; }
+  .meta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); }
+
+  .borders-demo > div { background: var(--bg-card); border: 1px solid var(--border-light); padding: 0.6rem 0.9rem; margin-bottom: 0.5rem; }
+  .borders-demo .b-card { border-left: var(--bl-card) solid var(--brand); }
+  .borders-demo .b-tile { border-left: var(--bl-tile) solid var(--section-civilwar); }
+  .borders-demo .b-banner { border-left: var(--bl-banner) solid var(--status-active); }
+
+  .section-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.6rem; margin: 0.6rem 0 1.2rem; }
+  .section-chip { padding: 0.7rem 0.9rem; border-radius: 4px; border: 1px solid var(--border-light); border-left: var(--bl-tile) solid; }
+  .section-chip strong { display: block; font-size: 0.92rem; color: var(--text-primary); }
+  .section-chip span { display: block; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-top: 2px; }
+  .section-chip.civilwar    { border-left-color: var(--section-civilwar); }
+  .section-chip.immigration { border-left-color: var(--section-immigration); }
+  .section-chip.germany     { border-left-color: var(--section-germany); }
+  .section-chip.charles     { border-left-color: var(--section-charles); }
+  .section-chip.schrader    { border-left-color: var(--section-schrader); }
+
+  footer.back-nav { margin-top: 2rem; text-align: center; padding: 1rem; }
+  footer.back-nav a { display: inline-block; padding: 0.5rem 1rem; background: var(--bg-deep); color: var(--brand); border: 1px solid var(--brand); border-radius: 3px; font-weight: 600; letter-spacing: 0.04em; border-bottom: none; }
+  footer.back-nav a:hover { background: var(--brand); color: #fff; }
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  </style>
+<script defer src="assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/styleguide.html#article",
+  "headline": "Style Guide",
+  "url": "https://charles-research.netlify.app/styleguide.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17",
+  "description": "Design system reference: palette, typography, status colors, components."
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+<meta property="og:url" content="https://charles-research.netlify.app/styleguide.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="sg-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; Style Guide</div>
+  <h1>Style Guide</h1>
+  <div class="sub">Single source of truth for color, type, components, and status semantics · CSS tokens in <code style="color:var(--brand-light);">assets/theme.css</code></div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<h2>1 · Brand</h2>
+<p>The gold accent (<code>--brand</code>) is reserved for site-wide brand and primary CTA only. It used to do double duty as "open status" and "Charles in America accent" — both now use distinct colors so brand stays singular.</p>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:var(--brand);"></div><div class="swatch-meta"><div class="swatch-name">Brand gold</div><div class="swatch-var">--brand</div><div class="swatch-hex">#d8b366</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--brand-dark);"></div><div class="swatch-meta"><div class="swatch-name">Brand dark</div><div class="swatch-var">--brand-dark</div><div class="swatch-hex">#8a6420</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--brand-light);"></div><div class="swatch-meta"><div class="swatch-name">Brand light</div><div class="swatch-var">--brand-light</div><div class="swatch-hex">#f1cf85</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--brand-tint);"></div><div class="swatch-meta"><div class="swatch-name">Brand tint</div><div class="swatch-var">--brand-tint</div><div class="swatch-hex">#f8ecc8</div></div></div>
+</div>
+
+<h2>2 · Section accents (coordinated palette)</h2>
+<p>Five section colors at roughly 50% saturation / 45% lightness — coordinated rather than independently chosen. Each section's deep-dive pages, hero accent, and cross-link tiles use its own color.</p>
+<div class="section-row">
+  <div class="section-chip civilwar"><strong>Civil War</strong><span>--section-civilwar · #c84a4a</span></div>
+  <div class="section-chip immigration"><strong>Immigration</strong><span>--section-immigration · #4a76c8</span></div>
+  <div class="section-chip germany"><strong>Germany &amp; Origins</strong><span>--section-germany · #5a8a4a</span></div>
+  <div class="section-chip charles"><strong>Charles in America</strong><span>--section-charles · #c87a30</span></div>
+  <div class="section-chip schrader"><strong>Schrader</strong><span>--section-schrader · #8a6420</span></div>
+</div>
+
+<h2>3 · Status colors</h2>
+<p>Used inside tile grids to indicate research-state. Color is paired with an icon character in markup so color-blind users still get the signal.</p>
+<div class="badge-row">
+  <span class="badge confirmed">✓ Confirmed</span>
+  <span class="badge eliminated">✕ Eliminated</span>
+  <span class="badge open">★ Open / Unresolved</span>
+  <span class="badge active">▶ Active Pivot</span>
+  <span class="badge context">● Context / Other</span>
+</div>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:var(--status-confirmed);"></div><div class="swatch-meta"><div class="swatch-name">Confirmed</div><div class="swatch-var">--status-confirmed</div><div class="swatch-hex">#4a8a4a</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--status-eliminated);"></div><div class="swatch-meta"><div class="swatch-name">Eliminated</div><div class="swatch-var">--status-eliminated</div><div class="swatch-hex">#8a4a4a</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--status-open);"></div><div class="swatch-meta"><div class="swatch-name">Open · amber</div><div class="swatch-var">--status-open</div><div class="swatch-hex">#c87a30</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--status-active);"></div><div class="swatch-meta"><div class="swatch-name">Active pivot</div><div class="swatch-var">--status-active</div><div class="swatch-hex">#5a4a8a</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--status-context);"></div><div class="swatch-meta"><div class="swatch-name">Context</div><div class="swatch-var">--status-context</div><div class="swatch-hex">#5a4a32</div></div></div>
+</div>
+
+<h2>4 · Neutrals</h2>
+<div class="swatch-grid">
+  <div class="swatch"><div class="swatch-color" style="background:var(--bg-page); border-bottom: 1px solid var(--border-light);"></div><div class="swatch-meta"><div class="swatch-name">Page background</div><div class="swatch-var">--bg-page</div><div class="swatch-hex">#f6f1e7</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--bg-card); border-bottom: 1px solid var(--border-light);"></div><div class="swatch-meta"><div class="swatch-name">Card background</div><div class="swatch-var">--bg-card</div><div class="swatch-hex">#fffaf0</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--bg-card-tint);"></div><div class="swatch-meta"><div class="swatch-name">Card tint</div><div class="swatch-var">--bg-card-tint</div><div class="swatch-hex">#f6ebd2</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--bg-deep);"></div><div class="swatch-meta"><div class="swatch-name">Deep / hero</div><div class="swatch-var">--bg-deep</div><div class="swatch-hex">#2c2620</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--text-primary);"></div><div class="swatch-meta"><div class="swatch-name">Text primary</div><div class="swatch-var">--text-primary</div><div class="swatch-hex">#1f1a14</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--text-meta);"></div><div class="swatch-meta"><div class="swatch-name">Text meta</div><div class="swatch-var">--text-meta</div><div class="swatch-hex">#4a3a22</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--text-muted);"></div><div class="swatch-meta"><div class="swatch-name">Text muted</div><div class="swatch-var">--text-muted</div><div class="swatch-hex">#6a5a42</div></div></div>
+  <div class="swatch"><div class="swatch-color" style="background:var(--border-medium);"></div><div class="swatch-meta"><div class="swatch-name">Border medium</div><div class="swatch-var">--border-medium</div><div class="swatch-hex">#a88a4a</div></div></div>
+</div>
+
+<h2>5 · Typography (1.25× scale)</h2>
+<div class="typography-demo" aria-label="Typography sample (decorative — not real heading levels)">
+  <div role="presentation" class="demo-h1" style="font-size:var(--type-h1); font-weight:700; line-height:1.15; color:var(--text-strong);">H1 · 2rem · 32px</div>
+  <p class="meta">--type-h1 · 2.0rem · used once per page</p>
+  <div role="presentation" class="demo-h2" style="font-size:var(--type-h2); font-weight:700; line-height:1.2; color:var(--text-strong);">H2 · 1.6rem · 25.6px</div>
+  <p class="meta">--type-h2 · section dividers, summary-card titles</p>
+  <div role="presentation" class="demo-h3" style="font-size:var(--type-h3); font-weight:700; line-height:1.25; color:var(--text-primary);">H3 · 1.28rem · 20.5px</div>
+  <p class="meta">--type-h3 · sub-section heads, callout titles</p>
+  <div role="presentation" class="demo-h4" style="font-size:var(--type-h4); font-weight:700; line-height:1.3; color:var(--text-strong);">H4 · 1.05rem · 16.8px</div>
+  <p class="meta">--type-h4 · card heads, person names</p>
+  <p>Body text · 1.0rem · 16px · primary reading size · <code>--type-body</code></p>
+  <p style="font-size:var(--type-small);">Small · 0.88rem · 14px · captions, secondary metadata · <code>--type-small</code></p>
+  <p style="font-size:var(--type-meta); color:var(--text-muted);">Meta · 0.78rem · 12.5px · timestamps, dates · <code>--type-meta</code></p>
+</div>
+
+<h2>6 · Border-left widths (standardized)</h2>
+<div class="borders-demo">
+  <div class="b-card">Card · 3px · <code>--bl-card</code> · non-clickable summary cards</div>
+  <div class="b-tile">Tile · 4px · <code>--bl-tile</code> · clickable tiles, person-cards, child-cards</div>
+  <div class="b-banner">Banner · 5px · <code>--bl-banner</code> · status banners, hero accents, pull-quotes</div>
+</div>
+
+<h2>7 · Components</h2>
+
+<h3>Summary card</h3>
+<div class="demo-card summary">
+  <h2 style="font-size:var(--type-h3); color:var(--text-primary); padding:0; border:none; margin:0 0 0.4rem;">★ At a Glance</h2>
+  <p style="margin:0;">A concise paragraph that opens every deep-dive. Brand-bordered, gradient background, larger type. <strong>One per page maximum.</strong></p>
+</div>
+
+<h3>Clickable tile · default state + hover</h3>
+<div class="demo-card tile">
+  <div class="icon">📅</div>
+  <div class="body">
+    <div class="eyebrow">Section eyebrow</div>
+    <div class="title">Tile Title</div>
+    <div class="sub">A short description of what this tile leads to. Hover to see the unified lift + shadow + section-tint background.</div>
+  </div>
+  <div style="font-size: 1.4rem; color: var(--section-civilwar);">→</div>
+</div>
+
+<h3>Status badges</h3>
+<div class="badge-row">
+  <span class="badge confirmed">✓ Confirmed</span>
+  <span class="badge eliminated">✕ Eliminated</span>
+  <span class="badge open">★ Open</span>
+  <span class="badge active">▶ Active</span>
+  <span class="badge context">● Context</span>
+</div>
+
+<h2>8 · Hover behavior (canonical)</h2>
+<p>Single transition rule applies to <strong>every</strong> clickable surface site-wide. Defined in <code>assets/theme.css</code>:</p>
+<pre style="background:var(--bg-card-tint); padding:0.8rem 1rem; border-radius:4px; font-family:var(--font-mono); font-size:0.85rem; overflow-x:auto;">--hover-lift:    translateY(-1px);
+--hover-shadow:  0 2px 10px rgba(0,0,0,0.10);
+--transition:    all 0.15s ease;</pre>
+
+<h2>9 · How to use these tokens</h2>
+<p>Every shared CSS file pulls from <code>assets/theme.css</code> via <code>var(--token-name)</code>. To re-theme the entire site, edit one file. To add a new section accent, add a new <code>--section-NAME</code> pair to the root and reference it in the new section's tile rules.</p>
+<ul style="padding-left: 1.4rem;">
+  <li>Don't hard-code hex colors in new code — always go through the variables.</li>
+  <li>Don't introduce new accent colors without adding them to <code>assets/theme.css</code>.</li>
+  <li>For status overrides on tiles: use the <code>--status-*</code> variables, never the brand or section variables.</li>
+</ul>
+
+</main>
+
+<footer class="back-nav">
+  <a href="index.html">↩ Back to the main site</a>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

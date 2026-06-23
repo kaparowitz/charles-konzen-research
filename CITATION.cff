@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+title: "Charles Konzen Research: A Genealogical Investigation"
+message: "If you cite this project, please use the metadata below."
+type: dataset
+abstract: >-
+  A multi-month transatlantic genealogical investigation into Charles Konzen
+  (recorded in U.S. records as Gannsen / Johnson; 1835–1903), Hessian-born
+  sergeant of Battery B, 2nd Missouri Light Artillery, and his Trendelburg /
+  Deisel family origins in Churhessen.  The investigation follows the
+  Genealogical Proof Standard and uses an explicit four-state confidence
+  taxonomy (Confirmed / Working / Open / Eliminated).  v1.1.0 adds a
+  single-page Claims Dashboard consolidating every load-bearing claim with
+  confidence pill, primary source, and falsification condition; a
+  methodological disentanglement of the five (probably six) distinct
+  Andreas Kon(t)ze identities of the Trendelburg-Deisel records 1718-1830;
+  and a pre-deploy maintenance harness closing the propagation-cascade
+  bug class at the build step.
+authors:
+  - family-names: Johnson
+    given-names: Jed
+    email: jedsjohnson@gmail.com
+    orcid: "https://orcid.org/PLACEHOLDER-ORCID-JED"
+  - family-names: Schräder
+    given-names: Peter
+    affiliation: "Independent genealogist (Trendelburg, Hesse, Germany)"
+    orcid: "https://orcid.org/PLACEHOLDER-ORCID-PETER"
+license: CC-BY-NC-SA-4.0
+license-url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+repository-code: "https://github.com/PLACEHOLDER-GITHUB-USER/charles-konzen-research"
+url: "https://charles-konzen-research.netlify.app/"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.PLACEHOLDER"
+    description: "Zenodo deposit DOI (pending mint)"
+keywords:
+  - Charles Konzen
+  - Kontzen
+  - Konze
+  - Trendelburg
+  - Churhessen
+  - Hesse-Kassel
+  - Battery B 2nd Missouri Light Artillery
+  - Civil War pension
+  - transatlantic genealogy
+  - Genealogical Proof Standard
+date-released: 2026-05-29
+version: "1.1.0"

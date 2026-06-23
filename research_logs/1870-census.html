@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>1870 U.S. Federal Census — Research Log — Charles Research</title>
+<link rel="canonical" href="https://charles-research.netlify.app/research_logs/1870-census.html">
+<meta name="description" content="The 1870 schedule had a free-text &quot;Place of birth&quot; column (column 11) plus the new &quot;Father of foreign birth / Mother of foreign birth&quot; flags (columns 11-12). For Charles, the place-of-birth field…">
+<link rel="stylesheet" href="_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  .rl-tells { background:#fffaf0; border:1px solid #d8b366; border-left:4px solid #d8b366; padding:1rem 1.2rem; border-radius:5px; margin:1.2rem 0; }
+  .rl-tells h2 { color:#8a6420; font-size:1.18rem; border:none; padding:0; margin:0 0 0.6rem; display:flex; align-items:baseline; gap:0.5rem; }
+  .rl-tells h2 .star { color:#d8b366; font-size:1.4rem; }
+  .rl-section { margin:1.6rem 0; }
+  .rl-section h2 { font-size:1.0rem; color:#3a2f1e; border-bottom:1px solid #d8c8a8; padding-bottom:0.3rem; margin:0 0 0.5rem; }
+  .rl-passes { background:#fffdf6; border:1px solid #d8c8a8; border-radius:4px; padding:0.6rem 0.9rem; margin:0.5rem 0; }
+  .rl-passes h3 { font-size:0.92rem; color:#5a4a32; margin:0.4rem 0 0.3rem; }
+  .rl-passes ul { margin:0.2rem 0; padding-left:1.3rem; font-size:0.9rem; line-height:1.55; }
+  .rl-result { display:inline-block; padding:0.15rem 0.5rem; border-radius:3px; font-size: 0.78rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
+  .rl-result.neg { background:#f3dde3; color:#6a3030; }
+  .rl-result.pos { background:#e8f0d6; color:#3a6a2a; }
+  .rl-result.collateral { background:#fff4d8; color:#8a6420; }
+  .rl-next { background:#f4f9ee; border-left:3px solid #5a8a4a; padding:0.7rem 0.9rem; border-radius:3px; }
+  .rl-next h2 { color:#3a6a2a; }
+  .rl-found-box { background:#e8f0d6; border:1px solid #a8c498; border-left:4px solid #5a8a4a; padding:0.9rem 1.1rem; border-radius:5px; margin:1rem 0; }
+  .rl-found-box h3 { color:#3a6a2a; margin:0 0 0.5rem; font-size:1.0rem; }
+  .rl-found-box table { width:100%; font-size:0.88rem; }
+  .rl-found-box table td { padding:0.2rem 0.6rem 0.2rem 0; vertical-align:top; }
+  .rl-found-box table td:first-child { color:#5a4a32; font-weight:600; width:30%; }
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  </style>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Research Logs",
+      "item": "https://charles-research.netlify.app/research_logs/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "1870 Census"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/research_logs/1870-census.html#article",
+  "headline": "1870 U.S. Federal Census — Research Log",
+  "url": "https://charles-research.netlify.app/research_logs/1870-census.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-06-20"
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+<meta property="og:url" content="https://charles-research.netlify.app/research_logs/1870-census.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="src-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#evidence">Key Evidence</a> &nbsp;/&nbsp; Evidence not found</div>
+  <h1>1870 U.S. Federal Census — Research Log</h1>
+  <div class="sub">Charles &amp; Auguste's young-family enumeration · household not located · in-laws found mistranscribed</div>
+  <div class="meta-row">
+    <span class="pill pill--eliminated">EVIDENCE NOT FOUND</span>
+    <span class="pill">Address per pension: <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=1518+S+7th+St+St+Louis+MO+63104" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">1518 S 7th</a> St → 718 Gates Ave</span>
+    <span class="pill">Search documented 4 May 2026</span>
+  </div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="rl-tells">
+  <h2><span class="star">★</span> What this record would tell us if found</h2>
+  <p>The <strong>only census enumeration of Charles's young family</strong> with first-born children alive. Specifically:</p>
+  <ul>
+    <li><strong>Household composition</strong> — whether Friedrich Wilhelm Gonnson (b. 1866, d. 1867) had been replaced by a second living child by mid-1870. The known surviving child by mid-1870 is Friedrike Catharina Caroline Amalia (Katherine Carolina), baptised 22 May 1870 — about ~3 months old at census time.</li>
+    <li><strong>Address on 1 June 1870</strong> — would settle whether they were still at 1518 South 7th Street or had moved to 718 Gates Avenue. The pension file documents both addresses but not the exact transition date.</li>
+    <li><strong>Charles's 1870 occupation</strong>, real-estate value, and personal-property value — would establish his economic position in his fifth American year.</li>
+    <li><strong>Nearby households on the page</strong> — would reveal his immediate neighbours and witness-network anchors. The Battery B veteran cluster (Adam Herweck, August Derr, Christian Meyer, Henry Stoll, Michael Nolan, Theodore Gottlob) would surface if any of them were neighbours.</li>
+    <li><strong>Auguste's birthplace as recorded</strong> — would confirm or refute the canonical reading that she was born in Clausthal, Kingdom of Hannover, ~1840. The 1900 census records her as Missouri-born (likely transcription error), but the 1870 entry would be ~30 years closer to her actual birth.</li>
+  </ul>
+  <h3 style="font-size:0.95rem; color:#5a4a32; margin:0.9rem 0 0.3rem;">What level of detail to expect on origin</h3>
+  <p>The 1870 schedule had a free-text <em>"Place of birth"</em> column (column 11) plus the new <em>"Father of foreign birth / Mother of foreign birth"</em> flags (columns 11-12). For Charles, the place-of-birth field could read at any of three granularities:</p>
+  <ul>
+    <li><strong>"Germany"</strong> — broadest. By 1870 the post-1871 unification language was already filtering down even though German unification wasn't quite complete; many enumerators wrote "Germany" by default.</li>
+    <li><strong>State-level</strong> — "Hesse," "Hessen-Cassel," "Hessen Cassel," "<a class="glossary-link" href="../glossary.html#g-kurhessen" title="Glossary: Kurhessen">Kurhessen</a>," or sometimes "Prussia" (which had annexed Kurhessen in 1866). For Charles, this would be the highest-probability outcome by 1870 — he had been in St. Louis ~11 years and may have given the enumerator a more specific answer than in 1860.</li>
+    <li><strong>Specific town or village</strong> — rare but transformative. By 1870 Charles's English would have been good enough to communicate a place name like "Trendelburg" or "Deisel" to an English-speaking enumerator without it getting mangled (as it was in 1862's "Freundburg Kurhessen").</li>
+  </ul>
+  <p>Equally informative: the same column for Auguste. The 1900 census records her as Missouri-born; if the 1870 entry says Hesse-Kassel or another German state, that would be the closer-to-truth record and would correct one of the wife-side biographical fields.</p>
+</section>
+
+<section class="rl-section">
+  <h2>Adjacent record found — Georg Kreichelt (Charles's father-in-law)</h2>
+  <p>The household of Charles's parents-in-law was located in the 1870 census, mistranscribed by the indexer. Documenting it here as the geographic anchor for the search.</p>
+  <div class="rl-found-box">
+    <h3><span class="rl-result pos">found</span> Georg Kreichelt household · St. Louis Ward 03 / Image 476</h3>
+    <table>
+      <tr><td>Surname as transcribed</td><td><strong>Reichel</strong> (mistranscribed — correct: Kreichelt)</td></tr>
+      <tr><td>Dwelling / family number</td><td>1683 / 2873</td></tr>
+      <tr><td>FHL film / image</td><td>4263033 · image 476 of 600</td></tr>
+      <tr><td>Members</td><td>Georg 51 (Huckster, Hannover, $650 personal estate) · Henriette 51 (keeping house, Hannover) · Chas 21 = Carl Kreichelt cigar maker · Julius 15 (errand boy) · Barbara 10</td></tr>
+      <tr><td>Auguste present?</td><td>No — correctly absent (married Charles Gannsen Jan 1866; living elsewhere by 1870)</td></tr>
+      <tr><td>Source</td><td><a href="https://www.ancestry.com/search/collections/7163/records/1216439" target="_blank" rel="noopener noreferrer">Ancestry record 1216439</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="rl-section">
+  <h2>Search log — passes attempted</h2>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Pass 1 · Page-by-page walk around the Kreichelts</h3>
+    <p>Walked <strong>10 consecutive census images (pages 472–482, ~80 households)</strong> around the Kreichelt household, looking for a Charles + Auguste pair under any plausible mistranscription. Visually scanned every household head + spouse for a 35-year-old Hesse-born husband + ~27-year-old wife "Auguste" + small child(ren).</p>
+    <ul>
+      <li>Pages 474–478: closest neighbours to Kreichelt at family numbers 2855–2891 — no match</li>
+      <li>Pages 472–473, 479–482: extended sweep — no match</li>
+      <li>Closest near-misses by partial criteria: <em>August Loeffel</em> (Hesse Tagelöhner, but wife is Henrietta not Auguste); <em>Chas Heas</em> (Hesse Damust huckster, wife Eligah, four children too many); <em>John C. Germer</em> (Hesse Kassel Porter, wife Mary not Auguste, kids predate marriage)</li>
+    </ul>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Pass 2 · Auguste-side index search</h3>
+    <p>Filtered Ancestry 1870 census on first name "Auguste" / "Augusta", birth year 1843 ± 5, lived in St. Louis Missouri, with spouse "Charles". Returned 310k+ broad results. Filtered further by birth place "Hesse-Cassel" / "Kurhessen". Top match was Augusta Gansman in Ward 4 — but the household is a separate Gansman family:</p>
+    <ul>
+      <li><strong>Fred Gansman</strong> 33, Engraver, b. <strong>Brunswick (Braunschweig)</strong>, $500</li>
+      <li><strong>Augusta</strong> 27, Keeps House, b. <strong>Hessen-Cassel</strong></li>
+      <li><strong>Herman</strong> 4, b. New York</li>
+      <li><strong>Mina</strong> 2, b. New York</li>
+    </ul>
+    <p>Wife profile matches our Auguste Kreichelt (b. ~1840 Clausthal, Hannover) but everything else rules it out: husband is "Fred" age 33 b. Brunswick (not Charles age 35 b. Hesse-Kassel); kids born in NY (Charles &amp; Auguste have always been in St. Louis since 1859/1866 respectively); kids' names &amp; ages don't match Charles &amp; Auguste's known children. Recorded as a "name-twin" St. Louis Gansman family.</p>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Pass 3 · Charles-side index search</h3>
+    <p>Filtered Ancestry 1870 census on birth year 1835 ± 5, gender male, birth place "Hesse-Cassel" / "Kurhessen", lived in St. Louis Missouri. Top candidates examined:</p>
+    <ul>
+      <li><strong>Louis Ploeser</strong> (Ward 3, Hesse-Darmstadt, Saddle Tree Maker, wife Augusta 33) — kids Frederick 11 / Louis 9 / Christian 7 / William 3 / Charles 9 mo predate Charles &amp; Auguste's 1866 wedding. Different family.</li>
+      <li><strong>Charles Sommer</strong> (Ward 3, Hesse-Kassel) — wife Mary, not Auguste.</li>
+      <li><strong>Adam Seamen</strong> (Ward 1, Hesse, wife "Augustus" = Augusta) — wealthy brewer, $40K real estate, six children. Different family.</li>
+      <li><strong>John C. Germer</strong> (Ward 5, Hesse Kassel, Porter in Store) — wife Mary, kids predate marriage.</li>
+    </ul>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Pass 4 · Surname-variant exact searches</h3>
+    <ul>
+      <li><em>Gansen</em> exact + St. Louis Missouri + 1870 — 634 fuzzy results, none in St Louis matching Charles profile</li>
+      <li><em>Konsen</em> exact + St. Louis Missouri + 1870 — 305 fuzzy results, top hits in Maryland/Virginia/Ohio/Kentucky; only Frederick Kinzen in Saint Ferdinand St. Louis (b. 1853 Prussia, not Charles)</li>
+      <li><em>Charles Gansen</em> exact + birth 1835 ± 5 — three matches total: Charles Ganson (Ohio), Charles Genson (Michigan), Charles Gonson (NY/Sweden). None in St. Louis.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="rl-section">
+  <h2>Working hypothesis</h2>
+  <p style="background:#f3dde3;border-left:4px solid #b06a6a;padding:0.5rem 0.8rem;border-radius:3px;"><strong>⚠ Partly superseded by the 20 June 2026 update below.</strong> The "Wards 4/5" claim in the second bullet is now believed wrong (the addresses fall in the Ward 2/3 zone), and the spouse-and-wife index searches cited above are now known to be structurally void because the 1870 index carries no household relationship links. See <a href="#upd-2026-06-20">Session update · 20 June 2026</a>.</p>
+  <p><strong>Charles &amp; Auguste's household was missed by the 1870 enumerator.</strong> This is consistent with three observations:</p>
+  <ul>
+    <li>The 1865-1869 pension address (1518 S 7th Street) and the 1871 directory address (718 Gates Avenue) imply a move during the 1870 calendar year — possibly during the June–October enumeration window, when families in transit were systematically under-counted.</li>
+    <li>1870 St. Louis ward boundaries split between Wards 4 and 5 along the central spine that runs through both addresses. A move across a ward boundary near census day 1 June would mean neither ward's enumerator captured them.</li>
+    <li>Across 10 adjacent pages around the Kreichelts and exact-match wife &amp; husband searches, no plausible mistranscription surfaces — the household is not in the indexed data at all under any spelling tried.</li>
+  </ul>
+  <p>Alternative hypotheses (less likely but not ruled out): (a) Charles was working away from St. Louis on enumeration day and Auguste + infant were enumerated alone under an unrecognised surname; (b) the household is on a still-unsearched ward / image — the page-walk methodology has covered Ward 03 around the Kreichelts but not Wards 4 / 5 of 1870 St. Louis.</p>
+</section>
+
+<section class="rl-next">
+  <h2>Next paths to chase</h2>
+  <ul>
+    <li><strong>Page-by-page walk of 1870 St. Louis Ward 4</strong> — the ward most likely to contain 1518 South 7th Street's 1870 enumeration. Estimated ~600 census pages; would need ED-by-ED narrowing.</li>
+    <li><strong>Page-by-page walk of 1870 St. Louis Ward 5</strong> — Soulard area, secondary candidate ward.</li>
+    <li><strong>City-directory cross-reference</strong> — The 1870 St. Louis city directory entry under any surname variant could pin down which ward they were in; if 718 Gates Avenue appears in 1870, that locks the search to a single ward.</li>
+    <li><strong>FamilySearch Full-Text Search</strong> when service is available — direct text search of unindexed 1870 census text could surface a mistranscribed entry the structured search misses.</li>
+    <li><strong>Charles Gannsen Jr. / Erwin Carl Konsen FamilySearch profile (KL18-V2Y) attached records</strong> — check if any FS user has linked an 1870 census entry that the project hasn't yet seen.</li>
+  </ul>
+</section>
+
+<section class="rl-section" id="upd-2026-06-20">
+  <h2>Session update · 20 June 2026 — FamilySearch index sweep &amp; methodology correction</h2>
+  <p>A fresh attempt on the FamilySearch <em>indexed</em> 1870 U.S. census (collection 1438024), driven by the address evidence. The household was still not located, but the session overturned several assumptions that had quietly invalidated parts of the earlier search, and it re-pointed the ward target.</p>
+
+  <div class="rl-tells">
+    <h2><span class="star">★</span> Four corrections that change how the search must be run</h2>
+    <ul>
+      <li><strong>The 1870 federal census is NOT in FamilySearch Full-Text.</strong> Full-Text covers St. Louis <em>city directories</em> (715 "Kreichelt" hits) and a handful of census collections (e.g. 1929/1935 Oklahoma), but not the 1870 U.S. census. The "Full-Text when available" next-path is therefore closed for this record. (Directory full-text, however, is a live avenue — see below.)</li>
+      <li><strong>The 1870 index has no household / relationship links.</strong> The 1870 schedule recorded no relationships, and FamilySearch did not reconstruct them. Sanity check: "Charles" b.1828–42 in St. Louis = <strong>3,279</strong> hits, but "Charles + spouse Aug*" = <strong>0</strong>. Every spouse-anchored query returns 0 regardless of truth — which voids the spouse-"Charles"/wife-pair logic used in the earlier Pass 2 &amp; Pass 3. Households can only be reached by searching one person and opening the record to read the co-residents.</li>
+      <li><strong>On census day they were at 718 Gates, recorded as "Johnson," not at 1518 S 7th.</strong> The pension address-chain dates 718 Gates to 1869–1874, so 1 June 1870 falls there; the 1871 Edwards' Directory lists the head as "<em>Johnson, Charles, conductor, St. Louis R.R., r. 718 Gate</em>." The 1870 enumerator may well have written a phonetic German surname (cf. 1880 "Gonson"), but the anglicised "Johnson" + occupation <em>conductor</em> is now an explicit thing to search.</li>
+      <li><strong>Auguste was Hannover-born, not Hesse.</strong> She was born ~1840 in Clausthal, Kingdom of Hannover. The earlier Pass 2 filtered her birthplace as "Hesse-Cassel," which would <em>exclude</em> the true entry. Her 1870 birthplace should read Hanover (or possibly Prussia).</li>
+    </ul>
+  </div>
+
+  <h3 style="margin-top:1.2rem;">Ward re-analysis (per the user's STLGS / Edwards' 1870 ward-boundary lead)</h3>
+  <p>Using the 1870 ward boundaries from Edwards' Directory: Ward 3's south edge ran along <strong>Lafayette</strong> (east of Linn) and its north edge along <strong>Rutger/Hickory</strong>; Ward 2 lay just south of Lafayette. The family's south-side cluster (1518 S 7th and the Gates-area addresses) sits around Lafayette Ave — i.e. astride the <strong>Ward 2 / Ward 3</strong> line — and the in-laws (Georg Kreichelt) were already confirmed in <strong>Ward 3</strong>. <strong>Wards 4 and 5 are ruled out</strong> as primary targets: Ward 4's north edge is Plum/Cerre and Ward 5 is the Market/Clark corridor, both well north of these addresses. The prior log's "Wards 4/5" guess should be replaced with <strong>Ward 2 + the unwalked majority of Ward 3</strong> (the April walk covered only ~10 pages around the Kreichelts at image 476).</p>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Pass 5 · Wife as principal (no spouse link), corrected birthplace</h3>
+    <ul>
+      <li>Aug* female b.1836–45, St. Louis = <strong>605</strong>; + birthplace Hanover = <strong>388</strong> (still includes males August/Augustus).</li>
+      <li>Exact "Augusta" b.1837–43, birthplace Hanover, St. Louis = <strong>316</strong> (16 pages). With no family links to narrow by and a common given name, the pool is intractable to brute-force.</li>
+      <li>Child "Josephine" b.1866–70, St. Louis = <strong>1,942</strong> — equally intractable for the same reason.</li>
+    </ul>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Pass 6 · Surname "Johnson" (the directory spelling)</h3>
+    <ul>
+      <li>"Charles/Chas Johnson," St. Louis 1870 = 72; narrowed to b.1831–40 = 18 — birthplaces almost all U.S. Only two are German-born:</li>
+      <li><strong>Charles Johnson, 40, b. Germany — Ward 1, household 154</strong> (M4XG-STX): wife "Minnie" 26, daughters Barbara 4, Louisa 3, Anna 1. Wrong wife, wrong children — <em>eliminated</em>.</li>
+      <li><strong>C P Johnson, b.1833 Prussia</strong> — the one remaining German "Johnson" male; low priority (initials "C P," Prussia) and not yet household-checked.</li>
+    </ul>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Pass 7 · Surname-variant sweeps on the FamilySearch AI index</h3>
+    <ul>
+      <li><em>Gonson</em> exact, St. Louis 1870 = <strong>0</strong>. Wildcard <em>G*ns*n</em> = <strong>44</strong> — all the known "Gansman" name-twin cluster (Val/Henry/Mary Gansman, b. Hesse/Hanover); no Gonson/Gonnson household.</li>
+      <li><em>Jansen</em> + given "C*" = <strong>0</strong> Charles (only a Cath and a Charlotte).</li>
+      <li><em>K*ns*n</em> = <strong>8</strong>. Surfaced a tempting <strong>"Augusta Kransen," 30, b. Prussia</strong> (surname ≈ Konsen/Gonsen?; age right) — but she is a <em>domestic servant</em> in the Geo Schlosstein household (Bavaria; Ward 1) alongside a 17-yr-old Louise Krausen. Unmarried, no Josephine — <em>eliminated</em>.</li>
+    </ul>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result collateral">surname-independent</span> Pass 8 · Given name + true origin, ignoring the surname</h3>
+    <ul>
+      <li>"Charles/Cha*" b. Hesse, St. Louis 1870 = <strong>77</strong> (surname-independent — would catch him under any mistranscribed surname <em>if</em> the given name read "Charles" and the birthplace read "Hesse"). Of these only ~2 city men are specifically <em>Hesse-Cassel/Kassel</em> (his real origin): Charles H. Dittmer (1836) and Chas Nuruberg (1833) — surnames bearing no resemblance to any Konzen/Gonson form. Not adoptable as matches; the 77 cannot be household-checked one-by-one without a ward filter, and <strong>the standardized place drops the ward, so the search cannot be restricted to Ward 2/3</strong> — ward elimination requires opening each record individually.</li>
+    </ul>
+  </div>
+
+  <div class="rl-found-box" style="background:#e8f0d6;border-color:#a8c498;">
+    <h3 style="color:#3a6a2a;">★ Breakthrough — the city directories place "Charles Gonson" at 718 Gate, in a railroad-workers' building</h3>
+    <p style="font-size:0.9rem;">A FamilySearch Full-Text sweep of <em>"718 Gate"</em> across the St. Louis directories (these are fully OCR-indexed) recovered the family's own entries and, crucially, their neighbours:</p>
+    <table style="width:100%;font-size:0.86rem;margin-top:0.4rem;">
+      <tr><td style="font-weight:600;width:26%;">1876 directory</td><td><strong>"Gonson Charles, driver, 718 Gate"</strong> — our Charles, under the same surname the 1880 census uses, at 718 Gate.</td></tr>
+      <tr><td style="font-weight:600;">1872–73 directory</td><td><strong>"Johnson Charles, conductor, r. 718 Gate"</strong> (plus a second "Johnson Charles, conductor, T.W. &amp; W.R.R.") — the anglicised rendering, streetcar conductor.</td></tr>
+      <tr><td style="font-weight:600;">1868–69 directory</td><td>718 Gate housed a cluster of <strong>St. Louis R.R.</strong> (horse-car) men: <em>McDonald Allan J.</em> (driver), <em>McDonald John D.</em> (conductor), <em>McDonald Joseph</em> (driver), and <em>William Chisholm</em> (driver). Same building, same employer.</td></tr>
+      <tr><td style="font-weight:600;">1877–82 directories</td><td>718 Gate continues as a working-men's address: <em>Walter Mulligan</em> (1877–78), brewer <em>Adam Ehl</em> &amp; midwife <em>Selina Ehl</em> (1880), conductor <em>William D. Hall</em> (1880–82), conductor <em>Jacob Rose</em> (1872–73).</td></tr>
+    </table>
+    <p style="font-size:0.9rem;margin-top:0.5rem;"><strong>Why this matters:</strong> 718 Gate was evidently a multi-tenant building tied to the St. Louis Railroad car service, and Charles — as a streetcar conductor/driver — lived there from ~1869 well into the 1870s. The 1870 census household is therefore almost certainly enumerated <em>alongside other St. Louis R.R. families</em>. Finding any 718-Gate neighbour in the 1870 census pins the exact page where Charles's mistranscribed/omitted household sits.</p>
+    <p style="font-size:0.9rem;"><strong>Status of the neighbour-anchor:</strong> the only "Chisholm" in 1870 St. Louis is an unrelated Canadian family in Ward 9 (William Chisholm the railroad driver had moved on), so it does not pin the page. <strong>Adam Ehl</strong> (the 718-Gate brewer) is in the 1880 census at <strong>1903 Linn Street, ED 100</strong> (saloonkeeper) — i.e. residents of this cluster sit in the <strong>Soulard / Linn-Street district</strong>, the deep-south-central grid that in 1870 falls in <strong>Ward 1–2</strong> (south of Lafayette). This nudges the likely 1870 ward <em>south</em> of the Kreichelts (Ward 3), toward Ward 2. "Gate" street still isn't placed on any period map (residents' directory vs. census addresses don't agree, so it may have been an alley or a renamed stub). The neighbour-anchor was then run to exhaustion and <strong>failed</strong>: Jacob Rose is <em>not</em> in St. Louis in the 1870 census (he reached 718 Gate only by 1872&ndash;73), and the McDonalds / Chisholm of the 1868&ndash;69 directory don't surface at 718 Gate in 1870 either. In other words, none of the documented 718-Gate neighbours was demonstrably co-resident in June 1870 except Charles himself — so there is no neighbour to pin the page. <strong>The sole remaining route is a manual image page-walk</strong> of the Soulard/Linn blocks of 1870 Ward 2 (and the south end of Ward 3), scanning for a railroad-worker household headed by a German "Charles/Carl" ~35 with wife Auguste and toddler Josephine.</p>
+    <p style="font-size:0.9rem;"><strong>First-pass walk attempt (21 June 2026):</strong> opened the 1870 Ward 1 image set on Ancestry to scope the walk. Two hard facts emerged. (1) <strong>The 1870 schedule has no street/house-number column</strong> (street addressing of the census only began in 1880) — so there is <em>no way to jump to "Gate" or "Linn" street</em>; the household can only be found by reading names line-by-line. (2) <strong>Scale:</strong> St. Louis Ward 1 alone is <strong>678 images</strong> (~40 names each ≈ 27,000 people), and Ward 2 is comparable — so a blind name-by-name walk of the candidate area is a multi-thousand-page manual task, not completable in a single sitting. Conclusion: a productive walk needs the neighbourhood narrowed <em>first</em>.</p>
+    <div class="rl-found-box" style="background:#e8f0d6;border-color:#a8c498;margin-top:0.8rem;">
+      <h3 style="color:#3a6a2a;">★ &ldquo;Gate Street&rdquo; located &mdash; Carondelet Avenue, Benton Park (1870 Ward 1)</h3>
+      <p style="font-size:0.9rem;">A FamilySearch Full-Text search of the directory <strong>fire/police call-box lists</strong> (1875&ndash;76, 1880, 1882 St. Louis directories) repeatedly records the box at <strong>&ldquo;Carondelet av. and Gate,&rdquo;</strong> listed in sequence with <em>&ldquo;Carondelet av. and Pestalozzi,&rdquo; &ldquo;McNair av.,&rdquo; &ldquo;Lynch,&rdquo;</em> and <em>&ldquo;Cherokee and Lemp's Brewery.&rdquo;</em> An 1864&ndash;65 directory likewise has a &ldquo;Gate av.&rdquo; corner entry. This finally <strong>places the lost &ldquo;Gate&rdquo; street as a cross-street of Carondelet Avenue in the deep-south Benton Park / Marine Villa brewing district (~2700&ndash;2900 south)</strong> &mdash; not in Soulard proper. In the 1870 ward grid that block is <strong>Ward 1</strong> (everything south of the Barton&nbsp;&rarr;&nbsp;Carondelet-av&nbsp;&rarr;&nbsp;Victor&nbsp;&rarr;&nbsp;Shenandoah line). The cast fits the place perfectly: a horse-car <em>conductor/driver</em> (Charles) and a <em>brewer</em> (Adam Ehl, later 1903 Linn) living in the Carondelet-Avenue / Lemp's-Brewery streetcar district, on the family's documented southward drift (1518 S 7th &rarr; 718 Gate &rarr; 2409 S Broadway).</p>
+      <p style="font-size:0.9rem;"><strong>Refined walk target:</strong> the 1870 <strong>Ward 1</strong> images covering the Carondelet&nbsp;Av / Pestalozzi / Lynch / Benton Park blocks (the enumerator walked street-by-street, so these cluster on consecutive sheets).</p>
+      <p style="font-size:0.9rem;"><strong>Anchor attempts (21 June 2026, exhausted):</strong> tried to pin the exact Ward-1 sheets via a household known to be at/near Gate in 1870 — Adam Ehl is <em>not</em> in the 1870 census (St. Louis), the 718-Gate McDonalds can't be isolated among ~12,000 Irish McDonalds, and no other Gate resident is both indexed and demonstrably present in June 1870. On Ancestry, filtering &ldquo;Augusta b.1840 + spouse Charles&rdquo; down to St. Louis Ward 1 surfaces only unrelated couples (the &ldquo;Krausen&rdquo; servant, Augusta Loutwick/spouse Louis, Augusta Renecke/spouse Nicholas) — confirming once more that <em>our household is not indexed with &ldquo;Charles&rdquo; as the inferred spouse</em> (his given name was mistranscribed too).</p>
+      <p style="font-size:0.9rem;"><strong>Two remaining routes, both manual:</strong> (1) a no-spouse scan of <em>every</em> German-born &ldquo;Augusta&rdquo; ~30 in 1870 Ward 1, opening each household to look for a streetcar-worker &ldquo;Charles/Carl&rdquo; + a ~2-yr-old Josephine; or (2) a direct image walk of the Ward-1 Benton Park / Carondelet-Av sheets. Failing both, an AI handwriting index of the 1870 census (as already exists for the directories that cracked this case) remains the cleanest eventual route.</p>
+      <p style="font-size:0.9rem;"><strong>Image-walk executed (21 June 2026) — anchor found, household not yet located.</strong> The decisive anchor for the walk is <strong>William J. Lemp</strong> (the Western/Lemp Brewery owner), enumerated in 1870 <strong>Ward 1, NARA roll M593_810, page 92B, dwelling 139, image 4273861_00192</strong> (occupation &ldquo;Brewery,&rdquo; $225k real estate) — his brewery sat at Cherokee &amp; Carondelet, ~two blocks from Gate (Carondelet&nbsp;Av &amp; Pestalozzi), so Charles should be in the same enumeration. Using Ancestry's per-sheet <em>index panel</em> (which lists every person's name/age/birthplace/occupation without handwriting-reading), I walked <strong>pages 91&ndash;99 (dwellings 134&ndash;200, ~360 households)</strong> straddling the brewery. Every household is a German/Swiss/Irish/Scandinavian working family — laborers, stone-cutters, masons, coopers, butchers, brewery hands — but <strong>no Charles + Auguste + Josephine cluster</strong> appears.</p>
+      <p style="font-size:0.9rem;"><strong>Key tell from the walk:</strong> across the whole Carondelet-Av/brewery stretch there is <em>not a single streetcar conductor or driver</em> — yet 718 Gate housed a whole cluster of St. Louis R.R. men (the McDonalds, Rose, Chisholm, and Charles himself). So 718 Gate's railroad-worker building is <strong>not</strong> in the brewery blocks beside Lemp; the streetcar cluster — and Charles — sits beside the <strong>St. Louis Railroad horse-car barn/stables</strong>.</p>
+      <p style="font-size:0.9rem;"><strong>Car-barn located (21 June 2026):</strong> the 1866&ndash;67 St. Louis directory lists &ldquo;<strong>St. Louis Railroad Co. Stables, W. Carondelet av. near Arsenal</strong>&rdquo; (southern division) — i.e. north along Carondelet Av from Lemp's brewery, toward the lower dwelling numbers / earlier census sheets. The streetcar-worker cluster (and 718 Gate) should sit near there.</p>
+      <p style="font-size:0.9rem;"><strong>Walk extended toward the stables — 16 sheets cleared (pages 84&ndash;99, dwellings 95&ndash;200, ~640 households).</strong> Heading north/back from Lemp the trades shift (teamsters Grewoer/Baha/Gerhause/Krisner; a wagon-driver; then mixed English/Irish — policeman, physician, plasterers, cigar-maker) but <strong>still no streetcar-conductor cluster and no Charles + Auguste + Josephine</strong>. The only &ldquo;Charles Johnson&rdquo; reached is the previously-<em>eliminated</em> German laborer at dwelling 109 (wife Minnie; daughters Barbara/Anna/Louisa; record M4XG-STX).</p>
+      <p style="font-size:0.9rem;"><strong>Entire subdivision walked — 24 sheets (images 4273861_00175&ndash;00199, dwellings 37&ndash;200, ~900 households): complete negative.</strong> The full first enumeration subdivision of 1870 Ward 1 has now been read end-to-end via the index panel. It contains exactly the expected neighbourhood — the Lemp brewery and its German workers; the wealthy Carondelet-Av merchant blocks (the <em>DeMenil</em> physician $400k, <em>Anheuser</em> the brewer, <em>Bowman</em> jewelers); and <strong>several scattered street-railway men</strong> (Frank Faggley &ldquo;driver on light car,&rdquo; &mdash; Conner &ldquo;conductor,&rdquo; Adam Shoer &ldquo;car conductor,&rdquo; John Sochrim &ldquo;RR conductor&rdquo;), confirming this is the right <em>kind</em> of district. But <strong>there is no Charles Gonson/Johnson with an Auguste and a Josephine anywhere in the subdivision.</strong></p>
+      <p style="font-size:0.9rem;"><strong>What this means.</strong> The best-reasoned target subdivision — the one containing Gate Street's Carondelet-Av blocks, the brewery, and the only conductor cluster — does <em>not</em> contain the household. The remaining possibilities are: (a) the family sits in a <em>different</em> enumeration subdivision of Ward 1 (the roll runs to 678 images; this subdivision was only ~25 of them) or just over the line in Ward 2 near the Arsenal stables — i.e. a blind search of hundreds more sheets with no anchor to target; (b) the 1870 enumerator genuinely <em>missed</em> the household (the original &ldquo;not in the indexed data&rdquo; hypothesis); or (c) it is present but with given names mangled past recognition even in the images. <strong>Conclusion of the page-walk:</strong> the targeted, anchored walk is <em>complete and negative</em>; further walking is unanchored and open-ended. The clean finish remains an <strong>AI handwriting/full-text index of the 1870 census</strong> (the same tool class that cracked the directories), which would surface the household by content regardless of surname/given-name distortion. The case is documented to a precise, resumable state: man (Charles Gonson/Johnson, streetcar conductor), street (Gate = Carondelet&nbsp;Av near Pestalozzi, Benton Park, 1870 Ward 1), anchor (Lemp, dwelling 139, image 4273861_00192), car-barn (Carondelet&nbsp;Av near Arsenal, likely Ward 2), and the entire Ward-1 brewery subdivision (dwellings 37&ndash;200, 24 sheets) now cleared.</p>
+      <p style="font-size:0.85rem;color:#5a4a32;"><strong>Full-text coverage checks (monitoring):</strong> <em>21 June 2026</em> — FamilySearch Full-Text still does <strong>not</strong> cover the 1870 U.S. Federal Census (a &ldquo;Kreichelt&rdquo; search filtered to Record Type = Census returns only the 3 Muskogee, Oklahoma 1929/1935 records; no U.S. 1870 census collection present). A monthly scheduled task (&ldquo;charles-1870-census-fulltext-watch&rdquo;) now re-checks this automatically and will re-run the Gonson/Auguste search the moment the 1870 census is added.</p>
+    </div>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Pass 9 · Ancestry's household-linked 1870 index (3-way)</h3>
+    <ul>
+      <li>Unlike FamilySearch, Ancestry's 1870 index <em>does</em> infer household relationships and shows the ward per hit — so it can be searched by family member. All three anchorings were run, St. Louis, no surname:</li>
+      <li><strong>Head Charles (b.1835) + spouse Augusta</strong> — top match is "Charles Happlerheimer, spouse Augusta, Ward 12, Prussia"; no Ward 2/3 German "Charles + Augusta" couple resembling the family in the ranked results.</li>
+      <li><strong>Wife Augusta (b.1840) + spouse Charles</strong> — no St. Louis Augusta whose husband is Charles/Chas matches on ward + Hanover origin; nearest Ward-3 adjacencies are "Augusta Trumm / Chas, Ward 3, Prussia ~1839" and (childless) "Charles Muenchhausen, Ward 3, Hanover" — neither fits surname, birthplace, or children.</li>
+      <li><strong>Child Josephine (b.1868) + father Charles + mother Augusta</strong> — no Josephine ~2 in St. Louis has <em>both</em> parents Charles and Augusta (the Charles-fathered Josephines have mothers Catharine / Bridget / Amelia).</li>
+      <li>The previously-rejected "Charles Sommer, Ward 3, Hesse-Kassel, wife Mary" reappears here, confirming it is the only Hesse-Cassel "Charles" couple in Ward 3 — and its wife is Mary, not Auguste.</li>
+    </ul>
+  </div>
+
+  <div class="rl-found-box" style="background:#fff4d8;border-color:#d8b366;">
+    <h3 style="color:#8a6420;">Revised conclusion (two-platform negative)</h3>
+    <p style="font-size:0.9rem;">The household is <strong>not retrievable from the indexed 1870 census on <em>either</em> FamilySearch or Ancestry</strong> — not as a Charles+Augusta couple (both spouse directions), not via the child Josephine with both parents named, and not under any recognizable surname variant (Gonson/Gonnson/Gansen/Konsen/Jansen/Johnson). Because Ancestry's household-linked, ward-aware index <em>also</em> fails to surface them, the earlier "given-name pools too large" limitation is no longer the whole story: the family is simply not present in the index as a recognizably-named St. Louis household. The two live explanations are (a) the enumerator <strong>missed</strong> the household (consistent with the 1869–70 move to 718 Gates), or (b) the surname <em>and/or</em> given names were mistranscribed into forms no name search reaches. Either way, the record is now recoverable only by a <strong>manual page-walk of the Ward 2 / Ward 3 images</strong> (or a fresh OCR/full-text index of the 1870 census if one is published).</p>
+  </div>
+
+  <div class="rl-next">
+    <h2>Revised next paths</h2>
+    <ul>
+      <li><strong>Page-walk Ward 2 and the unwalked majority of Ward 3</strong> (not Wards 4/5) — now the <em>primary</em> remaining route, since both indexes have failed. Start outward from the Kreichelt anchor (FHL 4263033, image 476) and cover Ward 2 south of Lafayette. Ancestry's "Browse Images → Missouri → St Louis → Ward 2 / Ward 3" gives the cleanest page-by-page set.</li>
+      <li><strong>Full-text the 1869/1870 St. Louis city directory</strong> (these <em>are</em> in FamilySearch Full-Text) for "Johnson Charles conductor" and the neighbours at 718 Gate(s), to pin the exact ED before walking — the single biggest force-multiplier for the page-walk.</li>
+      <li><strong>Watch for a published full-text / OCR index of the 1870 federal census.</strong> Neither FamilySearch Full-Text nor the structured indexes reach this household; an AI handwriting index of the 1870 schedules (as now exists for land/probate) would be the one tool that could surface a badly-mistranscribed entry by content.</li>
+      <li><strong>Closed this session:</strong> Ancestry household-linked search (3-way, negative); FamilySearch surname/given-name sweeps (negative); the German "Charles Johnson" branch (Ward 1 family eliminated; only "C P Johnson" b.1833 Prussia left un-opened, low priority).</li>
+    </ul>
+  </div>
+</section>
+
+<section class="rl-section">
+  <h2>Directory-mining sweep (FamilySearch Full-Text, 21 June 2026)</h2>
+  <p>The 718-Gate breakthrough prompted a full sweep of the St. Louis city directories for Charles under every surname spelling and at every documented address. It produced his <strong>only contemporaneous original sources</strong> and re-dated three address spans. Recorded here so the address-trail work lives alongside the 1870 hunt that spawned it.</p>
+  <div class="rl-found-box" style="background:#e8f0d6;border-color:#a8c498;">
+    <h3 style="color:#3a6a2a;">Directory address trail — what the sweep found</h3>
+    <table style="width:100%;font-size:0.86rem;">
+      <tr><td style="font-weight:600;width:20%;">718 Gate</td><td><strong>1871</strong> Johnson, conductor · <strong>1872&ndash;73</strong> Johnson, conductor (<a href="https://www.familysearch.org/ark:/61903/3:1:3QHK-XQZY-TLHN?view=fullText&amp;keywords=718+Gate&amp;lang=en">direct ↗</a>) · <strong>1874</strong> <em>Konsen</em>, driver (<a href="https://www.familysearch.org/ark:/61903/3:1:3QHK-LQZY-B4P9?view=fullText&amp;keywords=718+Gate&amp;lang=en">direct ↗</a>) · <strong>1876</strong> <em>Gonson</em>, driver. <span style="color:#3a6a2a;">Four spellings; extends the tenure to 1876.</span></td></tr>
+      <tr><td style="font-weight:600;">rear 2407 DeKalb</td><td><strong>1887</strong> &amp; <strong>1887&ndash;88</strong> Johnson, <em>watch</em> (<a href="https://www.familysearch.org/ark:/61903/3:1:3QHV-V38V-P919-P?view=fullText&amp;keywords=rear+2407+DeKalb&amp;lang=en">direct ↗</a>) · <strong>1895</strong> &amp; <strong>1895&ndash;96</strong> Gannsen, <em>watch</em> (+ Charles Jr.). <span style="color:#3a6a2a;">Extends the DeKalb/watchman residency back to 1887; 1888&ndash;94 are pension-only (the directory shows other tenants those years).</span></td></tr>
+      <tr><td style="font-weight:600;">1516 / 1518 S 7th</td><td><strong>No entry for Charles found</strong> at either number in any 1860s&ndash;70s directory — both were large multi-family tenements (1870&ndash;71 lists the Schweikert tailors at 1518; the Reis/Reif/Gettelmann families at 1516). The 1865&ndash;69 first address rests <em>only</em> on Charles's c.&nbsp;1898 pension recollection (&ldquo;1516 So. 7th&rdquo;); its number and dates are approximate. <strong>His earliest contemporaneous record anywhere in St. Louis is the 1871 directory at 718 Gate.</strong></td></tr>
+    </table>
+    <p style="font-size:0.88rem;">All entries reproduce the <em>n&ndash;s&ndash;n / n&ndash;z&ndash;n</em> surname skeleton (Johnson / Konsen / Gonson / Gannsen). Full chronology, with verification links, is on the <a href="../charles_america/st-louis-residences.html">St.&nbsp;Louis residences page</a>; the spellings are tabled on <a href="../surname-records.html#cluster">Surname across the records</a>.</p>
+  </div>
+</section>
+
+<section class="rl-section">
+  <h2>Cross-references in the project</h2>
+  <ul>
+    <li><a href="../family_pages/fam-konze.html">Konze family page</a> — the project's working-hypothesis family before 12 April 2026 elimination</li>
+    <li><a href="../correspondence/peter-schrader-timeline.html">Peter Schräder correspondence timeline</a> — the 1870 census search question first surfaced in Oct 2025 (Peter: "Charles doesn't appear in U.S. records until 1861. Not in 1860 census.")</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="back-nav">
+  <a href="../index.html#evidence">↩ Back to Key Evidence</a>
+</footer>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

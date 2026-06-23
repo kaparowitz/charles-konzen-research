@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Hessian Parish Map — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/germany/parish-map.html">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<meta name="description" content="An interactive geographic map of all thirty-six parishes investigated for Charles Konzen's German baptism — Trendelburg, Deisel, Friedrichsfeld, Helmarshausen, Hofgeismar, the surrounding villages of the Kreis Hofgeismar, the cross-border Catholic parishes, and the far-south place-name alternatives (Mainz, Diez, the Tier-3 'Deissen' parishes).">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Hessian Parish Map — Charles Research">
+<meta property="og:description" content="Interactive map of all thirty-six parishes investigated for Charles Konzen's German baptism, colour-coded by candidate status — thirty-one eliminated, no surviving candidate.">
+<meta property="og:url" content="https://charles-research.netlify.app/germany/parish-map.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/germany_parish-map.png">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.55; }
+
+  header.pm-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2rem 1.5rem 1.4rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.pm-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.4rem; }
+  header.pm-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.pm-hero h1 { color: var(--text-on-dark); font-size: 2rem; }
+  header.pm-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+
+  main { max-width: 1180px; margin: 0 auto; padding: 1.6rem 1.4rem 4rem; }
+  h2 { font-size: 1.4rem; color: var(--text-primary); margin: 1.6rem 0 0.6rem; }
+  p { margin-bottom: 0.8rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.04rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.2rem; max-width: 820px; }
+
+  /* ============ Status summary strip — at-a-glance counts ============ */
+  .status-summary {
+    display: flex; align-items: center; flex-wrap: wrap;
+    gap: 0.45rem 0.7rem;
+    padding: 0.6rem 0.95rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand-dark);
+    border-radius: 4px;
+    margin: 0 0 1rem;
+    font-size: 0.92rem;
+    color: var(--text-body);
+  }
+  .status-summary strong { color: var(--text-primary); margin-right: 0.4rem; }
+  .status-summary .ss-pill {
+    display: inline-flex; align-items: center;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  .status-summary .ss-pill.charles    { background: #c87a30; }
+  .status-summary .ss-pill.working    { background: #d8b366; color: #1f1a14; }
+  .status-summary .ss-pill.open       { background: #4a76c8; }
+  .status-summary .ss-pill.eliminated { background: #8a4a4a; }
+
+  /* Dark-mode fixes (29 May 2026): a shared "flip light boxes to dark card"
+     rule blanks the warm pills (charles/working) to dark-on-dark in dark mode;
+     and a shared hero-text sweep darkens this always-dark hero's breadcrumb
+     LINKS in light mode. Restore both. (Higher specificity + later source than
+     the shared rules, so these win without !important wars elsewhere.) */
+  :root:not(.theme-light) .status-summary .ss-pill.charles,
+  :root.theme-dark        .status-summary .ss-pill.charles { background: #c87a30 !important; color: #fff !important; }
+  :root:not(.theme-light) .status-summary .ss-pill.working,
+  :root.theme-dark        .status-summary .ss-pill.working { background: #d8b366 !important; color: #1f1a14 !important; }
+  /* 6 June 2026: the same shared rule also flips the eliminated/open pills to
+     dark-on-dark — and in LIGHT mode the red (eliminated) pill was rendering
+     dark text on dark red. Harden both, in all modes. */
+  .status-summary .ss-pill.eliminated,
+  :root.theme-light  .status-summary .ss-pill.eliminated,
+  :root.theme-dark   .status-summary .ss-pill.eliminated { background: #8a4a4a !important; color: #fff !important; }
+  .status-summary .ss-pill.open,
+  :root.theme-light  .status-summary .ss-pill.open,
+  :root.theme-dark   .status-summary .ss-pill.open { background: #4a76c8 !important; color: #fff !important; }
+  :root.theme-light header.pm-hero h1        { color: var(--text-on-dark, #f6f1e7) !important; }
+  :root.theme-light header.pm-hero .crumbs   { color: var(--text-on-dark-d, #c8b896) !important; }
+  :root.theme-light header.pm-hero .crumbs a { color: var(--brand, #d8b366) !important; }
+
+  /* ============ Map — full-width hero with overlay legend ============ */
+  .map-wrap { position: relative; margin: 0 0 1.6rem; }
+  #parish-map {
+    height: clamp(420px, 70vh, 720px);
+    width: 100%;
+    border: 1px solid var(--border-medium);
+    border-radius: 4px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.12);
+  }
+
+  .legend-overlay {
+    position: absolute; top: 12px; right: 12px;
+    background: rgba(255,250,240,0.96);
+    border: 1px solid var(--border-medium);
+    border-radius: 4px;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.84rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    z-index: 401;
+    max-width: 240px;
+    backdrop-filter: blur(2px);
+  }
+  :root.theme-dark .legend-overlay { background: rgba(36,32,26,0.94); border-color: var(--border-medium); color: var(--text-body); }
+  .legend-overlay h2 {
+    font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--brand-dark); font-weight: 700; margin: 0 0 0.4rem;
+  }
+  :root.theme-dark .legend-overlay h2 { color: var(--brand-light); }
+  .legend-overlay .lo-row { display: flex; align-items: flex-start; gap: 0.5rem; margin: 0.22rem 0; line-height: 1.35; }
+  .legend-overlay .lo-row .legend-dot { margin-top: 0.18rem; flex-shrink: 0; }
+  .legend-overlay .lo-row .lab { font-size: 0.8rem; color: var(--text-strong); }
+  :root.theme-dark .legend-overlay .lo-row .lab { color: var(--text-body); }
+  .legend-overlay .lo-rim {
+    margin-top: 0.4rem; padding-top: 0.4rem;
+    border-top: 1px solid var(--border-light);
+  }
+  .legend-overlay .lo-rim .rim-glyph {
+    display: inline-block; width: 14px; height: 1px;
+    border-top: 1.5px dashed #c87a30;
+    margin-top: 0.55rem; flex-shrink: 0;
+  }
+
+  @media (max-width: 700px) {
+    .legend-overlay {
+      position: static; max-width: 100%;
+      margin: 0.55rem 0 0;
+      right: auto; top: auto;
+      backdrop-filter: none;
+    }
+    #parish-map { height: 60vh; min-height: 360px; }
+  }
+
+  /* Legend dots reused in popup-fallback contexts */
+  .legend-dot { width: 13px; height: 13px; border-radius: 50%; flex-shrink: 0; border: 2px solid #fff; box-shadow: 0 0 0 1.5px #5a4a32; }
+  .legend-dot.working    { background: #d8b366; }
+  .legend-dot.confirmed  { background: #4a6e34; }
+  .legend-dot.eliminated { background: #8a4a4a; }
+  .legend-dot.open       { background: #4a76c8; }
+
+  /* Permanent town-name labels (30 May 2026): the label-free basemap means the
+     project owns every place name, so names always show and sit ABOVE the pin
+     instead of being hidden under a marker or omitted by the basemap. */
+  .leaflet-tooltip.town-label {
+    background: rgba(255,250,240,0.86);
+    border: none; box-shadow: 0 1px 2px rgba(0,0,0,0.18);
+    color: #2c2620; font-family: var(--font-serif); font-weight: 700;
+    font-size: 0.72rem; letter-spacing: 0.01em; padding: 0 5px; white-space: nowrap;
+  }
+  .leaflet-tooltip.town-label::before { display: none; }
+  :root.theme-dark .leaflet-tooltip.town-label { background: rgba(26,22,16,0.86); color: #f1ead7; }
+  .legend-dot.charles    { background: #c87a30; }
+
+  /* ============ Parish status section headings ============ */
+  .status-section-h {
+    display: flex; align-items: baseline; gap: 0.55rem; flex-wrap: wrap;
+    font-size: 1.05rem;
+    margin: 1.5rem 0 0.55rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border-light);
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .status-section-h .count {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .status-section-h.priority { color: #2a4a8a; border-bottom-color: #4a76c8; }
+  :root.theme-dark .status-section-h.priority { color: #8aa8e0; border-bottom-color: #4a76c8; }
+
+  /* ============ Parish-grid layout ============ */
+  .parish-grid { display: grid; grid-template-columns: 1fr; gap: 0.7rem; margin-top: 0.4rem; }
+  @media (min-width: 480px) { .parish-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .parish-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .parish-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 0.85rem 1.05rem;
+  }
+  .parish-card.working    { border-left: 4px solid #d8b366; }
+  .parish-card.confirmed  { border-left: 4px solid #4a6e34; }
+  .parish-card.eliminated { border-left: 4px solid #8a4a4a; }
+  .parish-card.open       { border-left: 4px solid #4a76c8; }
+  .parish-card.charles    { border-left: 4px solid #c87a30; }
+
+  .parish-card h4,
+  .parish-card .parish-h { font-size: 1rem; color: var(--text-primary); margin-bottom: 0.2rem; font-weight: 700; }
+  .parish-card .pmeta { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.4rem; }
+  .parish-card .pdesc { font-size: 0.88rem; color: var(--text-meta); line-height: 1.5; }
+
+  /* Distance line + mini distance bar (0–12 km scale, 5 km rim notch) */
+  .parish-card .pdist {
+    display: flex; align-items: center; gap: 0.55rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--brand-dark);
+    font-weight: 600;
+    margin: 0.05rem 0 0.45rem;
+  }
+  :root.theme-dark .parish-card .pdist { color: var(--brand-light); }
+  .parish-card .pdist .dist-bar {
+    display: inline-block;
+    width: 70px; height: 5px;
+    background: var(--border-light);
+    border-radius: 3px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .parish-card .pdist .dist-bar::before {
+    content: ''; position: absolute; top: 0; left: 0; bottom: 0;
+    background: var(--brand-dark);
+    border-radius: 3px;
+    width: var(--dist-pct, 0%);
+  }
+  .parish-card .pdist .dist-bar::after {
+    /* 5 km "walking distance" rim notch — at 5/12 = 41.6% of bar */
+    content: ''; position: absolute; top: -2px; bottom: -2px;
+    left: 41.6%; width: 1.5px;
+    background: #c87a30;
+    border-radius: 1px;
+  }
+  :root.theme-dark .parish-card .pdist .dist-bar { background: var(--border-medium); }
+  :root.theme-dark .parish-card .pdist .dist-bar::before { background: var(--brand); }
+
+  /* Click-sync state — clicking a card flies the map to its marker */
+  .parish-card.clickable { cursor: pointer; transition: background 0.15s, transform 0.15s, box-shadow 0.15s; }
+  .parish-card.clickable:hover { background: var(--bg-elevated); transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,0,0,0.12); }
+  .parish-card.is-active { box-shadow: 0 0 0 2px var(--brand), 0 3px 12px rgba(0,0,0,0.14); }
+  .parish-card.clickable:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+  .pill { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; color: #fff; }
+  .pill.working    { background: #d8b366; color: #1f1a14; }
+  .pill.confirmed  { background: #4a6e34; }
+  .pill.eliminated { background: #8a4a4a; }
+  .pill.open       { background: #4a76c8; }
+  .pill.charles    { background: #c87a30; }
+
+  /* ============ Search history strip ============ */
+  .search-history {
+    margin: 1.6rem 0 0.6rem;
+    padding: 0.85rem 1rem 0.95rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand-dark);
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  .search-history h3 {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--brand-dark); font-weight: 700;
+    margin: 0 0 0.55rem;
+  }
+  :root.theme-dark .search-history h3 { color: var(--brand-light); }
+  .search-history ol { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
+  .search-history li {
+    display: grid; grid-template-columns: 152px 1fr;
+    gap: 0.7rem; align-items: baseline;
+    font-size: 0.86rem; line-height: 1.45;
+  }
+  .search-history li .when {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .search-history li .what { color: var(--text-strong); }
+  :root.theme-dark .search-history li .what { color: var(--text-body); }
+  @media (max-width: 480px) {
+    .search-history li { grid-template-columns: 1fr; gap: 0.05rem; }
+  }
+
+  .leaflet-popup-content { font-family: var(--font-serif); font-size: 0.88rem; line-height: 1.5; }
+  .leaflet-popup-content strong { color: var(--text-primary); }
+  .leaflet-popup-content a { color: var(--brand-dark); }
+
+  footer.site-foot {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.pm-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.pm-hero h1, header.pm-hero .sub, header.pm-hero .crumbs, header.pm-hero .crumbs a { color: #000 !important; }
+    #parish-map, .legend-overlay { display: none; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+    .parish-card { border-left-width: 2px; background: none; }
+    .pill, .ss-pill { border: 1px solid #000; color: #000 !important; background: none !important; }
+    .status-summary, .search-history { background: none; border: 1px solid #888; }
+    .parish-card .pdist .dist-bar { border: 1px solid #000; background: none; }
+    .parish-card .pdist .dist-bar::before { background: #888 !important; }
+    .status-section-h { border-bottom: 1px solid #888; }
+  }
+</style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/germany/parish-map.html#article",
+  "headline": "Parish map — searched vs unsearched — Charles Research",
+  "description": "Map of the Trendelburg / Friedrichsfeld / Helmarshausen / Hofgeismar parish complex with search status by parish.",
+  "datePublished": "2026-04-15",
+  "dateModified": "2026-06-21",
+  "url": "https://charles-research.netlify.app/germany/parish-map.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Germany & Origins",
+      "item": "https://charles-research.netlify.app/germany/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Parish Map"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="pm-hero cinema-section-hero" data-tone="hesse">
+  <div class="crumbs"><a href="../index.html">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#germany">Germany &amp; Origins</a> &nbsp;/&nbsp; Parish Map</div>
+  <h1>Hessian Parish Map</h1>
+  <div class="sub">Every parish the project has investigated for Charles Konzen's German baptism — colour-coded by candidate status. Trendelburg-area, Kreis Hofgeismar, Churhessen.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">The 1866 St. Marcus marriage register names Charles's home as <em>"Deisse, Kreis Cassel, <a class="glossary-link" href="../glossary.html#g-churhessen" title="Glossary: Churhessen">Churhessen</a>"</em> — the village of Deisel, in the Hofgeismar <a class="glossary-link" href="../glossary.html#g-kirchenkreis" title="Glossary: Kirchenkreis">Kirchenkreis</a>. Every parish within reasonable walking distance has been searched — together with a wider adjacent ring, the cross-border Catholic parishes, and the far-south place-name alternatives; this map shows them all, with the Konze surname pool at the centre and the eliminated lines around the perimeter. (Click a far-south card — Mainz, Diez, the Tier-3 "Deissen" parishes — to fly the map there.) Click any marker — or any parish card below — to fly the map to that location. For the geography and town histories behind these parishes — what each place is, where it sits, and its per-town research-note index — see the <a href="../towns/index.html"><strong>Towns &amp; villages gazetteer</strong></a>.</p>
+
+<!-- ============ Status summary strip ============ -->
+<div class="status-summary" role="status" aria-label="Parish-search summary">
+  <strong>36 parishes investigated:</strong>
+  <span class="ss-pill charles">1 stated origin</span>
+  <span class="ss-pill working">2 working hypotheses</span>
+  <span class="ss-pill open">2 open gaps</span>
+  <span class="ss-pill eliminated">31 eliminated</span>
+</div>
+
+<!-- ============ Full-width hero map with overlay legend ============ -->
+<div class="map-wrap">
+  <div id="parish-map" role="img" aria-label="Interactive Leaflet map of Hessian parishes investigated"></div>
+  <aside class="legend-overlay" aria-label="Map legend">
+    <h2>Legend</h2>
+    <div class="lo-row"><span class="legend-dot charles"></span><span class="lab">Charles's stated origin (Deisel)</span></div>
+    <div class="lo-row"><span class="legend-dot working"></span><span class="lab">Working hypothesis — Konze surname pool</span></div>
+    <div class="lo-row"><span class="legend-dot open"></span><span class="lab">Open · undigitised register</span></div>
+    <div class="lo-row"><span class="legend-dot eliminated"></span><span class="lab">Eliminated by full-index search</span></div>
+    <div class="lo-row"><span class="legend-dot" style="width:13px; height:13px; border-radius:50%; border:3px solid #caa23a; background:rgba(216,179,102,0.18);"></span><span class="lab">✦ Konze family documented here (gold ring)</span></div>
+    <div class="lo-row"><span class="legend-dot" style="width:13px; height:13px; border-radius:50%; border:2px dashed #caa23a; background:transparent;"></span><span class="lab">✦ Konze claimed, unconfirmed (dashed gold)</span></div>
+    <div class="lo-row lo-rim"><span class="rim-glyph" aria-hidden="true"></span><span class="lab">5 km radius — "walking distance" rim</span></div>
+  </aside>
+</div>
+
+<div class="callout" style="background:var(--bg-card-tint); border:1px solid var(--border-light); border-left:4px solid #d8b366; border-radius:4px; padding:0.9rem 1.1rem; margin:0 0 1.4rem;">
+  <div style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--brand-dark); font-weight:700; margin-bottom:0.3rem;">Where the Konze name lives — June 2026 distribution sweep</div>
+  <p style="margin:0; font-size:0.92rem;">A surname sweep across the ring (Session 88) shows the Konze/Kontze pool is <strong>hyper-local</strong>: a single tight Diemel-valley cluster — <strong>Trendelburg · Deisel · Friedrichsfeld · Stammen · Hümme</strong>, all within ~5 km — with <strong>no Konze presence</strong> in any surrounding parish sampled or index-searched. (Nearby <strong>Gottsbüren</strong> is named as one Kontze man's 1833 birthplace but holds no Kontze in its own registers — a claimed, unconfirmed edge of the cluster.) Charles's two stated origins sit exactly inside the only place the surname exists. See the <a href="../changelog.html#cl-2026-06-06-konze-distribution">changelog</a>, or the <a href="konze-family-by-town.html"><strong>Konze family listed by town</strong></a>.</p>
+</div>
+
+<div class="callout" style="background:var(--bg-card-tint); border:1px solid var(--border-light); border-left:4px solid #d8b366; border-radius:4px; padding:0.9rem 1.1rem; margin:0 0 1.4rem;">
+  <div style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--brand-dark); font-weight:700; margin-bottom:0.3rem;">Which Konze son left — June 2026 FamilySearch-tree reconciliation</div>
+  <p style="margin:0; font-size:0.92rem;">A cross-read against the collaborative <strong>FamilySearch shared Family Tree</strong> — which holds an independently register-sourced reconstruction of the whole Trendelburg/Deisel Konze clan — corroborated the project's hand-built framework and sharpened the candidate picture by <em>negative evidence</em>. Running every documented Konze male of Charles's generation through the searchable German death and emigration indexes, all but one are fully accounted for in Germany (they stayed, married, and died in the parish complex). The one same-named exception, <strong>Carl Wilhelm Konze</strong> (b. 15 Sep 1831, Trendelburg), was surfaced and then <em>eliminated</em> — documented dying at Trendelburg on 30 October 1869. The sole male of the cohort who leaves <em>no</em> adult German footprint at all is <strong>Justus Ernst Konze</strong> (b. 14 Nov 1829, Friedrichsfeld) — a lead, not a confirmed identity. The two decisive tests now lead are both <em>offline</em>: a page-by-page read of the un-indexed <strong>Stammen burial register</strong> (Archion 220072) and an individual emigration / release file in <strong>HStAM Bestand 180 Hofgeismar</strong>. See <a href="../errata.html#er-2026-06-21-fs-tree-reconciliation">errata · 21 June 2026</a> and the <a href="../negative-results.html#families">negative-results audit</a>.</p>
+</div>
+
+<h2>Parish-by-parish status</h2>
+
+<!-- ============ Charles's stated origin ============ -->
+<h3 class="status-section-h">Charles's stated origin <span class="count">1 of 36</span></h3>
+<div class="parish-grid">
+  <article class="parish-card charles" data-parish="deisel">
+    <h3 class="parish-h">Deisel <span class="pill charles">Charles's village</span></h3>
+    <div style="display:inline-block; margin:0.15rem 0 0.35rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7a5a12; background:#f3e3b0; border:1px solid #d8b366; border-radius:3px; padding:1px 7px;">✦ Konze family documented here</div>
+    <div class="pmeta">51.568 N · 9.418 E · <a class="glossary-link" href="../glossary.html#g-kreis" title="Glossary: Kreis Hofgeismar">Kreis Hofgeismar</a></div>
+    <div class="pdist">★ Search-rim anchor</div>
+    <div class="pdesc">The "Deisse, Kreis Cassel, Churhessen" of Charles's 1866 marriage register. Population mid-19th century 1,118 (97.94% Evangelical/Lutheran). Three "geb. Konzen" mothers attested in Deisel 1828–1829. <a href="../towns/deisel.html">→ Deisel town page</a></div>
+  </article>
+</div>
+
+<!-- ============ Working hypotheses ============ -->
+<h3 class="status-section-h">Working hypotheses <span class="count">2 of 36 · Konze surname pool</span></h3>
+<div class="parish-grid">
+  <article class="parish-card working" data-parish="trendelburg">
+    <h3 class="parish-h">Trendelburg <span class="pill working">Working hypothesis</span></h3>
+    <div style="display:inline-block; margin:0.15rem 0 0.35rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7a5a12; background:#f3e3b0; border:1px solid #d8b366; border-radius:3px; padding:1px 7px;">✦ Konze family documented here</div>
+    <div class="pmeta">51.584 N · 9.420 E</div>
+    <div class="pdist">~1.8 km north <span class="dist-bar" style="--dist-pct: 15%;" aria-hidden="true"></span></div>
+    <div class="pdesc">The parish complex where Konze / Kontzen / Contzen surname is documented. Register 220108 alphabetical index lists "Konze, Johann Friedrich Wilhelm — Seite 243." Burial register 220096 K-section confirms Kontze burials 1773–1818. <strong>June 2026:</strong> the FS-tree reconciliation surfaced a same-named Trendelburg son, <em>Carl Wilhelm Konze</em> (FS 99Z3-DFK, b. 15 Sep 1831, son of Ludwig Karl Konze 1804 × Wilhelmine Marie Albrecht; first cousin of Justus Ernst), as a candidate — then <strong>eliminated</strong> him: he stayed, married Marie Lauterbach, and <strong>died at Trendelburg 30 Oct 1869</strong>. <a href="../towns/trendelburg.html">→ Trendelburg page</a></div>
+  </article>
+
+  <article class="parish-card working" data-parish="friedrichsfeld">
+    <h3 class="parish-h">Friedrichsfeld <span class="pill working">Konze branch</span></h3>
+    <div style="display:inline-block; margin:0.15rem 0 0.35rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7a5a12; background:#f3e3b0; border:1px solid #d8b366; border-radius:3px; padding:1px 7px;">✦ Konze family documented here</div>
+    <div class="pmeta">51.586 N · 9.369 E</div>
+    <div class="pdist">~3.9 km NW <span class="dist-bar" style="--dist-pct: 33%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Andreas Kontze line (FS PZF8-X19, b. 1 Oct 1795 Trendelburg, d. 1854 Mainz). KB 218959 Entry 195 documents Justus Ernst Konze, b. 14 Nov 1829. Three Peter-documented children added to FamilySearch May 2026. <strong>June 2026 reconciliation:</strong> with cousin Carl Wilhelm (1831) eliminated, <em>Justus Ernst</em> (FS P87Z-ZDC) is the sole Konze male of his generation who leaves <strong>no adult German death, marriage, or emigration record</strong> under any indexed variant — untraced after his 1843 Trendelburg confirmation. A lead, not a confirmed identity; the open tests are offline (Stammen burials 220072; HStAM Best. 180 Hofgeismar).</div>
+  </article>
+</div>
+
+<!-- ============ Priority open lead ============ -->
+<h3 class="status-section-h priority" id="open-leads">★ Priority open leads <span class="count">2 of 36 · undigitised volumes</span></h3>
+<div class="parish-grid">
+  <article class="parish-card open" data-parish="heisebeck">
+    <h3 class="parish-h">Heisebeck <span class="pill open">Open · undigitised</span></h3>
+    <div class="pmeta">51.606 N · 9.506 E</div>
+    <div class="pdist">~7.4 km NE <span class="dist-bar" style="--dist-pct: 62%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Marriages 1808–1921 are digitized (KB 219169 / 219190) and were searched in full — negative (Sessions 66–67). The <strong>post-1831 baptism volume</strong> — the one that would cover a January 1835 birth — is not on Archion; held on-site at the Landeskirchliches Archiv Kassel. The single most important undigitised volume in the candidate pool. Logged as a priority gap in <a href="../open-questions.html#heisebeck">Open Questions</a>. <a href="../towns/heisebeck.html">→ Heisebeck town page</a></div>
+  </article>
+
+  <article class="parish-card open" data-parish="liebenau">
+    <h3 class="parish-h">Liebenau (+ Grimelsheim) <span class="pill open">Open · undigitised</span></h3>
+    <div class="pmeta">51.496 N · 9.276 E · Archion holds only to 1777</div>
+    <div class="pdist">~12.7 km SW <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc"><strong>Coverage hole found June 2026:</strong> Archion holds Liebenau (Hesse) registers only to 1777 — the 1835 books (likely also covering filial Grimelsheim) are not online at all. Needs the Landeskirchliches Archiv Kassel or a FamilySearch microfilm.</div>
+  </article>
+
+</div>
+
+<!-- ============ Eliminated ============ -->
+<h3 class="status-section-h" id="eliminated">Eliminated <span class="count">31 of 36 · all searches negative — adjacent, border, toponym &amp; Tier-3 sweeps included</span></h3>
+<p style="margin:-0.2rem 0 0.6rem; font-size:0.82rem; color:var(--text-muted); font-style:italic;">Ordered nearest-to-farthest from Deisel — parishes lower in the list are progressively more distant and less likely to be relevant (Marzhausen, last, is ~40 km and was checked only for completeness). A gold ring marks any parish where the Konze surname is documented.</p>
+<div class="parish-grid">
+  <article class="parish-card eliminated" data-parish="stammen">
+    <h3 class="parish-h">Stammen <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div style="display:inline-block; margin:0.15rem 0 0.35rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7a5a12; background:#f3e3b0; border:1px solid #d8b366; border-radius:3px; padding:1px 7px;">✦ Konze family documented here</div>
+    <div class="pmeta">51.566 N · 9.446 E · reg. 220069</div>
+    <div class="pdist">~2.0 km east <span class="dist-bar" style="--dist-pct: 17%;" aria-hidden="true"></span></div>
+    <div class="pdesc">1835 baptisms searched live on Archion. One Konze-pool entry found — a <strong>stillborn male Kontze</strong>, b. 14 March 1835, Haus Nr. 21 (the first-pass reading &ldquo;Rudolph, b. 20 Mar&rdquo; was corrected at full zoom — see <a href="../errata.html#er-2026-06-06-stammen-stillborn">errata</a>), child of <em>Christian Ludwig Kontze</em> (Tagelöhner) × <em>Anne Gertrud née Temme</em> — a newly-documented <em>distinct</em> Stammen branch, not the Trendelburg Carl-Ludwig line; <strong>not Charles</strong> (stillborn). Kontze also appears 1833 as a godparent (&ldquo;der Schwager&rdquo;), and two <em>Jungkontze</em> mothers appear in 1835. <strong>Open offline test (June 2026):</strong> the Hofeditz family dispersed here — Justus Ernst Konze's siblings Heinrich Wilhelm (†1858) and Elisa Melusine (†1865) both died at Stammen — so the decisive read for Justus Ernst's own fate is the un-indexed <strong>Stammen burial register (Archion 220072, ~1843–1875)</strong>, page-by-page; a Konze death there would eliminate the leading hypothesis, its absence would harden it.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="huemme">
+    <h3 class="parish-h">Hümme <span class="pill eliminated">Eliminated</span></h3>
+    <div style="display:inline-block; margin:0.15rem 0 0.35rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7a5a12; background:#f3e3b0; border:1px solid #d8b366; border-radius:3px; padding:1px 7px;">✦ Konze family documented here</div>
+    <div class="pmeta">51.544 N · 9.407 E</div>
+    <div class="pdist">~2.8 km SSW <span class="dist-bar" style="--dist-pct: 23%;" aria-hidden="true"></span></div>
+    <div class="pdesc">The Hümme Kontze line was searched; the last male in this branch emigrated in the 1840s, so no candidate b. 1835 survives. <em>Corroborated June 2026:</em> transcript sampling 1830–58 finds the name surviving only in women's maiden names ("geb. Kontze"), with no Kontze-fathered baptism.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="gottsbueren">
+    <h3 class="parish-h">Gottsbüren <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div style="display:inline-block; margin:0.15rem 0 0.35rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7a5a12; background:transparent; border:1px dashed #d8b366; border-radius:3px; padding:1px 7px;">✦ Konze claimed · unconfirmed</div>
+    <div class="pmeta">51.552 N · 9.468 E · reg. 219049</div>
+    <div class="pdist">~3.9 km SE <span class="dist-bar" style="--dist-pct: 33%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Jan–Feb 1835 baptisms searched live on Archion: no Konze-pool male, no illegitimate male. A Stammen 1833 marriage names Christian Ludwig Kontze as <em>born in Gottsbüren</em> — but Gottsbüren's own books are <strong>entirely Kontze-free</strong> — no Kontze in baptisms (1804/06/08), marriages (1795–1806), or burials (1805–Jan 1825 read entry-by-entry; none 1827–33 either); only the maternal <em>Garland</em> family is native here. The Andreas Kontze family lived — and died — elsewhere. So Gottsbüren is a <strong>claimed but unconfirmed</strong> Konze tie (Andreas Kontze an in-migrant), not a documented Konze village. See <a href="../changelog.html#cl-2026-06-06-stammen-gottsbueren">changelog</a>.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="schoeneberg">
+    <h3 class="parish-h">Schöneberg <span class="pill eliminated">Eliminated · pre-1822 open</span></h3>
+    <div class="pmeta">51.578 N · 9.357 E</div>
+    <div class="pdist">~4.4 km west <span class="dist-bar" style="--dist-pct: 37%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Grandjot territory; no Konze. Pre-1822 records remain undigitised but the post-1822 Schöneberg index returned no Konze entry.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="lamerden">
+    <h3 class="parish-h">Lamerden <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.610 N · 9.392 E · reg. 219676</div>
+    <div class="pdist">~5.0 km NW <span class="dist-bar" style="--dist-pct: 42%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Jan–Feb 1835 baptisms read by eye (register not AI-transcribed): no Konze-pool male, no illegitimate male in the window.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="eberschuetz">
+    <h3 class="parish-h">Eberschütz <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.613 N · 9.441 E · reg. 218887</div>
+    <div class="pdist">~5.2 km NNE <span class="dist-bar" style="--dist-pct: 44%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Jan–Feb 1835 baptisms searched. One illegitimate male — <em>Heinrich Wilhelm Albore</em>, b. 22 Jan 1835, mother an unmarried woman from Bischhausen (Kgr. Hannover) — verified at full zoom and judged <strong>not a match</strong> (surname, given name, and place all unrelated to Charles).</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="haueda">
+    <h3 class="parish-h">Haueda <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.597 N · 9.353 E · reg. 219154</div>
+    <div class="pdist">~5.5 km WNW <span class="dist-bar" style="--dist-pct: 46%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Filial with its own Taufbuch from 1830. Jan–Feb 1835 males all legitimate; no unehelich entry, no Konze-pool surname.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="helmarshausen">
+    <h3 class="parish-h">Helmarshausen <span class="pill eliminated">Eliminated</span></h3>
+    <div class="pmeta">51.605 N · 9.491 E</div>
+    <div class="pdist">~6.5 km NE <span class="dist-bar" style="--dist-pct: 54%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Full-index search of the Helmarshausen KB returned no Konze-pool male b. ~1835. Eliminated April 2026.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="sielen">
+    <h3 class="parish-h">Sielen <span class="pill eliminated">Eliminated</span></h3>
+    <div class="pmeta">51.622 N · 9.465 E</div>
+    <div class="pdist">~6.8 km NE <span class="dist-bar" style="--dist-pct: 57%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Searched. Surname congruence weak. No -en form in scribal record. Eliminated.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="hombressen">
+    <h3 class="parish-h">Hombressen <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.520 N · 9.348 E · reg. 219487</div>
+    <div class="pdist">~7.2 km SW <span class="dist-bar" style="--dist-pct: 60%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Jan–Feb 1835: legitimate males only (21 Jan, 25 Feb); the single illegitimate birth is female. No Konze-pool surname.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="gieselwerder">
+    <h3 class="parish-h">Oberweser / Gieselwerder <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.581 N · 9.522 E · reg. 219016</div>
+    <div class="pdist">~7.3 km east <span class="dist-bar" style="--dist-pct: 61%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Oberweser's Evangelical records are held under Gieselwerder. Jan–Feb 1835 baptisms: all males legitimate, no Konze-pool surname, no illegitimate male.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="herstelle">
+    <h3 class="parish-h">Herstelle / Würgassen <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.633 N · 9.380 E · Matricula DE_EBAP_10608 · Catholic · Westphalia</div>
+    <div class="pdist">~7.7 km NNW <span class="dist-bar" style="--dist-pct: 64%;" aria-hidden="true"></span></div>
+    <div class="pdesc">First cross-border parish searched (Prussian Westphalia, Erzbistum Paderborn) — via <strong>Matricula</strong>, not Archion. The Herstelle register covers Würgassen residents. Jan–Feb 1835: every entry marked <em>ehelich</em>; no pool-like surname, no illegitimate male.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="hofgeismar">
+    <h3 class="parish-h">Hofgeismar <span class="pill eliminated">Eliminated</span></h3>
+    <div class="pmeta">51.496 N · 9.393 E · regional centre</div>
+    <div class="pdist">~8.2 km south <span class="dist-bar" style="--dist-pct: 68%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Both Hofgeismar parishes (Altstädter and Neustädter) searched. Surname-pool incompatible with Konze. Eliminated.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="karlshafen">
+    <h3 class="parish-h">Bad Karlshafen <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.645 N · 9.450 E · reg. 218677 (Luth.) + 218713 (Ref.)</div>
+    <div class="pdist">~8.8 km north <span class="dist-bar" style="--dist-pct: 74%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Both confessions searched — Lutheran clean; the Reformed book (French + German congregations merged from 1830) holds the region's one window-compatible illegitimate male, <em>Johann Heinrich Thielemann</em>, b. 8 Feb 1835 — but he was <strong>legitimized in 1838</strong> by a documented father (Schlosshahn) and stayed locally recorded; <strong>not Charles</strong>.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="ostheim">
+    <h3 class="parish-h">Ostheim <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.529 N · 9.300 E · reg. 219970</div>
+    <div class="pdist">~9.2 km WSW <span class="dist-bar" style="--dist-pct: 77%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Jan–Feb 1835: one stillborn male (unnamed, unbaptized — not a candidate by definition) and legitimate males only; no Konze-pool surname, no illegitimate male.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="niedermeiser">
+    <h3 class="parish-h">Niedermeiser <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.503 N · 9.318 E · reg. 219877</div>
+    <div class="pdist">~10.0 km SW <span class="dist-bar" style="--dist-pct: 83%;" aria-hidden="true"></span></div>
+    <div class="pdesc">No male baptism at all between 11 Jan and 1 Mar 1835 — the window entries are all female. No Konze-pool surname.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="dalhausen">
+    <h3 class="parish-h">Dalhausen <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.626 N · 9.305 E · Matricula DE_EBAP_10605 · Catholic · Westphalia</div>
+    <div class="pdist">~10.1 km NW <span class="dist-bar" style="--dist-pct: 84%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Cross-border. The register's own name index (Taufen 1822–1838) holds <strong>no pool-resembling surname for the entire 1822–1838 span</strong>; the Jan–Feb 1835 pages confirm all males <em>ehelich</em>. Striking near-miss: entry 6, <em>Friedrich Wilhelm Sievers</em>, was born exactly <strong>26 January 1835</strong> — but legitimate (Sievers × Spindeler) and his margin note (†23.2.1908) shows he <strong>died in Germany</strong>; positively eliminated.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="kelze">
+    <h3 class="parish-h">Hofgeismar-Kelze <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.483 N · 9.347 E · reg. 219634</div>
+    <div class="pdist">~10.7 km SW <span class="dist-bar" style="--dist-pct: 89%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Small Huguenot colony parish. The only Jan–Feb 1835 baptism is female; no Konze-pool surname, no in-window illegitimate male.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="beverungen">
+    <h3 class="parish-h">Beverungen <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.663 N · 9.373 E · Matricula DE_EBAP_10601 · Catholic · Westphalia</div>
+    <div class="pdist">~11.0 km north <span class="dist-bar" style="--dist-pct: 92%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Cross-border. Jan–Feb 1835 (Taufen 1803–1835, img T_0108): five window males, every one <em>ehelich</em> and none in the surname pool — and each carries a later margin note placing him <strong>dead or married in Germany</strong>, so all five are independently eliminated as emigrant candidates. No illegitimate entry.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="gewissenruh">
+    <h3 class="parish-h">Gewissenruh <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.623 N · 9.562 E · reg. 219001</div>
+    <div class="pdist">~11.7 km NE <span class="dist-bar" style="--dist-pct: 97%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Tiny Huguenot parish (~3 births/yr). No January 1835 baptism at all; the only window entry is female.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="grebenstein">
+    <h3 class="parish-h">Grebenstein <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.447 N · 9.411 E · reg. 219106</div>
+    <div class="pdist">~13.5 km south <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Jan–Feb 1835 baptisms searched: one illegitimate January birth but <em>female</em>; no Konze-pool male.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="veckerhagen">
+    <h3 class="parish-h">Veckerhagen <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.493 N · 9.593 E · reg. 220213</div>
+    <div class="pdist">~14.7 km SE <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Jan–Mar 1835 baptisms searched. One illegitimate male — <em>Wilhelm Walter</em>, baptized ~March 1835 (mother Anna Martha Johanne Schäfer) — outside the window and unrelated; <strong>not a match</strong>. No Konze-pool surname.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="immenhausen">
+    <h3 class="parish-h">Immenhausen <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.426 N · 9.478 E · reg. 219586</div>
+    <div class="pdist">~16.3 km south <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">1835 baptisms searched: all males legitimate with named fathers; no Konze-pool surname, no illegitimate male.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="marzhausen">
+    <h3 class="parish-h">Marzhausen <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.376 N · 9.918 E · reg. 181898 · Kirchenkreis Witzenhausen</div>
+    <div class="pdist">~40 km SE — outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Checked for completeness (neighbouring Kirchenkreis). 1835 entries all married couples; no Konze/Köster, no illegitimate male.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="gudensberg">
+    <h3 class="parish-h">Gudensberg <span class="pill eliminated">Eliminated · Tier-3 "Deissen"</span></h3>
+    <div class="pmeta">51.180 N · 9.450 E · Kirchenkreis Fritzlar</div>
+    <div class="pdist">~42 km S (near Kassel) — far outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Place-name candidate for "Deissen" / "Deisse." The 1850 confirmation class was read (partial coverage); no Konze-pool or window male. First flagged as an on-site Tier-3 target, then found on Archion.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="dissen">
+    <h3 class="parish-h">Dissen <span class="pill eliminated">Eliminated · Tier-3 "Deissen"</span></h3>
+    <div class="pmeta">51.198 N · 9.421 E · nr. Gudensberg</div>
+    <div class="pdist">~40 km S — far outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Tier-3 "Deissen" place-name candidate (James's reading of "Deisse"). Searched — negative; no Konze pool.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="grifte">
+    <h3 class="parish-h">Grifte <span class="pill eliminated">Eliminated · Tier-3 "Deissen"</span></h3>
+    <div class="pmeta">51.223 N · 9.426 E · Edermünde</div>
+    <div class="pdist">~37 km S — far outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Tier-3 "Deissen" place-name candidate. Searched — negative; no Konze pool.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="diez">
+    <h3 class="parish-h">Diez <span class="pill eliminated">Eliminated · toponym check</span></h3>
+    <div class="pmeta">50.369 N · 8.016 E · Hessen-Nassau (Lahn)</div>
+    <div class="pdist">~135 km S — far outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Hessen-Nassau place-name alternative tested against the "Deisse, Kreis Cassel" reading. No Konze pool; negative.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="dies">
+    <h3 class="parish-h">Dies <span class="pill eliminated">Eliminated · toponym check</span></h3>
+    <div class="pmeta">50.345 N · 8.025 E · Rhein-Lahn-Kreis</div>
+    <div class="pdist">~135 km S — far outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Hessen-Nassau place-name alternative for "Deisse." Outside Churhessen and no surname pool; negative.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="schierstein">
+    <h3 class="parish-h">Schierstein <span class="pill eliminated">Eliminated · toponym check</span></h3>
+    <div class="pmeta">50.042 N · 8.192 E · Wiesbaden (Rhine)</div>
+    <div class="pdist">~170 km S — far outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Tested the "Freudenberg / Schierstein" reading of the place name. Rhine parish, no Konze pool; negative.</div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="mainz">
+    <h3 class="parish-h">Mainz <span class="pill eliminated">Eliminated · family trail</span></h3>
+    <div class="pmeta">50.000 N · 8.271 E · Rheinhessen</div>
+    <div class="pdist">~175 km S — far outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Where Andreas Kontze (b. 1795 Trendelburg) died in 1854 — checked as the Konze family's southern settlement. No Charles-line male birth ~1835; the branch settled south after the 1840s.</div>
+  </article>
+</div>
+
+<p style="margin:0.6rem 0 0; font-size:0.88rem; color:var(--text-muted);">The "June 2026" eliminations above come from two sweeps: the <strong>4 June adjacent-parish sweep</strong> (eleven neighbouring parishes never previously opened) and the <strong>6 June western/northern border sweep</strong> (Bad Karlshafen, Hombressen, Haueda, Ostheim, Niedermeiser, and — across the Prussian border via Matricula — Herstelle/Würgassen). All were searched for a male birth on/near 26 January 1835 in the Konze pool <em>or</em> as an illegitimate birth (the Y-DNA result keeps the unwed-mother case live). See the <a href="../changelog.html#cl-2026-06-04-fulltext-adjacent-parishes">changelog</a> and <a href="../negative-results.html">Negative Results</a>.</p>
+
+<!-- ============ Search history ============ -->
+<aside class="search-history" aria-label="Search history">
+  <h3>Search history — what's been searched, when</h3>
+  <ol>
+    <li><span class="when">Spring 2026</span><span class="what">Hofgeismar (Altstädter + Neustädter), Sielen, Hümme, and Schöneberg eliminated by full-index review.</span></li>
+    <li><span class="when">April 2026</span><span class="what">Helmarshausen full-index search confirms no Konze-pool male born ~1835.</span></li>
+    <li><span class="when">May 2026</span><span class="what">Friedrichsfeld Andreas Kontze line documented; three Peter-confirmed children added to FamilySearch.</span></li>
+    <li><span class="when">June 2026</span><span class="what">Eleven adjacent Kreis-Hofgeismar parishes (Gottsbüren, Lamerden, Gewissenruh, Eberschütz, Stammen, Marzhausen, Grebenstein, Immenhausen, Veckerhagen, Oberweser/Gieselwerder, Kelze) searched live on Archion for a 26 Jan 1835 male birth — all negative. FamilySearch full-text index swept (German + U.S.): no origin-naming record. Entry 195 confirmed eliminated (Peter Schräder).</span></li>
+    <li><span class="when">6 June 2026</span><span class="what">Western/northern border sweep: Bad Karlshafen (both confessions), Hombressen, Haueda, Ostheim, Niedermeiser searched on Archion — negative; Herstelle/Würgassen (Catholic Westphalia) searched via Matricula — negative. New open gap logged: Liebenau 1835 (not digitized anywhere). Beverungen + Dalhausen then completed via Matricula — both negative; Dalhausen's boy born exactly 26 Jan 1835 (F. W. Sievers) is legitimate and died in Germany 1908. Y-DNA: YFull sample YF147577 confirmed I-Y38863 (Ashkenazi paternal line).</span></li>
+    <li><span class="when">6 June 2026 · later</span><span class="what">Konze surname-distribution sweep: the pool is one tight Diemel-valley cluster (Trendelburg · Deisel · Friedrichsfeld · Stammen · Hümme); the ring parishes show no Konze presence. Stammen branch mapped (Christian Ludwig Kontze × Anne Gertrud Temme; the 1835 entry corrected to a stillborn male, 14 March). Hümme line corroborated as daughtered-out/emigrated.</span></li>
+    <li><span class="when">21 June 2026</span><span class="what">FamilySearch shared-tree reconciliation of the whole Trendelburg/Deisel Konze clan: corroborates the project's hand-built framework and narrows the candidate field by negative evidence. Same-named Carl Wilhelm Konze (b. 1831 Trendelburg) surfaced then eliminated (d. Trendelburg 30 Oct 1869); Justus Ernst Konze (b. 1829 Friedrichsfeld) confirmed as the sole Konze male of his generation absent from every German death and emigration index. Archion citation audit (236 locators) — zero errors. StLGS untapped-resource sweep — one low-confidence "Conson" probate lead, else negative.</span></li>
+    <li><span class="when">Open</span><span class="what">Two decisive offline tests now lead, both on Justus Ernst Konze: a page-by-page read of the un-indexed Stammen burial register (Archion 220072, ~1843–1875) and an individual emigration / release-from-citizenship file in HStAM Bestand 180 Hofgeismar (Marburg). Behind them: the Heisebeck post-1831 baptism volume (pre-1845 gap, on-site only at the Landeskirchliches Archiv Kassel) and the HStAM Stammrolle (1855 class) inquiry, awaiting reply.</span></li>
+  </ol>
+</aside>
+
+<p style="margin-top:1.4rem; font-size:0.9rem; color: var(--text-muted); font-style:italic;">Coordinates are approximate village centres; for documentary citations of each parish register, see the <a href="../methodology.html#sources">Methodology page</a>. Distance bars use a 0–12 km scale; the orange notch marks the 5 km "walking distance" rim around Deisel.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="../index.html">Home</a> · <a href="../methodology.html">Methodology</a> · <a href="../open-questions.html">Open Questions</a> · <a href="../changelog.html">Changelog</a></p>
+</footer>
+
+<script>
+/* Wrapped in DOMContentLoaded because the Leaflet CDN <script> uses `defer`
+   (added 16 May 2026 perf pass). Without the wait, this inline IIFE runs
+   before Leaflet has executed and `L.map(...)` throws ReferenceError. */
+document.addEventListener('DOMContentLoaded', function () {
+  // Status labels for popup pills
+  var STATUS_LABELS = {
+    'charles':    "Charles's village",
+    'working':    'Working hypothesis',
+    'confirmed':  'Confirmed',
+    'eliminated': 'Eliminated',
+    'open':       'Open · undigitised'
+  };
+
+  // Parishes data — coordinates from village centres (OpenStreetMap-derived).
+  // The `id` field links each marker to the matching <article data-parish="...">.
+  var PARISHES = [
+    { id: 'deisel', konze: 'yes',         name: 'Deisel',         lat: 51.5681, lng: 9.4178, status: 'charles',
+      desc: '<strong>Charles\'s stated origin</strong> on the 1866 marriage register: "<em>aus Deisse, Kreis Cassel, Churhessen</em>." 97.94% Evangelical/Lutheran in the mid-19th century. <a href="../towns/deisel.html">Town page →</a>'
+    },
+    { id: 'trendelburg', konze: 'yes',    name: 'Trendelburg',    lat: 51.5839, lng: 9.4203, status: 'working',
+      desc: '<strong>Working hypothesis</strong> — Konze / Kontzen / Contzen surname pool documented from the mid-18th century. Register 220108 alphabetical index lists <em>Konze, Johann Friedrich Wilhelm — Seite 243</em>. June 2026: same-named son Carl Wilhelm Konze (b. 1831) surfaced then eliminated — d. Trendelburg 30 Oct 1869. <a href="../towns/trendelburg.html">Town page →</a>'
+    },
+    { id: 'friedrichsfeld', konze: 'yes', name: 'Friedrichsfeld', lat: 51.5864, lng: 9.3694, status: 'working',
+      desc: '<strong>Andreas Kontze line</strong> — FS PZF8-X19 (b. 1 Oct 1795 Trendelburg, d. 1854 Mainz). KB 218959 Entry 195 documents Justus Ernst Konze, b. 14 Nov 1829 — after the June 2026 FS-tree reconciliation, the sole Konze male of his generation with no adult German death/marriage/emigration record (a lead, not confirmed).'
+    },
+    { id: 'helmarshausen',  name: 'Helmarshausen',  lat: 51.6053, lng: 9.4906, status: 'eliminated',
+      desc: '<strong>Eliminated</strong> — full-index search returned no Konze-pool male b. ~1835. Eliminated April 2026.'
+    },
+    { id: 'hofgeismar',     name: 'Hofgeismar',     lat: 51.4961, lng: 9.3933, status: 'eliminated',
+      desc: '<strong>Eliminated</strong> — both Hofgeismar parishes searched, surname pool incompatible with Konze.'
+    },
+    { id: 'sielen',         name: 'Sielen',         lat: 51.6219, lng: 9.4647, status: 'eliminated',
+      desc: '<strong>Eliminated</strong> — surname congruence weak; no -en form in the scribal record.'
+    },
+    { id: 'huemme', konze: 'yes',         name: 'Hümme',          lat: 51.5436, lng: 9.4066, status: 'eliminated',
+      desc: '<strong>Eliminated</strong> — the Hümme Kontze line\'s last male emigrated in the 1840s.'
+    },
+    { id: 'schoeneberg',    name: 'Schöneberg',     lat: 51.5168, lng: 9.4176, status: 'eliminated',
+      desc: '<strong>Eliminated</strong> (Grandjot territory; no Konze). Pre-1822 records remain undigitised.'
+    },
+    { id: 'heisebeck',      name: 'Heisebeck',      lat: 51.5868, lng: 9.6565, status: 'open',
+      desc: '<strong>Open · undigitised</strong> — marriages 1808–1921 searched (negative); post-1831 baptisms on-site at Landeskirchliches Archiv Kassel. Priority gap in <a href="../open-questions.html#heisebeck">Open Questions</a>.'
+    },
+    // ---- June 2026 adjacent-parish sweep — all searched live on Archion, all negative ----
+    { id: 'stammen', konze: 'yes',        name: 'Stammen',        lat: 51.5660, lng: 9.4460, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — 1835 baptisms searched (reg. 220069). One Konze-pool entry: a stillborn male Kontze, b. 14 Mar 1835, child of Christian Ludwig Kontze × Anne Gertrud Temme (a distinct Stammen branch; first reading \'Rudolph, 20 Mar\' corrected at zoom) — not Charles.'
+    },
+    { id: 'gottsbueren', konze: 'claimed',    name: 'Gottsbüren',     lat: 51.5520, lng: 9.4680, status: 'eliminated',
+      desc: '<strong>1835 negative; Konze claimed but unconfirmed.</strong> A Stammen 1833 marriage names Christian Ludwig Kontze as born here, but Gottsbüren\'s books are entirely Kontze-free (baptisms, marriages, burials 1795–1833) — only the native Garland family. The Kontze family lived and died elsewhere; origin parish unknown.'
+    },
+    { id: 'lamerden',       name: 'Lamerden',       lat: 51.6100, lng: 9.3920, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Jan–Feb 1835 baptisms (reg. 219676): no Konze-pool or illegitimate male.'
+    },
+    { id: 'eberschuetz',    name: 'Eberschütz',     lat: 51.6130, lng: 9.4410, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Jan–Feb 1835 baptisms (reg. 218887). One illegitimate male (H. W. Albore, b. 22 Jan 1835) verified not a match.'
+    },
+    { id: 'gieselwerder',   name: 'Gieselwerder', lat: 51.5810, lng: 9.5220, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Oberweser\'s Evangelical records are held under Gieselwerder. Jan–Feb 1835 baptisms (reg. 219016): no Konze-pool or illegitimate male.'
+    },
+    { id: 'kelze',          name: 'Hofgeismar-Kelze', lat: 51.4830, lng: 9.3470, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — only window baptism female (reg. 219634); no Konze-pool surname.'
+    },
+    { id: 'gewissenruh',    name: 'Gewissenruh',    lat: 51.6230, lng: 9.5620, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — no January 1835 baptism at all (reg. 219001); window entry female.'
+    },
+    { id: 'grebenstein',    name: 'Grebenstein',    lat: 51.4470, lng: 9.4110, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Jan–Feb 1835 baptisms (reg. 219106): one illegitimate January birth but female; no Konze-pool male.'
+    },
+    { id: 'veckerhagen',    name: 'Veckerhagen',    lat: 51.4930, lng: 9.5930, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Jan–Mar 1835 baptisms (reg. 220213). One illegitimate male (Wilhelm Walter, ~Mar 1835) — not a match.'
+    },
+    { id: 'immenhausen',    name: 'Immenhausen',    lat: 51.4260, lng: 9.4780, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — 1835 baptisms (reg. 219586): all males legitimate; no Konze-pool surname.'
+    },
+    { id: 'marzhausen',     name: 'Marzhausen',     lat: 51.3760, lng: 9.9180, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Kirchenkreis Witzenhausen, checked for completeness (reg. 181898): no Konze/Köster, no illegitimate male.'
+    },
+    // ---- 6 June 2026 western/northern border sweep ----
+    { id: 'karlshafen',     name: 'Bad Karlshafen', lat: 51.6450, lng: 9.4500, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — both confessions searched (Luth. 218677 clean; Ref. 218713\'s one illegitimate male, Thielemann b. 8 Feb 1835, was legitimized 1838 — not Charles).'
+    },
+    { id: 'hombressen',     name: 'Hombressen',     lat: 51.5200, lng: 9.3480, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Jan–Feb 1835 (reg. 219487): legitimate males only; the one illegitimate is female.'
+    },
+    { id: 'haueda',         name: 'Haueda',         lat: 51.5970, lng: 9.3530, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Jan–Feb 1835 (reg. 219154): all males legitimate; no unehelich, no pool surname.'
+    },
+    { id: 'ostheim',        name: 'Ostheim',        lat: 51.5290, lng: 9.3000, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Jan–Feb 1835 (reg. 219970): one stillborn male (not a candidate); rest legitimate; no pool surname.'
+    },
+    { id: 'niedermeiser',   name: 'Niedermeiser',   lat: 51.5030, lng: 9.3180, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — no male baptism at all 11 Jan–1 Mar 1835 (reg. 219877).'
+    },
+    { id: 'herstelle',      name: 'Herstelle',      lat: 51.6330, lng: 9.3800, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — first cross-border parish (Catholic Westphalia, via Matricula DE_EBAP_10608; covers Würgassen). Jan–Feb 1835 all ehelich; no pool-like surname.'
+    },
+    { id: 'liebenau',       name: 'Liebenau',       lat: 51.4960, lng: 9.2760, status: 'open',
+      desc: '<strong>Open · coverage hole (June 2026)</strong> — Archion holds Liebenau (Hesse) only to 1777; the 1835 books (incl. filial Grimelsheim) are not online. Needs Kassel archive or FamilySearch film.'
+    },
+    { id: 'beverungen',     name: 'Beverungen',     lat: 51.6630, lng: 9.3730, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Catholic Westphalia, via Matricula (DE_EBAP_10601). Jan–Feb 1835: all five window males ehelich, none in the pool, each with a later margin note placing him dead or married in Germany.'
+    },
+    { id: 'dalhausen',      name: 'Dalhausen',      lat: 51.6260, lng: 9.3050, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — Catholic Westphalia, via Matricula (DE_EBAP_10605). Name index 1822–1838 holds no pool surname; the boy born exactly 26 Jan 1835 (F. W. Sievers) is legitimate and died in Germany 1908.'
+    },
+    // ---- 20 June 2026 Tier-3 "Deissen" parishes (Kirchenkreis Fritzlar / Edermünde, ~40 km S near Kassel) ----
+    { id: 'gudensberg',    name: 'Gudensberg',     lat: 51.1797, lng: 9.4503, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026 (Tier-3 "Deissen")</strong> — place-name candidate for "Deisse." 1850 confirmation class read (partial); no Konze-pool or window male. ~42 km south, near Kassel.'
+    },
+    { id: 'dissen',        name: 'Dissen',         lat: 51.1980, lng: 9.4210, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026 (Tier-3 "Deissen")</strong> — place-name candidate near Gudensberg; searched, negative. No Konze pool.'
+    },
+    { id: 'grifte',        name: 'Grifte',         lat: 51.2233, lng: 9.4256, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026 (Tier-3 "Deissen")</strong> — Edermünde place-name candidate; searched, negative. No Konze pool.'
+    },
+    // ---- Hessen-Nassau toponym-alternatives — place-name reading checks, far south, all negative ----
+    { id: 'diez',          name: 'Diez',           lat: 50.3692, lng: 8.0161, status: 'eliminated',
+      desc: '<strong>Eliminated · toponym-alternative</strong> — Hessen-Nassau (Lahn) reading tested against "Deisse, Kreis Cassel." No Konze pool; negative. ~135 km south.'
+    },
+    { id: 'dies',          name: 'Dies',           lat: 50.3450, lng: 8.0250, status: 'eliminated',
+      desc: '<strong>Eliminated · toponym-alternative</strong> — Rhein-Lahn place-name check for "Deisse." Outside Churhessen, no surname pool; negative. ~135 km south.'
+    },
+    { id: 'schierstein',   name: 'Schierstein',    lat: 50.0419, lng: 8.1924, status: 'eliminated',
+      desc: '<strong>Eliminated · toponym-alternative</strong> — tested the "Freudenberg / Schierstein" (Rhine) reading of the place name. No Konze pool; negative. ~170 km south.'
+    },
+    { id: 'mainz', konze: 'yes', name: 'Mainz',    lat: 50.0000, lng: 8.2711, status: 'eliminated',
+      desc: '<strong>Eliminated · family trail</strong> — where Andreas Kontze (b. 1795 Trendelburg) died 1854. Checked as the Konze family\'s southern settlement; no Charles-line male birth ~1835. ~175 km south.'
+    }
+  ];
+
+  // Color per status — matches the legend
+  var COLORS = {
+    'charles':    '#c87a30',
+    'working':    '#d8b366',
+    'confirmed':  '#4a6e34',
+    'eliminated': '#8a4a4a',
+    'open':       '#4a76c8'
+  };
+
+  // Inline popup-pill styles (Leaflet popups live outside the cinematic stylesheet)
+  var PILL_STYLES = {
+    'charles':    'background:#c87a30; color:#fff;',
+    'working':    'background:#d8b366; color:#1f1a14;',
+    'confirmed':  'background:#4a6e34; color:#fff;',
+    'eliminated': 'background:#8a4a4a; color:#fff;',
+    'open':       'background:#4a76c8; color:#fff;'
+  };
+
+  // Distance from Deisel (km) using the haversine formula
+  var DEISEL_LAT = 51.5681, DEISEL_LNG = 9.4178;
+  function distFromDeisel(lat, lng) {
+    var R = 6371; // km
+    var toRad = function (d) { return d * Math.PI / 180; };
+    var dLat = toRad(lat - DEISEL_LAT);
+    var dLng = toRad(lng - DEISEL_LNG);
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(toRad(DEISEL_LAT)) * Math.cos(toRad(lat)) *
+            Math.sin(dLng/2) * Math.sin(dLng/2);
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  var map = L.map('parish-map', { scrollWheelZoom: false }).setView([51.555, 9.43], 11);
+
+  // Clean but coloured basemap (CartoDB Voyager) — keeps the low-clutter feel of
+  // Positron but adds land/water/green tones and contrast, so the map no longer
+  // reads as washed-out white while the parish markers + 5 km radius still pop.
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Tap-to-enable scroll wheel zoom — friendlier for embedded maps
+  map.once('focus', function () { map.scrollWheelZoom.enable(); });
+  document.getElementById('parish-map').addEventListener('click', function () {
+    map.scrollWheelZoom.enable();
+  }, { once: true });
+
+  // 5 km radius circle around Deisel — the "walking distance" rim
+  L.circle([DEISEL_LAT, DEISEL_LNG], {
+    radius: 5000,
+    color: '#a0461a',
+    weight: 3,
+    opacity: 0.95,
+    fillColor: '#c87a30',
+    fillOpacity: 0.08,
+    dashArray: '10,7',
+    interactive: false
+  }).bindTooltip('5 km from Deisel — walking-distance rim', { permanent: false, direction: 'top' }).addTo(map);
+
+  // Plot every parish — keep markers indexed by id so cards can fly to them
+  var parishMarkers = {};
+  // Per-town label placement so permanent labels in the tight Trendelburg/Deisel
+  // cluster point in different directions and don't overlap at the default zoom.
+  var LABEL_LAYOUT = {
+    trendelburg:    { direction: 'top',    offset: [0, -10] },
+    deisel:         { direction: 'bottom', offset: [0, 10]  },
+    friedrichsfeld: { direction: 'bottom', offset: [0, 10]  },  // left label was reaching Haueda's dot
+    huemme:         { direction: 'left',   offset: [-10, 0] },
+    schoeneberg:    { direction: 'bottom', offset: [0, 10]  },
+    hofgeismar:     { direction: 'bottom', offset: [0, 10]  },
+    sielen:         { direction: 'top',    offset: [0, -10] },
+    helmarshausen:  { direction: 'right',  offset: [10, 0]  },
+    heisebeck:      { direction: 'right',  offset: [10, 0]  },
+    // June 2026 sweep — directions chosen so labels clear neighbouring dots:
+    stammen:        { direction: 'right',  offset: [10, 0]  },  // top would collide with Deisel's bottom label
+    gottsbueren:    { direction: 'bottom', offset: [0, 10]  },  // below the dot, clear of Stammen
+    lamerden:       { direction: 'left',   offset: [-10, 0] },  // west side empty
+    eberschuetz:    { direction: 'bottom', offset: [0, 10]  },  // top spilled into the Sielen dot
+    gieselwerder:   { direction: 'right',  offset: [10, 0]  },  // bottom label was still grazing Stammen's right label; east is clear
+    kelze:          { direction: 'left',   offset: [-10, 0] },  // clears Hofgeismar's bottom label
+    gewissenruh:    { direction: 'top',    offset: [0, -10] },
+    grebenstein:    { direction: 'left',   offset: [-10, 0] },  // clears Immenhausen
+    veckerhagen:    { direction: 'right',  offset: [10, 0]  },
+    immenhausen:    { direction: 'bottom', offset: [0, 10]  },
+    marzhausen:     { direction: 'top',    offset: [0, -10] },
+    // 6 June 2026 border sweep:
+    karlshafen:     { direction: 'right',  offset: [10, 0]  },  // east side empty; top would crowd Beverungen
+    hombressen:     { direction: 'bottom', offset: [0, 10]  },  // clears Ostheim/Haueda to the west
+    haueda:         { direction: 'left',   offset: [-10, 0] },  // bottom collided with Friedrichsfeld; west is empty
+    ostheim:        { direction: 'left',   offset: [-10, 0] },  // west side empty
+    niedermeiser:   { direction: 'bottom', offset: [0, 10]  },  // clears Kelze's left label
+    herstelle:      { direction: 'top',    offset: [0, -10] },  // clears Dalhausen (W) and Karlshafen (E)
+    liebenau:       { direction: 'left',   offset: [-10, 0] },  // SW corner, west empty
+    beverungen:     { direction: 'top',    offset: [0, -10] },  // northern edge
+    dalhausen:      { direction: 'left',   offset: [-10, 0] }   // west side empty
+  };
+  PARISHES.forEach(function (p) {
+    // Visual hierarchy on the map: Deisel anchors with a halo + larger radius;
+    // working hypotheses next; open / eliminated smallest.
+    var radius;
+    if      (p.status === 'charles')    radius = 13;
+    else if (p.status === 'working')    radius = 11;
+    else if (p.status === 'open')       radius = 10;
+    else                                radius = 8;
+
+    if (p.status === 'charles') {
+      L.circleMarker([p.lat, p.lng], {
+        radius: 22,
+        color: COLORS[p.status],
+        weight: 2,
+        fillColor: COLORS[p.status],
+        fillOpacity: 0.12,
+        interactive: false
+      }).addTo(map);
+    }
+
+    // ✦ Konze-family ring — a distinct GOLD halo marking parishes where the Konze
+    //   surname is documented (solid) or only claimed/unconfirmed (dashed), regardless
+    //   of candidate status. This is the "which parishes include Konze family" overlay.
+    if (p.konze) {
+      L.circleMarker([p.lat, p.lng], {
+        radius: radius + 6,
+        color: '#caa23a',
+        weight: 3,
+        opacity: 0.95,
+        fillColor: '#d8b366',
+        fillOpacity: p.konze === 'claimed' ? 0 : 0.12,
+        dashArray: p.konze === 'claimed' ? '3,4' : null,
+        interactive: false
+      }).addTo(map);
+    }
+
+    var marker = L.circleMarker([p.lat, p.lng], {
+      radius: radius,
+      color: '#2c2620',
+      weight: 2,
+      fillColor: COLORS[p.status],
+      fillOpacity: 1
+    }).addTo(map);
+
+    // Popup with status pill + distance line
+    var dist = distFromDeisel(p.lat, p.lng);
+    var distLine = (p.status === 'charles')
+      ? '<div style="font-family:\'SF Mono\',Menlo,monospace; font-size: 0.78rem; color:#6a5a42; margin-top:0.4rem;"><strong>★ Search-rim anchor</strong></div>'
+      : '<div style="font-family:\'SF Mono\',Menlo,monospace; font-size: 0.78rem; color:#6a5a42; margin-top:0.4rem;">~' + dist.toFixed(1) + ' km from Deisel</div>';
+
+    marker.bindPopup(
+      '<div style="min-width:200px; font-family:\'Iowan Old Style\',Georgia,serif;">' +
+        '<strong style="font-size:1rem; color:#1f1a14;">' + p.name + '</strong> ' +
+        '<span style="display:inline-block; ' + PILL_STYLES[p.status] + ' font-size: 0.72rem; font-weight:700; letter-spacing:0.05em; padding:2px 7px; border-radius:3px; text-transform:uppercase; vertical-align:middle;">' + STATUS_LABELS[p.status] + '</span>' +
+        '<div style="font-family:\'SF Mono\',Menlo,monospace; font-size:0.72rem; color:#6a5a42; margin:0.25rem 0 0.55rem;">' +
+          p.lat.toFixed(4) + ' N · ' + p.lng.toFixed(4) + ' E' +
+        '</div>' +
+        p.desc +
+        distLine +
+      '</div>',
+      { maxWidth: 320 }
+    );
+    var lay = LABEL_LAYOUT[p.id] || { direction: 'top', offset: [0, -9] };
+    marker.bindTooltip(p.name, { permanent: true, direction: lay.direction, offset: lay.offset, className: 'town-label' });
+    parishMarkers[p.id] = marker;
+  });
+
+  // ============ Bidirectional click sync between cards and map markers ============
+  function activateCard(card) {
+    document.querySelectorAll('.parish-card.is-active').forEach(function (c) {
+      c.classList.remove('is-active');
+    });
+    if (card) card.classList.add('is-active');
+  }
+
+  document.querySelectorAll('.parish-card[data-parish]').forEach(function (card) {
+    card.classList.add('clickable');
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+
+    var goToParish = function () {
+      var id = card.dataset.parish;
+      var m = parishMarkers[id];
+      if (!m) return;
+      var ll = m.getLatLng();
+      map.flyTo([ll.lat, ll.lng], 13, { duration: 0.55 });
+      m.openPopup();
+      activateCard(card);
+      // Scroll the map into view if the card was clicked from far below
+      var mapEl = document.getElementById('parish-map');
+      var rect = mapEl.getBoundingClientRect();
+      if (rect.bottom < 100 || rect.top > window.innerHeight - 200) {
+        mapEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    card.addEventListener('click', function (e) {
+      // Don't intercept clicks on links inside the card
+      if (e.target.closest('a')) return;
+      goToParish();
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.target.closest('a')) return;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goToParish(); }
+    });
+  });
+
+  // Marker click → highlight the matching card
+  Object.keys(parishMarkers).forEach(function (id) {
+    parishMarkers[id].on('click', function () {
+      var card = document.querySelector('.parish-card[data-parish="' + id + '"]');
+      activateCard(card);
+    });
+  });
+});
+</script>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

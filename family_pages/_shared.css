@@ -1,0 +1,643 @@
+/* Shared styles for family-line pages.
+   Linked from /family_pages/*.html
+   Originally inlined as a <style> block in every page; extracted here
+   on 1 May 2026 as part of a CSS-consolidation pass.
+   Style block hash: 6666c358
+   ------------------------------------------------------------- */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Iowan Old Style', Georgia, 'Times New Roman', serif; background:#f6f1e7; color:#2c2620; line-height:1.55; }
+  ::selection { background:#d8b366; color:#1f1a14; }
+  a { color:#8a6420; text-decoration:none; border-bottom:1px dotted #c9a76a; }
+  a:hover { color:#74420f; border-bottom-color:#8a6420; }
+
+  header.fam-hero { background:linear-gradient(135deg, #1f1a14 0%, #3a2f1e 100%); color:#f6f1e7; padding:1.6rem 1.5rem 1.4rem; border-bottom:4px double #d8b366; }
+  header.fam-hero .crumbs { font-size:0.82rem; color:#c8b896; margin-bottom:0.4rem; }
+  header.fam-hero .crumbs a { color:#d8b366; border-bottom:none; }
+  header.fam-hero h1 { color:#f6f1e7; font-size:2.0rem; line-height:1.2; }
+  header.fam-hero .sub { color:#e8dfc8; font-style:italic; margin-top:0.3rem; }
+  header.fam-hero .meta-row { margin-top:0.7rem; display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center; }
+  .badge { display:inline-block; font-size:0.76rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:3px 10px; border-radius:3px; }
+  .badge.eliminated { background:#8a4a4a; color:#fff; }
+  .badge.open { background:#d8b366; color:#1f1a14; }
+  .badge.active { background:#8a7ac0; color:#fff; }
+  .date { color:#c8b896; font-size:0.85rem; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 1.6rem 1.4rem 4rem; }
+
+  .charts-section { margin-bottom: 2rem; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:1rem 1.2rem; }
+  .charts-section h2 { color: var(--brand-dark); border-bottom:1px solid #c9a76a; padding-bottom:0.4rem; margin-bottom:0.8rem; font-size:1.3rem; }
+  .chart-full { margin-bottom:1.2rem; }
+  .chart-full img { display:block; max-width:100%; max-height:600px; margin:0 auto; border:1px solid #d8c8a8; box-shadow:0 2px 12px rgba(0,0,0,0.12); }
+  .chart-full figcaption { text-align:center; font-size:0.82rem; color:#6a5a42; margin-top:0.4rem; font-style:italic; }
+  .chart-full.pdf .pdf-card { display:flex; align-items:center; gap:1rem; background:linear-gradient(140deg, #fffaf0, #f6ebd2); border:1px solid #d8b366; border-radius:4px; padding:1rem 1.2rem; text-decoration:none; color:#3a2f1e; max-width:600px; margin:0 auto; border-bottom:1px solid #d8b366; }
+  .chart-full.pdf .pdf-card:hover { background:#f8ecc8; }
+  .pdf-icon-big { display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.2rem; background:#fff; border:1px solid #d8b366; border-radius:3px; padding:0.6rem 0.8rem; font-size:1.5rem; flex:0 0 auto; }
+  .pdf-icon-big .ext { font-size:0.75rem; background:#8a6420; color:#fff; padding:2px 8px; border-radius:2px; letter-spacing:0.08em; }
+  .no-chart { font-style:italic; color:#8a4a4a; padding:0.8rem; background:#fbeef3; border-left:3px solid #c84a76; border-radius:3px; }
+
+  .ff-section { margin-bottom: 1.2rem; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:1rem 1.2rem; }
+  .ff-section > h5 { font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:#6a5a42; margin-bottom:0.4rem; font-weight:700; }
+  .ff-section ul { padding-left:1.4rem; margin:0.4rem 0; font-size:0.96rem; }
+  .ff-section li { margin-bottom:0.3rem; }
+  hr.ff-divider { margin: 1.5rem 0; opacity: 0.3; height: 1px; background: var(--border-light, #d8c8a8); border: 0; }
+  .verdict { font-size:0.96rem; color:#5a4a32; }
+
+  a.fsn { color:#4a3a22; text-decoration:none; border-bottom:1px dotted #c9a76a; background:rgba(212,160,23,0.06); padding:0 2px; border-radius:2px; transition:all 0.15s; white-space:nowrap; }
+  a.fsn:hover { background:#d8b366; color:#1f1a14; border-bottom-color:#d8b366; }
+  a.fsn::after { content:'⌕'; font-size:0.75em; margin-left:2px; color:#8a7858; vertical-align:super; }
+  a.fsn.pid { background: rgba(74,118,200,0.12); }
+  a.fsn.pid:hover { background: #4a76c8; color: #fff; }
+  a.fsn.pid::after { content: '↗'; color: #4a76c8; }
+
+  .related { margin-top:2rem; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:1rem 1.2rem; border-left:4px solid #4a76c8; }
+  .related h3 { font-size:1rem; color: var(--brand-dark); margin-bottom:0.5rem; }
+  .related ul { padding-left:1.2rem; }
+
+  footer.back-nav { margin-top:2rem; text-align:center; padding:1rem; }
+  footer.back-nav a { display:inline-block; padding:0.5rem 1rem; background:#2c2620; color:#d8b366; border:1px solid #d8b366; border-radius:3px; font-weight:600; letter-spacing:0.04em; border-bottom:none; }
+  footer.back-nav a:hover { background:#d8b366; color:#1f1a14; }
+
+  /* ============================================================
+     Summary card (top-of-page TL;DR) + collapsible research log
+     Added 3 May 2026 to keep readers from drowning in detail.
+     ============================================================ */
+  .summary-card { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border:2px solid #d8b366; border-radius:6px; padding:1.2rem 1.4rem; margin-bottom:1.4rem; }
+  .summary-card.eliminated { background:linear-gradient(140deg, #fbeef3, #f0d8d8); border-color:#8a4a4a; }
+  .summary-card.open { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border-color:#d8b366; }
+  .summary-card.active { background:linear-gradient(140deg, #f4f0fb, #e0d8f0); border-color:#8a7ac0; }
+  .summary-card h2 { font-size:1.18rem; color: var(--brand-dark); margin-bottom:0.6rem; padding-bottom:0.3rem; border-bottom:1px solid #c9a76a; }
+  .summary-card.eliminated h2 { color:#8a4a4a; border-color:#c9a4a4; }
+  .summary-card.active h2 { color:#5a4a8a; border-color:#a89cc0; }
+  .summary-card .card-pill { display:inline-block; font-size:0.75rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; padding:0.18rem 0.55rem; border-radius:3px; vertical-align:middle; margin-bottom:0.4rem; }
+  .summary-card .card-pill.eliminated { background:#8a4a4a; color:#fff; }
+  .summary-card .card-pill.open { background:#d8b366; color:#1f1a14; }
+  .summary-card .card-pill.active { background:#8a7ac0; color:#fff; }
+  .summary-card .bottom-line { font-size:1rem; color:#3a2f1e; line-height:1.5; margin-bottom:0.6rem; }
+  .summary-card .bottom-line strong { color:#1f1a14; }
+  .summary-card .charles-link { background:rgba(212,160,23,0.12); border-left:3px solid #d8b366; padding:0.5rem 0.7rem; margin:0.6rem 0; font-size:0.92rem; color:#3a2f1e; line-height:1.45; border-radius:0 3px 3px 0; }
+  .summary-card.eliminated .charles-link { background:rgba(138,74,74,0.1); border-color:#8a4a4a; }
+  .summary-card.active .charles-link { background:rgba(138,122,192,0.1); border-color:#8a7ac0; }
+  .summary-card .charles-link strong { color:#8a6420; font-weight:700; }
+  .summary-card.eliminated .charles-link strong { color:#8a4a4a; }
+  .summary-card.active .charles-link strong { color:#5a4a8a; }
+  .summary-card .quick-facts { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.5rem; margin-top:0.6rem; }
+  .summary-card .qf { background:#fffdf6; border:1px solid #d8c8a8; border-radius:3px; padding:0.4rem 0.6rem; font-size:0.84rem; }
+  .summary-card .qf .qf-label { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#8a6420; font-weight:700; display:block; margin-bottom:0.1rem; }
+  .summary-card .qf .qf-value { color:#3a2f1e; line-height:1.35; }
+
+  details.research-log { margin-bottom:1rem; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; }
+  details.research-log > summary { padding:0.7rem 1rem; cursor:pointer; user-select:none; font-weight:600; color:#3a2f1e; background:linear-gradient(140deg, #f6ebd2, #ede4d0); border-bottom:1px solid transparent; border-radius:6px; list-style:none; }
+  details.research-log[open] > summary { border-bottom-color:#d8c8a8; border-radius:6px 6px 0 0; }
+  details.research-log > summary::-webkit-details-marker { display:none; }
+  details.research-log > summary::before { content:"▸"; color:#8a6420; font-weight:700; transition:transform 0.15s ease; display:inline-block; margin-right:0.5rem; font-size:0.8rem; }
+  details.research-log[open] > summary::before { transform:rotate(90deg); }
+  details.research-log > summary .log-meta { display:inline-block; font-size:0.78rem; color:#6a5a42; font-weight:400; margin-left:0.5rem; }
+  details.research-log .log-body { padding:0.4rem 0.4rem 0.6rem; }
+  details.research-log .log-body .ff-section { margin-bottom:0.6rem; }
+  details.research-log .log-body .charts-section { margin-bottom:0.6rem; }
+  details.research-log .log-body > *:last-child { margin-bottom:0; }
+
+
+@media print {
+  header.fam-hero, header.cw-hero, header.ca-hero, header.im-hero, header.ge-hero, header.src-hero,
+  footer.back-nav, .crumbs, details.research-log:not([open]) > .log-body { display:none !important; }
+  details.research-log > .log-body { display:block !important; }
+  body { background:#fff !important; color:#000 !important; font-size:11pt; }
+  a { color:#000 !important; text-decoration:none !important; border-bottom:none !important; }
+  a[href^="http"]::after { content:" (" attr(href) ")"; font-size:9pt; color:#666; }
+  .summary-card, .card, table.kv { background:#fff !important; border:1px solid #999 !important; page-break-inside:avoid; }
+  h1, h2, h3, h4 { page-break-after:avoid; }
+  img, svg { max-width:100% !important; page-break-inside:avoid; }
+}
+
+
+
+/* ============================================================
+   Theme override · added 3 May 2026 design pass
+   Pulls in tokens from /assets/theme.css and applies them.
+   Overrides are scoped to keep section identity while unifying chrome.
+   ============================================================ */
+
+/* Typography hierarchy — sharper 1.25× scale */
+h1 { font-size: var(--type-h1); line-height: 1.2; font-weight: 700; }
+h2 { font-size: var(--type-h2); line-height: 1.25; font-weight: 700; }
+h3 { font-size: var(--type-h3); line-height: 1.3;  font-weight: 700; }
+h4 { font-size: var(--type-h4); line-height: 1.35; font-weight: 700; }
+
+/* Link contrast fix — darken from #c9a76a to #a88a4a (AA-3:1 on cream) */
+a { border-bottom-color: var(--border-medium); }
+a.fsn { background: rgba(212,160,23,0.08); }
+a.fsn.pid { background: rgba(74,118,200,0.12); }
+
+/* Body text contrast — darken italic captions from #6a5a42 to #4a3a22 (AA on cream) */
+.meta, .small em, em.note, p.small, .ev-body p { color: var(--text-meta); }
+
+/* Standardize border-left widths: cards 3px, tiles 4px, banners/heroes 5px */
+.card, .summary-card { border-left-width: var(--bl-card) !important; }
+.cw-tile, .ca-tile, .im-tile, .ge-tile, .schrader-tile,
+.person-card, .child-card, .doc-card, .actor-card,
+.cw-tile.keystone, .ca-tile.keystone,
+header.fam-hero, header.cw-hero, header.ca-hero, header.im-hero, header.ge-hero, header.src-hero, header.up-hero {
+  border-left-width: 0;
+}
+
+/* Unified hover transition for all clickable surfaces */
+.cw-tile, .ca-tile, .im-tile, .ge-tile, .schrader-tile,
+.person-card, .child-card, .doc-card, .actor-card,
+.tree .sib, a.parent-card, a.entry, a.chart-link {
+  transition: var(--transition);
+}
+.cw-tile:hover, .ca-tile:hover, .im-tile:hover, .ge-tile:hover,
+.schrader-tile:hover, .person-card:hover, .child-card:hover,
+.doc-card:hover, .actor-card:hover, .tree .sib:hover, a.parent-card:hover {
+  transform: var(--hover-lift);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Specialize the gold — only brand surfaces use it now.
+   "Open" status was using gold (conflict). Switch to amber. */
+.summary-card.open { border-color: var(--status-open); }
+.summary-card.open h2 { border-bottom-color: var(--status-open); }
+.summary-card .card-pill.open { background: var(--status-open); color: #1f1a14; }
+.badge.open { background: var(--status-open); color: #1f1a14; }
+
+/* Section accent for Charles in America: switch from gold to amber/copper
+   to differentiate from brand */
+.ca-tile, .ca-tile.primary { border-left-color: var(--section-charles); }
+.ca-tile:hover { border-left-color: var(--section-charles-d); background: var(--section-charles-t); }
+.ca-tile-eyebrow { color: var(--section-charles-d); }
+.ca-tile:hover .ca-tile-title { color: var(--section-charles-d); }
+
+/* Active-tab indicator strengthening (only relevant on main index) */
+nav.tabs button.active {
+  background: rgba(212,160,23,0.18);
+  border-bottom: 3px solid var(--brand) !important;
+}
+
+/* Konze-status banner consistency */
+.konze-status-banner {
+  background: linear-gradient(140deg, var(--status-open-t), #fef3d6) !important;
+  border-color: var(--status-open) !important;
+  border-left-color: var(--status-open) !important;
+}
+
+
+/* ============================================================
+   FamilySearch family-relationships card layout (rec #5, May 3 2026)
+   Used on fam-konze.html and fam-grandjot.html for the FS-anchored
+   family-tree visualization. Replaces inline-styled SVG-derived layouts.
+   ============================================================ */
+.kfs-row { display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; margin:0.6rem 0; }
+.kfs-card { display:block; min-width:200px; max-width:260px; padding:0.55rem 0.7rem; border:1.5px solid #4a76c8; border-radius:5px; background:#eef3fa; text-decoration:none; color:#2c2620; transition:all 0.15s; line-height:1.35; }
+.kfs-card.female { border-color:#c84a76; background:#fbeef3; }
+.kfs-card.subject { border-width:2.5px; background:#fff4dc; border-color:#b48a3a; box-shadow:0 2px 6px rgba(180,138,58,0.25); min-width:240px; }
+.kfs-card:hover { filter:brightness(1.04); border-width:2.5px; box-shadow:0 2px 8px rgba(0,0,0,0.12); }
+.kfs-name { font-weight:700; font-size:0.96rem; color:#1f1a14; }
+.kfs-dates { font-size:0.82rem; color:#5a4a32; margin-top:0.15rem; }
+.kfs-detail { font-size:0.76rem; color:#6a5a42; font-style:italic; margin-top:0.15rem; }
+.kfs-pid { display:inline-block; margin-top:0.3rem; font-size: 0.78rem; font-weight:700; color:#3a5a8c; font-family:Menlo, Consolas, monospace; letter-spacing:0.02em; }
+.kfs-card.female .kfs-pid { color:#a83560; }
+.kfs-section-label { text-align:center; font-size: 0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:#8a6420; font-weight:700; margin:0.8rem 0 0.3rem; }
+.kfs-down { text-align:center; color:#8a6420; font-size:1.1rem; margin:0.2rem 0; line-height:1; }
+.kfs-marriage { text-align:center; font-size:0.78rem; color:#5a4a32; font-style:italic; margin:0.2rem 0; }
+.kfs-branch { flex:1; min-width:280px; max-width:520px; padding:0.7rem 0.8rem 0.5rem; background:#fff8e8; border:1px dashed #c9a76a; border-radius:4px; }
+.kfs-branch h4 { font-size:0.86rem; color: var(--brand-dark); margin:0 0 0.4rem; text-align:center; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
+.kfs-grand { font-size:0.82rem; color:#5a4a32; padding:0.4rem 0.55rem; background:#fbf5e6; border-left:3px solid #b48a3a; border-radius:3px; margin-top:0.4rem; }
+
+/* Reusable update callout (rec #5) — for "★ May 2026 update" style boxes */
+.update-callout { margin: 0.7rem 0; padding: 0.7rem 0.9rem; background: #fff4e8; border: 2px solid #c8581a; border-radius: 4px; }
+.update-callout h5 { margin: 0 0 0.4rem; color: #a3441f; font-size: 1rem; }
+.update-callout.green { background:#f4faf0; border-color:#5a8a4a; }
+.update-callout.green h5 { color:#3a6a2a; }
+.update-callout.amber { background:#fff8e8; border-color:#d8b366; }
+.update-callout.amber h5 { color:#8a6420; }
+
+/* Citations table inside update callouts */
+.update-callout table { width:100%; border-collapse:collapse; font-size:0.9rem; margin:0.4rem 0; }
+.update-callout table thead { background:#f4d4b8; text-align:left; }
+.update-callout table th, .update-callout table td { padding:0.3rem 0.5rem; border-bottom:1px solid #f0d8c0; }
+.update-callout table th { border-bottom:1px solid #c8581a; }
+
+/* ============================================================
+   Citation tables and recurring sub-heads (rec #6, May 4 2026)
+   These were inline-styled across fam-grandjot/fam-herwig/fam-quentin
+   and elsewhere; consolidating the styling here.
+   ============================================================ */
+table.cite-table { width:100%; border-collapse:collapse; font-size:0.9rem; margin:0.4rem 0; }
+table.cite-table thead { background:#e8d8a8; text-align:left; }
+table.cite-table thead th { padding:0.4rem 0.5rem; border-bottom:1px solid #c9a76a; }
+table.cite-table tbody td { padding:0.35rem 0.5rem; border-bottom:1px solid #ede4d0; }
+/* Variant inside .update-callout — orange-tinted heads */
+.update-callout table { width:100%; border-collapse:collapse; font-size:0.9rem; margin:0.4rem 0; }
+.update-callout table thead { background:#f4d4b8; text-align:left; }
+.update-callout table thead th { padding:0.35rem 0.5rem; border-bottom:1px solid #c8581a; }
+.update-callout table tbody td { padding:0.3rem 0.5rem; border-bottom:1px solid #f0d8c0; }
+
+/* Recurring sub-heads on family-page deep-dives */
+.subhead { font-size:0.95rem; margin:0.6rem 0 0.3rem; color:#5a4828; font-weight:700; }
+.subhead-amber { font-size:0.95rem; margin:0.9rem 0 0.3rem; color:#7a5a2a; font-weight:700; }
+.subhead-large { font-size:1.05rem; margin:0.8rem 0 0.4rem; color:#6a5024; font-weight:700; }
+
+/* ============================================================
+   FS-tree prose-list variant (for pages where the kfs-card grid
+   doesn't fit because entries carry marriage details, emigration
+   badges, etc.). Used on fam-grandjot.html, fam-herwig.html.
+   ============================================================ */
+section.fs-tree { margin:1.4rem 0 1.8rem; padding:1rem 1.2rem; border:1px solid #d6c7a3; border-left:5px solid #b48a3a; border-radius:4px; background:#fbf5e6; }
+section.fs-tree > h2 { margin-top:0; font-size:1.25rem; color:#6a5024; }
+section.fs-tree > p { margin:0 0 0.6rem; font-size:0.92rem; color:#5a4828; }
+section.fs-tree h3.gen-label { font-size:1rem; margin:0.4rem 0 0.4rem; color:#7a5a2a; font-weight:700; }
+section.fs-tree h3.gen-label-spaced { font-size:1rem; margin:0.8rem 0 0.4rem; color:#7a5a2a; font-weight:700; }
+section.fs-tree ul.fs-tree-list { margin:0 0 0.8rem 1.1rem; padding:0; font-size:0.95rem; }
+section.fs-tree ul.fs-tree-list li { margin-bottom:0.3rem; }
+section.fs-tree li.emigrant { background:rgba(200,88,26,0.08); padding:0.4rem 0.5rem; border-left:3px solid #c8581a; border-radius:3px; margin:0.3rem 0; }
+.emigrant-badge { display:inline-block; padding:0.1rem 0.45rem; background:#c8581a; color:#fff; border-radius:3px; font-size:0.78rem; font-weight:600; vertical-align:middle; }
+section.fs-tree p.fs-tree-summary { margin:0.8rem 0 0; padding:0.6rem 0.8rem; background:#f4ecd5; border-left:3px solid #b48a3a; font-size:0.9rem; color:#5a4828; }
+
+/* ============================================================
+   .family-tree — FamilySearch-style hierarchical genealogical tree
+   (May 4 2026 v2 — fixed: separate spouse links, real-DOM trunks
+   for reliable line connections, uniform card widths)
+   ============================================================ */
+.family-tree { display:flex; flex-direction:column; align-items:center; gap:0; margin:1rem auto; padding:0.6rem 0; overflow-x:auto; }
+.ft-gen-label { font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.08em; color:#8a6420; font-weight:700; margin-bottom:0.3rem; text-align:center; }
+
+/* UNIFIED CARD SIZE — every couple-card and person-card is exactly this width.
+   Override with explicit width style only when stacking 4+ children that need to be narrower. */
+.ft-couple-card, .ft-person-card { width:240px; box-sizing:border-box; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:all 0.15s; }
+.ft-couple-card:hover, .ft-person-card:hover { box-shadow:0 2px 10px rgba(0,0,0,0.16); transform:translateY(-1px); }
+
+/* Couple card — two stacked spouse-links sandwiching a marriage-info bar */
+.ft-couple-card {
+  display:flex; flex-direction:column;
+  border:2px solid #b48a3a;
+  border-radius:6px;
+  background:#fff8e8;
+  overflow:hidden;
+}
+.ft-couple-card.ft-subject { border-color:#d8b366; box-shadow:0 2px 8px rgba(212,160,23,0.30); border-width:2.5px; }
+
+/* Each spouse link inside the couple card is independently clickable */
+.ft-couple-card a.ft-person {
+  display:block; padding:0.5rem 0.7rem;
+  text-decoration:none; color:#2c2620;
+  transition:background 0.15s;
+  border:none; border-radius:0; max-width:none; min-width:0; background:transparent;
+}
+.ft-couple-card a.ft-person:hover { background:rgba(212,160,23,0.12); }
+.ft-couple-card a.ft-person.ft-female { background:rgba(200,74,118,0.05); }
+.ft-couple-card a.ft-person.ft-female:hover { background:rgba(200,74,118,0.14); }
+
+/* Marriage-info bar between the two spouses */
+.ft-couple-card .ft-marriage-bar {
+  background:#f4ecd5; text-align:center; font-size:0.72rem; font-style:italic; color:#5a4a32;
+  padding:0.18rem 0.4rem;
+  border-top:1px solid #c9a76a;
+  border-bottom:1px solid #c9a76a;
+}
+
+/* Single-person card (no spouse) */
+.ft-person-card {
+  display:block;
+  border:2px solid #4a76c8;
+  border-radius:6px;
+  background:#eef3fa;
+  text-decoration:none; color:#2c2620;
+  padding:0.5rem 0.7rem;
+}
+.ft-person-card.ft-female { border-color:#c84a76; background:#fbeef3; }
+.ft-person-card.ft-subject { border-color:#d8b366; background:#fff8e8; box-shadow:0 2px 8px rgba(212,160,23,0.30); border-width:2.5px; }
+
+/* Card content */
+.ft-name { font-weight:700; font-size:0.9rem; color:#1f1a14; line-height:1.25; text-align:center; }
+.ft-name.ft-name-tight { font-size:0.78rem; }
+.ft-dates { font-size:0.76rem; color:#5a4a32; margin-top:0.1rem; line-height:1.3; }
+.ft-detail { font-size:0.72rem; color:#6a5a42; font-style:italic; margin-top:0.1rem; line-height:1.3; }
+.ft-pid { display:inline-block; margin-top:0.18rem; font-size: 0.72rem; font-weight:700; color:#3a5a8c; font-family:Menlo, Consolas, monospace; }
+.ft-couple-card a.ft-person.ft-female .ft-pid { color:#a83560; }
+.ft-person-card.ft-female .ft-pid { color:#a83560; }
+
+/* === ORTHOGONAL CONNECTORS as real DOM elements === */
+/* A trunk is a 2px-wide vertical line, fixed height — used between parent-card and bar, and between bar and each child */
+.ft-trunk { width:2px; height:1.4rem; background:#8a6420; }
+
+/* The descent group wraps a parent card + trunk + children container */
+.ft-descend-group { display:flex; flex-direction:column; align-items:center; }
+
+/* Children container: width fits its contents.
+   .ft-sibling-bar is a real DOM div whose width is (frame_width − card_width),
+   so the bar starts at the center of the leftmost child and ends at the center
+   of the rightmost — never overhanging past the outermost trunks. */
+.ft-children-frame { display:flex; flex-direction:column; align-items:center; width:fit-content; max-width:100%; --ft-card-width:240px; }
+.ft-children-frame.compact { --ft-card-width:200px; }
+.ft-sibling-bar { height:2px; background:#8a6420; width:calc(100% - var(--ft-card-width)); }
+.ft-children-frame.single-child .ft-sibling-bar { display:none; }
+.ft-children-frame .ft-children-row { display:flex; flex-wrap:nowrap; align-items:stretch; justify-content:center; gap:1rem; }
+/* Each child is wrapped in a flex column with its own trunk on top.
+   The person-card flex:1's so every child tile stretches to the row's tallest, keeping all tiles uniform height regardless of name length. */
+.ft-child { display:flex; flex-direction:column; align-items:center; }
+.ft-child > .ft-trunk { margin-top:0; flex:0 0 auto; }
+.ft-child > .ft-person-card { flex:1 1 auto; }
+/* Single-child case: the trunk connects directly without a sibling-bar */
+.ft-children-frame.single-child .ft-child > .ft-trunk { display:none; }
+
+/* Multi-marriage stack: each marriage gets its own boxed sub-tree */
+.ft-multi-marriage-stack { display:flex; flex-direction:column; gap:1.6rem; align-items:center; margin-top:0.6rem; }
+.ft-marriage-branch-fs {
+  border:1px dashed #c9a76a; border-radius:6px;
+  padding:0.8rem 1rem;
+  background:#fffaf0;
+  width:100%;
+  max-width:1100px;
+}
+/* For wider sibling rows (4+ kids) add .compact to the children-frame to use narrower 200px cards */
+.ft-children-frame.compact .ft-person-card { width:200px; }
+.ft-children-frame.compact .ft-children-row { gap:0.7rem; }
+
+/* Standardized box content — birth + death rows with leading "b." / "d." labels */
+.ft-bd, .ft-dd { font-size:0.76rem; color:#5a4a32; line-height:1.3; margin:0.06rem 0 0; }
+.ft-bd::before { content:"b. "; font-weight:600; color:#6a5a42; }
+.ft-dd::before { content:"d. "; font-weight:600; color:#6a5a42; }
+.ft-marriage-branch-fs > h4 {
+  font-size:0.78rem; color:#8a6420;
+  margin:0 0 0.6rem; text-align:center;
+  font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+}
+
+/* BEGIN-DARK-MODE-BODY-OVERRIDE */
+/* ============================================================
+   Dark-mode overrides for family-line pages — updated 11 May 2026
+   ============================================================
+   _shared.css above hardcodes cream backgrounds on a dozen
+   bespoke classes (.summary-card, .ff-section, .charts-section,
+   .related, .qf, details.research-log, etc.). Re-paint each of
+   them in walnut tones whenever the user is in dark mode (or
+   when the theme-init script never ran — covered by
+   :root:not(.theme-light)). Also catches inline style=
+   "background:#fff..." attributes via attribute selectors.
+   ------------------------------------------------------------ */
+
+/* ---- body + global link colors ---- */
+:root:not(.theme-light) body,
+:root.theme-dark body {
+  background: #1a1612 !important;
+  color: #e8dfc8 !important;
+}
+:root:not(.theme-light) a,
+:root.theme-dark a { color: #e6c47a; }
+:root:not(.theme-light) a:hover,
+:root.theme-dark a:hover { color: #fadea0; }
+
+/* ---- Charts section ---- */
+:root:not(.theme-light) .charts-section,
+:root.theme-dark .charts-section {
+  background: #24201a; border-color: #6a5a40; color: #e8dfc8;
+}
+:root:not(.theme-light) .charts-section h2,
+:root.theme-dark .charts-section h2 {
+  color: #f1cf85; border-bottom-color: #6a5a40;
+}
+:root:not(.theme-light) .chart-full img,
+:root.theme-dark .chart-full img { border-color: #6a5a40; }
+:root:not(.theme-light) .chart-full figcaption,
+:root.theme-dark .chart-full figcaption { color: #c8b896; }
+:root:not(.theme-light) .chart-full.pdf .pdf-card,
+:root.theme-dark .chart-full.pdf .pdf-card {
+  background: linear-gradient(140deg, #24201a, #2c261d);
+  border-color: #8a6420; color: #e8dfc8;
+}
+:root:not(.theme-light) .chart-full.pdf .pdf-card:hover,
+:root.theme-dark .chart-full.pdf .pdf-card:hover { background: #2c261d; }
+:root:not(.theme-light) .pdf-icon-big,
+:root.theme-dark .pdf-icon-big {
+  background: #1a1612; border-color: #8a6420; color: #f4ead0;
+}
+:root:not(.theme-light) .no-chart,
+:root.theme-dark .no-chart {
+  background: #2c1c20; border-left-color: #c84a76; color: #e8c8c8;
+}
+
+/* ---- ff-section + verdict ---- */
+:root:not(.theme-light) .ff-section,
+:root.theme-dark .ff-section {
+  background: #24201a; border-color: #6a5a40; color: #e8dfc8;
+}
+:root:not(.theme-light) .ff-section > h5,
+:root.theme-dark .ff-section > h5 { color: #d8b366; }
+:root:not(.theme-light) .verdict,
+:root.theme-dark .verdict { color: #e8dfc8; }
+
+/* ---- inline anchor styling (.fsn) ---- */
+:root:not(.theme-light) a.fsn,
+:root.theme-dark a.fsn {
+  color: #e6c47a; background: rgba(212,160,23,0.12);
+  border-bottom-color: #6a5a40;
+}
+:root:not(.theme-light) a.fsn:hover,
+:root.theme-dark a.fsn:hover {
+  background: #d8b366; color: #1f1a14;
+}
+:root:not(.theme-light) a.fsn.pid,
+:root.theme-dark a.fsn.pid { background: rgba(74,118,200,0.20); }
+
+/* ---- Related panel ---- */
+:root:not(.theme-light) .related,
+:root.theme-dark .related {
+  background: #24201a; border-color: #6a5a40; color: #e8dfc8;
+}
+:root:not(.theme-light) .related h3,
+:root.theme-dark .related h3 { color: #f1cf85; }
+
+/* ---- Summary card (TL;DR at top of family page) ---- */
+:root:not(.theme-light) .summary-card,
+:root.theme-dark .summary-card {
+  background: linear-gradient(140deg, #24201a, #2c261d);
+  border-color: #8a6420; color: #e8dfc8;
+}
+:root:not(.theme-light) .summary-card.eliminated,
+:root.theme-dark .summary-card.eliminated {
+  background: linear-gradient(140deg, #2c1c20, #261820);
+  border-color: #8a4a4a;
+}
+:root:not(.theme-light) .summary-card.active,
+:root.theme-dark .summary-card.active {
+  background: linear-gradient(140deg, #2c2538, #221c30);
+  border-color: #5a4a8a;
+}
+:root:not(.theme-light) .summary-card h2,
+:root.theme-dark .summary-card h2 {
+  color: #f1cf85; border-bottom-color: #6a5a40;
+}
+:root:not(.theme-light) .summary-card.eliminated h2,
+:root.theme-dark .summary-card.eliminated h2 {
+  color: #e89090; border-bottom-color: #6a3030;
+}
+:root:not(.theme-light) .summary-card.active h2,
+:root.theme-dark .summary-card.active h2 {
+  color: #b8a8e0; border-bottom-color: #5a4a8a;
+}
+:root:not(.theme-light) .summary-card .bottom-line,
+:root.theme-dark .summary-card .bottom-line { color: #e8dfc8; }
+:root:not(.theme-light) .summary-card .bottom-line strong,
+:root.theme-dark .summary-card .bottom-line strong { color: #f4ead0; }
+:root:not(.theme-light) .summary-card .charles-link,
+:root.theme-dark .summary-card .charles-link {
+  background: rgba(212,160,23,0.16); color: #e8dfc8;
+}
+:root:not(.theme-light) .summary-card.eliminated .charles-link,
+:root.theme-dark .summary-card.eliminated .charles-link {
+  background: rgba(232,144,144,0.14); border-left-color: #c87070;
+}
+:root:not(.theme-light) .summary-card.active .charles-link,
+:root.theme-dark .summary-card.active .charles-link {
+  background: rgba(184,168,224,0.14); border-left-color: #b8a8e0;
+}
+:root:not(.theme-light) .summary-card .charles-link strong,
+:root.theme-dark .summary-card .charles-link strong { color: #f4ead0; }
+:root:not(.theme-light) .summary-card.eliminated .charles-link strong,
+:root.theme-dark .summary-card.eliminated .charles-link strong { color: #e89090; }
+:root:not(.theme-light) .summary-card.active .charles-link strong,
+:root.theme-dark .summary-card.active .charles-link strong { color: #b8a8e0; }
+:root:not(.theme-light) .summary-card .qf,
+:root.theme-dark .summary-card .qf {
+  background: #2c261d; border-color: #6a5a40;
+}
+:root:not(.theme-light) .summary-card .qf .qf-label,
+:root.theme-dark .summary-card .qf .qf-label { color: #d8b366; }
+:root:not(.theme-light) .summary-card .qf .qf-value,
+:root.theme-dark .summary-card .qf .qf-value { color: #e8dfc8; }
+
+/* ---- Research-log details ---- */
+:root:not(.theme-light) details.research-log,
+:root.theme-dark details.research-log {
+  background: #24201a; border-color: #6a5a40;
+}
+:root:not(.theme-light) details.research-log > summary,
+:root.theme-dark details.research-log > summary {
+  background: linear-gradient(140deg, #2c261d, #24201a);
+  color: #f4ead0;
+}
+:root:not(.theme-light) details.research-log[open] > summary,
+:root.theme-dark details.research-log[open] > summary {
+  border-bottom-color: #6a5a40;
+}
+:root:not(.theme-light) details.research-log > summary::before,
+:root.theme-dark details.research-log > summary::before { color: #d8b366; }
+:root:not(.theme-light) details.research-log > summary .log-meta,
+:root.theme-dark details.research-log > summary .log-meta { color: #c8b896; }
+
+
+/* ---- update-callout (★ May 2026 update boxes etc.) ---- */
+:root:not(.theme-light) .update-callout,
+:root.theme-dark .update-callout {
+  background: #24201a !important;
+  border-color: #c87a30 !important;
+  color: #e8dfc8;
+}
+:root:not(.theme-light) .update-callout.green,
+:root.theme-dark .update-callout.green {
+  background: #1e2618 !important;
+  border-color: #5a8a4a !important;
+}
+:root:not(.theme-light) .update-callout.amber,
+:root.theme-dark .update-callout.amber {
+  background: #2c261d !important;
+  border-color: #d8b366 !important;
+}
+:root:not(.theme-light) .update-callout h5,
+:root.theme-dark .update-callout h5 { color: #e89060; }
+:root:not(.theme-light) .update-callout.green h5,
+:root.theme-dark .update-callout.green h5 { color: #a8d090; }
+:root:not(.theme-light) .update-callout.amber h5,
+:root.theme-dark .update-callout.amber h5 { color: #f1cf85; }
+:root:not(.theme-light) .update-callout strong,
+:root.theme-dark .update-callout strong { color: #f4ead0; }
+:root:not(.theme-light) .update-callout em,
+:root.theme-dark .update-callout em { color: #d8c8a0; }
+:root:not(.theme-light) .update-callout a,
+:root.theme-dark .update-callout a { color: #f1cf85; }
+:root:not(.theme-light) .update-callout table thead,
+:root.theme-dark .update-callout table thead {
+  background: #3a2820 !important;
+}
+:root:not(.theme-light) .update-callout table th,
+:root:not(.theme-light) .update-callout table td,
+:root.theme-dark .update-callout table th,
+:root.theme-dark .update-callout table td {
+  border-bottom-color: #6a4838;
+  color: #e8dfc8;
+}
+
+/* ---- Citation tables (.cite-table) ---- */
+:root:not(.theme-light) table.cite-table,
+:root.theme-dark table.cite-table {
+  color: #e8dfc8;
+}
+:root:not(.theme-light) table.cite-table thead,
+:root.theme-dark table.cite-table thead {
+  background: #3a2f1e !important;
+  color: #f1cf85;
+}
+:root:not(.theme-light) table.cite-table thead th,
+:root.theme-dark table.cite-table thead th {
+  border-bottom-color: #6a5a40;
+  color: #f1cf85;
+}
+:root:not(.theme-light) table.cite-table tbody td,
+:root.theme-dark table.cite-table tbody td {
+  border-bottom-color: #3c352a;
+}
+
+/* ---- kfs-grand grandparent rows + subhead variants ---- */
+:root:not(.theme-light) .kfs-grand,
+:root.theme-dark .kfs-grand {
+  background: #2c261d !important;
+  border-left-color: #b48a3a;
+  color: #d8c8a0;
+}
+:root:not(.theme-light) .subhead,
+:root.theme-dark .subhead { color: #d8b366; }
+:root:not(.theme-light) .subhead-amber,
+:root.theme-dark .subhead-amber { color: #f1cf85; }
+:root:not(.theme-light) .subhead-large,
+:root.theme-dark .subhead-large { color: #f1cf85; }
+
+/* ---- Catch-all for INLINE style="background:#fff..." attributes ----
+   Some family pages (fam-herwig, fam-quentin, fam-grandjot) hardcode
+   cream backgrounds directly on individual elements. CSS specificity
+   normally can't beat inline styles, but attribute selectors + !important
+   can. */
+:root:not(.theme-light) [style*="background:#fff"],
+:root:not(.theme-light) [style*="background: #fff"],
+:root:not(.theme-light) [style*="background:#f6"],
+:root:not(.theme-light) [style*="background: #f6"],
+:root:not(.theme-light) [style*="background:#fbf"],
+:root:not(.theme-light) [style*="background: #fbf"],
+:root:not(.theme-light) [style*="background:#fdf"],
+:root:not(.theme-light) [style*="background: #fdf"],
+:root:not(.theme-light) [style*="background:#fef"],
+:root:not(.theme-light) [style*="background: #fef"],
+:root:not(.theme-light) [style*="background:#fae"],
+:root:not(.theme-light) [style*="background: #fae"],
+:root:not(.theme-light) [style*="background:#fce"],
+:root:not(.theme-light) [style*="background: #fce"],
+:root.theme-dark [style*="background:#fff"],
+:root.theme-dark [style*="background: #fff"],
+:root.theme-dark [style*="background:#f6"],
+:root.theme-dark [style*="background: #f6"],
+:root.theme-dark [style*="background:#fbf"],
+:root.theme-dark [style*="background: #fbf"],
+:root.theme-dark [style*="background:#fdf"],
+:root.theme-dark [style*="background: #fdf"],
+:root.theme-dark [style*="background:#fef"],
+:root.theme-dark [style*="background: #fef"],
+:root.theme-dark [style*="background:#fae"],
+:root.theme-dark [style*="background: #fae"],
+:root.theme-dark [style*="background:#fce"],
+:root.theme-dark [style*="background: #fce"] {
+  background: #24201a !important;
+  color: #e8dfc8 !important;
+  border-color: #6a5a40 !important;
+}
+/* END-DARK-MODE-BODY-OVERRIDE */

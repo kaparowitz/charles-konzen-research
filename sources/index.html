@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Primary Sources — Online Viewer Index — Charles Research</title>
+<meta name="description" content="Index of every primary-source document imaged on the Charles Research site: NARA service record and pension file pages, Archion parish-register scans, St. Marcus baptism and death entries, and Peter Schräder's Stammtafel charts.">
+<link rel="canonical" href="https://charles-research.netlify.app/sources/">
+<link rel="stylesheet" href="_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  .source-list { display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap:0.8rem; margin-top:0.8rem; }
+  .src-card { background:#fffaf0; border:1px solid #d8c8a8; border-left:4px solid #d8b366; border-radius:4px; padding:0.8rem 1rem; text-decoration:none; color:inherit; display:block; transition:all 0.15s; }
+  .src-card:hover { transform: translateY(-2px); box-shadow:0 4px 14px rgba(0,0,0,0.12); border-bottom:1px solid #d8c8a8; }
+  .src-card h3 { color:#1f1a14; font-size:1.0rem; margin-bottom:0.3rem; }
+  .src-card .doc-type { font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.06em; color:#8a6420; font-weight:700; margin-bottom:0.3rem; }
+  .src-card .desc { font-size:0.85rem; color:#5a4a32; }
+  /* Dark-mode overrides for .src-card — added 10 May 2026.
+     The defaults above hardcode the cream/brown palette that
+     goes invisible on the dark theme. These rules invert it
+     using the same theme tokens as dark-mode.css?v=20260518-legenddots */
+  :root.theme-dark .src-card {
+    background: #24201a;
+    border-color: #6a5a40;
+    color: #e8dfc8;
+  }
+  :root.theme-dark .src-card:hover {
+    background: #2a2519;
+    border-bottom-color: #6a5a40;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  }
+  :root.theme-dark .src-card h3 { color: #f1cf85; }
+  :root.theme-dark .src-card .doc-type { color: #fadea0; }
+  :root.theme-dark .src-card .desc { color: #e8dfc8; }
+  :root.theme-dark .src-card strong { color: #fadea0; }
+  :root.theme-dark .src-card em { color: #c8b896; }
+  @media (prefers-color-scheme: dark) {
+    html:not(.theme-light) .src-card {
+      background: #24201a;
+      border-color: #6a5a40;
+      color: #e8dfc8;
+    }
+    html:not(.theme-light) .src-card:hover {
+      background: #2a2519;
+      border-bottom-color: #6a5a40;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+    }
+    html:not(.theme-light) .src-card h3 { color: #f1cf85; }
+    html:not(.theme-light) .src-card .doc-type { color: #fadea0; }
+    html:not(.theme-light) .src-card .desc { color: #e8dfc8; }
+    html:not(.theme-light) .src-card strong { color: #fadea0; }
+    html:not(.theme-light) .src-card em { color: #c8b896; }
+  }
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  </style>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/sources/index.html#article",
+  "headline": "Primary Sources — Online Viewer Index",
+  "url": "https://charles-research.netlify.app/sources/index.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17"
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+<meta property="og:url" content="https://charles-research.netlify.app/sources/index.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/sources.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/sources.png">
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="src-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#archive">Source Archive</a> &nbsp;/&nbsp; Primary Source Viewer Index</div>
+  <h1>Primary Sources — Online Viewer Index</h1>
+  <div class="sub">Each primary source has its own webpage with the original document embedded inline plus a transcribed-key-facts summary — readable in any browser, no downloads required.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="section">
+  <h2>U.S. records about Charles Gannsen</h2>
+  <div class="source-list">
+    <a class="src-card" href="military-record.html">
+      <div class="doc-type">Civil War record · 1862</div>
+      <h3>Charles Gannsen Military Record</h3>
+      <div class="desc">Enlistment record · Co. G (as written on the enlistment card; Battery B in all later records) · "L. Charles Gannsen, age 23, born Freundburg, Kurhessen." Doc&nbsp;O on the 2020 journal index.</div>
+    </a>
+    <a class="src-card" href="fold3-service-records.html">
+      <div class="doc-type">Civil War record · NARA M405 · 25 pp.</div>
+      <h3>Fold3 / NARA M405 — Compiled Service Records</h3>
+      <div class="desc">Complete carded-record series for Charles 1862–1865 — bi-monthly muster cards, promotion cards, muster-out card. Companion to Doc&nbsp;O. Fold3 image #228767500.</div>
+    </a>
+    <a class="src-card" href="pension-file.html">
+      <div class="doc-type">Civil War pension file · 40 pp.</div>
+      <h3>F41-523680269E — Pension File</h3>
+      <div class="desc">The richest U.S.-side primary source. Service, family roster, address chain (1865–1903), medical exams, death notification. Doc&nbsp;M on the 2020 journal index.</div>
+    </a>
+    <a class="src-card" href="naturalization-record.html">
+      <div class="doc-type">Naturalization · image</div>
+      <h3>Naturalization Record</h3>
+      <div class="desc">Image scan of Charles's naturalization document. Cross-referenced by the 1900 census's "naturalized" notation.</div>
+    </a>
+    <a class="src-card" href="death-certificate.html">
+      <div class="doc-type">Civil vital record · 1903</div>
+      <h3>Death Certificate — no. 10619</h3>
+      <div class="desc">City of St.&nbsp;Louis Certificate of Death for Charles Johnson, recording death 17 Dec 1903 — age 69, occupation <em>watchman</em>, 40 yrs in U.S., stomach cancer, last residence 168 Sidney St. Doc&nbsp;A; civil counterpart to the St.&nbsp;Marcus burial #3393, whose register records the death as 16 Dec 1903 — the project adopts the parish date as its working anchor and logs the 1-day discrepancy on the <a href="death-certificate.html">death-certificate crosswalk</a>.</div>
+    </a>
+    <a class="src-card" href="project-attachment-3.html">
+      <div class="doc-type">Civil War service · Fold3 image</div>
+      <h3>Project Attachment 3</h3>
+      <div class="desc">Ancillary Civil-War-era scan referenced in early research papers; sourced from Fold3 image 303326269.</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>German records — Deisel parish</h2>
+  <div class="source-list">
+    <a class="src-card" href="entry-195-baptism.html">
+      <div class="doc-type">Archion image · Deisel KB&nbsp;218842</div>
+      <h3>Entry 195 — January 1835 Baptism</h3>
+      <div class="desc">High-resolution scan of Deisel KB 218842 Entry 195 &mdash; once the leading-hypothesis baptism record, but <strong>retracted 4 May 2026</strong> (re-read as a Köster day-labourer's child who died unbaptised); retained for the record. Sent to and discussed with Peter Schräder 26&nbsp;April 2026. See <a href="../errata.html#er-2026-05-25-rigor-pass">errata &middot; 25 May 2026</a>.</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Peter Schräder's compiled charts</h2>
+  <div class="source-list">
+    <a class="src-card" href="peter-bonhagen.html">
+      <div class="doc-type">Family chart · Deisel</div>
+      <h3>Bonhagen Family</h3>
+      <div class="desc">Ludwig Bonhagen × Katharina Elisabeth Leimbach, Deisel. Nine children incl. Wilhelm Heinrich (b. 24 Jan 1835).</div>
+    </a>
+    <a class="src-card" href="peter-friedhof-trendelburg.html">
+      <div class="doc-type">Gravestone list</div>
+      <h3>Jewish Graveyard at Trendelburg</h3>
+      <div class="desc">Identified gravestones at the Trendelburg Jewish cemetery, compiled during the now set-aside Jewish-paternal-line inquiry.</div>
+    </a>
+    <a class="src-card" href="peter-gans-meimbressen.html">
+      <div class="doc-type">Family chart · Jewish · Meimbressen</div>
+      <h3>Gans Family in Meimbressen</h3>
+      <div class="desc">Isaac Gans &amp; Lea Auerbach family — emigrated to America 1854. Relevant to the Gans-surname line of inquiry.</div>
+    </a>
+    <a class="src-card" href="peter-haake.html">
+      <div class="doc-type">Family chart · Trendelburg / Deisel</div>
+      <h3>Haake / Haacke Family</h3>
+      <div class="desc">Trendelburg-Deisel-Wülmersen Haacke family with linked Gans (Lippoldsberg) descent.</div>
+    </a>
+    <a class="src-card" href="peter-person.html">
+      <div class="doc-type">Family chart · Wehrden / Deisel</div>
+      <h3>Person Family</h3>
+      <div class="desc">Carl Ludwig Person sr. (1777–1839) and his Deppe second-marriage line. Investigated and ruled out as a candidate family.</div>
+    </a>
+    <a class="src-card" href="peter-jewish-citizen-1740.html">
+      <div class="doc-type">Citizen list · 1740</div>
+      <h3>Jewish Citizens of Trendelburg, 1740</h3>
+      <div class="desc">Earliest documented list of Jewish citizens in Trendelburg; includes a Seelmann (Seligmann) Gandt entry.</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Foundational research report</h2>
+  <div class="source-list">
+    <a class="src-card" href="../AncestryProGenealogists_Journal_June2020.pdf">
+      <div class="doc-type">Research journal · 11 pp. · June 2020</div>
+      <h3>AncestryProGenealogists Research Journal</h3>
+      <div class="desc">Full web edition of the 11-page 2020 research journal. Every source consulted, every finding, the full Doc&nbsp;A–O appendix. The foundational document where "Deisse → Deisel" was first proposed.</div>
+    </a>
+  </div>
+</section>
+
+<footer class="back-nav">
+  <a href="../index.html#archive">← Back to Source Archive</a>
+  <a href="../index.html">Site home</a>
+</footer>
+
+</main>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

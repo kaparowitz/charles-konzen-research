@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Investigation Session Notes — Charles Immigration</title>
+<link rel="canonical" href="https://charles-research.netlify.app/immigration/session-notes.html">
+<link rel="stylesheet" href="_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  .doc-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(360px, 1fr)); gap:0.8rem; margin-top:0.6rem; }
+  .doc-card { background:#fffaf0; border:1px solid #d8c8a8; border-left:4px solid #3a5a8c; border-radius:6px; padding:1rem 1.1rem; transition:all 0.15s; }
+  .doc-card:hover { background:#eef0f5; border-left-color:#243f66; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+  .doc-card .doc-type { font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.06em; color:#243f66; font-weight:700; margin-bottom:0.3rem; }
+  .doc-card .doc-title { font-size:1.05rem; font-weight:700; color:#1f1a14; margin:0 0 0.4rem; }
+  .doc-card .doc-title a { color:#1f1a14; text-decoration:none; border-bottom:1px dotted #c9a76a; }
+  .doc-card .doc-title a:hover { color:#243f66; }
+  .doc-card .doc-desc { font-size:0.88rem; color:#4a3a22; line-height:1.5; margin-bottom:0.5rem; }
+  .source-links { font-size:0.78rem; color:#5a4a32; padding-top:0.4rem; border-top:1px solid #ede4d0; }
+  .source-links strong { display:block; color:#243f66; margin-bottom:0.2rem; font-size: 0.78rem; text-transform:uppercase; letter-spacing:0.05em; }
+  .source-links a { display:inline-block; margin:0 0.3rem 0.2rem 0; padding:0.1rem 0.4rem; background:#eef0f5; border-radius:2px; color:#243f66; }
+  .source-links a:hover { background:#cfd8e8; }
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  </style>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Charles Research">
+  <meta property="og:title" content="Investigation Session Notes — Charles Gannsen Immigration">
+  <meta property="og:description" content="Five session notes from the April 2026 immigration-investigation arc, plus one standing master document. The session work concentrated on the Hildebrand-cohort lead (Sessions 75–77), the Carl Kinzer/Krieger 1859 Liverpool manifest investigation (Session 78), and the FamilySearch Charles Johnson Sr. ">
+  <meta property="og:url" content="https://charles-research.netlify.app/immigration/session-notes.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/immigration.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/immigration.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Investigation Session Notes — Charles Gannsen Immigration">
+  <meta name="twitter:description" content="Five session notes from the April 2026 immigration-investigation arc, plus one standing master document. The session work concentrated on the Hildebrand-cohort lead (Sessions 75–77), the Carl Kinzer/Krieger 1859 Liverpool manifest investigation (Session 78), and the FamilySearch Charles Johnson Sr. ">
+  <meta name="description" content="Five session notes from the April 2026 immigration-investigation arc, plus one standing master document. The session work concentrated on the Hildebrand-cohort lead (Sessions 75–77), the Carl Kinzer/Krieger 1859 Liverpool manifest investigation (Session 78), and the FamilySearch Charles Johnson Sr. ">
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/immigration/session-notes.html#article",
+  "headline": "Immigration research-session notes — Charles Research",
+  "description": "Working log of immigration-side research sessions: what was searched, what was found, what was ruled out.",
+  "datePublished": "2026-04-15",
+  "dateModified": "2026-05-12",
+  "url": "https://charles-research.netlify.app/immigration/session-notes.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Immigration Journey",
+      "item": "https://charles-research.netlify.app/immigration/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Session Notes"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="im-hero cinema-section-hero" data-tone="crossing">
+  <div class="crumbs"><a href="../index.html#immigration">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#immigration">Immigration Journey</a> &nbsp;/&nbsp; Investigation Session Notes</div>
+  <h1>Investigation Session Notes</h1>
+  <div class="sub">Sessions 69, 75, 76, 77, 78 · Hildebrand &amp; passenger-manifest investigation · April 2026</div>
+  <div class="meta-row"><span class="badge battery">IMMIGRATION JOURNEY</span><span class="date">5 session notes · 1 standing master document</span></div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="summary-card">
+  <h2>★ At a Glance</h2>
+  <p class="bottom-line">Five session notes from the April 2026 immigration-investigation arc, plus one standing master document. The session work concentrated on the Hildebrand-cohort lead (Sessions 75–77), the Carl Kinzer/Krieger 1859 Liverpool manifest investigation (Session 78), and the FamilySearch Charles Johnson Sr. profile cataloguing (Session 69). Each linked note captures the original session's findings, screenshots, and follow-up actions.</p>
+</section>
+
+<h2>Investigation session notes</h2>
+<div class="doc-grid">
+  <div class="doc-card">
+    <div class="doc-type">Session note · Apr 27 2026</div>
+    <div class="doc-title"><span>Session 77 — Ancestry Hildebrand passenger investigation</span> ↗</div>
+    <div class="doc-desc">Found the Wilhelmine Maria Hildebrand 1853 manifest (President Smidt). Surfaced and short-listed the Carl Kinzer 1859 candidate.</div>
+    <div class="source-links"><strong>External sources used</strong><a href="https://www.ancestry.com/search/collections/7488/" target="_blank" rel="noopener noreferrer">Ancestry NY arrivals 1820–1957</a><a href="https://www.lagis-hessen.de/de/subjects/index/sn/auswanderer" target="_blank" rel="noopener noreferrer">LAGIS Hessen Auswanderer</a></div>
+  </div>
+  <div class="doc-card">
+    <div class="doc-type">Session note · Apr 27 2026</div>
+    <div class="doc-title"><span>Session 78 — Manifest, pension, St. Marcus investigation</span> ↗</div>
+    <div class="doc-desc">Inspected the original Carl Kinzer manifest image — surname is actually KRIEGER. Eliminated the leading 1859 candidate.</div>
+    <div class="source-links"><strong>External sources used</strong><a href="https://www.ancestry.com/search/collections/7488/" target="_blank" rel="noopener noreferrer">Ancestry NY arrivals — Resolute manifest 20 Dec 1859</a><a href="../F41-523680269E%20%20Pvt.%20Charles%20Gannson%20%20Full%20Pension%20File-Civil%20War%20%20COMPLETE%20FILE.pdf" target="_blank" rel="noopener noreferrer">Pension file (witness network cross-ref)</a></div>
+  </div>
+  <div class="doc-card">
+    <div class="doc-type">Session note · Apr 27 2026</div>
+    <div class="doc-title"><span>Session 75 — Hildebrand St. Louis &amp; Rockford search</span> ↗</div>
+    <div class="doc-desc">Located the 1850 Ludwig Hildebrand cohort in Monroe Township, Ogle County IL. Established the chain-migration hypothesis.</div>
+    <div class="source-links"><strong>External sources used</strong><a href="https://www.familysearch.org/search/record/results?q.givenName=Ludwig&amp;q.surname=Hildebrand&amp;q.birthLikePlace=Deisel" target="_blank" rel="noopener noreferrer">FamilySearch · Hildebrand Deisel</a><a href="https://www.stlgs.org/" target="_blank" rel="noopener noreferrer">St. Louis Genealogical Society</a><a href="https://www.wikitree.com/wiki/Hildebrand-1043" target="_blank" rel="noopener noreferrer">WikiTree · Hildebrand line</a></div>
+  </div>
+  <div class="doc-card">
+    <div class="doc-type">Session note · Apr 27 2026</div>
+    <div class="doc-title"><span>Session 76 — LAGIS / St. Marcus investigation</span> ↗</div>
+    <div class="doc-desc"><a class="glossary-link" href="../glossary.html#g-lagis" title="Glossary: LAGIS">LAGIS</a> Hessian emigration index queried under every name variant. Negative for Charles.</div>
+    <div class="source-links"><strong>External sources used</strong><a href="https://www.lagis-hessen.de/de/subjects/index/sn/auswanderer" target="_blank" rel="noopener noreferrer">LAGIS Hessen Auswanderer</a><a href="https://www.familysearch.org/search/catalog/results?count=20&amp;query=%2Bcollection_place%3A%22United%20States%2C%20Missouri%2C%20St.%20Louis%22%20%2Bsubject%3A%22church%20records%22" target="_blank" rel="noopener noreferrer">FamilySearch · St. Louis church records</a></div>
+  </div>
+  <div class="doc-card">
+    <div class="doc-type">Investigation document · Apr 12 2026</div>
+    <div class="doc-title"><a href="../notes_view/Kontze_Family_Tree_and_Research_Paths.html">Kontze Family Tree &amp; Research Paths</a> ↗</div>
+    <div class="doc-desc">The standing master document tracking every emigration hypothesis, name-variant test, and follow-up lead. Continually updated through the Hildebrand investigation arc.</div>
+    <div class="source-links"><strong>External sources referenced</strong><a href="https://www.familysearch.org/tree/person/details/LZXC-6GB" target="_blank" rel="noopener noreferrer">FamilySearch · Charles Johnson Sr. (LZXC-6GB)</a><a href="https://www.archion.de/" target="_blank" rel="noopener noreferrer">Archion · Hessen parish records</a></div>
+  </div>
+  <div class="doc-card">
+    <div class="doc-type">Session note · Apr 26 2026</div>
+    <div class="doc-title"><span>Session 69 — FamilySearch · Charles Johnson Sr.</span> ↗</div>
+    <div class="doc-desc">Cataloged every name spelling Charles appears under in indexed records (Gonson, Gannsen, Gannson, Gonnson, Johnson) and the addresses associated with each.</div>
+    <div class="source-links"><strong>External sources used</strong><a href="https://www.familysearch.org/tree/person/details/LZXC-6GB" target="_blank" rel="noopener noreferrer">FamilySearch · LZXC-6GB</a><a href="https://www.familysearch.org/search/record/results?q.givenName=Charles&amp;q.surname=Gannsen&amp;q.residencePlace=St.%20Louis" target="_blank" rel="noopener noreferrer">FamilySearch · 1900 census Charles Gannsen</a></div>
+  </div>
+</div>
+
+</main>
+
+<footer class="back-nav">
+  <a href="../index.html#immigration">↩ Back to Immigration Journey on the main site</a>
+</footer>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Peter's Charts — Download Checklist</title>
+<link rel="canonical" href="https://charles-research.netlify.app/peter_charts_download_checklist.html">
+<meta name="description" content="Internal working checklist tracking which Stammtafel scans and parish-record images have been downloaded from Peter Schräder's research and integrated into the project archive.">
+<meta name="robots" content="noindex, follow">
+<style>
+  body { font-family: var(--font-serif); background: #f6f1e7; color: #2c2620; padding: 2rem; max-width: 1100px; margin: 0 auto; line-height: 1.5; }
+  h1 { color: #1f1a14; border-bottom: 2px solid #d8b366; padding-bottom: 0.5rem; }
+  p { margin-bottom: 0.8rem; }
+  .instructions { background: #fffaf0; border: 1px solid #d8b366; padding: 1rem 1.4rem; border-radius: 4px; margin: 1rem 0 2rem; }
+  .instructions ol { padding-left: 1.4rem; }
+  .instructions li { margin-bottom: 0.4rem; }
+  .row {
+    display: flex;
+    align-items: flex-start;
+    background: #fffaf0;
+    border: 1px solid #d8c8a8;
+    border-left: 4px solid #c9a76a;
+    border-radius: 4px;
+    padding: 0.9rem 1.1rem;
+    margin-bottom: 0.7rem;
+    gap: 1rem;
+  }
+  .row.eliminated { border-left-color: #8a4a4a; }
+  .row.open { border-left-color: #d8b366; background: #fffaee; }
+  .row.active { border-left-color: #8a7ac0; background: #f5eef8; }
+  .check {
+    flex: 0 0 28px;
+    height: 28px;
+    border: 2px solid #c9a76a;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    user-select: none;
+    background: #fff;
+  }
+  .check.done { background: #5a8a4a; border-color: #5a8a4a; color: #fff; }
+  .body { flex: 1 1 auto; }
+  .num { display: inline-block; width: 1.6rem; color: #8a6420; font-weight: 700; }
+  .fam { font-weight: 700; color: #3a2f1e; font-size: 1.05rem; }
+  .meta { font-size: 0.84rem; color: #6a5a42; font-style: italic; }
+  .desc { font-size: 0.88rem; color: #5a4a32; margin-top: 0.2rem; }
+  a.gmail-link {
+    display: inline-block;
+    margin-top: 0.4rem;
+    padding: 4px 10px;
+    background: #d8b366;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  a.gmail-link:hover { background: #b8881a; }
+  .progress {
+    position: sticky;
+    top: 0;
+    background: #2c2620;
+    color: #d8b366;
+    padding: 0.6rem 1rem;
+    margin: -2rem -2rem 1.5rem;
+    text-align: center;
+    font-weight: 700;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    z-index: 10;
+  }
+  .progress span { color: #f6f1e7; }
+  footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #d8c8a8; font-size: 0.85rem; color: #8a7858; }
+</style>
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Peter Charts Download Checklist"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/peter_charts_download_checklist.html#article",
+  "headline": "Peter's Charts — Download Checklist",
+  "url": "https://charles-research.netlify.app/peter_charts_download_checklist.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17",
+  "description": "Internal working checklist tracking which Stammtafel scans and parish-record images have been downloaded from Peter Schräder's research and integrated into the project archive."
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+<meta property="og:url" content="https://charles-research.netlify.app/peter_charts_download_checklist.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<div class="progress">DOWNLOAD CHECKLIST &nbsp;·&nbsp; <span id="prog">0 / 21</span> complete &nbsp;·&nbsp; <span style="color:#f6f1e7;">18 of 21 already in <code style="background:rgba(255,255,255,0.12);padding:1px 4px;border-radius:3px;color:#f6f1e7;">peter_charts/</code></span></div>
+
+<h1>Peter Schräder's family-chart attachments — download checklist</h1>
+
+<p>I identified the latest attachment per candidate family in your Gmail correspondence with Peter (Aug 2025 – Apr 2026). Click each "Open in Gmail" button below — Gmail opens that thread, scroll down to find Peter's email with the attachment(s), and click the download icon on the attachment thumbnail. Click the checkbox to track progress.</p>
+
+<div class="instructions bg-germany-tint">
+  <strong>Status as of 28 April 2026:</strong>
+  <p style="margin:0.4rem 0 0.2rem;">Items <strong>1, 3–11, 13–20</strong> are downloaded and integrated into the family-file panels of <code>index.html</code>. <strong>Three items still need attention:</strong></p>
+  <ul style="padding-left:1.4rem; margin:0.3rem 0;">
+    <li><strong>#2 Herwig</strong> — both attachments still need downloading.</li>
+    <li><strong>#12 Janson</strong> — original Gmail link in this checklist pointed to a reply with no attachment. <strong>Corrected link below.</strong></li>
+    <li><strong>#21 First Charles chart</strong> — the Gmail link works but I couldn't identify the corresponding file in <code>peter_charts/</code>. May be one of the <code>IMG_7162.jpeg</code> duplicates already present.</li>
+  </ul>
+</div>
+
+<div class="instructions">
+  <strong>Recommended workflow:</strong>
+  <ol>
+    <li>Create a folder <code>peter_charts/</code> inside <code>Charles Research/</code>.</li>
+    <li>Set Chrome's download location to that folder (Chrome &rarr; Settings &rarr; Downloads &rarr; Change). <em>Or</em> let everything go to <code>~/Downloads</code> and move them after.</li>
+    <li>Click each "Open in Gmail" button below in order. In each thread, scroll if needed to find the attachment from Peter, hover over the thumbnail, click the downward-arrow icon to download.</li>
+    <li>When done, tell me and I'll integrate the charts into the family-file panels on the website.</li>
+  </ol>
+</div>
+
+<!-- Each row: status class · checkbox · gmail link · description -->
+
+<div class="row open" data-i="1"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">1.</span><span class="fam">KONZE / KONTZE</span> <span class="meta">— 7 Apr 2026 · "Andreas Konze"</span><div class="desc"><a class="glossary-link" href="glossary.html#g-stammtafel" title="Glossary: Stammtafel">Stammtafel</a> Johann Friedrich Kontze.jpg — Andreas Konze line · Hofeditz · handicapped daughter · Mainz death</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19d6891e20f663a3" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="2"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">2.</span><span class="fam">HERWIG</span> <span class="meta">— 26 Mar 2026 · "Carl Ludwig Herwig"</span><div class="desc">2 attachments: bap Carl Louis Herwig 1830.jpg + conf Caarl Ludwig Herwig TB 1845.jpg (use "Download all attachments")</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19d2b6a5789c1e17" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="3"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">3.</span><span class="fam">GRANDJOT</span> <span class="meta">— 6 Mar 2026 · "overview"</span><div class="desc">Stammtafel neu.jpg + emigration 1855.jpg + 3 x emmigration 1857.jpg — Grandjot/Herwig family</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19cc2618dd86c802" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="4"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">4.</span><span class="fam">QUENTIN</span> <span class="meta">— 22 Apr 2026 · "Elise AUGUSTE Quentin"</span><div class="desc">Latest Quentin family overview · search for Elise Auguste 1834 baptism</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19db5c8bffda2271" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="5"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">5.</span><span class="fam">LUCAS</span> <span class="meta">— 13 Apr 2026 · "Re: new candidate"</span><div class="desc">Carl Ludwig Lucas marriage record — closes the Lucas line</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19d85d1362e60834" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="6"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">6.</span><span class="fam">HUND</span> <span class="meta">— 31 Mar 2026 · "9.3"</span><div class="desc">Friedrich August Hund baptism record (#125)</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19d43f751db1202f" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="7"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">7.</span><span class="fam">CAROLINA PHILIPPINE</span> <span class="meta">— 31 Mar 2026 · "confirmation"</span><div class="desc">1851 confirmation record proving she lived</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19d43d4af42d8b6e" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="8"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">8.</span><span class="fam">GANS / SEGELBAUM (Jewish, Meimbressen)</span> <span class="meta">— 24 Mar 2026 · "Meimbressen"</span><div class="desc">Jewish Gans family file from Hofgeismar <a class="glossary-link" href="glossary.html#g-kirchenkreis" title="Glossary: Kirchenkreis">Kirchenkreis</a></div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19d1f0f6fb719e1d" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row active" data-i="9"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">9.</span><span class="fam">STERN / KLEEBURG (set-aside thread)</span> <span class="meta">— 18 Mar 2026 · "graveyard"</span><div class="desc">Trendelburg Jewish graveyard survey</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19d025cadead45af" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row open" data-i="10"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">10.</span><span class="fam">OTHER HESSIAN JEWISH</span> <span class="meta">— 19 Mar 2026 · "puzzle pieces"</span><div class="desc">Trendelburg/Eberschütz Jewish residents · Solomon Gandt · Jeanette Gans</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19d0750e39ed8312" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="11"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">11.</span><span class="fam">BRANSON / FRISSE / BAUER</span> <span class="meta">— 11 Feb 2026 · "new overview"</span><div class="desc">Latest Bransuhn-clan family overview (Wehrden / Schönhagen / Amelunxen)</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19c4d8873ce4dea4" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="12"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">12.</span><span class="fam">JANSON</span> <span class="meta">— 27 Nov 2025 · "Janson Hofgeismar" <span style="color:#8a4a4a;">(corrected — old link pointed to a reply with no attachment)</span></span><div class="desc">Hofgeismar Janson family tree (Johann Heinrich, Wilhelmine Luc, six children)</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19ac6b315f66ce56" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="13"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">13.</span><span class="fam">PERSON ("French Count" line)</span> <span class="meta">— 27 Dec 2025 · "the Persons"</span><div class="desc">Wehrden Person family overview · Carl Ludwig Person sr. theory</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19b5f800e1fda930" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="14"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">14.</span><span class="fam">FRENCH COUNT (picture)</span> <span class="meta">— 9 Dec 2025 · "picture of the cound"</span><div class="desc">Picture of Count Jouffroy Gonsons (Bad Nauheim probate file)</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19b03d6ac5ef2ebe" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="15"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">15.</span><span class="fam">GANS / LIPPOLSBERG (Christian)</span> <span class="meta">— 15 Dec 2025 · "Re: Haake and Gans"</span><div class="desc">Johann Daniel Gans × Karoline Haake — godparents analysis</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19b21aacd0afe418" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="16"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">16.</span><span class="fam">BONHAGEN / BODENHAUSEN</span> <span class="meta">— 23 Dec 2025 · "Re: new idea"</span><div class="desc">Bonhage(n) family in Deisel · Bodenhausen → Bonsen shorthand · Henry Bonhagen Baltimore</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19b4bd9883da15a0" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row eliminated" data-i="17"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">17.</span><span class="fam">STEITZ / HARTMANN / MEIER (Karl-firstname Deisel emigrants)</span> <span class="meta">— 29 Oct 2025 · "Re: candidates" (readable chart)</span><div class="desc">Process-of-elimination chart of all "Karl"-firstname Deisel emigrants</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19a2fb71a79a0711" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row open" data-i="18"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">18.</span><span class="fam">NAMING-VARIANT (Toeppe → Deppe)</span> <span class="meta">— 30 Dec 2025 · "changing names"</span><div class="desc">Methodology example: 1801 baptism Scharlotte Toeppe → 1836 marriage Scharlotte Deppe</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19b6ef3bda6eb56a" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row open" data-i="19"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">19.</span><span class="fam">CHARLES — master Word doc</span> <span class="meta">— 18 Feb 2026 · "Charles G"</span><div class="desc">Peter's full Word document compiling everything known about Charles up to that date</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/19c712cfb4e79efc" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row open" data-i="20"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">20.</span><span class="fam">DEISEL EMIGRANTS TILL 1859</span> <span class="meta">— 15 Oct 2025 · "Re: question"</span><div class="desc">Peter's compiled list of Deisel emigrants up to 1859 — the master reference</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/199e8572e6cd47ee" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<div class="row open" data-i="21"><div class="check" onclick="t(this)"></div><div class="body"><span class="num">21.</span><span class="fam">FIRST CHARLES CHART</span> <span class="meta">— 26 Aug 2025 · "Re: Genealogy Research"</span><div class="desc">Peter's very first attachment — initial database lookup at the start of the active research</div><a class="gmail-link" target="_blank" href="https://mail.google.com/mail/u/0/#all/198e5a129b7fb661" rel="noopener noreferrer">Open in Gmail ↗</a></div></div>
+
+<footer>
+  <p><strong>When you're done:</strong> tell me, and I'll integrate the downloaded files into the family-file panels on the website. Save them in <code>~/Documents/Claude/Projects/Charles Research/peter_charts/</code> with their original filenames.</p>
+  <p>Progress is saved in your browser only — closing this tab will reset the checkboxes.</p>
+</footer>
+
+<script>
+  function t(el) {
+    el.classList.toggle('done');
+    el.textContent = el.classList.contains('done') ? '✓' : '';
+    const done = document.querySelectorAll('.check.done').length;
+    const total = document.querySelectorAll('.check').length;
+    document.getElementById('prog').textContent = done + ' / ' + total;
+  }
+  // Pre-mark items already downloaded into peter_charts/ as of 28 April 2026
+  document.addEventListener('DOMContentLoaded', () => {
+    const done = [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20];
+    done.forEach(i => {
+      const row = document.querySelector('.row[data-i="' + i + '"] .check');
+      if (row) { row.classList.add('done'); row.textContent = '✓'; }
+    });
+    const d = document.querySelectorAll('.check.done').length;
+    const total = document.querySelectorAll('.check').length;
+    document.getElementById('prog').textContent = d + ' / ' + total;
+  });
+</script>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

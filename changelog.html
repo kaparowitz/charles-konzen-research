@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Changelog — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/changelog.html">
+<link rel="stylesheet" href="assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<meta name="description" content="A reverse-chronological log of every significant finding, transcription, identification, and structural change to the Charles Research site.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Changelog — Charles Research">
+<meta property="og:description" content="A reverse-chronological log of every significant finding and structural change to the project.">
+<meta property="og:url" content="https://charles-research.netlify.app/changelog.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/changelog.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/changelog.png">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.55; }
+
+  header.cl-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.cl-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.cl-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.cl-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; letter-spacing: 0.02em; }
+  header.cl-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 720px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  h2 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brand-dark);
+    margin: 2.4rem 0 0.8rem;
+    border-bottom: 1px solid var(--border-medium);
+    padding-bottom: 0.3rem;
+  }
+  p { margin-bottom: 0.7rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.04rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.6rem; }
+
+  .cl-entry {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 4px;
+    padding: 0.85rem 1.05rem;
+    margin: 0.7rem 0;
+  }
+  .cl-entry.major { background: linear-gradient(140deg, var(--bg-card), var(--brand-tint)); border-left-color: var(--section-civilwar); border-left-width: 5px; }
+  .cl-entry.confirmed { border-left-color: var(--status-confirmed); }
+  .cl-entry.working { border-left-color: var(--brand); }
+  .cl-entry.eliminated { border-left-color: var(--status-eliminated); }
+  .cl-entry.structure { border-left-color: var(--status-active); background: linear-gradient(140deg, var(--bg-card), var(--status-active-t)); }
+
+  .cl-head { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.3rem; }
+  .cl-date { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); white-space: nowrap; }
+  .cl-pill { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; color: #fff; white-space: nowrap; }
+  .cl-pill.confirmed  { background: var(--status-confirmed); }
+  .cl-pill.working    { background: var(--brand); color: var(--text-primary); }
+  .cl-pill.eliminated { background: var(--status-eliminated); }
+  .cl-pill.structure  { background: var(--status-active); }
+  .cl-pill.major      { background: var(--section-civilwar); }
+
+  .cl-title { font-weight: 700; color: var(--text-primary); flex: 1; min-width: 0; }
+  .cl-body { font-size: 0.92rem; color: var(--text-meta); line-height: 1.55; margin-top: 0.3rem; }
+  .cl-body a { color: var(--brand-dark); }
+
+  footer.site-foot {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.cl-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.cl-hero h1, header.cl-hero .sub, header.cl-hero .crumbs, header.cl-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+    .cl-entry { background: none; border-left-width: 2px; }
+    .cl-pill { border: 1px solid #000; color: #000 !important; background: none !important; }
+  }
+</style>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/changelog.html#article",
+  "headline": "Changelog — Charles Research",
+  "description": "Chronological log of substantive updates to the Charles Konzen investigation.",
+  "datePublished": "2026-03-29",
+  "dateModified": "2026-05-12",
+  "url": "https://charles-research.netlify.app/changelog.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Changelog"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="cl-hero cinema-section-hero">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; Changelog</div>
+  <h1>Changelog</h1>
+  <div class="sub">A reverse-chronological log of every significant finding, transcription, identification, and structural change to the project. Latest at the top. Each entry is anchored by date so collaborators can cite a specific version.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">The home page carries the latest three or four findings as a feed; this page is the canonical archive. Entries are tagged by confidence: <span class="cl-pill confirmed">Confirmed</span> means a primary source is attached, <span class="cl-pill working">Working</span> is the leading current hypothesis, <span class="cl-pill eliminated">Eliminated</span> is a candidate ruled out, and <span class="cl-pill structure">Structure</span> records site- and methodology-level changes.</p>
+
+<h2 id="2026-06">June 2026</h2>
+
+<article class="cl-entry confirmed" id="cl-2026-06-21-surname-trail-nine">
+  <div class="cl-head">
+    <span class="cl-date">21 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Surname trail expanded from <strong>eight to nine</strong> attestations &mdash; the 1895 Gould&rsquo;s St.&nbsp;Louis city directory (&ldquo;Gannsen Charles, watchmaker, r.&nbsp;rear 2407&nbsp;DeKalb&rdquo;) is added to the canon, with the first trace of a son, Charles&nbsp;Jr.</span>
+  </div>
+  <div class="cl-body">
+    The single-source surname canon (<code>data/surname-attestations.json</code>) gains a <strong>ninth attestation</strong>: the 1895 Gould&rsquo;s <em>St.&nbsp;Louis Directory</em>, confirmed in-image (FamilySearch Full-Text, ark&nbsp;3QHV-V38V-568N, img&nbsp;268). Unlike the eight 1866&ndash;1896 family records, this one was supplied to a secular directory canvasser, yet still lands on the same [a]-vowel, G-stem <strong>outlier</strong> as the 1870 <em>Gansen</em> baptism &mdash; the project&rsquo;s namesake <em>Gannsen</em> form finally appearing <em>inside</em> the trail window, not only on the 1862 enlistment and 1868 naturalization Charles signed himself.
+    <strong>Cascade:</strong> regenerated the chronology and phonetic tables (<code>scripts/build-surname-trail.py</code>) and the eight evidence cards (<code>scripts/build-evidence-cards.py</code>); redrew the surname-trail figure (light + dark) with a ninth node and a 1895 tick; and propagated <strong>eight&nbsp;&rarr;&nbsp;nine</strong> spellings / attestations and <strong>two&nbsp;&rarr;&nbsp;three</strong> outliers across ~20 pages (home, abstract, methodology, FAQ, evidence index/cards, visualize, family poster, stories, the NARA / Fold3 source pages, and the <a href="germany/konzen-puzzle.html">Konzen Puzzle</a>, which also gains a dedicated 1895-directory callout). The cluster count is unchanged at six (three [ˈkɔn.sən], three [ˈɡɔn.sən]). The deploy-gate canon guard (<code>scripts/check_surname_canon.py</code> / <code>scripts/check_canon.sh</code>) was updated to the nine-count and re-run clean. The new household detail &mdash; watchmaker Charles Sr. and laborer Charles&nbsp;Jr. at rear 2407&nbsp;DeKalb &mdash; is recorded on <a href="charles_america/st-louis-residences.html">St.&nbsp;Louis Residences</a>. Logged at <a href="errata.html#er-2026-06-21-surname-trail-nine">errata &middot; 21 June 2026 &middot; surname-trail nine</a>.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-21-parish-count-reconciliation">
+  <div class="cl-head">
+    <span class="cl-date">21 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">Parishes-searched figure reconciled site-wide to <strong>36</strong> from the master coverage table; the Hessian parish map gains the seven missing parishes (Mainz, Schierstein, Dies, Diez, Gudensberg, Dissen, Grifte) and the candidate funnel is brought current (16 families &middot; 36 parishes).</span>
+  </div>
+  <div class="cl-body">
+    An audit of the &ldquo;parishes searched&rdquo; count found it stated inconsistently across the site &mdash; <strong>29</strong> on the home page, parish map, and Open Questions; <strong>32</strong> on Search Coverage and the Claims Dashboard; <strong>33</strong> on the Negative-Results audit &mdash; all of them snapshots predating the June 2026 western/northern border sweep and the Tier-3 &ldquo;Deissen&rdquo; additions. Recounting the <a href="negative-results.html#coverage-glance">master coverage table</a> (10 core + 11 adjacent + 9 western/northern + 3 toponym-alternatives + 3 Tier-3 = <strong>36</strong> distinct parishes/congregations) fixed the single canonical figure, now propagated to the <a href="index.html#germany">home-page Germany section</a>, the <a href="germany/index.html">Germany overview</a>, the <a href="germany/parish-map.html">parish map</a>, <a href="search-coverage.html">Search Coverage</a>, the <a href="claims-dashboard.html">Claims Dashboard</a>, <a href="negative-results.html">Negative Results</a> (breakdown re-itemised), <a href="open-questions.html">Open Questions</a>, and the candidate-funnel figure (now <strong>16 families &middot; 36 parishes</strong>, its first column relabelled &ldquo;13 origin candidates&rdquo; so the elimination math stays consistent).
+    The parish map also gained the <strong>seven previously-unmapped parishes</strong> as both markers and cards &mdash; Mainz (where Andreas Kontze died 1854), the far-south Hessen-Nassau toponym-alternatives (Schierstein, Dies, Diez), and the Tier-3 &ldquo;Deissen&rdquo; parishes near Kassel (Gudensberg, Dissen, Grifte) &mdash; bringing it to a complete 36-parish inventory; the eliminated tally moves 24&nbsp;&rarr;&nbsp;31. Separately, the Germany overview page had its deep-dive tiles repaired (a broken duplicate tile rebuilt as the Konzen-puzzle tile, titles restyled, the funnel figure constrained so it no longer overflows) and the &ldquo;read the full Germany &amp; Origins narrative&rdquo; link promoted to a prominent call-to-action.
+  </div>
+</article>
+
+<article class="cl-entry eliminated" id="cl-2026-06-21-fstree-reconciliation-parishmap">
+  <div class="cl-head">
+    <span class="cl-date">21 June 2026</span>
+    <span class="cl-pill eliminated">Eliminated</span>
+    <span class="cl-title">A FamilySearch shared-tree reconciliation narrows the Konze candidate field by negative evidence &mdash; the same-named Carl Wilhelm Konze (b. 1831) eliminated, Justus Ernst Konze (b. 1829) left as the sole open candidate &mdash; and the finding is propagated onto the Hessian parish map.</span>
+  </div>
+  <div class="cl-body">
+    A cross-read against the collaborative <strong>FamilySearch shared Family Tree</strong> &mdash; which holds an independently register-sourced reconstruction of the whole Trendelburg/Deisel Konze clan &mdash; corroborated the project&rsquo;s hand-built family framework and sharpened the candidate picture by <em>negative evidence</em>. Of every documented Konze male of Charles&rsquo;s generation, all but one are fully accounted for in Germany (they stayed, married, and died in the parish complex). The one same-named exception, <strong>Carl Wilhelm Konze</strong> (FS 99Z3-DFK, b. 15 Sep 1831 Trendelburg; first cousin of Justus Ernst), was surfaced and then <strong>eliminated</strong> &mdash; documented dying at Trendelburg <strong>30 October 1869</strong>, having married Marie Lauterbach locally. The sole male of the cohort who leaves <em>no</em> adult German death, marriage, or emigration record under any indexed variant is <strong>Justus Ernst Konze</strong> (FS P87Z-ZDC, b. 14 Nov 1829 Friedrichsfeld), untraced after his 1843 Trendelburg confirmation &mdash; a lead, not a confirmed identity.
+    The two decisive remaining tests are both <strong>offline</strong>: a page-by-page read of the un-indexed <strong>Stammen burial register</strong> (Archion 220072, ~1843&ndash;1875, where two of Justus Ernst&rsquo;s siblings died) and an individual emigration / release-from-citizenship file in <strong>HStAM Bestand 180 Hofgeismar</strong>.
+    The finding was folded into the <a href="abstract.html">abstract</a>, the <a href="claims-dashboard.html">Claims Dashboard</a>, and <a href="errata.html#er-2026-06-21-fs-tree-reconciliation">errata &middot; 21 June 2026</a>, and is now mirrored on the <a href="germany/parish-map.html">Hessian parish map</a> (Trendelburg, Friedrichsfeld, and Stammen cards, the map popups, and a new reconciliation callout); parish counts are unchanged (this is a candidate-level update, no parish moved category). Full detail: <code>FS_Tree_Konze_Reconciliation_June21_2026.md</code> and <code>Session106_ParishMap_FSTree_Reconciliation_Propagation_June21_2026.md</code>.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-19-birthdate-records">
+  <div class="cl-head">
+    <span class="cl-date">19 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">New reference page collates every U.S. record of Charles&rsquo;s birth date and ranks them by the Genealogical Proof Standard; two source-attribution errors and a pension-declaration mis-reading corrected.</span>
+  </div>
+  <div class="cl-body">
+    A new reference page, <a href="birthdate-records.html">Charles&rsquo;s birth date across the U.S. records</a>, gathers the six birth-bearing documents (Docs A, B, D, M, N, O) into one comparative table and ranks each by genealogical confidence under the <strong>Genealogical Proof Standard</strong> and the Mills source / information / evidence model. Its load-bearing finding: <strong>none of these records carries primary information about the birth</strong> &mdash; every figure (enlistment age, census ages, three pension-file ages, death certificate, burial register) traces to Charles or his family, so all are <em>secondary, direct</em> evidence, and the stated years scatter across <strong>1834&ndash;1841</strong>. The canonical <strong>26 January 1835</strong> stays <span class="cl-pill working">Working</span>.
+    Two corrections fell out of the build. (1) The life-timeline and a home-page Key-Evidence pointer credited the 26 Jan 1835 date to Charles&rsquo;s <em>&ldquo;pension affidavit&rdquo;</em>; the pension gives only ages &mdash; the full date is from the <strong>St. Marcus burial register (Doc N, #3393)</strong>. (2) On re-reading the original pension scan, the Original Invalid Pension declaration is re-dated <strong>15 January 1890</strong> (not 16), sworn before Clerk <strong>Philip H. Zepp</strong>, with Charles&rsquo;s age in the <strong>mid-50s (~56)</strong>, not 53. See <a href="errata.html#er-2026-06-19-birthdate-records">errata &middot; 19 June 2026</a>.
+    <strong>Census conflict resolved</strong> (FamilySearch, profile <a href="https://www.familysearch.org/tree/person/sources/LZXC-6GB" target="_blank" rel="noopener noreferrer">LZXC-6GB</a>, 19 June 2026): the 1880 census indexes Charles at <strong>age 39 (est. b. 1841)</strong> and the 1900 census at <strong>birth Nov 1836</strong> &mdash; confirming the 2020 journal abstract and correcting the <a href="claims-dashboard.html">Claims Dashboard</a>, which had carried &ldquo;age 45&rdquo; and &ldquo;b. Jan 1835.&rdquo; The dashboard, the home-page identity table, and the new reference page now agree: no record except the burial register fixes the year at 1835 (the censuses give 1841 and 1836).
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-13-stmarcus-bertha-confirmation">
+  <div class="cl-head">
+    <span class="cl-date">13 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Bertha&rsquo;s 1894 St. Marcus confirmation located (as &ldquo;Bertha Johnson&rdquo;); the other six children negative; a separate Janson family ruled out; and an 1887 &ldquo;Charles Konze&rdquo; marriage logged.</span>
+  </div>
+  <div class="cl-body">
+    A live signed-in read of the St. Marcus confirmation and marriage registers on FamilySearch (DGS 007769184; baptisms cross-checked on DGS 007769183). <strong>Bertha</strong>, Charles &amp; Auguste&rsquo;s youngest, was <strong>confirmed on Palm Sunday, 18 March 1894</strong> (first communion Easter, 25 March), recorded under the family&rsquo;s Anglicized surname <strong>&ldquo;Bertha Johnson&rdquo;</strong> (daughters&rsquo; entry 16, image 258); the birth is written <strong>20 December 1879</strong> &mdash; the day matches the 1898 pension (&ldquo;20 December 1880&rdquo;) while the year conflicts with the canonical baptism date 25 Dec 1880, logged as a footnote, not a canon change.
+    The five older children (Maria Josephine, Katherine, Auguste, Louise, Erwin Carl) were <strong>not</strong> found in their expected classes (1882&ndash;1890) under any spelling &mdash; including &ldquo;Johnson&rdquo; &mdash; so they were most likely not confirmed at St. Marcus. Three &ldquo;Jans(o/e)n&rdquo; confirmands (Hermann b. 1873, Heinrich b. 1875, Bertha b. 30 June 1879) are a <strong>separate Janson family</strong>, not Charles&rsquo;s children: their birth dates don&rsquo;t match, and Erwin Carl <em>Konsen</em> is independently confirmed at baptism entry 282 (DGS 007769183, image 488; b. 27 Aug 1875, mother &ldquo;geb. Kreichelt&rdquo;), distinct from Heinrich Jansen (b. 31 Aug 1875).
+    Also logged in passing: a <strong>Charles Konze &times; Laura Brown</strong> marriage, 6 July 1887 (St. Marcus marriage register entry 2481, image 472; witnesses Ernest Konze &amp; Lena Mertz) &mdash; a different St. Louis Konze household, not Charles Gannsen. And the <strong>&ldquo;Register of Communion 1877&ndash;1897&rdquo; is not in the FamilySearch digitization</strong> (the confirmation register runs 1849&ndash;1981, then the marriages title card; no communion section is filmed), confirming the lead is accessible only at the Eden Archives original. <strong>Bertha's 1894 confirmation has been added to <a href="children/bertha.html">her page</a></strong> as a Confirmed primary source (At-a-Glance, Vital details, a dedicated Confirmation-record section, and Sources), with the 1879-vs-1880 birth-year conflict footnoted; the canonical birth date remains <strong>25 December 1880</strong> (baptism-sourced) &mdash; the confirmation is presented as an independent attestation, not a canon change. Full detail: <code>Session99_StMarcus_Registers_Bertha_Confirmation_June13_2026.md</code>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-13-huemme-jungkonze-foldins">
+  <div class="cl-head">
+    <span class="cl-date">13 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Cross-town vitals pass (Hümme, Jungkonze, Stammen): three FS-tree fold-ins, and a consolidated "remaining vitals" worklist for every other town.</span>
+  </div>
+  <div class="cl-body">
+    Following the Deisel and Trendelburg sweeps, a triage of the remaining per-town pages (<a href="germany/konze-huemme.html">Hümme</a>, <a href="germany/konze-jungkonze.html">Jungkonze</a>, <a href="germany/konze-stammen.html">Stammen</a>; Gottsbüren and Friedrichsfeld already have no open-vital rows). Three rows closed from FamilySearch profiles, no Archion credits: <strong>Johann Christoph Kontze</strong> (<code>G245-6VQ</code>, Hümme, b. 26 Jan 1763 / d. 22 Nov 1828), <strong>Johann Friederich Kontze</strong> (<code>GRC2-K99</code>, Hümme, b. ~1775 / d. ~1824), and <strong>Wilhelmine Pappenheim geb. Jungkontze</strong> (<code>KZPG-7DL</code>, b. 11 Jan 1803 / d. 21 Jan 1881, × Konrad Pappenheim 1825 — a Hümme-born Jungkontze, folded into both the Jungkonze and Stammen pages). The Stammen swineherd family remains FS-tree-negative (Archion-only, 220063/220072), and the Jungkonze branch is largely tree-absent. Full inventory: <code>AllTowns_Konze_Vitals_Remaining_June13_2026.md</code>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-12-trendelburg-vitals">
+  <div class="cl-head">
+    <span class="cl-date">12 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Trendelburg Konze vitals pass: 38 gap-rows triaged, six resolved from the FS tree (credit-free), and the register-anchored remainder confirmed Archion-only.</span>
+  </div>
+  <div class="cl-body">
+    A full triage of every <a href="germany/konze-trendelburg.html">Trendelburg page</a> Konze row still missing a birth or death (38 of 85), saved as a tiered worklist. Six closed immediately from FamilySearch profiles, no Archion credits: <strong>Johannes Kontze jr.</strong> (<code>GH23-91T</code>, d. 25 Oct 1840), <strong>Anna Catharina Kontze</strong> (<code>GH23-989</code>, d. 9 Dec 1822, &times; Tönjes 1808), <strong>Anna Margretha Kontze</strong> (<code>GDGF-6CC</code>, b. 25 Aug 1750 / d. 12 Jan 1781), <strong>Maria Caroline Konze</strong> (<code>99Z3-8W3</code>, d. 14 Feb 1905, &times; Grossberndt 1846), and <strong>Johannes Kontze, 2nd son of Arnold Philipp</strong> (<code>GHFB-22N</code>, b. 1 Jul 1755 + d. 9 Feb 1820 — both cells filled). A bulk surname=Kontze / birthplace=Trendelburg tree sweep then established that the register-anchored daughters (b. 1774, 1777, 1779, 1782, 1801, 1809, 1811, 1828) are <strong>not in the communal tree</strong> — its Trendelburg holdings are the deep 1600s–1700s Dionysius/Andreas line — so those deaths are Archion-only with no anchor year (220102/220114, empty K-index), and three flagged men (Joh. Friedrich b.1810, Carl Ludwig b.1811, the Musketier) have no Trendelburg death at all (dispersed/emigrated). Justus Ernst, Maria Sabina, and Christine Wilhelmine Philippine were re-checked and remain tree-death-open. Worklist: <code>Trendelburg_Konze_Vitals_Worklist_June12_2026.md</code>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-12-deisel-missing-vitals">
+  <div class="cl-head">
+    <span class="cl-date">11&ndash;12 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Session 102 &mdash; Deisel missing-vitals sweep: 14 rows resolved, the two 1774/1814 Christophs proven to be ONE man, the Konze burial K-leaf read in full, and two &ldquo;Konze&rdquo; households unmasked as Koch and Knapp.</span>
+  </div>
+  <div class="cl-body">
+    A full sweep of every <a href="germany/konze-deisel.html">Deisel page</a> row with a missing birth or death (31 rows), worked through the signed-in FamilySearch communal tree and then verified at the registers. <strong>Fourteen rows now carry dates</strong> &mdash; among them both Maria Elisabeths of 1805 (Klaus Andreas&rsquo;s daughter lived to <strong>1886</strong> as Christian K&ouml;ster&rsquo;s wife; the Kirchen&auml;ltester&rsquo;s daughter married Thiele 1826 and died <strong>28 Feb 1830</strong>, satisfying both halves of the K-index-absence deduction at once), Wilhelmine b. 1811 (&times; Weiffenbach 1836, d. 1881), Christoph II &times; Schrage (1808&ndash;<strong>10 Mar 1860</strong>), Philipp Theodor (1840&ndash;1929), Heinrich Steinweg-135 (1835&ndash;1919), Heinrich V. (1847&ndash;1936), and Philipp 1r, Gemeinde-Vorsteher (<strong>b. 20 Aug 1825, d. 3 Feb 1872</strong> &mdash; register-read).
+    The structural result: the 8 Nov 1805 marriage entry (218824 Trauungen S.14) names the Hillebrand groom &ldquo;Dragoner&hellip; des hiesigen Kirchen&auml;ltesten Johann Christoph Kontze ehel. Sohn,&rdquo; and his 1814 burial margin reads &ldquo;geb. 22.5.1774&rdquo; &mdash; so <strong>&ldquo;Johann Christoph Konze jun.&rdquo; and the &ldquo;&times; Hillebrand&rdquo; Christoph are ONE man</strong>, and the three &ldquo;Christoph&rdquo; child burials need re-attribution.
+    The 218851 Konze burial-index K-leaf (1830&ndash;76) is now <strong>read in full</strong>, every entry cross-checked against the tree &mdash; with a cautionary catch: the leaf indexes <em>every</em> K-surname, and two long-standing &ldquo;Konze&rdquo; identifications dissolved under it: &ldquo;Carl Ludwig Konze&rdquo; (S246) is <strong>Carl Ludwig KOCH</strong>, Sch&auml;fer, and the &ldquo;Carl Wilhelm Konze, Tagl&ouml;hner &times; Sofie Lagemann&rdquo; household of Session 40 is <strong>KNAPP</strong> (the 1878 burial re-read carries the surname twice; FS holds the matching Deisel Tagl&ouml;hner Carl Wilhelm Knapp 1824&ndash;1902). Emigration ledger additions: Ludwig Konze 1836 &rarr; Frankfurt; Heinrich Philipp Konze 1876&ndash;1929 &rarr; Manhattan; Philipp Ludwig Konze b. 1871 &rarr; Chicago; Carl Konze b. 1881 &rarr; Manhattan. In a final pass the three orphaned &ldquo;Christoph&rdquo; child burials were re-attributed at the register: Christian (d. 1809) and Ludwig (d. 1815 &mdash; the burial age lands on the B&uuml;rgermeister&rsquo;s Ludwig b. 19 Aug 1813 to the day, and the father clause lacks &ldquo;weiland&rdquo;) both belong to the <strong>B&uuml;rgermeister &times; Schrage</strong>, and Ludwig (d. 1811, &ldquo;des Senioris&hellip; Sohn&rdquo;) to the <strong>Kirchen&auml;ltester sen.</strong> &mdash; none to the merged Dragoner, whose only children are the four Hillebrand siblings. Two marriage finds rounded out the session: <strong>Catharina Elise Konze</strong> (daughter of Ludwig Konze 1r &times; Amalie Meimbresse) &times; August Wilhelm Steitz, 19 Nov 1871 (218860 E376); and the groom&rsquo;s mother&rsquo;s remarriage &mdash; <strong>Maria geb. Dr&ouml;nner, widow of Johann Christoph Konze (1802&ndash;45), &times; Johann Heinrich Steitz on 14 May 1846</strong> (218860 E145) &mdash; which refutes the FS tree&rsquo;s &ldquo;Dr&ouml;nner d. 1840&rdquo; (she lived to remarry and bear August Wilhelm) and makes Wilhelm Steitz the uterine half-brother of the Frankfurt emigrant Ludwig Konze b. 1836. And <strong>Philipp Konze 1r</strong> was proven to be the B&uuml;rgermeister&rsquo;s &ldquo;Philipp #1.&rdquo; Full notes: Session102 file; tracker and town pages updated.
+  </div>
+</article>
+
+<article class="cl-entry eliminated" id="cl-2026-06-08-wider-candidate-field">
+  <div class="cl-head">
+    <span class="cl-date">8 June 2026</span>
+    <span class="cl-pill eliminated">Eliminated</span>
+    <span class="cl-title">Konzen-puzzle &ldquo;wider candidate field&rdquo; resolved &mdash; rosters A and B retracted, Heinrich Wilhelm eliminated, and the candidate tree recounted from nine men to eight.</span>
+  </div>
+  <div class="cl-body">
+    A re-check of the three &ldquo;wider candidate field&rdquo; rosters on the <a href="germany/konzen-puzzle.html">Konzen-puzzle page</a> against the project&rsquo;s own complete page-by-page Friedrichsfeld baptism search (9 April 2026) collapses two of them. The disputed &ldquo;Entry 28&rdquo; reads cleanly as <strong>Maria Sabina Kontze, b. 10 January 1834 (d. 18 February 1834), daughter of Andreas Kontze &times; Maria Sophia née Hofeditz</strong> &mdash; so <strong>roster A</strong> (the &ldquo;[?]ard colonist&rdquo;) is a misread of Andreas and is <strong>retracted</strong>, and <strong>roster B</strong> (an unread Konze maiden name behind the child) dissolves because the mother is Hofeditz, not a Konze (logged at <a href="errata.html#er-2026-06-08-wider-candidate-field">errata</a>).
+    In <strong>roster C</strong> (men weighed as Charles himself), <strong>Heinrich Wilhelm Konze</strong> (b. 1832) moves from inconclusive to <strong>eliminated</strong> &mdash; the marginal note on his Friedrichsfeld baptism plus the Schr&auml;der Stammtafel show he died in Germany on 19 February 1858, so he never emigrated. That leaves <strong>Justus Ernst Konze</strong> (b. 1829) as the lone open name &mdash; and a weak one: his siblings resurface and die at Stammen (whose burial index is read in full) but he does not, no marriage/death/emigration record survives, and his 1829 birth is six years off Charles&rsquo;s documented 1835.
+    The candidate-path chart (inline and the standalone SVG) was recounted accordingly &mdash; <strong>eight distinct men, six eliminated, two inconclusive</strong>; the colonist card is shown as withdrawn; and the stale &ldquo;Working conclusion &middot; 4 May 2026&rdquo; footer panel was rewritten to the current June-2026 position with its overflowing text reflowed to fit the box. Supersedes the <a href="errata.html#er-2026-05-31-friedrichsfeld-colonist">31 May 2026 &ldquo;probably spurious&rdquo;</a> holding.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-08-stmarcus-membership-roll">
+  <div class="cl-head">
+    <span class="cl-date">8 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">A St. Marcus &ldquo;pre-1866 membership roll&rdquo; cited as a route to the chosen-name hypothesis does not exist &mdash; the lead is retired.</span>
+  </div>
+  <div class="cl-body">
+    The <a href="germany/konzen-puzzle.html">Konzen-puzzle page</a> listed a St. Marcus pre-1866 membership roll &mdash; in hypothesis 4 (&ldquo;chosen name&rdquo;) and the &ldquo;Where the answer might come from&rdquo; panel &mdash; as a record that might carry a &ldquo;name formerly known as&rdquo; notation. The church&rsquo;s complete FamilySearch / FHL inventory shows <strong>no pre-1866 membership record</strong>: the earliest communicant book is a <strong>Register of Communion, 1877&ndash;1897</strong> (FHL roll 1503035), ~18 years after Charles arrived, and a communion register lists communicants by date, not birth-origin. Both spots were corrected to drop the non-existent roll and keep the Hessian Auswanderer-Beleg as the live lead (logged at <a href="errata.html#er-2026-06-08-stmarcus-membership-roll">errata</a>).
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-08-stlgs-fs-family">
+  <div class="cl-head">
+    <span class="cl-date">8 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">St. Louis records sweep: Auguste Kreichelt&rsquo;s birth fixed to <strong>12 May 1847</strong>, two daughters&rsquo; marriages documented, and Henriette Konze&rsquo;s 1891 will recovered.</span>
+  </div>
+  <div class="cl-body">
+    A pass across St. Louis Genealogical Society collections, the Buecher St. Marcus church indexes, the Missouri State Archives judicial-records database, and the FamilySearch tree.
+    <strong>Auguste Kreichelt&rsquo;s birth</strong> is now fixed to <strong>12 May 1847 at Clausthal</strong> &mdash; the date in the St. Marcus German Evangelical death register (1896), consistent with her civil death-register age of 49 &mdash; superseding the long-held &ldquo;~1840&rdquo; estimate (logged at <a href="errata.html#er-2026-06-08-auguste-birth-1847">errata</a>); her age at the 1853 immigration is correspondingly ~6, and she was not the eldest Kreichelt child. Her burial is confirmed at Old St. Marcus, <strong>22 December 1896</strong>.
+    Two daughters who died young in 1890 gain their husbands from the St. Marcus death register and the FamilySearch tree: <strong>Josephine Maria</strong> (d. 5 May 1890) married <strong>Edward &ldquo;Ed&rdquo; Herr</strong> (1866&ndash;1947) and had three sons (Edward, August &ldquo;Jacob,&rdquo; Conrad); <strong>Auguste</strong> (d. 31 Dec 1890) married <strong>James E. Somers</strong> on 12 July 1890, with one infant son, James Victor Somers (1890&ndash;1890) &mdash; added to <a href="children/josephine-maria.html">Josephine&rsquo;s</a> and <a href="children/auguste.html">Auguste&rsquo;s</a> pages.
+    In the Missouri State Archives probate database, <strong>Henriette Konze&rsquo;s 1891 estate file</strong> (St. Louis City case #18212) was recovered &mdash; her 1890 will names a previously-undocumented daughter <strong>Ida</strong>, confirms her parents as the Brenneckes, and shows that <strong>Anna Konze</strong> (m. Friedrich Brenneke 1893) was <em>not</em> her daughter. The probate-index &ldquo;Conson, James / Sophie&rdquo; lead was chased and <strong>ruled out</strong> as unrelated (zero &ldquo;Conson&rdquo; in the digitized source records; the surname is the abstractor&rsquo;s rendering of an unrelated Anglo name).
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-08-rigor-audit">
+  <div class="cl-head">
+    <span class="cl-date">8 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">Full-site genealogical-rigor audit &mdash; 31 findings fixed across three rounds, plus a maintenance-harness exclusion.</span>
+  </div>
+  <div class="cl-body">
+    A four-lens rigor pass (citation completeness, claim/evidence calibration, internal consistency, GPS) across the public site.
+    <strong>Round&nbsp;1 (15 findings):</strong> cross-page factual corrections (logged at <a href="errata.html#er-2026-06-08-rigor-audit-corrections">errata</a> &mdash; child/spouse ages and years, the dashboard discharge date, the birth-source attribution, the &ldquo;Company&nbsp;G&rdquo; unit, and a future-dated citation) plus calibration hedging where <strong>Working/Open</strong> claims (the Trendelburg/Deisel origin, the ~26 Jan 1835 birth date, the Konzen surname) were stated as fact on secondary surfaces &mdash; meta descriptions, JSON-LD, figure captions, the Foundation &ldquo;Confirmed&rdquo; card, the Freundburg page, and the Hesse-Kassel reconstruction; pension affidavits &ldquo;establish&rdquo;&rarr;&ldquo;attest&rdquo;; the naturalization &ldquo;confirms&hellip;&rdquo; reframed as Interpretive; single-test DNA phrasing softened.
+    <strong>Round&nbsp;2 (the report&rsquo;s recommendations):</strong> a confidence pill added to all eight <a href="evidence-index.html">evidence cards</a>; the shared footer origin tagline softened to a working-hypothesis phrasing across 193 pages; a reconciliation note on the <a href="civilwar/compiled_service_record_transcription.html">Compiled-Service-Record</a> page (Aug-roll vs the canonical 20 Dec 1865 discharge; the &ldquo;Nov&nbsp;11&rdquo; pay-line vs the 7 Nov promotion); the Deisel&ndash;Trendelburg distance standardised to ~2&nbsp;km; &ldquo;died unmarried&rdquo;&rarr;&ldquo;no marriage record located&rdquo;; and <code>notes_view/</code> added to the canon-guard exclusions (a regenerated archive of the already-excluded <code>notes/</code>).
+    <strong>Round&nbsp;3 (second-pass re-audit):</strong> the <a href="dna.html">DNA page</a>&rsquo;s Ashkenazi deep-paternal-line reading (held to only two-to-three testers) recalibrated from settled fact to a working inference, with matching fixes on <a href="open-questions.html#paternal-origin">Open Questions</a>, <code>germany/index.html</code>, the Konzen-puzzle page, and <code>updates.html</code>.
+    Canon guard, surname-canon guard, and the 320-page internal-link check all pass clean. Full detail in the audit report <span><code>Charles_Konzen_Genealogy_Rigor_Audit_June8_2026.docx</code></span>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-07-anton-wilhelm-stlouis">
+  <div class="cl-head">
+    <span class="cl-date">7 June 2026 (late night)</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Anton Wilhelm Contze of the Trendelburg grenadier family identified in St. Louis &mdash; and his baptism re-dated to 12 September 1806 on an exact match.</span>
+  </div>
+  <div class="cl-body">
+    <strong>The American end (Session 96, StLGS indexes):</strong> Anton Wilhelm Konze m. <strong>Henriette Louise Brenneke, 3 Jan 1861</strong>, Holy Ghost Evangelical, St. Louis (entry 684; witnesses Friedr. Brenneke &amp; Heinr. Menne), and d. <strong>15 Sep 1887</strong> per the St. Paul&rsquo;s UCC register aged <strong>&ldquo;81 J. 3 Tage&rdquo;</strong> &mdash; arithmetic that lands on a birthdate of exactly <strong>12 September 1806</strong>.
+    <strong>The German end (Sessions 96&ndash;97, register 220096 S.150&ndash;151 &middot; <a href="https://www.archion.de/p/777f69ec3f/" target="_blank" rel="noopener noreferrer">img 1059</a>):</strong> the Trendelburg baptism of Anton Wilhelm, son of <em>Joh. Christoph Conze, Grenadier unter dem Leib-Grenadier-Bataillon</em>, and <em>Anna Catharina geb. Pfeilin von Homberg</em>, reads &ldquo;geboren am 12ten&rdquo; under the <strong>&ldquo;Sept:&rdquo;</strong> month marker &mdash; bp. <strong>17 Sep 1806</strong>. The earlier &ldquo;12/17 Aug&rdquo; transcription missed the month marker two entries above; date corrected on the <a href="germany/konze-trendelburg.html">by-town census</a>. German birth record and American death arithmetic agree to the day. He is the <strong>first member of the Trendelburg Konze pool documented in St. Louis</strong> &mdash; Charles&rsquo;s own city &mdash; and the kinship bridge to Charles is now an active thread.
+    <strong>Also this session (97):</strong> the 220096 Taufen <strong>alphabetical index</strong> located at imgs 1095&ndash;1102 (Contze under C with &ldquo;s. auch K!&rdquo;; the K(cont)&ndash;P leaf unfilmed in both passes); the Konfirmationen register corroborates two paternities &mdash; Ostern 1776 (Andreas, son of Arnold Philip Kontze) and Ostern 1777 (<em>&ldquo;Johann Friedrich, des Rathsverwandten H. Andreas Kontzen ehel. &auml;ltester Sohn, alt 13&frac12; Jahr&rdquo;</em>), the latter <strong>resolving the contested Johann-Friedrich paternity</strong> in favour of the Rathsverwandter (see <a href="errata.html#er-2026-06-07-conflict-rereads">errata</a>); and the &ldquo;Rgmt v. Biesenroth&rdquo; tail on S.150 resolved as the <strong>Koch&ndash;Contzin</strong> baptism (Joh. Henrich Koch, b. 6 Aug 1806). Full detail: <a href="notes_view/Session96_StLGS_Konze_Gannsen_Search_June7_2026.html"><code>Session96_StLGS_Konze_Gannsen_Search_June7_2026.md</code></a>, <a href="notes_view/Session97_Trendelburg_Taufindex_Konfirmationen_June7_2026.html"><code>Session97_Trendelburg_Taufindex_Konfirmationen_June7_2026.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-07-bytown-trees">
+  <div class="cl-head">
+    <span class="cl-date">7 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">At-a-glance family-tree charts added to every town section of the Konze-by-town census.</span>
+  </div>
+  <div class="cl-body">
+    Every family sub-section on <a href="germany/konze-family-by-town.html">The Konze family, by town</a> &mdash; <strong>27 charts</strong> across Trendelburg, the Jungkonze branch, Deisel, Friedrichsfeld, Stammen, Gottsb&uuml;ren, and H&uuml;mme, one at the head of each household heading &mdash; now opens with an <strong>SVG family-tree chart</strong> presented as a standard genealogical drop-line descendant chart &mdash; strict generation ranks labelled I&nbsp;/&nbsp;II&nbsp;/&nbsp;III, spouses joined by the conventional &ldquo;=&rdquo; with the marriage date at the union point, children numbered i&nbsp;/&nbsp;ii&nbsp;/&nbsp;iii in birth order (Register style), and non-continuing children in compact stacked lists &mdash; rendered at native size in the same visual language as the <a href="Kontze_Family_Tree_Graphic.html">graphic family tree</a> (blue/rose person boxes, marriage and descent lines, dashed gold for contested or unconfirmed identities such as Entry 194, the contested Johann-Friedrich paternity, and the H&uuml;mme emigrant Christoph). The charts are generated from the page&rsquo;s own person rows by a new script (<code>scripts/build-bytown-trees.py</code>, idempotent &mdash; re-run after census updates), so the at-a-glance view and the person-level tables stay on one page. Dark-mode styling included.
+  </div>
+</article>
+
+<article class="cl-entry working" id="cl-2026-06-07-fs-tree-ids">
+  <div class="cl-head">
+    <span class="cl-date">7 June 2026</span>
+    <span class="cl-pill working">Working</span>
+    <span class="cl-title">FamilySearch tree IDs matched to the Konze census &mdash; 65 person rows on the by-town page now carry tree PIDs (marked &dagger;), from the communal cluster built largely by independent researcher &ldquo;GeneDana.&rdquo; Christoph Kontze b. 1814: two unverified US candidates logged.</span>
+  </div>
+  <div class="cl-body">
+    <strong>The match:</strong> a sweep of the FamilySearch Family Tree (searches across Trendelburg, Deisel, H&uuml;mme, Stammen and the Jungkonze surname) recovered a ~150-person Kontze cluster, much of it entered 2024 by &ldquo;GeneDana&rdquo; with verbatim Archion citations that independently confirm several Session-95 readings (incl. &ldquo;Johannes Kontze, Leineweber, geb&uuml;rtig von Stammen&rdquo;). <strong>65 rows</strong> of <a href="germany/konze-family-by-town.html">the Konze family by town</a> now link their tree profile (&dagger; chips); ~30 rows gained tree-only facts as flagged <em>FS tree&dagger;</em> notes &mdash; e.g. Heinrich Christoph Jungkonze (b. 1827) traced to <strong>Aplerbeck/Dortmund, Westphalia</strong> (m. 1866, line to 1985); Heinrich Wilhelm Kontze (1832&ndash;58) shown <strong>marrying at Stammen 1856</strong> (Ulrike Melusine Pappenheim); the Amalie Konze &ldquo;Paffe/Sasse&rdquo; conflict resolved toward <strong>Johannes Sasse</strong>; Wilhelmine Pappenheim geb. Jungkontze assigned to a previously-undocumented <strong>H&uuml;mme Jungkontze line</strong> (1701&ndash;1881).
+    <strong>Conflicts flagged, then RESOLVED the same night:</strong> four parallel Archion re-read agents took every disagreement back to the manuscripts. The tree was right five times (bride Maria <strong>Dr&ouml;nner</strong>, not &ldquo;Br&uuml;mmer&rdquo;; groom Johannes <strong>Sasse</strong>, not &ldquo;Paffe&rdquo;; b. <strong>8</strong> Aug 1834; Wilhelmine&rsquo;s death <strong>1843</strong>; the 15 Jun 1856 Stammen marriage of Heinrich Wilhelm Kontze, now register-verified with a remarriage margin); the register beat the tree twice (<strong>Doenges</strong>, not &ldquo;Tonjes&rdquo;; Friedrich the Leineweber <strong>buried at H&uuml;mme 8 Aug 1873</strong>, refuting &ldquo;d. New York City&rdquo;); and one read corrected BOTH sides &mdash; Konrad&rsquo;s 1841 burial says <strong>&ldquo;geschieden von Marie Elisabeth Brandt&rdquo;</strong>: Brandt was his own divorced first wife, not his mother, so the K&uuml;ster&rsquo;s wife is again an open question. Full verdicts: <a href="errata.html#er-2026-06-07-conflict-rereads">errata</a> and <a href="notes_view/Session96_Christoph_Kontze_US_Trail_June7_2026.html"><code>Session96_Christoph_Kontze_US_Trail_June7_2026.md</code></a> &sect;F.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-07-home-tab-removed">
+  <div class="cl-head">
+    <span class="cl-date">7 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">Home tab retired &mdash; the cinematic At a Glance is now the landing view of the main page, with its research figures brought current.</span>
+  </div>
+  <div class="cl-body">
+    <strong>Landing change:</strong> the &ldquo;Who was Charles Konzen?&rdquo; Home tab had gone stale (a &ldquo;Project status &middot; May 2026&rdquo; banner and superseded counts) and duplicated material that lives on the <a href="abstract.html">abstract</a>, <a href="claims-dashboard.html">claims dashboard</a>, and Key Evidence. It is removed; <strong>At a Glance</strong> (the four-chapter cinematic overview) is now the default view of <code>index.html</code>, refreshed to current figures &mdash; <strong>ninety-five research sessions &middot; 29 parishes searched</strong>. Old <code>#overview</code> links and the static redirect stubs resolve to the new landing automatically.
+    <strong>Salvaged, not lost:</strong> the <a href="index.html#charles-portrait-figure">first-known-photograph block</a> (Louis Roth studio, discovered September 2025) and the &ldquo;Latest&rdquo; findings paragraph moved into At a Glance; the banner portrait still links to the photograph&rsquo;s provenance. Nav &ldquo;Home&rdquo; entries sitewide now point at the main page directly. Link check clean across 299 pages.
+  </div>
+</article>
+
+<article class="cl-entry working" id="cl-2026-06-07-myheritage-cluster">
+  <div class="cl-head">
+    <span class="cl-date">7 June 2026</span>
+    <span class="cl-pill working">Working</span>
+    <span class="cl-title">MyHeritage match sweep finds the project&rsquo;s first substantive German-resident autosomal cluster on the paternal side &mdash; triangulated on chromosome&nbsp;17, isolated by AutoClustering, at 3rd-cousin depth to Charles&rsquo;s generation. Correspondence opened.</span>
+  </div>
+  <div class="cl-body">
+    <strong>The find:</strong> with both of the tested descendant&rsquo;s parents also on MyHeritage, every match can be assigned a side. Among <strong>327 Germany-resident matches</strong>, the largest (&asymp;50&ndash;80&nbsp;cM, Swabian surnames) all resolve <em>maternal</em> &mdash; but a three-member cluster at &asymp;52&ndash;60&nbsp;cM resolves <em>paternal</em>: two Germany-resident testers and a U.S.-resident daughter, sharing &asymp;52&nbsp;cM with each other, estimated <strong>3rd cousins to the tester&rsquo;s father</strong> &mdash; a most-recent-common-ancestor couple born ~1800&ndash;1840, Charles&rsquo;s generation or one above. Ancestral surnames in the cluster&rsquo;s shallow trees: Lipphardt, Sasse, Kielhorn (Lower Saxony / Hannover) and Eickenberg, L&uuml;ke (Westphalia).
+    <strong>Three independent confirmations:</strong> a chromosome-browser run triangulates the cluster with the father on <strong>chr&nbsp;17 (&asymp;54.2&ndash;64.3&nbsp;Mb, 12.4&nbsp;cM)</strong>; AutoClustering places the three in <strong>one cluster of exactly three</strong> &mdash; the only German paternal cluster in the list; and the shared-match webs coincide. One ancestral couple likely stands behind the group.
+    <strong>Not yet assigned:</strong> the father descends equally from Charles and from <a href="people/auguste-kreichelt.html">Auguste Kreichelt</a> (Hannoverian, Clausthal/Oberharz) &mdash; the cluster could be a sibling-line of Charles (&rarr; the German anchor) <em>or</em> Auguste&rsquo;s collateral kin (&rarr; first autosomal corroboration of the Kreichelt reconstruction). The discriminating question &mdash; <strong>Oberharz or Hofgeismar district?</strong> &mdash; is with the cluster&rsquo;s members (one had independently contacted the project years earlier). Also this session: the MyHeritage v2.5 ethnicity estimate added as a second-vendor corroboration of the &asymp;half-Germanic admixture; the target-surname sweep (Konze / Kontzen, Gannsen, Kreichelt, Grandjot, Herwig) negative in a second database; the kit attached to the family tree (Smart Matches live, Theories pending). Page: <a href="dna.html#myheritage-matches">DNA evidence &middot; MyHeritage match list</a>. Full detail: <a href="notes_view/Session96_MyHeritage_Match_Analysis_June7_2026.html"><code>Session96_MyHeritage_Match_Analysis_June7_2026.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-07-towns-gazetteer">
+  <div class="cl-head">
+    <span class="cl-date">7 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">Towns &amp; villages demoted to a pure gazetteer &mdash; all search status now lives in one place, the Hessian Parish Map. Stale Heisebeck claim corrected sitewide.</span>
+  </div>
+  <div class="cl-body">
+    <strong>Single source of truth:</strong> the <a href="towns/index.html">Towns of the Hofgeismar Kirchenkreis</a> page had frozen at the April 2026 state of the search (10 towns &middot; &ldquo;2 open leads / 5 eliminated&rdquo;) while the <a href="germany/parish-map.html">Hessian Parish Map</a> moved on to 29 parishes and the June sweeps. Rather than maintain status in two places, the towns page is now a <strong>gazetteer only</strong> &mdash; geography, town histories, per-town research-note index, and tools &mdash; with all candidate rankings, open gaps, and eliminations consolidated on the parish map. The page left the &ldquo;Hesse &amp; origins&rdquo; menu; it is reached from the parish map and the town links across the site.
+
+    <strong>Heisebeck correction:</strong> the towns page still claimed Heisebeck&rsquo;s registers were &ldquo;not digitized &hellip; and have never been searched at all&rdquo; &mdash; false since Sessions 66&ndash;67 (April 2026), which found the marriage registers digitized (KB 219169 / 219190) and searched them in full, negative. The accurate statement &mdash; only the <strong>post-1831 baptism volume</strong> (the one covering a January 1835 birth) remains undigitised, held at the Landeskirchliches Archiv Kassel &mdash; now appears consistently on the towns page, the parish map, and a new <a href="open-questions.html#heisebeck">Open Questions entry</a> (the parish map had claimed such an entry existed; it didn&rsquo;t). Link check clean across 299 pages.
+    <strong>Candidate funnel brought current:</strong> the <a href="visualize.html">candidate-funnel figure</a> (May 18) carried the same stale Heisebeck claim plus a now-false &ldquo;no Konze male b. 1835 in any digitised register&rdquo; (Stammen&rsquo;s stillborn male, b. 14 Mar 1835, was found and eliminated in June). Both corrected; a June-2026 footer line adds the ring-sweep results &mdash; 29 parishes, the Stammen and Dalhausen eliminations, and Liebenau 1835 as the second held-open register.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-08-followups">
+  <div class="cl-head">
+    <span class="cl-date">8 June 2026 &middot; latest</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Follow-up pass: Deisel&rsquo;s &ldquo;two-wives&rdquo; B&uuml;rgermeister resolved into two men; two son-in-law surnames corrected; the swineherd&rsquo;s two untraced sons and the US trail both exhausted with negatives.</span>
+  </div>
+  <div class="cl-body">
+    <strong>Deisel identity work:</strong> the 1808 baptisms prove <strong>two distinct Johann Christoph Konze men</strong> &mdash; the B&uuml;rgermeister (&times; Schrage) and a separate Joh. Christoph (&times; Hillebrand); their broods are now split into two rows (<a href="errata.html#er-2026-06-08-two-joh-christoph">errata</a>). Two son-in-law surnames corrected: Charlotte Konze&rsquo;s husband is <strong>Kloppmann</strong> (not Heggemann) and Amalie Konze&rsquo;s is <strong>Sasse</strong> (not Paffe) &mdash; each a single man, the &ldquo;two-person&rdquo; hypotheses withdrawn (<a href="errata.html#er-2026-06-08-kloppmann-sasse">errata</a>). Philipp Konze #2&rsquo;s baptism is confirmed absent from Deisel&rsquo;s K- AND C-indexes &mdash; he was baptized in another parish.
+
+    <strong>Christian Ludwig Kontze&rsquo;s 1883 death:</strong> in no church book nor online civil index. Sielen Standesamt 1883 read in full (no 11 April entry); Hofgeismar/Hombressen/Liebenau don&rsquo;t cover Stammen. The record sits in the <strong>Trendelburg Standesamt 1883 Sterberegister at HStAM Marburg (Bestand 905)</strong> &mdash; not digitised (Ancestry&rsquo;s &ldquo;Trendelburg 1883&rdquo; slot opens a mislabeled 1885 volume). An archive request is the only remaining route.
+
+    <strong>The swineherd&rsquo;s two untraced sons</strong> (Johann Christian b.1785, Johann Henrich b.1800): swept Stammen marriages (through 1831), Trendelburg marriages 1830&ndash;92, Gottsb&uuml;ren marriages 1827&ndash;33, and FamilySearch &mdash; all NEGATIVE. Neither married or was buried in any checked register. Johann Henrich (age 34 in 1835) is the better biological fit but carries <em>zero</em> documentary link to Charles. They remain the only open names in the family of plausible 1835-fathering age.
+
+    <strong>US trail exhausted:</strong> the two Ohio &ldquo;new leads&rdquo; surfaced this pass (a Hardin Co. tax-roll &ldquo;Christopher Kontze&rdquo; and a Put-in-Bay &ldquo;Charles Kontze&rdquo;) are the <em>same families already eliminated in Session 96</em> (the Koutz/Kautz man and a chronologically-incompatible household). No Kontze in 1840/1850/1860 census fits the 1839 Brig <em>President</em> party; no Pennsylvania naturalization or church record; the Kurhessen Auswanderungsakten (Kreis Hofgeismar) are not digitized &mdash; an on-site/HStAM task. <strong>No Charles candidate.</strong> See <code>Session97&hellip;.md</code> + the follow-up session note.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-08-loose-ends-2">
+  <div class="cl-head">
+    <span class="cl-date">8 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Four more loose ends closed: Christian Ludwig&rsquo;s couple stayed in Stammen to 1869 (not &ldquo;left after 1835&rdquo;); the Stammen marriage book swept; the Mississippi lead and Philipp #2&rsquo;s baptism both dead-end.</span>
+  </div>
+  <div class="cl-body">
+    <strong>Christian Ludwig Kontze:</strong> his wife <strong>Anne Gertrud geb. Temme died at Stammen Haus Nr. 21 in 1869 (b. 18 May 1801)</strong> with him named as her <em>living</em> husband &mdash; so the couple never left Stammen (correcting the &ldquo;left after 1835&rdquo; note). In ~36 years their only child stays the 1835 stillborn. He died 11 Apr 1883 but is absent from the Stammen burial book 1830&ndash;1936 &mdash; death recorded elsewhere (Hofgeismar civil registration), still to find.
+
+    <strong>Stammen marriages 1789&ndash;1831 swept:</strong> the two untraced swineherd sons (Johann Christian b.1785, Johann Henrich b.1800) did NOT marry there; the swineherd himself remarried 5 Jun 1818 as widower (&ldquo;Pfundmeister&rdquo;); Maria Sophia Kon&szlig;e&times;M&uuml;ller dated to 1813; the two Stammen Jungkonze marriages dated (Korff 1799, Lohr 1801).
+
+    <strong>Mississippi:</strong> the 1878 Vicksburg &ldquo;L Konntze&rdquo; is the unrelated <strong>Kountze banking family</strong> (original read); no Kontze in Warren Co. MS in 1840 or 1850, none in Philadelphia 1840 &mdash; the 1839 Brig <em>President</em> party (Chs. Augs. Kontze, 25, + a boy b. ~1835) has no onward US trace. <strong>Deisel:</strong> Philipp Konze #2&rsquo;s baptism is not in Deisel&rsquo;s register at all (the 1824 &ldquo;Philipp&rdquo; is a Goebel child) &mdash; baptized in another parish.
+
+    <strong>No Charles candidate</strong> emerged. The most candidate-relevant open names are now the swineherd&rsquo;s two untraced sons. See <a href="errata.html#er-2026-06-08-stammen-stayed">errata</a> and <code>Session97_LooseEnds_ChristianLudwig_StayedInStammen_June8_2026.md</code>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-08-swineherd-solved">
+  <div class="cl-head">
+    <span class="cl-date">8 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">The swineherd family solved end-to-end: Andreas of Stammen is Arnold Philipp&rsquo;s son (the &ldquo;Halbbruder&rdquo; puzzle resolved), Christian Ludwig was baptized IN STAMMEN and lived to 1883 &mdash; plus a provocative 1839 Philadelphia manifest: a Kontze man b. ~1814 traveling with a Kontze boy b. ~1835.</span>
+  </div>
+  <div class="cl-body">
+    <strong>Stammen KB 220063:</strong> the 23 Mar 1783 marriage names the swineherd&rsquo;s father &mdash; <strong>&ldquo;weyland Arnold Philips Konzen&hellip; zu Trendelburg&rdquo;</strong> &mdash; so Andreas (b. ~1758) and Joh. Henrich the younger were <strong>half-brothers</strong> via Arnold Philipp&rsquo;s two Uffelmann wives, exactly as the 1787 godfather entry says. <strong>Twelve children</strong> (1784&ndash;1809) all baptized in Stammen, incl. <strong>Christian Ludwig, bap. 23 Nov 1806 IN STAMMEN</strong> (margin: <strong>&dagger; 11 Apr 1883</strong>) &mdash; the 1833 &ldquo;geb&uuml;rtig von Gottsb&uuml;ren&rdquo; is refuted; both parents died in Stammen (1817 / 31 Dec 1828). Two sons &mdash; <strong>Johann Christian (b. 1785)</strong> and <strong>Johann Henrich (b. 1800)</strong> &mdash; are untraced adults of fathering age in 1835: a new candidate-relevant thread.
+
+    <strong>US hunt for the H&uuml;mme emigrant (Christoph, b. 13 Feb 1814):</strong> best hit is the Brig <em>President</em>, Bremen&rarr;Philadelphia, <strong>26 Aug 1839</strong>: &ldquo;Chs Aug(s) <strong>Kontze</strong>,&rdquo; 25, farmer, no wife, with a <strong>4-year-old male Kontze (b. ~1835)</strong>; origin column reads &ldquo;Warren Co. Mississippi&rdquo; or &ldquo;C[ur]hessen.&rdquo; Not claimed as Charles &mdash; but queued for Warren-County follow-up. No Christoph Kontze/Konze anywhere in Missouri. A H&uuml;mme&rarr;NYC Kontze line surfaced on the FS Tree (active researcher &ldquo;GeneDana&rdquo; &mdash; collaboration lead).
+
+    <strong>Deisel re-reads:</strong> the 10 Oct 1824 &ldquo;Philipp&rdquo; baptism is a <strong>Goebel</strong> child &mdash; Philipp Konze #2&rsquo;s baptism is unlocated (check Aug&ndash;Sep 1825); the B&uuml;rgermeister&rsquo;s father reads <strong>&ldquo;Christian Konze&rdquo;</strong> (~90%) &mdash; tying him to Christian (b. ~1756, d. 1829) &times; Br&ouml;nner.
+
+    <strong>Page:</strong> 239 entries; the new SVG <strong>town-trees</strong> and FamilySearch IDs added since yesterday are preserved &mdash; the Stammen/Gottsb&uuml;ren trees regenerated to the new state. See <a href="notes_view/Session96_Swineherd_Solved_US_Lead_June7_2026.html"><code>Session96_Swineherd_Solved_US_Lead_June7_2026.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-07-loose-ends">
+  <div class="cl-head">
+    <span class="cl-date">7 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Loose ends closed: the Andreas&times;Garland couple SOLVED (the Stammen swineherd&rsquo;s family), the H&uuml;mme emigrant NAMED (Christoph Kontze, b. 13 Feb 1814) &mdash; and every one of the census&rsquo;s 220 entries now carries a &ldquo;Why not Charles?&rdquo; verdict.</span>
+  </div>
+  <div class="cl-body">
+    <strong>&#9733; Garland puzzle solved:</strong> a H&uuml;mme burial (1837) names Johannes Kontze, <em>born Stammen 26 Jul 1788</em>, son of &ldquo;des verstorbenen <strong>Schweinehirten Andreas Kontze</strong> und der <strong>Marie Elisabeth geb. Gehrland</strong>&rdquo; &mdash; the same couple from Christian Ludwig&rsquo;s 1833 marriage. The family&rsquo;s base was <strong>Stammen</strong>; Christian Ludwig has an elder brother whose H&uuml;mme line continues to 1873+.
+
+    <strong>&#9733; The emigrant named:</strong> H&uuml;mme&rsquo;s complete marriage (1830&ndash;91) and burial (1830&ndash;74) indexes show exactly one vanishing adult male &mdash; <strong>Christoph Kontze, b. 13 Feb 1814</strong>, orphaned son of Friedrich Kontze &times; Marie Sophie Busch. Next: US records + Kurhessen Auswanderungsakten. (Six other Kontze men stayed &mdash; one celebrated a <em>diamond wedding</em> in 1911.)
+
+    <strong>Deisel:</strong> two adult Andreas Konzes disentangled (this morning&rsquo;s merge retracted &mdash; <a href="errata.html#er-2026-06-07-two-andreas">errata</a>); Klaus Andreas&rsquo;s burial (1847) names his father <strong>Johann Heinrich Konze</strong>; the B&uuml;rgermeister exactly dated (1784&ndash;1846, widow Schrage 1785&ndash;1862); ~24 indexed baptisms + the full burial roster read, incl. the unindexed 1846&ndash;50 window. <strong>Trendelburg:</strong> Nies Sr.&rsquo;s 1746 burial found (b. ~1681); two senior Andreases separated; the Jungkonze Fruchtmesser&rsquo;s wife is geb. <strong>Schellhase</strong>; the 1755 bride&rsquo;s surname settled (<strong>Schnell</strong>); 220093&rsquo;s burials 1719&ndash;36 are missing entirely (structural).
+
+    <strong>Page:</strong> <a href="germany/konze-family-by-town.html">Konze family by town</a> &mdash; 220 entries, H&uuml;mme section rebuilt, and a new <strong>&ldquo;Why not Charles?&rdquo;</strong> column states, person by person, why each individual cannot be Charles or a parent (wrong birth date, died before 1835, died in childhood, or &ldquo;no 26 Jan 1835 baptism names him/her in any swept register&rdquo;). <strong>Still no candidate</strong> &mdash; the elimination logic is now explicit. Full detail: <a href="notes_view/Session95_LooseEnds_FourPulls_GarlandSolved_June7_2026.html"><code>Session95_LooseEnds_FourPulls_GarlandSolved_June7_2026.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-07-gap-closing">
+  <div class="cl-head">
+    <span class="cl-date">7 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Gap-closing: six parallel register pulls date nearly every undated individual &mdash; the by-town census now holds 200 person-level entries, and the Trendelburg tree reaches generation zero (Andreas Kontze, b. ~1672).</span>
+  </div>
+  <div class="cl-body">
+    <strong>Generation zero:</strong> Arnold Philipp Kontze&rsquo;s baptism found &mdash; <strong>4 March 1708</strong>, son of <strong>Andreas Kontze, Kirchen-Senior (b. ~Dec 1672, d. 1761)</strong>; brothers Mathias (1714) and Johann Melcher (1715); plus Nies Sr. (d. before 1759, wife geb. Uffelmann), the baker Kirchen-Senior Joan Henric (1705&ndash;1762), and Jost Conze (fl. 1709).
+
+    <strong>Every indexed 220096 burial read</strong> (17 adults, 11 children): Joh. Henrich the younger d. <strong>29 Apr 1804</strong>; Rathsverwandter Andreas Contze d. <strong>7 Nov 1800</strong> (= &ldquo;the Elder of Stammen,&rdquo; prob. the 1760 groom); the Jungkonze Amtsdiener Joan Georg d. <strong>21 Feb 1797</strong> (film-seam entry resolved). <strong>Complete 1792&ndash;1814 baptism sweep:</strong> all six Enders-line Jungkonze children dated (Ludwig the tailor = Carl Ludwig, <strong>b. 24 Jan 1793, d. 1862</strong>; Wilhelmina/Christina Charlotta were twins; a sister died 1855 <em>in Gottsb&uuml;ren</em>); Andreas-b.1787&rsquo;s real children are Christoph 1808 (&dagger;1880), Friedrich 1810, Johannes 1814 (&dagger;1894).
+
+    <strong>Deisel:</strong> the &ldquo;young Andreas d. 1828&rdquo; collapses into <strong>Klaus Andreas Kontze (b. ~1768, d. 24 May 1828)</strong>; two conflated Wilhelmine-geb.-Konze women separated; Konrad d. <strong>22 Dec 1841</strong> (wife followed in three days); marriages dated 1837/1838/1849/1850; Philipp #2&rsquo;s father identified (Johann Heinrich Kontze, 1790&ndash;1865); Heinrich Wilhelm 1844&ndash;1877 fully dated; five new late-century households. Structural finds: 218851 ends Apr 1876; hidden index-continuation pages (K&rarr;C&rarr;X/Z) unlock 1843&ndash;76 for future reads; ~24 indexed Deisel Konze baptisms remain unread (queued).
+
+    <strong>Page:</strong> <a href="germany/konze-family-by-town.html">Konze family by town</a> now lists <strong>200 individuals</strong>, every row stating birth/death, spouse &amp; marriage date, children, and Archion register + Seite &mdash; with explicit &ldquo;no marriage found / no children recorded / died in infancy&rdquo; statements where that is the documented state. Corrections in <a href="errata.html#er-2026-06-07-deisel-corrections">errata (Deisel)</a> and <a href="errata.html#er-2026-06-07-trendelburg-gen0">errata (Trendelburg)</a>. <strong>Still no Charles candidate</strong> &mdash; no register-dated 26 Jan 1835 male birth anywhere in the newly read material. Full detail: <a href="notes_view/Session94_GapClosing_SixRegisterPulls_June7_2026.html"><code>Session94_GapClosing_SixRegisterPulls_June7_2026.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-07-person-census">
+  <div class="cl-head">
+    <span class="cl-date">7 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">By-town census rebuilt person-by-person (146 individual entries) &mdash; and two Archion pulls date the whole Jungkonze branch and the full 1773&ndash;1818 Trendelburg marriage index.</span>
+  </div>
+  <div class="cl-body">
+    <strong>Page rebuild:</strong> <a href="germany/konze-family-by-town.html">The Konze family, by town</a> now lists <strong>every documented individual on their own row</strong>, grouped by town and family, each with birth/death and marriage dates, spouse and children, and the Archion register + Seite reference &mdash; including a new <strong>Contze/Contzen variant households</strong> table and a full <strong>Jungkonze/Jungkontze branch</strong> section (now reconstructed 1755&ndash;1837, with explicit Stammen roots).
+
+    <strong>Exact dates pulled (two parallel register reads):</strong> all five children of Ludwig Jungkonze the tailor (1827&ndash;1835, three died small); Maria Wilhelmine Jungkonze (b. 7 May 1829, d. 10 Jan 1831); &ldquo;Einrod Jung-Konze&rdquo; resolved to <strong>Eduard Jung-Konze, b. 26 Apr 1822</strong>, son of the late Artillerist Johannes Jungkonze &times; Dorothea Steinbach of Cassel; the Hussar-corporal-turned-Fruchtmesser Joh. Henrich Jungconze (~1740, d. 20 Aug 1808); and <strong>all 16 marriages in the 220096 index dated</strong>, among them Johann Friedrich Kontze &times; Dorothea Elisabeth Jorden <strong>15 Feb 1795</strong> with birth margins (he b. 11 Dec 1763; she b. 12 Nov 1766) and Andreas Contze &times; Wilhelmina Grosbernd <strong>8 Mar 1807</strong>. New 1834 find: a fourth child of Carl Ludwig Konze &mdash; Christine Wilhelmine Philippine, b. 11 Aug 1834.
+
+    <strong>Corrections logged in <a href="errata.html#er-2026-06-07-jungkonze-dates">errata</a>:</strong> the two Jungkonze boys&rsquo; births are 12 Feb 1833 and <strong>18 Jun 1835</strong> (not &ldquo;~1833&ndash;34&rdquo;); the 1825 illegitimate Johann George belongs to a Maria Elisabeth <em>Konze</em> (not Jungkonze, not 1827); the Lotz marriage is 17 Feb 1774 (not Jan 1781); and the 1795 marriage names Johann Friedrich&rsquo;s father as a <em>Trendelburg Rathsverwandter</em> Andreas Kontze &mdash; conflicting with the Deisel-K&uuml;ster derivation (⚠ open). <strong>No new Charles candidate:</strong> none of the newly-dated children matches a 26 Jan 1835 birth. See <a href="notes_view/Session93_PersonLevel_Census_Exact_Dates_June7_2026.html"><code>Session93_PersonLevel_Census_Exact_Dates_June7_2026.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-06-tree-viz-refresh">
+  <div class="cl-head">
+    <span class="cl-date">6 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">Both family-tree visuals refreshed for currency &mdash; and a stale &ldquo;primary&rdquo; hypothesis on the all-families poster corrected. Plus a refuted Andreas-of-Trendelburg lead.</span>
+  </div>
+  <div class="cl-body">
+    <strong>Graphic family tree</strong> (<code>Kontze_Family_Tree_Graphic.html</code>): added a June-2026 panel for the newly-documented <strong>Stammen / Gottsbüren branch</strong> (Christian Ludwig Kontze × Anne Gertrud Temme; only child stillborn 1835; a distinct line, not Charles), refreshed the date, and cross-linked the new <a href="germany/konze-family-by-town.html">Konze family by town</a> page and the parish map.
+
+    <strong>All-families poster</strong> (<code>Family_Tree_All_Families.html</code>): the Charles box was still showing <em>&ldquo;Hypothesis A (PRIMARY): child of Henrich Wilhelm Gans&rdquo;</em> &mdash; the Gans&rarr;Gannsen lead that was <strong>set aside in May 2026</strong> and which the Y-DNA (Ashkenazi paternal line) further retires. Relabelled the dashed link <em>&ldquo;Hypothesis A &mdash; set aside,&rdquo;</em> rewrote both node notes to say no confirmed German parent (surname conclusion = Konzen, ★ Working), and cross-linked the by-town page. <em>The two trees are kept as complements: the graphic/poster show lineage; the by-town page is the census + FamilySearch-ID worklist.</em>
+
+    <strong>Research:</strong> tested whether Christian Ludwig&rsquo;s father was the Trendelburg Andreas Kontze (b. 1787) &mdash; <strong>refuted</strong>: that Andreas married as a <em>bachelor</em> in March 1807, and no Garland marriage or first-wife burial exists in Trendelburg or Deisel. Andreas Kontze (of the Stammen/Gottsbüren branch) and his wife Marie Elisabeth Garland remain an unplaced couple; their home parish is still unidentified. See <a href="notes_view/Session89_Stammen_Marriage_Burial_Gottsbueren_Konze_June6_2026.html"><code>Session89&hellip;.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-06-konze-by-town">
+  <div class="cl-head">
+    <span class="cl-date">6 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">New page: the Konze family listed by town, with FamilySearch IDs (known filled, the rest flagged to add). Plus a Gottsbüren-burials result and a parish-map polish pass.</span>
+  </div>
+  <div class="cl-body">
+    <strong>New page &mdash; <a href="germany/konze-family-by-town.html">Konze family by town</a>.</strong> Every documented Konze/Kontze individual in the five-village Diemel-valley cluster (Trendelburg, Deisel, Friedrichsfeld, Stammen, Hümme &mdash; plus the claimed-but-unconfirmed Gottsbüren tie), grouped by parish, with a <strong>FamilySearch-ID column</strong>: filled for the three linked profiles (Charles <code>LZXC-6GB</code>, Andreas Konze b.1795 <code>PZF8-X19</code>, Johann Henrich Kontze b.~1747 <code>G8HG-P2S</code>) and flagged &ldquo;not yet on FS &middot; add&rdquo; for the ~28 others, as a worklist for new profiles. Linked into the Hesse &amp; Origins nav and cross-linked from the parish map and Konzen Puzzle.
+
+    <strong>Gottsbüren burials read.</strong> No Kontze death appears in Gottsbüren 1827&ndash;1833 (and the Garland family is numerous among the dead) &mdash; so Andreas Kontze &times; Marie Elisabeth Garland almost certainly both died <strong>on or before 1826</strong>; and a follow-up entry-by-entry read of the older book&rsquo;s burial section (KB 219040, ~Oct 1805&ndash;Jan 1825) found <strong>no Kontze burial there either</strong> &mdash; Gottsbüren&rsquo;s registers are entirely Kontze-free across 1795&ndash;1833. The Andreas Kontze family lived and died elsewhere; the 1833 &ldquo;born in Gottsbüren&rdquo; most likely points at the mother&rsquo;s (Garland) home village. Andreas&rsquo;s real home parish &mdash; the prize &mdash; remains open (Deisel/Trendelburg suspected; only burials Feb 1825&ndash;1826 remain unread in Gottsbüren).
+
+    <strong>Parish-map polish.</strong> Konze-present parishes now carry a distinct <strong>gold ring</strong> on the map (dashed for the unconfirmed Gottsbüren tie) with matching legend + card tags; the Eliminated cards are <strong>ordered nearest-to-farthest from Deisel</strong>; and the search-history date column was widened so &ldquo;6 June 2026 &middot; later&rdquo; no longer overlaps its description.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-06-stammen-gottsbueren">
+  <div class="cl-head">
+    <span class="cl-date">6 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Stammen Kontze branch resolved — marriage + burial found — and it adds a sixth Konze village: Gottsbüren (correcting a June &ldquo;no Konze&rdquo; note).</span>
+  </div>
+  <div class="cl-body">
+    The Stammen marriage register (Trauungen 220078, entry 14, <strong>9 June 1833</strong>) records <strong>Christian Ludwig Kontze</strong>, Tagelöhner, <em>&ldquo;gebürtig von Gottsbüren,&rdquo;</em> son of the late <strong>Andreas Kontze &times; Marie Elisabeth née Garland</strong>, age 26½ (b. ~1806), marrying <strong>Anne Gertrud née Temme</strong> of Stammen. The Stammen burial register (Beerdigungen 220072, entry 58) confirms their only Stammen child — the <strong>stillborn son, b./bur. 14–16 March 1835</strong>. Neither spouse appears in the Stammen burial index, so <strong>the couple left Stammen after 1835</strong> (emigration is a live possibility — a thread for the U.S. side).
+
+    <strong>Correction:</strong> the 4 June sweep marked <strong>Gottsbüren &ldquo;no Konze presence&rdquo;</strong> — but that sampled only the 1830s baptism book. This Kontze family was in Gottsbüren in the <strong>early 1800s</strong> (pre-1830 registers the sample didn't cover), gone by the 1830s. Gottsbüren is named as this one Kontze man&rsquo;s birthplace — <strong>but a follow-up read of Gottsbüren&rsquo;s own pre-1830 book (KB 219040) found NO Kontze</strong> in its baptisms (1804/06/08) or marriages (1795&ndash;1806); only the maternal <em>Garland</em> family is native there. So Andreas Kontze was an <strong>in-migrant</strong>, and Gottsbüren is a <strong>claimed-but-unconfirmed</strong> Konze tie, not a documented sixth village (<a href="errata.html#er-2026-06-06-gottsbueren-konze">errata</a>). The confirmed cluster stays at five (Trendelburg · Deisel · Friedrichsfeld · Stammen · Hümme). A new (≈7th) <strong>Andreas Kontze of Gottsbüren</strong> enters the tree, not yet tied to the disentangled Andreas identities. Full detail in <a href="notes_view/Session89_Stammen_Marriage_Burial_Gottsbueren_Konze_June6_2026.html"><code>Session89_Stammen_Marriage_Burial_Gottsbueren_Konze_June6_2026.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-06-konze-distribution">
+  <div class="cl-head">
+    <span class="cl-date">6 June 2026 &middot; later</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Konze surname-distribution sweep &mdash; the pool is hyper-local: one tight Diemel-valley cluster (Trendelburg &middot; Deisel &middot; Friedrichsfeld &middot; Stammen &middot; H&uuml;mme), nothing in the surrounding ring. Plus a correction: the Stammen 1835 entry is a stillborn male, not &ldquo;Rudolph.&rdquo;</span>
+  </div>
+  <div class="cl-body">
+    A surname sweep (not a birth-window search) asked simply: <em>where do Konze/Kontze families exist at all?</em>
+
+    <strong>Stammen branch mapped.</strong> The newly-found family is <strong>Christian Ludwig Kontze, Tagel&ouml;hner of Stammen No. 21, &times; Anne Gertrud geb. Temme</strong> (her father the late Johann Conrad Temme of Stammen). Kontze appears in 1833 as godparent (&ldquo;der Schwager&rdquo;); the couple's only child found so far is the <strong>stillborn male of 14 March 1835</strong> &mdash; the earlier &ldquo;Rudolph Kontze b. 20 March&rdquo; reading is corrected (<a href="errata.html#er-2026-06-06-stammen-stillborn">errata</a>). The compound surname <strong>Jungkontze</strong> (known from Trendelburg) also appears in Stammen (two mothers, 1835). The Kontze&times;Temme marriage and the burials remain to be located (Trauungen 1833+ or pre-1830 KB; Beerdigungen 220072 unchecked).
+
+    <strong>H&uuml;mme line corroborated.</strong> Transcript sampling 1830&ndash;58 finds the Kontze name surviving in H&uuml;mme only as women's maiden names (&ldquo;geb. Kontze&rdquo; 1830, ~1840) with <em>no Kontze-fathered baptism</em> &mdash; consistent with the recorded note that the last H&uuml;mme Konze male <strong>emigrated in the 1840s</strong>. Naming him requires the un-transcribed marriage/burial/confirmation books (flagged; he is of interest for the American side too).
+
+    <strong>Presence ring negative.</strong> Gottsb&uuml;ren, Grebenstein, Immenhausen, Bad Karlshafen, Gieselwerder, Veckerhagen &mdash; no Konze presence in sampled material (adding to the index-searched negatives Helmarshausen, Hofgeismar, Sch&ouml;neberg, Sielen). <strong>Net: the Konze pool is a single ~5 km cluster exactly where Charles placed himself</strong> (&ldquo;Deisse&rdquo; = Deisel; &ldquo;Freundburg&rdquo; = Trendelburg) &mdash; geographically coherent with the surname conclusion, and it tells Y-DNA recruitment exactly where to look. Full detail in <a href="notes_view/Session88_Konze_Distribution_Sweep_Stammen_Correction_June6_2026.html"><code>Session88_Konze_Distribution_Sweep_Stammen_Correction_June6_2026.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-06-border-parishes">
+  <div class="cl-head">
+    <span class="cl-date">6 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">Western/northern border sweep — the unsearched left and top of the parish map closed out, including the first cross-border (Westphalian-Catholic) parishes via Matricula. All negative; one genuine coverage hole found (Liebenau 1835).</span>
+  </div>
+  <div class="cl-body">
+    A map review showed the western, northwestern and northern fringe of the search radius had never been opened — it falls outside the Evangelical Kreis-Hofgeismar net (different confessions, different states). Same criteria as the 4 June sweep: a male birth ~10 Jan–28 Feb 1835 in the Konze pool <em>or</em> illegitimate.
+
+    <strong>Kurhessen (Archion):</strong> <strong>Bad Karlshafen</strong> — both confessions searched; the Reformed book (French + German congregations merged from 1830) holds the region's one window-compatible illegitimate male, <em>Johann Heinrich Thielemann</em> (b. 8 Feb 1835), but he was <strong>legitimized in 1838</strong> by a documented father (Schlosshahn) and stayed locally recorded — not Charles. <strong>Hombressen, Haueda, Ostheim, Niedermeiser</strong> — all negative (Niedermeiser has <em>no</em> male baptism at all in the window; Ostheim's only window male is an unnamed stillbirth).
+
+    <strong>Across the Prussian border (Matricula, Erzbistum Paderborn — a platform this project had never used):</strong> <strong>Herstelle/Würgassen</strong> Jan–Feb 1835 read — every entry marked <em>ehelich</em>, no pool-like surname; negative. <strong>Beverungen</strong> and <strong>Dalhausen</strong> were then completed the same day — <strong>both negative</strong>: Beverungen's five window males are all <em>ehelich</em>, none in the pool, and each carries a later margin note placing him dead or married in Germany; Dalhausen's own name index holds no pool surname for the entire 1822–1838 span, and the one boy born <strong>exactly 26 January 1835</strong> (Friedrich Wilhelm Sievers) is legitimate and died in Germany in 1908 — positively eliminated.
+
+    <strong>Coverage hole:</strong> <strong>Liebenau (Hesse) 1835</strong> (likely covering filial Grimelsheim) is <em>not digitised anywhere</em> — Archion holds Liebenau only to 1777. Logged as a new open gap (Kassel archive or FamilySearch film). <strong>Net:</strong> the parish ring around Deisel now stands at <strong>29 investigated, 24 eliminated, 2 open gaps (Heisebeck pre-1845 and Liebenau 1835, both undigitised) — and still no male birth on/near 26 Jan 1835 in the surname pool anywhere, in two states and two confessions.</strong> Parish map, markers, and Negative Results updated; full detail in <a href="notes_view/Session87_Western_Northern_Border_Parishes_June6_2026.html"><code>Session87_Western_Northern_Border_Parishes_June6_2026.md</code></a>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed" id="cl-2026-06-06-ydna-yfull">
+  <div class="cl-head">
+    <span class="cl-date">6 June 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">YFull sample (YF147577) in hand — independently confirms the Ashkenazi paternal line on a second tree; the Y-DNA lead is now read out.</span>
+  </div>
+  <div class="cl-body">
+    Charles's tested male-line descendant is <strong>YFull sample YF147577</strong>, reviewed live alongside the FamilyTreeDNA Big Y. YFull (YTree v14.03) places it on the identical terminal subclade <code>I-Y38863</code> (formed ~750 ybp, TMRCA ≈ 1300 CE) — matching FamilyTreeDNA's <code>I-Y38863</code> (parent <code>I-BY2640</code>, ≈ 1400–1450 CE). The full Y-STR panel (~780 markers) is an unremarkable I2-M223 modal haplotype with no rare/null markers.
+
+    <strong>Match mining (both platforms).</strong> Charles's exact YFull branch has just three members — YF147577, <strong>YF078713 (Poland [PL-14], YFull "yid"/Ashkenazi tag)</strong>, and YF002081 — the same Poland/Ashkenazi signal FamilyTreeDNA shows (closest Big-Y match: a Polish "Mendelson" line, EKA <em>Zadok Mendelsson</em>). No Konze / Köster / Hessian surname appears on either platform; the named earliest-known ancestors are unambiguously Jewish.
+
+    <strong>What it means — and its limit.</strong> The strict paternal line is <strong>Ashkenazi-Jewish, east-central European</strong>, beneath the documented Hessian-Evangelical Konze family. But even the closest match coalesces ~1300–1450 CE (15–20+ generations back), so the Y-DNA pins the <em>ancestral population</em>, not Charles's 1835 father. The cleanest reading is an <strong>undocumented-paternity event</strong> up the line — which would also explain why no Konze baptism for Charles has ever been found, and ties to the January-1835 illegitimacy hypothesis. Logged on <a href="dna.html">DNA evidence</a> (new YFull card) and in <a href="notes_view/Session86_YFull_FTDNA_YDNA_Analysis_June6_2026.html"><code>Session86_YFull_FTDNA_YDNA_Analysis_June6_2026.md</code></a>. <strong>Highest-yield DNA next step:</strong> recruit a documented Trendelburg-area Konze male to Big-Y test — a match proves the surname line, a non-match confirms the non-paternity reading.
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-04-fulltext-adjacent-parishes">
+  <div class="cl-head">
+    <span class="cl-date">4 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">&ldquo;Complete the research&rdquo; pass on the remaining online leads &mdash; FamilySearch full-text (new ground) and the never-opened adjacent parishes. Result: the &ldquo;Chas. L.&rdquo; service card, otherwise negatives; still no candidate.</span>
+  </div>
+  <div class="cl-body">
+    With no active candidate and the HStAM Stammrolle inquiry already emailed (awaiting reply), this pass worked the leads that are searchable online now.
+
+    <strong>FamilySearch full-text index (first systematic use here).</strong> <em>U.S. side:</em> the &ldquo;Gannsen&rdquo; cluster is firmly our Charles, and a Co. B service card reading &ldquo;<strong>Gunnsen, Chas. L. or Gannsen, Chas.</strong>&rdquo; independently ties the middle initial <strong>L.</strong> to the soldier &mdash; a step toward &ldquo;Charles L. Johnson.&rdquo; But <strong>no naturalization, declaration of intention, probate or land record names a German birthplace</strong> under any spelling. <em>German side:</em> the surname pool returns no authentic Hesse match; the &ldquo;Konzen/Kontzen&rdquo; hits are unrelated Rhineland/Catholic and Brazilian families. Notably the index <em>does</em> hold deep Kreis Hofgeismar material (LDS family-group records / parish abstracts for Deisel, Trendelburg, Grebenstein, Veckerhagen&hellip;) with <strong>no Konze family attached to the district</strong> &mdash; a coverage-backed negative, not a gap.
+
+    <strong>Archion &mdash; adjacent parishes never opened before.</strong> Scanned Jan&ndash;Feb 1835 baptisms for a male Konze-pool birth <em>or</em> any illegitimate male birth (the DNA result keeps the unwed-mother case live). <strong>Gottsb&uuml;ren, Lamerden, Gewissenruh</strong> = clean negatives. <strong>Ebersch&uuml;tz</strong> (Taufen 1830&ndash;1897, reg. 218887, <a href="https://www.archion.de/p/81ac3f9a34/" target="_blank" rel="noopener noreferrer">img 351</a>) yielded one illegitimate male birth &mdash; <em>Heinrich Wilhelm Albore</em>, b. 22 Jan 1835, mother of the Albore family from Bischhausen (Kgr. Hannover) &mdash; <strong>re-read at full magnification and judged NOT a match</strong> (the surname relates to nothing Charles used, the given name isn&rsquo;t Carl/Ludwig, and Ebersch&uuml;tz is not one of his stated origins). The dedup check against the research logs confirms these parishes were previously only ever logged as &ldquo;digitised, not searched,&rdquo; so this is new, non-duplicative work.
+
+    <strong>Five more parishes scanned (later same day):</strong> <strong>Stammen</strong> (reg. 220069) has a Konze-pool male &mdash; <em>[corrected 6 June: at full zoom the Stammen entry is a <strong>stillborn male Kontze, b. 14 March 1835</strong>, no first name, child of Christian Ludwig Kontze × Anne Gertrud Temme — a distinct branch, confirmed NOT the Carl-Ludwig-Kontze line; see <a href="errata.html#er-2026-06-06-stammen-stillborn">errata</a>]</em>; <em>Rudolph Kontze, b. 20 March 1835</em>, son of Christian/Carl Ludwig Kontze &mdash; but wrong date and name, <strong>not Charles</strong> (a newly-documented Stammen Kontze family, possibly the Carl-Ludwig-Kontze line, worth a later cross-check); <strong>Veckerhagen</strong> (reg. 220213) has an illegitimate male <em>Wilhelm Walter</em> baptised ~March 1835, also <strong>not Charles</strong>; <strong>Marzhausen, Grebenstein, Immenhausen</strong> = negative. <strong>Oberweser</strong> (held under Gieselwerder, reg. 219016) and <strong>Hofgeismar-Kelze</strong> (reg. 219634) were then also searched &mdash; both negative &mdash; so the <strong>adjacent-parish sweep is now COMPLETE (11 parishes), with no male birth on/near 26 Jan 1835 in the surname pool anywhere.</strong> The Stammen Kontze was cross-checked and resolved: father <em>Christian Ludwig Kontze</em>, Tagel&ouml;hner of Stammen No. 21 (wife Anne Gertrud n&eacute;e Tem[me]) &mdash; a <strong>distinct</strong> man from the documented Carl Ludwig Kontze (b. 1804), i.e. a newly-documented separate Stammen branch, not Charles. <strong>Net status: no confirmed candidate;</strong> the readily-searchable online space is now substantially exhausted, leaving the Stammrolle reply, line-by-line passenger manifests, and Y-DNA recruitment as the decisive remaining avenues. Full detail in <a href="notes_view/Session85_FamilySearch_FullText_Adjacent_Parishes_June4_2026.html"><code>Session85_FamilySearch_FullText_Adjacent_Parishes_June4_2026.md</code></a>. <em>(The NARA pension file is already obtained, on the site, and fully transcribed &mdash; a closed source, not an open lead.)</em>
+  </div>
+</article>
+
+<article class="cl-entry structure" id="cl-2026-06-04-entry195-master-doc">
+  <div class="cl-head">
+    <span class="cl-date">4 June 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">Master research document reconciled with the Entry-195 elimination &mdash; the one place the 4 May retraction never reached &mdash; and the false &ldquo;no-burial &rarr; emigration&rdquo; inference that kept reviving the candidate is retired.</span>
+  </div>
+  <div class="cl-body">
+    A verification pass found that the Entry-195 elimination (Peter Schr&auml;der&rsquo;s expert re-reading, retracted 4 May 2026) had propagated everywhere across the public site but <strong>not into the master working document</strong> <a href="notes_view/Kontze_Family_Tree_and_Research_Paths.html"><code>Kontze_Family_Tree_and_Research_Paths.md</code></a>, which still labelled Entry 195 the &ldquo;STRONGEST CANDIDATE,&rdquo; &ldquo;NOT ELIMINATED,&rdquo; with &ldquo;strong emigration evidence.&rdquo; Because that file is the first thing any new research session reads, the dead candidate kept resurfacing there.
+
+    <strong>Fixes.</strong> The master document now opens with a stop-banner marking Entry 195 eliminated (male K&ouml;ster newborn who died unbaptised &mdash; not Charles), citing the 4 May retraction; the diagram node, ASCII tree, marriage-search section, and key-confirmation lines were all corrected to match. The two &ldquo;Candidate Path G / Justus Ernst Konze (b. 1829)&rdquo; assessments &mdash; a <em>different</em> person, never confirmed &mdash; were marked no-longer-active. Current status restated plainly: <strong>no active candidate</strong> for Charles&rsquo;s German birth record.
+
+    <strong>Inference retired.</strong> The reasoning &ldquo;no burial found in Deisel register 218851 &rarr; emigration &rarr; strongest candidate&rdquo; is a false inference: a newborn who died unbaptised in January 1835 is recorded in the <em>baptism</em> register&rsquo;s notation, not necessarily the burials register, so &ldquo;no separate burial&rdquo; never implied survival. This is logged so the candidate is not revived a third time.
+
+    <strong>Live-Archion data gathered the same day (no bearing on the elimination, recorded in <a href="notes_view/Session84_KB218842_Entry195_Reverification_GodparentColumn_June4_2026.html"><code>Session84&hellip;June4_2026.md</code></a>).</strong> A signed-in read of KB&nbsp;218842 image&nbsp;40 confirmed the entry reads only &ldquo;M&auml;nnl: K&ouml;ster&rdquo; (sex + surname, no given name) with the &Dagger;/ungetauft marker and an empty godparent column &mdash; the standard recording of an infant who died unbaptised. A full sibling page-scan of the register found only <em>two</em> K&ouml;ster &times; Hildebrand children (Jan 1835 and Aug 1836) and the family vanishing thereafter; the Deisel marriage register holds no K&ouml;ster&ndash;Hildebrand union for 1833&ndash;35. (Candid note: this pass initially and wrongly re-asserted Entry 195 as a candidate before being corrected against Peter Schr&auml;der&rsquo;s read &mdash; the same trap the master-document lag had set.) See <a href="errata.html#er-2026-06-04-entry195-master-doc">er-2026-06-04-entry195-master-doc</a>.
+  </div>
+</article>
+
+<h2 id="2026-05">May 2026</h2>
+
+<article class="cl-entry confirmed" id="cl-2026-05-31-archion-reads">
+  <div class="cl-head">
+    <span class="cl-date">31 May 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Live Archion read-session &mdash; two long-&ldquo;unreadable&rdquo; Kontze entries recovered, the Deisel 1736&ndash;1796 baptism structure corrected, and the Friedrichsfeld &ldquo;colonist&rdquo; candidate cast into doubt.</span>
+  </div>
+  <div class="cl-body">
+    A direct, signed-in Archion session worked through five of the project's outstanding register-reading items. Outcomes, with the primary-source images now read:
+
+    <strong>★ Trendelburg 220108, Seite 243 (entry &#8470;&nbsp;953) &mdash; recovered.</strong> The Konze baptism two earlier sessions could not confirm on a faintly-exposed page is the <em>Nottaufe</em> (emergency baptism) of <strong>Johann Friedrich Wilhelm Konze</strong>, b. 23 June 1861, baptised at home 28 June 1861; father <strong>Karl Wilhelm Konze, Einlieger</strong>; mother <strong>Marie geb. Lauterbach, von Deisel</strong>; godfather Johannes Köhler. Remarks column blank (no death note). Moved to <em>Resolved</em> on <a href="open-questions.html#resolved">Open Questions</a>. A documented Trendelburg&ndash;Deisel Konze link; does not bear on Charles (the father, b. 1831, is already eliminated as too young).
+
+    <strong>★ Deisel KB 218824, Seite 82 &mdash; the &ldquo;unreadable&rdquo; Andreas Kontze burial recovered.</strong> The April note flagged this entry as needing higher-resolution or in-person reading. It is the <strong>1828</strong> burial of <strong>Andreas Kontze, <em>Einlieger</em></strong>, died the 24th (Feb), aged <strong>29 years 7 months 25 days &rarr; b. ~mid-1798</strong> &mdash; which settles the prior ambiguity: this is the <em>young</em> Andreas Konze (the 1828 death), neither the elder Andreas nor the 1787/1830 one.
+
+    <strong>Deisel KB 218821 (1736&ndash;1796) &mdash; baptism structure corrected.</strong> Archion's own catalogue page gives Deisel baptisms as book-pages 7&ndash;172 (1736&ndash;1796); the section was traced by year-header to mid-1793, superseding the prior &ldquo;baptisms end ~1786&rdquo; estimate. Andreas Konze's own 1795 baptism could not be rendered &mdash; the 1794&ndash;96 leaves fall in an image band the viewer would not load (the documented &ldquo;navigation failure&rdquo;).
+
+    <strong>Friedrichsfeld 218959 &mdash; the &ldquo;[?]ard Kontze, Colonist&rdquo; candidate cast into doubt.</strong> A re-examination of every cleanly-read Friedrichsfeld leaf 1832&ndash;1835 found the <em>only</em> Kontze baptisms to be the two sons of <strong>Andreas Kontze &times; Maria Sophia née Hofeditz</strong> (Heinrich Wilhelm 1832, August 1834); the January-1835 leaf where Session 22 placed &ldquo;Entry 28&rdquo; is an illegitimate <em>Dölfer</em> baptism. No &ldquo;Maria Catharina Kontze&rdquo; surfaced &mdash; so the third <em>inconclusive</em> candidate on the <a href="germany/konzen-puzzle.html">Konzen-puzzle</a> chart now carries a <strong>&ldquo;probably spurious, pending a definitive leaf-by-leaf check&rdquo;</strong> caveat. The page also gained a <em>&ldquo;wider candidate field&rdquo;</em> section (rosters for the colonist-father, the maternal-line Konze women, and the men weighed as Charles himself).
+
+    <strong>Deisel Beerdigungen 218851, Entry 152 &mdash; still blocked.</strong> The mother's maiden name (&ldquo;Catharina Elisabeth geb. <em>Thilin? Thinka?</em>&rdquo;) &mdash; the Identity-6 tiebreaker &mdash; could not be relocated: the en-viewer image numbers don't match the April session's and the burial leaves are non-sequentially scanned. It remains at the legibility limit; a collateral &ldquo;geb. <em>Thile</em>&rdquo; entry nearby suggests the name <em>is</em> a real local surname. Recommended for the Landeskirchliches Archiv Kassel or Archion HTR.
+  </div>
+</article>
+
+<article class="cl-entry major" id="cl-2026-05-30-v1-2-0">
+  <div class="cl-head">
+    <span class="cl-date">30 May 2026</span>
+    <span class="cl-pill major">Major</span>
+    <span class="cl-title">★ <strong>v1.2.0</strong> &mdash; Genealogical-rigor pass and DNA-evidence integration. New <a href="dna.html">DNA evidence</a> page, an <em>Interpretive</em> confidence tier, a split of the compound identity claim, single-informant caveats, an alternative-toponym elimination block, and a new deep-paternal-origin open question.</span>
+  </div>
+  <div class="cl-body">
+    A rigor review of the site's evidentiary reasoning, followed by integration of newly supplied DNA results.
+
+    <strong>Confidence framework.</strong> Added an <a href="methodology.html#confidence"><em>Interpretive / contextual</em> tier</a> to the source-rating taxonomy for readings of motive or meaning that are consistent with the evidence but not falsifiable fact-claims; the firstborn &ldquo;Friedrich Wilhelm / deposed Elector&rdquo; reading was relabelled from <em>Working</em> to <em>Interpretive</em> and reconciled with the child page (which favours the parsimonious &ldquo;named for his godfather Friedrich Wilhelm Pillmann&rdquo; reading). The <a href="claims-dashboard.html">Claims Dashboard</a> identity row was split into a <em>Confirmed</em> American-life spine and a <em>Working</em> equation to &ldquo;Konzen of Trendelburg,&rdquo; so a compound claim is no stronger than its weakest link; stale confidence counts corrected.
+
+    <strong>Evidentiary caveats.</strong> Single-informant caution added to the birth-year row (independent records vs. independent information). An <a href="index.html#alt-decodings">alternative-toponym elimination block</a> added to <em>Germany &amp; Origins</em>, listing the real Hessian places &ldquo;Freundburg&rdquo; could decode to and why Trendelburg is selected by triple convergence rather than phonetics alone. A standing <a href="negative-results.html">Genealogical-Proof-Standard statement</a> added to the negative-results audit.
+
+    <strong>★ DNA evidence (new page).</strong> A dedicated <a href="dna.html">DNA evidence</a> page reports the FamilyTreeDNA Big Y-700 result (haplogroup <strong>I2-M223</strong>, terminal subclade <strong>I-Y38863</strong>, branch formed ~1400 CE / common ancestor ~1450 CE) and the AncestryDNA + Family Finder autosomal results, with the caveats that keep the origin and surname conclusions <em>Working</em>. The headline finding: Charles's closest paternal-line Y-matches are predominantly Ashkenazi-Jewish lineages, with a faint echo in several small autosomal matches &mdash; pointing to a deep Jewish origin in the strict male line that sits beneath the documented Hessian-Evangelical family. Logged as a new <a href="open-questions.html#paternal-origin">deep-paternal-origin open question</a> bearing on the never-found baptism and the 1835 illegitimacy hypothesis. Living DNA matches are not named, per the privacy policy. Wired into the <em>Sources &amp; method</em> nav, footer, sitemap, and search index.
+  </div>
+</article>
+
+<article class="cl-entry major" id="cl-2026-05-29-v1-1-0">
+  <div class="cl-head">
+    <span class="cl-date">27&ndash;29 May 2026</span>
+    <span class="cl-pill major">Major</span>
+    <span class="cl-title">★ <strong>v1.1.0</strong> &mdash; Five-round content-debt + maintenance-hardening pass. New Claims Dashboard, Andreas Konze identity disentanglement, Doc A&ndash;O crosswalk, and a pre-deploy gate harness that closes the propagation-cascade bug class at the build step.</span>
+  </div>
+  <div class="cl-body">
+    A two-punch-list, seven-round programme over four days &mdash; 50+ individual fixes across content, scaffolding-binding, audit-trail loop closure, and maintenance infrastructure. Full record in <a href="notes_view/HANDOFF.html"><code>HANDOFF.md</code></a>; full punch lists at <a href="notes_view/Site_Punch_List_May27_2026.html"><code>Site_Punch_List_May27_2026.md</code></a> and <a href="notes_view/Site_Punch_List_Round2_May27_2026.html"><code>Site_Punch_List_Round2_May27_2026.md</code></a>.
+
+    <strong>★ New artifacts.</strong> A single-screen <a href="claims-dashboard.html">Claims Dashboard</a> consolidates 15 load-bearing claims with confidence pill, primary source, and falsification condition per row. The <a href="index.html#andreas-disentanglement">Andreas Konze identity disentanglement</a> on <em>Germany &amp; Origins</em> walks the reader through the five (probably six) distinct men named Andreas Kon(t)ze in the Trendelburg-Deisel records 1718&ndash;1830, naming the methods (burial-age statements, marriage-entry spouse names, grandfather attribution at baptism) that distinguished each. The <a href="index.html#doc-crosswalk">Doc A&ndash;O crosswalk</a> on <em>Source Archive</em> anchors the 1-day Doc&nbsp;A vs Doc&nbsp;N death-date discrepancy; dagger footnotes on every visible &ldquo;16 December 1903&rdquo; instance link to it.
+
+    <strong>Propagation-cascade closure.</strong> Five surviving 7-attestation and 7-rendering instances closed across <code>index.html#overview</code>, <code>faq.html</code>, <code>evidence-index.html</code>, <code>germany/index.html</code>, <code>germany/konzen-puzzle.html</code>, <code>who/index.html</code>, <code>children/index.html</code>, <code>children/katherine-carolina.html</code>, <code>index.html#overview</code>, and <code>sponsor-reconciliation.html</code>. <em>Freundberg</em> &rarr; <em>Freundburg</em> propagation completed on <code>index.html#germany</code> and <code>index.html</code>. The 78+ session count reconciled across methodology, negative-results, and sponsor-reconciliation.
+
+    <strong>Audit-trail loop closed.</strong> Errata back-links now point from live claims into <code>errata.html</code> for: surname conclusion, Bertha 1880, height 5'5", Card 4/5 recalibration, 1890 Konzen reading, Heitzenberger&rarr;Hitzelberger, Doc A/N death-date discrepancy, Entry 195 retraction. A new formal errata entry <a href="errata.html#er-2026-05-03-heitzenberger-surname-family">er-2026-05-03-heitzenberger-surname-family</a> closes the previously dangling reference.
+
+    <strong>Scaffolding binding.</strong> ~37 inline cites added across <code>index.html#germany</code>, <code>index.html#charles</code>, <code>index.html#civilwar</code>, <code>index.html#evidence</code>, <code>methodology.html</code>, <code>abstract.html</code>, and <code>index.html#overview</code> pointing into negative-results, bibliography (with section anchors), errata, and the new Doc A&ndash;O crosswalk. The methodology &rarr; crosswalk binding (previously 0 links) now carries three inline citations.
+
+    <strong>Dual-audience routing.</strong> &ldquo;This page is for the family-reader path / researcher path&rdquo; preambles added to <code>stories.html</code> and <code>index.html#evidence</code>. The Konzen Puzzle landing now opens with a plain-language working-conclusion paragraph before the connoisseur card. Children's lifespan figcaption rewritten to surface the three young deaths explicitly with conservative cause-of-death framing.
+
+    <strong>People-page consolidation (27 pages, Cohort A).</strong> Per-page register choice: 10 kept the family-intro (bottom-line wrapped in a &ldquo;Researcher view&rdquo; <code>&lt;details&gt;</code>); 17 kept the bottom-line (family-intro reduced to one-sentence italic preamble). Why-Charles over-claims tightened on 15 pages across the rounds &mdash; absolutes hedged, factual slips corrected (Carl Kreichelt's siblings vs. parents, Henriette's recurring-sponsor framing, Auguste Kreichelt's documentary-witness role).
+
+    <strong>Foundation 2020 reframing.</strong> REFINED / RULED OUT / NEW SINCE 2020 cards rewritten as explicit &ldquo;2020 said X &mdash; we now know Y because Z&rdquo; pairs. The sponsor 15/17 ratio is now plain-language explained (Georg Kreichelt and Friedrich Pillmann both stand up at multiple baptisms).
+
+    <strong>Glossary auto-linking.</strong> First-occurrence glossary anchors added across 65 subpages (people, children, family_pages, towns) and 9 reference pages &mdash; 402 new anchors in R6 alone, on top of the Round-2 narrative sweep.
+
+    <strong>Sharing surfaces.</strong> 125 pages that lacked <code>og:image</code> patched. Twitter cards normalised to <code>summary_large_image</code> on 92 additional pages. <code>family-poster.html</code> OG image promoted from relative SVG to absolute PNG.
+
+    <strong>Skip-link / accessibility.</strong> <code>&lt;a id=&quot;main&quot;&gt;</code> anchor injected on 280 pages so the shared nav's skip-to-main works site-wide; persisted in <code>scripts/inject-site-nav.py</code> via <code>body_inject_skip_anchor()</code> so future inject passes don't regress. SPA-tab pseudo-anchor fix applied to 34 bare <code>href=&quot;#X&quot;</code> references across 14 standalone pages. 4 HTML5-invalid nested <code>&lt;a&gt;</code> tags fixed via <code>&lt;span role=&quot;link&quot;&gt;</code> + keyboard handlers.
+
+    <strong>Internal-link audit.</strong> 297 pages swept; 30 real bugs fixed (konsen-puzzle &rarr; konzen-puzzle rename, #evidence-card-1 &rarr; #card1 anchor, stories.html#X &rarr; per-story files, 10 family-page back-links to missing #fam-X anchors, plus 7 singletons). End state: 0 broken internal links.
+
+    <strong>Maintenance harness (new).</strong> Three pre-deploy gates wired into <code>deploy.sh</code>: <code>scripts/check_canon.sh</code> (canonical-claim grep guard, now actively monitoring stories pages too), <code>scripts/check_links.py</code> (full-site internal-link audit, fails the deploy on broken refs), and <code>scripts/build_search_index.py</code> (rebuildable search index, 186 entries replacing the 101-entry hand-curated artifact). The propagation-cascade bug class is now gated at the build step.
+
+    <strong>Citation metadata bumped.</strong> <code>.zenodo.json</code> and <code>CITATION.cff</code> bumped from v1.0.0 (2026-05-08) to v1.1.0 (2026-05-29). Description updated to surface the Claims Dashboard, Andreas Konze disentanglement, Doc A&ndash;O crosswalk, and the maintenance harness. Three new related-identifier links and three new keywords. Search-index regenerated.
+  </div>
+</article>
+
+<article class="cl-entry major">
+  <div class="cl-head">
+    <span class="cl-date">25 May 2026</span>
+    <span class="cl-pill major">Major</span>
+    <span class="cl-title">★★★ Full-site genealogical-rigor pass. The Y-DNA / Jewish-paternal-line inquiry was set aside; the retracted Entry-195 reading was propagated site-wide; the surname canon was finalised at eight distinct American spellings; and Key Evidence Cards 4&ndash;5 were recalibrated from asserted evidence to indirect inference.</span>
+  </div>
+  <div class="cl-body">
+    A genealogical-rigor review of the full site (Genealogical Proof Standard, citation quality, evidence-vs-inference, name disentanglement) found four classes of surviving problem, all now closed and logged on the errata page.
+
+    <strong>Y-DNA thread set aside.</strong> The Y-DNA Jewish-paternal-line inquiry &mdash; presented on <code>fam-stern.html</code> / <code>who/index.html</code> / <code>negative-results.html</code> as the &ldquo;active pivot&rdquo; and &ldquo;leading hypothesis,&rdquo; contradicting the documentary Konzen conclusion &mdash; has been set aside. All genetic assertions were removed from prose; <code>fam-stern.html</code>, <code>fam-gans-jewish.html</code> and <code>fam-other-jewish.html</code> are retained but reframed as a set-aside research thread. See <a href="errata.html#er-2026-05-25-ydna-set-aside">er-2026-05-25-ydna-set-aside</a>.
+
+    <strong>Entry-195 retraction propagated.</strong> The 4 May 2026 re-reading of Entry 195 (a Köster day-labourer's child, not a Konze baptism) had not reached the town pages, <code>fam-hildebrand.html</code>, or the index / overview negative-search sections; it is now corrected and linked to the source page throughout. Heisebeck's open-lead status is re-grounded on the parish being undigitised and unsearched.
+
+    <strong>Surname count finalised.</strong> Stray &ldquo;six&rdquo; / &ldquo;seven&rdquo; counts of American spellings were closed on <code>index.html</code>, <code>index.html#evidence</code>, the evidence cards, <code>index.html#germany</code>, <code>open-questions.html</code> and elsewhere; the canon is uniformly &ldquo;eight distinct American spellings across eight attestations.&rdquo; The 1890 death-record reading is &ldquo;Konzen&rdquo; on the evidence cards, consistent with the 17 May canon.
+
+    <strong>Evidence-card calibration.</strong> Key Evidence Cards 4 (Friedrich Wilhelm naming) and 5 (naturalization) are recalibrated from asserted &ldquo;Kurhessen references&rdquo; to indirect detail consistent with a Kurhessen origin; the Card 1 conclusion is reframed as a surname-pool inference with no specific Konze family confirmed. Scattered contradictions (Fort Wyman dates, candidate-family count, a future-dated citation, an arrival year, a register ID) were also reconciled. See <a href="errata.html#er-2026-05-25-rigor-pass">er-2026-05-25-rigor-pass</a>.
+  </div>
+</article>
+
+<article class="cl-entry major">
+  <div class="cl-head">
+    <span class="cl-date">17 May 2026 (night, second user-catch)</span>
+    <span class="cl-pill major">Major</span>
+    <span class="cl-title">★★★ The Konsen Puzzle &rarr; The Konzen Puzzle. Page renamed, keystone reassigned to the 1890 St. Marcus death record reading <em>"Auguste Somers geb Konzen"</em> &mdash; the only American attestation of the full Hessian z-form documented in the Trendelburg parish since 1773. 1875 Konsen baptism reframed as the phonetic-s sibling. 188 files touched, 431 string replacements.</span>
+  </div>
+  <div class="cl-body">
+    Triggered by a user catch noting that &mdash; per the 17 May late-evening cascade establishing the 1890 reading as <em>Konzen</em> with a z &mdash; the dedicated surname-puzzle page at <code>germany/konsen-puzzle.html</code> was inverted in its framing: it presented the 1875 American phonetic-s spelling <em>Konsen</em> as the keystone when the actual Hessian-attested spelling <em>Konzen</em> appears on American soil in the 1890 record. The page was renamed to <code>germany/konzen-puzzle.html</code>; the H1, title, OG card, JSON-LD headline, breadcrumb, "At a Glance" section, hero section, surname-chronology table, and phonetic-cluster table were all updated to position the 1890 <em>Konzen</em> attestation as the keystone evidence with the 1875 <em>Konsen</em> as its phonetic-s companion. The renamed page links both records as the two K-initial bracketing endpoints of the surname trail.
+
+    <strong>Cascade scope:</strong> 188 files updated in a single rewrite pass; 431 path / display-label string replacements (konsen-puzzle &rarr; konzen-puzzle for the URL, "Konsen Puzzle" &rarr; "Konzen Puzzle" for the display label, except in this changelog and on errata.html where historical references were preserved as the literal record). The injected nav fragment <code>assets/site-nav.html</code> was updated and re-injected to all 175 standalone pages. A 301 redirect added in <code>netlify.toml</code> from <code>/germany/konsen-puzzle.html</code> to the new URL.
+
+    <strong>Stale-1890-Konsen prose cleanup:</strong> a follow-on grep surfaced nine surviving stale framings &mdash; "two-record Konsen attestation (1875 baptism + 1890 death record)" / "1890 daughter's death record reads <em>Konsen</em>" / "Konsen <em>again</em>" / "the second instance of Konsen" &mdash; on <code>index.html</code>, <code>index.html#evidence</code>, <code>evidence-index.html</code>, <code>evidence/index.html</code>, <code>germany/index.html</code>, <code>cast.html</code>, <code>stories/7-konsen.html</code>, and the surname-chronology table on <code>index.html#germany</code>. All updated to "Konzen 1890 / Konsen 1875" framing. The "8 American spellings" chip on <code>index.html#germany</code> was bumped from 7 (final remnant of the pre-cascade 7-distinct canon).
+
+    <strong>Story 7 substantially rewritten:</strong> the lede that read "Two scribes, fifteen years apart, both writing the same spelling" was factually wrong post-cascade; replaced with "two K-initial American records bracket the surname trail 15 years apart" framing. The hero figcaption now correctly identifies the 1890 image as carrying the Konzen z-form.
+
+    See <a href="errata.html#er-2026-05-17-konzen-puzzle-rename">errata entry er-2026-05-17-konzen-puzzle-rename</a>. <strong>Lesson logged:</strong> after a primary-source re-reading flips a load-bearing word, the file-path / URL-slug / page-title layer is often missed because it's outside the prose-grep scope. Future rigor passes should explicitly check page titles, OG metadata, JSON-LD headlines, and URL slugs whenever a surname-spelling correction is applied.
+  </div>
+</article>
+
+<article class="cl-entry major">
+  <div class="cl-head">
+    <span class="cl-date">17 May 2026 (night)</span>
+    <span class="cl-pill major">Major</span>
+    <span class="cl-title">★★★ Post-cascade audit-fix pass — 27 findings closed in three batches (P0 / P1 / P2), 8-distinct canon propagated to flagship pages that still showed 6 or 7, stories.html split into 9 standalone pages, family-reader lede paragraphs added to all 34 people / children profiles, skip-to-main link propagated site-wide, glossary auto-link script (404 first-occurrence links), German-translation toggle in the footer, 1.1 GB of disk cruft cleared.</span>
+  </div>
+  <div class="cl-body">
+    <strong>What triggered it:</strong> a fresh independent audit of the site reviewing the four lenses the May-17-morning rigor pass and May-17-evening catch cascade hadn't covered (technical hygiene, structure &amp; navigation, family-reader fit, content/citation integrity post-cascade). 27 distinct findings catalogued in <code>Charles_Konzen_Site_Audit_May17_2026.docx</code>.
+
+    <strong>P0 (3 fixes — must-ship-before-next-deploy):</strong>
+    <em>F-1 surname-count.</em> The May-17-evening catch that bumped the U.S.-spelling canon from 7 → 8 (adding the 1890 daughter's <em>Konzen</em> reading) had propagated unevenly: five flagship pages still showed "6 distinct" / "seven distinct" wording inside paragraphs that elsewhere claimed 8. Within-page contradictions closed across <code>index.html</code> (5 instances), <code>abstract.html</code>, <code>methodology.html</code>, <code>faq.html</code>, <code>index.html#evidence</code> (figure caption), <code>evidence-index.html</code> (figure caption + bullet), <code>index.html#overview</code>, <code>index.html#overview</code>, <code>stories.html</code>, <code>index.html#charles</code>, <code>evidence/index.html</code>, <code>index.html#archive</code>.
+    <em>F-2 broken link.</em> <code>index.html#archive</code> Doc A–O crosswalk row F pointed at a non-existent <code>sources/marriage-record.html</code>; repointed to the Card-3 link already in the same row. Internal-link audit: 0 broken of ~14,000 verified.
+    <em>F-3 evidence-card orphans.</em> The 8 <code>evidence/card-1-...html</code> through <code>card-8-...html</code> pages built in the May-8 evening pass with full Article JSON-LD and per-page OG cards had zero inbound links. Now wired from the home-page <code>#evidence</code> section, <code>evidence-index.html</code>, and <code>index.html#evidence</code> via a top-of-page aside listing all 8 cards with permalinks for citation.
+
+    <strong>P1 (8 fixes — family-reader fit):</strong>
+    <em>F-4 home-page lede.</em> A ~50-word plain-language opener now sits above the existing "Who was Charles Konzen?" H2 ("Charles was a German immigrant who came to St. Louis in his twenties, fought as a sergeant in the U.S. Civil War, married Auguste Kreichelt in 1866, and raised seven children…"). The cinematic-investigation lede follows. First-time family readers no longer hit "Hessian origins · Churhessen · Kontze surname pool" tiles before learning who Charles was.
+    <em>F-5 skip-to-main link site-wide.</em> Was on 13 of 180 live pages (only the home page and a handful of standalones the May-8 audit had hand-patched). Added to the injected nav fragment in <code>assets/site-nav.html</code> and propagated to every page via <code>scripts/inject-site-nav.py</code>. Now 186 of 187 live pages carry it (the one exception is the redirect-only <code>charles_america/family-map.html</code>).
+    <em>F-6 mobile viewport.</em> <code>charles_america/family-map.html</code> was the only live page missing the viewport meta; added.
+    <em>F-7 visible TODO badges.</em> Six TODO chips in <code>immigration/bremen-reconstruction.html</code> that read as an unfinished page to family readers wrapped in a collapsed <code>&lt;details&gt;</code> labelled "Open research threads (technical)".
+    <em>F-8 German-translation discoverability.</em> The <code>de/abstract.html</code> and <code>de/glossary.html</code> translations were linked only via <code>hreflang</code> meta; no visible toggle. Added a "Language" group to the shared footer with English / Deutsch links, propagated to all 175 pages via the inject script.
+    <em>F-9 glossary auto-linking.</em> New script <code>scripts/auto-glossary.py</code> auto-links the first occurrence of 20 selected glossary terms (Kirchenbuch, Stammrolle, Auswanderer-Beleg, Kurrent, Churhessen, HTR, etc.) to <code>glossary.html#g-&lt;term&gt;</code> with a subtle dotted-underline. <strong>404 links added across 152 content pages.</strong> Companion script <code>scripts/glossary-ids.py</code> added stable <code>id="g-..."</code> anchors to the 34 previously-anchorless <code>&lt;dt&gt;</code> elements in <code>glossary.html</code> so the deep-links resolve cleanly.
+    <em>F-10 family-reader ledes on 34 people / children profiles.</em> Inserted a <code>&lt;p class="family-intro"&gt;</code> paragraph above the existing dense "At a Glance" lede on every <code>people/*.html</code> (27 pages) and <code>children/&lt;name&gt;.html</code> (7 pages). Each opener is hand-crafted: it leads with name + lifespan + plain-language relation-to-Charles, and the existing FS-ID-bearing rigor paragraph follows directly below. <code>children/index.html</code> H2 changed from "One family, six surnames" to "Charles and Auguste's seven children"; lede rewritten to introduce the kids before introducing the surname-trail evidence.
+    <em>F-11 attachment cruft.</em> Three auto-named <code>project_attachment_*</code> files in the project root were removed (one was a 5.4 MB duplicate of the Pension File PDF; one had a canonical home at <code>sources/project-attachment-3.html</code>). <strong>Note:</strong> <code>project_attachment_2.webp</code> turned out to be the unique naturalization-record image (referenced from 15 places) and was restored from git within the same session. <code>project_attachment_3.pdf</code> was not in git; its viewer page now points readers at the Fold3 source image (303326269) instead of an embedded copy. See <code>errata.html#er-2026-05-17-attachment-3</code>.
+
+    <strong>P1 — the big content split:</strong>
+    <em>F-25 stories.html split.</em> The 1,450-line single-scroll <code>stories.html</code> (9 narrative moments in one document) split into 9 standalone <code>stories/&lt;n&gt;-&lt;slug&gt;.html</code> pages with per-page <code>Article</code> JSON-LD, per-page OG cards, breadcrumbs, and prev/next pagers. The original <code>stories.html</code> rewritten as a TOC landing listing the 9 with short summaries. <strong>Stories now have citable permalinks</strong> (e.g. <code>/stories/6-braschler.html</code> for the Pastor Braschler smoking-gun) and behave like the per-card pages in <code>/evidence/</code>. Build script saved at <code>scripts/split-stories.py</code> (re-runnable).
+
+    <strong>P2 (cleanup):</strong>
+    <em>F-13/14/15.</em> Removed 4 deploy ZIPs from the project root (~640 MB: <code>charles-konzen-deploy.zip</code>, <code>charles-konzen-deploy-fresh-20260510-0308.zip</code>, <code>charles-konzen-darkmode-fix-FRESH.zip</code>, <code>charles-konzen-darkmode-SLIM.zip</code>); deleted <code>_archive_pre_audit_fixes/</code> (~494 MB, HANDOFF explicitly approved post-deploy); deleted 3 orphan junk files at root (<code>test-delete.txt</code>, <code>ziQDvl0O</code>, <code>nara.txt</code>). Total disk freed: 1.1 GB (project went from 2.5 GB → 590 MB).
+    <em>F-12.</em> <code>peter_charts_download_checklist.html</code> and <code>styleguide.html</code> added to <code>.netlifyignore</code> + excluded from sitemap.xml — both are internal dev pages, not public deliverables.
+
+    <strong>Maintained throughout:</strong> internal-link integrity (0 broken refs at end of pass), sitemap coverage (182 URLs), JSON-LD validity (all blocks parse), per-page meta-description and canonical (still 100%).
+
+    Cumulatively for 17 May 2026: seven P0 contradiction fixes (morning) + six P1 content additions + two P2 audit-companion pages + three late-evening user-catch reframes + 27 audit-fix-pass items (night) = <strong>43 substantive rigor and structural improvements in one day</strong>. All re-runnable scripts now live in <code>scripts/</code>: <code>auto-glossary.py</code>, <code>glossary-ids.py</code>, <code>insert-family-intros.py</code>, <code>split-stories.py</code>.
+
+    Audit catalogue: <code>Charles_Konzen_Site_Audit_May17_2026.docx</code>. Per-fix errata entries logged on <a href="errata.html">errata.html</a>.
+  </div>
+</article>
+
+<article class="cl-entry major">
+  <div class="cl-head">
+    <span class="cl-date">17 May 2026 (late evening)</span>
+    <span class="cl-pill major">Major</span>
+    <span class="cl-title">★★★ User-catch cascade — 1890 daughter's death record reads <em>Konzen</em> (with z), not Konsen. U.S.-spelling canon expands 7→8. Two other reframes: "L. Carl Konsen" reframed as Working reconstruction; Hesse-records chip set expanded from 3 to 5 forms with explicit "Konsen is NOT a Hesse-attested spelling" callout.</span>
+  </div>
+  <div class="cl-body">
+    Three substantive reframes shipped late-evening 17 May, all triggered by user catches on the same rigor-class: <em>project reconstructions / interpretations presented as primary-source attestations</em>. <strong>Catch 1 — "L. Carl Konsen" as attested birth name.</strong> The home page's "Identity at a glance" vital-details row listed Charles's "Birth name (German)" as <em>L. Carl Konsen</em> with the same label appearing as a chip on the name-evolution flow and in the verdict paragraph. No single source carries that combination. Reframed to "Birth name (reconstructed) ★ Working" with a footnote citing the three sources the reconstruction draws on (L. from 1862 enlistment + muster cards; Carl from 1866 marriage + 1872/1875 father-of-child fields; Konsen from 1875 son's baptism + 1890 daughter's death). Six instances corrected across index.html and index.html#charles. <strong>Catch 2 — Hesse-records chip set undercount + miscategorised.</strong> The name-evolution "Hesse records · pre-1859" stage listed only three forms (Konze · Konsen · Konzen). The canonical Trendelburg / Hofgeismar Kirchenkreis parish-register cluster is five: Konze · Kontze · Kontzen · Contze · Konzen — plus three more from the parish's own cross-reference note (Cortze · Cordes · Contz). "Konsen" with an s is not in the Hesse cluster; it appears only in the 1875 St. Marcus baptism (Pastor Hoffmann, Swiss-born) and the 1890 daughter's death record, as American phonetic captures of the Hessian form. Chips on both pages expanded to 5 forms with per-chip tooltips citing specific registers, the parish cross-reference note as a footnote, and an explicit "Konsen with an s is NOT in this cluster" callout. The <a href="germany/konzen-puzzle.html">Konsen Puzzle</a> page's lead paragraph also reframed (it had called Konsen "the German Hesse spelling found in the Deisel and Trendelburg church books"). <strong>Catch 3 — 1890 death record reads Konzen, not Konsen.</strong> A user re-examination of the 1890 St. Marcus death-register image of daughter Auguste concluded the maiden-name reading is <em>Konzen</em> with a z, <strong>reversing the 5 May 2026 errata</strong> that had previously corrected the reading from Konzen → Konsen. Reading history: Konzen → Konsen (5 May) → Konzen (17 May) across two months, reflecting the difficulty of distinguishing z from s in mid-19th-century German Kurrentschrift. Cascade effects: (1) the U.S.-spelling canon expanded from 7 to 8 distinct spellings (Gonnson · Gansen · Gonsen · Konsen · Jansen · Gonson · <strong>Konzen</strong> · Conson); (2) the 1890 record becomes <strong>the single American attestation of the full Hessian z-form Konzen</strong> documented in the Trendelburg parish from 1773; (3) the "Konsen attested twice 15 years apart" framing is retired and replaced by "Konsen 1875 (phonetic s-form) + Konzen 1890 (Hessian z-form) — two parallel orthographic variants bracketing the surname trail"; (4) today's morning P0-4 errata that had stripped Konzen from the U.S.-spelling enumeration on methodology.html and faq.html is reversed; Konzen has been restored with a pointer to the 1890 attestation. <strong>Cascade scope:</strong> 28 bulk replacements across 13 files (exact quote "Auguste Somers geb Konsen" → "Auguste Somers geb Konzen") + 6 more in a second pass for the HTML-entity-encoded variant in 6 children-page family-tree blocks; narrative reframes on index.html (×3), index.html#evidence (×3), germany/konzen-puzzle.html, methodology.html, faq.html, abstract.html surname-trail + verdict, children/auguste.html (×3 narrative blocks), people/auguste-kreichelt.html, charles_america/old-st-marcus-cemetery.html, tree-interactive.html. Three new errata entries logging each catch; the 5 May 2026 entry now carries a "SUPERSEDED 17 May 2026" banner. Static PDFs (abstract, methodology, errata, bibliography) regenerated. See <a href="notes_view/SITE_HEALTH_May17_2026.html"><code>SITE_HEALTH_May17_2026.md</code></a> for the full evening-catch table.
+  </div>
+</article>
+
+<article class="cl-entry structure">
+  <div class="cl-head">
+    <span class="cl-date">17 May 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">★★★ Genealogy-rigor audit follow-up — internal-contradiction sweep, Working-state tagging, sponsor-reconciliation + negative-results audit pages, conflict-resolution block on Key Evidence Card 8.</span>
+  </div>
+  <div class="cl-body">
+    A follow-up rigor pass triggered by the genealogy-rigor evaluation of 17 May. <strong>Internal contradictions resolved (P0):</strong> Charles's death date (16 December 1903, per the St. Louis death certificate) was distinguished from his burial date (19 December 1903, St. Marcus burial #3393) on every flagship page — the abstract, latest-findings, FAQ JSON-LD, tree-interactive bio, civil-war SVG timeline, and the Person JSON-LD on the home page (<code>"deathDate": "1903-12-16"</code>). Bertha's birth year corrected from "1879" to "1880" on index.html#overview, index.html, family-poster.html, tree-interactive.html, and faq.html (×3 instances); "lived to 80" tightened to "lived to 78" to match the canonical December 1880 baptism record. The Hessian-conscription age was conformed across the site to the canonical 1855/age 20 cohort (per Open Questions, glossary, hesse-kassel-context); ten lingering instances of "1853 conscription / age 18" — on index.html ×6, index.html#germany ×3, index.html#overview, index.html#immigration ×2, the evidence-not-found tiles on index.html#evidence and evidence-index.html, and the entire research_logs/hessian-stammrolle.html file — were rewritten. The bogus German "Konzen" form was stripped from the U.S.-spelling enumeration on methodology.html and faq.html. Surname-count enumerations on index.html#foundation, index.html, and who/index.html were conformed to "five distinct spellings across six baptisms" with an explicit pointer to the seven-rendering canonical trail (Gonnson · Gansen · Gonsen · Konsen · Jansen · Gonson · Conson). The "21 candidate families" figure was corrected to the canonical 13 on index.html#germany, correspondence/peter-schrader-timeline.html, and the index.html mirror. Auguste Kreichelt's birth year and birthplace were corrected on tree-interactive.html, faq.html, and research_logs/1870-census.html (from "1843 / Hesse-Cassel" to the canonical "~1840 / Clausthal, Kingdom of Hannover"). The Maria Josephine bio block in tree-interactive.html was de-cross-pollinated: the "Auguste Somers geb Konzen" 1890 death-record quote, which had been misattached to the second-born daughter, was moved to its rightful place on the fourth-born daughter Auguste Gonsen's bio. <strong>Working-state tagging (P1):</strong> the surname-conclusion sentence in the abstract and on both copies of the germany-and-origins surname verdict (index.html#germany and the index.html mirror) was rewritten to "is most likely <strong>KONZEN</strong>" with an inline <em>★ Working</em> chip pointing at the source-rating taxonomy and Open Questions Priority 1, eliminating the prior ambiguity between "the surname is KONZEN" prose and the project's own Working-state classification of the same conclusion. <strong>New audit-companion pages:</strong> a <a href="sponsor-reconciliation.html">Sponsor reconciliation</a> page turns the "immigrated alone" structural argument into a single auditable table — every named sponsor across the seven Gannsen baptisms 1866–1881, with each sponsor's documented kin link to Auguste in one column and the explicit absence of a Charles-side blood relative in the next, plus three counterargument blocks and category-distribution statistics (9 Auguste-side blood / 4 affinal / 3 St. Louis parish-circle / 0 Charles-side blood across 17 sponsorship slots). A <a href="negative-results.html">Negative-results audit</a> page lists every Hessian parish register searched (10 parishes, scope and result for each), every candidate family eliminated (13 with verdict date and closing-evidence ground), every U.S.-side and emigration-record search, and a methodology section on how "negative" is established — making the "reasonably exhaustive research" claim per the GPS standard auditable rather than narrative. <strong>Conflict-resolution block (P1):</strong> a new <code>&lt;details&gt;</code> section was added to Key Evidence Card 8 (Compiled Service Record) explicitly resolving the 1862 enlistment "age 23" reading (which implies birth ~1839) against the canonical 26 January 1835 date attested across four independent post-1862 records, with a Mills-§1.27-cited source-class weighting argument. <strong>Navigation wiring:</strong> both new pages added to <code>assets/site-nav.html</code> (under Sources &amp; method and Reference); inject-site-nav.py propagated the updated dropdowns to all 175 standalone pages; sitemap rebuilt to 174 entries including both new pages; methodology.html and open-questions.html each gained a paragraph linking the companion audit pages. <strong>Final grep verification:</strong> 0 remaining instances of "Bertha 1879", 0 instances of "died 19 December 1903" attributed to Charles, 0 instances of "Konzen" in any U.S.-spelling enumeration list, 0 instances of "21 candidate families", 0 instances of "1853 conscription record at age 18".
+  </div>
+</article>
+
+<article class="cl-entry structure">
+  <div class="cl-head">
+    <span class="cl-date">17 May 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">★★★ Multi-round audit-fix pass — content reconciliation, real SPA static mirrors, SEO/a11y/perf sweep across the whole site.</span>
+  </div>
+  <div class="cl-body">
+    A six-round audit-driven cleanup pass shipped today, addressing 34 distinct findings from the May 16 site audit plus the May 8, May 10, and May 14 audits' open items. <strong>Content rigor:</strong> the surname trail was standardised to "seven distinct American spellings across eight independent attestations (Gonnson · Gansen · Gonsen · Konsen · Jansen · Gonson · Conson)" — fixing six "six vs seven" slips and an abstract error that attributed the 1880 census surname to Pastor Nollau (Nollau wrote the 1880 baptism Jansen; the 1880 census recorded Gonson, enumerator unknown). The May-2026 "geb Konzen → geb Konsen" errata that had failed to propagate was applied to all 6 affected children pages. The "13 candidate families" headline was reconciled across updates.html and freundburg-mystery.html (was 21). The pension affiant roster in <a href="bibliography.html">bibliography.html</a> was corrected (7 affiants, Adam Herweck moved to wedding witness). Four "6 December 2026" future-dated references in abstract/about/errata/bibliography were corrected to "6 May 2026". <strong>Structure:</strong> the 12 SPA-tab redirect stubs were replaced with real static pages (170-1208 lines each, each carrying per-page <code>Article</code> JSON-LD, per-page OG cards, and prev/next pagers) — the <code>&lt;link rel="alternate"&gt;</code> promise in index.html now actually holds. The 11-item Reference dropdown was split into <strong>Reference</strong> (Abstract / Methodology / Bibliography / Open Questions / Errata / Visualize) and <strong>About</strong> (About / Contribute / FAQ / Glossary / Changelog), propagated to all 173 standalone pages. The Family_Tree_All_Families and Kontze_Family_Tree_Graphic visualisations were added to the People &amp; tree nav (previously orphaned). The first H2 on the Home tab changed from "Home" to "Who was Charles Konzen?". 44 inline <code>onclick</code> handlers on tab-jump links were stripped — Cmd-click / middle-click / right-click "open in new tab" now work properly. <strong>SEO &amp; SOCIAL:</strong> <code>BreadcrumbList</code> JSON-LD added to 149 pages; <code>Article</code> schema extended from ~35 to 165 pages (now covering /people/, /family_pages/, /civilwar/, /germany/, /immigration/, /children/, /towns/, /sources/, /research_logs/); subject-<code>Person</code> JSON-LD added to all 7 children profiles with parent links to Charles + Auguste, birth/death dates, and FamilySearch <code>sameAs</code>. 30 pages now carry per-page OG cards (was ~5); all <code>og:image</code> and <code>twitter:image</code> meta swept from relative SVG to absolute PNG. Sitemap cleaned of <code>assets/*</code> pollution; <code>updates.html</code> 301-redirected to <code>changelog.html</code>. 21 missing meta descriptions added, 123 missing canonical URLs added (now 0 of either). <strong>Accessibility &amp; performance:</strong> all 227 <code>&lt;img&gt;</code> tags gained <code>loading="lazy"</code>; 130 local imgs gained <code>width</code>/<code>height</code> (CLS-safe). Charles's portrait re-encoded to WebP (1.6 MB → 344 KB). Leaflet script gained <code>defer</code> on all 6 map-bearing pages. Skip-to-main link added to 7 standalone pages. Mobile nav now horizontally-scrolls a single row instead of wrapping to 2-3 rows. <strong>Cleanup:</strong> the 1.6 GB <code>_deploy_netlify/</code> mirror was removed from the deploy and repo; dead <code>sync-deploy.sh</code> deleted. Index.html's inline-background style attributes went from 20 to 10 (7 sponsors blocks + 3 cite-widget code blocks migrated to utility classes). Schräder umlaut consistency restored across flagship pages. 24 bare "St Louis" → "St. Louis" (preserving 4 quoted instances). Internal-link audit: 0 broken of 13,904 verified. JSON-LD validity: 0 parse errors of 354 blocks. See <a href="notes_view/SITE_HEALTH_May17_2026.html">SITE_HEALTH_May17_2026.md</a> for the full punch list.
+  </div>
+</article>
+
+<article class="cl-entry structure">
+  <div class="cl-head">
+    <span class="cl-date">16 May 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">★★★ Audit-driven refactor shipped — label sweep, redirect-stub consolidation, design-system migration, ARIA + responsive fixes, Read-next footers.</span>
+  </div>
+  <div class="cl-body">
+    A multi-day audit-driven cleanup pass landed across the working copy. Confidence-label sweep aligned every standalone page on the Konzen surname conclusion with the SPA — Confirmed where a primary source is attached, Working where the surviving hypothesis still leans on convergent inference. Ten static-mirror pages were reduced to lean redirect stubs pointing at their canonical SPA tab, and eight evidence-card files were similarly consolidated so the SPA tab is the single source of truth for evidence narration. Design-system migration cut inline <code>style="background:#…"</code> sites from roughly 83 to 19 by introducing <code>.bg-*</code>, <code>.tile</code>, <code>.callout</code>, and <code>.pill</code> utilities in <a href="assets/theme.css?v=20260530c">theme.css</a> — each binds to a token that <a href="assets/dark-mode.css?v=20260530c">dark-mode.css?v=20260518-legenddots</a> re-paints, so per-page overrides are no longer needed. A new <a href="index.html">/notes/index.html</a> catalogue indexes all 109 session notes, and inline session-note links were stripped from narrative pages. The SPA tabs now carry proper ARIA roles, <code>aria-controls</code>/<code>aria-selected</code> wiring, and full arrow-key + Home/End keyboard navigation. Responsive fixes added table-wrap scrollers for wide tables, capped SVG sizing on narrow viewports, and marked decorative graphics <code>aria-hidden</code>. The surname-trail SVG now ships paired light/dark variants and swaps under dark mode. The smoking-gun annotations were removed from the surname-trail figure and Key Evidence card — the conclusion now stands on the table of attestations rather than red-circle annotation. Final touch: a consistent <a href="towns/trendelburg.html">Read next</a> footer was rolled out to leaf pages (towns, sources, people, children) to give readers an obvious next-step path.
+  </div>
+</article>
+
+<article class="cl-entry structure">
+  <div class="cl-head">
+    <span class="cl-date">7 May 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">★★★ Site rebuild pass — Methodology, Open Questions, Changelog, surname-trail SVG, candidate funnel, custom OG card, sitemap, 404, print stylesheet.</span>
+  </div>
+  <div class="cl-body">
+    A site-wide professionalisation pass: dedicated <a href="methodology.html">Methodology</a> page codifies the source-rating taxonomy, transcription conventions, naming conventions, citation style, and privacy policy. <a href="open-questions.html">Open Questions</a> consolidates the project's documented gaps (German baptism, 1859 manifest, Auswanderer-Beleg, Stammrolle, 1860 + 1870 censuses, Trendelburg Seite 243, three embargoed materials). New stand-alone diagrams: a <em>surname-trail</em> figure showing the six distinct U.S. spellings across five scribes with phonetic clustering, and a <em>candidate-elimination funnel</em> showing the 13 candidate Hessian families filtered down to the surviving Konzen working hypothesis. Additional infrastructure: <a href="404.html">custom 404 page</a>, <a href="sitemap.xml">sitemap.xml</a>, <a href="robots.txt">robots.txt</a>, JSON-LD Person schema on the homepage, and a print stylesheet so any narrative page can be printed as a clean monograph.
+  </div>
+</article>
+
+<article class="cl-entry major">
+  <div class="cl-head">
+    <span class="cl-date">4 May 2026 · late evening</span>
+    <span class="cl-pill major">★★★ Project conclusion</span>
+    <span class="cl-title">Charles's surname is concluded as KONZEN — the Kontzen-family form documented in Trendelburg, Churhessen.</span>
+  </div>
+  <div class="cl-body">
+    Following Auguste Kreichelt's 1896 St. Marcus death record reading "Auguste Conson" — recorded by Pastor Eilt Heeren Eilts with Charles himself as the surviving informant — the project assembles a six-distinct-rendering surname-trail across five independent scribes (seven attestations, since Konsen appears in two records). Four of the six distinct renderings (Gonnson · Gonsen · Konsen · Conson) sound auditorily identical to a hearer's ear; Charles is documented as the speaker at the bookend records (1866 marriage, 1896 wife's funeral). Project convention going forward: "Charles Konzen" for German-side identity; "Charles Gannsen / Johnson" for U.S.-life references. See <a href="index.html#evidence">Card 1 of Key Evidence</a> for the full convergent-evidence argument.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">5 May 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★★ Daughter Auguste's 1890 death record reads "Auguste Somers geb Konzen" — Konsen now attested twice across 15 years.</span>
+  </div>
+  <div class="cl-body">
+    Re-examination of the 1890 death record (FamilySearch L5N2-M8Y) confirms the primary-entry line reads Konsen — the same Hessian -en form Pastor Hoffmann recorded for Erwin Carl on his 1875 St. Marcus baptism. The earlier transcription read this as "Konzen" with a German z; on re-examination the spelling is the same Konsen form documented 15 years earlier. The Konsen rendering is therefore now attested in two independent Charles-family records 15 years apart, by two different scribes — strengthening the linguistic-time-capsule reading.
+  </div>
+</article>
+
+<article class="cl-entry eliminated">
+  <div class="cl-head">
+    <span class="cl-date">4 May 2026 · evening</span>
+    <span class="cl-pill eliminated">Not found</span>
+    <span class="cl-title">★ 1870 U.S. Census search for Charles &amp; Auguste — household not located; Georg Kreichelt's family found mistranscribed as "Reichel."</span>
+  </div>
+  <div class="cl-body">
+    A targeted 1870 census sweep ran in three passes: located Georg Kreichelt's household at St. Louis Ward 03 (mistranscribed as "Reichel"); walked 10 consecutive census images around the Kreichelts (~80 households) without locating Charles &amp; Auguste; eliminated unrelated Augusta Gansman (Ward 4, husband Fred from Brunswick), Louis Ploeser, Adam Seamen, Charles Sommer. Strongest hypothesis: the household was missed by the 1870 enumerator during the address change between 1518 South 7th Street (1865-1869) and 718 Gates Avenue (1871). Logged in the new <em>Evidence not found</em> subsection.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">4 May 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★ Johannes Grandjot's 1855 emigration documented end-to-end — Bremen → NYC, 25 Sep 1855, traveling with wife Lisette.</span>
+  </div>
+  <div class="cl-body">
+    Carl Ludwig Grandjot's elder brother Johannes Grandjot (FS PCXP-H6X, b. 14 Sep 1828 Schöneberg) — known from Peter's chart as the only emigrant of the four Grandjot brothers — has both sides of his Atlantic crossing now corroborated. A Hessisches Staatsarchiv Marburg Auswanderer-Beleg (ID 19743) records his profession as Schuhmacher; Ancestry's NY arrivals indexes a "Joseph Grandjos" b. ~1828 from Bremen arriving NYC 25 September 1855 with co-traveler "Lisette Grandjot." Per Peter's correspondence, Johannes's wife "hanged herself in America" — Lisette is now the strongest candidate.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026 · late night</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★ Andreas Kontze's Friedrichsfeld family wired into FamilySearch — three Peter-documented children added to FS.</span>
+  </div>
+  <div class="cl-body">
+    The Joh. Friedrich Kontze line family page resolved by replacing a confused SVG with a clean cards-based layout pulled directly from FamilySearch PZF8-X19 — the Stammtafel-Andreas (b. 1 Oct 1795 Trendelburg, d. 6 Oct 1854 Mainz) — showing his confirmed parents, sibling, both Hofeditz wives, and children. Three children Peter has documented in the Friedrichsfeld KB but who were missing from FamilySearch were created on FS this session: Justus Ernst Konze (P87Z-ZDC), Maria Sabina Kontze (P878-ZSG), and August Kontze (P878-BL1).
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026 · night</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★★ Carl Louis Herwig located in the U.S. — married Catherine Sharda 6 Oct 1855 Plymouth, Massachusetts.</span>
+  </div>
+  <div class="cl-body">
+    Pivoting from the groom side to the bride side cracked open the long-cold Carl Louis Herwig trail. A direct search for his FS-recorded wife Catherine Sharda returned a 6 October 1855 Plymouth, MA marriage record indexed in two independent Ancestry collections. The groom: Lewes Herweg / Lewis Harwig, marriage age 24, b. abt 1831 Germany, father John Herweg / John Harwig — the unambiguous Anglicization of Johannes Herwig, the 1854 Sonter Johnny emigrant. Marriage age 24 in October 1855 places groom's birth in November 1830 — Carl Louis was born 27 Nov 1830 Trendelburg, so he was 24 turning 25.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026 · late evening</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★★★ Theodore Gottlob Sr. confirmed as Civil War veteran — Sgt., Co. A, 9th Illinois Infantry, 1861–1864.</span>
+  </div>
+  <div class="cl-body">
+    The cryptic "1893 Leavenworth Kansas" event on Theodore's profile is his admission to the National Home for Disabled Volunteer Soldiers. The original NHDVS Veterans Record documents two enlistments (April 1861 and July 1861) and pension $15/month for rheumatism "since the war" — same primary disability as Charles. Adds Theodore as the sixth confirmed Civil War veteran in Charles's pension witness pool, alongside Adam Herweck, August Derr, Christian Meyer, Henry Stoll, and Michael Nolan.
+  </div>
+</article>
+
+<article class="cl-entry working">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026 · late evening</span>
+    <span class="cl-pill working">Working</span>
+    <span class="cl-title">★ Witness "John Heitzenberger" — surname-family identified as Hitzelberger; individual ID still open.</span>
+  </div>
+  <div class="cl-body">
+    The 1890 pension declaration witness's surname was misread by the affidavit clerk as "Heitzenberger" — actual family surname is Hitzelberger (Pennsylvania-Maryland-German cluster). Profile reframed: surname-family identified to high confidence, individual still open. <a href="people/john-heitzenberger.html">→ Updated profile</a>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026 · evening</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★★★ Cemetery cross-reference: Charles AND Jacob Reck both buried at Old Saint Marcus.</span>
+  </div>
+  <div class="cl-body">
+    Jacob Reck — the husband of the open-ID 1868 baptism sponsor Josephine "von Delian" — is now confirmed buried at Old Saint Marcus Cemetery per Find a Grave Memorial #249141012, complete with a German Westliche Post obituary (30 May 1898). Charles Gannsen is also buried at Old Saint Marcus (Burial #3393, 19 Dec 1903) — five years apart, in the same parish-circle cemetery. The strongest documentary evidence that Jacob and Charles were socially in the same German-Protestant world for the full span of their adult St. Louis lives.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026 · evening</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★★ Two open identifications resolved: Wilhelmina Ebeling = Wilhelmine Ebling Leue · Maria Agnes Götz = Anna Maria Agnes Goetz.</span>
+  </div>
+  <div class="cl-body">
+    The 1866 firstborn baptism sponsor "Wilhelmina Ebeling[?]" is now identified as Wilhelmine Ebling Leue (1807-1872) — a 59-year-old senior Soulard German Lutheran neighbor of Charles &amp; Auguste, wife of Heinrich Leue. Six aligning evidence threads make this a strong identification. Separately, the 1868 baptism sponsor "Maria Agnes Götz" is consolidated with the 1866 wedding witness "Anna Goetz" — the same person, Anna Maria Agnes Goetz, wife of Andreas Goetz (FS 979T-53X). Andreas's 1880 occupation: Porter at Turner Hall — the St. Louis Turnverein.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026 · evening</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★ New themed essay: <em>The Pension Mutual-Aid Network</em>.</span>
+  </div>
+  <div class="cl-body">
+    Charles's 1891 pension award was not the work of one man working through paperwork alone. Reading the seven affidavits as a coordinated mutual-aid filing reveals a 1889-1891 Light Artillery alumni network running through one U.S. Claim Agent (Fred. W. Fout). Of the six personal witnesses, four were Missouri Light Artillery veterans. The narrative phrasings recur word-for-word across affidavits — a fingerprint of the agent's drafting hand. <a href="themes/pension-mutual-aid.html">→ Read the full theme</a>.
+  </div>
+</article>
+
+<article class="cl-entry working">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026</span>
+    <span class="cl-pill working">Working</span>
+    <span class="cl-title">★ Deisel religious-composition data added — 97.94% Evangelical/Lutheran.</span>
+  </div>
+  <div class="cl-body">
+    The Deisel town page now records Peter Schräder's mid-19th-century demographic data: total population 1,118 · Evangelical/Lutheran 1,095 (97.94%) · Catholic 5 · Jewish 17. The dominantly-Lutheran composition is consistent with Charles's St. Marcus Evangelical baptism cohort. Peter checked the Catholic parish that served Deisel's five Catholic families — no Charles match — ruling out the "Catholic baptism explains the missing Lutheran record" theory.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★★ Firstborn timeline pinned to the day · 20 June 1866 birth · 23 June 1866 Elector deposed · 2 September 1866 christening.</span>
+  </div>
+  <div class="cl-body">
+    Friedrich Wilhelm Gonnson's exact dates confirmed: born 20 June 1866, christened 2 September 1866, died 26 October 1867. The Elector Friedrich Wilhelm I was transferred as a prisoner to Stettin on 23 June 1866 — three days after the baby was born. By the 2 September baptism, Charles knew of the war and proceeded with sponsors Friedrich Wilhelm Pillmann and Wilhelmina Ebeling — a matched pair that registered the deposed Elector's name in the German-Evangelical record at the precise moment the Electorate ceased to exist.
+  </div>
+</article>
+
+<article class="cl-entry working">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026</span>
+    <span class="cl-pill working">Working</span>
+    <span class="cl-title">★ Second-path family connection — Jed is connected to Charles via TWO independent threads.</span>
+  </div>
+  <div class="cl-body">
+    The May 2026 FamilySearch tree review of Frederick Charles Johnson (KLBX-VR1, Charles's Anheuser-Busch-Bottler grandson, b. 1905) surfaced a custom-fact attribution: <em>"Named after his Uncle Frederick Gottlob"</em> — per the St. Marcus baptism record. This implies a Gottlob ⟷ Misch ⟷ Johnson family marriage line connecting Jed's direct-ancestor Theodore Gottlob (<a class="fsn pid" href="https://www.familysearch.org/tree/person/details/KG17-D3H" target="_blank" rel="noopener noreferrer">KG17-D3H</a>, the DeKalb-neighbor pension witness) to Charles Gannsen's grandchildren. So Jed is connected to Charles by TWO independent paths: the DeKalb-neighborhood-friendship path (Theodore Gottlob's 1890 pension-witness role) AND a marital-blood path. The exact Gottlob-Misch family bridge is still being reconstructed. <a href="people/theodore-gottlob.html">→ Theodore Gottlob profile</a>.
+  </div>
+</article>
+
+<article class="cl-entry structure">
+  <div class="cl-head">
+    <span class="cl-date">3 May 2026</span>
+    <span class="cl-pill structure">Structure</span>
+    <span class="cl-title">Format &amp; readability pass · embedded PDF · sponsor-tile fixes.</span>
+  </div>
+  <div class="cl-body">
+    Several site-wide formatting fixes: (a) the <a href="AncestryProGenealogists_Journal_June2020.pdf">2020 AncestryProGenealogists journal page</a> now embeds the original 11-page PDF inline with zoom controls. (b) The seven-children tile grid had nested-anchor HTML errors that were spilling "Open child page" text outside the tile boundaries; converted to clean div wrappers with explicit clickable headlines. (c) The <em>People who knew Charles</em> card grid was rebuilt with proper flex layout so role badges no longer overlap details. (d) The <em>St. Louis residences mapped</em> had pin 5 disconnected from its label box and pin 6 covering the house wording; pins are now properly connected with color-coded lines. (e) The Province of Hesse-Nassau flag in the Germany &amp; origins timeline was broken; replaced with the verified Wappen Provinz Hessen-Nassau coat of arms.
+  </div>
+</article>
+
+<article class="cl-entry working">
+  <div class="cl-head">
+    <span class="cl-date">2 May 2026</span>
+    <span class="cl-pill working">Working</span>
+    <span class="cl-title">★★★ Sponsor pattern strongly suggests Charles immigrated alone — no Charles-side kin in any of the seven baptisms.</span>
+  </div>
+  <div class="cl-body">
+    Across the seven Charles &amp; Auguste baptisms at St. Marcus (1866–1880), not a single named sponsor is a documented blood relative of Charles. Every kin sponsor traces to Auguste's Kreichelt-Albrecht-Pillmann-Mincke side. The asymmetry is stark: Charles followed the convention on his wife's side but had nobody on his own side to invite. Dovetails with the illegal-emigration-to-avoid-Kurfürst-conscription hypothesis.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">2 May 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Sponsor reconciliation complete — nine of twelve named sponsors now have FamilySearch IDs and dedicated profile pages.</span>
+  </div>
+  <div class="cl-body">
+    The May 2026 baptism-sponsor reconciliation pass produced FS-ID-anchored profiles for nine of the twelve named sponsors. Major Erwin Spraul finding: a June 1889 obituary reveals Spraul was Superintendent of the Anheuser-Busch Brewing Association — the most senior trade title at one of St. Louis's largest German-immigrant employers. Charles's grandson Frederick Charles Johnson later worked as a Bottler at Anheuser-Busch, sustaining a two-generation brewing-trade chain.
+  </div>
+</article>
+
+<article class="cl-entry working">
+  <div class="cl-head">
+    <span class="cl-date">1 May 2026</span>
+    <span class="cl-pill working">Working</span>
+    <span class="cl-title">Quentin Pass 6 — Hesse-Cassel Quentin baker found in 1860 Cincinnati census.</span>
+  </div>
+  <div class="cl-body">
+    A FamilySearch logged-in exact-match for surname Quentin + birthplace Hesse in 1860 returns exactly one result: Eliza Quentin, F, age 32, b. Hesse Cassel, wife of Herman Quentin (33, Hanover, baker) in a four-baker household at the 10th Ward, Cincinnati, OH. Strong candidate match for the LAGIS Auguste Quentin (Friedrichsfeld 1853, ledig).
+  </div>
+</article>
+
+<h2 id="2026-04">April 2026</h2>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">26 Apr 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">KB218842 HTR Entry 195 transcription — Justus Ernst Konze 1829 Friedrichsfeld baptism.</span>
+  </div>
+  <div class="cl-body">
+    Session 70: Peter Schräder's HTR transcription of Friedrichsfeld KB Entry 195 (14 November 1829) for Justus Ernst Konze, son of Andreas. Direct overlap with the Jan 1835 illegitimacy hypothesis around the name "Justus." See <span>session note</span>.
+  </div>
+</article>
+
+<article class="cl-entry working">
+  <div class="cl-head">
+    <span class="cl-date">22 Apr 2026</span>
+    <span class="cl-pill working">Working</span>
+    <span class="cl-title">St. Marcus burial-index scan complete for 1904–1925 — three Wilhelmines surfaced; all eliminated as kin.</span>
+  </div>
+  <div class="cl-body">
+    Burial-scan sessions 44 + 47 + 55 + 59 walked the St. Marcus burial index for 1904–1925 looking for any surviving Charles-side kin. Three Wilhelmines surfaced and all three were eliminated as the godmother Wilhelmine Ebeling Leue is buried 1872. Strengthens the "Charles immigrated alone" reading.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">17–18 Apr 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★ Trendelburg Register 220108 alphabetical index: Konze, Johann Friedrich Wilhelm — Seite 243.</span>
+  </div>
+  <div class="cl-body">
+    The first Konze father-surname baptism confirmed in post-1831 Trendelburg. The "243" is a Seite page number (not a Nro.); Session 20 executes the Seite 243 transcription. Image-to-Seite map for Register 220108 fully documented in the project's session conventions: image = 1375 + option (so option 0 = title page at image 1375).
+  </div>
+</article>
+
+<article class="cl-entry eliminated">
+  <div class="cl-head">
+    <span class="cl-date">15–18 Apr 2026</span>
+    <span class="cl-pill eliminated">Eliminated</span>
+    <span class="cl-title">Multi-register Jan 1835 illegitimacy scan — no Charles-pool baby surfaced.</span>
+  </div>
+  <div class="cl-body">
+    Sessions 17, 20, 21, 24 executed a coordinated multi-register scan across Trendelburg, Friedrichsfeld, Helmarshausen, and Hofgeismar for January 1835 illegitimate-birth entries that could match Charles. No candidate baby surfaced. The illegitimate-birth scenario is now logged as <em>Eliminated</em> on the candidate funnel; see <a href="open-questions.html">Open Questions</a> for what would resolve the still-missing baptism.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">10 Apr 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Helmarshausen Kirchenbuch complete index search — Konze pool absent.</span>
+  </div>
+  <div class="cl-body">
+    Full-index search of the Helmarshausen KB (8 km from Deisel) returned no Konze-pool male b. ~1835. Helmarshausen eliminated from the candidate pool. <span>→ Session note</span>.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">5–9 Apr 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★ Kontze / Konze complete family reconstruction — multiple revisions through April.</span>
+  </div>
+  <div class="cl-body">
+    The Kontze / Konze family reconstruction document went through ~22 versions across April, integrating Peter Schräder's Stammtafel readings of the Friedrichsfeld KB and the Trendelburg parish complex. The Andreas-of-Trendelburg vs. Andreas-of-Friedrichsfeld disentanglement was resolved (FS PZF8-X19 = the Stammtafel Andreas, b. 1 Oct 1795 Trendelburg, d. 6 Oct 1854 Mainz). Three previously missing children added to FamilySearch.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">3 Apr 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">First research-paper draft prepared for Peter Schräder.</span>
+  </div>
+  <div class="cl-body">
+    Initial transmission of the project's working hypothesis to Peter Schräder for review. Versions 1–4 cycled through the day; the v4 draft was the basis for Peter's first systematic Stammtafel response.
+  </div>
+</article>
+
+<h2 id="2026-03">March 2026</h2>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">29–31 Mar 2026</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Project rebooted as a published research site; Peter Schräder engaged as German genealogist.</span>
+  </div>
+  <div class="cl-body">
+    The project's archive of pre-2026 notes (the original "AncestryProGenealogists" 2020 journal, the 2017 Civil War record packet, family memory) was consolidated into a structured site with the twelve-tab navigation. Peter Schräder of Trendelburg agreed to the genealogist role and the research-paper exchange began.
+  </div>
+</article>
+
+<h2 id="2025">2025 — Pre-rebuild milestones</h2>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">Sep 2025</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">★★★ Charles Sr. portrait recovered — Louis Roth studio, St. Louis, ca. 1896–1903.</span>
+  </div>
+  <div class="cl-body">
+    Discovered by descendant Maximilian J. in a moving box in Independence, MO, while hanging family photos. Shared with Jed Johnson via email 18 September 2025; historical context (studio operated 1890–1907; photograph dated between Auguste's 1896 death and Charles's 1903 death) established 21 September 2025. The first known photograph of Charles. Now the home-page hero figure.
+  </div>
+</article>
+
+<article class="cl-entry confirmed">
+  <div class="cl-head">
+    <span class="cl-date">Earlier — pre-2025</span>
+    <span class="cl-pill confirmed">Confirmed</span>
+    <span class="cl-title">Foundation findings — 2017 NARA mail order; 2020 AncestryProGenealogists journal.</span>
+  </div>
+  <div class="cl-body">
+    The project rests on two earlier foundations: the 2017 NARA mail-order receipt of Charles's Compiled Service Record (G11-422819443E) and Pension File (F41-523680269E), and the 2020 AncestryProGenealogists journal of the original commissioned Hesse search. Both are imaged on the site under <a href="index.html#foundation">Foundation (2020)</a>.
+  </div>
+</article>
+
+<p style="margin-top:2.5rem; font-style:italic; color: var(--text-muted); font-size: 0.92rem;">For findings older than this, see the <a href="index.html#foundation">Foundation (2020)</a> tab. For the live latest-findings feed, see the <a href="index.html#glance">home page</a>.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="index.html">Home</a> · <a href="methodology.html">Methodology</a> · <a href="open-questions.html">Open Questions</a> · <a href="changelog.html">Changelog</a> · <a href="styleguide.html">Style Guide</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

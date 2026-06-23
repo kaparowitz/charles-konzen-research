@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Charles's Surname Across the U.S. Records — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/surname-records.html">
+<link rel="stylesheet" href="assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<meta name="description" content="Every U.S. record that spells Charles's surname — the signed enlistment and pension, marriage, naturalization, all seven children's baptisms, two censuses, and the death records — by date, with the spelling as written, the informant, an external verification link, a confidence level, and its evidence classification. The German-origin spellings cluster as G/K + vowel + n-s-n or n-z-n; the later records show the adopted 'Johnson'.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Charles's Surname Across the U.S. Records — Charles Research">
+<meta property="og:description" content="Nine spellings of Charles's surname across fourteen U.S. records, 1862–1896 — including all seven children's baptisms and two he signed himself — each sourced, externally linked, and ranked by confidence, plus the later 'Johnson' Anglicization.">
+<meta property="og:url" content="https://charles-research.netlify.app/surname-records.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.bd-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.bd-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.bd-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.bd-hero h1 { color: var(--text-on-dark); font-size: 2.2rem; letter-spacing: 0.02em; max-width: 880px; }
+  header.bd-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 820px; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  h2 { font-size: 1.45rem; color: var(--text-primary); margin: 2.4rem 0 0.8rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.1rem; color: var(--text-primary); margin: 1.4rem 0 0.3rem; }
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.07rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.4rem; }
+
+  .summary-strip {
+    background: var(--bg-card-tint); border: 1px solid var(--border-medium); border-radius: 4px;
+    padding: 0.9rem 1.1rem; margin: 1.2rem 0 1.8rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.8rem;
+  }
+  .summary-strip .stat { text-align: center; }
+  .summary-strip .stat .num { font-size: 1.7rem; font-weight: 700; color: var(--brand-dark); display: block; line-height: 1.05; }
+  .summary-strip .stat .lab { font-size: 0.76rem; color: var(--text-meta); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
+
+  .callout { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 4px solid var(--brand); border-radius: 4px; padding: 1rem 1.2rem; margin: 1.4rem 0; }
+  .callout .ttl { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.4rem; }
+
+  table.bd { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.6rem 0 1.2rem; }
+  table.bd thead tr { background: var(--bg-card-tint); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-meta); }
+  table.bd th, table.bd td { padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); }
+  table.bd tbody tr:nth-child(even) td { background: var(--bg-card); }
+  table.bd .num { font-weight: 700; color: var(--brand-dark); text-align: center; font-family: var(--font-mono); width: 2rem; }
+  table.bd .date { white-space: nowrap; font-weight: 700; color: var(--text-strong); }
+  table.bd .spell { font-weight: 700; color: var(--text-strong); font-size: 1.02rem; white-space: nowrap; }
+  table.bd .src { font-size: 0.82rem; color: var(--text-meta); }
+
+  .pill { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+  .pill.high { background: #5a8a4a; color: #fff; }
+  .pill.mod  { background: #d4a017; color: #2c2620; }
+  .pill.low  { background: #b48a3a; color: #2c2620; }
+  .pill.adopt { background: #6d6256; color: #fff; }
+  .gtag { display: block; margin-top: 0.35rem; font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-meta); text-transform: none; letter-spacing: 0; line-height: 1.3; }
+  .vlink { font-weight: 700; white-space: nowrap; }
+
+  html.theme-dark table.bd .num,
+  html.theme-dark .summary-strip .stat .num,
+  html.theme-dark .callout .ttl,
+  html.theme-dark .sie .box h4 { color: #e8cd8a; }
+  html.theme-dark .gtag { color: #b9a98a; }
+
+  .sie { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; margin: 1rem 0 1.2rem; }
+  .sie .box { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 3px solid var(--brand); border-radius: 4px; padding: 0.8rem 1rem; }
+  .sie .box h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brand-dark); margin: 0 0 0.3rem; }
+  .sie .box p { font-size: 0.88rem; margin: 0; }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.bd-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.bd-hero h1, header.bd-hero .sub, header.bd-hero .crumbs, header.bd-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+    .pill { border: 1px solid #000; color: #000 !important; background: none !important; }
+  }
+</style>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/surname-records.html#article",
+  "headline": "Charles's Surname Across the U.S. Records",
+  "description": "Every U.S. record that spells Charles's surname, by date, with the spelling as written, the informant, a verification link, a confidence level, and its evidence classification.",
+  "datePublished": "2026-06-20",
+  "dateModified": "2026-06-21",
+  "url": "https://charles-research.netlify.app/surname-records.html",
+  "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+  "about": { "@id": "https://charles-research.netlify.app/#charles" },
+  "author": [
+    { "@type": "Person", "name": "Jed Johnson" },
+    { "@type": "Person", "name": "Peter Schräder" }
+  ],
+  "publisher": { "@type": "Person", "name": "Jed Johnson", "url": "https://charles-research.netlify.app/about.html" },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="bd-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; Surname Across the U.S. Records</div>
+  <h1>Charles's Surname Across the U.S. Records</h1>
+  <div class="sub">Nine different spellings of one man's surname across fourteen records, 1862&ndash;1896 &mdash; including all seven of his children's baptisms, and two he <strong>signed himself</strong> &mdash; then the adopted &ldquo;Johnson.&rdquo; Each entry by date, with the spelling as written, who supplied it, an external verification link, a confidence level, and its evidence classification.</div>
+</header>
+
+<!-- BEGIN-INJECTED-SKIP-ANCHOR --><a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a><!-- END-INJECTED-SKIP-ANCHOR -->
+<main>
+
+<p class="lede">Most of these spellings are a <em>scribe&rsquo;s</em> phonetic capture of a name Charles spoke &mdash; which is exactly why they disagree. Two are different: Charles <strong>signed the 1862 military record and his 1890&ndash;91 pension declarations himself</strong>, so those carry his own hand. Read together, the German-origin spellings cluster on a single sound: an initial <strong>G&nbsp;/&nbsp;K</strong>, a back vowel, and an <strong>n&ndash;s&ndash;n</strong> or <strong>n&ndash;z&ndash;n</strong> ending (the <em>s</em>-forms like <em>Konsen</em> and the <em>z</em>-forms like <em>Konzen</em> are the same name). This page is the verification ledger behind the <a href="search-coverage.html#what">surname search criterion</a>; the deeper phonetic analysis is on <a href="germany/konzen-puzzle.html">The Konzen Puzzle</a>.</p>
+
+<div class="summary-strip">
+  <div class="stat"><span class="num">9</span><span class="lab">distinct spellings</span></div>
+  <div class="stat"><span class="num">14</span><span class="lab">U.S. records, 1862&ndash;1896</span></div>
+  <div class="stat"><span class="num">7</span><span class="lab">of them child baptisms</span></div>
+  <div class="stat"><span class="num">2</span><span class="lab">signed in his own hand</span></div>
+</div>
+
+<h2 id="standard">How these are rated &mdash; by genealogical standards</h2>
+
+<p>Each entry is classified with the same evidence-analysis model used on <a href="birthdate-records.html#standard">Birth date across the records</a> &mdash; the <strong>Source &middot; Information &middot; Evidence</strong> framework with the <strong>Genealogical Proof Standard</strong>. Two points are specific to surnames:</p>
+
+<div class="sie">
+  <div class="box"><h4>All are direct &mdash; the axis is the informant</h4><p>Every record <em>states a spelling</em>, so all are <span class="ev-direct">direct</span> evidence of &ldquo;the surname as recorded.&rdquo; What separates them is <strong>who supplied the name</strong> (Charles himself, a parent at a child&rsquo;s font, a survivor, an unnamed census informant) and how original the source is.</p></div>
+  <div class="box"><h4>Two records are in his own hand</h4><p>Charles <strong>signed</strong> the 1862 enlistment and his 1890&ndash;91 pension declarations &mdash; those spellings (<em>Gannsen</em>) are holograph, the form he chose for himself in America. Every other entry is a scribe&rsquo;s rendering of a name he <em>spoke</em>, including each child&rsquo;s baptism by a German pastor &mdash; so confidence tracks how directly he supplied the spelling.</p></div>
+  <div class="box"><h4>Confidence = fidelity to the true surname</h4><p>The pills below rank how well each spelling reflects Charles&rsquo;s <strong>actual German birth surname</strong>. Spellings he spoke as principal (marriage groom, widower) rank highest; the later &ldquo;Johnson&rdquo; is an <em>adopted</em> Americanisation and is marked as such &mdash; direct evidence of his U.S. identity, none of his German name.</p></div>
+</div>
+
+<div class="callout">
+  <div class="ttl">Standard used</div>
+  <p style="margin:0; font-size:0.9rem;">&bull; <strong>Genealogical Proof Standard</strong> and the source / information / evidence classifications &mdash; BCG, <em>Genealogy Standards</em>, 2nd ed. rev. (Nashville: Ancestry, 2021).</p>
+  <p style="margin:0.35rem 0 0; font-size:0.9rem;">&bull; The <strong>evidence-analysis model</strong> &mdash; Elizabeth Shown Mills, <em>Evidence Explained</em>, 3rd ed. rev. (Baltimore: GPC, 2017), ch. 1. See the project&rsquo;s <a href="methodology.html#confidence">source-rating taxonomy</a>.</p>
+</div>
+
+<h2 id="cluster">The German-origin cluster &mdash; every spelling, with its source</h2>
+
+<p>These are the records in which Charles&rsquo;s <em>original</em> surname was captured &mdash; the spellings that matter for matching him to a German parish register. The phonetic trail is tracked in the project&rsquo;s canonical <a href="germany/konzen-puzzle.html">surname-attestation table</a>; this ledger adds the two records he <strong>signed</strong> (military, pension), <strong>all seven of his children&rsquo;s baptisms</strong>, and &mdash; folded in by date &mdash; the <strong>city-directory listings</strong> (marked <span style="font-family:var(--font-mono);font-size:0.72rem;color:#8a6420;">dir</span>), so the whole chronology sits in one place. The St.&nbsp;Marcus parish registers are browse-only on FamilySearch, so each parish row links the film and cites the page / entry to navigate to.</p>
+
+<div class="box" style="border-left:4px solid var(--section-civilwar,#a04020); background:linear-gradient(140deg, var(--bg-card,#fffdf9), #fdf0eb);">
+  <h4>★ One name was <em>locked</em> &mdash; the rest he chose by context</h4>
+  <p>Read down the table and a pattern jumps out. The <strong>official, legally-linked records</strong> all carry the same <em>n-s-n</em> form <strong>&ldquo;Gannsen&rdquo;</strong>:</p>
+  <p style="margin:0.4rem 0; font-family:var(--font-mono); font-size:0.86rem;">1862 enlistment&nbsp;&nbsp;→&nbsp;&nbsp;1868 naturalization&nbsp;&nbsp;→&nbsp;&nbsp;1890&ndash;91 pension&nbsp;&nbsp;→&nbsp;&nbsp;1900 Soldiers&rsquo; Home</p>
+  <p>That is not coincidence, it is <strong>bureaucratic necessity</strong>. Charles enlisted as <em>Gannsen</em> and signed it, so the U.S. record knew him by that name. To <strong>naturalize</strong> he had to present as the same legal person &mdash; so he reused <em>Gannsen</em>. Decades later his <strong>pension</strong> was paid only because it could be tied back to the &ldquo;Gannsen&rdquo; entry in his Battery&nbsp;B muster record &mdash; so once again he signed <em>Gannsen</em>. And when he was admitted to the <strong>Danville Soldiers&rsquo; Home</strong> in 1900, that admission was processed <em>through</em> the pension &mdash; so the Home&rsquo;s Historical Register recorded him as &ldquo;<em>Gannson</em>,&rdquo; a clerk&rsquo;s vowel away from <em>Gannsen</em> and the same name, the official surname carried one link further down the chain. On every record that touched the federal government, the name was fixed; using anything else would have broken the chain of identity (and the pension).</p>
+  <p><strong>Everywhere else he was free</strong> &mdash; and he used it. At the parish font, in the city directory, on the census, at a funeral, the name was whatever he or the scribe reached for that day, swinging between the German sound (<em>Gonnson, Konsen, Gonson, Konzen, Conson</em>) and the Americanised forms (<em>Johnson, Jansen</em>) as the context invited. The German <em>-en</em> forms were not confined to church use &mdash; they also appear on the <strong>1880 census</strong> (<em>Gonson</em>) and in the <strong>1874 / 1876 city directories</strong> (<em>Konsen</em>, <em>Gonson</em>) &mdash; while the Americanised <strong>Johnson</strong> first appears (on present evidence) about <strong>1871</strong>, in the directories of his streetcar-conductor years. The result: a man legally <em>Gannsen</em>, ancestrally <em>Konzen</em>, and casually whatever the moment called for.</p>
+  <p style="margin-bottom:0;"><strong>A note on the earliest reading.</strong> <em>Gannsen</em> is not only the legally-locked form &mdash; it is also the <strong>earliest</strong> surname Charles is recorded under (the 1862 enlistment, in his own hand). A standard genealogical heuristic treats the earliest, first-person attestation as potentially the most faithful, which on that basis would weight <em>Gannsen</em>. The project flags this as a live consideration but holds it <strong>to be determined</strong>: it sits alongside &mdash; not above &mdash; the ancestral-<em>Konzen</em> reading argued from the homeland <em>-en</em> forms, since the two answer different questions (his American <em>legal</em> name versus his German <em>birth</em> surname).</p>
+</div>
+
+<table class="bd">
+  <thead>
+    <tr><th>#</th><th>Date</th><th>As written</th><th>Record &amp; who supplied it</th><th>Verify</th><th>Confidence</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="num">1</td><td class="date">2 Dec 1862</td>
+      <td class="spell">Gannsen</td>
+      <td>Civil War enlistment / Compiled Service Record (NARA M405, file&nbsp;G11-422819443E), Battery&nbsp;B, 2nd Missouri Light Artillery. <span class="src"><strong>Signed by Charles himself</strong> &mdash; his own hand on the Compiled Service Record, <strong>p.&nbsp;5</strong>.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/1:1:FF1S-VV6" target="_blank" rel="noopener noreferrer">FamilySearch &#x2197;</a><br><a href="evidence/card-2-civil-war-enlistment.html">Card 2</a></td>
+      <td><span class="pill high">High</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self, <strong>signed</strong>) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">2</td><td class="date">Jan 1866</td>
+      <td class="spell">Gonnson</td>
+      <td>St.&nbsp;Marcus marriage register (to Auguste Kreichelt); scribe Pastor G.&nbsp;W. Wall <em>(W&uuml;rttemberger)</em>. <span class="src">Supplied by <strong>Charles as groom</strong> &mdash; the principal speaking.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a><br><a href="index.html#evidence">Card 3</a></td>
+      <td><span class="pill high">High*</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">3</td><td class="date">1866</td>
+      <td class="spell">Gonnson</td>
+      <td><strong>Son Friedrich Wilhelm&rsquo;s baptism</strong>, St.&nbsp;Marcus (b. 20 Jun 1866). <span class="src">A parent at the child&rsquo;s font &mdash; same spelling Charles used at the January marriage.</span></td>
+      <td class="src vlink"><a href="children/friedrich-wilhelm.html">Child page</a><br><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (parent) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">4</td><td class="date">1 Jun 1868</td>
+      <td class="spell">Gonnson</td>
+      <td><strong>Daughter Maria Josephine&rsquo;s baptism</strong>, St.&nbsp;Marcus (Doc&nbsp;G, p.&nbsp;224, entry&nbsp;5857). <span class="src">A parent at the child&rsquo;s font.</span></td>
+      <td class="src vlink"><a href="children/josephine-maria.html">Child page</a><br><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (parent) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">5</td><td class="date">21 Oct 1868</td>
+      <td class="spell">Gannsen</td>
+      <td>U.S. naturalization, St.&nbsp;Louis (renounces &ldquo;the King of Prussia&rdquo;). <span class="src">Charles&rsquo;s own petition; kept the Civil-War clerk&rsquo;s spelling.</span></td>
+      <td class="src vlink"><a href="evidence/card-5-naturalization.html">Card 5</a> <span class="src">(NARA)</span></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">6</td><td class="date">22 May 1870</td>
+      <td class="spell">Gansen</td>
+      <td><strong>Daughter Katherine&rsquo;s baptism</strong>, St.&nbsp;Marcus; scribe Pastor Heinrich Braschler <em>(Swiss)</em>. <span class="src">A parent at the child&rsquo;s font.</span></td>
+      <td class="src vlink"><a href="children/katherine-carolina.html">Child page</a><br><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (parent) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">7</td><td class="date">23 Jun 1872</td>
+      <td class="spell">Gonsen</td>
+      <td><strong>Daughter Auguste&rsquo;s baptism</strong>, St.&nbsp;Marcus; scribe Pastor Braschler <strong>again</strong>. <span class="src">A parent at the font &mdash; same hand as 1870, different vowel.</span></td>
+      <td class="src vlink"><a href="children/auguste.html">Child page</a><br><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (parent) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">8</td><td class="date">22 Feb 1874</td>
+      <td class="spell">Jansen</td>
+      <td><strong>Daughter Louise&rsquo;s baptism</strong>, St.&nbsp;Marcus (pp.&nbsp;402&ndash;403, entry&nbsp;8178). <span class="src">A parent at the font &mdash; the <em>first</em> J-form in the trail.</span></td>
+      <td class="src vlink"><a href="children/louise.html">Child page</a><br><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (parent) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num" style="font-size:0.72rem;color:#8a6420;">dir</td><td class="date">1874</td>
+      <td class="spell">Konsen</td>
+      <td><strong>City directory</strong> &mdash; &ldquo;Konsen Charles, driver, r. 718 Gate&rdquo;; supplied by Charles or his household to the canvasser. <span class="src">The same K-form the 1875 baptism uses &mdash; independently, a year earlier.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/3:1:3QHK-LQZY-B4P9?view=fullText&amp;keywords=718+Gate&amp;lang=en" target="_blank" rel="noopener noreferrer">Direct record &#x2197;</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self/household) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">9</td><td class="date">3 Oct 1875</td>
+      <td class="spell">Konsen</td>
+      <td><strong>Son Erwin Carl&rsquo;s baptism</strong>, St.&nbsp;Marcus; scribe Pastor Julius Hoffmann. <span class="src">A parent at the font &mdash; first <em>K-</em> initial in the trail.</span></td>
+      <td class="src vlink"><a href="children/erwin-carl-konsen.html">Child page</a><br><a href="index.html#evidence">Card 6</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (parent) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num" style="font-size:0.72rem;color:#8a6420;">dir</td><td class="date">1876</td>
+      <td class="spell">Gonson</td>
+      <td><strong>City directory</strong> &mdash; &ldquo;Gonson Charles, driver, 718 Gate&rdquo;; self/household supplied. <span class="src">The same spelling the 1880 census uses &mdash; four years earlier.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/search/full-text/results?q.text=%22718%20Gate%22" target="_blank" rel="noopener noreferrer">FS Full-Text &#x2197;</a></td>
+      <td><span class="pill low">Low&ndash;Mod</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self/household) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">10</td><td class="date">1880</td>
+      <td class="spell">Gonson</td>
+      <td>U.S. Federal Census, 1534 Jackson St., St.&nbsp;Louis (&ldquo;Charles Gonson&rdquo;). <span class="src">Informant <strong>unrecorded</strong> &mdash; any adult in the household could have answered.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/1:1:M6N9-XYL" target="_blank" rel="noopener noreferrer">FamilySearch &#x2197;</a></td>
+      <td><span class="pill low">Low</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg; info</span> (household) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">11</td><td class="date">4 Sep 1881</td>
+      <td class="spell">Jansen</td>
+      <td><strong>Daughter Bertha&rsquo;s baptism</strong>, St.&nbsp;Marcus; scribe Pastor Johannes Nollau. <span class="src">A parent at the font &mdash; the J-form again.</span></td>
+      <td class="src vlink"><a href="children/bertha.html">Child page</a><br><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (parent) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">12</td><td class="date">1890</td>
+      <td class="spell">Konzen</td>
+      <td>Daughter Auguste&rsquo;s death record; scribe Pastor L.&nbsp;G. Nollau or a civil registrar. <span class="src">A <strong>family informant</strong> &mdash; the spelling closest to the candidate German surname.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a></td>
+      <td><span class="pill low">Low&ndash;Mod</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg; info</span> (family) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">13</td><td class="date">1890&ndash;91</td>
+      <td class="spell">Gannsen</td>
+      <td>U.S. pension file &mdash; sworn invalid-pension declarations (application 684507, certificate 14498, file&nbsp;F41-523680269E). <span class="src"><strong>Signed by Charles himself</strong>, under oath, on file <strong>pages 11, 13, 14, 29 &amp; 30</strong> &mdash; his own hand.</span></td>
+      <td class="src vlink"><a href="sources/pension-file.html">Pension file (images)</a> <span class="src">(NARA; on Fold3)</span></td>
+      <td><span class="pill high">High</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self, <strong>signed</strong>) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num" style="font-size:0.72rem;color:#8a6420;">dir</td><td class="date">1895</td>
+      <td class="spell">Gannsen</td>
+      <td><strong>City directory</strong> &mdash; &ldquo;Gannsen Charles, watch, r. rear 2407 DeKalb&rdquo; (with son Charles Jr., lab.); self/household supplied. <span class="src">His signed legal form (see the note above) &mdash; here reused informally for the canvasser.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/search/full-text/results?q.text=Gannsen" target="_blank" rel="noopener noreferrer">FS Full-Text &#x2197;</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self/household) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">14</td><td class="date">1896</td>
+      <td class="spell">Conson</td>
+      <td>Wife Auguste&rsquo;s death record, St.&nbsp;Marcus; scribe Pastor Eilt Heeren Eilts. <span class="src">Supplied by <strong>Charles as the surviving spouse</strong> &mdash; the man himself, again the principal.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a><br><a href="evidence/card-8-1896-conson.html">Card 8</a></td>
+      <td><span class="pill high">High*</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-size:0.84rem; color:var(--text-meta);">Records&nbsp;<strong>1</strong> (enlistment &mdash; CSR p.&nbsp;5) and&nbsp;<strong>13</strong> (pension &mdash; file pp.&nbsp;11, 13, 14, 29 &amp; 30) carry <strong>Charles&rsquo;s own signature</strong> &mdash; the only holograph spellings, and the form (<em>Gannsen</em>) he chose for himself. *&ldquo;High&rdquo; on the marriage and widower rows is relative: he spoke as principal, but a scribe wrote those. Rows&nbsp;3, 4, 6, 7, 8, 9, 11 are <strong>the seven children&rsquo;s baptisms</strong> &mdash; independent phonetic captures by German pastors. St.&nbsp;Marcus parish links open the FamilySearch catalog for the (browse-only) German registers; navigate by the page / entry cited.</p>
+
+<h2 id="anglicization">The adopted name &mdash; &ldquo;Johnson&rdquo;</h2>
+
+<p>The Americanised <strong>Johnson</strong> was not only the family's final settled name &mdash; Charles used it on and off throughout his life, in the informal records where he was free to (see the note at the top of the page). The city-directory listings (marked <span style="font-family:var(--font-mono);font-size:0.72rem;color:#8a6420;">dir</span>) show him as &ldquo;Johnson&rdquo; during his <strong>1871&ndash;73</strong> conductor years and again in the <strong>1887</strong> watchman directory &mdash; long before the death records &mdash; while in between he was recorded under the German forms (Konsen 1874, Gonson 1876, folded into the cluster table above). These records are <span class="ev-direct">direct</span> evidence of his <em>American identity</em> but say nothing about his German birth surname, and are flagged <span class="pill adopt">Adopted</span> rather than ranked.</p>
+
+<table class="bd">
+  <thead>
+    <tr><th>#</th><th>Date</th><th>As written</th><th>Record &amp; who supplied it</th><th>Verify</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="num" style="font-size:0.72rem;color:#8a6420;">dir</td><td class="date">1871</td>
+      <td class="spell">Johnson</td>
+      <td><strong>City directory</strong> (<em>Edwards'</em> p.&nbsp;352) &mdash; &ldquo;Johnson, Charles, conductor, St.&nbsp;Louis R.R., r. 718 Gate.&rdquo; <span class="src">Anglicised already, during the railroad-conductor years.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/search/full-text/results?q.text=%22718%20Gate%22" target="_blank" rel="noopener noreferrer">FS Full-Text &#x2197;</a></td>
+      <td><span class="pill adopt">Adopted name</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self/household) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num" style="font-size:0.72rem;color:#8a6420;">dir</td><td class="date">1872&ndash;73</td>
+      <td class="spell">Johnson</td>
+      <td><strong>City directory</strong> &mdash; &ldquo;Johnson Charles, conductor, r. 718 Gate.&rdquo;</td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/3:1:3QHK-XQZY-TLHN?view=fullText&amp;keywords=718+Gate&amp;lang=en" target="_blank" rel="noopener noreferrer">Direct record &#x2197;</a></td>
+      <td><span class="pill adopt">Adopted name</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self/household) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num" style="font-size:0.72rem;color:#8a6420;">dir</td><td class="date">1887</td>
+      <td class="spell">Johnson</td>
+      <td><strong>City directory</strong> (also 1887&ndash;88) &mdash; &ldquo;Johnson Charles, watch, r. rear 2407 DeKalb.&rdquo; <span class="src">Anglicised again, mid-life, during the watchman years.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/3:1:3QHV-V38V-P919-P?view=fullText&amp;keywords=rear+2407+DeKalb&amp;lang=en" target="_blank" rel="noopener noreferrer">Direct record &#x2197;</a></td>
+      <td><span class="pill adopt">Adopted name</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self/household) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">11</td><td class="date">1900</td>
+      <td class="spell">Johnson</td>
+      <td>U.S. Federal Census, Peter Kuhn household, 170 Sidney St., Ward&nbsp;9. <span class="src">Charles a <strong>boarder</strong>; head of household likely answered.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/1:1:M38T-XV2" target="_blank" rel="noopener noreferrer">FamilySearch &#x2197;</a></td>
+      <td><span class="pill adopt">Adopted name</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg; info</span> · <span class="ev-direct">direct</span> (of U.S. name)</span></td>
+    </tr>
+    <tr>
+      <td class="num">12</td><td class="date">17 Dec 1903</td>
+      <td class="spell">Johnson</td>
+      <td>City of St.&nbsp;Louis death certificate no.&nbsp;10619 (&ldquo;Charles L. Johnson&rdquo;). <span class="src">Supplied by a <strong>survivor</strong>, post-mortem.</span></td>
+      <td class="src vlink"><a href="https://www.ancestry.com/imageviewer/collections/1172/images/vrmmo1833_c10513-0714?ssrc=&amp;usePUB=true&amp;pId=7145333" target="_blank" rel="noopener noreferrer">Ancestry image &#x2197;</a></td>
+      <td><span class="pill adopt">Adopted name</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg; info</span> (survivor) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">13</td><td class="date">18 Dec 1903</td>
+      <td class="spell">Johnson</td>
+      <td><em>St.&nbsp;Louis Post-Dispatch</em> obituary (&ldquo;Charles L. Johnson&rdquo;). <span class="src">Family-supplied, post-mortem.</span></td>
+      <td class="src vlink"><a href="https://stltoday.newspapers.com/clip/6448522/" target="_blank" rel="noopener noreferrer">Newspapers.com &#x2197;</a></td>
+      <td><span class="pill adopt">Adopted name</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg; info</span> (family) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+    <tr>
+      <td class="num">14</td><td class="date">19 Dec 1903</td>
+      <td class="spell">Johnson</td>
+      <td>St.&nbsp;Marcus burial register, pp.&nbsp;240&ndash;241, no.&nbsp;3393 (the record giving &ldquo;born 26 January 1835&rdquo;). <span class="src">Family-supplied, post-mortem.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/3:1:3Q9M-CSMZ-1N5B" target="_blank" rel="noopener noreferrer">FamilySearch image &#x2197;</a></td>
+      <td><span class="pill adopt">Adopted name</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg; info</span> (family) · <span class="ev-direct">direct</span></span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="takeaway">What the spread tells a searcher</h2>
+
+<p>Set the nine German-origin spellings side by side &mdash; <em>Gannsen, Gonnson, Gansen, Gonsen, Konsen, Gonson, Jansen, Konzen, Conson</em> &mdash; and one pattern survives every scribe: an initial <strong>G or K</strong> (once softened to <em>J</em>), a single back vowel (<em>a&nbsp;/&nbsp;o</em>), and a closing <strong>&ndash;n&ndash;s&ndash;n</strong> <em>or</em> <strong>&ndash;n&ndash;z&ndash;n</strong> (the <em>s</em> and <em>z</em> are interchangeable for this sound). That is the evidentiary basis for the surname search criterion on <a href="search-coverage.html#what">Parish search coverage</a>: <strong>look for any surname in the <em>*n-s-n / *n-z-n</em> family</strong> (Gansen, Ganssen, Gonsen, Gonson, Konsen, Konzen&hellip;), not a single fixed name. The full phonetic reconstruction &mdash; vowels, clusters, and the candidate German forms &mdash; is on <a href="germany/konzen-puzzle.html">The Konzen Puzzle</a>.</p>
+
+<div class="callout">
+  <div class="ttl">Tool &mdash; map a surname across Germany</div>
+  <p>Test where any of these spellings concentrates today with the <strong>Namensverbreitungskarte</strong> (surname-distribution map) of the Verein f&uuml;r Computergenealogie: <a href="https://nvk.genealogy.net/map/" target="_blank" rel="noopener noreferrer">nvk.genealogy.net/map &#x2197;</a>. Enter a cluster form &mdash; <em>Gansen, Ganssen, Gonsen, Gonson, Konzen, Konsen</em>&hellip; &mdash; to see whether it concentrates near <a class="glossary-link" href="glossary.html#g-kurhessen" title="Glossary: Kurhessen">Kurhessen</a> / Kreis Hofgeismar, a quick geographic check on each candidate spelling. <span class="src">Tool provided by James Gunnis.</span></p>
+</div>
+
+<p style="margin-top:1.4rem; padding:0.8rem 1rem; background:var(--bg-card-tint); border-left:4px solid var(--brand); border-radius:3px; font-size:0.95rem;"><strong>Related.</strong> The conflicting <em>birth-date</em> figures are on <a href="birthdate-records.html">Birth date across the records</a>; the phonetic analysis is on <a href="germany/konzen-puzzle.html">The Konzen Puzzle</a>; what these spellings have been searched against in Germany is on <a href="search-coverage.html">Parish search coverage</a>; the document framework is the <a href="index.html#doc-crosswalk">Doc&nbsp;A&ndash;O crosswalk</a>.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="index.html">Home</a> · <a href="birthdate-records.html">Birth date across the records</a> · <a href="search-coverage.html">Parish search coverage</a> · <a href="germany/konzen-puzzle.html">The Konzen Puzzle</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

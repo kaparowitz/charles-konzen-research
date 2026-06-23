@@ -1,0 +1,432 @@
+/* Shared styles for the town pages — Hofgeismar Kirchenkreis village pages
+   Linked from /towns/*.html
+   Matches the visual language of /people/_shared.css and /sources/
+   ------------------------------------------------------------- */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Iowan Old Style', Georgia, 'Times New Roman', serif; background:#f6f1e7; color:#2c2620; line-height:1.55; }
+::selection { background:#d8b366; color:#1f1a14; }
+a { color:#8a6420; text-decoration:none; border-bottom:1px dotted #c9a76a; }
+a:hover { color:#74420f; border-bottom-color:#8a6420; }
+
+header.town-hero {
+  background: linear-gradient(135deg, #1f1a14 0%, #3a2f1e 100%);
+  color: #f6f1e7;
+  padding: 1.6rem 1.5rem 1.4rem;
+  border-bottom: 4px double #d8b366;
+}
+header.town-hero .crumbs { font-size: 0.82rem; color: #c8b896; margin-bottom: 0.4rem; }
+header.town-hero .crumbs a { color: #d8b366; border-bottom: none; }
+header.town-hero h1 {
+  color: #f6f1e7;
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+header.town-hero h1 .german { font-size: 1rem; color: #c8b896; font-weight: 400; font-style: italic; margin-left: 0.5rem; letter-spacing: 0; }
+header.town-hero .sub { color: #e8dfc8; font-style: italic; margin-top: 0.3rem; font-size: 0.95rem; }
+header.town-hero .meta-row {
+  margin-top: 0.7rem;
+  display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;
+}
+header.town-hero .pill {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 3px;
+  background: rgba(212,160,23,0.18);
+  color: #d8b366;
+}
+header.town-hero .pill.primary { background: #d8b366; color: #1f1a14; }
+header.town-hero .pill.contested { background: #c8581a; color: #fff; }
+header.town-hero .pill.confirmed { background: #4a8a4a; color: #fff; }
+header.town-hero .pill.undigitized { background: #8a4a4a; color: #fff; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 1.6rem 1.4rem 4rem; }
+
+.section {
+  margin-bottom: 1.6rem;
+  background: #fffaf0;
+  border: 1px solid #d8c8a8;
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+}
+.section h2 {
+  color: #1f1a14;
+  border-bottom: 1px solid #c9a76a;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.section h3 {
+  color: #4a3a22;
+  font-size: 1.05rem;
+  margin: 0.8rem 0 0.4rem;
+}
+.section p { margin-bottom: 0.7rem; }
+.section .small { font-size: 0.85rem; color: #6a5a42; }
+.section ul, .section ol { padding-left: 1.4rem; margin: 0.4rem 0 0.8rem; }
+.section li { margin-bottom: 0.25rem; }
+
+.kv { width: 100%; border-collapse: collapse; }
+.kv td { padding: 0.45rem 0.7rem; vertical-align: top; border-bottom: 1px solid #ede4d0; font-size: 0.95rem; }
+.kv td:first-child {
+  width: 32%;
+  color: #5a4a32;
+  font-weight: 600;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding-top: 0.55rem;
+}
+.kv tr:last-child td { border-bottom: none; }
+
+/* Resource cards — for the "Research resources" section */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 0.6rem 0;
+}
+.resource-card {
+  background: #fffaf0;
+  border: 1px solid #d8c8a8;
+  border-left: 4px solid #8a6420;
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+}
+.resource-card.archion { border-left-color: #4a76c8; }
+.resource-card.census { border-left-color: #5a8a4a; }
+.resource-card.immigration { border-left-color: #c87a30; }
+.resource-card.newspaper { border-left-color: #8a4a4a; }
+.resource-card.civil { border-left-color: #7a5aa0; }
+.resource-card.cemetery { border-left-color: #3a5a8a; }
+.resource-card h4 {
+  color: #2c2620;
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+}
+.resource-card .source-label {
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #6a5a42;
+  margin-bottom: 0.3rem;
+}
+.resource-card .source-label.archion { color: #4a76c8; }
+.resource-card .source-label.census { color: #5a8a4a; }
+.resource-card .source-label.immigration { color: #c87a30; }
+.resource-card .source-label.newspaper { color: #8a4a4a; }
+.resource-card .source-label.civil { color: #7a5aa0; }
+.resource-card .source-label.cemetery { color: #3a5a8a; }
+.resource-card p { font-size: 0.88rem; line-height: 1.45; margin-bottom: 0.4rem; color: #4a3a22; }
+.resource-card a {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  background: #2c2620;
+  color: #d8b366;
+  border: 1px solid #d8b366;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  text-decoration: none;
+  margin: 0.15rem 0.2rem 0.15rem 0;
+}
+.resource-card a:hover { background: #d8b366; color: #1f1a14; border-bottom-color: #d8b366; }
+
+/* Archion-path breadcrumb */
+.archion-path {
+  font-size: 0.84rem;
+  background: #f0e8d8;
+  border-left: 3px solid #4a76c8;
+  padding: 0.5rem 0.7rem;
+  margin: 0.4rem 0;
+  border-radius: 0 3px 3px 0;
+  line-height: 1.5;
+}
+.archion-path strong { color: #4a76c8; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.archion-path em { color: #4a3a22; font-style: italic; }
+
+/* Status callouts */
+.callout {
+  padding: 0.7rem 0.9rem;
+  margin: 0.6rem 0;
+  border-radius: 0 3px 3px 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.callout.contested { background: rgba(200,88,26,0.08); border-left: 4px solid #c8581a; color: #5a3a22; }
+.callout.confirmed { background: rgba(74,138,74,0.08); border-left: 4px solid #4a8a4a; color: #2c4a2c; }
+.callout.open { background: rgba(212,160,23,0.08); border-left: 4px solid #d8b366; color: #5a4a32; }
+.callout.warning { background: rgba(138,74,74,0.08); border-left: 4px solid #8a4a4a; color: #5a3030; }
+
+footer.back-nav { margin-top: 2rem; text-align: center; padding: 1rem; }
+footer.back-nav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #2c2620;
+  color: #d8b366;
+  border: 1px solid #d8b366;
+  border-radius: 3px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-bottom: none;
+  margin: 0 0.3rem;
+}
+footer.back-nav a:hover { background: #d8b366; color: #1f1a14; }
+
+@media (max-width: 640px) {
+  header.town-hero h1 { font-size: 1.5rem; }
+  main { padding: 1.2rem 0.9rem 3rem; }
+  .resource-grid { grid-template-columns: 1fr; }
+}
+
+
+@media print {
+  header.fam-hero, header.cw-hero, header.ca-hero, header.im-hero, header.ge-hero, header.src-hero,
+  footer.back-nav, .crumbs, details.research-log:not([open]) > .log-body { display:none !important; }
+  details.research-log > .log-body { display:block !important; }
+  body { background:#fff !important; color:#000 !important; font-size:11pt; }
+  a { color:#000 !important; text-decoration:none !important; border-bottom:none !important; }
+  a[href^="http"]::after { content:" (" attr(href) ")"; font-size:9pt; color:#666; }
+  .summary-card, .card, table.kv { background:#fff !important; border:1px solid #999 !important; page-break-inside:avoid; }
+  h1, h2, h3, h4 { page-break-after:avoid; }
+  img, svg { max-width:100% !important; page-break-inside:avoid; }
+}
+
+
+
+/* ============================================================
+   Theme override · added 3 May 2026 design pass
+   Pulls in tokens from /assets/theme.css and applies them.
+   Overrides are scoped to keep section identity while unifying chrome.
+   ============================================================ */
+
+/* Typography hierarchy — sharper 1.25× scale */
+h1 { font-size: var(--type-h1); line-height: 1.2; font-weight: 700; }
+h2 { font-size: var(--type-h2); line-height: 1.25; font-weight: 700; }
+h3 { font-size: var(--type-h3); line-height: 1.3;  font-weight: 700; }
+h4 { font-size: var(--type-h4); line-height: 1.35; font-weight: 700; }
+
+/* Link contrast fix — darken from #c9a76a to #a88a4a (AA-3:1 on cream) */
+a { border-bottom-color: var(--border-medium); }
+a.fsn { background: rgba(212,160,23,0.08); }
+a.fsn.pid { background: rgba(74,118,200,0.12); }
+
+/* Body text contrast — darken italic captions from #6a5a42 to #4a3a22 (AA on cream) */
+.meta, .small em, em.note, p.small, .ev-body p { color: var(--text-meta); }
+
+/* Standardize border-left widths: cards 3px, tiles 4px, banners/heroes 5px */
+.card, .summary-card { border-left-width: var(--bl-card) !important; }
+.cw-tile, .ca-tile, .im-tile, .ge-tile, .schrader-tile,
+.person-card, .child-card, .doc-card, .actor-card,
+.cw-tile.keystone, .ca-tile.keystone,
+header.fam-hero, header.cw-hero, header.ca-hero, header.im-hero, header.ge-hero, header.src-hero, header.up-hero {
+  border-left-width: 0;
+}
+
+/* Unified hover transition for all clickable surfaces */
+.cw-tile, .ca-tile, .im-tile, .ge-tile, .schrader-tile,
+.person-card, .child-card, .doc-card, .actor-card,
+.tree .sib, a.parent-card, a.entry, a.chart-link {
+  transition: var(--transition);
+}
+.cw-tile:hover, .ca-tile:hover, .im-tile:hover, .ge-tile:hover,
+.schrader-tile:hover, .person-card:hover, .child-card:hover,
+.doc-card:hover, .actor-card:hover, .tree .sib:hover, a.parent-card:hover {
+  transform: var(--hover-lift);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Specialize the gold — only brand surfaces use it now.
+   "Open" status was using gold (conflict). Switch to amber. */
+.summary-card.open { border-color: var(--status-open); }
+.summary-card.open h2 { border-bottom-color: var(--status-open); }
+.summary-card .card-pill.open { background: var(--status-open); color: #1f1a14; }
+.badge.open { background: var(--status-open); color: #1f1a14; }
+
+/* Section accent for Charles in America: switch from gold to amber/copper
+   to differentiate from brand */
+.ca-tile, .ca-tile.primary { border-left-color: var(--section-charles); }
+.ca-tile:hover { border-left-color: var(--section-charles-d); background: var(--section-charles-t); }
+.ca-tile-eyebrow { color: var(--section-charles-d); }
+.ca-tile:hover .ca-tile-title { color: var(--section-charles-d); }
+
+/* Active-tab indicator strengthening (only relevant on main index) */
+nav.tabs button.active {
+  background: rgba(212,160,23,0.18);
+  border-bottom: 3px solid var(--brand) !important;
+}
+
+/* Konze-status banner consistency */
+.konze-status-banner {
+  background: linear-gradient(140deg, var(--status-open-t), #fef3d6) !important;
+  border-color: var(--status-open) !important;
+  border-left-color: var(--status-open) !important;
+}
+
+
+/* ============================================================
+   DARK-MODE OVERRIDES — added 10 May 2026
+   The defaults above hardcode the cream/brown light palette.
+   These rules invert page surfaces (body, .section, .resource-card,
+   .archion-path, .callout, .kv) using the same theme tokens as
+   ../assets/dark-mode.css. The dark .town-hero header already
+   works in both modes and needs no override.
+   ============================================================ */
+
+:root.theme-dark body {
+  background: #1a1612;
+  color: #e8dfc8;
+}
+:root.theme-dark a { color: #fadea0; border-bottom-color: #d8b366; }
+:root.theme-dark a:hover { color: #f1cf85; border-bottom-color: #f1cf85; }
+:root.theme-dark ::selection { background: #d8b366; color: #1a1612; }
+
+:root.theme-dark .section {
+  background: #24201a;
+  border-color: #6a5a40;
+  color: #e8dfc8;
+}
+:root.theme-dark .section h2 { color: #f1cf85; border-bottom-color: #6a5a40; }
+:root.theme-dark .section h3 { color: #f1cf85; }
+:root.theme-dark .section .small { color: #c8b896; }
+:root.theme-dark .section strong { color: #fadea0; }
+:root.theme-dark .section em { color: #c8b896; }
+
+:root.theme-dark .kv td { color: #e8dfc8; border-bottom-color: #3c352a; }
+:root.theme-dark .kv td:first-child { color: #c8b896; }
+
+:root.theme-dark .resource-card {
+  background: #24201a;
+  border-color: #6a5a40;
+  color: #e8dfc8;
+}
+:root.theme-dark .resource-card h4 { color: #f1cf85; }
+:root.theme-dark .resource-card .source-label { color: #fadea0; }
+:root.theme-dark .resource-card p { color: #e8dfc8; }
+:root.theme-dark .resource-card a {
+  background: #1a1612;
+  color: #fadea0;
+  border-color: #6a5a40;
+}
+:root.theme-dark .resource-card a:hover {
+  background: #d8b366;
+  color: #1a1612;
+  border-color: #fadea0;
+}
+
+:root.theme-dark .archion-path {
+  background: #2a2519;
+  border-left-color: #6a8acc;
+  color: #e8dfc8;
+}
+:root.theme-dark .archion-path strong { color: #a8c0e0; }
+:root.theme-dark .archion-path em { color: #e8dfc8; }
+
+:root.theme-dark .callout.confirmed { background: rgba(108, 176, 96, 0.10); border-left-color: #6cb060; color: #b8e0a4; }
+:root.theme-dark .callout.contested { background: rgba(232, 160, 80, 0.12); border-left-color: #e8a050; color: #f4b890; }
+:root.theme-dark .callout.open      { background: rgba(216, 179, 102, 0.10); border-left-color: #d8b366; color: #fadea0; }
+:root.theme-dark .callout.warning   { background: rgba(200, 112, 112, 0.12); border-left-color: #c87070; color: #f4a098; }
+
+:root.theme-dark .summary-card {
+  background: #24201a;
+  border-color: #6a5a40;
+  color: #e8dfc8;
+}
+:root.theme-dark .summary-card h2 { color: #f1cf85; }
+:root.theme-dark .summary-card .bottom-line { color: #f4ead0; }
+
+:root.theme-dark .konze-status-banner {
+  background: linear-gradient(140deg, #2c2316 0%, #2a2519 100%) !important;
+  border-color: #6a5a40 !important;
+  border-left-color: #d8b366 !important;
+  color: #e8dfc8;
+}
+:root.theme-dark .konze-status-banner strong { color: #fadea0; }
+:root.theme-dark .konze-status-banner a { color: #fadea0; border-bottom-color: #d8b366; }
+
+:root.theme-dark footer.back-nav a {
+  background: #1a1612;
+  color: #fadea0;
+  border-color: #6a5a40;
+}
+:root.theme-dark footer.back-nav a:hover {
+  background: #d8b366;
+  color: #1a1612;
+}
+
+/* Same rules under prefers-color-scheme: dark for system-toggle users */
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light) body { background: #1a1612; color: #e8dfc8; }
+  html:not(.theme-light) a { color: #fadea0; border-bottom-color: #d8b366; }
+  html:not(.theme-light) a:hover { color: #f1cf85; border-bottom-color: #f1cf85; }
+
+  html:not(.theme-light) .section { background: #24201a; border-color: #6a5a40; color: #e8dfc8; }
+  html:not(.theme-light) .section h2 { color: #f1cf85; border-bottom-color: #6a5a40; }
+  html:not(.theme-light) .section h3 { color: #f1cf85; }
+  html:not(.theme-light) .section .small { color: #c8b896; }
+  html:not(.theme-light) .section strong { color: #fadea0; }
+
+  html:not(.theme-light) .kv td { color: #e8dfc8; border-bottom-color: #3c352a; }
+  html:not(.theme-light) .kv td:first-child { color: #c8b896; }
+
+  html:not(.theme-light) .resource-card { background: #24201a; border-color: #6a5a40; color: #e8dfc8; }
+  html:not(.theme-light) .resource-card h4 { color: #f1cf85; }
+  html:not(.theme-light) .resource-card .source-label { color: #fadea0; }
+  html:not(.theme-light) .resource-card p { color: #e8dfc8; }
+  html:not(.theme-light) .resource-card a { background: #1a1612; color: #fadea0; border-color: #6a5a40; }
+  html:not(.theme-light) .resource-card a:hover { background: #d8b366; color: #1a1612; }
+
+  html:not(.theme-light) .archion-path { background: #2a2519; border-left-color: #6a8acc; color: #e8dfc8; }
+  html:not(.theme-light) .archion-path strong { color: #a8c0e0; }
+  html:not(.theme-light) .archion-path em { color: #e8dfc8; }
+
+  html:not(.theme-light) .callout.confirmed { background: rgba(108, 176, 96, 0.10); border-left-color: #6cb060; color: #b8e0a4; }
+  html:not(.theme-light) .callout.contested { background: rgba(232, 160, 80, 0.12); border-left-color: #e8a050; color: #f4b890; }
+  html:not(.theme-light) .callout.open      { background: rgba(216, 179, 102, 0.10); border-left-color: #d8b366; color: #fadea0; }
+  html:not(.theme-light) .callout.warning   { background: rgba(200, 112, 112, 0.12); border-left-color: #c87070; color: #f4a098; }
+
+  html:not(.theme-light) .summary-card { background: #24201a; border-color: #6a5a40; color: #e8dfc8; }
+  html:not(.theme-light) .summary-card h2 { color: #f1cf85; }
+  html:not(.theme-light) .summary-card .bottom-line { color: #f4ead0; }
+
+  html:not(.theme-light) .konze-status-banner {
+    background: linear-gradient(140deg, #2c2316 0%, #2a2519 100%) !important;
+    border-color: #6a5a40 !important;
+    border-left-color: #d8b366 !important;
+    color: #e8dfc8;
+  }
+  html:not(.theme-light) .konze-status-banner strong { color: #fadea0; }
+  html:not(.theme-light) .konze-status-banner a { color: #fadea0; border-bottom-color: #d8b366; }
+
+  html:not(.theme-light) footer.back-nav a { background: #1a1612; color: #fadea0; border-color: #6a5a40; }
+  html:not(.theme-light) footer.back-nav a:hover { background: #d8b366; color: #1a1612; }
+}
+
+/* BEGIN-DARK-MODE-BODY-OVERRIDE */
+/* ============================================================
+   Dark-mode body override — updated 11 May 2026 (robust fallback)
+   ============================================================
+   The body rule earlier in this file hardcodes background:#f6f1e7
+   (cream). We override with `:root:not(.theme-light)` so the page
+   renders DARK whenever the user is in dark mode OR when the theme
+   init script fails to run (e.g., scripts blocked on file:// URLs).
+   The only way to get cream is to explicitly toggle to light, which
+   adds the .theme-light class.
+   ------------------------------------------------------------ */
+:root:not(.theme-light) body,
+:root.theme-dark body {
+  background: #1a1612 !important;
+  color: #e8dfc8 !important;
+}
+:root:not(.theme-light) a,
+:root.theme-dark a { color: #e6c47a; }
+:root:not(.theme-light) a:hover,
+:root.theme-dark a:hover { color: #fadea0; }
+/* END-DARK-MODE-BODY-OVERRIDE */

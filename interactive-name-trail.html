@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charles — One Man, Many Names · Interactive Explorer</title>
+<meta name="description" content="An interactive explorer of Charles's surname trail (nine American spellings, 1862–1903) and the conflicting birth-year evidence across the documentary record.">
+<style>
+  :root{
+    --ink:#2c2620; --ink-soft:#5a4a32; --meta:#6a5a42;
+    --parch:#fffdf6; --parch2:#fff8ea; --line:#d8c8a8;
+    --gold:#b8881f; --gold-bright:#d8b366; --dark:#1f1a14;
+    --g:#b8881f;   /* G-forms */
+    --k:#b5532f;   /* K-forms */
+    --j:#3a6ea5;   /* J-forms */
+    --self:#1f1a14;/* self-signed */
+    --johnson:#5a7d4a; /* adopted */
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--parch);color:var(--ink);
+    font-family:'Iowan Old Style','Palatino Linotype',Georgia,'Times New Roman',serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:1.6rem 1.2rem 4rem}
+  header.masthead{border-bottom:2px solid var(--gold-bright);padding-bottom:1rem;margin-bottom:1.2rem}
+  .eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;
+    font-family:'Inter',system-ui,sans-serif}
+  h1{font-size:2.1rem;line-height:1.1;margin:.35rem 0 .3rem;letter-spacing:.01em}
+  h1 em{font-style:italic;color:var(--gold)}
+  .sub{color:var(--ink-soft);font-size:1.05rem;max-width:62ch;margin:0}
+  .tabs{display:flex;gap:.4rem;margin:1.4rem 0 1rem;flex-wrap:wrap;
+    font-family:'Inter',system-ui,sans-serif}
+  .tab{appearance:none;border:1px solid var(--line);background:var(--parch2);color:var(--ink-soft);
+    font:inherit;font-size:.92rem;font-weight:600;padding:.5rem .95rem;border-radius:4px;cursor:pointer;
+    transition:all .15s}
+  .tab:hover{border-color:var(--gold)}
+  .tab.active{background:var(--dark);color:var(--gold-bright);border-color:var(--dark)}
+  .view{display:none;animation:fade .35s ease}
+  .view.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .panel-intro{font-size:1rem;color:var(--ink-soft);margin:.2rem 0 1rem;max-width:70ch}
+  .chartcard{background:var(--parch2);border:1px solid var(--line);border-radius:8px;padding:.6rem .4rem;
+    box-shadow:0 1px 4px rgba(0,0,0,.05);overflow-x:auto}
+  svg{display:block;width:100%;height:auto;min-width:660px}
+  .legend{display:flex;gap:.4rem .9rem;flex-wrap:wrap;margin:.9rem .2rem 0;
+    font-family:'Inter',system-ui,sans-serif;font-size:.8rem}
+  .lg{display:inline-flex;align-items:center;gap:.35rem;cursor:pointer;color:var(--meta);
+    border:1px solid transparent;border-radius:20px;padding:.12rem .5rem;transition:all .15s;user-select:none}
+  .lg:hover{border-color:var(--line)}
+  .lg.off{opacity:.32;text-decoration:line-through}
+  .sw{width:12px;height:12px;border-radius:50%;flex:0 0 auto;border:1.5px solid rgba(0,0,0,.25)}
+  .detail{margin-top:1rem;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold-bright);
+    border-radius:6px;padding:1rem 1.1rem;min-height:104px}
+  .detail .d-when{font-family:'Inter',system-ui,sans-serif;font-size:.74rem;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--gold);font-weight:700}
+  .detail .d-name{font-size:1.7rem;margin:.15rem 0 .1rem;letter-spacing:.01em}
+  .detail .d-rec{font-size:1rem;color:var(--ink);margin:.2rem 0 .5rem}
+  .detail .d-who{font-size:.92rem;color:var(--ink-soft);font-style:italic}
+  .detail .chip{display:inline-block;font-family:'Inter',system-ui,sans-serif;font-size:.7rem;font-weight:700;
+    letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-top:.55rem}
+  .detail .placeholder{color:var(--meta);font-style:italic}
+  .node{cursor:pointer}
+  .node circle{transition:r .12s,stroke-width .12s}
+  .node:hover circle,.node.sel circle{stroke:var(--dark);stroke-width:3}
+  .axis text{font-family:'Inter',system-ui,sans-serif;font-size:11px;fill:var(--meta)}
+  .axis line{stroke:var(--line)}
+  .lane-label{font-family:'Inter',system-ui,sans-serif;font-size:11px;fill:var(--meta);font-weight:600}
+  .note{font-size:.85rem;color:var(--meta);margin-top:1.4rem;border-top:1px solid var(--line);padding-top:.9rem;
+    max-width:74ch}
+  .note a{color:var(--gold)}
+  .kicker{font-family:'Inter',system-ui,sans-serif;font-weight:700;font-size:.82rem;color:var(--ink);
+    letter-spacing:.02em;margin:.2rem 0 .3rem}
+  .star{font-size:.9rem}
+</style>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+</head>
+<body>
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+<div class="wrap">
+  <header class="masthead">
+    <div class="eyebrow">Charles Research · Interactive</div>
+    <h1>One man, <em>many names</em></h1>
+    <p class="sub">The same person appears in St. Louis records under at least nine different surname spellings — and gives nearly a dozen different birth years. Tap any marker to see the record behind it.</p>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-view="surname" role="tab">The surname trail</button>
+    <button class="tab" data-view="birth" role="tab">The birth-year puzzle</button>
+  </div>
+
+  <!-- ================= SURNAME VIEW ================= -->
+  <section class="view active" id="view-surname">
+    <p class="panel-intro">Each dot is one dated record, 1862–1903. Vertical position groups records by <strong>who supplied the name</strong>; colour groups the spelling family. The form Charles signed himself (<em>Gannsen</em>) stays remarkably stable, while the spellings clerks captured by ear drift wildly — and the single closest match to the candidate German surname, <em>Konzen</em>, appears only once, on his daughter's 1890 death record.</p>
+    <div class="chartcard"><svg id="svg-surname" viewBox="0 0 920 430" role="img" aria-label="Timeline of surname spellings 1862 to 1903"></svg></div>
+    <div class="legend" id="legend-surname"></div>
+    <div class="detail" id="detail-surname"><div class="placeholder">Tap a marker above to read the record.</div></div>
+  </section>
+
+  <!-- ================= BIRTH VIEW ================= -->
+  <section class="view" id="view-birth">
+    <p class="panel-intro">Every record that states Charles's age implies a different birth year — spanning <strong>~1825 to ~1841</strong>, a 16-year spread. Only one source gives an exact date: the St. Marcus burial register, <strong>26 January 1835</strong>, the project's working birth date (shown as the gold star).</p>
+    <div class="chartcard"><svg id="svg-birth" viewBox="0 0 920 360" role="img" aria-label="Implied birth years across records"></svg></div>
+    <div class="detail" id="detail-birth"><div class="placeholder">Tap a marker above to read the record.</div></div>
+  </section>
+
+  <p class="note">
+    Data transcribed from the project's own <strong>Surname across the records</strong> and <strong>Birth date across the records</strong> pages. Spelling families are a presentation aid, not a source claim; confidence labels and the “who supplied it” grouping follow the site's evidence ratings. <em>Gannsen</em> is the form Charles signed himself; <em>Johnson</em> is the adopted American name carried from 1871. This explorer is a reading aid — the underlying records and their images remain the authority.
+  </p>
+</div>
+
+<script>
+/* ---------- DATA (transcribed from surname-records.html / birthdate-records.html) ---------- */
+// fam: g / k / j / self / johnson  → colour. lane index 0..4 by supplier.
+const LANES = ["Charles himself","At a child's font","City directory","U.S. census","Death / burial record"];
+const FAMS = {
+  self:   {c:"var(--self)",    label:"Gannsen — self-signed"},
+  g:      {c:"var(--g)",       label:"G-forms (Gonnson · Gansen · Gonsen · Gonson)"},
+  k:      {c:"var(--k)",       label:"K-forms (Konsen · Konzen)"},
+  j:      {c:"var(--j)",       label:"J-forms (Jansen)"},
+  johnson:{c:"var(--johnson)", label:"Johnson — adopted name"}
+};
+const SUR = [
+  {d:"2 Dec 1862", x:1862.9, name:"Gannsen", fam:"self", lane:0, rec:"Civil War enlistment / Compiled Service Record (NARA M405, Battery B, 2nd Missouri Light Artillery).", who:"Charles himself — his own signature.", conf:"High · self-attested"},
+  {d:"Jan 1866",   x:1866.0, name:"Gonnson", fam:"g", lane:1, rec:"St. Marcus marriage register (to Auguste Kreichelt); scribe Pastor G. W. Wall.", who:"Charles as groom — the principal speaking.", conf:"Strong · 1° informant"},
+  {d:"1866",       x:1866.5, name:"Gonnson", fam:"g", lane:1, rec:"Son Friedrich Wilhelm's baptism, St. Marcus (b. 20 Jun 1866).", who:"A parent at the child's font.", conf:"Strong · 1° informant"},
+  {d:"1 Jun 1868", x:1868.4, name:"Gonnson", fam:"g", lane:1, rec:"Daughter Maria Josephine's baptism, St. Marcus (p. 224, entry 5857).", who:"A parent at the child's font.", conf:"Strong · 1° informant"},
+  {d:"21 Oct 1868",x:1868.8, name:"Gannsen", fam:"self", lane:0, rec:"U.S. naturalization, St. Louis — renounces 'the King of Prussia'.", who:"Charles's own petition; kept the Civil-War clerk's spelling.", conf:"High · self-attested"},
+  {d:"22 May 1870",x:1870.4, name:"Gansen", fam:"g", lane:1, rec:"Daughter Katherine's baptism, St. Marcus; scribe Pastor Heinrich Braschler (Swiss).", who:"A parent at the child's font.", conf:"Strong · 1° informant"},
+  {d:"1871",       x:1871.3, name:"Johnson", fam:"johnson", lane:2, rec:"Edwards' Directory p. 352 — 'Johnson, Charles, conductor, St. Louis R.R., r. 718 Gate.'", who:"Directory canvasser — first appearance of the adopted American name.", conf:"Original · directory"},
+  {d:"23 Jun 1872",x:1872.5, name:"Gonsen", fam:"g", lane:1, rec:"Daughter Auguste's baptism, St. Marcus; scribe Pastor Braschler again.", who:"A parent at the font — same hand as 1870, different vowel.", conf:"Strong · 1° informant"},
+  {d:"1874",       x:1874.0, name:"Konsen", fam:"k", lane:2, rec:"Edwards' Directory — 'Konsen Charles, driver, r. 718 Gate.' The K-form independently, in a directory.", who:"Directory canvasser.", conf:"Original · directory"},
+  {d:"22 Feb 1874",x:1874.15,name:"Jansen", fam:"j", lane:1, rec:"Daughter Louise's baptism, St. Marcus (pp. 402–403, entry 8178).", who:"A parent at the font — the first J-form in the trail.", conf:"Strong · 1° informant"},
+  {d:"3 Oct 1875", x:1875.8, name:"Konsen", fam:"k", lane:1, rec:"Son Erwin Carl's baptism, St. Marcus; scribe Pastor Julius Hoffmann.", who:"A parent at the font — first K-initial in the baptisms.", conf:"Moderate · 1° informant"},
+  {d:"1876",       x:1876.3, name:"Gonson", fam:"g", lane:2, rec:"Edwards' Directory — 'Gonson Charles, driver, 718 Gate.' The same spelling the 1880 census later uses.", who:"Directory canvasser.", conf:"Original · directory"},
+  {d:"1880",       x:1880.0, name:"Gonson", fam:"g", lane:3, rec:"U.S. Federal Census, 1534 Jackson St., St. Louis ('Charles Gonson').", who:"Informant unrecorded — any adult in the household could have answered.", conf:"Original · 2° info"},
+  {d:"4 Sep 1881", x:1881.7, name:"Jansen", fam:"j", lane:1, rec:"Daughter Bertha's baptism, St. Marcus; scribe Pastor Johannes Nollau.", who:"A parent at the font — the J-form again.", conf:"Moderate · 1° informant"},
+  {d:"1890",       x:1890.0, name:"Konzen", fam:"k", lane:4, rec:"Daughter Auguste's death record, St. Marcus — 'geb. Konzen'.", who:"A family informant — the single American attestation of the candidate German z-form.", conf:"Strong · maiden-name datum"},
+  {d:"1890–91",    x:1890.6, name:"Gannsen", fam:"self", lane:0, rec:"U.S. pension file — sworn invalid-pension declarations (cert. 14498, file F41-523680269E).", who:"Charles himself, under oath.", conf:"High · self-attested"},
+  {d:"1895",       x:1895.0, name:"Gannsen", fam:"self", lane:2, rec:"Gould's Directory — 'Gannsen Charles, watch, r. rear 2407 DeKalb' (son Charles Jr. below).", who:"Directory canvasser, recording his self-used form.", conf:"Original · directory"},
+  {d:"1896",       x:1896.0, name:"Conson", fam:"g", lane:4, rec:"Wife Auguste's death record, St. Marcus; scribe Pastor Eilt Heeren Eilts.", who:"Charles as surviving spouse — the principal, again.", conf:"Strong · 1° informant"},
+  {d:"17 Dec 1903",x:1903.0, name:"Johnson", fam:"johnson", lane:4, rec:"City of St. Louis death certificate no. 10619 ('Charles L. Johnson').", who:"Supplied by a survivor, post-mortem.", conf:"Original · 2° info"}
+];
+const BIRTH = [
+  {d:"2 Dec 1862",  yr:1839, stated:'"age 23"', rec:"Civil War enlistment — Regimental Descriptive Book ('Age 23; born Freundburg, Kurhessen').", conf:"Original · self, but enlistment ages run rough"},
+  {d:"1880",        yr:1841, stated:'"age 39"', rec:"U.S. Federal Census, 1534 Jackson St. ('Charles Gonson').", conf:"Original · 2° info (any household adult)"},
+  {d:"15 Jan 1890", yr:1834, stated:'"aged ~56"', rec:"Declaration for Original Invalid Pension (file F41-523680269E, pp. 14–15).", conf:"Original · self, reads mid-50s"},
+  {d:"18 Jan 1890", yr:1825, stated:'"aged 65"', rec:"Pension filing — clear outlier within the same file.", conf:"Outlier · see file note"},
+  {d:"9 Feb 1891",  yr:1838, stated:'"aged 53"', rec:"Declaration for Invalid Pension (file F41-523680269E, p. 11).", conf:"Original · self"},
+  {d:"1900",        yr:1836.8, stated:'"Nov 1836; age 63"', rec:"U.S. Federal Census, Peter Kuhn household, 170 Sidney St.", conf:"Original · 2° info (Charles a boarder)"},
+  {d:"~1900",       yr:1837, stated:'"about 1837"', rec:"U.S. National Homes for Disabled Volunteer Soldiers register (Danville).", conf:"Original · institutional"},
+  {d:"17 Dec 1903", yr:1834, stated:'"age 69; born 1834"', rec:"City of St. Louis death certificate no. 10619.", conf:"Original · 2° info (survivor)"},
+  {d:"18 Dec 1903", yr:1834.3, stated:'"age 69"', rec:"St. Louis Post-Dispatch obituary.", conf:"Original · 2° info (family)"},
+  {d:"19 Dec 1903", yr:1835, stated:'"born 26 Jan 1835"', rec:"St. Marcus burial register, pp. 240–241, no. 3393 — the only exact date in the record.", conf:"★ Working birth date", canon:true}
+];
+
+/* ---------- helpers ---------- */
+const NS="http://www.w3.org/2000/svg";
+function el(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+const off = new Set(); // hidden families
+
+/* ---------- SURNAME CHART ---------- */
+const svgS=document.getElementById("svg-surname");
+const X0=120,X1=900,Y0=46,laneGap=70;
+function xPos(yr){return X0+(yr-1861)/(1904-1861)*(X1-X0);}
+function laneY(i){return Y0+i*laneGap;}
+function drawSurname(){
+  svgS.innerHTML="";
+  // lane bands + labels
+  LANES.forEach((lab,i)=>{
+    svgS.appendChild(el("line",{x1:X0,y1:laneY(i),x2:X1,y2:laneY(i),stroke:"var(--line)","stroke-dasharray":"2 4"}));
+    const t=el("text",{x:12,y:laneY(i)+4,class:"lane-label"});t.textContent=lab;svgS.appendChild(t);
+  });
+  // x axis ticks
+  const ax=el("g",{class:"axis"});
+  [1865,1870,1875,1880,1885,1890,1895,1900].forEach(y=>{
+    ax.appendChild(el("line",{x1:xPos(y),y1:Y0-12,x2:xPos(y),y2:laneY(LANES.length-1)+10,stroke:"var(--line)"}));
+    const t=el("text",{x:xPos(y),y:laneY(LANES.length-1)+28,"text-anchor":"middle"});t.textContent=y;ax.appendChild(t);
+  });
+  svgS.appendChild(ax);
+  // nodes
+  SUR.forEach((r,idx)=>{
+    if(off.has(r.fam))return;
+    const g=el("g",{class:"node",tabindex:0,"data-i":idx});
+    const cx=xPos(r.x),cy=laneY(r.lane);
+    g.appendChild(el("circle",{cx,cy,r:9,fill:FAMS[r.fam].c,"fill-opacity":.9,stroke:"#fff","stroke-width":2}));
+    const t=el("text",{x:cx,y:cy-14,"text-anchor":"middle",style:"font-family:Inter,sans-serif;font-size:10px;font-weight:600;fill:var(--ink)"});
+    t.textContent=r.name;g.appendChild(t);
+    g.addEventListener("click",()=>selSur(idx,g));
+    g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();selSur(idx,g);}});
+    svgS.appendChild(g);
+  });
+}
+function selSur(i,g){
+  document.querySelectorAll("#svg-surname .node").forEach(n=>n.classList.remove("sel"));
+  g.classList.add("sel");
+  const r=SUR[i];
+  document.getElementById("detail-surname").innerHTML=
+    `<div class="d-when">${r.d}</div>`+
+    `<div class="d-name" style="color:${FAMS[r.fam].c}">${r.name}</div>`+
+    `<div class="d-rec">${r.rec}</div>`+
+    `<div class="d-who">${r.who}</div>`+
+    `<span class="chip" style="background:${FAMS[r.fam].c};color:#fff">${r.conf}</span>`;
+}
+// legend (toggles families)
+const leg=document.getElementById("legend-surname");
+Object.keys(FAMS).forEach(f=>{
+  const s=document.createElement("span");s.className="lg";s.dataset.f=f;
+  s.innerHTML=`<span class="sw" style="background:${FAMS[f].c}"></span>${FAMS[f].label}`;
+  s.addEventListener("click",()=>{if(off.has(f)){off.delete(f);s.classList.remove("off");}else{off.add(f);s.classList.add("off");}drawSurname();});
+  leg.appendChild(s);
+});
+
+/* ---------- BIRTH CHART ---------- */
+const svgB=document.getElementById("svg-birth");
+const BX0=70,BX1=890,BY=150,Y_MIN=1823,Y_MAX=1843;
+function bx(yr){return BX0+(yr-Y_MIN)/(Y_MAX-Y_MIN)*(BX1-BX0);}
+function drawBirth(){
+  svgB.innerHTML="";
+  // baseline
+  svgB.appendChild(el("line",{x1:BX0,y1:BY,x2:BX1,y2:BY,stroke:"var(--line)","stroke-width":2}));
+  const ax=el("g",{class:"axis"});
+  for(let y=1825;y<=1842;y+=1){
+    const major=(y%5===0);
+    ax.appendChild(el("line",{x1:bx(y),y1:BY-(major?8:4),x2:bx(y),y2:BY+(major?8:4),stroke:"var(--line)"}));
+    if(major){const t=el("text",{x:bx(y),y:BY+26,"text-anchor":"middle"});t.textContent=y;ax.appendChild(t);}
+  }
+  svgB.appendChild(ax);
+  // canonical band at 1835
+  svgB.appendChild(el("line",{x1:bx(1835),y1:30,x2:bx(1835),y2:BY,stroke:"var(--gold-bright)","stroke-width":2,"stroke-dasharray":"3 3"}));
+  const ct=el("text",{x:bx(1835),y:24,"text-anchor":"middle",style:"font-family:Inter,sans-serif;font-size:11px;font-weight:700;fill:var(--gold)"});
+  ct.textContent="26 Jan 1835 · working date";svgB.appendChild(ct);
+  // markers: stagger above/below to avoid overlap
+  const sorted=[...BIRTH].map((r,i)=>({r,i})).sort((a,b)=>a.r.yr-b.r.yr);
+  sorted.forEach((o,k)=>{
+    const r=o.r, up=(k%2===0);
+    const cx=bx(r.yr), cy=BY+(up?-46:46)-(up?0:0);
+    const stem=BY;
+    svgB.appendChild(el("line",{x1:cx,y1:stem,x2:cx,y2:cy,stroke:r.canon?"var(--gold)":"var(--meta)","stroke-width":r.canon?2:1}));
+    const g=el("g",{class:"node",tabindex:0});
+    if(r.canon){
+      g.appendChild(el("path",{class:"star",d:starPath(cx,cy,11,5),fill:"var(--gold-bright)",stroke:"var(--gold)","stroke-width":1.5}));
+    }else{
+      g.appendChild(el("circle",{cx,cy,r:8,fill:"#fff",stroke:"var(--k)","stroke-width":2.5}));
+    }
+    const t=el("text",{x:cx,y:up?cy-15:cy+22,"text-anchor":"middle",style:"font-family:Inter,sans-serif;font-size:10px;font-weight:600;fill:var(--ink)"});
+    t.textContent=r.stated.replace(/"/g,'');g.appendChild(t);
+    g.addEventListener("click",()=>selBirth(o.i,g));
+    g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();selBirth(o.i,g);}});
+    svgB.appendChild(g);
+  });
+}
+function starPath(cx,cy,R,r){let p="";for(let i=0;i<10;i++){const ang=Math.PI/5*i-Math.PI/2;const rad=i%2?r:R;p+=(i?"L":"M")+(cx+rad*Math.cos(ang)).toFixed(1)+","+(cy+rad*Math.sin(ang)).toFixed(1);}return p+"Z";}
+function selBirth(i,g){
+  document.querySelectorAll("#svg-birth .node").forEach(n=>n.classList.remove("sel"));
+  g.classList.add("sel");
+  const r=BIRTH[i];
+  document.getElementById("detail-birth").innerHTML=
+    `<div class="d-when">${r.d} &nbsp;·&nbsp; implies ${Math.round(r.yr)}</div>`+
+    `<div class="d-name" style="font-size:1.3rem;color:${r.canon?'var(--gold)':'var(--ink)'}">${r.stated} ${r.canon?'<span class="star">★</span>':''}</div>`+
+    `<div class="d-rec">${r.rec}</div>`+
+    `<span class="chip" style="background:${r.canon?'var(--gold)':'var(--k)'};color:#fff">${r.conf}</span>`;
+}
+
+/* ---------- tabs ---------- */
+document.querySelectorAll(".tab").forEach(t=>{
+  t.addEventListener("click",()=>{
+    document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+    document.querySelectorAll(".view").forEach(x=>x.classList.remove("active"));
+    t.classList.add("active");
+    document.getElementById("view-"+t.dataset.view).classList.add("active");
+  });
+});
+
+drawSurname();
+drawBirth();
+</script>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

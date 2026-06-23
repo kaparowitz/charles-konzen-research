@@ -1,0 +1,148 @@
+# ============================================================
+# Netlify build configuration
+# Charles Research — charles-research.netlify.app
+# ============================================================
+#
+# Added 8 May 2026 as part of the audit-fix pass.
+# Purpose: pin the publish directory to the project root and
+# make build behavior explicit (previously the site was
+# deployed via Netlify UI settings or a duplicate
+# _deploy_netlify/ mirror, which has been archived to
+# _archive_pre_audit_fixes/_deploy_netlify_mirror/).
+
+[build]
+  publish = "."
+
+# Skip everything under _archive*, _backup_originals/, and notes/
+# (private working drafts) from the public deploy by listing them
+# in .netlifyignore.
+
+# ------------------------------------------------------------
+# Redirects
+# ------------------------------------------------------------
+
+# Old hostname → new canonical hostname (only fires if the
+# domain charlesgannsen.netlify.app still resolves to this
+# Netlify site; harmless otherwise).
+[[redirects]]
+  from = "https://charlesgannsen.netlify.app/*"
+  to = "https://charles-research.netlify.app/:splat"
+  status = 301
+  force = true
+
+# Former canonical hostname → new canonical hostname. Renamed
+# 21 Jun 2026 from charles-konzen-research → charles-research
+# (dropping the unproven "Konzen" surname premise from the site
+# name). NOTE: once the site is renamed in Netlify the old
+# *.netlify.app subdomain is released and no longer routes here,
+# so this rule is best-effort/harmless — kept for documentation.
+[[redirects]]
+  from = "https://charles-konzen-research.netlify.app/*"
+  to = "https://charles-research.netlify.app/:splat"
+  status = 301
+  force = true
+
+# Pretty URLs for section folders — /civilwar → /civilwar/
+[[redirects]]
+  from = "/civilwar"
+  to = "/civilwar/"
+  status = 301
+[[redirects]]
+  from = "/germany"
+  to = "/germany/"
+  status = 301
+[[redirects]]
+  from = "/immigration"
+  to = "/immigration/"
+  status = 301
+[[redirects]]
+  from = "/people"
+  to = "/people/"
+  status = 301
+[[redirects]]
+  from = "/sources"
+  to = "/sources/"
+  status = 301
+[[redirects]]
+  from = "/towns"
+  to = "/towns/"
+  status = 301
+[[redirects]]
+  from = "/evidence"
+  to = "/evidence/"
+  status = 301
+[[redirects]]
+  from = "/children"
+  to = "/children/"
+  status = 301
+
+# Canonicalisation — updates.html was an orphan parallel changelog; the
+# canonical reverse-chronological log lives at /changelog.html (in the
+# Reference nav). 301 from old URL to keep any external links alive.
+# (16 May 2026 consolidation pass.)
+[[redirects]]
+  from = "/updates.html"
+  to = "/changelog.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/updates"
+  to = "/changelog.html"
+  status = 301
+  force = true
+
+# Konsen Puzzle → Konzen Puzzle rename (17 May 2026 night).
+# The page used to live at /germany/konsen-puzzle.html. The May 2026
+# user-catch cascade established that the daughter Auguste's 1890 St.
+# Marcus death record reads "Auguste Somers geb Konzen" (with z), not
+# Konsen (with s) — the only American attestation of the full Hessian
+# z-form documented in the Trendelburg parish since 1773. The page was
+# renamed to reflect that the Hessian z-spelling now anchors the puzzle.
+[[redirects]]
+  from = "/germany/konsen-puzzle.html"
+  to = "/germany/konzen-puzzle.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/germany/konsen-puzzle"
+  to = "/germany/konzen-puzzle.html"
+  status = 301
+  force = true
+
+# ------------------------------------------------------------
+# Headers
+# ------------------------------------------------------------
+
+# Cache static assets aggressively
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/optimized/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML must always revalidate so deploys show up immediately without a
+# hard-refresh (assets are version-stamped + cached 1yr above; HTML is not,
+# so without this browsers can serve a stale cached page after a deploy).
+# (Added 29 May 2026 after a full-bleed overview.html change didn't appear
+# until a manual hard-refresh.)
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Sensible security headers on every page
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "interest-cohort=()"

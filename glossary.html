@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Glossary — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/glossary.html">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/glossary.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/glossary.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/glossary.html">
+<link rel="stylesheet" href="assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="assets/dark-mode.css?v=20260530c">
+<script defer src="assets/theme-toggle.js?v=20260509-2330"></script>
+<meta name="description" content="A glossary of the German and genealogical terminology used across the Charles Research site — Kirchenbuch, Stammtafel, Auswanderer-Beleg, Kurrent, and more.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Glossary — Charles Research">
+<meta property="og:description" content="Definitions of the German and genealogical terminology used across the project.">
+<meta property="og:url" content="https://charles-research.netlify.app/glossary.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/glossary.png">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.gl-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.gl-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.gl-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.gl-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; }
+  header.gl-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+  p { margin-bottom: 0.7rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+
+  .lede { font-size: 1.04rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.4rem; }
+
+  .quick-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin: 0 0 1.6rem;
+    padding: 0.7rem 0.9rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 4px;
+    font-size: 0.86rem;
+  }
+  .quick-jump strong { color: var(--brand-dark); margin-right: 0.5rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; align-self: center; }
+  .quick-jump a {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    background: var(--bg-card-tint);
+    border: 1px solid var(--border-medium);
+    border-radius: 3px;
+    color: var(--text-strong);
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    border-bottom: 1px solid var(--border-medium);
+    transition: var(--transition);
+  }
+  .quick-jump a:hover { background: var(--brand-tint); color: var(--brand-dark); }
+
+  h2.letter {
+    font-size: 1.4rem;
+    color: var(--brand-dark);
+    margin: 1.8rem 0 0.6rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid var(--border-medium);
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+    scroll-margin-top: 1rem;
+  }
+
+  dl.glossary { margin: 0; }
+  dl.glossary dt {
+    font-size: 1.04rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 1rem 0 0.2rem;
+  }
+  dl.glossary dt .pron {
+    font-size: 0.78rem;
+    font-style: italic;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-left: 0.4rem;
+  }
+  dl.glossary dt .lang {
+    display: inline-block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    background: var(--brand-tint);
+    color: var(--brand-dark);
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 0.5rem;
+    vertical-align: 0.05em;
+    font-weight: 600;
+  }
+  dl.glossary dd {
+    color: var(--text-strong);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 0;
+    margin-bottom: 0.4rem;
+  }
+  dl.glossary dd em.cf { font-size: 0.84rem; color: var(--text-muted); }
+
+  footer.site-foot {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.gl-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.gl-hero h1, header.gl-hero .sub, header.gl-hero .crumbs, header.gl-hero .crumbs a { color: #000 !important; }
+    .quick-jump { background: none; border-left-width: 2px; }
+    a { color: #000; border-bottom: none; }
+    h2.letter { page-break-after: avoid; }
+    dl.glossary dt { page-break-after: avoid; }
+  }
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  </style>
+<script defer src="assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/site-nav.js"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="assets/cite-widget.js"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css">
+<script defer src="assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/glossary.html#article",
+  "headline": "Glossary — Charles Research",
+  "description": "German genealogical terminology used throughout the Charles Konzen investigation.",
+  "datePublished": "2026-04-01",
+  "dateModified": "2026-05-12",
+  "url": "https://charles-research.netlify.app/glossary.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Glossary"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="abstract.html" role="menuitem">Abstract</a>
+      <a href="claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="index.html" role="menuitem">Home</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="gl-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; Glossary</div>
+  <h1>Glossary</h1>
+  <div class="sub">Definitions of the German archival and genealogical terminology used across the project — for readers approaching this site without a background in 19th-century Hessian record-keeping.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">The site is bilingual by accident: it reports findings in English, but the underlying records — Kirchenbücher, Stammrollen, Auswanderer-Belege — are German, and the standard descriptive vocabulary is German too. This page defines the terms that recur most often.</p>
+
+<nav class="quick-jump" aria-label="Jump to letter">
+  <strong>Jump</strong>
+  <a href="#A">A</a><a href="#B">B</a><a href="#C">C</a><a href="#D">D</a><a href="#E">E</a>
+  <a href="#F">F</a><a href="#G">G</a><a href="#H">H</a><a href="#I">I</a><a href="#K">K</a>
+  <a href="#L">L</a><a href="#N">N</a><a href="#P">P</a><a href="#R">R</a><a href="#S">S</a>
+  <a href="#T">T</a><a href="#V">V</a>
+</nav>
+
+<h2 class="letter" id="A">A</h2>
+<dl class="glossary">
+  <dt id="g-auswanderer-beleg">Auswanderer-Beleg <span class="lang">DE</span> <span class="pron">/ˈaʊsˌvandərɐ bəˈleːk/</span></dt>
+  <dd>Lit. "emigrant document." A formal emigration permit issued by the local Hessian authority, certifying that a subject of military age had discharged conscription obligations and had no outstanding civic debts. Required by law in 19th-century Hesse-Kassel; in practice, often evaded. Many Auswanderer-Belege survive in <a href="https://arcinsys.hessen.de/" target="_blank" rel="noopener noreferrer">Arcinsys</a>, the catalogue of the Hessian state archive at Marburg. <em class="cf">cf. <a href="open-questions.html#priority">Open Questions, Priority 3</a>.</em></dd>
+
+  <dt id="g-auswanderung">Auswanderung <span class="lang">DE</span></dt>
+  <dd>Emigration. <em>Auswanderungswelle</em> = "wave of emigration"; refers in this project to the great mid-19th-century German emigration to the United States.</dd>
+</dl>
+
+<h2 class="letter" id="B">B</h2>
+<dl class="glossary">
+  <dt id="g-bestattung">Bestattung / Bestattungsregister <span class="lang">DE</span></dt>
+  <dd>"Burial / burial register." The third book in a typical Hessian Lutheran <a href="#kirchenbuch">Kirchenbuch</a>, after Taufen (baptisms) and Trauungen (marriages). The Trendelburg Bestattungsregister 220096 is one of the project's pivotal sources; it contains the K-section index entries for the Kontze / Kontzen surname pool 1773–1818.</dd>
+</dl>
+
+<h2 class="letter" id="C">C</h2>
+<dl class="glossary">
+  <dt id="g-churhessen">Churhessen <span class="lang">DE</span></dt>
+  <dd>The pre-1866 orthography for the Electorate of Hesse-Kassel. Modern German: <em>Kurhessen</em>. Charles's 1866 St. Marcus marriage register uses the Churhessen form, dating the language of the record to the pre-Prussian-annexation period. <em class="cf">See also <a href="germany/hesse-kassel-context.html">Hesse-Kassel context</a>.</em></dd>
+
+  <dt id="g-compiled-service-record">Compiled Service Record (CSR) <span class="lang">EN</span></dt>
+  <dd>A U.S. National Archives compilation of the carded muster-roll entries, special orders, and miscellaneous service papers documenting one Civil War soldier's enlistment, postings, and discharge. Charles's CSR (file G11-422819443E) is imaged on the site at <a href="sources/nara-service-record-packet.html">Sources › NARA</a>.</dd>
+</dl>
+
+<h2 class="letter" id="D">D</h2>
+<dl class="glossary">
+  <dt id="g-deisel">Deisel <span class="lang">DE</span></dt>
+  <dd>The village ~5 km south of Trendelburg in the Kreis Hofgeismar. Charles's stated home on the 1866 St. Marcus marriage register — recorded as "Deisse" by Pastor Wall, an English-speaking listener's capture of the spoken German place-name.</dd>
+</dl>
+
+<h2 class="letter" id="E">E</h2>
+<dl class="glossary">
+  <dt id="g-evangelisch">Evangelisch <span class="lang">DE</span></dt>
+  <dd>"Evangelical." In the German context of the 19th century, the umbrella term for both Lutheran and Reformed Protestant churches; at the parish level the dominant denomination of Hesse-Kassel. Charles's American church — St. Marcus German <em>Evangelical</em> Church in St. Louis — preserved the term.</dd>
+</dl>
+
+<h2 class="letter" id="F">F</h2>
+<dl class="glossary">
+  <dt id="g-familysearch">FamilySearch <span class="lang">EN</span></dt>
+  <dd>The Church of Jesus Christ of Latter-day Saints' free genealogical platform. Hosts the project's editable family tree and indexes a large fraction of the U.S. vital and census records. Person IDs (e.g. <code>LZXC-6GB</code> for Charles, <code>LZKV-9F5</code> for Auguste) are used inline throughout the site.</dd>
+
+  <dt id="g-fold3">Fold3 <span class="lang">EN</span></dt>
+  <dd>An Ancestry-owned database of digitised U.S. military records, especially Civil War service and pension files. Used in this project as the working transcription layer; where Fold3 readings disagree with the NARA originals, the NARA reading is canonical.</dd>
+
+  <dt id="g-freundburg">"Freundburg" <span class="lang">EN</span></dt>
+  <dd>The non-existent place-name written by an English-speaking recruiting clerk on Charles's 2 December 1862 enlistment register. Phonetically decoded as Trendelburg: the German "Tr-" cluster heard as "Fr-," the meaningless syllable "-endel-" normalised to the familiar German <em>Freund-</em> ("friend"), the place-suffix <em>-burg</em> preserved. <em class="cf">See <a href="research_logs/freundburg-kurhessen.html">research log</a>.</em></dd>
+</dl>
+
+<h2 class="letter" id="G">G</h2>
+<dl class="glossary">
+  <dt id="g-geb">geb. (geboren) <span class="lang">DE</span></dt>
+  <dd>"Born" — used in genealogy to introduce a maiden name: <em>"Auguste Somers geb. Konzen"</em> = "Auguste Somers, née Konzen." The German equivalent of the French <em>née</em>.</dd>
+
+  <dt id="g-genealogical-proof-standard">Genealogical Proof Standard (GPS) <span class="lang">EN</span></dt>
+  <dd>The Board for Certification of Genealogists' five-element framework for sound genealogical conclusion: reasonably exhaustive research; complete and accurate citations; analysis and correlation of the collected information; resolution of conflicting evidence; and a soundly reasoned, coherently written conclusion. Codified in <em>Genealogy Standards</em>, 2nd ed. (Nashville: Ancestry, 2019). The project's confidence taxonomy on <a href="methodology.html#confidence">Methodology</a> is designed against this standard.</dd>
+</dl>
+
+<h2 class="letter" id="H">H</h2>
+<dl class="glossary">
+  <dt id="g-htr">HTR (Handwritten Text Recognition) <span class="lang">EN</span></dt>
+  <dd>Automated transcription of historical handwritten text. Used by Peter Schräder for first-pass readings of Friedrichsfeld KB entries before manual correction.</dd>
+</dl>
+
+<h2 class="letter" id="I">I</h2>
+<dl class="glossary">
+  <dt id="g-illegitim">illegitim / unehelich <span class="lang">DE</span></dt>
+  <dd>"Illegitimate / out of wedlock." A baptismal entry for an illegitimate child in a 19th-century parish record typically notes the mother's name only, often with the marginal note <em>illegitim</em> or <em>unehelich</em>; the father's name may be supplied by a later legitimisation entry or be absent entirely. The project's multi-register Jan 1835 illegitimacy scan (April 2026) searched these entries specifically and surfaced no candidate baby for Charles.</dd>
+</dl>
+
+<h2 class="letter" id="K">K</h2>
+<dl class="glossary">
+  <dt id="kirchenbuch">Kirchenbuch <span class="lang">DE</span> <span class="pron">/ˈkɪʁçənˌbuːx/</span></dt>
+  <dd>Lit. "church book." A parish register, kept by the local pastor and recording the three principal sacraments — baptisms (<em>Taufen</em>), marriages (<em>Trauungen</em>), and burials (<em>Bestattungen</em>). For 18th- and 19th-century Hessian Lutherans, the Kirchenbuch is the closest thing to a vital-records register; civil registration began in Hesse only in the 1870s. Most Hessian Kirchenbücher relevant to this project are digitised on <a href="https://www.archion.de/" target="_blank" rel="noopener noreferrer">Archion.de</a>.</dd>
+
+  <dt id="g-kirchenkreis">Kirchenkreis <span class="lang">DE</span></dt>
+  <dd>"Parish circle." A super-parish administrative unit in the German Protestant church, roughly equivalent to a deanery or rural decanal district. Charles's <em>stated</em> home village Deisel (per his 1862 Civil War enlistment record and the 1866 St. Marcus marriage register) sat in the Kirchenkreis Hofgeismar, which also contained the parishes of Trendelburg, Friedrichsfeld, Helmarshausen, Sielen, Hümme, Schöneberg, and Heisebeck — the cluster the project has searched. The specific German baptismal entry that would localise Charles's home parish has not yet been recovered (see <a href="open-questions.html">Open Questions, Priority 1</a>).</dd>
+
+  <dt id="g-konze">Konze / Kontze / Kontzen / Contze / Contzen / Konzen <span class="lang">DE</span></dt>
+  <dd>The surname pool documented continuously in the Trendelburg parish complex from the mid-18th century. Treated as orthographically interchangeable by the parish itself (cross-reference note in burial-register 220096: "<em>siehe auch K. Contze, Cortze, Cordes, Contz</em>"). <strong>Konzen</strong> is the project's May-2026 working conclusion for the form Charles inherited. <em class="cf">See <a href="germany/konzen-puzzle.html">The Konzen puzzle</a>.</em></dd>
+
+  <dt id="g-kreis">Kreis <span class="lang">DE</span></dt>
+  <dd>"Circle / district." A 19th-century Hessian county-equivalent administrative unit, between the village and the state. Charles's stated origin "Kreis Cassel" refers to one of the larger administrative districts of the Electorate; "Kreis Hofgeismar" is the more granular district that contains his actual village.</dd>
+
+  <dt id="g-kurfurst">Kurfürst <span class="lang">DE</span></dt>
+  <dd>"Elector." The Holy-Roman-Empire-era title of one of the seven (later more) princes who elected the Holy Roman Emperor. After 1806 the function ceased to exist, but the ruler of Hesse-Kassel preserved the title for prestige. Friedrich Wilhelm I, the last Elector of Hesse, was deposed in September 1866 when Prussia annexed the territory — three days after Charles &amp; Auguste's firstborn was christened with the same first names, in St. Louis.</dd>
+
+  <dt id="g-kurhessen">Kurhessen <span class="lang">DE</span></dt>
+  <dd>Modern spelling of <em>Churhessen</em>, the Electorate of Hesse-Kassel. Used inside the 1862 enlistment register's "Kurhessen" reading. <em class="cf">See <a href="#C">Churhessen</a>.</em></dd>
+
+  <dt id="g-kurrent">Kurrent / Sütterlin <span class="lang">DE</span></dt>
+  <dd>Two cursive German handwriting scripts. <em>Kurrentschrift</em> (Kurrent) was in general use through the 19th century. <em>Sütterlinschrift</em> (Sütterlin) is a 1911 simplification of Kurrent that was the dominant script in German schools 1915–1941. Both are essentially illegible to modern readers without training. All 19th-century Hessian parish entries on this project are written in Kurrent.</dd>
+</dl>
+
+<h2 class="letter" id="L">L</h2>
+<dl class="glossary">
+  <dt id="g-lagis">LAGIS <span class="lang">DE</span></dt>
+  <dd>Landesgeschichtliches Informationssystem Hessen — a free regional records portal for historical Hesse. Used in this project for parish boundaries, regional emigration data, and contextual reference.</dd>
+
+  <dt id="g-ledig">ledig <span class="lang">DE</span></dt>
+  <dd>"Unmarried, single." Common notation in 19th-century Hessian parish entries, often paired with the subject's profession.</dd>
+</dl>
+
+<h2 class="letter" id="N">N</h2>
+<dl class="glossary">
+  <dt id="g-nara">NARA <span class="lang">EN</span></dt>
+  <dd>The (U.S.) National Archives and Records Administration, headquartered in Washington, D.C. Holds the original Compiled Service Records and Pension Files for U.S. Civil War soldiers. Charles's CSR and Pension File were obtained as mail-order packets from NARA in May 2026.</dd>
+
+  <dt id="g-ngsq">NGSQ <span class="lang">EN</span></dt>
+  <dd>The <em>National Genealogical Society Quarterly</em>, a leading peer-reviewed U.S. genealogical journal. Its short-form citation style is the basis for citations on this site.</dd>
+</dl>
+
+<h2 class="letter" id="P">P</h2>
+<dl class="glossary">
+  <dt id="g-pfarramt">Pfarramt / Pfarrer <span class="lang">DE</span></dt>
+  <dd>"Parish office / pastor." The <em>Pfarramt</em> is the administrative office of a Lutheran parish; the <em>Pfarrer</em> is the parish minister, the keeper of the Kirchenbuch.</dd>
+</dl>
+
+<h2 class="letter" id="R">R</h2>
+<dl class="glossary">
+  <dt id="g-register">Register <span class="lang">DE/EN</span></dt>
+  <dd>In the Archion.de context, a numbered parish register: e.g., Register <strong>220108</strong> = Trendelburg Taufen 1830–1863. The site cites these by Archion register ID.</dd>
+</dl>
+
+<h2 class="letter" id="S">S</h2>
+<dl class="glossary">
+  <dt id="g-seite">Seite <span class="lang">DE</span></dt>
+  <dd>"Page." Used to disambiguate from <em>Nro.</em> ("number," referring to the entry number on a page) and <em>Bild</em> (the digital image number in the Archion viewer). The project's image-to-Seite map for Trendelburg Register 220108 (1 Seite ≈ 1.15 images; image = 1375 + viewer-option) is documented in the project's session conventions.</dd>
+
+  <dt id="g-stammrolle">Stammrolle <span class="lang">DE</span></dt>
+  <dd>A 19th-century Hessian military register, listing all males of conscription age in a given year-cohort. For Charles, the relevant Stammrolle would be the 1855 cohort (males b. 1835). Some volumes for the relevant district remain undigitised at the Hessisches Staatsarchiv Marburg. <em class="cf">cf. <a href="open-questions.html#priority">Open Questions, Priority 4</a>.</em></dd>
+
+  <dt id="g-stammtafel">Stammtafel <span class="lang">DE</span></dt>
+  <dd>"Family table" — a structured pedigree chart of one ancestral line, typically on a single sheet. Peter Schräder's Stammtafel-construction work for the Trendelburg-Friedrichsfeld Konze branches is the spine of the project's German-side analysis.</dd>
+
+  <dt id="g-st-marcus">St. Marcus <span class="lang">EN</span></dt>
+  <dd>St. Marcus German Evangelical Church in St. Louis, founded 1843. Charles &amp; Auguste's parish: the site of their 1866 marriage, the seven baptisms 1866–1880, and Charles's 1903 burial at Old Saint Marcus Cemetery (now St. Marcus Commemorative Park; markers removed).</dd>
+</dl>
+
+<h2 class="letter" id="T">T</h2>
+<dl class="glossary">
+  <dt id="g-taufe">Taufe / Taufen <span class="lang">DE</span></dt>
+  <dd>"Baptism / baptisms." The first book in a Lutheran Kirchenbuch. The Trendelburg Taufen 1830–1863 (Register 220108) is the central source for the project's Konze-line searches.</dd>
+
+  <dt id="g-trauung">Trauung / Trauungen <span class="lang">DE</span></dt>
+  <dd>"Marriage / marriages." The second book in a Lutheran Kirchenbuch. Used to corroborate parental relationships and witness networks.</dd>
+
+  <dt id="g-trendelburg">Trendelburg <span class="lang">DE</span></dt>
+  <dd>The fortified village ~5 km north of Deisel that gives the project its working geographic anchor. Trendelburg's Kontze-pool burial register and post-1830 baptismal register are central evidence; the parish complex is the leading hypothesis for Charles's actual baptism.</dd>
+</dl>
+
+<h2 class="letter" id="V">V</h2>
+<dl class="glossary">
+  <dt id="g-verschollen">verschollen <span class="lang">DE</span></dt>
+  <dd>"Disappeared / lost without trace." A standard archival annotation in 19th-century Hessian state records for a subject whose departure was not formally recorded — typically used in Stammrolle and church-membership registers for males who had emigrated without filing the paperwork. The annotation pattern <em>"nach Amerika"</em> ("to America") similarly tags an unfiled emigration.</dd>
+</dl>
+
+<p style="margin-top:2.4rem; font-style:italic; color:var(--text-muted); font-size:0.92rem;">If a term you encountered on the site isn't here, please <a href="methodology.html#corrections">let me know</a> and I'll add it.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="index.html">Home</a> · <a href="abstract.html">Abstract</a> · <a href="methodology.html">Methodology</a> · <a href="bibliography.html">Bibliography</a> · <a href="glossary.html">Glossary</a> · <a href="open-questions.html">Open Questions</a> · <a href="changelog.html">Changelog</a> · <a href="visualize.html">Visualize</a> · <a href="faq.html">FAQ</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

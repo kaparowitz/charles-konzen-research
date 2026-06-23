@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>1860 U.S. Federal Census — Research Log — Charles Research</title>
+<link rel="canonical" href="https://charles-research.netlify.app/research_logs/1860-census.html">
+<meta name="description" content="The 1860 schedule's &quot;Place of birth&quot; column was free-text and the granularity depended entirely on the enumerator. Three plausible outcomes:">
+<link rel="stylesheet" href="_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  .rl-banner { background:linear-gradient(140deg, #faecea, #f5dbd6); border:1px solid #c9a4a4; border-left:4px solid #a3441f; padding:0.9rem 1.1rem; border-radius:5px; margin:1.4rem 0; }
+  .rl-star { color:#a3441f; font-size:1.4rem; font-weight:700; line-height:1; }
+  .rl-tells { background:#fffaf0; border:1px solid #d8b366; border-left:4px solid #d8b366; padding:1rem 1.2rem; border-radius:5px; margin:1.2rem 0; }
+  .rl-tells h2 { color:#8a6420; font-size:1.18rem; border:none; padding:0; margin:0 0 0.6rem; display:flex; align-items:baseline; gap:0.5rem; }
+  .rl-tells h2 .star { color:#d8b366; font-size:1.4rem; }
+  .rl-section { margin:1.6rem 0; }
+  .rl-section h2 { font-size:1.0rem; color:#3a2f1e; border-bottom:1px solid #d8c8a8; padding-bottom:0.3rem; margin:0 0 0.5rem; }
+  .rl-passes { background:#fffdf6; border:1px solid #d8c8a8; border-radius:4px; padding:0.6rem 0.9rem; margin:0.5rem 0; }
+  .rl-passes h3 { font-size:0.92rem; color:#5a4a32; margin:0.4rem 0 0.3rem; }
+  .rl-passes ul { margin:0.2rem 0; padding-left:1.3rem; font-size:0.9rem; line-height:1.55; }
+  .rl-result { display:inline-block; padding:0.15rem 0.5rem; border-radius:3px; font-size: 0.78rem; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
+  .rl-result.neg { background:#f3dde3; color:#6a3030; }
+  .rl-result.pos { background:#e8f0d6; color:#3a6a2a; }
+  .rl-result.collateral { background:#fff4d8; color:#8a6420; }
+  .rl-next { background:#f4f9ee; border-left:3px solid #5a8a4a; padding:0.7rem 0.9rem; border-radius:3px; }
+  .rl-next h2 { color:#3a6a2a; }
+</style>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Research Logs",
+      "item": "https://charles-research.netlify.app/research_logs/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "1860 Census"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/research_logs/1860-census.html#article",
+  "headline": "1860 U.S. Federal Census — Research Log",
+  "url": "https://charles-research.netlify.app/research_logs/1860-census.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17"
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+<meta property="og:url" content="https://charles-research.netlify.app/research_logs/1860-census.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="src-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#evidence">Key Evidence</a> &nbsp;/&nbsp; Evidence not found</div>
+  <h1>1860 U.S. Federal Census — Research Log</h1>
+  <div class="sub">Charles Gannsen's first U.S. enumeration · expected but never located · all searches negative</div>
+  <div class="meta-row">
+    <span class="pill pill--eliminated">EVIDENCE NOT FOUND</span>
+    <span class="pill">Charles arrived 1859 — should appear in this census</span>
+  </div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="rl-tells">
+  <h2><span class="star">★</span> What this record would tell us if found</h2>
+  <p>Charles's <strong>first U.S. residence and household composition within months of his 1859 arrival</strong>. Specifically:</p>
+  <ul>
+    <li><strong>Where he was living</strong> — boarding alone, lodging with a Hessian family, or already settled with people he later named as wedding witnesses (Adam Herweck, Philipp Weber).</li>
+    <li><strong>Who his neighbours were</strong> — neighbouring households on the same census page would identify his chain-migration cohort and reveal whether he travelled with anyone he later co-existed with in St. Louis.</li>
+    <li><strong>His occupation in 1860</strong> — still farmer (per the 1862 enlistment)? laboring? already blacksmithing? — establishing the trade he brought from Germany.</li>
+    <li><strong>His surname spelling at arrival</strong> — the indexed name in 1860 would be the closest U.S. record to his German-side surname before American clerks introduced their own variants.</li>
+    <li><strong>Whether he was already naturalised or alien</strong> — the 1860 census recorded foreign-born status but not naturalisation timing; its absence vs. presence would frame the 1865+ naturalisation question.</li>
+  </ul>
+  <h3 style="font-size:0.95rem; color:#5a4a32; margin:0.9rem 0 0.3rem;">What level of detail to expect on origin</h3>
+  <p>The 1860 schedule's <em>"Place of birth"</em> column was free-text and the granularity depended entirely on the enumerator. Three plausible outcomes:</p>
+  <ul>
+    <li><strong>Just "Germany"</strong> — most common outcome for German-born adults in 1860 St. Louis. Adds nothing the project doesn't already know.</li>
+    <li><strong>State-level</strong> — "Prussia," "Bavaria," "Hannover," "Hesse," "Hesse-Cassel," "Hesse-Darmstadt," "Württemberg," "Baden." For Charles, "Hesse" or "Hesse-Cassel" / "<a class="glossary-link" href="../glossary.html#g-kurhessen" title="Glossary: Kurhessen">Kurhessen</a>" would corroborate the 1862 enlistment-record's "Freundburg Kurhessen" reading.</li>
+    <li><strong>Region or city level</strong> — usually only when the household head spoke clearly with the enumerator. Could include "Cassel" (the Kurhessen capital) or a specific village. For Charles in 1860, just one year after arrival and presumably still answering in German, this is the least likely but most transformative outcome.</li>
+  </ul>
+</section>
+
+<section class="rl-section">
+  <h2>Why this record should exist</h2>
+  <p>Per the 1900 U.S. census, Charles answered "1859" as his year of immigration. The 1860 federal census was enumerated 1 June – mid-October 1860, so anyone in residence in the United States as of June 1860 should be recorded. Charles enlisted in the Union Army at St. Louis on 2 December 1862 (per the Civil War enlistment record), giving "St. Louis" as his location and "Farmer" as his occupation, which means he had already established residence in Missouri by mid-1862. He was almost certainly somewhere in the U.S. on 1 June 1860 — but no enumeration entry has been positively identified.</p>
+</section>
+
+<section class="rl-section">
+  <h2>Search log — passes attempted</h2>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Surname-variant exact-match passes</h3>
+    <p>FamilySearch and Ancestry 1860 census collections searched with each of the following surname variants combined with birthplace = Germany / Hesse / Hannover / Kurhessen / Hesse-Cassel and birth year ~1835 ± 5:</p>
+    <ul>
+      <li><em>Gannsen, Gansen, Gansin, Gansing</em> — zero matches with Hesse-born + St. Louis residence</li>
+      <li><em>Gonson, Gonnson, Gonsson, Gonsen</em> — zero matches with Hesse-born + St. Louis residence</li>
+      <li><em>Konsen, Konze, Kontze, Contze</em> — zero matches with Hesse-born + St. Louis residence</li>
+      <li><em>Jansen, Janson, Janssen, Jensen</em> — multiple results, none with Charles + St. Louis + Hesse profile</li>
+      <li><em>Hansen, Hanson</em> — multiple results, none matching profile</li>
+      <li><em>Johnson</em> with Germany birthplace — too broad to reliably surface a match; no St. Louis-area Charles Johnson b. ~1835 Hesse identified</li>
+    </ul>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> First-name-only sweep</h3>
+    <p>Searches restricted to "Charles" or "Carl" or "Karl" with birthplace Hesse / Hesse-Cassel / Kurhessen and lived-in St. Louis Missouri 1860, surname blank — produced no candidate matching age 25 ± 3 with no wife and no children (Charles was unmarried in 1860, married Auguste Kreichelt in Jan 1866).</p>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result neg">negative</span> Address-anchor approach</h3>
+    <p>Charles's earliest documented St. Louis address (<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=1518+S+7th+St+St+Louis+MO+63104" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">1518 South 7th Street</a>, 1865-1869 per pension address history) was a 1860s residence — by 1860 he was likely at a different address. No 1860 St. Louis directory entry under any surname variant has been located. The 1860 census images for St. Louis Wards 1-12 have not been walked page-by-page for this record (the 1870 walk around the Kreichelts established the methodology but was not extended back to 1860).</p>
+  </div>
+
+  <div class="rl-passes">
+    <h3><span class="rl-result collateral">collateral</span> Outside St. Louis</h3>
+    <p>Possibility considered: Charles may not have been in St. Louis on 1 June 1860. He could have been in transit (rural Missouri, Illinois, etc.) or working seasonally. A geographic-broad first-name-only sweep across all of Missouri / Illinois has not been completed. Given the Battery B unit-mate Adam Herweck's 1860 location is unclear, the possibility that Charles was elsewhere in the same year is open.</p>
+  </div>
+</section>
+
+<section class="rl-section">
+  <h2>Sources / databases consulted</h2>
+  <ul>
+    <li><a href="https://www.ancestry.com/search/collections/7667/" target="_blank" rel="noopener noreferrer">Ancestry · 1860 United States Federal Census</a></li>
+    <li><a href="https://www.familysearch.org/search/collection/1473181" target="_blank" rel="noopener noreferrer">FamilySearch · 1860 United States Federal Census</a></li>
+    <li>St. Louis 1860 city directory (incomplete, no online index for German-immigrant residents matching profile)</li>
+  </ul>
+</section>
+
+<section class="rl-section">
+  <h2>Cross-references in the project</h2>
+  <ul>
+    <li><span>Session 75 — Hildebrand St. Louis &amp; Rockford search</span> — Hildebrand-side chain-migration check; ruled out Stephen Hildebrand of DeKalb Street as a Charles connection</li>
+    <li><span>Session 11 — Four-priorities execution</span> — included surname-variant census passes</li>
+    <li><a href="../immigration/sources-and-name-variants.html">Sources &amp; name-variant catalogue</a> — full list of spellings tried across all U.S. record sets</li>
+  </ul>
+</section>
+
+<section class="rl-next">
+  <h2>Next paths to chase</h2>
+  <ul>
+    <li><strong>Page-by-page walk of 1860 St. Louis Wards 4 and 5</strong> — the wards most likely to have covered Soulard / South Broadway / South 7th Street area. Mirroring the 1870 Kreichelt-side walk methodology.</li>
+    <li><strong>Cross-state sweep</strong> — test the hypothesis that Charles was outside St. Louis on 1 June 1860. Search Illinois, Indiana, Ohio for Hesse-born unmarried male age 25 ± 3.</li>
+    <li><strong>1860 St. Louis city directory</strong> — physical / paper directory hold by Missouri Historical Society and St. Louis Public Library. Not yet ordered.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="back-nav">
+  <a href="../index.html#evidence">↩ Back to Key Evidence</a>
+</footer>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

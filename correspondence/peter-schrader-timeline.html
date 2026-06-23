@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Peter Schräder Correspondence Timeline — Charles Research</title>
+<link rel="canonical" href="https://charles-research.netlify.app/correspondence/peter-schrader-timeline.html">
+<link rel="stylesheet" href="../family_pages/_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  /* ============================================================
+     Peter Schräder timeline — restyled 11 May 2026
+     ============================================================
+     Rebuilt to match the rest of the site:
+       • All colors/borders use theme.css + dark-mode.css?v=20260518-legenddots tokens
+         (--bg-card, --text-body, --border-light, --brand, etc.),
+         so light/dark mode work automatically — no per-element
+         overrides needed.
+       • Stat tiles use the scoreboard pattern from
+         index.html#schrader (.scb-item).
+       • "Who Peter is" intro uses the spotlight-panel pattern.
+       • Month <details> mirror the .arc-group pattern from
+         index.html#archive.
+     ------------------------------------------------------------ */
+
+  /* ---- Legend strip ---- */
+  .legend-row {
+    display: flex; flex-wrap: wrap; gap: 0.5rem;
+    margin: 0.6rem 0 1.4rem; align-items: center; font-size: 0.82rem;
+  }
+  .legend-row .swatch {
+    display: inline-flex; align-items: center; gap: 0.45rem;
+    padding: 0.3rem 0.65rem; border-radius: 3px;
+    background: var(--bg-card-tint, #f6ebd2);
+    border: 1px solid var(--border-light, #d8c8a8);
+    color: var(--text-body, #2c2620);
+  }
+  .legend-row .dot {
+    display: inline-block; width: 0.7rem; height: 0.7rem;
+    border-radius: 50%;
+  }
+  .legend-row .dot.in   { background: var(--section-germany, #5a8a4a); }
+  .legend-row .dot.out  { background: var(--section-immigration, #4a76c8); }
+  .legend-row .dot.evt  { background: var(--brand, #d8b366); }
+  .legend-row .dot.piv  { background: var(--status-active, #8a7ac0); }
+  .legend-row .dot.elim { background: var(--status-eliminated, #8a4a4a); }
+
+  /* ---- Phase header (banner between major eras) ---- */
+  .phase-header {
+    background: linear-gradient(140deg, var(--bg-deep, #1a1612), var(--bg-card-tint, #2c261d));
+    color: var(--text-on-dark, #f6f1e7);
+    padding: 0.95rem 1.15rem;
+    border-radius: 4px;
+    border-left: 5px solid var(--brand, #d8b366);
+    margin: 1.8rem 0 1.1rem;
+  }
+  .phase-header .phase-num {
+    display: block; font-size: 0.76rem;
+    color: var(--brand, #d8b366);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 0.2rem;
+  }
+  .phase-header h2 {
+    color: var(--text-on-dark, #f6f1e7);
+    font-size: 1.18rem; margin: 0; border: none; padding: 0;
+  }
+  .phase-header p {
+    margin: 0.4rem 0 0; font-size: 0.88rem;
+    color: var(--text-on-dark-d, #c8b896); font-style: italic;
+  }
+
+  /* ---- Timeline column + dots ---- */
+  .ts-timeline {
+    position: relative; margin: 0.6rem 0 1.6rem;
+    padding-left: 1.8rem;
+    border-left: 3px solid var(--brand, #d8b366);
+  }
+  .ts-event {
+    position: relative; margin-bottom: 1.1rem;
+    padding: 0.7rem 0.95rem;
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-radius: 4px;
+    color: var(--text-body, #2c2620);
+    transition: box-shadow 0.15s, transform 0.15s;
+  }
+  .ts-event:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+  .ts-event::before {
+    content: ""; position: absolute;
+    left: -2.05rem; top: 0.85rem;
+    width: 0.85rem; height: 0.85rem;
+    border-radius: 50%;
+    background: var(--brand, #d8b366);
+    border: 2px solid var(--bg-page, #fffaf0);
+    box-shadow: 0 0 0 1px var(--brand-dark, #8a6420);
+  }
+  .ts-event.in::before   { background: var(--section-germany, #5a8a4a); box-shadow: 0 0 0 1px var(--section-germany-d, #3a6a2a); }
+  .ts-event.out::before  { background: var(--section-immigration, #4a76c8); box-shadow: 0 0 0 1px var(--section-immigration-d, #2a4a8a); }
+  .ts-event.piv::before  { background: var(--status-active, #8a7ac0); box-shadow: 0 0 0 1px #5a4a8a; }
+  .ts-event.elim::before { background: var(--status-eliminated, #8a4a4a); box-shadow: 0 0 0 1px #5a2828; }
+  .ts-event .when {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 0.8rem; font-weight: 700;
+    color: var(--brand-dark, #8a6420);
+    letter-spacing: 0.03em;
+  }
+  .ts-event .what {
+    display: block; margin-top: 0.25rem;
+    font-size: 0.96rem; line-height: 1.55;
+    color: var(--text-strong, #3a2f1e);
+  }
+  .ts-event .who {
+    display: inline-block; font-size: 0.76rem;
+    padding: 0.1rem 0.45rem; border-radius: 3px;
+    margin-left: 0.45rem; vertical-align: middle;
+    font-weight: 700; letter-spacing: 0.04em;
+  }
+  .ts-event .who.in   { background: rgba(90,138,74,0.18); color: var(--section-germany-d, #3a6a2a); }
+  .ts-event .who.out  { background: rgba(74,118,200,0.18); color: var(--section-immigration-d, #2a4a8a); }
+  .ts-event .who.both { background: rgba(212,160,23,0.18); color: var(--brand-dark, #8a6420); }
+  .ts-event.piv {
+    background: linear-gradient(140deg, var(--status-active-t, #f4f0fb), var(--bg-card-tint, #e6dff0));
+    border-color: #a89cc0;
+  }
+  .ts-event.elim {
+    background: linear-gradient(140deg, var(--status-eliminated-t, #fbeef3), #f3dde3);
+    border-color: #c9a4a4;
+  }
+  .ts-event.in {
+    background: linear-gradient(140deg, var(--section-germany-t, #f4f9ee), #e8f0d6);
+    border-color: #a8c498;
+  }
+  .ts-event.star {
+    box-shadow: 0 0 0 2px var(--brand, #d8b366), 0 2px 10px rgba(0,0,0,0.08);
+  }
+  .ts-event .related {
+    font-size: 0.82rem;
+    color: var(--text-meta, #6a5a42);
+    font-style: italic; margin-top: 0.4rem;
+  }
+  .ts-event .related a { color: var(--brand-dark, #8a6420); }
+
+  /* ---- "Who Peter is" intro card — spotlight-style ---- */
+  .ix-card {
+    margin: 0.6rem 0 1.6rem;
+    padding: 1.2rem 1.4rem 1.1rem;
+    background: linear-gradient(140deg, var(--bg-card, #fffaee), var(--bg-card-tint, #f6ebd2));
+    border: 1px solid var(--brand-dark, #c87a30);
+    border-left: 6px solid var(--brand-dark, #c87a30);
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .ix-card h2 {
+    margin: 0 0 0.55rem; font-size: 1.3rem;
+    color: var(--text-heading, var(--text-strong, #3a2f1e));
+    border-bottom: 1px solid var(--border-light, #c9a76a);
+    padding-bottom: 0.35rem; letter-spacing: -0.005em;
+  }
+  .ix-card .bottom-line {
+    font-size: 0.98rem; line-height: 1.55;
+    color: var(--text-body, #2c2620);
+  }
+
+  /* Operating-principles inset (was .ff-section) */
+  .ix-card .principles {
+    background: var(--bg-card, #fffdf6);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-radius: 4px;
+    padding: 0.85rem 1.05rem;
+    margin: 1rem 0 0.7rem;
+  }
+  .ix-card .principles h3 {
+    font-size: 0.78rem; margin: 0 0 0.5rem; padding: 0; border: none;
+    color: var(--brand-dark, #8a6420);
+    letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700;
+  }
+  .ix-card .principles ul {
+    margin: 0; padding-left: 1.2rem;
+    font-size: 0.92rem; line-height: 1.5;
+    color: var(--text-body, #2c2620);
+  }
+  .ix-card .principles li { margin-bottom: 0.35rem; }
+  .ix-card .principles strong { color: var(--text-strong, #1f1a14); }
+
+  /* Stat tiles — scoreboard style */
+  .ix-card .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0.55rem;
+    margin-top: 0.9rem;
+  }
+  .ix-card .stat {
+    display: flex; flex-direction: column; gap: 0.15rem;
+    padding: 0.7rem 0.85rem;
+    background: var(--bg-card, #fffdf6);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-left: 4px solid var(--brand, #d8b366);
+    border-radius: 4px;
+  }
+  .ix-card .stat .lbl {
+    font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.085em;
+    color: var(--text-strong, #3a2f1e); font-weight: 700;
+  }
+  .ix-card .stat .val {
+    font-size: 1.15rem; font-weight: 700; line-height: 1.15;
+    color: var(--brand-dark, #8a6420);
+    margin-top: 0.15rem;
+  }
+  .ix-card .stat .sub {
+    font-size: 0.78rem; color: var(--text-meta, #6a5a42);
+    font-style: italic; line-height: 1.3; margin-top: 0.15rem;
+  }
+
+  /* ---- Source / file list ---- */
+  .source-list {
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-radius: 4px;
+    padding: 0.85rem 1.05rem;
+    margin: 1.1rem 0;
+  }
+  .source-list h3 {
+    font-size: 0.92rem;
+    color: var(--text-strong, #3a2f1e);
+    margin-bottom: 0.5rem; padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border-light, #c9a76a);
+  }
+  .source-list ul {
+    padding-left: 1.2rem;
+    font-size: 0.88rem;
+    color: var(--text-body, #2c2620);
+  }
+  .source-list li { margin-bottom: 0.3rem; }
+
+  /* ---- Month <details> — same look as index.html#archive arc-groups ---- */
+  details.ts-month {
+    margin: 1.1rem 0 0;
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-radius: 4px;
+    background: var(--bg-card, #fffaf0);
+    overflow: hidden;
+  }
+  details.ts-month + details.ts-month { margin-top: 0.55rem; }
+  details.ts-month > summary {
+    list-style: none; cursor: pointer;
+    padding: 0.8rem 1.05rem;
+    background: var(--bg-card-tint, #f6ebd2);
+    border-bottom: 1px solid var(--border-light, #d8c8a8);
+    font-weight: 700;
+    color: var(--text-strong, #3a2f1e);
+    font-size: 0.98rem;
+    display: flex; align-items: center; gap: 0.65rem;
+    transition: background 0.15s;
+  }
+  details.ts-month > summary:hover {
+    background: var(--bg-elevated, #ead49e);
+  }
+  details.ts-month > summary::-webkit-details-marker { display: none; }
+  details.ts-month > summary::before {
+    content: "\25B8"; display: inline-block;
+    transition: transform 0.15s;
+    color: var(--brand, #d8b366);
+    font-size: 0.8rem; flex: 0 0 auto;
+  }
+  details.ts-month[open] > summary::before { transform: rotate(90deg); }
+  details.ts-month > summary .month-label { flex: 1 1 auto; }
+  details.ts-month > summary .month-count {
+    font-size: 0.8rem;
+    color: var(--text-meta, #6a5a42);
+    font-weight: 500; font-style: italic; flex: 0 0 auto;
+  }
+  details.ts-month > .ts-month-body { padding: 1rem 1.1rem 1.1rem; }
+  details.ts-month > .ts-month-body > .ts-timeline { margin: 0; }
+
+  /* ---- Inline chart-list inside the "Incoming files" details ---- */
+  .charts-list {
+    font-size: 0.9rem; line-height: 1.7;
+    margin: 0; padding-left: 1.3rem;
+    color: var(--text-body, #2c2620);
+  }
+  .charts-list a { color: var(--brand-dark, #8a6420); }
+
+  /* ---- Respect prefers-reduced-motion (audit-fix pass, 8 May 2026) ---- */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  </style>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Charles Research">
+  <meta property="og:title" content="Peter Schräder Correspondence Timeline — Charles Research">
+  <meta property="og:description" content="Peter Schräder is a Hessian genealogist who has been the principal collaborator on this investigation. The active research phase began in August 2025 and has run continuously since. This page captures the chronology of the back-and-forth so that any prior topic can be located quickly. Each event is ">
+  <meta property="og:url" content="https://charles-research.netlify.app/correspondence/peter-schrader-timeline.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/correspondence.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/correspondence.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Peter Schräder Correspondence Timeline — Charles Research">
+  <meta name="twitter:description" content="Peter Schräder is a Hessian genealogist who has been the principal collaborator on this investigation. The active research phase began in August 2025 and has run continuously since. This page captures the chronology of the back-and-forth so that any prior topic can be located quickly. Each event is ">
+  <meta name="description" content="Peter Schräder is a Hessian genealogist who has been the principal collaborator on this investigation. The active research phase began in August 2025 and has run continuously since. This page captures the chronology of the back-and-forth so that any prior topic can be located quickly. Each event is ">
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Schräder Correspondence",
+      "item": "https://charles-research.netlify.app/correspondence/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Peter Schrader Timeline"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/correspondence/peter-schrader-timeline.html#article",
+  "headline": "Peter Schräder Correspondence Timeline",
+  "url": "https://charles-research.netlify.app/correspondence/peter-schrader-timeline.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17",
+  "description": "Peter Schräder is a Hessian genealogist who has been the principal collaborator on this investigation. The active research phase began in August 2025 and has run continuously since. This page captures the chronology of the back-and-forth so that any prior topic can be located quickly. Each event is"
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="fam-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html#schrader">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#schrader">Schräder Correspondence</a> &nbsp;/&nbsp; Peter's Email Timeline</div>
+  <h1>Peter Schräder · Correspondence Timeline</h1>
+  <div class="sub">Active research phase: <strong>August 2025 – present</strong> · 100+ emails</div>
+  <div class="meta-row"><span class="badge active">ONGOING — multi-year collaboration</span><span class="date">Last updated 3 May 2026</span></div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="ix-card">
+  <h2>★ Who Peter is</h2>
+  <p class="bottom-line"><strong>Peter Schräder</strong> is a Hessian genealogist who has been the principal collaborator on this investigation. The active research phase began in <strong>August 2025</strong> and has run continuously since. This page captures the chronology of the back-and-forth so that any prior topic can be located quickly.</p>
+  <div class="principles">
+    <h3>Peter's working operating principles</h3>
+    <ul>
+      <li><strong>Geographic constraint.</strong> Pre-train Hesse: an 1859 emigrant from the north would travel Trendelburg → Karlshafen on the Weser → Bremen, NOT to Le Havre. Filters U.S.-arrival records.</li>
+      <li><strong>Phonetic constraint.</strong> Charles answered an English-speaking clerk in German. "Trendelburg" became "Freundburg" / "Trendelb-urg" / "Deisse." "Konsen" became "Gonnson" / "Gannsen." Many surname matches require allowing for this distortion.</li>
+      <li><strong>Charles is findable.</strong> A recurring methodological theme in Peter's correspondence (paraphrased): each elimination is progress, because the real Charles — a documented person — still exists in the records somewhere, under some spelling.</li>
+      <li><strong>Dead-end discipline.</strong> Peter is rigorous about confirming eliminations through to a death record or alternative U.S. trace, not just absence of evidence.</li>
+    </ul>
+  </div>
+  <div class="stat-grid">
+    <div class="stat"><span class="lbl">Active phase</span><span class="val">Aug 2025 – now</span><span class="sub">9+ months continuous</span></div>
+    <div class="stat"><span class="lbl">Total emails</span><span class="val">100+</span><span class="sub">two-way</span></div>
+    <div class="stat"><span class="lbl">Charts received</span><span class="val">17+</span><span class="sub">Stammtafeln + scans</span></div>
+    <div class="stat"><span class="lbl">Candidate families</span><span class="val">13</span><span class="sub">surfaced &amp; reasoned through</span></div>
+    <div class="stat"><span class="lbl">Set aside</span><span class="val">Jewish-paternal-line</span><span class="sub">May 2026</span></div>
+  </div>
+</section>
+
+<div class="legend-row">
+  <span class="swatch"><span class="dot in"></span> Peter → Jed</span>
+  <span class="swatch"><span class="dot out"></span> Jed → Peter</span>
+  <span class="swatch"><span class="dot evt"></span> milestone / mixed</span>
+  <span class="swatch"><span class="dot piv"></span> pivot / methodology</span>
+  <span class="swatch"><span class="dot elim"></span> elimination</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- ACTIVE RESEARCH PHASE — August 2025 onward                     -->
+<!-- ============================================================ -->
+<div class="phase-header">
+  <span class="phase-num">Active</span>
+  <h2>Active research phase — August 2025 onward</h2>
+  <p>Jed engages Peter with U.S.-side context (the 1875 St. Marcus baptism preserving the surname KONSEN, the 2020 AncestryProGenealogists journal indexing the Deisel parish). Peter opens his archive and the weekly back-and-forth begins.</p>
+</div>
+
+<details class="ts-month">
+<summary><span class="month-label">Aug 2025 · relaunching the search</span><span class="month-count">6 events</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event out">
+    <div class="when">25 Aug 2025 · "Genealogy Research" — Jed's restart</div>
+    <div class="what">Jed restarts the collaboration with Peter (originally introduced via Archion in January 2019). Asks Peter to check his databases for <em>L. Charles</em> / <em>Charles L Gannsen</em> / <em>Gonnson</em> / <em>Konze</em> variants — most likely birth date <strong>25 January 1835 ± one year</strong> <em>[as framed in this 2025 message; the project later standardized on 26 January 1835]</em>, Charles having indicated origin in Deisel + Trendelburg. <span class="who out">outgoing</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">26 Aug 2025 · "Re: Genealogy Research" — first database check</div>
+    <div class="what">Peter checks his Deisel/Trendelburg holdings and sends an attachment summarizing what the U.S. records imply on the German side. Critical seed observation: in one U.S. document Charles is "from Deisel, county Kassel," in another he is from <strong>"Freudenburg"</strong> — a town far from Deisel. Peter flags the contradiction; the resolution will not surface until <em>December 2025</em> when he proposes the Trendelburg → Freundburg phonetic explanation. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">27 Aug 2025 · "Deisel" — methodology framing</div>
+    <div class="what">Peter's first big methodology comment (paraphrased): the only way to solve the Deisel problem is to examine the church records directly, since there are no German census records and the military lists are not available online until after 1850. This positions the Deisel parish register (Archion KB&nbsp;218842) as the central source for the entire investigation. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">27 Aug 2025 · Konze hypothesis surfaces</div>
+    <div class="what">Jed mentions a candidate from Ancestry: <strong>Ludwig Konze, b. 15 July 1835, son of Andreas Konze and "Mara Grabe"</strong> (a misread of Maria Grobe / Hofeditz). No marriage record yet found. This is the <em>first surfacing</em> of the Konze hypothesis that becomes the central thread of April 2026. <span class="who out">outgoing</span></div>
+  </div>
+  <div class="ts-event in elim">
+    <div class="when">28 Aug 2025 · Konze candidates eliminated</div>
+    <div class="what">Peter checks his database. <strong>Ludwig Konze</strong> died <em>1919 in Germany</em> — never emigrated. The only other Konze with the right first name in Deisel is <strong>Karl Konze</strong>, who died in Homberg/Efze 1920. Both eliminated as Charles in the first 24 hours. (One Konze remains in the Deisel index with no further detail — that thread reopens in 2026 as Andreas Konze.) <span class="who in">incoming · elimination</span></div>
+  </div>
+  <div class="ts-event in star">
+    <div class="when">31 Aug 2025 · "again Deisel" — Trendelburg "Protected Jews" 1740</div>
+    <div class="what">Peter sends the <strong>1740 "Protected Jews" citizen list of Trendelburg</strong> from the Marburg State Archive: <em>Seligmann Ganß</em> of Trendelburg · widow of <em>Jacob Meyer</em> of Deisel · <em>Salomon Gumbrecht</em> of Trendelburg. The first time Jewish residents of the Deisel/Trendelburg parish cluster are surfaced as candidates — a thread later examined again in March 2026 as part of a Jewish-origin hypothesis, since set aside. <span class="who in">incoming</span></div>
+    <div class="related">📎 Attachments preserved as <a href="../peter_charts/citizen 1740 1.jpg" target="_blank" rel="noopener noreferrer">citizen 1740 1.jpg</a> · <a href="../peter_charts/citizen 1740 2.webp" target="_blank" rel="noopener noreferrer">citizen 1740 2.jpg</a> · <a href="../peter_charts/jewisg citizen 1740.pdf" target="_blank" rel="noopener noreferrer">jewisg citizen 1740.pdf</a> (later forwarded again 19 Mar 2026 in the puzzlepieces.zip bundle). → <a href="../family_pages/fam-other-jewish.html">Family file 13 — Trendelburg "Protected Jews" 1740</a></div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+<details class="ts-month">
+<summary><span class="month-label">Sep 2025 · Hessian-archive landscape</span><span class="month-count">6 events</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event in">
+    <div class="when">2 Sep 2025 · "communities in Hessia"</div>
+    <div class="what">Peter sends the link to the <strong>Hessian State Archive Wiesbaden</strong> overview of Jewish communities in Hesse: <a href="https://arcinsys.hessen.de/arcinsys/showItemsList.action?nodeId=s43882" target="_blank" rel="noopener noreferrer">arcinsys.hessen.de · s43882</a>. Frames the entire Jewish-records geography for the year ahead. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">2–3 Sep 2025 · <a class="glossary-link" href="../glossary.html#g-lagis" title="Glossary: LAGIS">LAGIS</a> Trendelburg cemetery list</div>
+    <div class="what">Jed compiles a list of names from the LAGIS Trendelburg Jewish cemetery and sends to Peter. Peter confirms these are Trendelburg burials — Carl Gannson cannot be there because he died in the U.S. The list anchors the project's understanding of the Jewish-Trendelburg population for later cross-referencing. <span class="who out">outgoing</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">4 Sep 2025 · graveyard names confirmed</div>
+    <div class="what">Peter identifies all the names Jed sent as Trendelburg burials. Reaffirms: Carl died in the U.S. and won't be in this set. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">5 Sep 2025 · "Hofgeismar" — chor leader death</div>
+    <div class="what">Peter sends an Arcinsys link to a Hofgeismar death record: <a href="https://arcinsys.hessen.de/arcinsys/digitalMediaViewer.action?archivalDescriptionId=3732258&selectId=11090941" target="_blank" rel="noopener noreferrer">arcinsys.hessen.de · digital media viewer</a>. The entry concerns a chor leader with a similar surname; the named son is too old to be Charles. Useful only as proof-of-life for the surname cluster in the area. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">7–8 Sep 2025 · "Emmigration Records"</div>
+    <div class="what">Peter shares <a href="https://arcinsys.hessen.de/arcinsys/list.action?nodeid=g172425&page=1" target="_blank" rel="noopener noreferrer">arcinsys.hessen.de · g172425</a> — Hessian emigration records (printed registers in Marburg). Peter has had a quick look but did not find Charles. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">15 Sep 2025 · pause</div>
+    <div class="what">Jed's review of the Arcinsys list is delayed; promises to look the following week. <span class="who out">outgoing</span></div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+<details class="ts-month">
+<summary><span class="month-label">Oct 2025 · the Lippolsberg Gans surface &amp; the Karl-firstname filter</span><span class="month-count">13 events</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event in">
+    <div class="when">9 Oct 2025 · "Immigration Record Search"</div>
+    <div class="what">Peter pushes Jed: "without more information from the U.S., we will not find him. The data we have is too vague. We don't know the exact date of his birth, where he came from and not even his family name." Asks Jed to enumerate <em>everything</em> publicly available on the U.S. side. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">9 Oct 2025 · Jed's U.S.-side inventory</div>
+    <div class="what">Jed lists out the U.S. paper trail: <em>Church Marriage record · Civil War enlistment &amp; history · Pension file · St. Marcus baptism records of children</em> — establishing the shared evidence base. <span class="who out">outgoing</span></div>
+  </div>
+  <div class="ts-event in star">
+    <div class="when">11 Oct 2025 · LAGIS Hessen subjects link · the "L. Charles" name reading</div>
+    <div class="what">Peter sends <a href="https://www.lagis-hessen.de/de/subjects/index/sn/ha" target="_blank" rel="noopener noreferrer">LAGIS Hessen subjects · sn/ha</a>, keyword "Deisel," another emigrant index. Jed confirms it matches his leading hypothesis: Charles is recorded in the earliest U.S. records as <strong>L. Charles Gannsen</strong>, and Peter suggests the <em>L</em> stands for <strong>Ludwig</strong> (Charles's American middle-name slot mapping to the German given-name slot). The L = Ludwig hypothesis is set early. <span class="who both">milestone</span></div>
+  </div>
+  <div class="ts-event piv">
+    <div class="when">12 Oct 2025 · "a trace" — the compensation conversation</div>
+    <div class="what">Peter raises compensation: <em>"Till now it was for me the thrill of the hunt, if someone is searched in the area I live in, I always willing to help, but now I…"</em> The shift from informal collaboration to structured paid research is here. Jed agrees and asks Peter how to send payment. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">14 Oct 2025 · Marburg emigrants 1854 → Meier Meierhof</div>
+    <div class="what">Peter found documents in <strong>Marburg State Archive</strong> about emigrants from northern Hesse in 1854. Identifies <strong>Meier Meierhof</strong> — single, from Deisel — the first archive-named Deisel emigrant. Jed responds same day: Meier Meierhof came to NY in 1854, then went to Pittsburgh PA, became a baker. (Eliminated, but the work establishes the Hessen-Marburg → NY → inland-trade pattern.) <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">14 Oct 2025 · "question" — when did Charles arrive?</div>
+    <div class="what">Peter asks Jed to confirm Charles's arrival date. Jed: per 1900 census, <strong>1859</strong>. He doesn't appear in U.S. records until 1861. Not in 1860 census. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">15 Oct 2025 · Deisel emigrants list to 1859</div>
+    <div class="what">Peter sends an attachment with a <strong>list of emigrants from Deisel up to 1859</strong> — preserved as <a href="../peter_charts/Deisel.xlsx" target="_blank" rel="noopener noreferrer">Deisel.xlsx</a>. No leads found in either direction; both Peter and Jed agree the list does not contain Charles. <span class="who in">incoming</span></div>
+    <div class="related">📎 <a href="../peter_charts/Deisel.xlsx" target="_blank" rel="noopener noreferrer">Deisel.xlsx</a></div>
+  </div>
+  <div class="ts-event piv">
+    <div class="when">16 Oct 2025 · "the research" — formal payment</div>
+    <div class="what">Peter: "I don't want to give up the research or — to use a German proverb — 'throw the rifle into the corn.' But I think I've earned a payment for the things I've done for you." The payment formalizes the multi-month collaboration. Jed sends payment same evening; Peter acknowledges receipt 17 Oct. <span class="who in">incoming · milestone</span></div>
+  </div>
+  <div class="ts-event in star">
+    <div class="when">17–18 Oct 2025 · Lippolsberg Gans · the Johann Daniel Gans family</div>
+    <div class="what">Peter searches his "Northern Kassel county" database and finds <strong>Jenss / Jenssen / Genns</strong> in <strong>Lippolsberg</strong> — a village ~20 km from Deisel. The next day he expands: <strong>Johann Daniel GANS</strong>, b. Lippolsberg 1787, m. 1829 <strong>Karoline Haake in DEISEL</strong>. A daughter and son born in Deisel 1831 and 1833. The family later moved back to Lippolsberg. <strong>The Lippolsberg Gans line — the first major candidate family</strong> — surfaces here. The connection between Lippolsberg (Gans surname) and Deisel (where the family briefly lived) becomes the working hypothesis for the next month. <span class="who in">incoming · pivot</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">21 Oct 2025 · "godparents"</div>
+    <div class="what">Peter asks if Jed has examined the godparents of Carl Gannson's children: a sibling or close relative would normally appear. Jed says he's looked but not found a link; will double-check. (This thread reopens in December 2025 with Peter's detailed godparents analysis.) <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in elim">
+    <div class="when">22 Oct 2025 · "facts" thread (mail returned 23 Oct)</div>
+    <div class="what">Peter: census records aren't always accurate; military records show a different birth date. Discussion of which records to trust. Then Peter googles "Deisel + Gannson/Gonnson" and re-finds Lippolsberg. There was an <strong>illegitimate child Karl Gans</strong> — mother was a Gans — who emigrated to the US in ~1846 (born 1844). <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">24 Oct 2025 · Karl Gans summary attachment</div>
+    <div class="what">Peter sends an attachment with a <strong>summary of all the Karl Gans data</strong> he could find from German sources. The summary closes the Karl Gans hypothesis as a viable Charles match — the dates do not work out. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event piv">
+    <div class="when">27 Oct 2025 · "the net closes" — the Karl-firstname filter</div>
+    <div class="what">Peter declares his methodology: <em>"will check my database: male, born in Deisel in the 1830s, no wedding or death date mentioned. Then I will check if one of these men emigrated."</em> This is the Karl-firstname Deisel-emigrant filter that produces the Bonhagen / Koester / Phillip candidates the following month. <span class="who in">incoming · methodology</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">28 Oct 2025 · "candidates" — first filtered list</div>
+    <div class="what">Peter sends the first attachment with people he caught in the net, filtered by first-name <em>Karl</em>. The list seeds Jed's U.S.-side checks for the next week. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">29 Oct 2025 · candidates updated + readable chart</div>
+    <div class="what">Two more attachments same day: an updated list with notes, then a <em>"more readable chart."</em> The three image scans — preserved as <a href="../peter_charts/IMG_7479.webp" target="_blank" rel="noopener noreferrer">IMG_7479.jpeg</a> · <a href="../peter_charts/IMG_7481.jpeg" target="_blank" rel="noopener noreferrer">IMG_7481.jpeg</a> · <a href="../peter_charts/IMG_7483.webp" target="_blank" rel="noopener noreferrer">IMG_7483.jpeg</a> — also bundled as <a href="../peter_charts/recandidates.zip" target="_blank" rel="noopener noreferrer">recandidates.zip</a>. <span class="who in">incoming</span></div>
+    <div class="related">📎 <a href="../peter_charts/recandidates.zip" target="_blank" rel="noopener noreferrer">recandidates.zip</a> (3 candidate-list scans)</div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+<details class="ts-month">
+<summary><span class="month-label">Nov 2025 · the Bremen DAD detour &amp; the first eliminations</span><span class="month-count">13 events</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event in">
+    <div class="when">1 Nov 2025 · "Bremen" — Deutsche Auswanderer-Datenbank</div>
+    <div class="what">Peter sends a link to the <a href="https://www.deutsche-auswanderer-datenbank.de/online-recherche" target="_blank" rel="noopener noreferrer">Deutsche Auswanderer-Datenbank</a> — the consolidated German emigration database held in Bremerhaven. Jed submits a request for the PDF on a "Carl Gansen" entry (b. 1835, emigration year 1859). <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">1 Nov 2025 · candidate triage report</div>
+    <div class="what">Jed reports on the 28-29 Oct candidate list: <strong>Steitz</strong> died in Ohio; <strong>Hartmann</strong> died in Philadelphia. Two more eliminations from the Karl-firstname filter (see attachments preserved with the candidate list). <span class="who out">outgoing</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">8–10 Nov 2025 · "the call" — Peter calls Bremen on Jed's behalf</div>
+    <div class="what">Peter rings the Bremen archive directly. The lady who handles requests is on holiday; will be back tomorrow. Normal turnaround is 3-4 weeks; Peter requests urgent processing. The next day he confirms the request was placed and flagged urgent. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in elim">
+    <div class="when">12 Nov 2025 · Bremen DAD result — GANSEN, CARL</div>
+    <div class="what">The DAD office (dadrecherche.de) returns the requested PDF on <strong>GANSEN, CARL [b899722]</strong>. The match turns out to be a doctor — wrong profession, wrong biography. <strong>Eliminated.</strong> Jed forwards Peter the result the same day. <span class="who in">incoming · elimination</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">13–14 Nov 2025 · "you don't want to give up?"</div>
+    <div class="what">Peter: "Hey Jed, you don't want to give up or do you?" Jed: "I would like to continue searching if possible. I think we can eventually find him." Peter agrees to continue. The continuation commitment that sustains the next six months is here. <span class="who both">milestone</span></div>
+  </div>
+  <div class="ts-event in elim">
+    <div class="when">15 Nov 2025 · "checking data" — exhaustive negative scan</div>
+    <div class="what">Peter runs a full database scan: <strong>around Deisel: zero "Gon*" entries in 100,000 deaths</strong>; in baptisms only one (Gonnermann, 1944, far too late). <strong>Around Hann Münden: zero baptisms, zero funerals.</strong> The geographic-Gon* surname space is empty. The negative result drives the conclusion that Charles must be in this region under a different surname or another spelling. <span class="who in">incoming · elimination</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">16–17 Nov 2025 · payment + the Auguste question</div>
+    <div class="what">Peter notes he sees no point continuing without more compensation; Jed sends $300. Peter receives the payment and re-engages with a new question: "Do you know anything about his wife? Perhaps we can find the missing clue here." The wife-side investigation begins. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">18 Nov 2025 · "the wife" — two Augustes</div>
+    <div class="what">Peter probes: which Auguste daughter became Carl's wife? Jed: <strong>Auguste Kreichelt</strong>. Peter clarifies: there were two Auguste Kreichelts; the older one is the right one. Asks for her death record to triangulate the wife's age accuracy. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">19 Nov 2025 · "new candidates" — first quarter 1835</div>
+    <div class="what">Peter assumes Carl Gonnson b. Deisel in Q1 1835, filters all males born in those three months with no marriage / no death. <strong>Three men emigrated to North America</strong>, including <strong>Phillip Koester</strong>. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event out elim">
+    <div class="when">19 Nov 2025 · same-day eliminations from Jed's side</div>
+    <div class="what">Within hours of Peter's filter list, Jed eliminates all three on U.S. records: <strong>Henry Bonhagen</strong> → Virginia (1858 marriage Norfolk VA); <strong>[Phillip] Koester</strong> → South Carolina; <strong>Phillip [a third candidate]</strong> → Richmond VA. None reaches St. Louis. The Karl-firstname filter is exhausted. <span class="who out">outgoing · elimination</span></div>
+  </div>
+  <div class="ts-event in piv">
+    <div class="when">19 Nov 2025 · "error" — the bONhagen → gONsson pivot seed</div>
+    <div class="what">Peter realizes Phillip Koester emigrated too late to be Charles. Asks: <em>"Could it be theat the bONhagen guy is our man? gONsson?"</em> The phonetic / capitalization wordplay seeds the December "Bodenhausen → Bonsen" name-mutation theory. <span class="who in">incoming · pivot seed</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">20 Nov 2025 · "the research" — Deisel demographics</div>
+    <div class="what">Peter shares 18th-century Deisel demographics: <strong>1,118 people, 1,095 evangelical</strong>, the rest a tiny handful of non-Lutheran. Argues that if Charles is from a different community (Catholic, Jewish, or recent immigrant) within the parish, the records would not have captured him in the same way. The thread that becomes the December Catholic-Westfalia / Wehrden hypothesis. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">20 Nov 2025 · "discussion" — Archion forum thread</div>
+    <div class="what">Peter starts a discussion thread on the <strong>Archion.de Hessen forum</strong> asking other genealogists for leads. Asks Jed to upload the wedding and death records of Charles to FamilySearch and provide the public links so Peter can post them on Archion. Jed sends:<br>· St. Marcus St. Louis Wedding (Entry 676 #4): <a href="https://www.familysearch.org/en/tree/person/memories/LZXC-6GB" target="_blank" rel="noopener noreferrer">LZXC-6GB</a><br>· St. Marcus St. Louis Death (Entry 3393 #115): on the same FS profile. <span class="who out">outgoing</span></div>
+  </div>
+  <div class="ts-event in star">
+    <div class="when">22–23 Nov 2025 · "back to the roots" — the Deisel emigrants book</div>
+    <div class="what">Peter finds an <a href="https://www.hna.de/lokales/hofgeismar/darum-viele-deiseler-nach-amerika-2263989.html" target="_blank" rel="noopener noreferrer">HNA newspaper article</a> about a 1990s book on emigrants from Deisel. Orders the book; promises to share what he finds. The book becomes the central source for the late-November / early-December emigrant-list research. The same thread mentions Peter's discovery of an old <strong>1739 Deisel tax list</strong> with names of interest, including (per his own description) one that resembles the Gannsen family. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in elim">
+    <div class="when">26 Nov 2025 · "a new home?" — the Deisel emigrants book read</div>
+    <div class="what">Peter has read the book. <em>"Many facts about the people from Deisel who left Germany — but not a single detail about Gonnson."</em> The book's coverage is exhaustive. The conclusion: <strong>Charles is not in the Deisel emigrant record under any spelling</strong>. Peter argues the search must broaden geographically beyond Deisel. The Deisel-only hypothesis is closed (although it reopens in April 2026 when Entry 195 surfaces in the parish baptism register). <span class="who in">incoming · elimination</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">27 Nov 2025 · "Information from the book" — context essay</div>
+    <div class="what">Peter shares context from the book: in mid-19th century northern Hessia the population was outgrowing the available farmland; the system that obliged peasants to leave the land had collapsed; emigration to America was a structural escape valve. Sets the structural context for the entire Deisel-region emigrant pattern. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">27 Nov 2025 · "Janson Hofgeismar" — Janson family chart</div>
+    <div class="what">Peter starts a summary of the <strong>Janson family in Hofgeismar</strong>, the parish adjacent to Deisel. Of interest: <strong>Maria Janson, emigrated 1861 via Bremen</strong>, possibly to the U.S. The Janson candidate-family is opened. <span class="who in">incoming</span></div>
+    <div class="related">→ <a href="../family_pages/fam-janson.html">Family file 15 — Janson</a></div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+<details class="ts-month">
+<summary><span class="month-label">Dec 2025 · family-by-family deep dives + the Freundburg breakthrough</span><span class="month-count">14 events</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event in">
+    <div class="when">1 Dec 2025 · Janson detail</div>
+    <div class="what">Peter sends more detailed Janson information: <strong>Janson, Johann Heinrich</strong>, *14.8.1792, son of Johann Georg Janson and Anna Catharina Müller, †27.2.1849; oo 21.11.1830 Hofgeismar to <strong>Wilhelmine Luc</strong>; six children including a stillborn male in 1831. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">2 Dec 2025 · pre-1810 confirmations offline-only</div>
+    <div class="what">Peter notes that confirmations of the Janson children would be the most informative next document, but his Hofgeismar pre-1810 confirmations are <em>offline only</em>. Frames a constraint that recurs throughout the project: many Hessian sources are not on Archion. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">3 Dec 2025 · "the Jansons updated"</div>
+    <div class="what">Peter sends the full <strong>Janson stammtafel</strong> in the body of the email: parents, children, marriages and emigration notes. The detail is sufficient to determine that <strong>Johann Friedrich Ludwig Janson</strong> is the closest age match — Jed checks U.S. records but cannot find a corresponding immigrant. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in star">
+    <div class="when">6 Dec 2025 · ★★★ "Trendelburg / Freudenberg" — the Freundburg breakthrough</div>
+    <div class="what">★ <strong>One of Peter's most important contributions to the project.</strong> Peter argues that the place-name "<em>Freundburg</em>" on Charles's enlistment card is a phonetic transcription artifact: when an English-speaking U.S. military clerk asked Charles where he came from, Charles answered in German <em>"Trendelburg"</em>. The clerk heard the first syllable <em>"Trendel"</em> as the German <em>"Freund"</em> (friend) and wrote down <em>"Freundburg."</em> The puzzling enlistment-card place becomes a <em>positive</em> identifier. The methodology — phonetic mutation under English-speaking clerks — also underwrites the project's tolerance for "Konsen → Gonnson → Gannsen → Johnson" surname mutation. <span class="who in">incoming · pivot</span></div>
+  </div>
+  <div class="ts-event in piv">
+    <div class="when">7 Dec 2025 · "new familyname" — the 1808 Napoleonic Jewish-naming list</div>
+    <div class="what">Peter found a list documenting that in 1808, during Napoleonic occupation of Germany, <strong>Jewish citizens were required to accept new family names</strong>. He raises the question of whether Charles's family came from a Jewish lineage that adopted "Gansen" / "Konsen" under that decree. Jed pushes back: Charles displayed no Jewish religious practice in America; the historical record does not indicate Jewishness. The hypothesis goes dormant — and was examined again in March 2026 as a Jewish-origin hypothesis, later set aside. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in star">
+    <div class="when">7 Dec 2025 · "a french count" — Jouffroy Gonsons</div>
+    <div class="what">Peter searches the Hessian archives and finds the <em>only</em> Gonnson in the entire Hessian archive: <strong>Family Law Cases, Bad Nauheim · Jouffroy Gonsons, Louis Felix Francois, Count von, of Paris, Opening of Will</strong>. Peter offers to order the document for a few Euros. Jed agrees and is excited. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">9 Dec 2025 · "picture of the count"</div>
+    <div class="what">Peter finds a portrait of the count online and sends it to Jed asking for a likeness check against Charles's known photo. Jed runs facial-similarity AI: <em>not a strong resemblance</em>; could be related but not closely. <span class="who in">incoming</span></div>
+    <div class="related">📎 <a href="../peter_charts/the count.jpg" target="_blank" rel="noopener noreferrer">the count.jpg</a></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">14–15 Dec 2025 · "Haake and Gans" — godparents pattern</div>
+    <div class="what">Peter sends a detailed look at the <strong>Gans family in Deisel</strong> + Charles's wife's family the <strong>Haake</strong>. Notes the family in America called itself <em>"Gansen"</em> when they spoke German. The two of them analyze godparent patterns at the seven baptisms of Charles's children: the godparents of the 1st and 2nd baptisms are interesting (could be relatives), the rest are Kreichelt in-laws. Jed identifies <strong>Carl Kreichelt × Catherine Albrecht</strong> m. 5 Mar 1871 and notes Erwin Spraul (Baden, friend, not blood-related) and Jacob Reck (no link found). <span class="who both">incoming + outgoing</span></div>
+    <div class="related">📎 <a href="../peter_charts/Haake.pdf" target="_blank" rel="noopener noreferrer">Haake.pdf</a> · → <a href="../family_pages/fam-koster.html">Family file (Konze daughters who married out)</a></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">16–18 Dec 2025 · "relationship" — godparents detail</div>
+    <div class="what">Peter sends a more detailed look at the godparents — Carl Kreichelt · Amalia Münke · Friedrich Billmann (godfather at two baptisms; the only Billmann Peter could find). Asks: did Carl Kreichelt and Amalia Münke marry later? Jed (travelling) replies a few days late: Carl Kreichelt married Catherine Albrecht 5 Mar 1871; Amalia Münke is unknown. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in elim">
+    <div class="when">20–21 Dec 2025 · "good and bad news" — Jouffroy Gonsons will arrives</div>
+    <div class="what">Peter receives the <strong>last will of Count Louis Felix Francois Jouffroy Gonsons</strong> from the French / Hessian archive. <strong>Nothing useful</strong> for the Charles search — no Hessian or Deisel-region descendants of Charles's age. Eliminated. The invoice will follow in January. Jed asks Peter to mail him the document anyway as a memento; Peter agrees. <span class="who in">incoming · elimination</span></div>
+  </div>
+  <div class="ts-event in piv">
+    <div class="when">22 Dec 2025 · "new idea" — Bodenhausen → Bonsen pastor's-shorthand</div>
+    <div class="what">Peter found in an old book of his hometown that the family-name <strong>Bodenhausen</strong> was usually shortened by the pastor (and the people themselves) to <strong>Bonsen</strong>. <em>"Bonsen → Gonsen?"</em> He proposes a return to the Bonhagen / Bonsen track from the November candidates list, this time interpreting the surname through the pastor's-shorthand lens. <span class="who in">incoming · pivot</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">23 Dec 2025 · Bonhage(n) detailed chart</div>
+    <div class="what">Peter sends a <strong>detailed chart of the Bonhage(n) family in Deisel</strong> — Henry Bonhagen's siblings, parents, the Karlshafen marriage anchor. Asks Jed to confirm: at the 1858 Norfolk VA marriage record of Henry Bonhagen, does the bride's hometown read as <strong>Karlshafen</strong>? Jed confirms — that is the most likely reading; Karlshafen is the Hessian Weser-port from which 1850s Hessian emigrants left for the U.S. The Bonhagen → Karlshafen → Norfolk thread is solidified, although Henry Bonhagen himself is already eliminated as Charles. <span class="who in">incoming</span></div>
+    <div class="related">📎 <a href="../peter_charts/Bonhagen.pdf" target="_blank" rel="noopener noreferrer">Bonhagen.pdf</a> · → <a href="../family_pages/fam-bonhagen.html">Family file 21 — Bonhagen / Bodenhausen</a></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">23 Dec 2025 · Friedrich Bonhagen (brother) in Baltimore</div>
+    <div class="what">Jed adds: Henry's brother <strong>Friedrich Bonhagen</strong> was a tailor in Baltimore. Heinrich (= Henry) Bonhage(n) is the one Jed had identified earlier in the Norfolk VA marriage. <span class="who out">outgoing</span></div>
+  </div>
+  <div class="ts-event in star">
+    <div class="when">27 Dec 2025 · "the Persons" — the Persons family chart</div>
+    <div class="what">★ Peter sends a chart of the <strong>Persons family of Deisel</strong> (Person.pdf). <em>"You might have known — I had a look at the Persons already (see attachment). And you might have also known — no direct hit. But there has to be a connection: these are the only people in Deisel..."</em> Jed: <em>"Wow, that's exactly what I was looking for. Checks all the boxes. The Carl name is passed down from father to son to grandson just like in my family. Last name very similar. Very amazing!"</em> The Persons family becomes the leading hypothesis for the next four days. <span class="who in">incoming · pivot</span></div>
+    <div class="related">📎 <a href="../peter_charts/Person.pdf" target="_blank" rel="noopener noreferrer">Person.pdf</a> · → <a href="../family_pages/fam-person.html">Family file — Persons</a></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">28–29 Dec 2025 · "closer look" — Person/Weller chart</div>
+    <div class="what">Peter expands: <strong>Johannes Weller</strong> came from Westfalia like Carl Ludwig Weller; the villages were nearby but Deisel was Kurhessian (Lutheran) while Wehrden / Haarbrück were Westfalian (Catholic). The next day Peter adds a Weller brother and the Hofeditz family to the chart. Jed asks for traces of Carl Friedrich Person (locksmith × Maria Sophie Schmit †12.6.1839). <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">30 Dec 2025 · genealogy notation tutorial</div>
+    <div class="what">Peter clarifies the German notation for Jed: <em>"Weller, Johannes, Lineweaver, * 13.5.1753 Haarbrück in Westfalia, son of Georg Weller and Anna Gertrude Riepe, † 25.7.1799"</em> means born 13 May 1753 in Haarbrück, son of those parents, died 25 July 1799. Walks Jed through the format that Peter uses in all subsequent stammtafeln. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in star piv">
+    <div class="when">30 Dec 2025 · ★ "changing names" — Toeppe → Deppe</div>
+    <div class="what">★ <strong>The standing methodology paper.</strong> Peter sends the worked example that becomes the project's foundational surname-mutation evidence: a girl baptised <strong>Scharlotte Toeppe</strong> in 1801 was recorded as <strong>Scharlotte Deppe</strong> at her marriage in 1836 — same person, same parish, ~35 years apart, the surname mutated by scribe and dialect. Underwrites the entire investigation's tolerance for "Gannsen / Gonnson / Johnson / Konsen / Jansen / Gans-son" as plausibly the same surname under different scribes. <span class="who in">incoming · methodology</span></div>
+    <div class="related">📎 <a href="../peter_charts/bap Toeppe 1801.webp" target="_blank" rel="noopener noreferrer">bap Toeppe 1801.jpg</a> · <a href="../peter_charts/cop Person Deppe.webp" target="_blank" rel="noopener noreferrer">cop Person Deppe.jpg</a> · bundled as <a href="../peter_charts/changingnames.zip" target="_blank" rel="noopener noreferrer">changingnames.zip</a> · → <a href="../family_pages/fam-naming.html">Family file 20 — Toeppe → Deppe (naming-variant methodology)</a></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">31 Dec 2025 · "catholic" — the Wehrden / Westfalia map</div>
+    <div class="what">Peter sends a <strong>Catholic vs Lutheran map of the Weser region</strong>: Wehrden (where the Persons came from) is Westfalian Catholic; Deisel is Kurhessian Lutheran. He adds Wehrden data to the Persons file and re-sorts by family-name. Floats a working theory: Carl Ludwig Persons's daughter Marie Elisabeth — who died in Kassel — had an illegitimate child who could be Charles. The theory is incomplete and is set aside in early January 2026 as the Konze hypothesis takes over. <span class="who in">incoming</span></div>
+    <div class="related">📎 <a href="../peter_charts/catholic map.webp" target="_blank" rel="noopener noreferrer">catholic map.jpg</a></div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+<details class="ts-month">
+<summary><span class="month-label">Jan 2026 · post-holiday candidate review</span><span class="month-count">3 events</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event in">
+    <div class="when">Early Jan 2026 · candidate-list review</div>
+    <div class="what">Peter resumes the candidate-tracking review after the holiday break. Continues working through his Karl-firstname Deisel emigrant filter, the Janson follow-up (deeper biographical detail on Joh. Heinrich Janson's six children), and the Bonhage(n)/Bodenhausen pastor's-shorthand surname theory. Quietly preparing the next big stammtafel (which surfaces 11 Feb as the Branson chart). <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">Mid-Jan 2026 · Deisel emigrants book follow-up</div>
+    <div class="what">Peter mentions he is studying the printed Deisel-emigrants compilation more thoroughly, looking for any unsearched Deisel resident with the right age window and an undocumented destination. The "the book" thread that resurfaces in the 23 Feb 2026 email begins here. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">Late Jan 2026 · Jed sends US-side update</div>
+    <div class="what">Jed sends Peter the latest U.S.-side state — the pension-witness network reconstruction, the address timeline (1865–1903), and the seven-children baptism sponsor table. Peter integrates this into his candidate-tracking spreadsheet to filter for Hessian families with St. Louis or Battery-B-adjacent connections. <span class="who out">outgoing</span></div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+<details class="ts-month">
+<summary><span class="month-label">Feb 2026 · the clarifying questions</span><span class="month-count">multi-event</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event in">
+    <div class="when">11 Feb 2026 · "new overview" — Branson / Frisse</div>
+    <div class="what">Peter sends the <strong>Heinrich Branson stammtafel</strong>: Branson / Brahsuhn / Frisse / Bauer cluster across Wehrden / Schönhagen / Amelunxen. Christina Elisabeth Branson b. 16 Jan 1808 × Joh. Heinrich Frisse, with eight Frisse children traced including Franz Johann (b. 1840 → emigrated, d. 1909 Philadelphia). Linked theory: Karl Ludwig Person sr. (b. 1777, widower 12+ years, d. 1839) proposed as possible father of an illegitimate Charles. <span class="who in">incoming</span></div>
+    <div class="related">→ See <a href="../family_pages/fam-branson.html">Family file 14 — Branson</a> · <a href="../family_pages/fam-person.html">Family file 16 — Person</a> · <strong>eliminated</strong>: Bransons all Catholic; Charles was Lutheran/Evangelical.</div>
+  </div>
+  <div class="ts-event evt">
+    <div class="when">19 Feb 2026 · "citizen"</div>
+    <div class="what">Peter resolves the 1859/1868 confusion definitively: <strong>1859 = U.S. arrival</strong>, <strong>1868 = naturalization</strong>. Establishes the U.S. timeline that anchors all subsequent emigration-route reasoning. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">23 Feb 2026 · "the book"</div>
+    <div class="what">Peter steps back to study the published book of Deisel emigrants (the printed academic monograph compiling the Hessian state-archive emigration register). Looking for any unsearched resource. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in star">
+    <div class="when">24 Feb 2026 · Herwig surfaces</div>
+    <div class="what">Peter finds the <strong>Herwig family in Trendelburg</strong>, who emigrated 1854. Critical U.S.-side connection: <strong>Adam Herweck</strong> — sponsor at Charles's 1866 St. Louis marriage — served in the same Civil War unit as Charles. The Herwig hypothesis takes off as the leading thread. <span class="who in">incoming</span></div>
+    <div class="related">→ See <a href="../family_pages/fam-herwig.html">Family file 2 — Herwig</a></div>
+  </div>
+  <div class="ts-event piv">
+    <div class="when">26 Feb 2026 · "Trendelburg-Deisel"</div>
+    <div class="what">Peter's key insight: when Charles was asked his birthplace shortly after arrival, he answered in German. The English-speaking clerk substituted the familiar German word <em>Freund</em> ("friend") for the unfamiliar <em>Trendel</em> first syllable, producing <em>"Freundburg"</em> on the enlistment card. Reconciles <strong>"Freundburg, <a class="glossary-link" href="../glossary.html#g-kurhessen" title="Glossary: Kurhessen">Kurhessen</a>"</strong> — first time that puzzling text becomes a positive identifier rather than a dead end. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event evt">
+    <div class="when">27 Feb 2026 · pivot to Trendelburg</div>
+    <div class="what">Peter proposes refocusing from Deisel onto Trendelburg proper. Jed agrees; the search center-of-gravity moves up the Diemel valley. <span class="who both">milestone</span></div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+<details class="ts-month">
+<summary><span class="month-label">Mar 2026 · the Grandjot crash &amp; the Y-DNA review</span><span class="month-count">multi-event</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event in star">
+    <div class="when">3 Mar 2026 · "best news ever"</div>
+    <div class="what">Peter finds <strong>Carl Ludwig Grandjot</strong>, b. Schöneberg 1836, godfathered by Johannes Herwig — the Trendelburg → Schöneberg → emigrant chain. For 24 hours this looks like the answer; Peter sends three charts (<a class="glossary-link" href="../glossary.html#g-stammtafel" title="Glossary: Stammtafel">Stammtafel</a> neu.jpg, emigration 1855.jpg, 3 x emmigration 1857.jpg). <span class="who in">incoming</span></div>
+    <div class="related">→ See <a href="../family_pages/fam-grandjot.html">Family file 3 — Grandjot</a></div>
+  </div>
+  <div class="ts-event elim">
+    <div class="when">4 Mar 2026 · "bad news"</div>
+    <div class="what">The Grandjot candidate dies in Schöneberg in <strong>1901</strong> — never emigrated. Eliminated. Peter: <em>"Sorry Jed, he isn't our man… but I still think we're on the right path."</em> <em>(Note: a 5 Mar 2026 follow-up email from Peter mentioned the Carl Ludwig Grandjot family tragedy — his wife Katherine Sophia committed suicide by hanging in Schöneberg, Germany, before Carl Ludwig's own 1901 death. An earlier version of this timeline mis-attributed that suicide to Johannes's wife in the U.S.; corrected after re-reading Peter's email.)</em> <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event piv">
+    <div class="when">15 Mar 2026 · methodology check</div>
+    <div class="what">Peter pushes Jed on U.S.-side coverage: 1860, 1870, 1900 census; pension addresses; the missing 1890 census schedule. Jed agrees to compile a comprehensive U.S.-side anchor list. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event piv star">
+    <div class="when">16–19 Mar 2026 · the Y-DNA review</div>
+    <div class="what">Jed reviewed Y-DNA results with Peter as a possible Jewish-paternal-line lead. Peter sends documents on the Hofgeismar Jewish cemetery, the Stern / Kleeburg families, and Jewish citizens of Trendelburg / Eberschütz. (this thread was later set aside — May 2026) <span class="who both">review</span></div>
+    <div class="related">→ See <a href="../family_pages/fam-stern.html">Family file 9 — Stern / Kleeburg (set-aside thread)</a></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">18 Mar 2026 · "graveyard"</div>
+    <div class="what">Peter sends the <strong>Friedhof Trendelburg</strong> survey (PDF) — Jewish-graveyard names &amp; dates including Minna Kleeburg née Stern (b. 15 Apr 1832), wife of Simon Kleeburg, on the LAGIS Hofgeismar Jewish-cemetery database. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">19 Mar 2026 · "puzzle pieces"</div>
+    <div class="what">Peter expands the <strong>Trendelburg "Protected Jews"</strong> thread: Solomon Gandt (Trendelburg) and Jeanette Gans (Eberschütz) flagged as surname-resemblance candidates. 1812 lists of Jewish males in Deisel, Trendelburg, etc. enclosed. Methodology pivot: tax registers ~1750 (every citizen, all faiths) named as the next concrete step. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event elim">
+    <div class="when">21–25 Mar 2026 · Gans / Segelbaum</div>
+    <div class="what">Peter investigates the <strong>Jewish Gans family of Meimbressen</strong>, forced renamed to Segelbaum under Hessian Jewish-naming law, who emigrated 1853/54. Salomon Gans renamed himself "Charles" in the U.S. — but the wrong Charles (wrong age, wrong destination). <strong>Eliminated 25 March 2026.</strong> The Hessian-Jewish-emigrant pattern, however, motivated the Y-DNA review and a Jewish-origin hypothesis, later set aside. <span class="who in">incoming</span></div>
+    <div class="related">→ See <a href="../family_pages/fam-gans-jewish.html">Family file 8 — Gans / Segelbaum</a></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">26 Mar 2026 · Carl Ludwig Herwig records</div>
+    <div class="what">Peter retrieves the <strong>baptism and confirmation records of Carl Ludwig Herwig</strong> from Trendelburg. Born 1830 (parish ledger erroneously recorded confirmation 1831). Mother's maiden name Grandjot. The leading Christian-record candidate at this point, but the Herwig family's documented destination is Massachusetts, not Missouri. <span class="who in">incoming</span></div>
+  </div>
+  <div class="ts-event elim">
+    <div class="when">31 Mar 2026 · two clean eliminations</div>
+    <div class="what">Peter resolves two open candidates simultaneously: (1) <strong>Caroline Phillipine Herwig</strong> (the "died-in-infancy" hypothesis) — confirmed alive past 1851; eliminated. (2) <strong>Friedrich August Hund</strong> (Trendelburg baptism #125, illegitimate son of Christine Niemeyer, father Carl Ludwig Hund accepted paternity) — Peter resolved the name reading; eliminated. <span class="who in">incoming</span></div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+<details class="ts-month">
+<summary><span class="month-label">Apr 2026 · the Konze deep dive &amp; "not a legitimate son"</span><span class="month-count">multi-event</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event out">
+    <div class="when">3 Apr 2026 · message to Peter</div>
+    <div class="what">Jed sends a multi-part message reviewing the Y-DNA findings, the U.S.-side family-network (Auguste Kreichelt, Jacob Reck, the pension witnesses), and proposing several lines of follow-up. Three drafts saved across the day — <em>April 3 morning</em>, <em>April 3 update</em>, <em>April 3 evening</em>. <span class="who out">outgoing</span></div>
+    <div class="related">Source files: <a href="../Message_for_Peter_Schrader_April3_2026.md">Message_for_Peter_Schrader_April3_2026.md</a> · <a href="../Message_for_Peter_Schrader_April3_2026_update.md">_update.md</a> · <a href="../Message_for_Peter_Schrader_April3_2026_evening.md">_evening.md</a></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">5 Apr 2026 · research paper sent</div>
+    <div class="what">Jed sends Peter a comprehensive <strong>Research Paper</strong> (.docx, 132 KB) consolidating the U.S.-side findings to date — pension-witness network, baptism sponsorships at St. Marcus 1869–1879, the 1875 KONSEN baptism record, the Y-DNA results. Companion message late evening. <span class="who out">outgoing</span></div>
+    <div class="related">Source files: <a href="../Research_Paper_for_Peter_Schrader_April5_2026.docx">Research_Paper_for_Peter_Schrader_April5_2026.docx</a> · <a href="../Message_for_Peter_Schrader_April5_2026_evening.md">Message_for_Peter_Schrader_April5_2026_evening.md</a></div>
+  </div>
+  <div class="ts-event in star">
+    <div class="when">5–8 Apr 2026 · Andreas Konze "Easter egg"</div>
+    <div class="what">Peter sends the <strong>Konze / Hofeditz overview chart</strong>. Unusual case: handicapped eldest daughter, grandfather a council member of Trendelburg, the father (Andreas Konze) "lost without a trace" — recorded as such in baptism marginalia, factory-worker in Friedrichsfeld, dying in Mainz 1854. Three of his grandchildren recorded at baptism as "children of the lost-without-trace Andreas Konze." This kicks off the Konze deep dive — the leading hypothesis for the next two weeks. <span class="who in">incoming</span></div>
+    <div class="related">→ See <a href="../family_pages/fam-konze.html">Family file 1 — Konze</a> · <a href="../Analysis_Peter_Schrader_Andreas_Konze_Email_April7_2026.md">Analysis_Peter_Schrader_Andreas_Konze_Email_April7_2026.md</a></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">9–13 Apr 2026 · Carl Ludwig Lucas → Konze pivot</div>
+    <div class="what">Peter: <strong>Carl Ludwig Lucas</strong> in Trendelburg fits — born Feb 1835, illegitimate, confirmed 1849, emigrated. Looks like a parallel candidate. Then on <strong>13 April</strong> Peter eliminates Lucas (marriage record found, different man); on <strong>12 April</strong> Peter checks his Konze database against the Deisel emigration list and concludes: <em>"Charles is not a legitimate son of the Konze family."</em> Only one Konze appears in the relevant emigration list and it is not Charles. <span class="who in">incoming · partial elimination</span></div>
+    <div class="related">→ See <a href="../family_pages/fam-lucas.html">Family file 5 — Lucas</a></div>
+  </div>
+  <div class="ts-event in">
+    <div class="when">15–22 Apr 2026 · Quentin cluster</div>
+    <div class="what">Peter surfaces the <strong>Quentin family</strong> — Georg Carl Quentin emigrated U.S., aunt × Frickhoefer also emigrated. Detailed overview chart sent (Stammtafel Johann Justus Quentin2.jpg + emm Quentin 1853.jpg). The Quentin women named children for godparents which complicates matching. Sophie Auguste Quentin turned out to have stayed in Germany; Elise Auguste Quentin found via maternal-name search 22 April 2026. <span class="who in">incoming</span></div>
+    <div class="related">→ See <a href="../family_pages/fam-quentin.html">Family file 4 — Quentin</a></div>
+  </div>
+  <div class="ts-event piv">
+    <div class="when">23 Apr 2026 · Christian-record pool substantially worked through</div>
+    <div class="what">Inflection point in the investigation. With Quentin Anglo-side identification still open, Peter and Jed agree the Christian-record candidate pool has been substantially worked through. The Y-DNA Jewish-paternal-line thread was pursued next; it has since been set aside (May 2026). Among the sources named at the time: <strong>tax registers of Deisel / Trendelburg ~1750</strong> (which list every citizen, including non-Christians), the LAGIS Jewish-graves database, HETRINA Hessian military records, and follow-up on the Stern divorce document Peter ordered from the Hessian state archive. <span class="who both">methodology</span></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">26 Apr 2026 · Hildebrand query</div>
+    <div class="what">Jed sends a focused query about <strong>Wilhelmine Hildebrand</strong> (mother in Entry 195, the leading Konze candidate baptism). Three distinct Wilhelmine Hildebrands appear in the Deisel/Trendelburg records; Jed asks Peter to triangulate. Same day, Peter receives the high-resolution Entry 195 baptism scan extracted from KB 218842. <span class="who out">outgoing</span></div>
+    <div class="related">Source: <a href="../Message_for_Peter_Schrader_April26_2026_Hildebrand_Query.md">Message_for_Peter_Schrader_April26_2026_Hildebrand_Query.md</a> · <a href="../Entry195_KB218842_PeterSchrader_April26_2026.png">Entry195_KB218842_PeterSchrader_April26_2026.png</a></div>
+  </div>
+  <div class="ts-event out">
+    <div class="when">27 Apr 2026 · LAGIS &amp; St. Marcus findings</div>
+    <div class="what">Jed sends Peter the LAGIS-emigration-database results (Friedrichsfeld 1853 emigrants → Nordamerika confirmed) and the St. Marcus marriage-index search results (no Quentin / Frickhöfer matches in the 1847–1865 index). Ground for the late-April / early-May Quentin US-side breakthrough. <span class="who out">outgoing</span></div>
+    <div class="related">Source: <a href="../Message_for_Peter_Schrader_April27_2026_LAGIS_StMarcus_Findings.md">Message_for_Peter_Schrader_April27_2026_LAGIS_StMarcus_Findings.md</a></div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+<details class="ts-month">
+<summary><span class="month-label">3–4 May 2026 · Entry 195 definitive elimination</span><span class="month-count">2 events</span></summary>
+<div class="ts-month-body">
+<div class="ts-timeline">
+  <div class="ts-event out">
+    <div class="when">3 May 2026 · Justus Köster check</div>
+    <div class="what">Jed sends a follow-up question on the Quentins thread asking Peter to confirm whether Entry 195 (KB 218842, 23 Jan 1835, Deisel) might be the baptism of <strong>Justus Köster</strong> — the boy whose 1849 confirmation appears at Entry 261 with parents Joh. Köster (Kaufmann) × Wilhelmine geb. Hildebrand. <span class="who out">outgoing</span></div>
+  </div>
+  <div class="ts-event in elim star">
+    <div class="when">4 May 2026 · ★ Peter's <a class="glossary-link" href="../glossary.html#g-kurrent" title="Glossary: Kurrent">Kurrent</a> re-reading — Entry 195 eliminated</div>
+    <div class="what">Peter answers definitively: <em>"No Jed, you're completly wrong."</em> Three corrections to the project's prior reading of Entry 195: <strong>(1)</strong> the child <strong>received no first name</strong> — the field previously transcribed as "Justus" actually reads <em>"männlich"</em> (male), the convention used in Lutheran registers when an infant dies before baptism; <strong>(2)</strong> the child was born and <strong>died three days later, without baptism</strong> — so cannot be Charles, who lived to age ~60 in St. Louis; <strong>(3)</strong> the father's surname was <strong>Küster / Kuester (Köster), Tagelöhner (day-labourer)</strong>, not Konze, Kaufmann. Peter notes the absence of baptism is itself unusual and infers the boy was healthy and died unexpectedly. The Entry 195 ⇄ Entry 261 collision is also resolved: those two entries belong to different Deisel Köster households. Project recalibration: Open Question A (the Kurrent reading) and Open Question G (the Justus collision) both close. <span class="who in">incoming · elimination</span></div>
+    <div class="related">→ See <a href="../sources/entry-195-baptism.html">Entry 195 source page (with eliminated banner)</a>. The Entry 195 card was removed from the home-page Key Evidence section after the elimination — the source page above is now the canonical write-up.</div>
+  </div>
+</div>
+
+</div>
+</div>
+</details>
+
+
+<details class="ts-month">
+<summary><span class="month-label">📥 Incoming — Peter's charts &amp; PDFs (delivered to project archive)</span><span class="month-count">19 files</span></summary>
+<div class="ts-month-body">
+  <ul class="charts-list">
+    <li><a href="../peter_charts/Stammtafel%20Johann%20Friedrich%20Kontze.webp">Stammtafel Johann Friedrich Kontze.jpg</a></li>
+    <li><a href="../peter_charts/Stammtafel%20Johann%20Justus%20Quentin2.webp">Stammtafel Johann Justus Quentin2.jpg</a></li>
+    <li><a href="../peter_charts/Stammtafel%20Heinrich%20Branson.webp">Stammtafel Heinrich Branson.jpg</a></li>
+    <li><a href="../peter_charts/Stammtafel%20neu.webp">Stammtafel neu.jpg (Grandjot)</a></li>
+    <li><a href="../peter_charts/emigration%201855.jpg">emigration 1855.jpg</a></li>
+    <li><a href="../peter_charts/emm%20Quentin%201853.jpg">emm Quentin 1853.jpg</a></li>
+    <li><a href="../peter_charts/3%20x%20emmigration%201857.jpg">3 x emmigration 1857.jpg</a></li>
+    <li><a href="../peter_charts/citizen%201740%201.jpg">citizen 1740 1.jpg</a> · <a href="../peter_charts/citizen%201740%202.webp">citizen 1740 2.jpg</a></li>
+    <li><a href="../peter_charts/Jeanette%20Gans.jpg">Jeanette Gans.jpg</a></li>
+    <li><a href="../peter_charts/bap%20Toeppe%201801.webp">bap Toeppe 1801.jpg</a> · <a href="../peter_charts/cop%20Person%20Deppe.webp">cop Person Deppe.jpg</a></li>
+    <li><a href="../peter_charts/bap%20Carl%20Ludwig%20Lucas%201935.webp">bap Carl Ludwig Lucas 1935.jpg</a> · <a href="../peter_charts/bap%20Friedrich%20August%20Hund%201835.webp">bap Friedrich August Hund 1835.jpg</a></li>
+    <li><a href="../peter_charts/Friedhof%20Trendelburg.pdf">Friedhof Trendelburg.pdf</a></li>
+    <li><a href="../peter_charts/Bonhagen.pdf">Bonhagen.pdf</a></li>
+    <li><a href="../peter_charts/Gans%20Meimbressen.pdf">Gans Meimbressen.pdf</a></li>
+    <li><a href="../peter_charts/Haake.pdf">Haake.pdf</a></li>
+    <li><a href="../peter_charts/Person.pdf">Person.pdf</a></li>
+    <li><a href="../peter_charts/Charles%20Gonnson.docx">Charles Gonnson.docx</a></li>
+    <li><a href="../peter_charts/Deisel.xlsx">Deisel.xlsx</a> (Peter's emigrant database)</li>
+  </ul>
+</div>
+</details>
+
+<section class="source-list">
+  <h3>📁 Related family files (per-candidate Stammtafel + verdict)</h3>
+  <ul>
+    <li><a href="../family_pages/fam-konze.html">1. Konze / Kontze / Konsen</a> · <a href="../family_pages/fam-herwig.html">2. Herwig</a> · <a href="../family_pages/fam-grandjot.html">3. Grandjot</a> · <a href="../family_pages/fam-quentin.html">4. Quentin</a> · <a href="../family_pages/fam-lucas.html">5. Lucas</a> · <a href="../family_pages/fam-hund.html">6. Hund</a> · <a href="../family_pages/fam-carolina.html">7. Carolina Phillipine Herwig</a></li>
+    <li><a href="../family_pages/fam-gans-jewish.html">8. Gans / Segelbaum (Jewish)</a> · <a href="../family_pages/fam-stern.html">9. Stern / Kleeburg (set-aside thread)</a> · <a href="../family_pages/fam-hildebrand.html">10. Hildebrand</a> · <a href="../family_pages/fam-hofeditz.html">11. Hofeditz</a> · <a href="../family_pages/fam-koster.html">12. Köster &amp; Schildknecht</a></li>
+    <li><a href="../family_pages/fam-other-jewish.html">13. Trendelburg "Protected Jews"</a> · <a href="../family_pages/fam-branson.html">14. Branson / Frisse</a> · <a href="../family_pages/fam-janson.html">15. Janson</a> · <a href="../family_pages/fam-person.html">16. Person</a></li>
+    <li><a href="../family_pages/fam-gans-lipp.html">18. Gans-Lippolsberg</a> · <a href="../family_pages/fam-steitz.html">19. Karl-firstname sweep</a> · <a href="../family_pages/fam-naming.html">20. Toeppe → Deppe (methodology)</a> · <a href="../family_pages/fam-bonhagen.html">21. Bonhagen</a></li>
+  </ul>
+</section>
+
+</main>
+
+<footer class="back-nav">
+  <a href="../index.html#schrader">↩ Back to Schräder Correspondence on the main site</a>
+</footer>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>The Konze family, by town &middot; Charles Konzen Germany &amp; Origins</title>
+<meta name="description" content="Every documented Konze/Kontze individual in the Diemel-valley cluster, grouped by parish, each town on its own page with family charts and FamilySearch IDs.">
+<link rel="canonical" href="https://charles-research.netlify.app/germany/konze-family-by-town.html">
+<link rel="stylesheet" href="_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  .hero-block{margin-bottom:1.4rem}.crumbs{font-size:0.84rem;color:var(--text-muted);margin-bottom:0.6rem}
+  .lede{font-size:1.05rem;line-height:1.6;color:var(--text-body)}
+  .fs-legend{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:0.85rem;margin:0.8rem 0;padding:0.6rem 0.9rem;background:var(--bg-card-tint,#f6ebd2);border:1px solid var(--border-light,#e0d4b8);border-radius:4px}
+  .town-block{margin:1.8rem 0}.town-block h2{border-bottom:1px solid var(--border-medium,#c9b78a);padding-bottom:0.3rem}
+  .town-sub{font-size:0.92rem;color:var(--text-meta);font-style:italic;margin:0.3rem 0 0.7rem}
+  .town-pill{display:inline-block;font-size:0.66rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;vertical-align:middle;margin-left:0.4rem;white-space:nowrap}
+  .town-pill.charles{background:#c87a30;color:#fff}.town-pill.working{background:#d8b366;color:#1f1a14}.town-pill.eliminated{background:#8a4a4a;color:#fff}.town-pill.open{background:#4a76c8;color:#fff}
+  table.fam-table{width:100%;border-collapse:collapse;font-size:0.9rem;margin-top:0.3rem}
+  table.fam-table th,table.fam-table td{text-align:left;vertical-align:top;padding:0.5rem 0.7rem;border-bottom:1px solid var(--border-light,#e6dcc4)}
+  table.fam-table th{font-size:0.74rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-meta)}
+  table.fam-table tr:nth-child(odd) td{background:var(--bg-card,#fffaf0)}
+  table.fam-table .pn{font-weight:700;color:var(--text-strong)}
+  table.fam-table .fsid{white-space:nowrap;font-size:0.82rem}
+  .fs-add{color:#9a6a2a;font-style:italic;white-space:nowrap}
+  :root.theme-dark table.fam-table tr:nth-child(odd) td{background:var(--bg-card,#24201a)}
+  :root.theme-dark table.fam-table .pn{color:var(--text-body)}:root.theme-dark .fs-add{color:#d8b366}
+  .town-block h3{font-size:1.02rem;margin:1.3rem 0 0.2rem;color:var(--text-strong)}
+  .reg-key{font-size:0.85rem;margin:0.5rem 0}.reg-key summary{cursor:pointer;color:var(--text-meta)}
+  table.fam-table td{font-size:0.86rem}
+  table.fam-table td.why{font-size:0.8rem;color:var(--text-meta);min-width:130px}
+  footer.back-nav{margin-top:2rem;padding-top:1rem}
+</style>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BEGIN-TOWN-TREE-CSS -->
+<style>
+  /* At-a-glance tree styling — mirrors Kontze_Family_Tree_Graphic.html.
+     SVGs render at native size; wide trees scroll horizontally. */
+  .town-tree { overflow-x: auto; padding: 10px 6px 4px; margin: 0.6rem 0 1.5rem;
+               background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8);
+               border-radius: 5px;
+               /* Break out of the 1100px article column: the figure hugs the
+                  SVG's natural width, centred on the column, capped at the
+                  viewport. Wider-than-viewport trees scroll horizontally. */
+               width: fit-content; max-width: calc(100vw - 3rem);
+               margin-left: 50%; transform: translateX(-50%); }
+  .town-tree-caption { font-size: 0.8rem; color: var(--text-meta, #6a5a42); font-style: italic;
+                       padding: 0.35rem 0.8rem 0.5rem; margin: 0; }
+  .town-tree-legend { display: flex; flex-wrap: wrap; gap: 0.3rem 1.4rem; align-items: center;
+                      font-size: 0.82rem; color: var(--text-meta, #6a5a42);
+                      padding: 0.25rem 0.8rem 0.6rem; border-bottom: 1px dashed var(--border-light, #d8c8a8);
+                      margin-bottom: 0.4rem; }
+  .town-tree-legend .leg { display: inline-block; width: 14px; height: 14px; border-radius: 3px;
+                           margin-right: 0.4rem; vertical-align: -2px; }
+  .town-tree-legend .leg.male { background: #e8f0fe; border: 1.5px solid #4a76c8; }
+  .town-tree-legend .leg.female { background: #fde8ef; border: 1.5px solid #c84a76; }
+  .town-tree-legend .leg.unknown { background: #f0eee8; border: 1.5px solid #8a8070; }
+  .town-tree-legend .leg.candidate { background: #fff3cd; border: 2px dashed #d8b366; }
+  :root.theme-dark .town-tree-legend .leg.male { background: #1c2638; border-color: #6a8ad8; }
+  :root.theme-dark .town-tree-legend .leg.female { background: #36202a; border-color: #d86a8a; }
+  :root.theme-dark .town-tree-legend .leg.unknown { background: #2a261e; border-color: #8a7a4a; }
+  :root.theme-dark .town-tree-legend .leg.candidate { background: #2c2516; border-color: #d8b366; }
+  .town-tree .person-box rect { rx: 6; ry: 6; stroke-width: 1.5; }
+  .town-tree .male rect { fill: #e8f0fe; stroke: #4a76c8; }
+  .town-tree .female rect { fill: #fde8ef; stroke: #c84a76; }
+  .town-tree .unknown rect { fill: #f0eee8; stroke: #8a8070; }
+  .town-tree .candidate rect { fill: #fff3cd; stroke: #d8b366; stroke-width: 2.5; stroke-dasharray: 6,3; }
+  .town-tree .person-name { font-weight: bold; font-size: 15px; fill: #2c2c2c; }
+  .town-tree .person-dates { font-size: 12.5px; fill: #666; }
+  .town-tree .person-detail { font-size: 12px; fill: #888; font-style: italic; }
+  .town-tree .marriage-line { stroke: #666; stroke-width: 1.5; }
+  .town-tree .descent-line { stroke: #999; stroke-width: 1; fill: none; }
+  .town-tree .marriage-label { font-size: 11.5px; fill: #888; }
+  .town-tree .marriage-eq { font-weight: bold; font-size: 19px; fill: #555; }
+  .town-tree .gen-label { font-size: 15px; fill: #b0a583; font-style: italic; font-weight: bold; }
+  .town-tree .section-label { font-size: 17px; fill: #555; font-weight: bold; }
+  :root.theme-dark .town-tree .male rect { fill: #1c2638; stroke: #6a8ad8; }
+  :root.theme-dark .town-tree .female rect { fill: #36202a; stroke: #d86a8a; }
+  :root.theme-dark .town-tree .unknown rect { fill: #2a261e; stroke: #8a7a4a; }
+  :root.theme-dark .town-tree .candidate rect { fill: #2c2516; stroke: #d8b366; }
+  :root.theme-dark .town-tree .person-name { fill: #f4e2b0; }
+  :root.theme-dark .town-tree .person-dates { fill: #c8b896; }
+  :root.theme-dark .town-tree .person-detail { fill: #a89a76; }
+  :root.theme-dark .town-tree .section-label { fill: #c8b896; }
+  :root.theme-dark .town-tree .marriage-label { fill: #a89a76; }
+  :root.theme-dark .town-tree .marriage-eq { fill: #c8b896; }
+  :root.theme-dark .town-tree .gen-label { fill: #8a7a4a; }
+  :root.theme-dark .town-tree .marriage-line { stroke: #a89a76; }
+  :root.theme-dark .town-tree .descent-line { stroke: #6a5e3e; }
+</style>
+<!-- END-TOWN-TREE-CSS -->
+
+<style>
+  .town-index{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.9rem;margin:1.2rem 0 2rem}
+  .town-card{display:block;padding:0.9rem 1rem;border:1px solid var(--border-medium,#c9b78a);border-radius:6px;background:var(--bg-card,#fffaf0);text-decoration:none;transition:box-shadow .15s,border-color .15s}
+  .town-card:hover{border-color:var(--text-strong,#8a6a30);box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+  .town-card .tc-name{display:block;font-weight:700;font-size:1.05rem;color:var(--text-strong)}
+  .town-card .tc-sub{display:block;font-size:0.85rem;color:var(--text-meta);margin-top:0.35rem;line-height:1.45}
+  .town-card .town-pill{margin-left:0.4rem;margin-top:0.2rem}
+</style>
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+<main id="main">
+<section class="hero-block">
+  <div class="crumbs"><a href="../index.html#germany">&larr; Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#germany">Germany &amp; Origins</a> &nbsp;/&nbsp; Konze family by town</div>
+  <h1>The Konze / Kontze family, by town</h1>
+  <p class="lede">Every documented Konze / Kontze / Kontzen / Contze / Contzen / Konzen individual &mdash; including the earliest register spellings <strong>Konde</strong> and <strong>Konten</strong> (pre-1770 scribal variants, preserved here as written) &mdash; in the Diemel-valley cluster where the surname occurs &mdash; <strong>one entry per person</strong>, grouped by parish and family, with exact birth, death, and marriage dates and the Archion register + Seite (page) reference for each. The people-level companion to the <a href="parish-map.html">Hessian parish map</a>. FamilySearch IDs are filled where known; where blank, the person is not yet on FamilySearch and can be added.</p>
+  <div class="fs-legend"><span><code>ABCD-123</code> = linked FamilySearch profile</span><span><span class="fs-add">&mdash; add to FS</span> = no profile yet (a to-do)</span><span><sup>&dagger;</sup> = ID matched 7 Jun 2026 from the communal FamilySearch tree (largely &ldquo;GeneDana&rdquo;&rsquo;s Archion-based entries) &mdash; tree data is unsourced; verify against the registers before merging</span><span><strong>S.</strong> = Seite (register page) &middot; <strong>img</strong> = Archion image number &middot; <strong>E</strong> = entry number</span></div>
+  <p class="town-sub" style="margin-top:0.7rem;">K&ouml;ster is excluded (a separate, ubiquitous local surname). Sources: Archion registers (cited per row), Peter Schr&auml;der&rsquo;s Stammtafeln (&ldquo;Stammtafel&rdquo;), HETRINA military index, and Sessions 11&ndash;94. Exact dates newly read from the registers on 6&ndash;10 June 2026 are <strong>bold</strong>. Where no marriage or children are documented, the row says so explicitly. Last updated 13 June 2026 (Session 102: Deisel missing-vitals sweep &mdash; 14 rows resolved via the FS communal tree, the 1774&ndash;1814 Christoph merge register-verified, the Konze burial K-leaf 1830&ndash;76 read in full, two false-Konze households (Koch, Knapp) weeded out; plus a Trendelburg vitals pass &mdash; 6 rows resolved from the FS tree, and the 220114 burial Namensregister read and found to be missing its A&ndash;K leaves, so the register-anchored 1830&ndash;77 deaths have no index route. See the per-town pages.)</p>
+  <p class="town-sub" style="margin-top:0.6rem;">Each town&rsquo;s Archion register key (ID &rarr; book) now lives on that town&rsquo;s own page, beside its family chart.</p>
+</section>
+
+<section class="town-block">
+  <h2>Browse by town</h2>
+  <p class="town-sub">Each parish now has its own page with the full family chart and one-row-per-person tables. Pick a town to open it.</p>
+  <nav class="town-index" aria-label="Konze towns">
+  <a class="town-card" href="konze-trendelburg.html">
+    <span class="tc-name">Trendelburg <span class="town-pill working">Konze documented</span></span>
+    <span class="tc-sub">The earliest generation — KB 1708–1772 (Reg 220093)</span>
+  </a>
+  <a class="town-card" href="konze-jungkonze.html">
+    <span class="tc-name">The Jungkonze / Jungkontze branch <span class="town-pill working">Trendelburg &amp; Stammen</span></span>
+    <span class="tc-sub">Stammen &amp; Trendelburg roots — the Amtsdiener Joan Georg's house and the distinct Joh. George × Büngner line (Joh. Christoph, Johannes the Leineweber, Anna Gertrudt)</span>
+  </a>
+  <a class="town-card" href="konze-deisel.html">
+    <span class="tc-name">Deisel <span class="town-pill charles">Konze documented</span></span>
+    <span class="tc-sub">Charles&rsquo;s stated origin &middot; the founding generation — Andreas Kontze I and his sons</span>
+  </a>
+  <a class="town-card" href="konze-friedrichsfeld.html">
+    <span class="tc-name">Friedrichsfeld <span class="town-pill working">Konze documented</span></span>
+    <span class="tc-sub"></span>
+  </a>
+  <a class="town-card" href="konze-stammen.html">
+    <span class="tc-name">Stammen <span class="town-pill working">Konze documented</span></span>
+    <span class="tc-sub">Swineherd family fully reconstructed</span>
+  </a>
+  <a class="town-card" href="konze-gottsbueren.html">
+    <span class="tc-name">Gottsb&uuml;ren <span class="town-pill working">Konze documented</span></span>
+    <span class="tc-sub">A Jungkonze-born woman buried here (1855); the disputed origin claim is addressed on the page</span>
+  </a>
+  <a class="town-card" href="konze-huemme.html">
+    <span class="tc-name">H&uuml;mme <span class="town-pill working">Konze documented</span></span>
+    <span class="tc-sub">The K&uuml;ster (sexton) line and elders, fully reconstructed</span>
+  </a>
+  </nav>
+</section>
+
+<section class="town-block">
+  <h2 id="charles">The subject &mdash; Charles himself <span class="town-pill charles">origin parish not yet found</span></h2>
+  <table class="fam-table"><thead><tr><th>Person</th><th>Born / baptized</th><th>Died / buried</th><th>Spouse &middot; marriage</th><th>Children</th><th>Source</th><th>Why not Charles?</th></tr></thead><tbody>
+    <tr><td class="pn">Charles Konzen / Gannsen / Johnson Sr. <span class="fsid"><a href="https://www.familysearch.org/tree/person/details/LZXC-6GB" target="_blank" rel="noopener noreferrer"><code>LZXC-6GB</code></a></span></td><td>b. 26 Jan 1835 (claimed; Deisel/Trendelburg per his own statements)</td><td>d. 16 Dec 1903, St.&nbsp;Louis</td><td>&times; Auguste Kreichelt, 25 Jan 1866, St.&nbsp;Marcus, St.&nbsp;Louis (<a href="https://www.familysearch.org/tree/person/details/LZKV-9F5" target="_blank" rel="noopener noreferrer"><code>LZKV-9F5</code></a>)</td><td>seven children &mdash; see <a href="../children/index.html">The seven children</a></td><td>US records; German baptism unrecovered</td><td class="why">&mdash; he IS Charles</td></tr>
+  </tbody></table>
+</section>
+
+<section class="town-block">
+  <h2 id="addnote">Adding these to FamilySearch</h2>
+  <p class="town-sub">Rows marked <span class="fs-add">&mdash; add to FS</span> are candidates for new FamilySearch profiles; paste each new PID back here (and into the census) to keep the map linked. Profiles that already exist: Charles (<code>LZXC-6GB</code>), Andreas Konze b.1795 (<code>PZF8-X19</code>), Johann Henrich Kontze b.~1747 (<code>G8HG-P2S</code>), Auguste Kreichelt (<code>LZKV-9F5</code>). Infants and children who died young are left unmarked &mdash; add them under their parents if you want complete FS coverage.</p>
+</section>
+</main>
+
+<footer class="back-nav">
+  <a href="../index.html#germany">&#8617; Back to Germany &amp; Origins on the main site</a>
+</footer>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

@@ -1,0 +1,57 @@
+/* TEAM */
+
+  Project author & site builder: Jed Johnson
+  Email: see methodology.html#corrections
+  Location: United States
+
+  German genealogist & primary research collaborator: Peter Schräder
+  Location: Trendelburg, Hesse, Germany
+
+  Family-photo discovery (September 2025): Maximilian J.
+  Location: Independence, Missouri
+
+/* PROJECT */
+
+  Subject: Charles Konzen (also Gannsen / Johnson; 1835–1903)
+  Domain: charles-research.netlify.app
+  Started: August 2025 (rebooted from 2017 NARA mail-order
+           and 2020 AncestryProGenealogists journal)
+
+/* ARCHIVES & DATABASES */
+
+  National Archives and Records Administration (NARA), Washington, D.C.
+  Archion.de — German Protestant church-record portal
+  Hessisches Staatsarchiv Marburg — Auswanderer-Belege & Stammrollen
+  LAGIS — Landesgeschichtliches Informationssystem Hessen
+  FamilySearch.org · Ancestry.com · Find a Grave · Fold3
+  St. Marcus German Evangelical Church, St. Louis (microfilmed records)
+
+/* THANKS */
+
+  Peter Schräder for the Trendelburg side of the work, the Stammtafel
+  reconstructions, and the patience of two years of research dialogue.
+
+  The descendants who shared photographs, inscriptions, and family
+  memory — particularly Maximilian J. for the September 2025 portrait
+  recovery.
+
+/* SITE */
+
+  Last update: 2026-05-07
+  Stack: Plain HTML, CSS variables (assets/theme.css), no build step.
+  Search: client-side over /search-index.json (no external service).
+  Map: Leaflet 1.9.4 + OpenStreetMap.
+  Hosting: Netlify
+  Source: see Methodology page for citation conventions and corrections.
+
+/* SITE STANDARDS */
+
+  Methodology: /methodology.html
+  Abstract: /abstract.html
+  Bibliography: /bibliography.html
+  Glossary: /glossary.html
+  Open Questions: /open-questions.html
+  Changelog: /changelog.html
+  Visualize hub: /visualize.html
+  FAQ: /faq.html
+  Stories: /stories.html

@@ -1,0 +1,42 @@
+User-agent: *
+Allow: /
+
+# Internal / archival directories — do not index
+Disallow: /_archive/
+Disallow: /_archive_pre_audit_fixes/
+Disallow: /_backup_originals/
+Disallow: /_recovery_20260608/
+Disallow: /nara_pages/
+Disallow: /nara_ocr/
+Disallow: /scripts/
+
+# Working drafts and session notes — also carry meta robots noindex
+Disallow: /notes/
+
+# Working notes and intermediate research files at root — kept accessible
+# (so existing direct links don't 404) but should not be indexed.
+Disallow: /Analysis_
+Disallow: /Andreas_
+Disallow: /Archion_
+Disallow: /Bremen_
+Disallow: /Candidate_
+Disallow: /Deisel_
+Disallow: /Friedrichsfeld_
+Disallow: /Helmarshausen_
+Disallow: /Konfirmationen_
+Disallow: /Kontze_
+Disallow: /Mainz_
+Disallow: /Message_for_Peter_
+Disallow: /Part_
+Disallow: /Register_
+Disallow: /Research_Paper_
+Disallow: /Session_
+Disallow: /Trendelburg_
+Disallow: /Charles_Gannsen_Research_Priorities_
+
+# Source files and editor artefacts — never indexable
+Disallow: /*.bak$
+Disallow: /*.docx$
+Disallow: /*.md$
+
+Sitemap: https://charles-research.netlify.app/sitemap.xml
