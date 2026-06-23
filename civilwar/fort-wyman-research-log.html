@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Fort Wyman / 64th Illinois Mystery — Research Log · Charles Gannsen Civil War</title>
+<link rel="canonical" href="https://charles-research.netlify.app/civilwar/fort-wyman-research-log.html">
+<meta name="description" content="Charles's 1890 pension declaration claims he was injured by heavy lifting at Fort Wyman, Rolla, Missouri while detailed as drill sergeant for the 64th Illinois Infantry in Heavy Artillery tactics.…">
+<link rel="stylesheet" href="_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  /* Research-log specific styles */
+  .rl-status { background:linear-gradient(140deg, #fbf3ef, #fde0d8); border:2px solid #a04030; border-left:5px solid #6a2820; border-radius:6px; padding:1rem 1.2rem; margin:1rem 0 1.5rem; }
+  .rl-status h3 { color:#6a2820; margin:0 0 0.4rem; }
+  .rl-status p { margin:0 0 0.5rem; }
+  .rl-status p:last-child { margin-bottom:0; }
+  .rl-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:0.8rem; margin:0.6rem 0 1rem; }
+  .rl-card { background:#fffaf0; border:1px solid #d8c8a8; border-left:4px solid #a04030; border-radius:4px; padding:0.7rem 0.9rem; }
+  .rl-card.confirmed { border-left-color:#5a8a4a; }
+  .rl-card.weak { border-left-color:#c8754a; }
+  .rl-card.eliminated { border-left-color:#7a6a5a; opacity:0.92; }
+  .rl-card.candidate { border-left-color:#4a76c8; background:linear-gradient(140deg, #fffaf0, #eef3fa); }
+  .rl-card h5 { font-size:0.92rem; color:#3a2f1e; margin:0 0 0.3rem; }
+  .rl-card p { font-size:0.88rem; line-height:1.55; margin:0 0 0.4rem; }
+  .rl-card p:last-child { margin-bottom:0; }
+  .rl-card .verdict { display:inline-block; font-size: 0.76rem; letter-spacing:0.06em; text-transform:uppercase; font-weight:700; padding:2px 8px; border-radius:3px; margin-bottom:0.3rem; }
+  .verdict-confirmed { background:#5a8a4a; color:#fff; }
+  .verdict-disputed { background:#c8754a; color:#fff; }
+  .verdict-weak { background:#a76a30; color:#fff; }
+  .verdict-eliminated { background:#7a6a5a; color:#fff; }
+  .verdict-candidate { background:#4a76c8; color:#fff; }
+  .verdict-open { background:#8a7ac0; color:#fff; }
+  .rl-round { background:#fffaf0; border:1px solid #d8c8a8; border-radius:5px; padding:1rem 1.2rem; margin:0.8rem 0; }
+  .rl-round h3 { color:#3a2f1e; margin:0 0 0.5rem; padding-bottom:0.3rem; border-bottom:1px solid #d8c8a8; }
+  .rl-round h3 .when { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:0.78rem; color:#8a6420; font-weight:700; letter-spacing:0.04em; margin-left:0.6rem; }
+  .rl-round .finding { background:#f4f9ee; border-left:3px solid #5a8a4a; padding:0.5rem 0.8rem; margin:0.5rem 0; border-radius:0 3px 3px 0; font-size:0.92rem; }
+  .rl-round .finding strong { color:#3a6a2a; }
+  .rl-round .null { background:#f9eeee; border-left:3px solid #a04030; padding:0.5rem 0.8rem; margin:0.5rem 0; border-radius:0 3px 3px 0; font-size:0.92rem; }
+  .rl-round .null strong { color:#6a2820; }
+  .verdict-table th { background:#f4ecd5; color:#3a2f1e; font-weight:700; }
+  .verdict-table td { vertical-align:top; }
+  .verdict-table td:nth-child(1) { font-weight:600; }
+  .verdict-table td:nth-child(2) { white-space:nowrap; }
+  blockquote { border-left:3px solid #d8b366; background:#fffaee; padding:0.5rem 0.9rem; margin:0.6rem 0; font-style:italic; color:#3a2f1e; font-size:0.92rem; }
+</style>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Civil War",
+      "item": "https://charles-research.netlify.app/civilwar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Fort Wyman Research Log"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/civilwar/fort-wyman-research-log.html#article",
+  "headline": "Fort Wyman / 64th Illinois Mystery — Research Log · Charles Gannsen Civil War",
+  "url": "https://charles-research.netlify.app/civilwar/fort-wyman-research-log.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17"
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+<meta property="og:url" content="https://charles-research.netlify.app/civilwar/fort-wyman-research-log.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/civilwar.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/civilwar.png">
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="cw-hero cinema-section-hero" data-tone="civilwar">
+  <div class="crumbs"><a href="../index.html#civilwar">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#civilwar">Civil War</a> &nbsp;/&nbsp; <a href="places-served.html">Where Charles Served</a> &nbsp;/&nbsp; Fort Wyman Research Log</div>
+  <h1>Fort Wyman / "64th Illinois" Mystery — Research Log</h1>
+  <div class="sub">A May 2026 forensic investigation: pension claim vs. War Department roll search vs. NARA muster cards vs. free-source unit-history checks · who was Charles drilling at Fort Wyman in 1865?</div>
+  <div class="meta-row"><span class="badge battery">CIVIL WAR</span><span class="date">Last updated <time datetime="2026-05-06">6 May 2026</time></span></div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="summary-card">
+  <h2>★ At a Glance</h2>
+  <p class="bottom-line">Charles's 1890 pension declaration claims he was injured by heavy lifting at <strong>Fort Wyman, Rolla, Missouri</strong> while detailed as drill sergeant for the <strong>64th Illinois Infantry</strong> in Heavy Artillery tactics. The carded record places Charles at <strong>Rolla, Missouri from 27 March through 1 July 1865</strong> (~3 months) under <strong>G.O. No. 82</strong> / S.O. No. 14, Hd Qrs Dept of the Mo. Charles arrived at Rolla after his ~11-month <a href="new-madrid.html">New Madrid Tour 2</a> (24 April 1864 – 27 March 1865) ended. Fort Wyman was the main Union fortification at Rolla, so this is consistent with the pension claim's "Fort Wyman" wording — but the literal word "Wyman" does not appear on any muster card. On 1 July 1865 Charles transferred from Rolla to Department HQ St. Louis under S.O. No. 159; he was relieved 4 November 1865 by S.O. No. 92. The unit-being-drilled question is still open; the strongest candidate is the <strong>49th Wisconsin Volunteer Infantry</strong> (at Rolla 13 March – August 1865), which overlaps Charles's 27 March – 1 July Rolla window almost exactly.</p>
+</section>
+
+<div class="rl-status">
+  <h3>Status as of 6 May 2026</h3>
+  <p><strong>Place: CORROBORATED with caveat.</strong> The cards explicitly place Charles at <em>"Rolla, Mo."</em> from 27 March – 1 July 1865 under G.O. No. 82 / S.O. No. 14, Hd Qrs Dept of the Mo. Fort Wyman was the main fort at Rolla, so the pension claim's "Fort Wyman" wording is consistent with the carded record. <strong>The literal word "Wyman" does NOT appear on any muster card</strong> — the previous "first verbatim Wyman hit anywhere" finding was a transcription error and is retracted.</p>
+  <p><strong>Rolla detachment: 27 March – 1 July 1865 (~3 months)</strong>, following the ~11-month New Madrid Tour 2 (24 April 1864 – 27 March 1865).</p>
+  <p><strong>July–November 1865: Department HQ in St. Louis (NOT Rolla).</strong> Special Order No. 159, 1 July 1865, transferred Charles from Rolla to Department Headquarters in St. Louis. He served there until 4 November 1865, when S.O. No. 92 relieved him.</p>
+  <p><strong>Reduction Sgt → Pvt: 15 March 1865</strong> — late in New Madrid Tour 2, before the Rolla transfer. Charles served the entire Rolla and Dept HQ details as a Private.</p>
+  <p><strong>Date in pension declaration: still contradicted.</strong> Charles's declaration says "July 1862" — before his 2 December 1862 enlistment. The actual carded Rolla service is 27 March – 1 July 1865.</p>
+  <p><strong>Unit being drilled: still unknown.</strong> 49th Wisconsin remains the strongest candidate (Rolla 13 March – August 1865, overlapping Charles's 27 March – 1 July Rolla window almost exactly).</p>
+</div>
+
+<h2>The puzzle</h2>
+
+<p>Charles Gannsen's <a href="../sources/pension-file.html">1890 Declaration for Invalid Pension</a> stakes his right-inguinal-hernia disability claim on a single sentence:</p>
+
+<blockquote>"… in the line of duty at Rolla, in the State of Missouri, on or about [July] 1862, while detailed as drill Sergeant to instruct the <strong>64th Illinois Infantry</strong> in the tactics of Heavy Artillery, by heavy lifting in <strong>Fort Wyman</strong> he was injured on the right side."</blockquote>
+
+<p>The Pension Bureau awarded $12 / month on this claim in November 1891 despite an internal contradiction surfaced by their own due-diligence search: the 30 June 1891 War Department roll-check returned <em>"the name Charles Gannsen has not been found on rolls of any Co. in 64 Ill Vol"</em> (<a href="../sources/pension-file.html">NARA Pension Page 36</a>). Charles was awarded the pension anyway — but the question of <em>who he actually drilled at Fort Wyman</em> has remained open.</p>
+
+<h2>What's now confirmed (corrected May 2026 evening)</h2>
+
+<div class="rl-grid">
+  <div class="rl-card confirmed">
+    <span class="verdict verdict-confirmed">Confirmed</span>
+    <h5>Place — "Rolla, Mo." (Fort Wyman by default), 27 Mar – 1 Jul 1865 (~3 months)</h5>
+    <p>Verified verbatim across both packets — <a href="../sources/fold3-service-records.html#fp06">Fold3 PG 5/6</a> and <a href="../sources/nara-service-record-packet.html#np11">NARA PG 11 Cards B/C</a>: <em>"On Det Serv at Rolla Mo. G.O. N° 82 H.Q. Dept of the Mo March 27, 65"</em> (Fold3) / <em>"S.O. No. 14, March 24/65"</em> (NARA). Charles was at Rolla from late March 1865 through 1 July 1865 — about <strong>3 months</strong>. Fort Wyman was the main Union fortification at Rolla, so the pension claim's "Fort Wyman" wording is consistent with the cards' "Rolla" reading — but <strong>the literal word "Wyman" does not appear on any muster card</strong>.</p>
+  </div>
+  <div class="rl-card confirmed">
+    <span class="verdict verdict-confirmed">Confirmed</span>
+    <h5>Three governing Special Orders (corrected)</h5>
+    <p><strong>G.O. No. 82, 27 March 1865</strong> — Rolla detachment (Fold3 PG 5/6, NARA PG 11 B/C). <em>NOT S.O. No. 14, NOT 24 March, as previously stated.</em><br>
+    <strong>S.O. No. 159, 1 July 1865</strong> — transfer from Rolla back to <strong>Department HQ in St. Louis</strong> (Fold3 PG 4, NARA PG 12 A/B). <em>NOT to Wyman HQ at Rolla; the previous "Wyman Hd Qrs Rolla Mo July 15" reading was a transcription error.</em><br>
+    <strong>S.O. No. 92, 4 November 1865</strong> — <em>"Relieving Priv. L. C. Gannsen, 2nd Mo. Lt. Art., from duty at Hd Qs Dept of the Mo,"</em> by command of Maj. Gen. John Pope, signed J. W. Williams, A.A.G. (Fold3 PG 23/24, NARA PG 04/05). Received at Battery HQ <em>"Novbr 10/65."</em> Note that this order relieves Charles from duty at <em>Department HQ in St. Louis</em> (where he had been since 1 July) — not from Rolla, where he had been earlier in the year.</p>
+  </div>
+  <div class="rl-card confirmed">
+    <span class="verdict verdict-confirmed">Confirmed</span>
+    <h5>Reduction in rank: 15 March 1865</h5>
+    <p>Verbatim on Fold3 PG 4 and NARA PG 12 A/B: <em>"Served as Sgt until Mar 15, 65 when reduced to Ranks Per [G.O.] No. 82."</em> The reduction happened in <strong>March 1865 under G.O. No. 82</strong> — the <em>same</em> general order that detached Charles to Rolla on 27 March 1865. There is only one G.O. No. 82 of Hd Qrs Dept of the Mo. for this period; the order combined the rank-reduction (effective 15 March) and the Rolla detachment (effective 27 March). The "1–4 November 1865" reduction date previously inferred from S.O. No. 92 is wrong; that order described Charles already as <em>"Private L. C. Gannsen"</em> because the reduction had happened seven months earlier. Charles served all of his subsequent 1865 Rolla and Dept HQ St. Louis details as a Private, not a Sergeant.</p>
+  </div>
+</div>
+
+<h2>What remains disputed</h2>
+
+<div class="rl-grid">
+  <div class="rl-card">
+    <span class="verdict verdict-disputed">Disputed</span>
+    <h5>Date — pension declaration says July 1862</h5>
+    <p>Charles's 1890 declaration places the injury "on or about July 1862," before his 2 December 1862 enlistment — geographically and chronologically impossible. His own 1898 handwritten address-history letter (<a href="../sources/pension-file.html">Pension Page 28</a>) writes the year as "July 1863" — also problematic (he was at the St. Louis garrison forts then). The actual NARA-documented Rolla service is <strong>March – November 1865</strong> — almost certainly the period when the heavy-lifting incident actually occurred.</p>
+  </div>
+  <div class="rl-card">
+    <span class="verdict verdict-disputed">Disputed</span>
+    <h5>Unit — the 64th Illinois was nowhere near Rolla</h5>
+    <p>The <strong>64th Illinois ("Yates Sharpshooters")</strong> served under Sherman in Tennessee, Georgia, and the Carolinas in 1865 — they marched to the sea, fought at Bentonville, and were discharged in Louisville. Never at Rolla. The Pension Bureau's 30 June 1891 negative reply on the 64th Illinois rolls is therefore correct on its terms — Charles was never attached to that regiment.</p>
+  </div>
+  <div class="rl-card">
+    <span class="verdict verdict-disputed">Disputed</span>
+    <h5>Heavy-lifting incident location</h5>
+    <p>Charles's pension declaration locates the injury at Fort Wyman, Rolla. But the comrade affidavits sworn in 1891 by 1st Sgt. <strong>August Derr</strong> and Pvt. <strong>Christian Meyer</strong> — both fellow Battery B veterans — locate the disabilities at <strong>New Madrid, Sept–Nov 1863</strong>: hearing loss from heavy cannonading, rheumatism from cold and exposure, and the rupture from heavy lifting at the same station. Two contradictory accounts of the same disability cluster, both inside the pension file. The carded muster cards do not adjudicate.</p>
+  </div>
+</div>
+
+<h2>Investigation log</h2>
+
+<div class="rl-round">
+  <h3>Round 1 <span class="when">6 May 2026</span> — Initial Fold3-only reading</h3>
+  <p>Working from only the Fold3 download of the M405 carded service records, the spring–April 1865 detached-service muster card (Fold3 PG 11) was read as <em>"Fort Madison Marines, since April 23/65."</em> The destination was interpreted as either the U.S. Marine Hospital in St. Louis, the Marine Barracks at Jefferson Barracks, or possibly Fort Madison, Iowa. <strong>Fort Wyman did not appear on this card.</strong> Earlier project analysis concluded that the muster cards did not corroborate the pension claim's "Fort Wyman" detail.</p>
+  <div class="null"><strong>Outcome:</strong> Pension claim's Fort Wyman wording appeared unsupported by the carded record. The hernia / right-side / 64th Illinois detail looked like pension-file confabulation.</div>
+</div>
+
+<div class="rl-round">
+  <h3>Round 2 <span class="when">6 May 2026 (initial reading — partly retracted)</span> — NARA mail-order packet (G11-422819443E) examined</h3>
+  <p>A 13-page NARA mail-order <a class="glossary-link" href="../glossary.html#g-compiled-service-record" title="Glossary: Compiled Service Record">Compiled Service Record</a> packet, ordered in 2018 and previously misfiled in the project as a placeholder PDF, was re-identified and read page-by-page. The NARA scan is dramatically clearer than the Fold3 download on the spring–fall 1865 cards. Three cards resolved more cleanly than in Fold3, but the <em>initial</em> agent-transcription of two of them was wrong — corrected in Round 6 below.</p>
+  <div class="finding"><strong>Initial (incorrect) finding:</strong> NARA PG 11 Card B was read as <em>"On det. serv. at Rolla Mo. S.O. No. 14 March 24/65."</em> NARA PG 12 Card A was read as <em>"On det. serv. at Wyman Hd Qrs. Rolla Mo. By Order No. 159 July 15."</em> Both are incorrect. The actual readings (verified Round 6) are <strong>G.O. No. 82, March 27, 1865</strong> for the Rolla detachment, and <strong>S.O. No. 159, July 1, 1865, Dept HQ St. Louis</strong> for the July transfer. There is no "Wyman" word on any card.</div>
+  <p>What WAS correctly read in Round 2: <strong>NARA PG 04</strong> reproduces Special Order No. 92 in full — 4 November 1865, by command of Maj. Gen. Pope, signed J. W. Williams A.A.G., directing Pvt. L. C. Gannsen to report back to his battery. That reading stands.</p>
+</div>
+
+<div class="rl-round">
+  <h3>Round 3 <span class="when">6 May 2026</span> — Digit-drop hypothesis: 144th Illinois</h3>
+  <p>First working hypothesis on the unit Charles drilled: a clerk on the 1890 declaration dropped the leading "1" of <em>"144th"</em>, leaving <em>"44th"</em>, which was then mis-recorded as <em>"64th"</em>. The 144th Illinois Volunteer Infantry was a one-year regiment (organized Alton, 21 October 1864; mustered out 14 July 1865) — the right kind of green regiment to need an artillery sergeant's drill instruction.</p>
+  <p><strong>Free-source check:</strong> Frederick Dyer's <em>Compendium</em> and the Illinois GenWeb regimental page agree the 144th was assigned only to <em>"St. Louis District / Alton"</em> on prison-guard duty — never Rolla. The Alton Jaeger Guards reenactor history specifies the regiment was <em>"organized to guard the prisons in Alton and St. Louis."</em> Reece's <em>Report of the Adjutant General of the State of Illinois</em> company-by-company rosters (Companies A–K) examined for any "Rolla" or "Fort Wyman" or "Detached: 2 Mo. Lt. Arty." annotation.</p>
+  <div class="null"><strong>Outcome:</strong> Zero hits across all 11 roster pages. The 144th Illinois regimental-history transcript reads: <em>"Notwithstanding diligent effort was made to obtain historical mention of the services of the Regiment, none was sent into the office and hence it was not in our power to say anything authentic concerning the campaign of the Regiment."</em> The 146th Illinois (parallel digit-drop candidate) never went to Missouri at all. <strong>144th case closed.</strong></div>
+</div>
+
+<div class="rl-round">
+  <h3>Round 4 <span class="when">6 May 2026</span> — Free-source unit-history sweep</h3>
+  <p>Broader search: which units WERE at Rolla / Fort Wyman in March – November 1865? Sources consulted: NPS Soldiers and Sailors System battle-units pages; Frederick Dyer's <em>Compendium</em>; Illinois GenWeb regimental pages; FortWiki / hmdb.org Fort Wyman markers; civilwararchive.com Missouri / Indiana / Illinois pages. Candidate Illinois infantry regiments (46th, 64th, 47th, 24th, 17th, 144th, 146th) and cavalry regiments (4th, 6th, 7th, 8th, 17th IL Cav) tested individually. 64th U.S. Colored Infantry tested as the literal-number candidate. 64th Indiana / 64th Iowa tested as state-mis-transcription candidates.</p>
+  <div class="finding"><strong>Finding:</strong> The <strong>49th Wisconsin Volunteer Infantry</strong> emerged as the strongest candidate. NPS battle-unit page UWI0049RI reads: <em>"Organized at Madison, Wis., December 24, 1864, to March 5, 1865. Left State for St. Louis, Mo., March 8, 1865, thence moved to Rolla, Mo., March 13. Garrison and guard duty at Rolla till August and at St. Louis, Mo., till November. Attached to 2nd Sub-District, District of St. Louis, Dept. of Missouri."</em> Arrived Rolla 13 March 1865 — <strong>eleven days before</strong> Charles's S.O. 14 of 24 March. Brand-new green one-year regiment in the right administrative jurisdiction. Geographic + chronological + organizational fit on every dimension.</div>
+  <p>Other candidates eliminated: 46th IL (Cumberland → Texas in 1865), 64th USCI (Vicksburg / Mississippi), 17th IL Cavalry (left Rolla January 1865), 64th IN (never fielded as infantry), 64th IA (no such unit; Iowa fielded only 48 infantry regiments).</p>
+</div>
+
+<div class="rl-round">
+  <h3>Round 5 <span class="when">6 May 2026</span> — 49th Wisconsin roster check + Battery B location complication</h3>
+  <p>Definitive free-source check: the official Wisconsin Adjutant General's <em>Roster of Wisconsin Volunteers, War of the Rebellion, 1861–1865, Vol. II</em> (Madison: Democrat Printing, 1886), pages 847–867, the 49th Wisconsin section. Searched the full ~8,300 lines of the regimental section for: "Gannsen / Gansen / Gonnson / Gannson"; "drill instructor"; "2d Mo." / "2nd Mo." / "Missouri Light"; "Fort Wyman."</p>
+  <div class="null"><strong>Finding:</strong> <strong>Zero hits</strong> in the 49th Wisconsin section for any of the search terms. The only artillery-related annotation in the regiment is one Field &amp; Staff transfer-in (<em>"From Corp. Co. M, 1st Wis. Heavy Art."</em>) — a 1st Wisconsin transferee, not a 2nd Missouri Light Artillery instructor. The state roster does not document Charles's attachment to the 49th Wisconsin.</div>
+  <p><strong>Material complication:</strong> NPS battle-unit page UMO0002RAL for the 2nd Missouri Light Artillery places Battery B at <strong>Franklin, Missouri</strong> from 19 November 1864 through 1 June 1865 — <em>not</em> at Rolla. <em>"Moved to Franklin November 19-21, and duty there till June 1, 1865. Ordered to St. Louis June 1 and equipped as Cavalry. Moved to Omaha, Neb., June 11-20."</em> Franklin is ~60 miles east of Rolla. So Charles was personally detached <em>away from his battery</em> to Rolla — the simple "Battery B was at Rolla and Charles drilled the 49th Wisconsin alongside" picture is wrong. Charles was a singular detached private assigned to drill duty by departmental Special Order, not part of a battery presence at Rolla.</p>
+  <div class="finding"><strong>Outcome:</strong> The 49th Wisconsin remains the strongest candidate by co-location at Rolla, but the documentary link from either side is missing.</div>
+</div>
+
+<div class="rl-round">
+  <h3>Round 6 <span class="when">6 May 2026 (evening), user re-read of Fold3 cards</span> — Major transcription corrections</h3>
+  <p>The user pointed out that the agent's earlier transcriptions of Fold3 PG 4, 5, 6, and 13 (and the parallel NARA PG 11 / 12 cards) contained multiple errors. A focused re-reading of the original PDFs, cross-comparing both packets, confirmed the user's corrected readings:</p>
+  <ul>
+    <li><strong>The Rolla Special Order is No. 82, dated 27 March 1865</strong> — not S.O. No. 14 dated 24 March (Fold3 PG 5/6, NARA PG 11 B/C: <em>"On Det Serv at Rolla Mo. G.O. N° 82 H.Q. Dept of the Mo March 27, 65"</em>).</li>
+    <li><strong>The July Special Order detached Charles to Department HQ in St. Louis, not to "Wyman HQ Rolla."</strong> S.O. No. 159 is dated 1 July 1865, not 15 July (Fold3 PG 4, NARA PG 12 A/B: <em>"On Det Serv at Dept Hd Qr St Louis Mo. S.O. No 159 July 1, 65"</em>). The earlier "Wyman" reading was a transcription error; no card contains the word.</li>
+    <li><strong>The reduction Sgt → Pvt happened on 15 March 1865, not November 1865</strong>, per <strong>G.O. No. 82</strong> — the <em>same</em> general order that detached Charles to Rolla on 27 March 1865 (only one G.O. No. 82 in this window). Fold3 PG 4 / NARA PG 12 A/B: <em>"Served as Sgt until Mar 15, 65 when reduced to Ranks Per [G.O.] No. 82."</em> Charles served all his subsequent 1865 details as a Private, consistent with S.O. No. 92's reference to him as <em>"Private L. C. Gannsen."</em></li>
+    <li><strong>The promotion to Sergeant date is preserved on Fold3 PG 13</strong>, not just NARA — earlier transcription missed this (Fold3 PG 13: <em>"Promoted from Corporal to Sergeant Nov 7, 1863."</em>).</li>
+  </ul>
+  <div class="finding"><strong>Revised picture:</strong> Charles's late-war detached service is two distinct postings, not one continuous Rolla / Wyman period. <strong>(1) Rolla, Mo., 27 March – 1 July 1865 (~3 months)</strong> under G.O. No. 82 / S.O. No. 14. <strong>(2) Department HQ in St. Louis, 1 July – 4 November 1865 (~4 months)</strong> under S.O. No. 159, relieved by S.O. No. 92.</div>
+  <div class="finding"><strong>Implication for the 49th Wisconsin candidacy:</strong> The overlap window with the 49th Wisconsin tightens but the candidacy <em>strengthens</em> on the dimension that matters most. Charles arrived at Rolla on 27 March 1865 — exactly two weeks after the 49th Wisconsin arrived (13 March 1865) — and remained through ~early July, almost exactly the 49th's Rolla garrison window (Rolla 13 March – August 1865 per NPS). This is the cleanest possible co-location for a drill-instructor detail to a green one-year regiment. The only reason the documentary link is still missing is that neither packet records the recipient unit on the carded text — the Special Orders themselves (NARA RG 393) would name the unit.</div>
+  <div class="finding"><strong>Implication for the pension claim's "Fort Wyman" wording:</strong> The pension declaration says Charles was injured "at Fort Wyman." Fort Wyman was the main Union fortification at Rolla, so the claim is consistent with the cards' "at Rolla, Mo." reading — but the literal word "Wyman" doesn't appear on the muster cards. The previous claim that NARA PG 12 carried a "first verbatim Wyman hit anywhere" is retracted.</div>
+</div>
+
+<h2>Hypotheses tested — current verdicts</h2>
+
+<table class="kv verdict-table">
+  <thead><tr><th>Candidate</th><th>Verdict</th><th>Why</th></tr></thead>
+  <tbody>
+    <tr><td><strong>49th Wisconsin Volunteer Infantry</strong></td><td><span class="verdict verdict-candidate">★ Strongest candidate</span></td><td>At Rolla 13 March – August 1865 per NPS. Brand-new green 1-year regiment. Right administrative jurisdiction (2nd Sub-District, District of St. Louis, Dept. of Missouri). Co-location with Charles's NARA-documented detachment is exact. <em>But:</em> the regiment's official Wisconsin AG roster (Vol. II, 1886) carries zero mention of Charles, "drill instructor," or "2d Mo. Lt. Arty." Documentary link not yet established.</td></tr>
+    <tr><td>64th Illinois Infantry ("Yates Sharpshooters")</td><td><span class="verdict verdict-eliminated">Eliminated</span></td><td>Under Sherman in Tennessee, Georgia, Carolinas in 1865; never in Missouri. Pension Bureau's 1891 negative roll search is correct on its terms — Charles never attached to this regiment.</td></tr>
+    <tr><td>144th Illinois Infantry (digit-drop candidate)</td><td><span class="verdict verdict-eliminated">Eliminated</span></td><td>Assigned only to St. Louis District / Alton on prison-guard duty per Dyer's <em>Compendium</em> + Illinois GenWeb. Reece's full company-by-company rosters carry zero "Rolla" or "Fort Wyman" annotations. Reenactor history specifies <em>"organized to guard the prisons in Alton and St. Louis."</em></td></tr>
+    <tr><td>146th Illinois Infantry (parallel digit-drop)</td><td><span class="verdict verdict-eliminated">Eliminated</span></td><td>Garrison duty at Camp Butler with detachments at Brighton, Quincy, Jacksonville — all in-state Illinois. Never went to Missouri.</td></tr>
+    <tr><td>46th Illinois Infantry (digit-transposition)</td><td><span class="verdict verdict-eliminated">Eliminated</span></td><td>Per ILGenWeb regimental page, 1865 movement: Cumberland → Texas. Battles terminate at Ft. Blakely, Alabama (April 1865), then Department of Texas in August. No Missouri assignment in 1865.</td></tr>
+    <tr><td>64th U.S. Colored Infantry</td><td><span class="verdict verdict-eliminated">Eliminated</span></td><td>At Vicksburg, Mississippi until April 1865, then at Davis' Bend and in Department of Mississippi until March 1866. Never operated in Missouri.</td></tr>
+    <tr><td>17th Illinois Cavalry</td><td><span class="verdict verdict-eliminated">Eliminated</span></td><td>Left Rolla January 1865 (two months before Charles's detachment) and only returned at year-end for administrative wind-down — not a drilling presence.</td></tr>
+    <tr><td>64th Indiana / 64th Iowa (state-confusion candidates)</td><td><span class="verdict verdict-eliminated">Eliminated</span></td><td>64th Indiana never fielded as infantry (planned units consolidated as artillery batteries before mustering); 64th Iowa never existed (Iowa fielded only 48 infantry regiments).</td></tr>
+    <tr><td>Other Illinois infantry (24th, 47th, 17th)</td><td><span class="verdict verdict-eliminated">Eliminated</span></td><td>All on Sherman / Mobile / Texas trajectories by 1865. No Rolla hits.</td></tr>
+    <tr><td>Transient regiments cycling through Rolla</td><td><span class="verdict verdict-open">Open — would require post returns</span></td><td>Rolla was a major Union supply depot during demobilization. Multiple regiments may have passed through being mustered out or redirected. Not testable from free regimental histories alone.</td></tr>
+    <tr><td>Confabulation (no actual drill detail)</td><td><span class="verdict verdict-open">Open</span></td><td>The "drilled the 64th Illinois" narrative could be a 1890 elaboration grafted onto a real but different detached service. The pension award itself stands on the comrade affidavits of Derr and Meyer locating disabilities at New Madrid 1863, not on the drill-instructor narrative.</td></tr>
+  </tbody>
+</table>
+
+<h2>Definitive next steps</h2>
+
+<ol>
+  <li><strong>Order the manuscript text of Special Orders Nos. 82 (27 Mar 1865), 159 (1 Jul 1865), and 92 (4 Nov 1865), Headquarters, Department of the Missouri</strong> — NARA RG 393, Part 1. The orders themselves will name the recipient regiment for Charles's drill detail (likely embedded in the body of G.O. No. 82). Available via NATF Form 86, ~$30 each. <em>The most diagnostic single record possible.</em> <strong>Note revised order numbers per the 6 May 2026 user correction.</strong></li>
+  <li><strong>Order the post returns of Fort Wyman / District of Rolla, March – early July 1865</strong> — NARA RG 393, Part 1, Entry 6232 (Returns from U.S. Military Posts). These list garrison units month by month and would name the regiments at the post during Charles's narrowed 27 March – early July 1865 Rolla window. Same paid-order path, ~$30.</li>
+  <li><strong>Order the post returns of Department HQ, St. Louis, July – November 1865</strong> — same RG 393 series. Charles's NEWLY-IDENTIFIED 1 July – 4 November 1865 posting at Department HQ St. Louis is itself a 4-month detached service for which we have only the cards' summary remarks. The post returns would document daily / weekly assignments at Department HQ during that window, including any drill or instructor detail.</li>
+  <li><strong>HathiTrust browse of <em>War of the Rebellion</em> Series I, Vol. XLVIII, Part II</strong> (correspondence, March–November 1865, Department of Missouri) — search "Fort Wyman", "District of Rolla", "S.O. 82", "S.O. 159", "S.O. 92" for any published verbatim of the orders. Free.</li>
+  <li><strong>Missouri Digital Heritage / Soldiers' Records</strong> at <a href="https://www.sos.mo.gov/mdh/" target="_blank" rel="noopener noreferrer">sos.mo.gov/mdh</a> — pull Charles Gannsen's Missouri service-record card image directly; check for any "detached" remarks not visible on the Fold3 or NARA scans. Free.</li>
+  <li><strong>FamilySearch image-only Missouri muster-and-descriptive rolls</strong> for Battery B, 2nd Mo. Lt. Arty., March–November 1865. Free; would be definitive evidence of where the battery and individuals were on a given date.</li>
+</ol>
+
+<h2>Sources cited in this log</h2>
+
+<ul>
+  <li><a href="../sources/nara-service-record-packet.html">NARA mail-order Compiled Service Record packet (G11-422819443E)</a> — 13 pp.</li>
+  <li><a href="../sources/fold3-service-records.html">Fold3 / NARA M405 Compiled Service Records</a> — 25 pp.</li>
+  <li><a href="../sources/pension-file.html">Civil War Pension File (F41-523680269E)</a> — 40 pp., includes the 1890 Declaration for Invalid Pension and the 30 June 1891 War Department roll-search reply.</li>
+  <li><a href="https://www.nps.gov/civilwar/search-battle-units-detail.htm?battleUnitCode=UWI0049RI" target="_blank" rel="noopener noreferrer">NPS Soldiers and Sailors System — 49th Wisconsin Volunteer Infantry</a></li>
+  <li><a href="https://www.nps.gov/civilwar/search-battle-units-detail.htm?battleUnitCode=UMO0002RAL" target="_blank" rel="noopener noreferrer">NPS Soldiers and Sailors System — 2nd Missouri Light Artillery</a></li>
+  <li><a href="https://archive.org/details/rosterofwisconsi02wisco" target="_blank" rel="noopener noreferrer">Roster of Wisconsin Volunteers, Vol. II (1886)</a> — 49th Wisconsin section, pp. 847–867</li>
+  <li><a href="https://civilwar.illinoisgenweb.org/civilwar/reg_html/144_reg.html" target="_blank" rel="noopener noreferrer">144th Illinois Infantry Regiment (ILGenWeb)</a></li>
+  <li><a href="http://old.outfitters.com/illinois/history/civil/cw144-dyer.html" target="_blank" rel="noopener noreferrer">144th Illinois entry, Dyer's Compendium</a></li>
+  <li><a href="https://www.altonjaegerguards.org/144th-ills-vols-inf.html" target="_blank" rel="noopener noreferrer">Alton Jaeger Guards — 144th Illinois reenactor history</a></li>
+  <li><a href="https://civilwar.illinoisgenweb.org/civilwar/reg_html/046_reg.html" target="_blank" rel="noopener noreferrer">46th Illinois Infantry (ILGenWeb)</a></li>
+  <li><a href="https://www.hmdb.org/m.asp?m=139747" target="_blank" rel="noopener noreferrer">Fort Wyman Historical Marker (HMDB)</a></li>
+  <li><a href="http://www.fortwiki.com/Fort_Wyman" target="_blank" rel="noopener noreferrer">Fort Wyman (FortWiki)</a></li>
+  <li><a href="https://www.civilwararchive.com/Unreghst/unmocav2.htm" target="_blank" rel="noopener noreferrer">Civil War Archive — Missouri Cavalry, Pt. 2</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Battery_B,_2nd_Missouri_Light_Artillery" target="_blank" rel="noopener noreferrer">Battery B, 2nd Missouri Light Artillery (Wikipedia)</a></li>
+</ul>
+
+</main>
+
+<footer class="back-nav">
+  <a href="places-served.html">↩ Back to Where Charles Served</a>
+  <a href="../index.html#civilwar">Civil War tab</a>
+  <a href="../index.html">Site home</a>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

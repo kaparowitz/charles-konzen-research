@@ -1,0 +1,1679 @@
+/* ============================================================
+   Charles Research · Cinematic layer (v1.1)
+   Built 7 May 2026 · expanded site-wide 8 May 2026.
+   Adds an editorial cinematic experience: dramatic cover,
+   scroll-revealed chapter prelude, refined navigation,
+   and reusable section heroes — all additive on top of theme.css.
+   Imports its own webfonts so it can be linked from any page
+   without each page also adding <link> tags for Google Fonts.
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap");
+
+/* ============================================================
+   1 · TOKENS — extend theme.css, never override its semantic tokens
+   ============================================================ */
+:root {
+  /* Display + UI accent type — paired with Iowan Old Style body */
+  --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --font-ui:      'Inter', 'Helvetica Neue', system-ui, sans-serif;
+
+  /* Cinematic ink — deeper than theme.css --bg-deep, with a hint of green */
+  --ink-night:    #14110c;
+  --ink-shadow:   #1d180f;
+  --ink-paper:    #ece2cc;
+  --ink-vellum:   #e9dcc1;
+  --ink-line:     rgba(212, 160, 23, 0.42);
+
+  /* Refined gilt — a touch warmer & less plastic than --brand */
+  --gilt:         #d8b366;
+  --gilt-bright:  #f1cf85;
+  --gilt-deep:    #8a6420;
+
+  /* Section atmospheres (richer than theme.css tints) */
+  --atm-hesse:        radial-gradient(120% 100% at 30% 20%, #1f2418 0%, #14110c 60%);
+  --atm-crossing:     radial-gradient(120% 100% at 70% 30%, #161e2c 0%, #0d1018 60%);
+  --atm-civilwar:     radial-gradient(120% 100% at 50% 80%, #2a1410 0%, #14110c 60%);
+  --atm-stlouis:      radial-gradient(120% 100% at 30% 70%, #2a1d10 0%, #14110c 60%);
+
+  --transition-cine:  600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   2 · COVER — the full-viewport landing
+   ============================================================ */
+.cinema-cover {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  align-items: center;
+  background: var(--ink-night);
+  color: var(--ink-paper);
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(1.5rem, 5vw, 5rem);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Atmospheric layered backdrop — vignette + subtle warm glow + grain */
+.cinema-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 30% 35%, rgba(216, 179, 102, 0.16), transparent 65%),
+    radial-gradient(ellipse 80% 60% at 75% 70%, rgba(168, 80, 40, 0.10), transparent 70%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, transparent 30%, rgba(0,0,0,0.55) 100%),
+    var(--ink-night);
+  z-index: -2;
+  animation: cineSlowDrift 24s ease-in-out infinite alternate;
+}
+
+/* SVG grain layer */
+.cinema-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.7  0 0 0 0 0.4  0 0 0 0.32 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes cineSlowDrift {
+  0%   { transform: scale(1.0)  translate3d(0, 0, 0); }
+  100% { transform: scale(1.04) translate3d(-1%, -0.8%, 0); }
+}
+
+/* --- Portrait column --- */
+.cinema-cover__portrait {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding-right: clamp(1rem, 4vw, 3rem);
+}
+.cinema-cover__portrait-frame {
+  position: relative;
+  width: clamp(220px, 28vw, 380px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(216, 179, 102, 0.35),
+    0 0 0 8px var(--ink-shadow),
+    0 0 0 9px rgba(216, 179, 102, 0.55),
+    0 30px 80px -20px rgba(0,0,0,0.85),
+    0 0 120px -10px rgba(216, 179, 102, 0.18);
+  animation: cinePortraitIn 1500ms var(--transition-cine) both;
+}
+.cinema-cover__portrait-frame img,
+.cinema-cover__portrait-frame .portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Zoom past the wooden frame edges, centered on the face */
+  transform: scale(1.3);
+  transform-origin: 50% 38%;
+  filter: contrast(1.05) brightness(0.95);
+}
+
+/* Decorative compass rule beneath portrait */
+.cinema-cover__portrait-rule {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(180px, 22vw, 320px);
+  height: 16px;
+  pointer-events: none;
+}
+.cinema-cover__portrait-rule::before,
+.cinema-cover__portrait-rule::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 42%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gilt) 50%, transparent);
+}
+.cinema-cover__portrait-rule::before { left: 0; }
+.cinema-cover__portrait-rule::after  { right: 0; }
+.cinema-cover__portrait-rule span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px; height: 6px;
+  background: var(--gilt);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(216, 179, 102, 0.6);
+}
+
+/* --- Type column --- */
+.cinema-cover__type {
+  position: relative;
+  max-width: 36rem;
+  animation: cineTypeIn 1400ms var(--transition-cine) 200ms both;
+}
+
+.cinema-cover__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gilt);
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.cinema-cover__eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 38px;
+  height: 1px;
+  background: var(--gilt);
+}
+
+.cinema-cover__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(3.4rem, 9vw, 7.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.012em;
+  color: var(--ink-paper);
+  margin: 0 0 0.6rem;
+  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+}
+.cinema-cover__title em {
+  font-style: italic;
+  color: var(--gilt-bright);
+  font-weight: 400;
+}
+
+.cinema-cover__dates {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-style: italic;
+  color: var(--ink-vellum);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+.cinema-cover__dates .yr {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--gilt-bright);
+  font-feature-settings: "lnum";
+}
+.cinema-cover__dates .dash {
+  display: inline-block;
+  width: 28px; height: 1px;
+  background: var(--gilt);
+  align-self: center;
+}
+
+.cinema-cover__sub {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.55;
+  color: rgba(236, 226, 204, 0.85);
+  font-style: italic;
+  max-width: 32rem;
+  margin: 0 0 2.2rem;
+}
+.cinema-cover__sub strong {
+  color: var(--ink-paper);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.cinema-cover__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem 2.4rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(236, 226, 204, 0.65);
+  margin-bottom: 2.4rem;
+}
+.cinema-cover__meta div { display: flex; flex-direction: column; gap: 0.3rem; }
+.cinema-cover__meta .k { color: var(--gilt); font-size: 0.72rem; letter-spacing: 0.22em; }
+.cinema-cover__meta .v { color: var(--ink-vellum); font-size: 0.85rem; letter-spacing: 0.04em; text-transform: none; font-family: var(--font-display); font-style: italic; }
+
+.cinema-cover__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-paper);
+  text-decoration: none;
+  padding: 0.95rem 1.6rem;
+  background: transparent;
+  border: 1px solid rgba(216, 179, 102, 0.55);
+  border-radius: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.cinema-cover__cta::after {
+  content: "↓";
+  display: inline-block;
+  font-size: 1rem;
+  letter-spacing: 0;
+  transition: transform 0.3s ease;
+}
+.cinema-cover__cta:hover,
+.cinema-cover__cta:hover:visited {
+  background: var(--gilt);
+  /* !important beats the global theme a:hover (which forces light gold and made
+     this dark-text-on-gold button light-on-gold / unreadable). 30 May 2026. */
+  color: #1f1a14 !important;
+  border-color: var(--gilt);
+}
+.cinema-cover__cta:hover::after { transform: translateY(3px); }
+
+/* Scroll cue — bottom-center vertical line that pulses */
+.cinema-cover__scroll {
+  position: absolute;
+  bottom: clamp(1rem, 3vh, 2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(236, 226, 204, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  pointer-events: none;
+  z-index: 5;
+}
+.cinema-cover__scroll::after {
+  content: "";
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--gilt), transparent);
+  animation: cinePulse 2.6s ease-in-out infinite;
+}
+
+/* Top brand strip inside the cover */
+.cinema-cover__brand {
+  position: absolute;
+  top: clamp(1.2rem, 2.4vw, 2rem);
+  left: clamp(1.5rem, 5vw, 5rem);
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(236, 226, 204, 0.6);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.cinema-cover__brand::before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--gilt);
+}
+
+@keyframes cinePulse { 0%, 100% { opacity: 0.3; transform: scaleY(0.7); } 50% { opacity: 1; transform: scaleY(1); } }
+@keyframes cinePortraitIn { from { opacity: 0; transform: scale(0.92) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes cineTypeIn { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- Mobile cover --- */
+@media (max-width: 880px) {
+  .cinema-cover {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 5rem 1.5rem 4rem;
+    min-height: auto;
+  }
+  .cinema-cover__portrait { padding: 0 0 2rem; }
+  .cinema-cover__portrait-frame { width: clamp(180px, 50vw, 240px); }
+  .cinema-cover__type { margin: 0 auto; }
+  .cinema-cover__eyebrow,
+  .cinema-cover__dates,
+  .cinema-cover__meta { justify-content: center; }
+  .cinema-cover__sub { margin-left: auto; margin-right: auto; }
+  .cinema-cover__brand { position: static; margin: 0 auto 2rem; justify-content: center; }
+  .cinema-cover__scroll { display: none; }
+}
+
+/* ============================================================
+   3 · CHAPTER PRELUDE — four scroll-revealed chapters
+   ============================================================ */
+.cinema-prelude {
+  background: var(--ink-night);
+  color: var(--ink-paper);
+  position: relative;
+  overflow: hidden;
+}
+.cinema-prelude::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.7  0 0 0 0 0.4  0 0 0 0.28 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.cinema-chapter {
+  position: relative;
+  min-height: 90vh;
+  min-height: 90svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 6vw, 5rem);
+  isolation: isolate;
+  overflow: hidden;
+}
+.cinema-chapter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.65;
+}
+.cinema-chapter[data-chapter="1"]::before { background: var(--atm-hesse); }
+.cinema-chapter[data-chapter="2"]::before { background: var(--atm-crossing); }
+.cinema-chapter[data-chapter="3"]::before { background: var(--atm-civilwar); }
+.cinema-chapter[data-chapter="4"]::before { background: var(--atm-stlouis); }
+
+.cinema-chapter__inner {
+  /* Full-bleed chapter band (29 May 2026, per user pref): content runs
+     edge-to-edge with only a small breathing margin, instead of a 56rem
+     centred reading column. The numeral keeps its auto column; the body
+     (1fr) fills the rest of the viewport width. */
+  max-width: none;
+  margin: 0;
+  padding-inline: clamp(1.25rem, 4vw, 4.5rem);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: clamp(1.5rem, 4vw, 3.6rem);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1100ms var(--transition-cine), transform 1100ms var(--transition-cine);
+  will-change: opacity, transform;
+}
+.cinema-chapter.is-visible .cinema-chapter__inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cinema-chapter__numeral {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 13vw, 11rem);
+  line-height: 0.85;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gilt);
+  margin-top: -0.1em;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.5);
+  letter-spacing: -0.02em;
+}
+
+.cinema-chapter__body { min-width: 0; padding-top: 0.5rem; }
+
+.cinema-chapter__year {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gilt);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.cinema-chapter__year::after {
+  content: "";
+  display: inline-block;
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--gilt) 0%, transparent 80%);
+  max-width: 240px;
+}
+
+.cinema-chapter__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 6vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink-paper);
+  margin: 0 0 1.2rem;
+}
+.cinema-chapter__title em { font-style: italic; color: var(--gilt-bright); font-weight: 400; }
+
+.cinema-chapter__lede {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+  line-height: 1.6;
+  color: rgba(236, 226, 204, 0.86);
+  font-style: italic;
+  margin: 0 0 1.8rem;
+  max-width: none; /* full-bleed: was 36rem (29 May 2026) */
+}
+.cinema-chapter__lede strong {
+  color: var(--ink-paper);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.cinema-chapter__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(236, 226, 204, 0.55);
+  margin-bottom: 2rem;
+}
+.cinema-chapter__meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+.cinema-chapter__meta span::before {
+  content: "";
+  width: 4px; height: 4px;
+  background: var(--gilt);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.cinema-chapter__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-paper);
+  text-decoration: none;
+  padding: 0.95rem 1.6rem;
+  background: transparent;
+  border: 1px solid rgba(216, 179, 102, 0.55);
+  border-radius: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-bottom-width: 1px;
+}
+.cinema-chapter__cta::after {
+  content: "→";
+  font-size: 1rem;
+  letter-spacing: 0;
+  transition: transform 0.3s ease;
+}
+.cinema-chapter__cta:hover,
+.cinema-chapter__cta:hover:visited {
+  background: var(--gilt);
+  color: #1f1a14 !important;   /* beat the global theme a:hover (light gold) — was unreadable on gold. 30 May 2026 */
+  border-color: var(--gilt);
+}
+.cinema-chapter__cta:hover::after { transform: translateX(5px); }
+
+@media (max-width: 720px) {
+  .cinema-chapter { min-height: auto; padding: 4rem 1.5rem; }
+  .cinema-chapter__inner { grid-template-columns: 1fr; gap: 1rem; }
+  .cinema-chapter__numeral { font-size: 5rem; line-height: 1; margin-bottom: 0.4rem; }
+  .cinema-chapter__title { font-size: 2.4rem; }
+  .cinema-chapter__year::after { display: none; }
+}
+
+/* ============================================================
+   4 · INVITATION — bridge between cinematic prelude and tab UI
+   ============================================================ */
+.cinema-invitation {
+  background: linear-gradient(180deg, var(--ink-night) 0%, var(--ink-night) 30%, #2c2620 100%);
+  color: var(--ink-paper);
+  text-align: center;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem clamp(3rem, 6vw, 5rem);
+  position: relative;
+}
+.cinema-invitation::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--gilt));
+}
+.cinema-invitation__eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gilt);
+  margin-bottom: 1.6rem;
+}
+.cinema-invitation__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  line-height: 1.15;
+  color: var(--ink-paper);
+  margin: 0 auto 1.4rem;
+  max-width: 38rem;
+}
+.cinema-invitation__sub {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: rgba(236, 226, 204, 0.75);
+  font-style: italic;
+  max-width: 36rem;
+  margin: 0 auto 0;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   5 · NAV REFINEMENT — applied when nav is in cinematic mode
+   ============================================================ */
+nav.tabs.cinematic {
+  background: var(--ink-night);
+  border-bottom: 1px solid rgba(216, 179, 102, 0.4);
+  border-top: 1px solid rgba(216, 179, 102, 0.18);
+  font-family: var(--font-ui);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.6), 0 8px 30px -10px rgba(0,0,0,0.5);
+}
+nav.tabs.cinematic .group-btn {
+  color: rgba(236, 226, 204, 0.75);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 1.1rem 1.6rem;
+  border-bottom: 2px solid transparent;
+}
+nav.tabs.cinematic .group-btn::after {
+  color: rgba(216, 179, 102, 0.55);
+  font-size: 0.55rem;
+  margin-left: 0.5rem;
+  letter-spacing: 0;
+}
+nav.tabs.cinematic .group-btn:hover { color: var(--ink-paper); background: rgba(216, 179, 102, 0.05); }
+nav.tabs.cinematic .group-btn.active-group {
+  color: var(--gilt-bright);
+  border-bottom-color: var(--gilt);
+  background: transparent;
+}
+nav.tabs.cinematic .group-menu {
+  background: var(--ink-shadow);
+  border: 1px solid rgba(216, 179, 102, 0.35);
+}
+nav.tabs.cinematic .group-menu button {
+  color: rgba(236, 226, 204, 0.78);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  padding: 0.7rem 1.15rem;
+  border-left: 2px solid transparent;
+}
+nav.tabs.cinematic .group-menu button:hover {
+  color: var(--ink-paper);
+  background: rgba(216, 179, 102, 0.08);
+}
+nav.tabs.cinematic .group-menu button.active {
+  color: var(--gilt-bright);
+  background: rgba(216, 179, 102, 0.10);
+  border-left-color: var(--gilt);
+}
+
+/* ============================================================
+   6 · SECTION HERO — for use on germany/, civilwar/, immigration/
+   ============================================================ */
+header.cinema-section-hero {
+  position: relative;
+  padding: clamp(4rem, 9vw, 7rem) clamp(1.5rem, 5vw, 5rem) clamp(3rem, 6vw, 4.5rem) !important;
+  background: var(--ink-night) !important;
+  color: var(--ink-paper) !important;
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(216, 179, 102, 0.4) !important;
+  text-align: left !important;
+}
+header.cinema-section-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0.7;
+}
+header.cinema-section-hero[data-tone="hesse"]::before    { background: var(--atm-hesse); }
+header.cinema-section-hero[data-tone="crossing"]::before { background: var(--atm-crossing); }
+header.cinema-section-hero[data-tone="civilwar"]::before { background: var(--atm-civilwar); }
+header.cinema-section-hero[data-tone="stlouis"]::before  { background: var(--atm-stlouis); }
+header.cinema-section-hero[data-tone="default"]::before  { background: radial-gradient(120% 100% at 50% 30%, #1f1a14 0%, #14110c 60%); }
+header.cinema-section-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.7  0 0 0 0 0.4  0 0 0 0.26 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+header.cinema-section-hero .csh__inner {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* Fallback / compatibility — when a page uses the old hero structure
+   (`<div class="crumbs">…</div><h1>…</h1><div class="sub">…</div>`)
+   and only adds the cinema-section-hero class, these rules restyle
+   the inherited elements so they read against the dark backdrop. */
+header.cinema-section-hero > .crumbs,
+header.cinema-section-hero > h1,
+header.cinema-section-hero > .sub,
+header.cinema-section-hero > .meta,
+header.cinema-section-hero > .tag,
+header.cinema-section-hero > p {
+  max-width: 60rem;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+header.cinema-section-hero .crumbs {
+  font-family: var(--font-ui) !important;
+  font-size: 0.76rem !important;
+  letter-spacing: 0.24em !important;
+  text-transform: uppercase !important;
+  color: rgba(236, 226, 204, 0.55) !important;
+  margin-bottom: 1.5rem !important;
+  border-bottom: none !important;
+}
+header.cinema-section-hero .crumbs a {
+  color: var(--gilt) !important;
+  border-bottom: none !important;
+  text-decoration: none !important;
+}
+header.cinema-section-hero .crumbs a:hover { color: var(--gilt-bright) !important; }
+header.cinema-section-hero .meta,
+header.cinema-section-hero .tag {
+  font-family: var(--font-ui) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.26em !important;
+  text-transform: uppercase !important;
+  color: var(--gilt) !important;
+  border: none !important;
+}
+/* The cinema h1 (with !important) is already covered above; this
+   tightens it for old-structure heros without csh__title. */
+header.cinema-section-hero > h1,
+header.cinema-section-hero .csh__title {
+  max-width: 60rem;
+}
+
+/* ============================================================
+   6.6 · CINE-TYPOGRAPHY — sitewide opt-in font upgrade
+   Add `body.cine-typography` to a page (or have cinematic.js
+   add it globally) to lift its display headings into Cormorant
+   Garamond and meta labels into Inter, without changing layout.
+   ============================================================ */
+body.cine-typography .lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.18rem;
+  line-height: 1.6;
+  font-weight: 600;            /* 30 May 2026: was 400 — the thin Cormorant face read faint */
+  color: var(--text-body);     /* darker than the old --text-meta, for legibility */
+}
+body.cine-typography .conf,
+body.cine-typography .conf-key-label,
+body.cine-typography .toc-label,
+body.cine-typography .label {
+  font-family: var(--font-ui);
+  letter-spacing: 0.18em;
+}
+
+/* ============================================================
+   6.7.5 · CINE TILES — refine the section tile language so the
+   cards stop fighting the dark cinematic heroes above them.
+   - eyebrows in Inter small-caps
+   - subtle gilt outline on hover
+   - warmer base shadow
+   ============================================================ */
+body.cine-typography .cw-tile .eyebrow,
+body.cine-typography .ge-tile .eyebrow,
+body.cine-typography .im-tile .eyebrow,
+body.cine-typography .ca-tile .eyebrow,
+body.cine-typography .schrader-tile .eyebrow,
+body.cine-typography .doc-card .eyebrow,
+body.cine-typography .person-card .eyebrow,
+body.cine-typography .actor-card .eyebrow,
+body.cine-typography .child-card .eyebrow,
+body.cine-typography .cw-tile-eyebrow,
+body.cine-typography .schrader-tile-eyebrow {
+  font-family: var(--font-ui) !important;
+  letter-spacing: 0.18em !important;
+  font-weight: 600 !important;
+}
+
+/* Tile titles get the display serif at a slightly heavier face */
+body.cine-typography .cw-tile .title,
+body.cine-typography .ge-tile .title,
+body.cine-typography .im-tile .title,
+body.cine-typography .ca-tile .title,
+body.cine-typography .schrader-tile-title,
+body.cine-typography .cw-tile-title,
+body.cine-typography .doc-card .title,
+body.cine-typography .person-card .title,
+body.cine-typography .actor-card .title,
+body.cine-typography .child-card .title {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.005em;
+  font-size: 1.12em;
+  line-height: 1.2;
+}
+
+/* Hover — add a subtle gilt outline & deeper shadow on top of
+   each section's existing tinted hover. The gilt thread ties the
+   cards to the cinematic banner & heroes. */
+body.cine-typography .cw-tile,
+body.cine-typography .ge-tile,
+body.cine-typography .im-tile,
+body.cine-typography .ca-tile,
+body.cine-typography .schrader-tile,
+body.cine-typography .doc-card,
+body.cine-typography .person-card,
+body.cine-typography .actor-card,
+body.cine-typography .child-card {
+  position: relative;
+  isolation: isolate;
+}
+body.cine-typography .cw-tile::after,
+body.cine-typography .ge-tile::after,
+body.cine-typography .im-tile::after,
+body.cine-typography .ca-tile::after,
+body.cine-typography .schrader-tile::after,
+body.cine-typography .doc-card::after,
+body.cine-typography .person-card::after,
+body.cine-typography .actor-card::after,
+body.cine-typography .child-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 5px;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px transparent inset, 0 0 0 0 rgba(216, 179, 102, 0);
+  transition: box-shadow 0.25s ease;
+  z-index: 1;
+}
+body.cine-typography .cw-tile:hover::after,
+body.cine-typography .ge-tile:hover::after,
+body.cine-typography .im-tile:hover::after,
+body.cine-typography .ca-tile:hover::after,
+body.cine-typography .schrader-tile:hover::after,
+body.cine-typography .doc-card:hover::after,
+body.cine-typography .person-card:hover::after,
+body.cine-typography .actor-card:hover::after,
+body.cine-typography .child-card:hover::after {
+  box-shadow:
+    0 0 0 1px rgba(216, 179, 102, 0.55) inset,
+    0 4px 18px rgba(106, 72, 24, 0.10);
+}
+
+/* Tile arrow icons in the new gilt on hover (overrides each
+   section's hover-arrow color so the gilt reads consistently) */
+body.cine-typography .cw-tile:hover .cw-tile-arrow,
+body.cine-typography .schrader-tile:hover .schrader-tile-arrow {
+  color: var(--gilt-deep) !important;
+}
+
+/* Cards (.card.accent / .card.confirmed / .card.hypothesis / .card.open)
+   keep their semantic tint but the left border picks up gilt at default
+   for the unbranded `.card` to match the gilt thread. */
+body.cine-typography .card:not(.accent):not(.confirmed):not(.hypothesis):not(.open) {
+  border-left: 3px solid rgba(216, 179, 102, 0.6);
+}
+
+/* ::selection across all cine-typography pages — single gilt swatch */
+body.cine-typography ::selection {
+  background: var(--gilt) !important;
+  color: var(--ink-night) !important;
+}
+
+/* ============================================================
+   6.7.6 · REFINED PEACH PANELS — soften .whats-new, .tab-open-q,
+   .conf-key, and the "Project conclusion" mega-banner from bright
+   peach-coral to warm vellum + oxblood/gilt accents.
+   ============================================================ */
+body.cine-typography .whats-new {
+  background: linear-gradient(140deg, #fbf3e2, #f6ebd0) !important;
+  border: 1px solid rgba(216, 179, 102, 0.55) !important;
+  border-left: 4px solid var(--gilt) !important;
+  box-shadow: 0 1px 3px rgba(106, 72, 24, 0.10) !important;
+  color: var(--text-strong) !important;
+}
+body.cine-typography .whats-new .label {
+  font-family: var(--font-ui);
+  letter-spacing: 0.18em;
+  color: var(--gilt-deep) !important;
+}
+body.cine-typography .whats-new .date {
+  font-family: var(--font-ui);
+  letter-spacing: 0.04em;
+  color: var(--text-meta);
+  font-size: 0.78rem;
+}
+body.cine-typography .whats-new strong { color: var(--text-strong); }
+body.cine-typography .whats-new a { color: var(--gilt-deep); }
+body.cine-typography .whats-new a:hover { color: #6a3020; }
+
+/* The triple-star "Project conclusion" / "What's new" mega-banners
+   on the homepage — currently bright coral. Shift to oxblood. */
+body.cine-typography .whats-new[style*="#fce8d6"],
+body.cine-typography .whats-new[style*="#a3441f"],
+body.cine-typography .whats-new[style*="#c8714a"] {
+  background: linear-gradient(140deg, #fbf3e2, #f6e6ce) !important;
+  border: 1px solid rgba(160, 64, 48, 0.45) !important;
+  border-left: 5px solid #a04030 !important;
+}
+body.cine-typography .whats-new[style*="#a3441f"] .label,
+body.cine-typography .whats-new[style*="#c8714a"] .label {
+  color: #6a2820 !important;
+}
+body.cine-typography .whats-new[style*="#a3441f"] strong,
+body.cine-typography .whats-new[style*="#c8714a"] strong { color: #6a2820 !important; }
+body.cine-typography .whats-new[style*="#a3441f"] details summary,
+body.cine-typography .whats-new[style*="#c8714a"] details summary { color: #6a2820 !important; }
+
+/* The .tab-open-q "Open questions" panel — soften from peach to vellum */
+body.cine-typography .tab-open-q {
+  background: linear-gradient(140deg, #fbf3e2, #f6e6ce) !important;
+  border: 1px solid rgba(160, 64, 48, 0.4) !important;
+  border-left: 4px solid #a04030 !important;
+  color: var(--text-strong) !important;
+}
+body.cine-typography .tab-open-q h4 {
+  font-family: var(--font-ui);
+  color: #6a2820 !important;
+  border-bottom-color: rgba(160, 64, 48, 0.3) !important;
+}
+body.cine-typography .tab-open-q h4::before {
+  background: #a04030 !important;
+  font-family: var(--font-display);
+  font-style: italic;
+}
+body.cine-typography .tab-open-q li::before { color: #a04030 !important; }
+body.cine-typography .tab-open-q a { color: var(--gilt-deep); }
+
+/* .conf-key — the "Reading the badges" key */
+body.cine-typography .conf-key {
+  background: var(--bg-card) !important;
+  border: 1px solid rgba(216, 179, 102, 0.5) !important;
+  border-left: 3px solid var(--gilt) !important;
+}
+body.cine-typography .conf-key-label {
+  color: var(--gilt-deep) !important;
+}
+
+/* Page TOC — refine to gilt */
+body.cine-typography .page-toc {
+  background: var(--bg-card) !important;
+  border: 1px solid rgba(216, 179, 102, 0.5) !important;
+  border-left: 4px solid var(--gilt) !important;
+}
+body.cine-typography .page-toc .toc-label {
+  color: var(--gilt-deep) !important;
+  font-family: var(--font-ui);
+}
+
+/* ============================================================
+   6.7.7 · COLOR EMOJI DESATURATION — for showcase pages only
+   The remaining tile-icon emoji (📋 🔍 🗺 🏛 📷 etc.) render as
+   color glyphs from the system emoji font and fight the editorial
+   palette. Apply a sepia/desaturate filter so they read as warm
+   monochrome ink-on-paper marks instead of full-color cartoon.
+   Skipped for note pages because their ⏳ status emoji should
+   remain visually distinct. ============================================================ */
+body.cine-typography .cw-tile-icon,
+body.cine-typography .ge-tile-icon,
+body.cine-typography .ca-tile-icon,
+body.cine-typography .im-tile-icon,
+body.cine-typography .cw-tile .icon,
+body.cine-typography .ge-tile .icon,
+body.cine-typography .ca-tile .icon,
+body.cine-typography .im-tile .icon,
+body.cine-typography .schrader-tile .icon,
+body.cine-typography .doc-card .icon,
+body.cine-typography .child-card .icon,
+body.cine-typography .person-card .icon,
+body.cine-typography .actor-card .icon {
+  filter: sepia(0.65) saturate(0.55) hue-rotate(-12deg) brightness(0.92);
+  opacity: 0.95;
+  transition: filter 0.25s ease, opacity 0.25s ease;
+}
+body.cine-typography .cw-tile:hover .cw-tile-icon,
+body.cine-typography .ge-tile:hover .ge-tile-icon,
+body.cine-typography .ca-tile:hover .ca-tile-icon,
+body.cine-typography .im-tile:hover .im-tile-icon,
+body.cine-typography .cw-tile:hover .icon,
+body.cine-typography .ge-tile:hover .icon,
+body.cine-typography .ca-tile:hover .icon,
+body.cine-typography .im-tile:hover .icon,
+body.cine-typography .schrader-tile:hover .icon {
+  filter: sepia(0.45) saturate(0.7) hue-rotate(-8deg) brightness(1);
+  opacity: 1;
+}
+
+/* The "Archion path" prefix lines on the homepage — make their gilt ✦
+   read as gilt instead of inheriting whatever color the surrounding span has. */
+body.cine-typography .src.archion-nav { color: var(--text-meta); }
+body.cine-typography .src.archion-nav strong { color: var(--gilt-deep); }
+
+/* ============================================================
+   6.8 · POLISH LAYER — small refinements that add up
+   - Refined focus rings (soft gilt, not hard yellow)
+   - Refined blockquotes (Cormorant italic + gilt rule)
+   - Refined hr (gilt center-fade rule)
+   - Refined details/summary marker
+   - Refined inline code/kbd
+   - Footer h4 typography
+   - The Latest-Findings "Start here" tile grid hover
+   - Subtle gilt underline on default links
+   ============================================================ */
+
+/* Focus rings — soft gilt with offset and slight glow, not the
+   hard chrome-yellow outline */
+body.cine-typography *:focus-visible {
+  outline: 2px solid var(--gilt) !important;
+  outline-offset: 3px !important;
+  border-radius: 2px;
+  box-shadow: 0 0 0 5px rgba(216, 179, 102, 0.16) !important;
+  transition: outline 120ms ease, box-shadow 120ms ease;
+}
+body.cine-typography a:focus-visible,
+body.cine-typography button:focus-visible {
+  outline-offset: 2px !important;
+}
+
+/* SPA tab-panels (section.page / [role="tabpanel"]) carry tabindex="0"
+   so screen readers can announce them, but that also means a hash
+   click (e.g. `<a href="#charles">`) programmatically focuses the
+   section. The body-wide focus-visible rule above then paints a 2px
+   gilt outline around the full-width section, appearing as vertical
+   "bars on both sides of the page" until the user clicks elsewhere
+   and blurs the section. Suppress the visual ring on these panels —
+   tabindex / role still expose them to assistive tech. */
+body.cine-typography section.page:focus,
+body.cine-typography section.page:focus-visible,
+body.cine-typography [role="tabpanel"]:focus,
+body.cine-typography [role="tabpanel"]:focus-visible,
+section.page:focus,
+section.page:focus-visible,
+[role="tabpanel"]:focus,
+[role="tabpanel"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Blockquotes — when used in detail-page prose */
+body.cine-typography blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.12em;
+  line-height: 1.55;
+  color: var(--text-strong);
+  margin: 1.4rem 0;
+  padding: 0.4rem 1.2rem;
+  border-left: 3px solid var(--gilt);
+  background: linear-gradient(90deg, rgba(216, 179, 102, 0.06), transparent 80%);
+}
+body.cine-typography blockquote cite,
+body.cine-typography blockquote footer {
+  font-family: var(--font-ui);
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gilt-deep);
+  display: block;
+  margin-top: 0.6rem;
+}
+
+/* Hr — gilt center-fade rule */
+body.cine-typography hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    rgba(216, 179, 102, 0.45) 25%,
+    var(--gilt) 50%,
+    rgba(216, 179, 102, 0.45) 75%,
+    transparent 100%);
+  margin: 2rem auto;
+  width: 60%;
+  max-width: 320px;
+}
+
+/* Details / summary — refined typographic disclosure marker */
+body.cine-typography details > summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.4rem;
+  font-family: var(--font-ui);
+  letter-spacing: 0.04em;
+}
+body.cine-typography details > summary::-webkit-details-marker { display: none; }
+body.cine-typography details > summary::before {
+  content: "+";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  width: 1.05em;
+  height: 1.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--gilt);
+  border: 1px solid rgba(216, 179, 102, 0.5);
+  border-radius: 50%;
+  font-size: 0.95em;
+  line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+body.cine-typography details[open] > summary::before {
+  content: "−";
+  color: var(--gilt-bright);
+  border-color: var(--gilt);
+  transform: rotate(180deg);
+}
+
+/* Inline code / kbd / .mono — warmer ink, gilt edge */
+body.cine-typography code,
+body.cine-typography kbd,
+body.cine-typography .mono {
+  font-family: var(--font-mono);
+  background: rgba(216, 179, 102, 0.10);
+  border: 1px solid rgba(216, 179, 102, 0.28);
+  border-radius: 3px;
+  padding: 0.05em 0.35em;
+  color: var(--text-strong);
+  font-size: 0.86em;
+}
+
+/* Footer — Cormorant for the column heads, Inter for sitemap labels,
+   gilt accent on the divider rule */
+body.cine-typography footer.site-footer h4,
+body.cine-typography footer.site-foot h4 {
+  font-family: var(--font-display) !important;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  color: var(--gilt-bright) !important;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(216, 179, 102, 0.28);
+}
+body.cine-typography footer.site-footer .sitemap-col li,
+body.cine-typography footer.site-foot .sitemap-col li {
+  font-family: var(--font-ui);
+  letter-spacing: 0.02em;
+  font-size: 0.78rem;
+}
+body.cine-typography footer.site-footer .footer-meta,
+body.cine-typography footer.site-foot .footer-meta {
+  font-family: var(--font-display);
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+/* Default link refinement — switch dotted underlines to a clean
+   gilt 1px underline that reads as "ink underline on aged paper".
+   Scoped to body content to avoid touching nav/tiles/headers. */
+body.cine-typography main a,
+body.cine-typography section.page p a,
+body.cine-typography section.page li a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(216, 179, 102, 0.5);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+body.cine-typography main a:hover,
+body.cine-typography section.page p a:hover,
+body.cine-typography section.page li a:hover {
+  color: var(--gilt);
+  border-bottom-color: var(--gilt);
+}
+
+/* "Start here" 4-tile chronological grid on Latest Findings —
+   targets the inline-styled tiles by their structure (anchor with
+   inline gradient bg). Adds a refined gilt corner mark on hover. */
+body.cine-typography section#overview a[onclick*="data-target=germany"],
+body.cine-typography section#overview a[onclick*="data-target=immigration"],
+body.cine-typography section#overview a[onclick*="data-target=civilwar"],
+body.cine-typography section#overview a[onclick*="data-target=charles"] {
+  position: relative;
+  isolation: isolate;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+body.cine-typography section#overview a[onclick*="data-target=germany"]:hover,
+body.cine-typography section#overview a[onclick*="data-target=immigration"]:hover,
+body.cine-typography section#overview a[onclick*="data-target=civilwar"]:hover,
+body.cine-typography section#overview a[onclick*="data-target=charles"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -8px rgba(106, 72, 24, 0.25),
+              0 0 0 1px rgba(216, 179, 102, 0.55) inset;
+}
+
+/* The 2-block punchline cards on Latest Findings — the cream gold +
+   blue cards. Refine the blue one toward Prussian-tinted vellum
+   (was bright #f0f4ff). */
+body.cine-typography section#overview div[style*="#dfe8fb"],
+body.cine-typography section#overview div[style*="#f0f4ff"] {
+  background: linear-gradient(140deg, #f4f1e8, #ecedf0) !important;
+}
+
+/* The Charles-portrait figure on Latest Findings — gilt the frame */
+body.cine-typography #charles-portrait-figure {
+  background: linear-gradient(140deg, #fffaee, #faeee5) !important;
+  border: 1px solid rgba(160, 64, 48, 0.35) !important;
+  border-left: 5px solid #a04030 !important;
+}
+body.cine-typography #charles-portrait-figure img {
+  border: 1px solid rgba(216, 179, 102, 0.6) !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18),
+              0 0 0 4px rgba(255,250,240,0.6) !important;
+}
+header.cinema-section-hero .csh__crumbs {
+  font-family: var(--font-ui);
+  font-size: 0.76rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(236, 226, 204, 0.55);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+header.cinema-section-hero .csh__crumbs a {
+  color: var(--gilt);
+  border-bottom: none;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+header.cinema-section-hero .csh__crumbs a:hover { color: var(--gilt-bright); }
+header.cinema-section-hero .csh__crumbs span { color: rgba(216, 179, 102, 0.65); }
+
+header.cinema-section-hero .csh__chapter {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--gilt);
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+header.cinema-section-hero .csh__chapter::before {
+  content: "";
+  width: 32px; height: 1px;
+  background: var(--gilt);
+}
+
+header.cinema-section-hero h1,
+header.cinema-section-hero .csh__title {
+  font-family: var(--font-display) !important;
+  font-weight: 500 !important;
+  font-size: clamp(2.4rem, 6.4vw, 4.8rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.01em;
+  color: var(--ink-paper) !important;
+  margin: 0 0 1.1rem !important;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.4);
+}
+header.cinema-section-hero h1 em,
+header.cinema-section-hero .csh__title em {
+  font-style: italic;
+  color: var(--gilt-bright);
+  font-weight: 400;
+}
+
+header.cinema-section-hero .csh__sub,
+header.cinema-section-hero .sub {
+  font-family: var(--font-display) !important;
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem) !important;
+  line-height: 1.6 !important;
+  color: rgba(236, 226, 204, 0.85) !important;
+  font-style: italic !important;
+  max-width: 42rem;
+  margin: 0 0 1.6rem !important;
+}
+header.cinema-section-hero .csh__sub strong,
+header.cinema-section-hero .sub strong {
+  color: var(--ink-paper);
+  font-weight: 600;
+  font-style: normal;
+}
+
+header.cinema-section-hero .csh__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem 2.4rem;
+  margin-top: 1.8rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(216, 179, 102, 0.2);
+}
+header.cinema-section-hero .csh__meta div { display: flex; flex-direction: column; gap: 0.25rem; }
+header.cinema-section-hero .csh__meta .k {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gilt);
+}
+header.cinema-section-hero .csh__meta .v {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-vellum);
+}
+
+/* ============================================================
+   6.5 · IN-TAB MODIFIER — full-bleed escape from constrained main
+   Use when cinematic blocks are nested inside a max-width container
+   (e.g., the homepage Overview tab inside <main max-width:1200px>).
+   ============================================================ */
+.cinema-cover.in-tab,
+.cinema-prelude.in-tab,
+.cinema-invitation.in-tab {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+/* Pull the cover up to the top of its tab section so there's no
+   sliver of paper background between the sticky nav and the cover. */
+section.page > .cinema-cover.in-tab:first-child,
+section.page > .cinema-cover.in-tab:nth-child(2) {
+  margin-top: -2rem; /* offsets <main> top padding */
+}
+
+/* In-tab cover can be a touch shorter than 100vh since the sticky
+   nav is already on screen. */
+.cinema-cover.in-tab { min-height: 88vh; min-height: 88svh; }
+
+/* Tighten the first chapter against the cover so the transition
+   reads as one continuous experience. */
+.cinema-prelude.in-tab .cinema-chapter:first-child { min-height: 78vh; min-height: 78svh; }
+
+/* Inside the tab UI, the chapter reveal animation should still fire,
+   but the IntersectionObserver may miss it because the tab parent
+   was display:none on first paint. The JS handles forced reveal on
+   tab-activate; this CSS just makes sure the fallback works without JS. */
+@supports not (animation-timeline: scroll()) {
+  /* No-op marker — JS layer drives this. */
+}
+
+/* ============================================================
+   6.7 · CINEMA BANNER — compact site-header for the homepage
+   Use as: <header class="site-header cinema-banner">
+   Dark ink + gilt, ~150px tall. Stays out of the way of the
+   sticky tab nav below it. Refined typography matches the rest
+   of the site without taking over the screen.
+   ============================================================ */
+header.site-header.cinema-banner {
+  background: var(--ink-night) !important;
+  color: var(--ink-paper) !important;
+  border-bottom: 1px solid rgba(216, 179, 102, 0.4) !important;
+  position: relative;
+  isolation: isolate;
+  padding: clamp(1.4rem, 2.8vw, 2.2rem) clamp(1.5rem, 4vw, 3rem) !important;
+  text-align: left !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(1.2rem, 2.6vw, 2.4rem) !important;
+  flex-wrap: nowrap !important;
+  overflow: hidden;
+}
+header.site-header.cinema-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 40% 70% at 25% 50%, rgba(216, 179, 102, 0.10), transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(168, 80, 40, 0.06), transparent 70%);
+  z-index: -2;
+  pointer-events: none;
+}
+header.site-header.cinema-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.7  0 0 0 0 0.4  0 0 0 0.20 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* The portrait link — strip the dotted underline that "a" gets globally */
+header.site-header.cinema-banner > a {
+  border-bottom: none !important;
+  display: inline-block;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+/* Portrait — wrapper provides positioning + the gradient halo + ring */
+header.site-header.cinema-banner .banner-portrait {
+  position: relative;
+  display: inline-block;
+  width: clamp(78px, 9vw, 116px);
+  height: clamp(78px, 9vw, 116px);
+  flex-shrink: 0;
+  border-radius: 50%;
+  isolation: isolate;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Soft warm halo BEHIND the portrait — gilt → copper → ink */
+header.site-header.cinema-banner .banner-portrait::before {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(241, 207, 133, 0.55) 0%,
+    rgba(216, 179, 102, 0.35) 28%,
+    rgba(168, 80, 40, 0.18) 55%,
+    rgba(20, 17, 12, 0) 78%
+  );
+  filter: blur(10px);
+  z-index: -2;
+  pointer-events: none;
+  animation: bannerHalo 6.5s ease-in-out infinite alternate;
+}
+
+/* Conic-gradient gilt ring just outside the portrait edge */
+header.site-header.cinema-banner .banner-portrait::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 215deg,
+    var(--gilt-bright) 0deg,
+    var(--gilt) 90deg,
+    var(--gilt-deep) 180deg,
+    var(--gilt) 270deg,
+    var(--gilt-bright) 360deg
+  );
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.9;
+  /* Knock the centre out so we only see the ring, not a filled disc */
+  -webkit-mask: radial-gradient(circle, transparent 50%, #000 52%);
+          mask: radial-gradient(circle, transparent 50%, #000 52%);
+}
+
+/* Circular clipping frame — the <picture> element clips the zoomed image
+   and carries the ring shadows so they aren't clipped with it */
+header.site-header.cinema-banner .banner-portrait picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--ink-night);
+  box-shadow:
+    0 0 0 3px var(--ink-shadow),
+    0 8px 24px rgba(0, 0, 0, 0.5),
+    0 0 60px -10px rgba(216, 179, 102, 0.25);
+  transition: box-shadow 0.4s ease;
+}
+
+/* The actual image, zoomed in on the face within the oval mat */
+header.site-header.cinema-banner .banner-portrait-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 44% 33%;
+  transform: scale(1.49);
+  transform-origin: 50% 54%;
+  filter: contrast(1.05) brightness(0.95);
+  transition: filter 0.4s ease;
+}
+
+/* Hover — the whole assembly gets brighter and lifts a touch */
+header.site-header.cinema-banner > a:hover .banner-portrait { transform: translateY(-2px); }
+header.site-header.cinema-banner > a:hover .banner-portrait picture {
+  box-shadow:
+    0 0 0 3px var(--ink-shadow),
+    0 12px 32px rgba(0, 0, 0, 0.6),
+    0 0 80px -10px rgba(241, 207, 133, 0.35);
+}
+header.site-header.cinema-banner > a:hover .banner-portrait-img {
+  filter: contrast(1.08) brightness(1);
+}
+header.site-header.cinema-banner > a:hover .banner-portrait::before { opacity: 1.05; }
+header.site-header.cinema-banner > a:hover .banner-portrait::after { opacity: 1; }
+
+@keyframes bannerHalo {
+  0%   { opacity: 0.7; transform: scale(0.97); }
+  100% { opacity: 1;   transform: scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  header.site-header.cinema-banner .banner-portrait::before { animation: none; }
+}
+
+/* Type column */
+header.site-header.cinema-banner .banner-type {
+  text-align: left !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+  min-width: 0;
+}
+header.site-header.cinema-banner .banner-eyebrow {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gilt);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+}
+header.site-header.cinema-banner .banner-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--gilt);
+}
+header.site-header.cinema-banner h1 {
+  font-family: var(--font-display) !important;
+  font-weight: 500 !important;
+  font-style: normal !important;
+  font-size: clamp(1.9rem, 4vw, 2.9rem) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--ink-paper) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  text-shadow: 0 1px 14px rgba(0,0,0,0.35);
+}
+header.site-header.cinema-banner h1 em {
+  font-style: italic;
+  color: var(--gilt-bright);
+  font-weight: 400;
+}
+header.site-header.cinema-banner .banner-meta {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(0.88rem, 1.1vw, 1.05rem);
+  color: rgba(236, 226, 204, 0.72);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+header.site-header.cinema-banner .banner-meta .sep {
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: var(--gilt);
+  font-style: normal;
+  font-weight: 600;
+  opacity: 0.7;
+}
+header.site-header.cinema-banner .banner-byline {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(236, 226, 204, 0.6);
+  margin: 0.18rem 0 0;
+}
+
+/* Mobile — stack into a centered column */
+@media (max-width: 720px) {
+  header.site-header.cinema-banner {
+    flex-wrap: wrap !important;
+    text-align: center !important;
+    padding: 1.6rem 1.2rem !important;
+    gap: 1rem !important;
+  }
+  header.site-header.cinema-banner .banner-type {
+    align-items: center;
+    text-align: center !important;
+  }
+  header.site-header.cinema-banner .banner-eyebrow {
+    justify-content: center;
+  }
+  header.site-header.cinema-banner h1 { font-size: 2rem !important; }
+}
+
+/* Print — flatten the banner */
+@media print {
+  header.site-header.cinema-banner {
+    background: #fff !important;
+    color: #000 !important;
+    border-bottom: 1.5pt solid #555 !important;
+    padding: 0 0 8pt !important;
+    text-align: left !important;
+    display: block !important;
+  }
+  header.site-header.cinema-banner::before,
+  header.site-header.cinema-banner::after { display: none !important; }
+  header.site-header.cinema-banner h1 { color: #000 !important; text-shadow: none !important; }
+  header.site-header.cinema-banner .banner-meta,
+  header.site-header.cinema-banner .banner-eyebrow,
+  header.site-header.cinema-banner .banner-byline { color: #444 !important; }
+}
+
+/* ============================================================
+   7 · UTILITIES & MOTION-REDUCED FALLBACKS
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .cinema-cover::before { animation: none; }
+  .cinema-cover__portrait-frame,
+  .cinema-cover__type { animation: none; }
+  .cinema-chapter__inner {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .cinema-cover__scroll::after { animation: none; }
+}
+
+/* ============================================================
+   8 · PRINT — strip the cinematic chrome cleanly
+   ============================================================ */
+@media print {
+  .cinema-cover,
+  .cinema-prelude,
+  .cinema-invitation,
+  header.cinema-section-hero {
+    background: #fff !important;
+    color: #000 !important;
+    min-height: 0 !important;
+    padding: 0 0 8pt !important;
+    border-bottom: 1.5pt solid #555 !important;
+  }
+  .cinema-cover::before,
+  .cinema-cover::after,
+  .cinema-prelude::before,
+  .cinema-chapter::before,
+  header.cinema-section-hero::before,
+  header.cinema-section-hero::after,
+  .cinema-cover__scroll { display: none !important; }
+  .cinema-cover__title,
+  .cinema-chapter__title,
+  header.cinema-section-hero h1 { color: #000 !important; text-shadow: none !important; font-size: 22pt !important; }
+  .cinema-cover__sub,
+  .cinema-chapter__lede,
+  header.cinema-section-hero .csh__sub,
+  header.cinema-section-hero .sub { color: #444 !important; font-size: 9.5pt !important; }
+  .cinema-chapter { min-height: 0 !important; padding: 0.4rem 0 !important; }
+  .cinema-chapter__inner { opacity: 1 !important; transform: none !important; }
+
+  /* Canonical hero-print rules — added 16 May 2026 (hero-class consolidation).
+     These cover what the 18 per-page *-hero print blocks used to do
+     individually. Per-page <style> blocks can now be pruned without
+     visual regression — see AUDIT-MIGRATION.md §3 for the queue. */
+  header.cinema-section-hero .crumbs,
+  header.tab-hero .crumbs,
+  header.child-hero .crumbs,
+  header.story-hero .crumbs { display: none !important; }
+  header.cinema-section-hero h1,
+  header.tab-hero h1,
+  header.child-hero h1,
+  header.story-hero h1 { color: #000 !important; font-size: 18pt !important; line-height: 1.18 !important; margin-bottom: 4pt !important; }
+  header.cinema-section-hero .sub,
+  header.tab-hero .sub,
+  header.child-hero .sub,
+  header.story-hero .sub { color: #444 !important; font-size: 9.5pt !important; }
+  header.tab-hero,
+  header.child-hero,
+  header.story-hero { background: #fff !important; color: #000 !important; padding: 0 0 8pt !important; border-bottom: 1.5pt solid #555 !important; }
+}
+
+/* "Start here" researcher front-door tab — home-page nav accent (added 20 Jun 2026) */
+nav.tabs .tab-group[data-group="start"] .group-btn { color: #e8cd8a; font-weight: 700; }
+nav.tabs .tab-group[data-group="start"] .group-btn:hover { color: #fff7e6; background: rgba(216,179,102,0.12); }
+nav.tabs .tab-group[data-group="start"] .group-btn.active-group { color: #fff7e6; }

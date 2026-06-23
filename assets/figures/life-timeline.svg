@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1400 540" preserveAspectRatio="xMidYMid meet"
+     role="img" aria-labelledby="tl-title tl-desc"
+     font-family="'Iowan Old Style','Georgia','Times New Roman',serif">
+  <title id="tl-title">Charles Konzen — life timeline 1835–1903</title>
+  <desc id="tl-desc">Charles Konzen's 68 years across five chapters: Hessian youth, Atlantic crossing, Civil War service, St. Louis family life, and widowed late life. Major events are clickable.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="100%" stop-color="#f6ebd2"/>
+    </linearGradient>
+    <linearGradient id="ch-h" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8d8a8"/><stop offset="100%" stop-color="#c9a76a"/></linearGradient>
+    <linearGradient id="ch-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a7898"/><stop offset="100%" stop-color="#3a5878"/></linearGradient>
+    <linearGradient id="ch-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#d8a4a4"/><stop offset="100%" stop-color="#c84a4a"/></linearGradient>
+    <linearGradient id="ch-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#e8c8a4"/><stop offset="100%" stop-color="#c87a30"/></linearGradient>
+    <linearGradient id="ch-l" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8b8a4"/><stop offset="100%" stop-color="#8a7858"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.2" stdDeviation="1.6" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="grain" patternUnits="userSpaceOnUse" width="6" height="6">
+      <circle cx="3" cy="3" r="0.4" fill="#8a7858" opacity="0.07"/>
+    </pattern>
+    <style><![CDATA[
+      a, .lnk { cursor: pointer; }
+      a rect.tile, a circle.dot, .lnk rect.tile, .lnk circle.dot { transition: filter 0.15s ease; }
+      a:hover rect.tile, .lnk:hover rect.tile { filter: brightness(1.06); }
+      a:hover circle.dot, .lnk:hover circle.dot { filter: brightness(1.15); }
+
+      /* The chapter-band labels (HESSIAN YOUTH, CIVIL WAR, etc.) sit
+         on top of the colored gradient bars (gold, blue, oxblood,
+         copper, gray-brown) — those gradients are independent of
+         light/dark mode, so the band-label text must stay dark to
+         remain readable on the band. Marked with class="band-text".
+         Other dark text (on the paper background) flips in dark mode. */
+      .band-text { fill: #1f1a14 !important; }
+      .band-text-mute { fill: #3a2f1e !important; }
+      .band-text-light { fill: #fff !important; }
+      .band-text-civilwar { fill: #5a1818 !important; font-weight: 700; }
+
+      /* Tick-label group — date numbers under the axis. Paint-order
+         halo lets the dashed stems sit cleanly behind them. */
+      .tick-labels text { font-weight: 700; }
+
+      /* DARK-MODE — responds to the OS color-scheme preference. Most
+         users running the site in dark mode also have OS-level dark. */
+      @media (prefers-color-scheme: dark) {
+        /* Paper background → dark walnut */
+        rect[fill="url(#bg)"] { fill: #1f1a14 !important; }
+        rect[fill="url(#grain)"] { display: none !important; }
+
+        /* Cream/paper rect callouts inside chapters */
+        rect[fill="#fdf0eb"], rect[fill="#fdf2e0"], rect[fill="#fffaf0"],
+        rect[fill="#eef3fb"], rect[fill="#dfe8fb"], rect[fill="#f6f1e7"] {
+          fill: #2a2519 !important;
+        }
+
+        /* Dark text fills on the paper background → cream.
+           NOTE: text on chapter bands (class="band-text*") is excluded
+           via the .band-text rules above. */
+        text[fill="#1f1a14"]:not(.band-text):not(.band-text-mute),
+        text[fill="#2c2620"]:not(.band-text):not(.band-text-mute),
+        text[fill="#3a2f1e"]:not(.band-text):not(.band-text-mute) {
+          fill: #f4ead0 !important;
+        }
+        text[fill="#5a4a32"]:not(.band-text):not(.band-text-mute),
+        text[fill="#6a5a42"]:not(.band-text):not(.band-text-mute) {
+          fill: #c8b896 !important;
+        }
+        /* Mid-tone dark fills used for labels */
+        text[fill="#5a1818"]:not(.band-text-civilwar),
+        text[fill="#5a3010"], text[fill="#8a3a3a"],
+        text[fill="#8a4a4a"] {
+          fill: #f4a098 !important;
+        }
+        text[fill="#8a5418"], text[fill="#8a6420"] {
+          fill: #fadea0 !important;
+        }
+        text[fill="#2a4a8a"], text[fill="#1a2540"] {
+          fill: #9ab8e0 !important;
+        }
+        text[fill="#3a6a2a"] {
+          fill: #b8e0a4 !important;
+        }
+        /* White strokes around dots stay readable on dark too;
+           replace with very pale gold for better contrast. */
+        circle[stroke="#fff"], rect[stroke="#fff"] {
+          stroke: #d4c8a8 !important;
+        }
+
+        /* Tick-label group ("1835", "1845", "1855", etc.) — the
+           fill is inherited from the <g> (no fill attribute on
+           individual <text> children), and the cream-paper halo
+           stroke becomes a glow on a dark background. Flip the
+           group's fill to bright gold and the halo stroke to dark
+           walnut so the dates pop against the dark axis. */
+        g.tick-labels {
+          fill: #fadea0 !important;
+          stroke: #1f1a14 !important;
+        }
+        g.tick-labels text {
+          fill: #fadea0 !important;
+        }
+        /* The axis line itself is #2c2620 — fine on dark walnut
+           since they're very close. Brighten to khaki so it's visible. */
+        line[stroke="#2c2620"] {
+          stroke: #8a7a5a !important;
+        }
+        /* The dashed event stems (#a88a4a khaki) stay visible in dark
+           mode — slight bump so they hold up against the dark bg. */
+        g[stroke="#a88a4a"] {
+          stroke: #c8b896 !important;
+        }
+      }
+    ]]></style>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1400" height="540" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1400" height="540" fill="url(#grain)"/>
+
+  <!-- Title strip -->
+  <rect x="0" y="0" width="1400" height="46" fill="#2c2620"/>
+  <text x="20" y="29" fill="#d4a017" font-size="14" font-weight="700" letter-spacing="2">CHARLES KONZEN · LIFE TIMELINE · 1835 – 1903</text>
+  <text x="1380" y="29" fill="#c8b896" font-size="11" text-anchor="end">68 years · five chapters · click any event</text>
+
+  <!-- ====================================================== -->
+  <!-- Time axis: x = 80 → 1284, mapping 1835 → 1903           -->
+  <!-- 1835=80   1855=434  1859=505  1862=559  1865=611         -->
+  <!-- 1866=629  1875=789  1880=877  1890=1054  1896=1160       -->
+  <!-- 1903=1284 (line ends here, at the death dot)             -->
+  <!-- ====================================================== -->
+
+  <!-- ===== Chapter bands (y=110-152) ===== -->
+  <rect x="80" y="110" width="425" height="42" rx="3" fill="url(#ch-h)" opacity="0.85"/>
+  <text class="band-text"      x="292" y="128" text-anchor="middle" font-size="10" font-weight="700" fill="#3a2f1e" letter-spacing="2">HESSIAN YOUTH · 1835–1859</text>
+  <text class="band-text-mute" x="292" y="143" text-anchor="middle" font-size="9" fill="#5a4a32" font-style="italic">24 years · largely undocumented</text>
+
+  <rect x="505" y="110" width="54" height="42" rx="3" fill="url(#ch-a)" opacity="0.92"/>
+  <text class="band-text-light" x="532" y="129" text-anchor="middle" font-size="9" font-weight="700" fill="#f6f1e7" letter-spacing="2">XING</text>
+  <text class="band-text-light" x="532" y="142" text-anchor="middle" font-size="8.5" fill="#dfe8fb" font-style="italic">~1859</text>
+
+  <rect x="559" y="110" width="70" height="42" rx="3" fill="url(#ch-c)" opacity="0.88"/>
+  <text class="band-text-civilwar" x="594" y="128" text-anchor="middle" font-size="9.5" font-weight="700" fill="#5a1818" letter-spacing="2">CIVIL WAR</text>
+  <text class="band-text-civilwar" x="594" y="143" text-anchor="middle" font-size="9" fill="#5a1818" font-style="italic">1862–1865</text>
+
+  <rect x="629" y="110" width="531" height="42" rx="3" fill="url(#ch-s)" opacity="0.85"/>
+  <text class="band-text"      x="894" y="128" text-anchor="middle" font-size="10" font-weight="700" fill="#3a2f1e" letter-spacing="2">ST. LOUIS FAMILY LIFE · 1866–1896</text>
+  <text class="band-text-mute" x="894" y="143" text-anchor="middle" font-size="9" fill="#5a4a32" font-style="italic">30 years · marriage, seven baptisms, watchman's work</text>
+
+  <rect x="1160" y="110" width="124" height="42" rx="3" fill="url(#ch-l)" opacity="0.85"/>
+  <text class="band-text"      x="1222" y="128" text-anchor="middle" font-size="9" font-weight="700" fill="#1f1a14" letter-spacing="1">WIDOWED LATE LIFE</text>
+  <text class="band-text-mute" x="1222" y="142" text-anchor="middle" font-size="8" fill="#3a2f1e" font-style="italic">1896–1903 · pension, portrait</text>
+
+  <!-- ============ STEMS — drawn before axis so tick labels overlay them cleanly ============ -->
+  <g stroke="#a88a4a" stroke-width="1" stroke-dasharray="3,2">
+    <!-- A2 stems (further above, gap=88 from axis) -->
+    <line x1="505"  y1="320" x2="505"  y2="232"/>  <!-- emigration -->
+    <line x1="629"  y1="320" x2="629"  y2="232"/>  <!-- marriage -->
+
+    <!-- A1 stems (closer above, gap=32 from axis) -->
+    <line x1="80"   y1="320" x2="80"   y2="288"/>  <!-- birth -->
+    <line x1="877"  y1="320" x2="877"  y2="288"/>  <!-- 1880 census -->
+    <line x1="1160" y1="320" x2="1160" y2="288"/>  <!-- wife's death -->
+    <line x1="1284" y1="320" x2="1284" y2="288"/>  <!-- death -->
+
+    <!-- B1 stems (closer below, gap=32 from axis) -->
+    <line x1="611"  y1="320" x2="611"  y2="352"/>  <!-- muster-out -->
+    <line x1="1063" y1="320" x2="1063" y2="352"/>  <!-- pension -->
+    <line x1="1222" y1="320" x2="1222" y2="352"/>  <!-- portrait -->
+
+    <!-- B2 stems (further below, gap=88 from axis — mirrors A2) -->
+    <line x1="559"  y1="320" x2="559"  y2="408"/>  <!-- enlistment -->
+    <line x1="789"  y1="320" x2="789"  y2="408"/>  <!-- seven baptisms (central) -->
+  </g>
+
+  <!-- ===== Time axis (ends at 1903 = x=1284, where Charles dies) — drawn over stems so tick labels stay clean ===== -->
+  <line x1="80" y1="320" x2="1284" y2="320" stroke="#2c2620" stroke-width="2.5"/>
+  <!-- Tick labels carry a cream paint-order halo so dashed stems behind them stay legible -->
+  <g class="tick-labels" font-size="10" fill="#5a4a32" paint-order="stroke" stroke="#fffaf0" stroke-width="3" stroke-linejoin="round">
+    <line x1="80"   y1="312" x2="80"   y2="328" stroke="#2c2620" stroke-width="1.5"/><text x="80"   y="346" text-anchor="middle" font-weight="700">1835</text>
+    <line x1="257"  y1="315" x2="257"  y2="325" stroke="#2c2620" stroke-width="1"/>  <text x="257"  y="342" text-anchor="middle" font-size="9">1845</text>
+    <line x1="434"  y1="312" x2="434"  y2="328" stroke="#2c2620" stroke-width="1.5"/><text x="434"  y="346" text-anchor="middle" font-weight="700">1855</text>
+    <line x1="611"  y1="312" x2="611"  y2="328" stroke="#2c2620" stroke-width="1.5"/><text x="611"  y="346" text-anchor="middle" font-weight="700">1865</text>
+    <line x1="789"  y1="312" x2="789"  y2="328" stroke="#2c2620" stroke-width="1.5"/><text x="789"  y="346" text-anchor="middle" font-weight="700">1875</text>
+    <line x1="966"  y1="312" x2="966"  y2="328" stroke="#2c2620" stroke-width="1.5"/><text x="966"  y="346" text-anchor="middle" font-weight="700">1885</text>
+    <line x1="1143" y1="312" x2="1143" y2="328" stroke="#2c2620" stroke-width="1.5"/><text x="1143" y="346" text-anchor="middle" font-weight="700">1895</text>
+  </g>
+
+  <!-- ============ EVENT TILES — ABOVE THE AXIS (6) ============ -->
+
+  <!-- Emigration 1859 — A2 row (further from axis) -->
+  <a xlink:href="../../index.html#immigration" target="_top">
+    <title>1859 — Atlantic crossing, Bremen → New York. Manifest not yet located.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="445" y="176" width="120" height="56" rx="5" fill="#eef3fb" stroke="#4a76c8" stroke-width="1.8"/>
+      <text x="505" y="196" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a2540">EMIGRATION</text>
+      <text x="505" y="211" text-anchor="middle" font-size="9" fill="#2a4a8a" font-style="italic">1859 · age 24</text>
+      <text x="505" y="225" text-anchor="middle" font-size="8.5" fill="#1a2540">Bremen → U.S.</text>
+    </g>
+    <circle class="dot" cx="505" cy="320" r="6" fill="#4a76c8" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- Marriage Jan 1866 — A2 row (further from axis) -->
+  <a xlink:href="../../charles_america/life-timeline.html" target="_top">
+    <title>7 January 1866 — Married Auguste Kreichelt at St. Marcus Evangelical Church, St. Louis.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="569" y="176" width="120" height="56" rx="5" fill="#fdf2e0" stroke="#c87a30" stroke-width="1.8"/>
+      <text x="629" y="196" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5a3010">MARRIAGE</text>
+      <text x="629" y="211" text-anchor="middle" font-size="9" fill="#8a5418" font-style="italic">7 Jan 1866</text>
+      <text x="629" y="225" text-anchor="middle" font-size="8.5" fill="#5a3010">to Auguste Kreichelt</text>
+    </g>
+    <circle class="dot" cx="629" cy="320" r="6" fill="#c87a30" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- Birth 1835 — A1 row (closer to axis) -->
+  <a xlink:href="../../open-questions.html#priority" target="_top">
+    <title>26 January 1835 — Charles born in Hesse. Specific parish not yet recovered.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="20" y="240" width="120" height="48" rx="5" fill="#fffaf0" stroke="#5a8a4a" stroke-width="1.8"/>
+      <text x="80" y="258" text-anchor="middle" font-size="11" font-weight="700" fill="#1f1a14">★ BIRTH</text>
+      <text x="80" y="272" text-anchor="middle" font-size="9.5" fill="#3a6a2a" font-style="italic">26 Jan 1835</text>
+      <text x="80" y="284" text-anchor="middle" font-size="8.5" fill="#5a4a32">parish unknown</text>
+    </g>
+    <circle class="dot" cx="80" cy="320" r="6.5" fill="#5a8a4a" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- 1880 Census — A1 row (closer to axis) — moved above per request -->
+  <a xlink:href="../../index.html#evidence" target="_top">
+    <title>1880 U.S. Census — household at 1534 Jackson St., Charles "Gonson" age 39, cotton-press worker, wife Guissie. Separately, Pastor Nollau recorded daughter Bertha's 1880 baptism as "Jansen" — the Anglicization-bridge to Johnson.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="817" y="240" width="120" height="48" rx="5" fill="#eef3fb" stroke="#4a76c8" stroke-width="1.8"/>
+      <text x="877" y="258" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1a2540">1880 CENSUS</text>
+      <text x="877" y="272" text-anchor="middle" font-size="9" fill="#2a4a8a" font-style="italic">recorded "Gonson"</text>
+      <text x="877" y="284" text-anchor="middle" font-size="8.5" fill="#1a2540">1534 Jackson St.</text>
+    </g>
+    <circle class="dot" cx="877" cy="320" r="6" fill="#4a76c8" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- Wife's death 1896 — A1 row (closer to axis) -->
+  <a xlink:href="../../index.html#evidence" target="_top">
+    <title>1896 — Wife Auguste Kreichelt dies. Death record reads "Auguste Conson" — Charles is the surviving informant.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="1100" y="240" width="120" height="48" rx="5" fill="#fdf0eb" stroke="#c84a4a" stroke-width="1.8"/>
+      <text x="1160" y="258" text-anchor="middle" font-size="11" font-weight="700" fill="#5a1818">WIFE'S DEATH</text>
+      <text x="1160" y="272" text-anchor="middle" font-size="9.5" fill="#8a3a3a" font-style="italic">1896 · "Conson"</text>
+      <text x="1160" y="284" text-anchor="middle" font-size="8.5" fill="#5a1818">Charles informant</text>
+    </g>
+    <circle class="dot" cx="1160" cy="320" r="6" fill="#c84a4a" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- Death 1903 — A1 row (closer to axis) — line ends here -->
+  <a xlink:href="../../charles_america/old-st-marcus-cemetery.html" target="_top">
+    <title>19 December 1903 — Charles dies of stomach cancer; buried Old Saint Marcus Cemetery.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="1224" y="240" width="120" height="48" rx="5" fill="#1f1a14" stroke="#000" stroke-width="2"/>
+      <text x="1284" y="258" text-anchor="middle" font-size="11" font-weight="700" fill="#d4a017">DEATH</text>
+      <text x="1284" y="272" text-anchor="middle" font-size="9.5" fill="#c8b896" font-style="italic">19 Dec 1903 · 68</text>
+      <text x="1284" y="284" text-anchor="middle" font-size="8.5" fill="#c8b896">Old St. Marcus</text>
+    </g>
+    <circle class="dot" cx="1284" cy="320" r="7" fill="#1f1a14" stroke="#d4a017" stroke-width="2.5"/>
+  </a>
+
+  <!-- ============ EVENT TILES — BELOW THE AXIS (5) ============ -->
+
+  <!-- Muster-out Dec 1865 — B1 row (closer to axis, mirrors Birth/Census/etc.) -->
+  <a xlink:href="../../civilwar/places-served.html" target="_top">
+    <title>20 December 1865 — Mustered out as Sergeant after three years' service.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="555" y="352" width="112" height="48" rx="5" fill="#fdf0eb" stroke="#c84a4a" stroke-width="1.6"/>
+      <text x="611" y="370" text-anchor="middle" font-size="10" font-weight="700" fill="#5a1818">MUSTER OUT</text>
+      <text x="611" y="384" text-anchor="middle" font-size="9" fill="#8a3a3a" font-style="italic">20 Dec 1865</text>
+      <text x="611" y="396" text-anchor="middle" font-size="8" fill="#5a1818">Sgt. · 3 yrs done</text>
+    </g>
+    <circle class="dot" cx="611" cy="320" r="5.5" fill="#c84a4a" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- Pension award 1890-91 — B1 row (closer to axis) -->
+  <a xlink:href="../../themes/pension-mutual-aid.html" target="_top">
+    <title>1890-1891 — Pension declaration filed; $12/month rheumatism awarded.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="1003" y="352" width="120" height="48" rx="5" fill="#fdf0eb" stroke="#c84a4a" stroke-width="1.4"/>
+      <text x="1063" y="370" text-anchor="middle" font-size="10" font-weight="700" fill="#5a1818">PENSION AWARD</text>
+      <text x="1063" y="384" text-anchor="middle" font-size="9" fill="#8a3a3a" font-style="italic">1890 file · 1891 award</text>
+      <text x="1063" y="396" text-anchor="middle" font-size="8.5" fill="#5a1818">$12/mo · rheumatism</text>
+    </g>
+    <circle class="dot" cx="1063" cy="320" r="5" fill="#c84a4a" stroke="#fff" stroke-width="1.8"/>
+  </a>
+
+  <!-- Portrait ca. 1896-1903 — B1 row (closer to axis) -->
+  <a xlink:href="../../stories.html#portrait" target="_top">
+    <title>ca. 1896-1903 — Louis Roth studio portrait taken (the only known photograph of Charles, recovered Sept 2025).</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="1162" y="352" width="120" height="48" rx="5" fill="#fdf2e0" stroke="#c87a30" stroke-width="1.4"/>
+      <text x="1222" y="370" text-anchor="middle" font-size="10" font-weight="700" fill="#5a3010">PORTRAIT</text>
+      <text x="1222" y="384" text-anchor="middle" font-size="9" fill="#8a5418" font-style="italic">Louis Roth studio</text>
+      <text x="1222" y="396" text-anchor="middle" font-size="8.5" fill="#5a3010">ca. 1896–1903</text>
+    </g>
+    <circle class="dot" cx="1222" cy="320" r="5" fill="#c87a30" stroke="#fff" stroke-width="1.8"/>
+  </a>
+
+  <!-- Enlistment Dec 1862 — B2 row (further from axis, mirrors A2) -->
+  <a xlink:href="../../index.html#civilwar" target="_top">
+    <title>2 December 1862 — Enlisted in Battery B, 2nd Missouri Light Artillery, age 23.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="500" y="408" width="118" height="56" rx="5" fill="#fdf0eb" stroke="#c84a4a" stroke-width="1.8"/>
+      <text x="559" y="428" text-anchor="middle" font-size="11" font-weight="700" fill="#5a1818">ENLISTMENT</text>
+      <text x="559" y="443" text-anchor="middle" font-size="9.5" fill="#8a3a3a" font-style="italic">2 Dec 1862</text>
+      <text x="559" y="457" text-anchor="middle" font-size="8.5" fill="#5a1818">Battery B · age 23</text>
+    </g>
+    <circle class="dot" cx="559" cy="320" r="6.5" fill="#c84a4a" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- Seven baptisms 1866-1880 — B2 row (further from axis, mirrors A2) -->
+  <a xlink:href="../../charles_america/seven-children.html" target="_top">
+    <title>1866-1880 — Seven children baptised at St. Marcus: Friedrich Wilhelm 1866-1867, Josephine Maria 1868-1890, Katherine Carolina 1870-1949, Auguste 1872-1890, Louise 1873-1947, Erwin Carl Konsen 1875-1950, Bertha 1879-1959.</title>
+    <g filter="url(#sh)">
+      <rect class="tile" x="645" y="408" width="288" height="56" rx="5" fill="#fdf2e0" stroke="#c87a30" stroke-width="1.8"/>
+      <text x="789" y="427" text-anchor="middle" font-size="11" font-weight="700" fill="#5a3010">SEVEN BAPTISMS · 1866–1880</text>
+      <text x="789" y="442" text-anchor="middle" font-size="8.5" fill="#8a5418" font-style="italic">Friedrich Wilhelm · Josephine Maria · Katherine Carolina · Auguste</text>
+      <text x="789" y="455" text-anchor="middle" font-size="8.5" fill="#8a5418" font-style="italic">Louise · Erwin Carl Konsen · Bertha</text>
+    </g>
+    <!-- Seven small dots on the axis, one per baptism year -->
+    <g fill="#c87a30" stroke="#fff" stroke-width="1.4">
+      <circle cx="647"  cy="320" r="3"/>
+      <circle cx="664"  cy="320" r="3"/>
+      <circle cx="700"  cy="320" r="3"/>
+      <circle cx="735"  cy="320" r="3"/>
+      <circle cx="753"  cy="320" r="3"/>
+      <circle cx="789"  cy="320" r="3"/>
+      <circle cx="860"  cy="320" r="3"/>
+    </g>
+  </a>
+
+  <!-- ============ Legend ============ -->
+  <g transform="translate(80, 488)">
+    <rect x="0" y="0" width="1204" height="32" rx="3" fill="#fffaf0" stroke="#d8c8a8"/>
+    <text x="14" y="14" font-size="9.5" font-weight="700" fill="#5a4a32" letter-spacing="1">LEGEND</text>
+    <text x="14" y="26" font-size="8" fill="#6a5a42" font-style="italic">click any tile to open · 6 events above the axis · 5 events below · symmetric spacing</text>
+    <g transform="translate(280, 16)" font-size="9.5" fill="#3a2f1e">
+      <circle cx="0" cy="0" r="4.5" fill="#5a8a4a" stroke="#fff" stroke-width="1.5"/>
+      <text x="9" y="3">birth</text>
+      <circle cx="68" cy="0" r="4.5" fill="#4a76c8" stroke="#fff" stroke-width="1.5"/>
+      <text x="77" y="3">crossing &amp; census</text>
+      <circle cx="200" cy="0" r="4.5" fill="#c84a4a" stroke="#fff" stroke-width="1.5"/>
+      <text x="209" y="3">military &amp; pension</text>
+      <circle cx="305" cy="0" r="4.5" fill="#c87a30" stroke="#fff" stroke-width="1.5"/>
+      <text x="314" y="3">family · St. Louis</text>
+      <circle cx="420" cy="0" r="4.5" fill="#1f1a14" stroke="#d4a017" stroke-width="1.5"/>
+      <text x="429" y="3">death</text>
+    </g>
+  </g>
+
+</svg>

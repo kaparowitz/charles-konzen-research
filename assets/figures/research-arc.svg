@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1240 540" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="ra-title ra-desc" font-family="'Iowan Old Style','Georgia','Times New Roman',serif">
+  <title id="ra-title">Charles Research — investigation arc, 2017–May 2026</title>
+  <desc id="ra-desc">A meta-timeline showing how the investigation itself unfolded — from the 2017 NARA mail-order foundation, through the 2020 AncestryProGenealogists commissioned journal, the September 2025 photograph recovery, the March 2026 project reboot with Peter Schräder, and the dense April–May 2026 working period that produced the surname conclusion.</desc>
+
+  <defs>
+    <linearGradient id="ra-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#fffaf0"/>
+      <stop offset="100%" stop-color="#f6ebd2"/>
+    </linearGradient>
+    <linearGradient id="phase-found" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8d8a8"/>
+      <stop offset="100%" stop-color="#c9a76a"/>
+    </linearGradient>
+    <linearGradient id="phase-recover" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c8a4"/>
+      <stop offset="100%" stop-color="#c87a30"/>
+    </linearGradient>
+    <linearGradient id="phase-active" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8a4a4"/>
+      <stop offset="100%" stop-color="#c84a4a"/>
+    </linearGradient>
+    <linearGradient id="phase-synth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff3d6"/>
+      <stop offset="100%" stop-color="#d4a017"/>
+    </linearGradient>
+    <filter id="ra-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.4" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <pattern id="grain2" patternUnits="userSpaceOnUse" width="6" height="6">
+      <circle cx="3" cy="3" r="0.4" fill="#8a7858" opacity="0.07"/>
+    </pattern>
+    <marker id="ra-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5a4a32"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1240" height="540" fill="url(#ra-bg)"/>
+  <rect x="0" y="0" width="1240" height="540" fill="url(#grain2)"/>
+
+  <!-- Title strip -->
+  <rect x="0" y="0" width="1240" height="46" fill="#2c2620"/>
+  <text x="20" y="29" fill="#d4a017" font-size="14" font-weight="700" letter-spacing="2">RESEARCH ARC · HOW THE INVESTIGATION ITSELF UNFOLDED</text>
+  <text x="1220" y="29" fill="#c8b896" font-size="11" text-anchor="end">2017 ─ May 2026</text>
+
+  <!-- ============ Phase strips (horizontal) ============ -->
+  <!-- We compress earlier years and expand the dense April–May 2026 period -->
+  <!-- x mapping (custom, non-linear): -->
+  <!--   2017      → x=80    -->
+  <!--   2020      → x=170   -->
+  <!--   Sep 2025  → x=290   -->
+  <!--   Mar 2026  → x=380   -->
+  <!--   1 Apr 2026 → x=460  -->
+  <!--   30 Apr    → x=900   -->
+  <!--   May 2026  → x=1080  -->
+
+  <g>
+    <!-- Foundation phase (2017-2020) — long but documented as discrete events -->
+    <rect x="60" y="100" width="170" height="44" rx="4" fill="url(#phase-found)" opacity="0.85"/>
+    <text x="145" y="124" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3a2f1e" letter-spacing="2">FOUNDATION · 2017–2020</text>
+    <text x="145" y="138" text-anchor="middle" font-size="9" fill="#5a4a32" font-style="italic">paperwork in a drawer</text>
+
+    <!-- Recovery phase (Sept 2025 – Feb 2026) -->
+    <rect x="240" y="100" width="130" height="44" rx="4" fill="url(#phase-recover)" opacity="0.88"/>
+    <text x="305" y="124" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5a3010" letter-spacing="2">RECOVERY · 2025</text>
+    <text x="305" y="138" text-anchor="middle" font-size="9" fill="#8a5418" font-style="italic">a face appears</text>
+
+    <!-- Active phase (Apr 2026) -->
+    <rect x="380" y="100" width="540" height="44" rx="4" fill="url(#phase-active)" opacity="0.88"/>
+    <text x="650" y="124" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5a1818" letter-spacing="2">ACTIVE INVESTIGATION · APRIL 2026 · 80+ SESSIONS</text>
+    <text x="650" y="138" text-anchor="middle" font-size="9" fill="#8a3a3a" font-style="italic">Trendelburg, Friedrichsfeld, Helmarshausen, Heisebeck — search and elimination</text>
+
+    <!-- Synthesis phase (May 2026) -->
+    <rect x="930" y="100" width="240" height="44" rx="4" fill="url(#phase-synth)" opacity="0.92"/>
+    <text x="1050" y="124" text-anchor="middle" font-size="10.5" font-weight="700" fill="#5a4318" letter-spacing="2">SYNTHESIS · MAY 2026</text>
+    <text x="1050" y="138" text-anchor="middle" font-size="9" fill="#8a5a14" font-style="italic">the surname conclusion</text>
+  </g>
+
+  <!-- ============ Time axis ============ -->
+  <line x1="60" y1="290" x2="1180" y2="290" stroke="#2c2620" stroke-width="2.5"/>
+  <g font-size="10" fill="#5a4a32" font-weight="700">
+    <line x1="80"  y1="282" x2="80"  y2="298" stroke="#2c2620" stroke-width="1.5"/>
+    <text x="80"  y="318" text-anchor="middle">2017</text>
+    <line x1="170" y1="282" x2="170" y2="298" stroke="#2c2620" stroke-width="1.5"/>
+    <text x="170" y="318" text-anchor="middle">2020</text>
+    <line x1="290" y1="282" x2="290" y2="298" stroke="#2c2620" stroke-width="1.5"/>
+    <text x="290" y="318" text-anchor="middle">Sept 2025</text>
+    <line x1="380" y1="282" x2="380" y2="298" stroke="#2c2620" stroke-width="1.5"/>
+    <text x="380" y="318" text-anchor="middle">Mar 2026</text>
+    <line x1="460" y1="282" x2="460" y2="298" stroke="#2c2620" stroke-width="1"/>
+    <text x="460" y="318" text-anchor="middle" font-size="9" font-weight="500">1 Apr</text>
+    <line x1="600" y1="285" x2="600" y2="295" stroke="#2c2620"/>
+    <text x="600" y="318" text-anchor="middle" font-size="9" font-weight="500">10 Apr</text>
+    <line x1="760" y1="285" x2="760" y2="295" stroke="#2c2620"/>
+    <text x="760" y="318" text-anchor="middle" font-size="9" font-weight="500">20 Apr</text>
+    <line x1="920" y1="282" x2="920" y2="298" stroke="#2c2620" stroke-width="1"/>
+    <text x="920" y="318" text-anchor="middle" font-size="9" font-weight="500">30 Apr</text>
+    <line x1="1020" y1="282" x2="1020" y2="298" stroke="#2c2620" stroke-width="1"/>
+    <text x="1020" y="318" text-anchor="middle" font-size="9" font-weight="500">3 May</text>
+    <line x1="1100" y1="282" x2="1100" y2="298" stroke="#2c2620" stroke-width="1.5"/>
+    <text x="1100" y="318" text-anchor="middle">7 May</text>
+  </g>
+
+  <!-- ============ Events ABOVE axis ============ -->
+
+  <!-- 2017 NARA mail-order -->
+  <a xlink:href="sources/nara-service-record-packet.html" target="_top">
+    <title>2017 — NARA mail-order: Compiled Service Record (G11-422819443E) and Pension File (F41-523680269E) obtained.</title>
+    <line x1="80" y1="290" x2="80" y2="222" stroke="#5a4a32" stroke-width="1"/>
+    <g filter="url(#ra-shadow)">
+      <rect x="22" y="172" width="116" height="50" rx="4" fill="#fffaf0" stroke="#a88a4a" stroke-width="1.5"/>
+      <text x="80" y="190" text-anchor="middle" font-size="10" font-weight="700" fill="#3a2f1e">NARA</text>
+      <text x="80" y="203" text-anchor="middle" font-size="9" fill="#5a4a32" font-style="italic">mail-order</text>
+      <text x="80" y="215" text-anchor="middle" font-size="8.5" fill="#5a4a32">CSR + Pension File</text>
+    </g>
+    <circle cx="80" cy="290" r="5" fill="#a88a4a" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- 2020 AncestryProGenealogists journal -->
+  <a xlink:href="index.html#foundation" target="_top">
+    <title>Feb–Jun 2020 — AncestryProGenealogists research journal. Decodes "Deisse" → Deisel; rules out Ludwig 1836 and Karl 1839; establishes Hofgeismar Kirchenkreis as the working area.</title>
+    <line x1="170" y1="290" x2="170" y2="222" stroke="#5a4a32" stroke-width="1"/>
+    <g filter="url(#ra-shadow)">
+      <rect x="106" y="172" width="128" height="50" rx="4" fill="#fffaf0" stroke="#a88a4a" stroke-width="1.5"/>
+      <text x="170" y="190" text-anchor="middle" font-size="10" font-weight="700" fill="#3a2f1e">2020 JOURNAL</text>
+      <text x="170" y="203" text-anchor="middle" font-size="9" fill="#5a4a32" font-style="italic">Schmidt &amp; Podoll</text>
+      <text x="170" y="215" text-anchor="middle" font-size="8.5" fill="#5a4a32">Hofgeismar working area</text>
+    </g>
+    <circle cx="170" cy="290" r="5" fill="#a88a4a" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- Sept 2025 — portrait recovered -->
+  <a xlink:href="stories.html#portrait" target="_top">
+    <title>September 2025 — Portrait of Charles Sr. found in a moving box in Independence, MO by descendant Maximilian J.</title>
+    <line x1="290" y1="290" x2="290" y2="220" stroke="#8a5418" stroke-width="1.2"/>
+    <g filter="url(#ra-shadow)">
+      <rect x="226" y="170" width="128" height="52" rx="4" fill="#fdf2e0" stroke="#c87a30" stroke-width="2"/>
+      <text x="290" y="188" text-anchor="middle" font-size="11" font-weight="700" fill="#5a3010">★ PORTRAIT</text>
+      <text x="290" y="201" text-anchor="middle" font-size="9" fill="#8a5418" font-style="italic">Maximilian J. discovery</text>
+      <text x="290" y="213" text-anchor="middle" font-size="8.5" fill="#5a3010">a face after 122 years</text>
+    </g>
+    <circle cx="290" cy="290" r="6" fill="#c87a30" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- Mar 2026 reboot + Peter -->
+  <a xlink:href="index.html#schrader" target="_top">
+    <title>March 2026 — Project rebooted as a published research site. Peter Schräder of Trendelburg engaged as German genealogist. First research-paper exchange.</title>
+    <line x1="380" y1="290" x2="380" y2="220" stroke="#8a5a14" stroke-width="1.2"/>
+    <g filter="url(#ra-shadow)">
+      <rect x="316" y="170" width="128" height="52" rx="4" fill="#fffaee" stroke="#8a5a14" stroke-width="2"/>
+      <text x="380" y="188" text-anchor="middle" font-size="11" font-weight="700" fill="#5a3a08">REBOOT</text>
+      <text x="380" y="201" text-anchor="middle" font-size="9" fill="#8a5a14" font-style="italic">Peter Schräder engaged</text>
+      <text x="380" y="213" text-anchor="middle" font-size="8.5" fill="#5a3a08">first research paper</text>
+    </g>
+    <circle cx="380" cy="290" r="6" fill="#8a5a14" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- 11 Apr — K-section breakthrough -->
+  <a xlink:href="notes/Register_220096_Burial_Index_K_Section_BREAKTHROUGH_April11_2026.html" target="_top">
+    <title>11 April 2026 — Trendelburg burial register 220096, K-section: Kontze / Kontzen / Contze surname pool documented continuously from 1773. The pivotal surname-pool finding.</title>
+    <line x1="610" y1="290" x2="610" y2="245" stroke="#8a3a3a" stroke-width="1.2"/>
+    <g filter="url(#ra-shadow)">
+      <rect x="500" y="195" width="220" height="52" rx="4" fill="#fdf0eb" stroke="#c84a4a" stroke-width="2"/>
+      <text x="610" y="213" text-anchor="middle" font-size="11" font-weight="700" fill="#5a1818">★ K-SECTION BREAKTHROUGH</text>
+      <text x="610" y="226" text-anchor="middle" font-size="9" fill="#8a3a3a" font-style="italic">Trendelburg burials 220096 · 11 Apr</text>
+      <text x="610" y="238" text-anchor="middle" font-size="8.5" fill="#5a1818">Kontze surname pool · 1773–1824</text>
+    </g>
+    <circle cx="610" cy="290" r="6" fill="#c84a4a" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- 17 Apr — Trendelburg index → Konze, Johann Friedrich Wilhelm — Seite 243 -->
+  <a xlink:href="open-questions.html#priority" target="_top">
+    <title>17 April 2026 — Register 220108 alphabetical index: "Konze, Johann Friedrich Wilhelm — Seite 243." First Konze father-surname baptism confirmed in post-1831 Trendelburg.</title>
+    <line x1="720" y1="290" x2="720" y2="220" stroke="#8a3a3a" stroke-width="1"/>
+    <g>
+      <rect x="616" y="170" width="208" height="44" rx="4" fill="#fdf0eb" stroke="#c84a4a" stroke-width="1.5"/>
+      <text x="720" y="186" text-anchor="middle" font-size="10" font-weight="700" fill="#5a1818">★ "KONZE, J.F.W. — SEITE 243"</text>
+      <text x="720" y="199" text-anchor="middle" font-size="9" fill="#8a3a3a" font-style="italic">Register 220108 index · 17 Apr</text>
+      <text x="720" y="210" text-anchor="middle" font-size="8.5" fill="#5a1818">first post-1831 Konze father</text>
+    </g>
+    <circle cx="720" cy="290" r="5" fill="#c84a4a" stroke="#fff" stroke-width="1.5"/>
+  </a>
+
+  <!-- ============ Events BELOW axis ============ -->
+
+  <!-- Apr eliminations -->
+  <g>
+    <text x="600" y="350" text-anchor="middle" font-size="11" font-weight="700" fill="#8a3a3a" letter-spacing="1">▼ ELIMINATION SWEEP</text>
+    <text x="600" y="364" text-anchor="middle" font-size="9" fill="#8a3a3a" font-style="italic">Helmarshausen · Sielen · Schöneberg · Hümme · Mainz · multi-register illegitimacy scan</text>
+    <line x1="500" y1="375" x2="700" y2="375" stroke="#8a3a3a" stroke-width="1" stroke-dasharray="3,3"/>
+  </g>
+  <g fill="#8a4a4a" stroke="#fff" stroke-width="1.5">
+    <circle cx="510" cy="290" r="3"/>
+    <circle cx="540" cy="290" r="3"/>
+    <circle cx="580" cy="290" r="3"/>
+    <circle cx="650" cy="290" r="3"/>
+    <circle cx="690" cy="290" r="3"/>
+  </g>
+
+  <!-- 3 May 2026 — Pension network identified + Theodore Gottlob -->
+  <a xlink:href="themes/pension-mutual-aid.html" target="_top">
+    <title>3 May 2026 — The pension witness network identified as a coordinated 1889-1891 mutual-aid filing run by Claim Agent Fred. W. Fout. Theodore Gottlob's "1893 Leavenworth Kansas" decoded as NHDVS admission.</title>
+    <line x1="1020" y1="290" x2="1020" y2="395" stroke="#8a3a3a" stroke-width="1.2"/>
+    <g filter="url(#ra-shadow)">
+      <rect x="940" y="395" width="160" height="52" rx="4" fill="#fdf0eb" stroke="#c84a4a" stroke-width="2"/>
+      <text x="1020" y="413" text-anchor="middle" font-size="10" font-weight="700" fill="#5a1818">★ PENSION NETWORK</text>
+      <text x="1020" y="426" text-anchor="middle" font-size="9" fill="#8a3a3a" font-style="italic">3 May · Gottlob · Fout</text>
+      <text x="1020" y="438" text-anchor="middle" font-size="8.5" fill="#5a1818">mutual-aid filing decoded</text>
+    </g>
+    <circle cx="1020" cy="290" r="6" fill="#c84a4a" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- 4 May 2026 — KONZEN surname conclusion -->
+  <a xlink:href="abstract.html" target="_top">
+    <title>4 May 2026 — Surname conclusion: KONZEN. Six-rendering surname trail across five scribes, Charles-self-attested at the bookend records (1866 marriage Gonnson, 1896 wife's funeral Conson). Project conclusion published.</title>
+    <line x1="1075" y1="290" x2="1075" y2="220" stroke="#a3441f" stroke-width="2"/>
+    <g filter="url(#ra-shadow)">
+      <rect x="990" y="170" width="170" height="52" rx="4" fill="#fce8d6" stroke="#a3441f" stroke-width="2.5"/>
+      <text x="1075" y="188" text-anchor="middle" font-size="11" font-weight="700" fill="#a3441f" letter-spacing="1">★★★ KONZEN</text>
+      <text x="1075" y="201" text-anchor="middle" font-size="9" fill="#a3441f" font-style="italic">surname conclusion · 4 May</text>
+      <text x="1075" y="213" text-anchor="middle" font-size="8.5" fill="#5a1818">six renderings · five scribes</text>
+    </g>
+    <circle cx="1075" cy="290" r="7" fill="#a3441f" stroke="#fff" stroke-width="2.5"/>
+  </a>
+
+  <!-- 7 May 2026 — Site rebuild pass -->
+  <a xlink:href="changelog.html" target="_top">
+    <title>7 May 2026 — Site rebuild: Methodology, Open Questions, Abstract, FAQ, Bibliography, Glossary, Visualize hub, four signature graphics, parish map, print stylesheet, JSON-LD, sitemap, Atom feed.</title>
+    <line x1="1130" y1="290" x2="1130" y2="395" stroke="#8a5a14" stroke-width="1.2"/>
+    <g filter="url(#ra-shadow)">
+      <rect x="1056" y="395" width="160" height="52" rx="4" fill="#fffaee" stroke="#8a5a14" stroke-width="1.8"/>
+      <text x="1136" y="413" text-anchor="middle" font-size="10" font-weight="700" fill="#5a3a08">SITE REBUILD</text>
+      <text x="1136" y="426" text-anchor="middle" font-size="9" fill="#8a5a14" font-style="italic">7 May · methodology, abstract,</text>
+      <text x="1136" y="438" text-anchor="middle" font-size="8.5" fill="#5a3a08">graphics, performance pass</text>
+    </g>
+    <circle cx="1130" cy="290" r="6" fill="#8a5a14" stroke="#fff" stroke-width="2"/>
+  </a>
+
+  <!-- ============ Investigator labels along the bottom ============ -->
+  <g transform="translate(60, 480)">
+    <rect x="0" y="0" width="1116" height="38" rx="4" fill="#fffaf0" stroke="#d8c8a8"/>
+    <text x="14" y="17" font-size="9.5" font-weight="700" fill="#5a4a32" letter-spacing="1">WHO DID WHAT</text>
+    <text x="14" y="31" font-size="9" fill="#3a2f1e">
+      <tspan font-weight="700">Schmidt &amp; Podoll</tspan> (2020) · <tspan font-weight="700">Maximilian J.</tspan> (Sept 2025 portrait recovery) · <tspan font-weight="700">Peter Schräder, Trendelburg</tspan> (March 2026 onward — Kirchenbuch readings, Stammtafel, surname analysis) · <tspan font-weight="700">Jed Johnson</tspan> (project author, U.S.-side records, site, synthesis)
+    </text>
+  </g>
+
+  <!-- Click-affordance hint -->
+  <text x="1220" y="475" text-anchor="end" font-size="9" font-style="italic" fill="#6a5a42">click any event to open</text>
+
+</svg>

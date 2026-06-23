@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 680" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="trail-title trail-desc" font-family="'Iowan Old Style','Georgia','Times New Roman',serif">
+  <title id="trail-title">Charles Konzen — surname trail in U.S. records, 1866–1896</title>
+  <desc id="trail-desc">Nine distinct American spellings of Charles Konzen's surname, recorded by at least five different scribes between 1866 and 1896. Six of the nine (Gonnson, Gonsen, Konsen, Gonson, Konzen, Conson) form a single phonetic cluster, sounding auditorily identical to a hearer. Two K-initial records bracket the surname trail fifteen years apart — Konsen 1875 (the closest American phonetic capture to the Hessian Kontzen / Konzen cluster) and Konzen 1890 (the only American record carrying the full Hessian z-form documented in the Trendelburg parish since 1773).</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="100%" stop-color="#f6ebd2"/>
+    </linearGradient>
+    <linearGradient id="cluster-band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#fef3d6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#fef3d6" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#fef3d6" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="2.2" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <marker id="arrow-end" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7aae6a"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1240" height="680" fill="url(#bg)"/>
+
+  <!-- Title strip (light variant) -->
+  <rect x="0" y="0" width="1240" height="46" fill="#f4ecd6" stroke="#c9a76a" stroke-width="1"/>
+  <text x="20" y="29" fill="#8a6420" font-size="14" font-weight="700" letter-spacing="2">SURNAME TRAIL · 9 DISTINCT SPELLINGS · 5 SCRIBES · 30 YEARS</text>
+  <text x="1220" y="29" fill="#6a5a42" font-size="11" text-anchor="end">1866 ─ 1896</text>
+
+<!-- ===== Phonetic-cluster band ===== -->
+  <rect x="80" y="220" width="1080" height="120" fill="url(#cluster-band)" rx="8"/>
+  <text x="620" y="212" text-anchor="middle" fill="#c89548" font-size="12" font-style="italic" font-weight="700" letter-spacing="1">Phonetic cluster — 6 of 9 attestations sound [ˈkɔn.sən] to a hearer's ear</text>
+
+  <!-- ========== OUTLIER row (Gansen + Jansen) — boxes 160 wide ========== -->
+
+  <!-- Gansen 1870 (OUTLIER · blue) -->
+  <g filter="url(#soft-shadow)">
+    <title>Outlier: Gansen 1870 — son's baptism, Pastor Braschler</title>
+    <line x1="217" y1="410" x2="217" y2="195" stroke="#a88a4a" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <rect x="137" y="138" width="160" height="56" rx="6" fill="#eef3fb" stroke="#4a76c8" stroke-width="2"/>
+    <text x="217" y="162" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2540">Gansen</text>
+    <text x="217" y="182" text-anchor="middle" font-size="10" fill="#2a4a8a">son's bapt 1870 · Braschler</text>
+  </g>
+  <circle cx="217" cy="410" r="5" fill="#4a76c8" stroke="#fff" stroke-width="2"/>
+
+  <!-- Jansen 1880 (OUTLIER · blue) -->
+  <g filter="url(#soft-shadow)">
+    <title>Outlier: Jansen 1880 — Bertha's baptism, Pastor Nollau</title>
+    <line x1="558" y1="410" x2="558" y2="195" stroke="#a88a4a" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <rect x="478" y="138" width="160" height="56" rx="6" fill="#eef3fb" stroke="#4a76c8" stroke-width="2"/>
+    <text x="558" y="162" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2540">Jansen</text>
+    <text x="558" y="182" text-anchor="middle" font-size="10" fill="#2a4a8a">Bertha's bapt 1880 · Nollau</text>
+  </g>
+  <circle cx="558" cy="410" r="5" fill="#4a76c8" stroke="#fff" stroke-width="2"/>
+
+  <!-- ========== CLUSTER row (gold boxes) — boxes 160 wide ========== -->
+
+  <!-- Gonnson 1866 -->
+  <g filter="url(#soft-shadow)">
+    <title>Cluster member: Gonnson 1866 — marriage record, Pastor Wall (Charles is the speaker)</title>
+    <line x1="80" y1="410" x2="80" y2="285" stroke="#a88a4a" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <rect x="6" y="230" width="160" height="56" rx="6" fill="#fffaf0" stroke="#d4a017" stroke-width="2"/>
+    <text x="86" y="254" text-anchor="middle" font-size="20" font-weight="700" fill="#1f1a14">Gonnson</text>
+    <text x="86" y="274" text-anchor="middle" font-size="10" fill="#6a5a42">marriage 1866 · Wall</text>
+  </g>
+  <circle cx="80" cy="410" r="6" fill="#d4a017" stroke="#fff" stroke-width="2"/>
+
+  <!-- Gonsen 1872 — sub-row, below the upper row, so it doesn't crash into Konsen -->
+  <g filter="url(#soft-shadow)">
+    <title>Cluster member: Gonsen 1872 — son's baptism, Pastor Braschler</title>
+    <line x1="285" y1="410" x2="285" y2="345" stroke="#a88a4a" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <rect x="205" y="288" width="160" height="56" rx="6" fill="#fffaf0" stroke="#d4a017" stroke-width="2"/>
+    <text x="285" y="312" text-anchor="middle" font-size="20" font-weight="700" fill="#1f1a14">Gonsen</text>
+    <text x="285" y="332" text-anchor="middle" font-size="10" fill="#6a5a42">son's bapt 1872 · Braschler</text>
+  </g>
+  <circle cx="285" cy="410" r="5" fill="#7aae6a" stroke="#fff" stroke-width="2"/>
+
+  <!-- Konsen 1875 — box centered on the 1875 timeline tick (x=388) -->
+  <g filter="url(#soft-shadow)">
+    <title>Cluster member: Konsen 1875 — Erwin Carl's baptism, Pastor Hoffmann</title>
+    <line x1="388" y1="410" x2="388" y2="285" stroke="#a88a4a" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <rect x="303" y="230" width="170" height="56" rx="6" fill="#fff3d6" stroke="#d4a017" stroke-width="2.5"/>
+    <text x="388" y="254" text-anchor="middle" font-size="20" font-weight="700" fill="#1f1a14">Konsen</text>
+    <text x="388" y="274" text-anchor="middle" font-size="9.5" fill="#6a5a42">Erwin Carl bapt 1875 · Hoffmann</text>
+  </g>
+  <circle cx="388" cy="410" r="6" fill="#d4a017" stroke="#fff" stroke-width="2"/>
+
+  <!-- Konzen 1890 — Hessian z-form keystone: the only American record carrying
+       the full Trendelburg-parish spelling. Bolder border + darker fill to
+       mark it as the singular bridge-form. Wider box (200) so the
+       "Hessian z-form" sub-caption fits comfortably. -->
+  <g filter="url(#soft-shadow)">
+    <title>Cluster member · keystone: Konzen 1890 — daughter Auguste's death record. The only American record carrying the full Hessian z-form documented in the Trendelburg parish since 1773.</title>
+    <line x1="900" y1="410" x2="900" y2="285" stroke="#a88a4a" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <rect x="800" y="230" width="200" height="56" rx="6" fill="#fde8b0" stroke="#a3441f" stroke-width="3"/>
+    <text x="900" y="254" text-anchor="middle" font-size="20" font-weight="700" fill="#1f1a14">Konzen</text>
+    <text x="900" y="274" text-anchor="middle" font-size="9.5" fill="#6a5a42">Auguste death 1890 · Hessian z-form</text>
+  </g>
+  <circle cx="900" cy="410" r="7" fill="#a3441f" stroke="#fff" stroke-width="2"/>
+
+  <!-- Gonson 1880 — U.S. Federal Census enumerator (Jackson St., St. Louis).
+       Sub-cluster row, below the timeline-tick collision with Jansen 1880. -->
+  <g filter="url(#soft-shadow)">
+    <title>Cluster member: Gonson 1880 — U.S. Federal Census, 1534 Jackson St. (enumerator unknown)</title>
+    <line x1="558" y1="410" x2="558" y2="345" stroke="#a88a4a" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <rect x="478" y="288" width="160" height="56" rx="6" fill="#fffaf0" stroke="#d4a017" stroke-width="2"/>
+    <text x="558" y="312" text-anchor="middle" font-size="20" font-weight="700" fill="#1f1a14">Gonson</text>
+    <text x="558" y="332" text-anchor="middle" font-size="10" fill="#6a5a42">1880 census · 1534 Jackson St.</text>
+  </g>
+  <circle cx="558" cy="410" r="5" fill="#7aae6a" stroke="#fff" stroke-width="2"/>
+
+  <!-- Cluster-thread annotation (arc connects all six cluster boxes:
+       Gonnson 1866 → Gonsen 1872 → Konsen 1875 → Gonson 1880 → Konzen 1890 → Conson 1896.
+       G≈K (velar stop, voicing slip) and -en/-on (unstressed schwa) are
+       the same Hessian root heard by at least five different American scribes;
+       the 1890 Konzen entry is the only one carrying the full Hessian z-form. -->
+  <path d="M 86 290 Q 185 460 285 348 Q 336 460 388 290 Q 470 460 558 348 Q 720 360 900 290 Q 1000 320 1100 290" stroke="#7aae6a" stroke-width="1.6" fill="none" marker-end="url(#arrow-end)" stroke-dasharray="3,3"/>
+
+  <!-- Gannsen 1895 (OUTLIER · blue) — Gould's St. Louis city directory, self/household supplied.
+       Drawn BEFORE Conson so the Conson box occludes the leader where they cross. -->
+  <g filter="url(#soft-shadow)">
+    <title>Outlier: Gannsen 1895 — Gould's St. Louis city directory ("Gannsen Charles, watchmaker, rear 2407 DeKalb"); self/household supplied. The only attestation of Charles's signed Gannsen form inside the 1866–1896 trail window.</title>
+    <line x1="1040" y1="410" x2="1040" y2="195" stroke="#a88a4a" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <rect x="960" y="138" width="160" height="56" rx="6" fill="#eef3fb" stroke="#4a76c8" stroke-width="2"/>
+    <text x="1040" y="162" text-anchor="middle" font-size="20" font-weight="700" fill="#1a2540">Gannsen</text>
+    <text x="1040" y="182" text-anchor="middle" font-size="10" fill="#2a4a8a">city directory 1895 · self</text>
+  </g>
+  <circle cx="1040" cy="410" r="5" fill="#4a76c8" stroke="#fff" stroke-width="2"/>
+
+  <!-- Conson 1896 — phonetically identical to Konsen (K=C, -on=-en),
+       so styled the same as the two Konsen attestations -->
+  <g filter="url(#soft-shadow)">
+    <title>Cluster member: Conson 1896 — wife Auguste's death record, Pastor Eilts (Charles is the speaker)</title>
+    <line x1="1100" y1="410" x2="1100" y2="285" stroke="#a88a4a" stroke-width="1.2" stroke-dasharray="2,2"/>
+    <rect x="1020" y="230" width="160" height="56" rx="6" fill="#fff3d6" stroke="#d4a017" stroke-width="2.5"/>
+    <text x="1100" y="254" text-anchor="middle" font-size="20" font-weight="700" fill="#1f1a14">Conson</text>
+    <text x="1100" y="274" text-anchor="middle" font-size="10" fill="#6a5a42">wife's death 1896 · Eilts</text>
+  </g>
+  <circle cx="1100" cy="410" r="6" fill="#d4a017" stroke="#fff" stroke-width="2"/>
+
+  <!-- ========== Timeline axis ========== -->
+  <line x1="80" y1="410" x2="1100" y2="410" stroke="#b09878" stroke-width="2"/>
+  <g font-size="14" fill="#7a6a52" font-weight="600">
+    <line x1="80"  y1="405" x2="80"  y2="420" stroke="#b09878" stroke-width="1.5"/>
+    <text x="80"  y="442" text-anchor="middle">1866</text>
+    <line x1="217" y1="405" x2="217" y2="420" stroke="#b09878" stroke-width="1.5"/>
+    <text x="217" y="442" text-anchor="middle">1870</text>
+    <line x1="285" y1="405" x2="285" y2="420" stroke="#b09878" stroke-width="1.5"/>
+    <text x="285" y="442" text-anchor="middle">1872</text>
+    <line x1="388" y1="405" x2="388" y2="420" stroke="#b09878" stroke-width="1.5"/>
+    <text x="388" y="442" text-anchor="middle">1875</text>
+    <line x1="558" y1="405" x2="558" y2="420" stroke="#b09878" stroke-width="1.5"/>
+    <text x="558" y="442" text-anchor="middle">1880</text>
+    <line x1="900" y1="405" x2="900" y2="420" stroke="#b09878" stroke-width="1.5"/>
+    <text x="900" y="442" text-anchor="middle">1890</text>
+    <line x1="1040" y1="405" x2="1040" y2="420" stroke="#b09878" stroke-width="1.5"/>
+    <text x="1040" y="442" text-anchor="middle" font-size="12">1895</text>
+    <line x1="1100" y1="405" x2="1100" y2="420" stroke="#b09878" stroke-width="1.5"/>
+    <text x="1100" y="442" text-anchor="middle">1896</text>
+  </g>
+
+  <!-- ========== Charles-as-speaker bookend annotations ========== -->
+  <g font-size="13" fill="#9a8268">
+    <text x="80"   y="475" text-anchor="middle" font-style="italic">Charles speaks · to Pastor Wall</text>
+    <text x="1100" y="475" text-anchor="middle" font-style="italic">Charles speaks · to Pastor Eilts</text>
+    <line x1="80"  y1="480" x2="80"  y2="490" stroke="#b09878"/>
+    <line x1="1100" y1="480" x2="1100" y2="490" stroke="#b09878"/>
+    <text x="590" y="500" text-anchor="middle" font-size="12" fill="#9a8268" font-weight="600">Bookend records: same speaker, 30-year gap, both [ˈkɔn.sən]</text>
+  </g>
+
+  <!-- ========== Legend (light variant) ========== -->
+  <!-- Widened to 720 + height 88 to fit the new Konzen-keystone row and the
+       3-name G-stem row without overflow. -->
+  <g transform="translate(260, 510)">
+    <rect x="0" y="0" width="720" height="88" rx="5" fill="#f4ecd6" stroke="#c9a76a" stroke-width="1.5"/>
+
+    <circle cx="18" cy="28" r="7" fill="#d4a017" stroke="#3a2f1e" stroke-width="1.5"/>
+    <text x="32" y="32" font-size="13" fill="#3a2f1e">Cluster member · sounds [ˈkɔn.sən]</text>
+
+    <circle cx="18" cy="60" r="7" fill="#4a76c8" stroke="#3a2f1e" stroke-width="1.5"/>
+    <text x="32" y="64" font-size="13" fill="#3a2f1e">Outlier · scribal mishearing</text>
+
+    <rect x="320" y="10" width="18" height="18" fill="#fde8b0" stroke="#a3441f" stroke-width="2"/>
+    <text x="346" y="24" font-size="13" fill="#3a2f1e">Konzen 1890 · Hessian z-form (1×) ★</text>
+
+    <rect x="320" y="36" width="18" height="18" fill="#fff3d6" stroke="#d4a017" stroke-width="1.5"/>
+    <text x="346" y="50" font-size="13" fill="#3a2f1e">Konsen / Conson · K-stem (3×)</text>
+
+    <rect x="320" y="62" width="18" height="18" fill="#fffaf0" stroke="#d4a017" stroke-width="1.5"/>
+    <text x="346" y="76" font-size="13" fill="#3a2f1e">Gonnson / Gonsen / Gonson · G-stem (3×)</text>
+  </g>
+
+  <!-- ========== Conclusion strip ========== -->
+  <!-- Pushed down to y=608 to give the taller (88-px) legend room above. -->
+  <g transform="translate(20, 608)">
+    <rect x="0" y="0" width="1200" height="58" rx="4" fill="#fce8d6" stroke="#a3441f" stroke-width="1.5"/>
+    <text x="20" y="22" font-size="11" font-weight="700" fill="#a3441f" letter-spacing="1.5">SURNAME CONCLUSION · MAY 2026</text>
+    <text x="20" y="42" font-size="12" fill="#3a2f1e">Charles's German-side surname is <tspan font-weight="700" fill="#a3441f">KONZEN</tspan> — the Hessian -en form preserved in the Trendelburg / Friedrichsfeld parish complex of Churhessen.</text>
+  </g>
+
+</svg>

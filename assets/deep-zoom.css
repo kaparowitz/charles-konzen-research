@@ -1,0 +1,81 @@
+/* ============================================================
+   Deep-zoom (OpenSeadragon) viewer — Charles Research
+   Wraps a primary-source scan in a pannable / zoomable canvas
+   so peer reviewers can inspect the scribal hand directly.
+   ============================================================ */
+.deep-zoom {
+  margin: 1.4rem 0;
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border-medium, #d8c8a8);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.deep-zoom .dz-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--bg-card-tint, #fff8e8);
+  border-bottom: 1px solid var(--border-light, #e8dcc0);
+  font-size: 0.84rem;
+  color: var(--text-meta);
+}
+.deep-zoom .dz-meta .dz-icon { color: var(--brand-dark, #8a6420); font-size: 0.95rem; }
+.deep-zoom .dz-meta .dz-title { color: var(--text-strong, #1f1a14); font-weight: 700; }
+.deep-zoom .dz-meta .dz-source { font-style: italic; }
+.deep-zoom .dz-meta a {
+  color: var(--brand-dark, #8a6420);
+  border-bottom: 1px dotted var(--border-medium, #d8c8a8);
+  text-decoration: none;
+  margin-left: auto;
+  font-size: 0.82rem;
+}
+.deep-zoom .dz-stage {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: #1f1a14;
+}
+.deep-zoom .dz-stage.tall { height: 620px; }
+.deep-zoom .dz-stage.short { height: 360px; }
+@media (max-width: 600px) {
+  .deep-zoom .dz-stage { height: 320px; }
+  .deep-zoom .dz-stage.tall { height: 380px; }
+}
+.deep-zoom .dz-fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #1f1a14;
+}
+.deep-zoom figcaption {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.86rem;
+  color: var(--text-meta);
+  background: var(--bg-card, #fff);
+  border-top: 1px solid var(--border-light, #e8dcc0);
+}
+.deep-zoom figcaption strong { color: var(--text-strong, #1f1a14); }
+
+/* OpenSeadragon overrides */
+.openseadragon-canvas { outline: none !important; }
+/* Small, non-covering badge so the static <img> is ALWAYS visible
+   beneath it — even if OpenSeadragon never loads (offline, CDN blocked,
+   open-failed). Previously this was an opaque full-stage overlay, which
+   left the scan hidden whenever the zoom canvas failed to open. */
+.deep-zoom .dz-loading {
+  position: absolute; left: 10px; bottom: 10px;
+  padding: 4px 10px; border-radius: 4px;
+  color: #d8b366; font-style: italic; font-size: 0.8rem;
+  background: rgba(31, 26, 20, 0.72);
+  pointer-events: none;
+}
+
+/* Print: collapse to a static image */
+@media print {
+  .deep-zoom .dz-stage { display: none; }
+  .deep-zoom .dz-print-img { display: block; max-width: 100%; max-height: 4.5in; margin: 0 auto; }
+}
+.deep-zoom .dz-print-img { display: none; }

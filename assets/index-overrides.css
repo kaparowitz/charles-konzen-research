@@ -1,0 +1,1581 @@
+/* index.html override stylesheet — extracted 29 May 2026 from inline <style> blocks 2-31
+   (concatenated in original document order). MUST load after key-evidence-redesign.css
+   and after the base/theme/cinematic/dark-mode sheets to preserve the original cascade. */
+
+/* Inlined safeguards — guaranteed to load with the HTML, not cached separately */
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light) section.page div[style*="linear-gradient"],
+  html:not(.theme-light) section.page a[style*="linear-gradient"],
+  html:not(.theme-light) section.page figure[style*="linear-gradient"],
+  html:not(.theme-light) section.page section[style*="linear-gradient"] {
+    background-color: #24201a !important;
+    background-image: none !important;
+    border-color: #6a5a40 !important;
+    color: #f6efe2 !important;
+  }
+  html:not(.theme-light) section.page div[style*="linear-gradient"] *,
+  html:not(.theme-light) section.page a[style*="linear-gradient"] *,
+  html:not(.theme-light) section.page figure[style*="linear-gradient"] *,
+  html:not(.theme-light) section.page section[style*="linear-gradient"] * {
+    color: #f6efe2 !important;
+    background-image: none !important;
+  }
+  html:not(.theme-light) section.page div[style*="linear-gradient"] strong,
+  html:not(.theme-light) section.page a[style*="linear-gradient"] strong,
+  html:not(.theme-light) section.page figure[style*="linear-gradient"] strong {
+    color: #fadea0 !important;
+  }
+}
+html.theme-dark section.page div[style*="linear-gradient"],
+html.theme-dark section.page a[style*="linear-gradient"],
+html.theme-dark section.page figure[style*="linear-gradient"],
+html.theme-dark section.page section[style*="linear-gradient"] {
+  background-color: #24201a !important;
+  background-image: none !important;
+  border-color: #6a5a40 !important;
+  color: #f6efe2 !important;
+}
+html.theme-dark section.page div[style*="linear-gradient"] *,
+html.theme-dark section.page a[style*="linear-gradient"] *,
+html.theme-dark section.page figure[style*="linear-gradient"] *,
+html.theme-dark section.page section[style*="linear-gradient"] * {
+  color: #f6efe2 !important;
+  background-image: none !important;
+}
+html.theme-dark section.page div[style*="linear-gradient"] strong,
+html.theme-dark section.page a[style*="linear-gradient"] strong,
+html.theme-dark section.page figure[style*="linear-gradient"] strong {
+  color: #fadea0 !important;
+}
+/* ---- Solid-color inline-style sweep — catches boxes the linear-gradient sweep misses
+       (e.g. .whats-new with inline background:#fce8d6 salmon, used for the top project-conclusion
+       and "what's new" callouts on the integrated read-through page). ---- */
+html.theme-dark [style*="background:#fce8d6"],
+html.theme-dark [style*="background: #fce8d6"],
+html:not(.theme-light) [style*="background:#fce8d6"],
+html:not(.theme-light) [style*="background: #fce8d6"] {
+  background: #2c211a !important;
+  background-color: #2c211a !important;
+  border-color: #6a4030 !important;
+  color: #f6efe2 !important;
+}
+html.theme-dark [style*="background:#fce8d6"] *,
+html.theme-dark [style*="background: #fce8d6"] *,
+html:not(.theme-light) [style*="background:#fce8d6"] *,
+html:not(.theme-light) [style*="background: #fce8d6"] * {
+  color: #f6efe2 !important;
+}
+html.theme-dark [style*="background:#fce8d6"] strong,
+html.theme-dark [style*="background:#fce8d6"] .label,
+html.theme-dark [style*="background:#fce8d6"] summary,
+html:not(.theme-light) [style*="background:#fce8d6"] strong,
+html:not(.theme-light) [style*="background:#fce8d6"] .label,
+html:not(.theme-light) [style*="background:#fce8d6"] summary {
+  color: #fadea0 !important;
+}
+html.theme-dark [style*="background:#fce8d6"] a,
+html:not(.theme-light) [style*="background:#fce8d6"] a {
+  color: #f1cf85 !important;
+}
+
+
+  .map-wrap { position: relative; }
+  .map-wrap > .ge-map-legend,
+  .map-wrap > .ca-map-legend,
+  .map-wrap > .cw-map-legend,
+  .map-wrap > .im-map-legend,
+  .map-wrap > .ppl-map-legend,
+  .map-wrap > .map-legend,
+  .map-wrap > .towns-legend,
+  .map-wrap > aside.legend {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 500;
+    max-width: 280px;
+    background: rgba(255, 250, 240, 0.96) !important;
+    border: 1px solid var(--border-medium, #a88a4a) !important;
+    border-radius: 4px;
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.82rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
+    margin: 0 !important;
+    color: var(--text-strong, #1f1a14);
+  }
+  :root.theme-dark .map-wrap > .ge-map-legend,
+  :root.theme-dark .map-wrap > .ca-map-legend,
+  :root.theme-dark .map-wrap > .cw-map-legend,
+  :root.theme-dark .map-wrap > .im-map-legend,
+  :root.theme-dark .map-wrap > .ppl-map-legend,
+  :root.theme-dark .map-wrap > .map-legend,
+  :root.theme-dark .map-wrap > .towns-legend,
+  :root.theme-dark .map-wrap > aside.legend,
+  :root:not(.theme-light) .map-wrap > .ge-map-legend,
+  :root:not(.theme-light) .map-wrap > .ca-map-legend,
+  :root:not(.theme-light) .map-wrap > .cw-map-legend,
+  :root:not(.theme-light) .map-wrap > .im-map-legend,
+  :root:not(.theme-light) .map-wrap > .ppl-map-legend,
+  :root:not(.theme-light) .map-wrap > .map-legend,
+  :root:not(.theme-light) .map-wrap > .towns-legend,
+  :root:not(.theme-light) .map-wrap > aside.legend {
+    background: rgba(28, 22, 16, 0.92) !important;
+    border-color: var(--border-medium, #6a5a40) !important;
+    color: var(--text-body, #e8dfc8);
+  }
+  @media (max-width: 700px) {
+    .map-wrap > .ge-map-legend,
+    .map-wrap > .ca-map-legend,
+    .map-wrap > .cw-map-legend,
+    .map-wrap > .im-map-legend,
+    .map-wrap > .ppl-map-legend,
+    .map-wrap > .map-legend,
+    .map-wrap > .towns-legend,
+    .map-wrap > aside.legend {
+      position: static;
+      max-width: none;
+      margin: 0.6rem 0 0 !important;
+    }
+  }
+
+
+/* NUCLEAR override — every box on the integrated read-through that has a
+   light background hard-coded in body-inline <style> blocks and is therefore
+   not picked up by the regular dark-mode cascade. Loaded after every external
+   stylesheet so it always wins on the !important channel. */
+
+/* (1) Overview-tab "Project conclusion" / "What's new" salmon boxes (#fce8d6 inline) */
+html.theme-dark body.cine-typography section#overview .whats-new,
+html:not(.theme-light) body.cine-typography section#overview .whats-new,
+html.theme-dark body.cine-typography .whats-new[style*="#fce8d6"],
+html:not(.theme-light) body.cine-typography .whats-new[style*="#fce8d6"] {
+  background: #2c211a !important;
+  background-color: #2c211a !important;
+  background-image: none !important;
+  border: 2px solid #6a4030 !important;
+  border-left: 6px solid #a04030 !important;
+  color: #f4ead0 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.32) !important;
+}
+html.theme-dark body.cine-typography section#overview .whats-new *,
+html:not(.theme-light) body.cine-typography section#overview .whats-new * {
+  color: #f4ead0 !important;
+  background-image: none !important;
+}
+html.theme-dark body.cine-typography section#overview .whats-new strong,
+html.theme-dark body.cine-typography section#overview .whats-new .label,
+html.theme-dark body.cine-typography section#overview .whats-new summary,
+html:not(.theme-light) body.cine-typography section#overview .whats-new strong,
+html:not(.theme-light) body.cine-typography section#overview .whats-new .label,
+html:not(.theme-light) body.cine-typography section#overview .whats-new summary {
+  color: #fadea0 !important;
+}
+html.theme-dark body.cine-typography section#overview .whats-new a,
+html:not(.theme-light) body.cine-typography section#overview .whats-new a {
+  color: #f1cf85 !important;
+}
+
+/* (2) Germany-tab boxes: top hook, confirmed/open card pair, timeline group,
+       ge-contribute, ge-pullquote, and the "where the search stands" aside */
+html.theme-dark body.cine-typography section#germany .ge-hook,
+html.theme-dark body.cine-typography section#germany figure.ge-timeline,
+html.theme-dark body.cine-typography section#germany .ge-timeline,
+html.theme-dark body.cine-typography section#germany .ge-timeline-prose,
+html.theme-dark body.cine-typography section#germany .ge-timeline-mobile,
+html.theme-dark body.cine-typography section#germany .ge-contribute,
+html.theme-dark body.cine-typography section#germany .ge-pullquote,
+html.theme-dark body.cine-typography section#germany .card.confirmed,
+html.theme-dark body.cine-typography section#germany .card.open,
+html.theme-dark body.cine-typography section#germany aside[style*="linear-gradient"],
+html:not(.theme-light) body.cine-typography section#germany .ge-hook,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline,
+html:not(.theme-light) body.cine-typography section#germany .ge-timeline,
+html:not(.theme-light) body.cine-typography section#germany .ge-timeline-prose,
+html:not(.theme-light) body.cine-typography section#germany .ge-timeline-mobile,
+html:not(.theme-light) body.cine-typography section#germany .ge-contribute,
+html:not(.theme-light) body.cine-typography section#germany .ge-pullquote,
+html:not(.theme-light) body.cine-typography section#germany .card.confirmed,
+html:not(.theme-light) body.cine-typography section#germany .card.open,
+html:not(.theme-light) body.cine-typography section#germany aside[style*="linear-gradient"] {
+  background: #24201a !important;
+  background-color: #24201a !important;
+  background-image: none !important;
+  border-color: #6a5a40 !important;
+  color: #e8dfc8 !important;
+}
+html.theme-dark body.cine-typography section#germany .ge-hook *,
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg text:not(.svg-pivot-year):not(.svg-pivot-age):not(.svg-pivot-event),
+html.theme-dark body.cine-typography section#germany .ge-timeline-prose .body,
+html.theme-dark body.cine-typography section#germany .ge-timeline-prose .body *,
+html.theme-dark body.cine-typography section#germany .ge-timeline-mobile ol li,
+html.theme-dark body.cine-typography section#germany .ge-contribute,
+html.theme-dark body.cine-typography section#germany .ge-pullquote,
+html.theme-dark body.cine-typography section#germany .card.confirmed li,
+html.theme-dark body.cine-typography section#germany .card.confirmed p,
+html.theme-dark body.cine-typography section#germany .card.open li,
+html.theme-dark body.cine-typography section#germany .card.open p,
+html.theme-dark body.cine-typography section#germany aside[style*="linear-gradient"],
+html:not(.theme-light) body.cine-typography section#germany .ge-hook *,
+html:not(.theme-light) body.cine-typography section#germany .ge-timeline-prose .body,
+html:not(.theme-light) body.cine-typography section#germany .ge-timeline-prose .body *,
+html:not(.theme-light) body.cine-typography section#germany .ge-timeline-mobile ol li,
+html:not(.theme-light) body.cine-typography section#germany .ge-contribute,
+html:not(.theme-light) body.cine-typography section#germany .ge-pullquote,
+html:not(.theme-light) body.cine-typography section#germany .card.confirmed li,
+html:not(.theme-light) body.cine-typography section#germany .card.confirmed p,
+html:not(.theme-light) body.cine-typography section#germany .card.open li,
+html:not(.theme-light) body.cine-typography section#germany .card.open p,
+html:not(.theme-light) body.cine-typography section#germany aside[style*="linear-gradient"] {
+  color: #e8dfc8 !important;
+}
+html.theme-dark body.cine-typography section#germany .ge-hook strong,
+html.theme-dark body.cine-typography section#germany .ge-contribute strong,
+html.theme-dark body.cine-typography section#germany .ge-pullquote strong,
+html.theme-dark body.cine-typography section#germany .card.confirmed h3,
+html.theme-dark body.cine-typography section#germany .card.open h3,
+html.theme-dark body.cine-typography section#germany .card.confirmed strong,
+html.theme-dark body.cine-typography section#germany .card.open strong,
+html.theme-dark body.cine-typography section#germany .ge-timeline-prose summary,
+html.theme-dark body.cine-typography section#germany aside[style*="linear-gradient"] strong,
+html:not(.theme-light) body.cine-typography section#germany .ge-hook strong,
+html:not(.theme-light) body.cine-typography section#germany .ge-contribute strong,
+html:not(.theme-light) body.cine-typography section#germany .ge-pullquote strong,
+html:not(.theme-light) body.cine-typography section#germany .card.confirmed h3,
+html:not(.theme-light) body.cine-typography section#germany .card.open h3,
+html:not(.theme-light) body.cine-typography section#germany .card.confirmed strong,
+html:not(.theme-light) body.cine-typography section#germany .card.open strong,
+html:not(.theme-light) body.cine-typography section#germany .ge-timeline-prose summary,
+html:not(.theme-light) body.cine-typography section#germany aside[style*="linear-gradient"] strong {
+  color: #fadea0 !important;
+}
+html.theme-dark body.cine-typography section#germany .card.confirmed a,
+html.theme-dark body.cine-typography section#germany .card.open a,
+html.theme-dark body.cine-typography section#germany .ge-contribute a,
+html.theme-dark body.cine-typography section#germany .ge-timeline-prose .body a,
+html:not(.theme-light) body.cine-typography section#germany .card.confirmed a,
+html:not(.theme-light) body.cine-typography section#germany .card.open a,
+html:not(.theme-light) body.cine-typography section#germany .ge-contribute a,
+html:not(.theme-light) body.cine-typography section#germany .ge-timeline-prose .body a {
+  color: #f1cf85 !important;
+}
+html.theme-dark body.cine-typography section#germany .ge-timeline-mobile ol li .yr,
+html:not(.theme-light) body.cine-typography section#germany .ge-timeline-mobile ol li .yr {
+  color: #f4ead0 !important;
+}
+
+/* (3) Timeline SVG text fills — theme-aware. Light mode keeps the dark
+       inline `fill="#3a2f1e"` / `fill="#6a5a42"` attributes as-is; dark
+       mode overrides them with cream / gilt for legibility on the dark
+       card background. Pivot row (1866) stays in its warm-red regardless. */
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-title,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-title {
+  fill: #f4ead0 !important;
+}
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-sub,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-sub {
+  fill: #c8b896 !important;
+}
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-year,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-year {
+  fill: #f1cf85 !important;
+}
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-age,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-age {
+  fill: #c8b896 !important;
+}
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-event,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-event {
+  fill: #e8dfc8 !important;
+}
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-tick,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-tick {
+  stroke: #c8b896 !important;
+}
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-pivot-year,
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-pivot-age,
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-pivot-event,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-pivot-year,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-pivot-age,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-pivot-event {
+  fill: #f08060 !important;
+}
+html.theme-dark body.cine-typography section#germany figure.ge-timeline svg .svg-pivot-tick,
+html:not(.theme-light) body.cine-typography section#germany figure.ge-timeline svg .svg-pivot-tick {
+  stroke: #f08060 !important;
+}
+
+/* Sponsors annotation block — used in the seven-children stat panel.
+   Migrated 17 May 2026 (was 7× inline style attributes on lines 2538–2574). */
+.sponsors.small {
+  margin-top: 0.25rem;
+  padding: 0.35rem 0.6rem;
+  background: var(--bg-card, #fffaf0);
+  border-left: 3px solid #c8b896;
+  color: var(--text-meta, #5a4a32);
+}
+.sponsors.small.featured {
+  background: var(--bg-card-tint, #fdf4d8);
+  border-left-color: var(--brand, #d8b366);
+}
+
+/* Citation code blocks ("How to cite" section).
+   Migrated 17 May 2026 (was 3× identical inline-style attributes). */
+.cite-section code.cite-line {
+  display: block;
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.84rem;
+  color: var(--text-primary, #1f1a14);
+  background: var(--bg-page, #fff);
+  padding: 0.6rem 0.8rem;
+  border-radius: 3px;
+  border: 1px solid var(--border-medium, #d8c8a8);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+    /* ===== Charles in America — section-scoped styles (ported from standalone, May 2026) ===== */
+    #charles h3 { font-family: var(--font-serif); font-size: 1.4rem; color: var(--brand-dark, #8a6420); border-bottom: 1px solid var(--border-light, #e8dcc0); padding-bottom: 0.4rem; margin: 2rem 0 1rem; }
+    #charles h4 { font-family: var(--font-serif); font-size: 1.08rem; color: var(--text-strong, #3a2f1e); margin: 1.6rem 0 0.7rem; letter-spacing: 0.01em; }
+
+    /* Quick stats bar — darker stat tile background, each tile is a clickable link */
+    #charles .quick-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.7rem; margin: 1.2rem 0 1.8rem; }
+    #charles .quick-stats .stat { display: block; background: #d8c088; border: 1px solid #a8884c; border-radius: 5px; padding: 1.05rem 0.7rem; text-align: center; text-decoration: none; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+    #charles .quick-stats .stat:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.32); border-color: #f0c878; }
+    #charles .quick-stats .stat::after { content: none !important; }   /* override site-wide "+" decorator — these tiles are links, not expanders */
+    #charles .quick-stats .stat-num { font-family: var(--font-serif); font-size: 2.1rem; font-weight: 700; color: var(--brand-dark, #5a3a08); line-height: 1.1; }
+    #charles .quick-stats .stat-lbl { font-size: 0.92rem; color: var(--text-body, #2c2010); margin-top: 0.4rem; line-height: 1.4; }
+    :root.theme-dark #charles .quick-stats .stat,
+    :root:not(.theme-light) #charles .quick-stats .stat { background: #18140e !important; border-color: #5a4628 !important; }
+    :root.theme-dark #charles .quick-stats .stat:hover,
+    :root:not(.theme-light) #charles .quick-stats .stat:hover { border-color: #d8b366 !important; box-shadow: 0 4px 14px rgba(216, 179, 102, 0.25) !important; }
+
+    /* SVG life timeline — theme-aware */
+    #charles .life-timeline-fig { margin: 0.4rem 0 1rem; padding: 0.6rem; background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8); border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    #charles .life-timeline-fig svg { display: block; width: 100%; height: auto; max-height: 280px; }
+    #charles .life-timeline-fig figcaption { font-size: 0.96rem; color: var(--text-muted, #5a4a32); margin-top: 0.5rem; font-style: italic; padding: 0 0.3rem; }
+
+    /* Name evolution — theme-aware */
+    #charles .name-evolution { background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8); border-radius: 6px; padding: 1.4rem 1.3rem; margin: 0.4rem 0 1rem; color: var(--text-body, #2c2620); }
+    #charles .name-flow { display: flex; align-items: stretch; gap: 0.4rem; flex-wrap: wrap; margin: 0.9rem 0 0.8rem; }
+    #charles .name-stage { flex: 1 1 180px; min-width: 160px; padding: 0.4rem 0; }
+    #charles .name-stage .stage-label { font-size: 0.84rem; color: #8a6420; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; font-weight: 700; }
+    #charles .name-stage .chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    #charles .name-stage .chip { font-family: var(--font-serif); font-size: 1rem; padding: 0.3rem 0.7rem; border-radius: 3px; border: 1px solid; white-space: nowrap; }
+    #charles .name-stage .chip.german { background: #3a2e14; border-color: #c89a40; color: #f4e2b0; }
+    #charles .name-stage .chip.transition { background: #3a2410; border-color: #b07830; color: #f4d8a8; }
+    #charles .name-stage .chip.mid { background: #3a1c0c; border-color: #a06030; color: #f0caa0; }
+    #charles .name-stage .chip.american { background: #2a1408; border-color: #884420; color: #ecbe9a; }
+    /* Light-mode: the dark "aged-ink" chips are too heavy on the light step-1 card — use parchment-toned,
+       still colour-graded (Hesse green-brown -> American warm), with dark readable text. Dark mode keeps the dark chips above. */
+    :root.theme-light #charles .name-stage .chip.german { background:#e8e0c4; border-color:#b8923a; color:#4a3c14; }
+    :root.theme-light #charles .name-stage .chip.transition { background:#ecdcc2; border-color:#a86c28; color:#5a3a16; }
+    :root.theme-light #charles .name-stage .chip.mid { background:#eed8be; border-color:#9a5a28; color:#5a3214; }
+    :root.theme-light #charles .name-stage .chip.american { background:#f0d4b8; border-color:#844018; color:#5a2e12; }
+    @media (prefers-color-scheme: light) {
+      :root:not(.theme-dark) #charles .name-stage .chip.german { background:#e8e0c4; border-color:#b8923a; color:#4a3c14; }
+      :root:not(.theme-dark) #charles .name-stage .chip.transition { background:#ecdcc2; border-color:#a86c28; color:#5a3a16; }
+      :root:not(.theme-dark) #charles .name-stage .chip.mid { background:#eed8be; border-color:#9a5a28; color:#5a3214; }
+      :root:not(.theme-dark) #charles .name-stage .chip.american { background:#f0d4b8; border-color:#844018; color:#5a2e12; }
+    }
+    #charles .name-arrow { font-size: 1.5rem; color: #b07830; font-weight: 700; align-self: center; flex: 0 0 auto; line-height: 1; }
+    #charles .surname-preservation { display: flex; gap: 0.7rem; padding: 0.95rem 1.1rem; background: #2a1c08; border-left: 3px solid #f0c878; border-radius: 3px; margin-top: 0.9rem; font-size: 1.04rem; color: #f4e2b0; line-height: 1.55; }
+    #charles .surname-preservation strong { color: #f8e8b8; }
+    #charles .surname-preservation em { color: #f4e2b0; }
+    #charles .surname-preservation .star { color: #f4d898; font-size: 1.2rem; flex: 0 0 auto; line-height: 1.4; }
+    #charles .surname-preservation a { color: #f0c878; border-bottom: 1px dotted #b89860; }
+
+    /* Narrative block — theme-aware */
+    #charles .narrative-block { background: var(--bg-card, #fffaf0); border-left: 3px solid var(--brand, #d8b366); padding: 1rem 1.3rem; margin: 0.4rem 0 1rem; }
+    #charles .narrative-block p { font-family: var(--font-serif); font-size: 1.14rem; line-height: 1.7; color: var(--text-body, #2c2620); margin: 0 0 1rem; }
+    #charles .narrative-block p:last-child { margin-bottom: 0; }
+    #charles .narrative-block p .place { font-style: italic; }
+
+    /* Deep-dive group heads */
+    #charles .dd-group-head { display: flex; align-items: baseline; gap: 0.6rem; margin: 1.6rem 0 0.7rem; }
+    #charles .dd-group-head h4 { margin: 0; }
+    #charles .dd-group-head .dd-count { font-size: 0.92rem; color: #8a6420; font-family: 'SF Mono', Menlo, Consolas, monospace; }
+
+    /* City images — theme-aware */
+    #charles details.city-images { background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8); border-radius: 6px; padding: 0; margin: 0.4rem 0 1rem; }
+    #charles details.city-images > summary { padding: 0.95rem 1.2rem; cursor: pointer; font-weight: 700; color: var(--brand-dark, #8a6420); font-size: 1.08rem; list-style: none; }
+    #charles details.city-images > summary::-webkit-details-marker { display: none; }
+    #charles details.city-images > summary::before { content: "▸ "; color: #b07830; margin-right: 0.4rem; transition: transform 0.15s; display: inline-block; }
+    #charles details.city-images[open] > summary::before { transform: rotate(90deg); }
+    #charles details.city-images[open] > summary { border-bottom: 1px solid var(--border-light, #e8dcc0); }
+    #charles .city-images-inner { padding: 1rem 1.1rem; }
+
+    /* Charles in America — Leaflet summary map (5 key life-arc pins) */
+    #ca-fmap { height: 56vh; min-height: 420px; border: 2px solid #d8b366; border-radius: 6px; box-shadow: 0 4px 14px rgba(74, 58, 34, 0.18); margin: 0.4rem 0 1.2rem; }
+    #ca-fmap .leaflet-popup-content-wrapper { background:#fffaf0; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.18); }
+    #ca-fmap .leaflet-popup-content { font-family:var(--font-serif); color:#3a2f1e; font-size:0.92rem; line-height:1.45; margin:0.7rem 0.9rem; }
+    #ca-fmap .leaflet-popup-content h4 { color: var(--brand-dark); font-size:1rem; margin-bottom:0.25rem; padding-bottom:0.2rem; border-bottom:1px solid #d8c8a8; }
+    #ca-fmap .leaflet-popup-content .yr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:0.78rem; color:#8a6420; font-weight:700; letter-spacing:0.03em; display:inline-block; margin-bottom:0.3rem; }
+    #ca-fmap .leaflet-popup-content .body { font-size:0.88rem; color:#3a2f1e; }
+    #ca-fmap .leaflet-popup-content a { color:#8a6420; border-bottom:1px dotted #d8c8a8; }
+    #ca-fmap .leaflet-popup-content .openmap { display:inline-block; margin-top:0.4rem; font-size:0.82rem; color:#8a6420; border-bottom:1px dashed #d8b366; }
+    #ca-fmap .leaflet-popup-tip { background:#fffaf0; }
+
+    #charles .ca-map-legend { background:#fffaf0; border:1px solid #d8c8a8; border-radius:4px; padding:0.95rem 1.2rem; margin:0 0 1.4rem; font-size:1rem; }
+    #charles .ca-map-legend h4 { font-size:0.95rem; color: var(--brand-dark); margin:0 0 0.5rem; padding-bottom:0.25rem; border-bottom:1px solid #d8c8a8; }
+    #charles .ca-map-legend .legend-row { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.35rem; }
+    #charles .ca-map-legend .legend-row:last-child { margin-bottom:0; }
+    #charles .ca-map-legend .swatch { flex:0 0 20px; width:20px; height:20px; border-radius:50%; border:2px solid #fffaf0; box-shadow:0 0 0 1px #5a4a32; display:inline-flex; align-items:center; justify-content:center; color:#fff; font:700 11px 'Helvetica Neue',Arial,sans-serif; text-shadow:0 1px 1px rgba(0,0,0,0.5); }
+    #charles .ca-map-legend .swatch.house-early { color:#5a4420; text-shadow:none; }
+    #charles .ca-map-legend .swatch.house-early { background:#e8c878; }
+    #charles .ca-map-legend .swatch.house-late  { background:#c89640; }
+    #charles .ca-map-legend .swatch.last { background:#a04020; }
+    #charles .ca-map-legend .swatch.church { background:#5a4a8a; }
+    #charles .ca-map-legend .swatch.cemetery { background:#3a4a3a; }
+    #charles .ca-map-legend .swatch.census { background:#4a7a8a; }
+    #charles .ca-map-legend .swatch.residence { background:#b08a4a; }
+    #charles .ca-map-legend .legend-label { color:#3a2f1e; font-size:0.98rem; }
+    #charles .ca-map-legend .legend-yr { display:inline-block; font:700 0.72rem 'Helvetica Neue',Arial,sans-serif; color:#6a4a1a; background:#f0e3c4; border:1px solid #d8c39a; border-radius:3px; padding:0.5px 5px; margin-left:2px; vertical-align:1px; white-space:nowrap; }
+    #charles .ca-map-legend { position: static; clear: both; }
+    #charles .ca-map-legend .legend-note { margin:0.6rem 0 0; font-size:0.82rem; color:#6a5a42; line-height:1.45; }
+    /* Permanent pin labels on the life-arc map */
+    #ca-fmap .ca-pin-tip { background:rgba(28,22,16,0.84); color:#f6e6b8; border:none; box-shadow:0 1px 3px rgba(0,0,0,0.45); font-family:var(--font-serif); font-size:0.7rem; font-weight:700; letter-spacing:0.01em; padding:1px 6px; white-space:nowrap; border-radius:3px; }
+    #ca-fmap .ca-pin-tip::before { display:none; }
+    :root.theme-dark #charles .ca-map-legend, :root:not(.theme-light) #charles .ca-map-legend { background:#24201a; border-color:#3c352a; }
+    :root.theme-dark #charles .ca-map-legend .legend-label, :root:not(.theme-light) #charles .ca-map-legend .legend-label { color:#e8dfc8; }
+    :root.theme-dark #charles .ca-map-legend .legend-yr, :root:not(.theme-light) #charles .ca-map-legend .legend-yr { color:#f0d9a4; background:#3a3022; border-color:#544733; }
+    #charles .ca-map-legend .legend-label .small { color:#6a5a42; font-size:0.88rem; }
+    :root.theme-dark #charles .ca-map-legend .legend-label .small, :root:not(.theme-light) #charles .ca-map-legend .legend-label .small { color:#b3a588; }
+
+    /* Image gallery */
+    #charles .ca-img-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.1rem; margin:0; }
+    #charles .ca-img-gallery figure { margin:0; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+    #charles .ca-img-gallery figure img { width:100%; height:auto; display:block; border-radius:3px; background:#3a2f1e; }
+    #charles .ca-img-gallery figure figcaption { font-size:0.95rem; color:#3a2f1e; line-height:1.5; margin-top:0.6rem; }
+    #charles .ca-img-gallery figure figcaption strong { color:#8a3a3a; }
+    #charles .ca-img-gallery figure figcaption .credit { display:block; margin-top:0.4rem; font-size:0.86rem; color:#6a5a42; font-style:italic; }
+
+    /* Readability bumps */
+    #charles .lede { font-size: 1.22rem; line-height: 1.6; }
+    #charles .tab-meta { font-size: 0.95rem; }
+    #charles .page-toc { font-size: 1.04rem; line-height: 1.7; padding: 1rem 1.2rem; }
+    #charles .page-toc .toc-label { font-size: 0.9rem; }
+    #charles .page-toc a { font-size: 1.04rem; }
+    #charles table.kv { font-size: 1.02rem; }
+    #charles table.kv td { padding: 0.55rem 0.7rem; line-height: 1.55; }
+    #charles p:not(.lede):not(.tab-meta) { font-size: 1.06rem; line-height: 1.65; }
+    #charles .ca-tile-title { font-size: 1.15rem; }
+    #charles .ca-tile-sub { font-size: 0.98rem; line-height: 1.55; }
+    #charles .ca-tile-eyebrow { font-size: 0.82rem; }
+
+    /* Static / non-clickable states for tiles whose destination pages don't yet exist.
+       These render as intentional data displays / "in development" placeholders so users
+       aren't promised pages that 404. Swap back to <a href="..."> and remove the .stat-static
+       or .coming-soon class when the destination page lands. */
+    #charles .quick-stats .stat-static { cursor: default; }
+    #charles .quick-stats .stat-static:hover { transform: none; box-shadow: none; border-color: #a8884c; }
+    #charles .ca-tile.coming-soon { cursor: default; opacity: 0.78; position: relative; display: block; text-decoration: none; }
+    #charles .ca-tile.coming-soon:hover { transform: none; box-shadow: none; }
+    #charles .ca-tile.coming-soon .ca-tile-arrow { opacity: 0; }
+    #charles .ca-tile.coming-soon .ca-tile-eyebrow::after {
+      content: " · in development";
+      color: #a89060;
+      font-style: italic;
+      letter-spacing: 0;
+    }
+    /* Visual weight rescue for the $-prefixed quick-stat tile, which otherwise reads smaller
+       than its bare-numeric siblings. */
+    #charles .quick-stats .stat-num.stat-money { font-size: 1.65rem; letter-spacing: 0.01em; }
+    #charles .quick-stats .stat-num.stat-money .per { font-size: 1rem; opacity: 0.8; }
+
+    /* ===== Format parity with #germany — overrides for the shared ge-* kit so it reads
+       as American (Union blue + brick) rather than Hessian green when used inside #charles.
+       The ge-hook / ge-metrics / ge-wappen-row / ge-dropcap / ge-fleuron / ge-surname-step /
+       ge-place-table / ge-place-quote classes are defined globally in the #germany section's
+       style block; here we only adjust the accent colors. ===== */
+    #charles { --section-america: #3a4a8a; --section-america-light: #5a6aaa; --section-america-warm: #8a4030; }
+    #charles .ge-hook { border-left-color: var(--section-america); }
+    #charles .ge-hook strong { color: var(--text-heading, #1f1a14); }
+    #charles .ge-metrics .metric { border-left-color: var(--section-america); }
+    #charles .ge-metrics a.metric:hover, #charles .ge-metrics a.metric:focus-visible { border-color: var(--section-america-light); }
+    #charles .ge-metrics .metric .num { color: var(--section-america); }
+    #charles .ge-metrics .metric.static { cursor: default; }
+    #charles .ge-metrics .metric.static:hover { transform: none; box-shadow: none; border-color: var(--border-light, #d8c8a8); border-left-color: var(--section-america); }
+    #charles .ge-wappen-row h3 { margin: 0 !important; border-top: none !important; padding-top: 0 !important; font-size: 1.4rem; color: var(--section-america); }
+    #charles .ge-surname-step { border-left-color: var(--section-america-light); }
+    #charles .ge-surname-step.verdict { border-left-color: var(--brand-dark, #8a6420); }
+    #charles .ge-surname-step .step-num { background: var(--section-america); color: #fff5dd; }
+    #charles .ge-surname-step.verdict .step-num { background: var(--brand-dark, #8a6420); }
+    #charles .ge-surname-step h2 { color: var(--section-america); font-size: 1.18rem; margin: 0 0 0.7rem 0; padding: 0; border: 0; }
+    #charles .ge-surname-step.verdict h2 { color: var(--brand-dark, #8a6420); }
+    #charles .ge-surname-step .verdict-line strong { color: var(--section-america-warm); }
+    #charles .ge-place-table th { color: var(--section-america); }
+    #charles .ge-place-quote { border-left-color: var(--section-america); }
+    :root.theme-dark #charles .ge-wappen-row h3,
+    :root:not(.theme-light) #charles .ge-wappen-row h3 { color: #a8b8e8; }
+    :root.theme-dark #charles .ge-metrics .metric .num,
+    :root:not(.theme-light) #charles .ge-metrics .metric .num { color: #a8b8e8; }
+    :root.theme-dark #charles .ge-surname-step h2,
+    :root:not(.theme-light) #charles .ge-surname-step h2 { color: #a8b8e8; }
+
+    /* Evidence boxes — force a clearly dark background in dark mode so the
+       cream/tan source-quote blockquotes don't read as "light" against the
+       walnut page. The base .ge-place-quote rule (defined in the #germany
+       inline style block) uses var(--bg-card-tint), which in some cascades
+       resolves to the light theme value; pin a hard dark color here. */
+    :root.theme-dark #charles .ge-place-quote,
+    :root:not(.theme-light) #charles .ge-place-quote {
+      background: #1f1a12 !important;
+      color: var(--text-body, #e8dfc8) !important;
+      border-left-color: var(--brand, #d8b366) !important;
+    }
+    :root.theme-dark #charles .ge-place-quote .quote-cite,
+    :root:not(.theme-light) #charles .ge-place-quote .quote-cite {
+      color: var(--text-meta, #c8b896) !important;
+    }
+    :root.theme-dark #charles .ge-place-quote strong,
+    :root:not(.theme-light) #charles .ge-place-quote strong {
+      color: var(--text-strong, #f4ead0) !important;
+    }
+    :root.theme-dark #charles .ge-surname-step,
+    :root:not(.theme-light) #charles .ge-surname-step {
+      background: var(--bg-card, #24201a) !important;
+      border-color: var(--border-light, #3c352a) !important;
+    }
+    :root.theme-dark #charles .ge-surname-step.verdict,
+    :root:not(.theme-light) #charles .ge-surname-step.verdict {
+      background: linear-gradient(140deg, var(--bg-card, #24201a), var(--bg-card-tint, #2c261d)) !important;
+    }
+  
+
+        #charles .lt-axis { stroke: var(--text-muted, #5a4a32); stroke-width:1.5; fill:none; }
+        #charles .lt-tick { stroke: var(--brand-dark, #8a6420); stroke-width:1.2; }
+        #charles .lt-yr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:14px; fill: var(--text-muted, #6a5a42); }
+        #charles .lt-dot { fill: var(--brand-dark, #8a6420); stroke: var(--bg-card, #fffaf0); stroke-width:2; }
+        #charles .lt-dot.major { fill:#a04020; }
+        #charles .lt-label { font-family:var(--font-serif); font-size:15px; fill: var(--text-strong, #1f1a14); }
+        #charles .lt-eyr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:13px; fill: var(--brand-dark, #8a6420); font-weight:700; }
+        #charles .lt-stem { stroke: var(--brand, #d8b366); stroke-width:1.2; }
+        #charles .lt-phase-children { fill: var(--brand, #d8b366); opacity:0.85; }
+        #charles .lt-phase-label { font-family:var(--font-serif); font-size:13px; fill: #1f1a14; font-style:italic; font-weight:600; }
+      
+
+    /* Civil War — Leaflet map (mirrors charles_america/st-louis-residences.html, recoloured red) */
+    #cw-fmap { height: 60vh; min-height: 440px; border: 2px solid #c84a4a; border-radius: 6px; box-shadow: 0 4px 14px rgba(74, 58, 34, 0.18); margin: 1rem 0 1.4rem; }
+    #cw-fmap .leaflet-popup-content-wrapper { background:#fffaf0; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.18); }
+    #cw-fmap .leaflet-popup-content { font-family:var(--font-serif); color:#3a2f1e; font-size:0.92rem; line-height:1.45; margin:0.7rem 0.9rem; }
+    #cw-fmap .leaflet-popup-content h4 { color:#8a3a3a; font-size:1rem; margin-bottom:0.25rem; padding-bottom:0.2rem; border-bottom:1px solid #e6c8c8; }
+    #cw-fmap .leaflet-popup-content .yr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:0.78rem; color:#8a3a3a; font-weight:700; letter-spacing:0.03em; display:inline-block; margin-bottom:0.3rem; }
+    #cw-fmap .leaflet-popup-content .body { font-size:0.88rem; color:#3a2f1e; }
+    #cw-fmap .leaflet-popup-content a { color:#8a3a3a; border-bottom:1px dotted #e6c8c8; }
+    #cw-fmap .leaflet-popup-content .openmap { display:inline-block; margin-top:0.4rem; font-size:0.82rem; color:#8a3a3a; border-bottom:1px dashed #c84a4a; }
+    #cw-fmap .leaflet-popup-tip { background:#fffaf0; }
+
+    .cw-map-legend { background:#fffaf0; border:1px solid #d8c8a8; border-radius:4px; padding:0.9rem 1.1rem; margin:0 0 1.4rem; font-size:0.88rem; }
+    .cw-map-legend h3 { font-size:0.95rem; color: var(--brand-dark); margin-bottom:0.5rem; padding-bottom:0.25rem; border-bottom:1px solid #d8c8a8; }
+    .cw-map-legend .legend-row { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.35rem; }
+    .cw-map-legend .legend-row:last-child { margin-bottom:0; }
+    .cw-map-legend .swatch { flex:0 0 18px; width:18px; height:18px; border-radius:50%; border:2px solid #fffaf0; box-shadow:0 0 0 1px #5a4a32; display:inline-block; }
+    .cw-map-legend .swatch.station { background:#c84a4a; }
+    .cw-map-legend .swatch.detached { background:#c8754a; }
+    .cw-map-legend .swatch.field { background:#8a3a3a; }
+    .cw-map-legend .legend-label { color:#3a2f1e; font-size:0.86rem; }
+    .cw-map-legend .legend-label .small { color:#6a5a42; font-size:0.76rem; }
+
+    /* Legend overlay hard-lock — mirrors the .ppl-map-legend behaviour on the People tab.
+       Hard-pins position:absolute inside #civilwar even if a later rule tries to win
+       the cascade with equal specificity. Drops back to in-flow at <=700px. */
+    #civilwar .map-wrap > .cw-map-legend {
+      position: absolute !important;
+      top: 14px !important;
+      right: 14px !important;
+      z-index: 500 !important;
+      max-width: 280px;
+      margin: 0 !important;
+      padding: 0.65rem 0.85rem !important;
+      font-size: 0.82rem;
+      background: rgba(255, 250, 240, 0.96) !important;
+      border: 1px solid var(--border-medium, #a88a4a) !important;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
+      color: var(--text-strong, #1f1a14);
+    }
+    :root.theme-dark #civilwar .map-wrap > .cw-map-legend,
+    :root:not(.theme-light) #civilwar .map-wrap > .cw-map-legend {
+      background: rgba(28, 22, 16, 0.92) !important;
+      border-color: var(--border-medium, #6a5a40) !important;
+      color: var(--text-body, #e8dfc8) !important;
+    }
+    @media (max-width: 700px) {
+      #civilwar .map-wrap > .cw-map-legend {
+        position: static !important;
+        max-width: none;
+        margin: 0.6rem 0 0 !important;
+      }
+    }
+
+    /* ===== Civil War — section-scoped overrides of the shared ge-* kit, mirroring #charles.
+       Civil War palette is oxblood (theme.css: --section-civilwar #a04030, -d #6a2820) with a
+       brick-red accent (#c84a4a) for the brighter UI hits (map pins, callouts). ===== */
+    #civilwar { --section-cw: #a04030; --section-cw-d: #6a2820; --section-cw-light: #c84a4a; --section-cw-warm: #8a3a3a; }
+    #civilwar .ge-hook { border-left-color: var(--section-cw); }
+    #civilwar .ge-hook strong { color: var(--text-heading, #1f1a14); }
+    #civilwar .ge-metrics .metric { border-left-color: var(--section-cw); }
+    #civilwar .ge-metrics a.metric:hover, #civilwar .ge-metrics a.metric:focus-visible { border-color: var(--section-cw-light); }
+    #civilwar .ge-metrics .metric .num { color: var(--section-cw); }
+    #civilwar .ge-metrics .metric.static { cursor: default; }
+    #civilwar .ge-metrics .metric.static:hover { transform: none; box-shadow: none; border-color: var(--border-light, #d8c8a8); border-left-color: var(--section-cw); }
+    #civilwar .ge-wappen-row h3 { margin: 0 !important; border-top: none !important; padding-top: 0 !important; font-size: 1.4rem; color: var(--section-cw); }
+    :root.theme-dark #civilwar .ge-wappen-row h3,
+    :root:not(.theme-light) #civilwar .ge-wappen-row h3 { color: #e8a890; }
+    :root.theme-dark #civilwar .ge-metrics .metric .num,
+    :root:not(.theme-light) #civilwar .ge-metrics .metric .num { color: #e8a890; }
+
+    /* H2 badge — clean replacement for the previous inline-styled duplicate H2 */
+    #civilwar .cw-section-h2 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.7rem; }
+    #civilwar .cw-section-h2 .cw-union-badge { font-size: 0.55em; color: #3a4a8a; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    :root.theme-dark #civilwar .cw-section-h2 .cw-union-badge,
+    :root:not(.theme-light) #civilwar .cw-section-h2 .cw-union-badge { color: #a8b8e8; }
+
+    /* Narrative-block (mirrors #charles version, recoloured) */
+    #civilwar .narrative-block { background: var(--bg-card, #fffaf0); border-left: 3px solid var(--section-cw); padding: 1rem 1.3rem; margin: 0.4rem 0 1rem; }
+    #civilwar .narrative-block p { font-family: var(--font-serif); font-size: 1.10rem; line-height: 1.7; color: var(--text-body, #2c2620); margin: 0 0 1rem; }
+    #civilwar .narrative-block p:last-child { margin-bottom: 0; }
+    #civilwar .narrative-block p .place { font-style: italic; }
+    #civilwar .narrative-block p strong { color: var(--section-cw-d); }
+    :root.theme-dark #civilwar .narrative-block p strong,
+    :root:not(.theme-light) #civilwar .narrative-block p strong { color: #f0c0a8; }
+
+    /* Deep-dive group heads (mirrors #charles) */
+    #civilwar .dd-group-head { display: flex; align-items: baseline; gap: 0.6rem; margin: 1.6rem 0 0.7rem; }
+    #civilwar .dd-group-head h4 { margin: 0; font-size: 1.05rem; color: var(--section-cw); border-bottom: none; padding-bottom: 0; }
+    #civilwar .dd-group-head .dd-count { font-size: 0.92rem; color: var(--section-cw-d); font-family: 'SF Mono', Menlo, Consolas, monospace; }
+    :root.theme-dark #civilwar .dd-group-head h4,
+    :root:not(.theme-light) #civilwar .dd-group-head h4 { color: #e8a890; }
+    /* Dark-mode rescue: the deep-oxblood --section-cw-d is unreadable on dark cards.
+       Lift the "1 tile / 4 tiles" counters to a warm tan that matches the section accent. */
+    :root.theme-dark #civilwar .dd-group-head .dd-count,
+    :root:not(.theme-light) #civilwar .dd-group-head .dd-count { color: #d8a890; }
+
+    /* Service-arc SVG timeline (mirrors #charles .life-timeline-fig, recoloured) */
+    #civilwar .service-timeline-fig { margin: 0.4rem 0 1rem; padding: 0.6rem; background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8); border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    #civilwar .service-timeline-fig svg { display: block; width: 100%; height: auto; max-height: 280px; }
+    #civilwar .service-timeline-fig figcaption { font-size: 0.96rem; color: var(--text-muted, #5a4a32); margin-top: 0.5rem; font-style: italic; padding: 0 0.3rem; }
+    #civilwar .st-axis { stroke: var(--text-muted, #5a4a32); stroke-width:1.5; fill:none; }
+    #civilwar .st-tick { stroke: var(--section-cw-d, #6a2820); stroke-width:1.2; }
+    #civilwar .st-yr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:14px; fill: var(--text-muted, #6a5a42); }
+    #civilwar .st-dot { fill: var(--section-cw, #a04030); stroke: var(--bg-card, #fffaf0); stroke-width:2; }
+    #civilwar .st-dot.major { fill:#c84a4a; }
+    #civilwar .st-label { font-family:var(--font-serif); font-size:15px; fill: var(--text-strong, #1f1a14); }
+    #civilwar .st-eyr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:13px; fill: var(--section-cw-d, #6a2820); font-weight:700; }
+    #civilwar .st-stem { stroke: var(--section-cw, #a04030); stroke-width:1.2; }
+    #civilwar .st-phase-detached { fill: #c8754a; opacity:0.65; }
+    #civilwar .st-phase-pension { fill:#5a4a8a; opacity:0.55; }
+    #civilwar .st-phase-label { font-family:var(--font-serif); font-size:12px; fill: var(--text-strong, #3a2f1e); font-style:italic; }
+
+    /* Missouri-history gallery — collapsible details wrapper (mirrors #charles details.city-images) */
+    #civilwar details.mo-history-images { background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8); border-radius: 6px; padding: 0; margin: 0.4rem 0 1rem; }
+    #civilwar details.mo-history-images > summary { padding: 0.95rem 1.2rem; cursor: pointer; font-weight: 700; color: var(--section-cw, #a04030); font-size: 1.08rem; list-style: none; }
+    #civilwar details.mo-history-images > summary::-webkit-details-marker { display: none; }
+    #civilwar details.mo-history-images > summary::before { content: "▸ "; color: var(--section-cw-light, #c84a4a); margin-right: 0.4rem; transition: transform 0.15s; display: inline-block; }
+    #civilwar details.mo-history-images[open] > summary::before { transform: rotate(90deg); }
+    #civilwar details.mo-history-images[open] > summary { border-bottom: 1px solid var(--border-light, #e8dcc0); }
+    #civilwar .mo-history-images-inner { padding: 1rem 1.1rem; }
+
+    /* Force ge-* kit fonts to follow the section's reading flow */
+    #civilwar .ge-metrics { margin: 0.4rem 0 1.2rem; }
+    #civilwar .page-toc { margin-top: 0.4rem; }
+  
+
+    .mo-img-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.05rem; margin:0.4rem 0 1.5rem 0; }
+    .mo-img-gallery figure { margin:0; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:0.7rem; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+    .mo-img-gallery figure img { width:100%; height:auto; display:block; border-radius:3px; background:#3a2f1e; }
+    .mo-img-gallery figure figcaption { font-size:0.81rem; color:#3a2f1e; line-height:1.4; margin-top:0.55rem; }
+    .mo-img-gallery figure figcaption strong { color:#8a3a3a; }
+    .mo-img-gallery figure figcaption .credit { display:block; margin-top:0.35rem; font-size:0.73rem; color:#6a5a42; font-style:italic; }
+  
+
+    /* ===== People in the Story — section-scoped overrides of the shared ge-* kit.
+       --section-people is slate violet (#5a4a8a), suggesting community / civic gathering.
+       Mirrors the patterns in #charles { --section-america } and #civilwar { --section-cw }. ===== */
+    #people { --section-ppl: #5a4a8a; --section-ppl-d: #3a2e6a; --section-ppl-light: #8a7ac0; --section-ppl-warm: #6a4a7a; }
+    #people .ge-hook { border-left-color: var(--section-ppl); }
+    #people .ge-hook strong { color: var(--text-heading, #1f1a14); }
+    #people .ge-metrics .metric { border-left-color: var(--section-ppl); }
+    #people .ge-metrics a.metric:hover, #people .ge-metrics a.metric:focus-visible { border-color: var(--section-ppl-light); }
+    #people .ge-metrics .metric .num { color: var(--section-ppl); }
+    #people .ge-metrics .metric.static { cursor: default; }
+    #people .ge-metrics .metric.static:hover { transform: none; box-shadow: none; border-color: var(--border-light, #d8c8a8); border-left-color: var(--section-ppl); }
+    #people .ge-wappen-row h3 { margin: 0 !important; border-top: none !important; padding-top: 0 !important; font-size: 1.4rem; color: var(--section-ppl); }
+    :root.theme-dark #people .ge-wappen-row h3,
+    :root:not(.theme-light) #people .ge-wappen-row h3 { color: #b8a8e8; }
+    :root.theme-dark #people .ge-metrics .metric .num,
+    :root:not(.theme-light) #people .ge-metrics .metric .num { color: #b8a8e8; }
+
+    /* H4 sub-headings inside A/B/C sections (Battery B comrades / Civilian witnesses / etc.) */
+    #people h4.people-subhead { font-family: var(--font-serif); font-size: 1.08rem; color: var(--section-ppl-d); margin: 1.4rem 0 0.5rem; font-weight: 700; }
+    :root.theme-dark #people h4.people-subhead,
+    :root:not(.theme-light) #people h4.people-subhead { color: #c8b8e8; }
+
+    /* Open-IDs sub-heading — replaces the inline color:#a3441f */
+    #people h4.open-ids-head { color: #a3441f; }
+    :root.theme-dark #people h4.open-ids-head,
+    :root:not(.theme-light) #people h4.open-ids-head { color: #e89070; }
+
+    /* Person-card name — replaces the <h2> inside .person-card to keep the heading outline clean.
+       Visual rules copied from the existing .person-card h3 rule in cinematic-spa.css. */
+    #people .person-card .person-card-name { color: var(--brand-dark); font-size: 1.05rem; font-weight: 700; margin: 0 0 0.45rem; line-height: 1.25; clear: both; }
+    #people .person-card:hover .person-card-name { color: var(--brand-dark); text-decoration: underline; }
+    :root.theme-dark #people .person-card .person-card-name,
+    :root:not(.theme-light) #people .person-card .person-card-name { color: var(--brand-light, #f1cf85); }
+
+    /* Charles card surname accent (was inline color:#a3441f) */
+    #people .person-card-name .accent-surname { color: #a3441f; }
+    :root.theme-dark #people .person-card-name .accent-surname,
+    :root:not(.theme-light) #people .person-card-name .accent-surname { color: #e89070; }
+    #people .person-card-name .aka { font-weight:500; color:#6a5a42; font-size:0.85em; }
+    :root.theme-dark #people .person-card-name .aka,
+    :root:not(.theme-light) #people .person-card-name .aka { color: #b8a890; }
+
+    /* CTA buttons at top of tab (replaces 20+ inline style properties) */
+    #people .people-cta { display: inline-block; padding: 0.45rem 0.95rem; background: var(--bg-card, #fffaf0); border: 1px solid var(--section-ppl); border-left: 4px solid var(--section-ppl); border-radius: 3px; color: var(--text-strong, #5a4a32); font-weight: 600; text-decoration: none; margin: 0 0.4rem 0.5rem 0; transition: all 0.15s ease; }
+    #people .people-cta:hover { background: var(--brand-tint, #fff4d8); border-left-color: var(--section-ppl-d); transform: translateY(-1px); }
+    #people .people-cta.alt { border-color: var(--section-ppl-light); border-left-color: var(--section-ppl-light); }
+    :root.theme-dark #people .people-cta,
+    :root:not(.theme-light) #people .people-cta { background: var(--bg-card, #24201a); color: var(--text-body, #e8dfc8); }
+
+    /* Narrative-block (mirrors #charles version, recoloured) */
+    #people .narrative-block { background: var(--bg-card, #fffaf0); border-left: 3px solid var(--section-ppl); padding: 1rem 1.3rem; margin: 0.4rem 0 1rem; }
+    #people .narrative-block p { font-family: var(--font-serif); font-size: 1.10rem; line-height: 1.7; color: var(--text-body, #2c2620); margin: 0 0 1rem; }
+    #people .narrative-block p:last-child { margin-bottom: 0; }
+    #people .narrative-block p .place { font-style: italic; }
+    #people .narrative-block p strong { color: var(--section-ppl-d); }
+    :root.theme-dark #people .narrative-block p strong,
+    :root:not(.theme-light) #people .narrative-block p strong { color: #c8b8e8; }
+
+    /* Deep-dive group heads for the bottom cross-references tile grid */
+    #people .dd-group-head { display: flex; align-items: baseline; gap: 0.6rem; margin: 1.6rem 0 0.7rem; }
+    #people .dd-group-head h4 { margin: 0; font-size: 1.05rem; color: var(--section-ppl); border-bottom: none; padding-bottom: 0; }
+    #people .dd-group-head .dd-count { font-size: 0.92rem; color: var(--section-ppl-d); font-family: 'SF Mono', Menlo, Consolas, monospace; }
+    :root.theme-dark #people .dd-group-head h4,
+    :root:not(.theme-light) #people .dd-group-head h4 { color: #b8a8e8; }
+    :root.theme-dark #people .dd-group-head .dd-count,
+    :root:not(.theme-light) #people .dd-group-head .dd-count { color: #c8a8d8; }
+
+    /* Bottom tile grid (mirrors .cw-tile-grid pattern) */
+    #people .ppl-tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.85rem; margin: 1rem 0 1.4rem; }
+    #people .ppl-tile { display: flex; align-items: flex-start; gap: 0.8rem; background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8); border-left: 4px solid var(--section-ppl); border-radius: 5px; padding: 0.95rem 1.05rem; text-decoration: none; color: var(--text-body, #2c2620); transition: all 0.15s ease; }
+    #people .ppl-tile:hover { background: #f4eef8; border-left-color: var(--section-ppl-d); transform: translateY(-1px); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    #people .ppl-tile .icon { font-size: 1.5rem; color: var(--section-ppl); flex-shrink: 0; }
+    #people .ppl-tile .body { flex: 1; min-width: 0; }
+    #people .ppl-tile .eyebrow { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--section-ppl-d); font-weight: 700; }
+    #people .ppl-tile .title { font-size: 1rem; font-weight: 700; color: var(--text-strong, #1f1a14); margin: 0.15rem 0; }
+    #people .ppl-tile .desc { font-size: 0.86rem; color: var(--text-meta, #6a5a42); line-height: 1.5; }
+    :root.theme-dark #people .ppl-tile,
+    :root:not(.theme-light) #people .ppl-tile { background: var(--bg-card, #24201a) !important; border-color: var(--border-light, #6a5a40) !important; color: var(--text-body, #e8dfc8) !important; }
+    :root.theme-dark #people .ppl-tile:hover,
+    :root:not(.theme-light) #people .ppl-tile:hover { background: var(--bg-card-tint, #2c261d) !important; }
+    :root.theme-dark #people .ppl-tile .title,
+    :root:not(.theme-light) #people .ppl-tile .title { color: var(--text-heading, #f1cf85) !important; }
+
+    /* Witness-map (mirrors #ca-fmap from #charles, recoloured slate violet) */
+    #ppl-fmap { height: 56vh; min-height: 420px; border: 2px solid var(--section-ppl); border-radius: 6px; box-shadow: 0 4px 14px rgba(74, 58, 34, 0.18); margin: 0.4rem 0 1.2rem; }
+    #ppl-fmap .leaflet-popup-content-wrapper { background:#fffaf0; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.18); }
+    #ppl-fmap .leaflet-popup-content { font-family:var(--font-serif); color:#3a2f1e; font-size:0.92rem; line-height:1.45; margin:0.7rem 0.9rem; }
+    #ppl-fmap .leaflet-popup-content h4 { color: var(--section-ppl-d); font-size:1rem; margin-bottom:0.25rem; padding-bottom:0.2rem; border-bottom:1px solid #d8c8a8; }
+    #ppl-fmap .leaflet-popup-content .yr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:0.78rem; color:var(--section-ppl-d); font-weight:700; letter-spacing:0.03em; display:inline-block; margin-bottom:0.3rem; }
+    #ppl-fmap .leaflet-popup-content .body { font-size:0.88rem; color:#3a2f1e; }
+    #ppl-fmap .leaflet-popup-content a { color: var(--section-ppl); border-bottom:1px dotted #d8c8a8; }
+    #ppl-fmap .leaflet-popup-content .openmap { display:inline-block; margin-top:0.4rem; font-size:0.82rem; color:var(--section-ppl); border-bottom:1px dashed var(--section-ppl); }
+
+    #people .ppl-map-legend { background:#fffaf0; border:1px solid #d8c8a8; border-radius:4px; padding:0.85rem 1.1rem; margin:0 0 1.4rem; font-size:0.92rem; }
+    :root.theme-dark #people .ppl-map-legend,
+    :root:not(.theme-light) #people .ppl-map-legend { background: var(--bg-card, #24201a); border-color: var(--border-light, #6a5a40); color: var(--text-body, #e8dfc8); }
+    #people .ppl-map-legend h4 { font-size:0.95rem; color: var(--section-ppl); margin:0 0 0.5rem; padding-bottom:0.25rem; border-bottom:1px solid #d8c8a8; }
+    #people .ppl-map-legend .legend-row { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.32rem; }
+    #people .ppl-map-legend .swatch { flex:0 0 16px; width:16px; height:16px; border-radius:50%; border:2px solid #fffaf0; box-shadow:0 0 0 1px #5a4a32; }
+    #people .ppl-map-legend .swatch.charles { background:#a04020; }
+    #people .ppl-map-legend .swatch.battery { background:#c84a4a; }
+    #people .ppl-map-legend .swatch.civilian { background:#5a4a8a; }
+    #people .ppl-map-legend .legend-label { color: var(--text-body, #3a2f1e); font-size:0.88rem; }
+    #people .ppl-map-legend .legend-label .small { color: var(--text-muted, #6a5a42); font-size:0.78rem; }
+
+    /* Small inline annotations */
+    #people .cw-side-note { font-weight: 500; color: var(--text-muted, #6a5a42); font-size: 0.85em; }
+    :root.theme-dark #people .cw-side-note,
+    :root:not(.theme-light) #people .cw-side-note { color: #b8a890; }
+    #people .ppl-footer-link { color: var(--section-ppl); font-weight: 700; }
+    :root.theme-dark #people .ppl-footer-link,
+    :root:not(.theme-light) #people .ppl-footer-link { color: #b8a8e8; }
+  
+
+      .ck-flags { margin: 1.7rem auto 2rem; padding: 1.5rem 1.2rem 1.3rem; max-width: 540px;
+        text-align: center; background: var(--bg-card, #fffaf0);
+        border: 1px solid var(--border-light, #d8c8a8);
+        border-left: 3px solid var(--brand, #d8b366);
+        border-right: 3px solid var(--brand, #d8b366); border-radius: 4px; }
+      .ck-flags .ck-flags-row { display: flex; align-items: flex-start; justify-content: center;
+        gap: 1.3rem; flex-wrap: wrap; }
+      .ck-flags figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+      .ck-flags img { display: block; height: 88px; width: auto; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }
+      .ck-flags figcaption { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em;
+        color: var(--text-meta, #6a5a42); line-height: 1.4; max-width: 11rem; }
+      .ck-flags figcaption strong { display: block; color: var(--brand-dark, #8a6420);
+        font-size: 0.78rem; letter-spacing: 0.04em; }
+      .ck-flags .ck-flags-mid { display: flex; flex-direction: column; align-items: center;
+        gap: 0.05rem; margin-top: 1.5rem; color: var(--brand-dark, #8a6420); }
+      .ck-flags .ck-flags-yr { font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; }
+      .ck-flags .ck-flags-ar { font-size: 1.35rem; line-height: 0.8; }
+      .ck-flags .ck-flags-cap { font-size: 0.92rem; font-style: italic; line-height: 1.62;
+        color: var(--text-meta, #6a5a42); margin: 1.1rem auto 0; max-width: 31rem; }
+    
+
+    /* Immigration Journey — Leaflet map (mirrors charles_america/st-louis-residences.html, recoloured blue) */
+    #im-fmap { height: 60vh; min-height: 440px; border: 2px solid #4a76c8; border-radius: 6px; box-shadow: 0 4px 14px rgba(74, 58, 34, 0.18); margin: 1rem 0 1.4rem; }
+    #im-fmap .leaflet-popup-content-wrapper { background:#fffaf0; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.18); }
+    #im-fmap .leaflet-popup-content { font-family:var(--font-serif); color:#3a2f1e; font-size:0.92rem; line-height:1.45; margin:0.7rem 0.9rem; }
+    #im-fmap .leaflet-popup-content h4 { color:#2a4a8a; font-size:1rem; margin-bottom:0.25rem; padding-bottom:0.2rem; border-bottom:1px solid #c5d2ea; }
+    #im-fmap .leaflet-popup-content .yr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:0.78rem; color:#2a4a8a; font-weight:700; letter-spacing:0.03em; display:inline-block; margin-bottom:0.3rem; }
+    #im-fmap .leaflet-popup-content .body { font-size:0.88rem; color:#3a2f1e; }
+    #im-fmap .leaflet-popup-content a { color:#2a4a8a; border-bottom:1px dotted #c5d2ea; }
+    #im-fmap .leaflet-popup-content .openmap { display:inline-block; margin-top:0.4rem; font-size:0.82rem; color:#2a4a8a; border-bottom:1px dashed #4a76c8; }
+    #im-fmap .leaflet-popup-tip { background:#fffaf0; }
+
+    .im-map-legend { position:absolute; bottom:12px; right:12px; z-index:1000; max-width:260px; background:rgba(255,250,240,0.94); backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px); border:1px solid var(--border-medium, #a88a4a); border-radius:4px; padding:0.7rem 0.9rem; margin:0; font-size:0.85rem; box-shadow:0 2px 10px rgba(0,0,0,0.22); }
+    :root.theme-dark .im-map-legend { background:rgba(30,26,22,0.94); border-color:#6a5a40; }
+    @media (max-width:700px) { .im-map-legend { position:static; max-width:100%; margin:0.55rem 0 0; backdrop-filter:none; -webkit-backdrop-filter:none; } }
+    .im-map-legend h3 { font-size:0.95rem; color: var(--brand-dark); margin-bottom:0.5rem; padding-bottom:0.25rem; border-bottom:1px solid var(--border-light, #d8c8a8); }
+    .im-map-legend .legend-row { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.35rem; }
+    .im-map-legend .legend-row:last-child { margin-bottom:0; }
+    .im-map-legend .swatch { flex:0 0 18px; width:18px; height:18px; border-radius:50%; border:2px solid #fffaf0; box-shadow:0 0 0 1px #5a4a32; display:inline-block; }
+    .im-map-legend .swatch.depart { background:#3a5878; }
+    .im-map-legend .swatch.arrive { background:#4a76c8; }
+    .im-map-legend .swatch.dest { background:#d8b366; }
+    .im-map-legend .swatch.route { background:transparent; border:none; box-shadow:none; height:0; border-top:2px dashed #4a76c8; border-radius:0; align-self:center; margin:0 0 4px; }
+    .im-map-legend .legend-label { color:var(--text-body, #3a2f1e); font-size:0.86rem; }
+    .im-map-legend .legend-label .small { color:var(--text-meta, #6a5a42); font-size:0.76rem; }
+    /* The base .im-map-legend rule sets bottom:12px while the .map-wrap overlay
+       rule sets top:14px — both anchors applied, stretching the legend to the
+       full map height and burying the Bremen pin (top-right of this map).
+       Pin it TOP-LEFT at content height: Bremen sits on the right and the U.S.
+       ports cluster lower-left, so the top-left corner is clear of every pin. */
+    .map-wrap > .im-map-legend {
+      top: 14px; left: 14px; right: auto; bottom: auto; height: auto;
+    }
+    .im-map-baserates { font-size:0.86rem; color:var(--text-meta, #6a5a42); font-style:italic; margin:0 0 1.4rem; padding:0.4rem 0.8rem; border-left:3px solid var(--section-immigration, #4a76c8); background:rgba(74, 118, 200, 0.06); border-radius:0 3px 3px 0; }
+
+    /* ============ CHAPTER + CONTEXT-CARD STYLES ============ */
+    .im-chapter-head { display:flex; align-items:baseline; gap:0.6rem; margin:1.6rem 0 0.5rem; }
+    .im-chapter-head .ch-num { font-family:var(--font-display, 'Cormorant Garamond', Georgia, serif); font-size:0.85rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--brand-dark, #8a6420); font-weight:700; }
+    .im-chapter-head h3 { margin:0; font-size:1.45rem; color:var(--text-heading, #8a6420); font-family:var(--font-display, 'Cormorant Garamond', Georgia, serif); font-weight:600; }
+    .im-chapter-intro { font-size:0.95rem; color:var(--text-body, #3a2f1e); line-height:1.6; margin:0.2rem 0 0.9rem; max-width:62rem; }
+    /* Civil-war tab chapter eyebrows — give #civilwar a chaptered-story read like the immigration tab */
+    #civilwar .cw-ch-eyebrow { display:block; font-family:var(--font-display,'Cormorant Garamond',Georgia,serif); font-size:0.82rem; letter-spacing:0.18em; text-transform:uppercase; color:#a3441f; font-weight:700; line-height:1.2; margin-bottom:0.12rem; }
+    :root.theme-dark #civilwar .cw-ch-eyebrow { color:#e8956a; }
+    #civilwar .cw-story-note { font-size:0.95rem; color:var(--text-meta,#6a5a42); font-style:italic; line-height:1.55; margin:0.4rem 0 1.3rem; max-width:62rem; }
+    #civilwar .cw-chapter-intro { font-size:0.98rem; color:var(--text-body,#3a2f1e); line-height:1.6; margin:0.1rem 0 1rem; max-width:62rem; }
+    :root.theme-dark #civilwar .cw-chapter-intro { color:var(--text-body,#e8dfc8); }
+    /* Civil-war Chapter 1 post-by-post detail cards */
+    #civilwar .cw-posts { margin:0.4rem 0 0.2rem; }
+    #civilwar .cw-post { margin:1.5rem 0; padding:0.1rem 0 0.1rem 1rem; border-left:3px solid #c9a76a; }
+    :root.theme-dark #civilwar .cw-post { border-left-color:#7a5a2a; }
+    #civilwar .cw-post > h4 { font-size:1.2rem; color:#8a3a2a; font-family:var(--font-display,'Cormorant Garamond',Georgia,serif); font-weight:600; margin:0 0 0.5rem; }
+    :root.theme-dark #civilwar .cw-post > h4 { color:#f0b090; }
+    #civilwar .cw-post p { font-size:0.96rem; line-height:1.66; margin:0 0 0.7rem; max-width:60rem; }
+    #civilwar .cw-post p:last-child { margin-bottom:0; }
+    #civilwar .cw-post p > strong:first-child { color:#a3441f; }
+    :root.theme-dark #civilwar .cw-post p > strong:first-child { color:#e8956a; }
+    /* Collapsed "Battery B postings & pension" deep-dive index, folded into the story end */
+    #civilwar .cw-deepdive-footer { margin:1.5rem 0 0.4rem; padding:1rem 1.2rem; background:var(--bg-card,#fffaf0); border:1px solid #d8c8a8; border-left:3px solid #a04030; border-radius:5px; }
+    #civilwar .cw-deepdive-footer h4 { margin:0 0 0.3rem; font-size:1.12rem; color:#8a3a2a; font-family:var(--font-display,'Cormorant Garamond',Georgia,serif); }
+    #civilwar .cw-deepdive-footer > p { font-size:0.92rem; line-height:1.6; margin:0 0 0.5rem; }
+    #civilwar .cw-deepdive-footer > p:last-child { margin-bottom:0; }
+    #civilwar .cw-deepdive-footer p > strong { color:#a3441f; }
+    :root.theme-dark #civilwar .cw-deepdive-footer { background:var(--bg-card,#24201a); border-color:#3c352a; }
+    :root.theme-dark #civilwar .cw-deepdive-footer h4 { color:#f0b090; }
+    :root.theme-dark #civilwar .cw-deepdive-footer p > strong { color:#e8956a; }
+    /* Germany & Origins tab chapter eyebrows (green accent) */
+    #germany .cw-ch-eyebrow { display:block; font-family:var(--font-display,'Cormorant Garamond',Georgia,serif); font-size:0.82rem; letter-spacing:0.18em; text-transform:uppercase; color:#3a6a2a; font-weight:700; line-height:1.2; margin-bottom:0.12rem; }
+    :root.theme-dark #germany .cw-ch-eyebrow { color:#9cc88a; }
+    #germany .cw-story-note { font-size:0.95rem; color:var(--text-meta,#6a5a42); font-style:italic; line-height:1.55; margin:0.4rem 0 1.3rem; max-width:62rem; }
+
+    .card.context { background:var(--bg-card, #fffaf0); border:1px solid var(--border-light, #d8c8a8); border-radius:4px; padding:0.95rem 1.15rem; margin:0 0 1rem; }
+    .card.context.push { border-left:4px solid var(--section-immigration, #4a76c8); }
+    .card.context.cost { border-left:4px solid var(--brand-dark, #d8b366); }
+    .card.context.time { border-left:4px solid var(--section-immigration, #4a76c8); }
+    .card.context.risk { border-left:4px solid var(--section-civilwar, #a04030); }
+    .card.context h4 { margin:0 0 0.4rem; font-size:1rem; color:var(--text-heading, #8a6420); font-family:var(--font-display, 'Cormorant Garamond', Georgia, serif); font-weight:600; }
+
+    /* ============ COST BAR ============ */
+    .im-cost-bar { margin:0.7rem 0 0.4rem; }
+    .im-cost-bar-track { display:flex; height:36px; border-radius:4px; overflow:hidden; border:1px solid var(--border-medium, #a88a4a); background:var(--bg-card, #fffaf0); }
+    .im-cost-bar-segment { display:flex; align-items:center; justify-content:center; font-family:var(--font-ui, Inter, sans-serif); font-size: 0.78rem; font-weight:700; color:#1a1612; letter-spacing:0.03em; padding:0 0.4rem; text-align:center; line-height:1.1; }
+    .im-cost-bar-segment.steerage { background:#4a76c8; color:#fff; }
+    .im-cost-bar-segment.barge { background:#9ab8e0; }
+    .im-cost-bar-segment.lodging { background:#c8b896; }
+    .im-cost-bar-segment.onward { background:#d8b366; }
+    .im-cost-bar-key { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:0.3rem 0.8rem; margin-top:0.5rem; font-size:0.8rem; color:var(--text-body, #3a2f1e); }
+    .im-cost-bar-key span.swatch { display:inline-block; width:11px; height:11px; border-radius:2px; vertical-align:middle; margin-right:0.35rem; border:1px solid rgba(0,0,0,0.18); }
+    .im-cost-bar-key .swatch.steerage { background:#4a76c8; }
+    .im-cost-bar-key .swatch.barge    { background:#9ab8e0; }
+    .im-cost-bar-key .swatch.lodging  { background:#c8b896; }
+    .im-cost-bar-key .swatch.onward   { background:#d8b366; }
+    .im-cost-bar-total { margin-top:0.7rem; padding:0.55rem 0.8rem; background:var(--bg-card-tint, #f6ebd2); border-left:3px solid var(--brand-dark, #d8b366); border-radius:0 3px 3px 0; font-size:0.92rem; line-height:1.5; color:var(--text-strong, #3a2f1e); }
+    .im-cost-bar-total strong { color:var(--brand-dark, #8a6420); }
+
+    /* ============ TIME BAR ============ */
+    .im-time-bar { margin:0.7rem 0 0.4rem; }
+    .im-time-bar-track { position:relative; height:46px; background:var(--bg-card, #fffaf0); border:1px solid var(--border-medium, #a88a4a); border-radius:4px; overflow:hidden; }
+    .im-time-bar-segment { position:absolute; top:0; bottom:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-ui, Inter, sans-serif); font-size:0.72rem; font-weight:700; color:#1a1612; letter-spacing:0.02em; padding:0 0.3rem; text-align:center; line-height:1.1; border-right:1px solid rgba(0,0,0,0.15); }
+    .im-time-bar-segment:last-child { border-right:none; }
+    .im-time-bar-segment.barge   { background:#9ab8e0; }
+    .im-time-bar-segment.wait    { background:#c8b896; }
+    .im-time-bar-segment.atlantic { background:#4a76c8; color:#fff; }
+    .im-time-bar-segment.onward  { background:#d8b366; }
+    .im-time-bar-axis { display:flex; justify-content:space-between; margin-top:0.3rem; font-family:var(--font-mono, 'SF Mono', Menlo, monospace); font-size: 0.76rem; color:var(--text-meta, #6a5a42); padding:0 0.1rem; }
+    .im-time-bar-axis span { font-variant-numeric:tabular-nums; }
+    .im-time-bar-key { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:0.3rem 0.8rem; margin-top:0.5rem; font-size:0.8rem; color:var(--text-body, #3a2f1e); }
+    .im-time-bar-key span.swatch { display:inline-block; width:11px; height:11px; border-radius:2px; vertical-align:middle; margin-right:0.35rem; border:1px solid rgba(0,0,0,0.18); }
+    .im-time-bar-key .swatch.barge    { background:#9ab8e0; }
+    .im-time-bar-key .swatch.wait     { background:#c8b896; }
+    .im-time-bar-key .swatch.atlantic { background:#4a76c8; }
+    .im-time-bar-key .swatch.onward   { background:#d8b366; }
+
+    /* ============ RESOLUTION PANEL ============ */
+    .im-resolution-panel { margin:0.6rem 0 1.4rem; display:flex; flex-direction:column; gap:0.55rem; }
+    .im-resolution-row { display:flex; gap:0.85rem; padding:0.7rem 0.95rem; background:var(--bg-card, #fffaf0); border:1px solid var(--border-light, #d8c8a8); border-radius:4px; }
+    .im-resolution-row.likely    { border-left:4px solid var(--status-confirmed, #4a8a4a); }
+    .im-resolution-row.possible  { border-left:4px solid var(--status-open, #c87a30); }
+    .im-resolution-row.unlikely  { border-left:4px solid var(--status-eliminated, #8a4a4a); }
+    .im-resolution-rank { flex:0 0 auto; width:2rem; height:2rem; border-radius:50%; background:var(--bg-elevated, #fffdf6); border:1.5px solid var(--brand-dark, #d8b366); color:var(--brand-dark, #8a6420); display:flex; align-items:center; justify-content:center; font-family:var(--font-display, 'Cormorant Garamond', Georgia, serif); font-weight:700; font-size:1.1rem; line-height:1; }
+    .im-resolution-body { flex:1 1 auto; min-width:0; }
+    .im-resolution-head { font-size:0.95rem; margin-bottom:0.25rem; color:var(--text-strong, #3a2f1e); }
+    .im-resolution-prob { font-family:var(--font-ui, Inter, sans-serif); font-size: 0.76rem; letter-spacing:0.06em; text-transform:uppercase; font-weight:700; padding:0.1rem 0.45rem; border-radius:2px; background:rgba(216, 179, 102, 0.18); color:var(--brand-dark, #8a6420); margin-left:0.3rem; }
+    .im-resolution-row.likely   .im-resolution-prob { background:rgba(74, 138, 74, 0.18);  color:#3a6a2a; }
+    .im-resolution-row.unlikely .im-resolution-prob { background:rgba(138, 74, 74, 0.18);  color:#7a3030; }
+    .im-resolution-body p { margin:0.25rem 0 0; font-size:0.88rem; line-height:1.55; color:var(--text-body, #3a2f1e); }
+
+    /* Dark-mode parity for the new immigration components */
+    :root.theme-dark .card.context { background:var(--bg-card, #24201a); border-color:var(--border-medium, #6a5a40); }
+    :root.theme-dark .card.context h4 { color:var(--text-heading, #f1cf85); }
+    :root.theme-dark .im-cost-bar-total { background:var(--bg-elevated, #2a2519); color:var(--text-strong, #f4ead0); }
+    :root.theme-dark .im-cost-bar-total strong { color:var(--brand-light, #fadea0); }
+    :root.theme-dark .im-cost-bar-segment.barge,
+    :root.theme-dark .im-cost-bar-segment.lodging,
+    :root.theme-dark .im-cost-bar-segment.onward { color:#1a1612; }
+    :root.theme-dark .im-time-bar-track { background:var(--bg-elevated, #2a2519); }
+    :root.theme-dark .im-resolution-row { background:var(--bg-card, #24201a); border-color:var(--border-medium, #6a5a40); }
+    :root.theme-dark .im-resolution-rank { color:var(--brand-light, #fadea0); background:var(--bg-elevated, #2a2519); }
+    :root.theme-dark .im-resolution-head { color:var(--text-strong, #f4ead0); }
+    :root.theme-dark .im-resolution-body p { color:var(--text-body, #e8dfc8); }
+    :root.theme-dark .im-resolution-prob { background:rgba(216, 179, 102, 0.22); color:var(--brand-light, #fadea0); }
+    :root.theme-dark .im-resolution-row.likely   .im-resolution-prob { background:rgba(108, 176, 96, 0.22); color:#a8d68a; }
+    :root.theme-dark .im-resolution-row.unlikely .im-resolution-prob { background:rgba(200, 112, 112, 0.22); color:#f4a098; }
+    :root.theme-dark .im-map-legend .legend-row .legend-label { color:var(--text-body, #e8dfc8); }
+    :root.theme-dark .im-map-legend .legend-row .legend-label .small { color:var(--text-meta, #c8b896); }
+    :root.theme-dark .im-map-baserates { color:var(--text-meta, #c8b896); background:rgba(106, 138, 204, 0.10); }
+    :root.theme-dark .im-chapter-head .ch-num { color:var(--brand-light, #fadea0); }
+    :root.theme-dark .im-chapter-head h3 { color:var(--text-heading, #f1cf85); }
+  
+
+    .im-img-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.1rem; margin:0 0 1.5rem 0; }
+    .im-img-gallery figure { margin:0; background:var(--bg-card, #fffaf0); border:1px solid var(--border-light, #d8c8a8); border-radius:6px; padding:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+    .im-img-gallery figure img { width:100%; height:auto; display:block; border-radius:3px; background:#3a2f1e; }
+    .im-img-gallery figure figcaption { font-size:0.82rem; color:var(--text-body, #3a2f1e); line-height:1.45; margin-top:0.55rem; }
+    .im-img-gallery figure figcaption strong { color:var(--section-immigration, #2a4a8a); }
+    .im-img-gallery figure figcaption .credit { display:block; margin-top:0.35rem; font-size: 0.78rem; color:var(--text-meta, #6a5a42); font-style:italic; }
+    :root.theme-dark .im-img-gallery figure { background:var(--bg-card, #24201a); border-color:var(--border-medium, #6a5a40); }
+    :root.theme-dark .im-img-gallery figure figcaption { color:var(--text-body, #e8dfc8); }
+    :root.theme-dark .im-img-gallery figure figcaption strong { color:var(--section-immigration, #6a8acc); }
+    :root.theme-dark .im-img-gallery figure figcaption .credit { color:var(--text-meta, #c8b896); }
+    .im-deep-subhead { margin:1.2rem 0 0.5rem; font-family:var(--font-ui, Inter, sans-serif); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--text-meta, #6a5a42); font-weight:700; padding-bottom:0.3rem; border-bottom:1px solid var(--border-light, #d8c8a8); }
+    :root.theme-dark .im-deep-subhead { color:var(--text-meta, #c8b896); border-bottom-color:var(--border-medium, #6a5a40); }
+  
+
+    /* Horizontally scrollable container for wide tables on narrow viewports.
+       Applied site-wide via the .table-wrap class — keeps tables from forcing
+       horizontal scroll on the whole page. */
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -0.4rem; padding: 0 0.4rem; }
+    .ge-hook { font-size:1.12rem; color:var(--text-strong, #3a2f1e); line-height:1.6; margin:1rem 0 1.4rem; padding:0.95rem 1.2rem; background:var(--bg-card, #fffaf0); border-left:3px solid var(--brand-dark, #8a6420); border-radius:0 4px 4px 0; }
+    .ge-hook strong { color:var(--text-heading, #1f1a14); }
+    .ge-hook em { font-style:italic; color:var(--text-meta, #6a5a42); }
+    .ge-metrics { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:0.6rem; margin:1.4rem 0 1.8rem; padding:0; background:transparent; border:none; border-radius:0; }
+    .ge-metrics .metric { display:flex; flex-direction:column; align-items:flex-start; gap:0.1rem; padding:0.6rem 0.85rem; background:var(--bg-card, #fffaf0); border:1px solid var(--border-light, #d8c8a8); border-left:3px solid var(--section-germany, #3a6a2a); border-radius:3px; text-decoration:none; color:inherit; cursor:pointer; transition:transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+    .ge-metrics a.metric:hover, .ge-metrics a.metric:focus-visible { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.12); border-color:var(--brand, #d8b366); text-decoration:none; }
+    .ge-metrics a.metric:focus-visible { outline:2px solid var(--brand, #d8b366); outline-offset:2px; }
+    .ge-metrics .metric .num { font-family:var(--font-serif); font-size:1.55rem; font-weight:700; color:var(--section-germany, #3a6a2a); line-height:1.05; }
+    .ge-metrics .metric .lbl { font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-meta, #6a5a42); line-height:1.3; font-weight:600; }
+    .ge-metrics .metric.pending { border-left-color:var(--status-eliminated, #a3441f); }
+    .ge-metrics .metric.pending .num { color:var(--status-eliminated, #a3441f); }
+    .ge-asof { display:inline-block; font-size: 0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-meta, #6a5a42); font-weight:700; background:var(--bg-card-tint, #f4ecd6); padding:0.15rem 0.5rem; border-radius:2px; margin-left:0.6rem; vertical-align:0.12em; }
+
+    /* ---- Page-density tightening (May 2026) ----------------------
+       The user reported the page feeling overwhelming. These rules
+       add more breathing room around section boundaries and inside
+       the confirmed / open cards, and tighten the bullet lists. */
+    main.tab-body h3.mt-section {
+      margin-top: 2.6rem;
+      padding-top: 0.4rem;
+      border-top: 1px solid var(--border-light, #d8c8a8);
+      font-size: 1.32rem;
+    }
+    main.tab-body h3.mt-section:first-of-type {
+      margin-top: 1.8rem;
+      border-top: none;
+      padding-top: 0;
+    }
+    main.tab-body p.lede { font-size: 1.05rem; line-height: 1.6; margin: 1rem 0 1.2rem; }
+    main.tab-body .grid-2.mt-1rem { gap: 1.3rem; margin-top: 1.3rem; }
+    main.tab-body .card.confirmed,
+    main.tab-body .card.open {
+      padding: 1.2rem 1.35rem 1.1rem;
+      border-radius: 5px;
+    }
+    main.tab-body .card.confirmed h3,
+    main.tab-body .card.open h3 {
+      font-size: 1.06rem;
+      margin: 0 0 0.85rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-light, #e8dcc0);
+    }
+    main.tab-body .card.confirmed ul.pl-list-tight,
+    main.tab-body .card.open ul.pl-list-tight {
+      padding-left: 1.15rem;
+      margin: 0;
+    }
+    main.tab-body .card.confirmed ul.pl-list-tight li,
+    main.tab-body .card.open ul.pl-list-tight li {
+      margin-bottom: 0.75rem;
+      line-height: 1.55;
+    }
+    main.tab-body .card.confirmed ul.pl-list-tight li:last-child,
+    main.tab-body .card.open ul.pl-list-tight li:last-child {
+      margin-bottom: 0;
+    }
+    /* Hesse 3-reorganizations: let the timeline figure breathe */
+    main.tab-body figure.ge-timeline {
+      padding: 1.2rem 1rem;
+      margin: 1.4rem 0 1.2rem;
+    }
+    /* Surname-investigation: a touch more space between the 3 cards */
+    main.tab-body .ge-surname-grid { gap: 1.4rem; margin: 1.4rem 0; }
+    main.tab-body .ge-surname-card { padding: 1.1rem 1.3rem; }
+    main.tab-body .ge-surname-card h4 { font-size: 1.05rem; margin-bottom: 0.75rem; }
+    main.tab-body .ge-surname-card p { line-height: 1.6; margin-bottom: 0.7rem; }
+  
+
+    /* ===== Page decorations (Victorian-style visual ornament) ===== */
+
+    /* Fleuron divider — small ornament + horizontal rules, placed between major sections */
+    .ge-fleuron { display:flex; justify-content:center; align-items:center; margin:2.8rem 0 1.4rem; color:var(--brand-dark, #8a6420); pointer-events:none; }
+    .ge-fleuron svg { width:340px; max-width:75%; height:auto; }
+    :root.theme-dark .ge-fleuron, :root:not(.theme-light) .ge-fleuron { color:var(--brand, #d8b366); opacity:0.85; }
+
+    /* Drop cap — large decorated initial letter for major prose openings (apply to <p>) */
+    p.ge-dropcap { overflow:hidden; }
+    p.ge-dropcap::first-letter {
+      font-family:var(--font-serif);
+      font-size:3.6em;
+      font-weight:700;
+      float:left;
+      line-height:0.85;
+      margin:0.18rem 0.5rem 0 0;
+      color:var(--brand-dark, #8a6420);
+      font-style:italic;
+    }
+    :root.theme-dark p.ge-dropcap::first-letter, :root:not(.theme-light) p.ge-dropcap::first-letter {
+      color:var(--brand-light, #f1cf85);
+    }
+
+    /* Wappen header — section heading paired with a small coat-of-arms emblem */
+    .ge-wappen-row { display:flex; gap:1.1rem; align-items:flex-start; margin:1.6rem 0 0.6rem; padding-top:0.4rem; border-top:1px solid var(--border-light, #d8c8a8); }
+    :root.theme-dark .ge-wappen-row, :root:not(.theme-light) .ge-wappen-row { border-top-color:var(--border-light, #6a5a40); }
+    .ge-wappen-row .ge-wappen { width:60px; height:78px; flex-shrink:0; margin-top:0.1rem; }
+    .ge-wappen-row h3 { margin:0 !important; border-top:none !important; padding-top:0 !important; font-size:1.32rem; }
+    .ge-wappen-row + p.lede { margin-top:0.6rem; }
+
+    /* Pen nib icon — inline glyph for attestations / speaker flags */
+
+    /* Victorian chronology strip — decorative timeline above the surname-chronology table */
+    .ge-chrono-strip-wrap { background:linear-gradient(140deg, var(--bg-card, #fffaf0), var(--bg-card-tint, #fff5dd)); border:1px solid var(--border-light, #d8c8a8); border-radius:5px; padding:0.5rem 0.8rem 0.2rem; margin:0.7rem 0 0.4rem; }
+    :root.theme-dark .ge-chrono-strip-wrap, :root:not(.theme-light) .ge-chrono-strip-wrap { background:linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); border-color:var(--border-light); }
+    .ge-chrono-strip { width:100%; height:auto; display:block; color:var(--brand-dark, #8a6420); }
+    :root.theme-dark .ge-chrono-strip, :root:not(.theme-light) .ge-chrono-strip { color:var(--brand, #d8b366); }
+    .ge-chrono-strip text.cs-year, .ge-chrono-strip text.cs-label, .ge-chrono-strip text.cs-gap { fill:currentColor; }
+    .ge-chrono-strip .cs-baseline { stroke:currentColor; stroke-width:1.2; opacity:0.4; }
+    .ge-chrono-strip .cs-marker { fill:currentColor; }
+    .ge-chrono-strip .cs-bookend { fill:var(--status-eliminated, #a3441f); }
+    .ge-chrono-strip .cs-bookend-inner { fill:#fff5dd; }
+    :root.theme-dark .ge-chrono-strip .cs-bookend, :root:not(.theme-light) .ge-chrono-strip .cs-bookend { fill:#f08060; }
+    :root.theme-dark .ge-chrono-strip .cs-bookend-inner, :root:not(.theme-light) .ge-chrono-strip .cs-bookend-inner { fill:#2c211a; }
+  
+
+    .ge-badge { display:inline-block; font-size: 0.72rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; padding:0.1rem 0.5rem; border-radius:10px; margin-left:0.25rem; vertical-align:0.12em; white-space:nowrap; }
+    .ge-badge.active { background:#3a6a2a; color:#fff5dd; }
+    .ge-badge.searching { background:#8a6a14; color:#fff5dd; }
+    .ge-badge.awaiting { background:#3a5878; color:#fff5dd; }
+    .ge-badge.marburg { background:#7a3416; color:#fff5dd; }
+    .cite-inline { display:inline-block; font-size:0.72rem; color:#6a5a42; text-decoration:none; border:1px solid #d8c8a8; border-radius:2px; padding:0 0.3rem; margin-left:0.25rem; background:#fff8ea; vertical-align:0.12em; }
+    .cite-inline:hover { background:#fef3d6; color:#3a2f1e; }
+    .ge-contribute { background:linear-gradient(140deg, #fff5dd, #fef3d6); border:1px solid #d8b366; border-left:4px solid #8a6420; border-radius:4px; padding:0.75rem 1rem; margin:1rem 0 1.4rem; font-size:0.9rem; color:#3a2f1e; line-height:1.55; }
+    .ge-contribute strong { color:#7a3416; }
+    .ge-contribute a { color:#8a6420; font-weight:700; }
+  
+
+    /* Surname investigation — light-mode defaults; dark-mode overrides below */
+    .ge-surname-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin:1rem 0 1rem; }
+    .ge-surname-card { background:#fffaf0; border:1px solid #d8c8a8; border-left:3px solid #5a8a4a; border-radius:5px; padding:0.85rem 1rem; box-shadow:0 1px 2px rgba(0,0,0,0.05); color:#3a2f1e; }
+    .ge-surname-card.status { border-left-color:#a3441f; background:linear-gradient(140deg, #fffaf0, #fff5dd); }
+    .ge-surname-card h4 { color:#3a6a2a; font-size:0.98rem; margin:0 0 0.55rem 0; padding:0; border:0; }
+    .ge-surname-card.status h4 { color:#7a3416; }
+    .ge-surname-card p { font-size:0.9rem; line-height:1.55; margin:0 0 0.55rem 0; color:#3a2f1e; }
+    .ge-surname-card p:last-child { margin-bottom:0; }
+    .ge-surname-table { width:100%; border-collapse:collapse; font-size:0.92rem; margin:0.3rem 0 0.4rem; background:transparent; }
+    .ge-surname-table th, .ge-surname-table td { padding:0.5rem 0.7rem; text-align:left; border-bottom:1px solid #e8dcc0; color:#3a2f1e; }
+    .ge-surname-table th { background:#fff8ea; color:#3a6a2a; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; border-bottom:2px solid #d8c8a8; }
+    .ge-surname-table tr.self td { background:#fff5dd; }
+    .ge-surname-table tr.self td:first-child { font-weight:700; color:#8a6420; }
+    .ge-surname-table .star { color:#a3441f; font-weight:700; font-size:1.05rem; }
+    .ge-surname-table .meta { font-size:0.86rem; color:#6a5a42; font-style:italic; }
+    .ge-surname-table tfoot td { font-size:0.82rem; color:#6a5a42; font-style:italic; background:transparent; border-bottom:0; padding-top:0.6rem; }
+
+    /* Surname pool diagram — full width, generous viewBox so text stays large */
+    .ge-pool-diagram { display:block; width:100%; max-width:560px; height:auto; margin:0.6rem auto 0.3rem; }
+    .ge-pool-diagram .root-bg { fill:#3a2f1e; }
+    .ge-pool-diagram .root-label-small { fill:#d8c8a8; }
+    .ge-pool-diagram .root-label-big { fill:#d8b366; }
+    .ge-pool-diagram .variant-box { fill:#fffaf0; stroke:#8a6a14; }
+    .ge-pool-diagram .variant-box.highlight { fill:#fff5dd; stroke:#a3441f; }
+    .ge-pool-diagram .variant-name { fill:#3a2f1e; }
+    .ge-pool-diagram .variant-name.highlight { fill:#a3441f; }
+    .ge-pool-diagram .variant-meta { fill:#6a5a42; }
+    .ge-pool-diagram .variant-meta.highlight { fill:#7a3416; }
+    .ge-pool-diagram .connector { stroke:#8a6a14; }
+    .ge-pool-diagram .connector.highlight { stroke:#a3441f; }
+
+    /* ===== DARK MODE OVERRIDES ===== */
+    :root.theme-dark .ge-surname-card { background: var(--bg-card); border-color: var(--border-light); border-left-color: var(--brand-dark); color: var(--text-body); }
+    :root.theme-dark .ge-surname-card.status { background: linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); border-left-color: var(--status-eliminated); }
+    :root.theme-dark .ge-surname-card h4 { color: var(--brand); }
+    :root.theme-dark .ge-surname-card.status h4 { color: var(--status-eliminated); }
+    :root.theme-dark .ge-surname-card p { color: var(--text-body); }
+    :root.theme-dark .ge-surname-table { background: transparent; }
+    :root.theme-dark .ge-surname-table th, :root.theme-dark .ge-surname-table td { color: var(--text-body); border-bottom-color: var(--border-light); }
+    :root.theme-dark .ge-surname-table th { background: var(--bg-card-tint); color: var(--brand); border-bottom-color: var(--border-medium); }
+    :root.theme-dark .ge-surname-table tr.self td { background: var(--bg-elevated); }
+    :root.theme-dark .ge-surname-table tr.self td:first-child { color: var(--brand-light); }
+    :root.theme-dark .ge-surname-table .star { color: var(--brand); }
+    :root.theme-dark .ge-surname-table .meta { color: var(--text-meta); }
+    :root.theme-dark .ge-surname-table tfoot td { color: var(--text-meta); }
+    :root.theme-dark .ge-surname-table tfoot td a { color: var(--brand); }
+    :root.theme-dark .ge-pool-diagram .root-bg { fill: var(--bg-deep); }
+    :root.theme-dark .ge-pool-diagram .root-label-small { fill: var(--text-meta); }
+    :root.theme-dark .ge-pool-diagram .root-label-big { fill: var(--brand-light); }
+    :root.theme-dark .ge-pool-diagram .variant-box { fill: var(--bg-card-tint); stroke: var(--brand-dark); }
+    :root.theme-dark .ge-pool-diagram .variant-box.highlight { fill: var(--bg-elevated); stroke: var(--status-eliminated); }
+    :root.theme-dark .ge-pool-diagram .variant-name { fill: var(--text-strong); }
+    :root.theme-dark .ge-pool-diagram .variant-name.highlight { fill: var(--status-eliminated); }
+    :root.theme-dark .ge-pool-diagram .variant-meta { fill: var(--text-meta); }
+    :root.theme-dark .ge-pool-diagram .variant-meta.highlight { fill: var(--status-eliminated); }
+    :root.theme-dark .ge-pool-diagram .connector { stroke: var(--brand-dark); }
+    :root.theme-dark .ge-pool-diagram .connector.highlight { stroke: var(--status-eliminated); }
+  
+
+        .ge-threads { margin:0.6rem 0 0; padding-left:1.2rem; }
+        .ge-threads li { margin-bottom:0.55rem; line-height:1.55; }
+        .ge-threads li:last-child { margin-bottom:0; }
+      
+
+    .ge-place-quote { background:var(--bg-card-tint, #fff5dd); border-left:3px solid var(--brand-dark, #8a6420); padding:0.95rem 1.2rem; margin:0.6rem 0 0.7rem; font-family:var(--font-serif); font-size:1.15rem; line-height:1.5; color:var(--text-strong, #1f1a14); border-radius:0 4px 4px 0; }
+    .ge-place-quote .quote-cite { display:block; font-size:1.02rem; color:var(--text-meta, #6a5a42); margin-top:0.5rem; font-style:italic; }
+    .ge-place-table { width:100%; border-collapse:collapse; font-size:1rem; margin:0.3rem 0 0.7rem; background:transparent; }
+    .ge-place-table th, .ge-place-table td { padding:0.6rem 0.85rem; text-align:left; border-bottom:1px solid var(--border-light, #e8dcc0); color:var(--text-body, #3a2f1e); line-height:1.55; }
+    .ge-place-table td em { font-size:1.06rem; color:var(--text-strong, #1f1a14); }
+    .ge-surname-step p em, .ge-surname-step blockquote em { font-size:1.04em; }
+    .ge-place-table th { background:var(--bg-card-tint, #fff8ea); color:var(--section-germany, #3a6a2a); font-size: 0.78rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; border-bottom:2px solid var(--border-medium, #d8c8a8); }
+    :root.theme-dark .ge-place-quote,
+    :root:not(.theme-light) .ge-place-quote {
+      background: #1f1a12 !important;
+      color: var(--text-body, #e8dfc8) !important;
+      border-left-color: var(--brand, #d8b366) !important;
+    }
+    :root.theme-dark .ge-place-quote .quote-cite,
+    :root:not(.theme-light) .ge-place-quote .quote-cite { color: var(--text-meta, #c8b896) !important; }
+    :root.theme-dark .ge-place-quote strong,
+    :root:not(.theme-light) .ge-place-quote strong { color: var(--text-strong, #f4ead0) !important; }
+    :root.theme-dark .ge-place-table th { background:var(--bg-card-tint); color:var(--brand); }
+    :root.theme-dark .ge-place-table th, :root.theme-dark .ge-place-table td { color:var(--text-body); border-bottom-color:var(--border-light); }
+  
+
+      
+
+    /* Surname chronology — adapted from konzen-puzzle.html, slightly enlarged for main-page reading */
+    .surname-chronology { margin: 0.8rem 0 0.6rem; overflow-x: auto; }
+    .surname-chronology table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+    .surname-chronology th, .surname-chronology td { text-align: left; padding: 0.62rem 0.85rem; border-bottom: 1px solid var(--border-light, #d8c8a8); vertical-align: top; line-height: 1.5; }
+    .surname-chronology th { font-family: var(--font-ui, Inter, sans-serif); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-meta, #6a5a42); font-weight: 700; background: var(--bg-card-tint, #f6ebd2); }
+    .surname-chronology td.surname { font-family: var(--font-mono, 'SF Mono', Menlo, monospace); font-weight: 700; color: var(--brand-dark, #8a6420); font-size: 1.08rem; }
+    .surname-chronology td.surname.cluster,
+    .surname-chronology td.surname.cluster strong,
+    .surname-chronology td.surname.cluster em,
+    .surname-chronology td.surname.cluster a { color: #3a6a2a; }
+    /* Keystone 1890 Konzen row — brighter, bolder, tinted background */
+    .surname-chronology tr.konzen-keystone > td { background: rgba(74, 138, 74, 0.12); }
+    .surname-chronology tr.konzen-keystone td.surname.cluster,
+    .surname-chronology tr.konzen-keystone td.surname.cluster strong,
+    .surname-chronology tr.konzen-keystone td.surname.cluster em { color: #2c5a1c; font-weight: 800; }
+    .surname-chronology td em { font-size: 0.95rem; }
+    .surname-chronology tr.charles-speaker td { background: rgba(216, 179, 102, 0.10); }
+    .surname-chronology .speaker-flag { display: inline-block; padding: 0.12rem 0.5rem; background: rgba(74, 138, 74, 0.20); color: #3a6a2a; border-radius: 3px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; }
+    :root.theme-dark .surname-chronology th { background: var(--bg-elevated, #2a2519); color: var(--text-meta, #c8b896); border-bottom-color: var(--border-medium, #6a5a40); }
+    :root.theme-dark .surname-chronology td { border-bottom-color: var(--border-medium, #6a5a40); color: var(--text-body, #e8dfc8); }
+    :root.theme-dark .surname-chronology td.surname { color: var(--brand-light, #fadea0); }
+    :root.theme-dark .surname-chronology td.surname.cluster { color: #b8e0a4; }
+    :root.theme-dark .surname-chronology tr.charles-speaker td { background: rgba(216, 179, 102, 0.14); }
+    :root.theme-dark .surname-chronology .speaker-flag { background: rgba(108, 176, 96, 0.22); color: #b8e0a4; }
+  
+
+    .ge-surname-step { display:grid; grid-template-columns:auto 1fr; gap:1rem 1.2rem; margin:1.4rem 0; padding:1.1rem 1.3rem; background:var(--bg-card, #fffaf0); border:1px solid var(--border-light, #d8c8a8); border-left:3px solid var(--section-germany, #5a8a4a); border-radius:5px; }
+    .ge-surname-step.verdict { border-left-color:var(--brand-dark, #8a6420); background:linear-gradient(140deg, var(--bg-card, #fffaf0), var(--bg-card-tint, #fff5dd)); }
+    .ge-surname-step .step-num { width:34px; height:34px; border-radius:50%; background:var(--section-germany, #3a6a2a); color:#fff5dd; font-family:var(--font-serif); font-size:1.15rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 34px; }
+    .ge-surname-step.verdict .step-num { background:var(--brand-dark, #8a6420); }
+    .ge-surname-step .step-body { min-width:0; }
+    .ge-surname-step h4 { color:var(--section-germany, #3a6a2a); font-size:1.08rem; margin:0 0 0.55rem 0; padding:0; border:0; }
+    .ge-surname-step.verdict h4 { color:var(--brand-dark, #8a6420); }
+    .ge-surname-step p { font-size:0.95rem; line-height:1.6; margin:0 0 0.8rem 0; color:var(--text-body, #3a2f1e); }
+    .ge-surname-step p:last-child { margin-bottom:0; }
+    .ge-surname-step .verdict-line { font-family:var(--font-serif); font-size:1.4rem; line-height:1.4; margin:0.2rem 0 0.9rem 0; color:var(--text-strong, #1f1a14); }
+    .ge-surname-step .verdict-line strong { font-size:1.7rem; letter-spacing:0.04em; color:var(--status-eliminated, #a3441f); }
+    .ge-surname-step .verdict-foot { font-size:0.92rem; margin-top:0.6rem; }
+    .ge-surname-step .ge-surname-table { margin:0.5rem 0 0; }
+    .ge-surname-step .ge-pool-diagram { max-width:640px; }
+    @media (max-width: 560px) {
+      .ge-surname-step { grid-template-columns:1fr; gap:0.6rem; padding:0.95rem 1.05rem; }
+      .ge-surname-step .step-num { width:28px; height:28px; flex:0 0 28px; font-size:1rem; }
+    }
+    :root.theme-dark .ge-surname-step { background:var(--bg-card); border-color:var(--border-light); }
+    :root.theme-dark .ge-surname-step.verdict { background:linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); border-left-color:var(--brand); }
+    :root.theme-dark .ge-surname-step h4 { color:var(--brand); }
+    :root.theme-dark .ge-surname-step.verdict h4 { color:var(--brand-light); }
+    :root.theme-dark .ge-surname-step p { color:var(--text-body); }
+    :root.theme-dark .ge-surname-step .verdict-line { color:var(--text-strong); }
+    :root.theme-dark .ge-surname-step .verdict-line strong { color:var(--brand-light); }
+  
+
+    /* Germany & Origins — Leaflet map (mirrors charles_america/st-louis-residences.html, recoloured green) */
+    #ge-fmap { height: 75vh; min-height: 620px; border: 2px solid #5a8a4a; border-radius: 6px; box-shadow: 0 4px 14px rgba(74, 58, 34, 0.18); margin: 1rem 0 1.4rem; }
+    #ge-fmap .leaflet-popup-content-wrapper { background:#fffaf0; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.18); }
+    #ge-fmap .leaflet-popup-content { font-family:var(--font-serif); color:#3a2f1e; font-size:0.92rem; line-height:1.45; margin:0.7rem 0.9rem; }
+    #ge-fmap .leaflet-popup-content h4 { color:#3a6a2a; font-size:1rem; margin-bottom:0.25rem; padding-bottom:0.2rem; border-bottom:1px solid #c9d8b8; }
+    #ge-fmap .leaflet-popup-content .yr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:0.78rem; color:#3a6a2a; font-weight:700; letter-spacing:0.03em; display:inline-block; margin-bottom:0.3rem; }
+    #ge-fmap .leaflet-popup-content .body { font-size:0.88rem; color:#3a2f1e; }
+    #ge-fmap .leaflet-popup-content a { color:#3a6a2a; border-bottom:1px dotted #c9d8b8; }
+    #ge-fmap .leaflet-popup-content .openmap { display:inline-block; margin-top:0.4rem; font-size:0.82rem; color:#3a6a2a; border-bottom:1px dashed #5a8a4a; }
+    #ge-fmap .leaflet-popup-tip { background:#fffaf0; }
+
+    .ge-map-legend { background:#fffaf0; border:1px solid #d8c8a8; border-radius:4px; padding:0.9rem 1.1rem; margin:0 0 1.4rem; font-size:0.88rem; }
+    .ge-map-legend h3 { font-size:0.95rem; color: var(--brand-dark); margin-bottom:0.5rem; padding-bottom:0.25rem; border-bottom:1px solid #d8c8a8; }
+    .ge-map-legend .legend-row { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.35rem; }
+    .ge-map-legend .legend-row:last-child { margin-bottom:0; }
+    .ge-map-legend .swatch { flex:0 0 18px; width:18px; height:18px; border-radius:50%; border:2px solid #fffaf0; box-shadow:0 0 0 1px #5a4a32; display:inline-block; }
+    .ge-map-legend .swatch.origin { background:#5a8a4a; }
+    .ge-map-legend .swatch.regional { background:#8a6a14; }
+    .ge-map-legend .swatch.port { background:#3a5878; }
+    .ge-map-legend .legend-label { color:#3a2f1e; font-size:0.86rem; }
+    .ge-map-legend .legend-label .small { color:#6a5a42; font-size:0.76rem; }
+    .ge-map-legend .legend-line { flex:0 0 22px; width:22px; height:0; border-top:2px dashed #5a8a4a; display:inline-block; }
+    .ge-map-legend .legend-line.route { border-top-color:#a3441f; border-top-style:dashed; }
+  
+
+    .ge-map-hint { font-size:0.88rem; color:var(--text-meta, #6a5a42); font-style:italic; margin:-0.6rem 0 1rem; }
+    .ge-map-hint strong { font-style:normal; color:var(--text-strong, #3a2f1e); }
+  
+
+    .ge-img-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.1rem; margin:0 0 1.5rem 0; }
+    .ge-img-gallery figure { margin:0; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+    .ge-img-gallery figure img { width:100%; height:auto; display:block; border-radius:3px; background:#3a2f1e; }
+    .ge-img-gallery figure figcaption { font-size:0.86rem; color:#3a2f1e; line-height:1.5; margin-top:0.55rem; }
+    .ge-img-gallery figure figcaption strong { color:#3a6a2a; }
+    .ge-img-gallery figure figcaption details { margin-top:0.45rem; font-size:0.82rem; }
+    .ge-img-gallery figure figcaption details summary { cursor:pointer; color:#3a6a2a; font-weight:700; }
+    .ge-img-gallery figure figcaption details[open] summary { margin-bottom:0.3rem; }
+    .ge-img-gallery figure figcaption details p { margin:0.3rem 0; line-height:1.5; }
+    .ge-img-gallery figure figcaption .credit { display:block; margin-top:0.35rem; font-size: 0.78rem; color:#6a5a42; font-style:italic; }
+  
+
+    .ge-timeline { background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:0.6rem 0.8rem; margin:0.8rem 0 0.6rem; }
+    :root.theme-dark .ge-timeline,
+    :root:not(.theme-light) .ge-timeline { background: var(--bg-card, #24201a) !important; border-color: var(--border-light, #6a5a40) !important; }
+    .ge-timeline svg { width:100%; height:auto; display:block; }
+    /* ---- SVG text + tick colors, theme-aware (added 11 May 2026) ----
+       Hardcoded fills on the timeline SVG were unreadable in dark mode;
+       these classes resolve to dark colors in light theme and bright
+       walnut-cream / gilt colors when .theme-dark is set on :root. */
+    .ge-timeline svg .svg-title      { fill: #3a2f1e; }
+    .ge-timeline svg .svg-sub        { fill: #6a5a42; }
+    .ge-timeline svg .svg-year       { fill: #3a2f1e; }
+    .ge-timeline svg .svg-age        { fill: #6a5a42; }
+    .ge-timeline svg .svg-event      { fill: #6a5a42; }
+    .ge-timeline svg .svg-tick       { stroke: #3a2f1e; }
+    .ge-timeline svg .svg-pivot-year { fill: #a3441f; }
+    .ge-timeline svg .svg-pivot-age  { fill: #a3441f; }
+    .ge-timeline svg .svg-pivot-event{ fill: #a3441f; }
+    .ge-timeline svg .svg-pivot-tick { stroke: #a3441f; }
+    :root.theme-dark .ge-timeline svg .svg-title,
+    :root:not(.theme-light) .ge-timeline svg .svg-title       { fill: #f4ead0; }
+    :root.theme-dark .ge-timeline svg .svg-sub,
+    :root:not(.theme-light) .ge-timeline svg .svg-sub         { fill: #c8b896; }
+    :root.theme-dark .ge-timeline svg .svg-year,
+    :root:not(.theme-light) .ge-timeline svg .svg-year        { fill: #f1cf85; }
+    :root.theme-dark .ge-timeline svg .svg-age,
+    :root:not(.theme-light) .ge-timeline svg .svg-age         { fill: #c8b896; }
+    :root.theme-dark .ge-timeline svg .svg-event,
+    :root:not(.theme-light) .ge-timeline svg .svg-event       { fill: #e8dfc8; }
+    :root.theme-dark .ge-timeline svg .svg-tick,
+    :root:not(.theme-light) .ge-timeline svg .svg-tick        { stroke: #c8b896; }
+    :root.theme-dark .ge-timeline svg .svg-pivot-year,
+    :root:not(.theme-light) .ge-timeline svg .svg-pivot-year  { fill: #f08060; }
+    :root.theme-dark .ge-timeline svg .svg-pivot-age,
+    :root:not(.theme-light) .ge-timeline svg .svg-pivot-age   { fill: #f08060; }
+    :root.theme-dark .ge-timeline svg .svg-pivot-event,
+    :root:not(.theme-light) .ge-timeline svg .svg-pivot-event { fill: #f08060; }
+    :root.theme-dark .ge-timeline svg .svg-pivot-tick,
+    :root:not(.theme-light) .ge-timeline svg .svg-pivot-tick  { stroke: #f08060; }
+    :root.theme-dark .ge-timeline-mobile,
+    :root:not(.theme-light) .ge-timeline-mobile,
+    :root.theme-dark .ge-timeline-prose,
+    :root:not(.theme-light) .ge-timeline-prose { background: var(--bg-card, #24201a) !important; border-color: var(--border-light, #6a5a40) !important; }
+    :root.theme-dark .ge-timeline-prose .body,
+    :root:not(.theme-light) .ge-timeline-prose .body { color: var(--text-body, #e8dfc8) !important; }
+    :root.theme-dark .ge-timeline-mobile ol li,
+    :root:not(.theme-light) .ge-timeline-mobile ol li { color: var(--text-body, #e8dfc8) !important; border-left-color: var(--border-light, #6a5a40) !important; }
+    :root.theme-dark .ge-timeline-mobile ol li .yr,
+    :root:not(.theme-light) .ge-timeline-mobile ol li .yr { color: var(--text-strong, #f4ead0) !important; }
+    .ge-timeline-prose { background:#fffaf0; border:1px solid #d8c8a8; border-radius:4px; padding:0; margin:0.4rem 0 0.8rem; }
+    .ge-timeline-prose summary { padding:0.55rem 0.9rem; cursor:pointer; font-weight:700; color:#3a6a2a; font-size:0.92rem; }
+    .ge-timeline-prose[open] summary { border-bottom:1px solid #d8c8a8; }
+    .ge-timeline-prose .body { padding:0.7rem 1rem; font-size:0.92rem; line-height:1.6; color:#3a2f1e; }
+    .ge-timeline-prose .body p { margin:0 0 0.6rem 0; }
+    .ge-timeline-prose .body p:last-child { margin-bottom:0; }
+    .ge-timeline-mobile { display:none; padding:0.6rem 0.8rem; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; margin:0.8rem 0 0.6rem; }
+    .ge-timeline-mobile ol { margin:0; padding:0; list-style:none; }
+    .ge-timeline-mobile ol li { position:relative; padding:0.45rem 0 0.45rem 1.1rem; margin-left:0.5rem; border-left:2px solid #d8c8a8; line-height:1.45; font-size:0.88rem; color:#3a2f1e; }
+    .ge-timeline-mobile ol li:last-child { border-left-color:transparent; }
+    .ge-timeline-mobile ol li::before { content:""; position:absolute; left:-7px; top:0.85rem; width:10px; height:10px; border-radius:50%; background:#3a2f1e; border:2px solid #fffaf0; box-shadow:0 0 0 1px #3a2f1e; }
+    .ge-timeline-mobile ol li.pivot::before { background:#a3441f; box-shadow:0 0 0 1px #a3441f; width:13px; height:13px; left:-8px; top:0.78rem; }
+    .ge-timeline-mobile ol li .yr { font-family:var(--font-serif); font-size:1rem; font-weight:700; color:#1f1a14; }
+    .ge-timeline-mobile ol li.pivot .yr { color:#a3441f; }
+    .ge-timeline-mobile ol li .age { font-size:0.76rem; color:#6a5a42; margin-left:0.3rem; }
+    .ge-timeline-mobile ol li .band { display:inline-block; font-size: 0.72rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; padding:0.1rem 0.45rem; border-radius:3px; margin:0.15rem 0.35rem 0.15rem 0; vertical-align:0.05em; color:#fff5dd; }
+    .ge-timeline-mobile ol li .band.kurhessen { background:#8a6a14; }
+    .ge-timeline-mobile ol li .band.nassau { background:#3a5878; }
+    .ge-timeline-mobile ol li .band.empire { background:#5a3a2a; }
+    .ge-timeline-mobile ol li .band.america { background:#3a6a2a; }
+    @media (max-width: 600px) {
+      .ge-timeline { display:none; }
+      .ge-timeline-mobile { display:block; }
+    }
+  
+
+    .ge-visit-card { background:#fffaf0; border:1px solid #c9d8b8; border-left:4px solid #5a8a4a; border-radius:6px; padding:0.95rem 1.2rem; margin:0 0 0.9rem 0; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
+    .ge-visit-card h4 { color:#3a6a2a; font-size:1.05rem; margin:0 0 0.45rem 0; padding:0; border:0; }
+    .ge-visit-card p { font-size:0.92rem; color:#3a2f1e; line-height:1.55; margin:0 0 0.55rem 0; }
+    .ge-visit-card p:last-child { margin-bottom:0; }
+    .ge-visit-card a { color:#3a6a2a; }
+  
+
+    .ge-explore-section { margin-top:1.2rem; }
+    .ge-explore-section .group-label { font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:#3a6a2a; margin:1rem 0 0.5rem 0; padding-bottom:0.3rem; border-bottom:1px solid #c9d8b8; font-weight:700; }
+    .ge-towns-strip { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:0.55rem; margin:0.7rem 0 0.7rem; }
+    .ge-town-mini { display:flex; flex-direction:column; gap:0.2rem; padding:0.65rem 0.8rem; background:#fffaf0; border:1px solid #c9d8b8; border-left:3px solid #5a8a4a; border-radius:5px; text-decoration:none; color:#3a2f1e; transition:all 0.15s; min-height:78px; box-shadow:0 1px 2px rgba(0,0,0,0.05); }
+    .ge-town-mini:hover { background:#f4f9ee; box-shadow:0 2px 6px rgba(0,0,0,0.10); transform:translateY(-1px); }
+    .ge-town-mini.origin { border-left-color:#d8b366; background:linear-gradient(140deg, #fffaf0, #fff5dd); }
+    .ge-town-mini.regional { border-left-color:#8a6a14; }
+    .ge-town-mini.pending { border-left-color:#a3441f; opacity:0.92; }
+    .ge-town-mini .name { font-weight:700; font-size:0.95rem; color:#1f1a14; line-height:1.2; }
+    .ge-town-mini .role { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#6a5a42; font-weight:700; line-height:1.3; display:flex; align-items:center; gap:0.35rem; }
+    .ge-town-mini .role::before { content:""; flex:0 0 8px; width:8px; height:8px; border-radius:50%; background:#5a8a4a; box-shadow:0 0 0 1px #fffaf0, 0 0 0 2px #5a8a4a; }
+    .ge-town-mini.origin .role { color:#8a6420; }
+    .ge-town-mini.origin .role::before { background:#d8b366; box-shadow:0 0 0 1px #fffaf0, 0 0 0 2px #d8b366; }
+    .ge-town-mini.regional .role { color:#5a4a14; }
+    .ge-town-mini.regional .role::before { background:#8a6a14; box-shadow:0 0 0 1px #fffaf0, 0 0 0 2px #8a6a14; }
+    .ge-town-mini.pending .role { color:#7a3416; }
+    .ge-town-mini.pending .role::before { background:#a3441f; box-shadow:0 0 0 1px #fffaf0, 0 0 0 2px #a3441f; }
+  
+
+      .ck-memorial { margin: 3.6rem 0 0.6rem; padding: 2.5rem 1.6rem 2.3rem; text-align: center;
+        background: var(--bg-card-tint, #f4ecd6); border: 1px solid var(--border-light, #d8c8a8);
+        border-top: 3px double var(--brand, #d8b366); border-bottom: 3px double var(--brand, #d8b366);
+        border-radius: 3px; }
+      .ck-memorial .ck-orn { color: var(--brand-dark, #8a6420); font-size: 1.5rem; line-height: 1;
+        margin-bottom: 0.9rem; }
+      .ck-memorial .ck-ded { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.24em;
+        color: var(--text-meta, #6a5a42); margin: 0 0 0.4rem; }
+      .ck-memorial .ck-name { font-family: var(--font-serif); font-size: 2.15rem;
+        font-weight: 700; line-height: 1.1; color: var(--text-heading, #1f1a14); margin: 0 0 0.55rem; }
+      .ck-memorial .ck-dates { font-size: 0.97rem; font-style: italic; line-height: 1.65;
+        color: var(--text-meta, #6a5a42); margin: 0 auto 1.9rem; max-width: 30rem; }
+      .ck-memorial .ck-arms { display: flex; justify-content: center; align-items: flex-end;
+        gap: 2.6rem; flex-wrap: wrap; margin: 0 0 1.7rem; }
+      .ck-memorial figure { margin: 0; display: flex; flex-direction: column; align-items: center; }
+      .ck-memorial .ck-arms img { height: auto; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.22)); }
+      .ck-memorial .ck-arms-main img { width: 250px; max-width: 62vw; }
+      .ck-memorial .ck-arms-mod img { width: 140px; max-width: 38vw; }
+      .ck-memorial figcaption { margin-top: 0.85rem; font-size: 0.78rem; line-height: 1.5;
+        text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-meta, #6a5a42); }
+      .ck-memorial figcaption strong { display: block; color: var(--brand-dark, #8a6420);
+        font-size: 0.82rem; letter-spacing: 0.05em; margin-bottom: 0.12rem; }
+      .ck-memorial .ck-inscription { font-size: 1.05rem; line-height: 1.72; font-style: italic;
+        color: var(--text-strong, #3a2f1e); max-width: 35rem; margin: 0 auto; }
+      @media (max-width: 540px) {
+        .ck-memorial { padding: 2rem 1rem 1.9rem; }
+        .ck-memorial .ck-arms { gap: 1.5rem; }
+        .ck-memorial .ck-name { font-size: 1.72rem; }
+      }
+    
+
+    /* Hierarchical family-tree styles — copied from family_pages/_shared.css for index.html parity with the Carl Ludwig Grandjot focal-candidate tree */
+    .family-tree { display:flex; flex-direction:column; align-items:center; gap:0; margin:1rem auto; padding:0.6rem 0; overflow-x:auto; }
+    .ft-gen-label { font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.08em; color:#8a6420; font-weight:700; margin-bottom:0.3rem; text-align:center; }
+    .ft-couple-card, .ft-person-card { width:240px; box-sizing:border-box; box-shadow:0 1px 3px rgba(0,0,0,0.08); transition:all 0.15s; }
+    .ft-couple-card:hover, .ft-person-card:hover { box-shadow:0 2px 10px rgba(0,0,0,0.16); transform:translateY(-1px); }
+    .ft-couple-card { display:flex; flex-direction:column; border:2px solid #b48a3a; border-radius:6px; background:#fff8e8; overflow:hidden; }
+    .ft-couple-card.ft-subject { border-color:#d8b366; box-shadow:0 2px 8px rgba(212,160,23,0.30); border-width:2.5px; }
+    .ft-couple-card a.ft-person { display:block; padding:0.5rem 0.7rem; text-decoration:none; color:#2c2620; transition:background 0.15s; border:none; border-radius:0; max-width:none; min-width:0; background:transparent; }
+    .ft-couple-card a.ft-person:hover { background:rgba(212,160,23,0.12); }
+    .ft-couple-card a.ft-person.ft-female { background:rgba(200,74,118,0.05); }
+    .ft-couple-card a.ft-person.ft-female:hover { background:rgba(200,74,118,0.14); }
+    .ft-couple-card .ft-marriage-bar { background:#f4ecd5; text-align:center; font-size:0.72rem; font-style:italic; color:#5a4a32; padding:0.18rem 0.4rem; border-top:1px solid #c9a76a; border-bottom:1px solid #c9a76a; }
+    .ft-person-card { display:block; border:2px solid #4a76c8; border-radius:6px; background:#eef3fa; text-decoration:none; color:#2c2620; padding:0.5rem 0.7rem; }
+    .ft-person-card.ft-female { border-color:#c84a76; background:#fbeef3; }
+    .ft-person-card.ft-subject { border-color:#d8b366; background:#fff8e8; box-shadow:0 2px 8px rgba(212,160,23,0.30); border-width:2.5px; }
+    .ft-person-card.ft-died-young { border-color:#8a4a4a; background:#fbeef3; opacity:0.85; }
+    .family-tree .ft-name { font-weight:700; font-size:0.9rem; color:#1f1a14; line-height:1.25; text-align:center; }
+    .family-tree .ft-name.ft-name-tight { font-size:0.78rem; }
+    .family-tree .ft-dates { font-size:0.76rem; color:#5a4a32; margin-top:0.1rem; line-height:1.3; }
+    .family-tree .ft-detail { font-size:0.72rem; color:#6a5a42; font-style:italic; margin-top:0.1rem; line-height:1.3; }
+    .family-tree .ft-pid { display:inline-block; margin-top:0.18rem; font-size: 0.72rem; font-weight:700; color:#4a76c8; font-family:Menlo, Consolas, monospace; }
+    .ft-couple-card a.ft-person.ft-female .ft-pid { color:#c84a76; }
+    .ft-person-card.ft-female .ft-pid { color:#c84a76; }
+    .family-tree .ft-trunk { width:2px; height:1.4rem; background:#8a6420; }
+    .ft-descend-group { display:flex; flex-direction:column; align-items:center; }
+    .ft-children-frame { display:flex; flex-direction:column; align-items:center; width:fit-content; max-width:100%; --ft-card-width:240px; }
+    .ft-children-frame.compact { --ft-card-width:200px; }
+    .ft-sibling-bar { height:2px; background:#8a6420; width:calc(100% - var(--ft-card-width)); }
+    .ft-children-frame.single-child .ft-sibling-bar { display:none; }
+    .ft-children-frame .ft-children-row { display:flex; flex-wrap:nowrap; align-items:stretch; justify-content:center; gap:1rem; }
+    .ft-child { display:flex; flex-direction:column; align-items:center; }
+    .ft-child > .ft-trunk { margin-top:0; flex:0 0 auto; }
+    .ft-child > .ft-person-card { flex:1 1 auto; }
+    .ft-children-frame.single-child .ft-child > .ft-trunk { display:none; }
+    .ft-multi-marriage-stack { display:flex; flex-direction:column; gap:1.6rem; align-items:center; margin-top:0.6rem; }
+    .ft-marriage-branch-fs { border:1px dashed #c9a76a; border-radius:6px; padding:0.8rem 1rem; background:#fffaf0; width:100%; max-width:100%; box-sizing:border-box; overflow-x:auto; }
+    .ft-marriage-branch-fs .family-tree { overflow-x:visible; min-width:fit-content; }
+    .ft-children-frame.compact .ft-person-card { width:150px; }
+    .ft-children-frame.compact .ft-children-row { gap:0.5rem; flex-wrap:nowrap; }
+    .ft-children-frame.compact { --ft-card-width:150px; }
+    .family-tree .ft-bd, .family-tree .ft-dd { font-size:0.76rem; color:#5a4a32; line-height:1.3; margin:0.06rem 0 0; }
+    .family-tree .ft-bd::before { content:"b. "; font-weight:600; color:#6a5a42; }
+    .family-tree .ft-dd::before { content:"d. "; font-weight:600; color:#6a5a42; }
+    .ft-marriage-branch-fs > h4 { font-size:0.78rem; color: var(--brand-dark); margin:0 0 0.6rem; text-align:center; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
+    .tree-note { font-size:0.86rem; color:#5a4a32; font-style:italic; padding:0.55rem 0.8rem; background:rgba(212,160,23,0.07); border-left:3px solid #d8b366; border-radius:0 3px 3px 0; margin:0.8rem 0; }
+  
+
+      /* Surname-trail figure — swap to the dark SVG variant in dark mode so
+         every box, the title strip, conclusion strip, and legend read as a
+         dark-theme diagram instead of a light cream panel. */
+      :root.theme-dark .ev-surname-trail img.surname-trail-light,
+      :root:not(.theme-light) .ev-surname-trail img.surname-trail-light { display: none !important; }
+      :root.theme-dark .ev-surname-trail img.surname-trail-dark,
+      :root:not(.theme-light) .ev-surname-trail img.surname-trail-dark { display: block !important; }
+      :root.theme-dark .ev-surname-trail,
+      :root:not(.theme-light) .ev-surname-trail {
+        background: #1a1612 !important;
+        border-color: #3c352a !important;
+      }
+    
+
+    /* ===== Source Archive — section-scoped styles (rebuilt 10 May 2026) ===== */
+    #archive h3 { font-family: var(--font-serif); font-size: 1.4rem; color: var(--brand-dark, #8a6420); border-bottom: 1px solid var(--border-light, #e8dcc0); padding-bottom: 0.4rem; margin: 2rem 0 1rem; }
+    #archive h4 { font-family: var(--font-serif); font-size: 1.08rem; color: var(--text-strong, #3a2f1e); margin: 1.6rem 0 0.7rem; letter-spacing: 0.01em; }
+
+    /* Stats bar — six clickable tiles matching the Charles / Civil War / Germany pattern */
+    #archive .quick-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.7rem; margin: 1.2rem 0 1.8rem; }
+    #archive .quick-stats .stat { display: block; background: #d8c088; border: 1px solid #a8884c; border-radius: 5px; padding: 1.05rem 0.7rem; text-align: center; text-decoration: none; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+    #archive .quick-stats .stat:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.32); border-color: #f0c878; }
+    #archive .quick-stats .stat::after { content: none !important; }
+    #archive .quick-stats .stat-num { font-family: var(--font-serif); font-size: 2.1rem; font-weight: 700; color: var(--brand-dark, #5a3a08); line-height: 1.1; }
+    #archive .quick-stats .stat-lbl { font-size: 0.92rem; color: var(--text-body, #2c2010); margin-top: 0.4rem; line-height: 1.4; }
+    :root.theme-dark #archive .quick-stats .stat,
+    :root:not(.theme-light) #archive .quick-stats .stat { background: #18140e !important; border-color: #5a4628 !important; }
+    :root.theme-dark #archive .quick-stats .stat:hover,
+    :root:not(.theme-light) #archive .quick-stats .stat:hover { border-color: #d8b366 !important; box-shadow: 0 4px 14px rgba(216, 179, 102, 0.25) !important; }
+
+    /* "How to use this archive" card */
+    #archive .archive-how { background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8); border-left: 4px solid #8a6420; border-radius: 4px; padding: 0.85rem 1.1rem; margin: 0.6rem 0 1.2rem; font-size: 1rem; line-height: 1.6; color: var(--text-body, #3a2f1e); }
+    #archive .archive-how strong { color: var(--text-strong, #1f1a14); }
+    #archive .archive-how ul { margin: 0.4rem 0 0 1.1rem; padding: 0; }
+    #archive .archive-how li { margin: 0.18rem 0; }
+    :root.theme-dark #archive .archive-how strong, :root:not(.theme-light) #archive .archive-how strong { color: var(--text-heading, #f1cf85) !important; }
+
+    /* Search/filter input */
+    #archive .archive-search { display: flex; align-items: center; gap: 0.7rem; margin: 1rem 0 1.4rem; padding: 0.6rem 0.9rem; background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8); border-radius: 4px; }
+    #archive .archive-search label { font-size: 0.84rem; font-weight: 700; color: var(--brand-dark, #8a6420); white-space: nowrap; text-transform: uppercase; letter-spacing: 0.05em; }
+    #archive .archive-search input { flex: 1; padding: 0.4rem 0.7rem; border: 1px solid var(--border-medium, #d8c8a8); border-radius: 3px; font-size: 0.96rem; font-family: inherit; background: var(--bg-card, #fffaf0); color: var(--text-body, #2c2620); }
+    #archive .archive-search input:focus { outline: 2px solid var(--brand, #d8b366); outline-offset: 1px; }
+    #archive .archive-search .archive-filter-count { font-size: 0.86rem; color: var(--text-muted, #6a5a42); white-space: nowrap; }
+    :root.theme-dark #archive .archive-search input, :root:not(.theme-light) #archive .archive-search input { background: var(--bg-card-tint, #2c261d) !important; border-color: var(--border-medium, #6a5a40) !important; color: var(--text-body, #e8dfc8) !important; }
+
+    /* Card-category color accents — visible at a glance */
+    #archive .doc-card.primary { border-left: 4px solid #8a6420; }
+    #archive .doc-card.collaborator { border-left: 4px solid #6a4a8a; }
+    #archive .doc-card.synthesis { border-left: 4px solid #c87a30; }
+    #archive .doc-card.session { border-left: 4px solid #5a8a4a; }
+    #archive .doc-card.breakthrough { border-left: 4px solid #c84a4a; }
+    #archive .doc-card .doc-date { display: block; font-size: 0.78rem; color: var(--text-muted, #6a5a42); font-family: 'SF Mono', Menlo, Consolas, monospace; margin-top: 0.35rem; letter-spacing: 0.03em; }
+
+    /* Research-arc groupings inside the full session log */
+    #archive .arc-group { margin: 0.4rem 0 1rem; border: 1px solid var(--border-light, #d8c8a8); border-radius: 4px; background: var(--bg-card, #fffaf0); }
+    #archive .arc-group > summary { padding: 0.7rem 1rem; cursor: pointer; font-weight: 700; color: var(--brand-dark, #8a6420); font-size: 1.02rem; list-style: none; display: flex; align-items: center; gap: 0.6rem; }
+    #archive .arc-group > summary::-webkit-details-marker { display: none; }
+    #archive .arc-group > summary::before { content: "\25B8"; color: var(--brand, #d8b366); transition: transform 0.15s; display: inline-block; }
+    #archive .arc-group[open] > summary::before { transform: rotate(90deg); }
+    #archive .arc-group .arc-meta { font-size: 0.78rem; color: var(--text-muted, #6a5a42); margin-left: auto; font-weight: 400; }
+    #archive .arc-group .arc-body { padding: 0.5rem 1rem 0.9rem; }
+    #archive .arc-group .arc-keystone { display: inline-block; padding: 0.05rem 0.4rem; background: rgba(200, 74, 74, 0.12); color: #c84a4a; font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; border-radius: 2px; margin-left: 0.4rem; vertical-align: 0.08em; }
+
+    /* "Show all 28 prior versions" mini-collapse */
+    #archive details.prior-versions { display: block; margin-top: 0.5rem; }
+    #archive details.prior-versions summary { font-size: 0.84rem; color: var(--brand-dark, #8a6420); cursor: pointer; }
+    #archive details.prior-versions[open] summary { margin-bottom: 0.3rem; }
+    #archive details.prior-versions .version-list a { background: var(--bg-card-tint, #fff8ea); }
+
+    /* Readability bumps */
+    #archive .lede { font-size: 1.22rem; line-height: 1.6; }
+    #archive .tab-meta { font-size: 0.95rem; }
+    #archive .page-toc { font-size: 1.04rem; line-height: 1.7; padding: 1rem 1.2rem; }
+    #archive .page-toc .toc-label { font-size: 0.9rem; }
+    #archive .page-toc a { font-size: 1.04rem; }
+    #archive p:not(.lede):not(.tab-meta):not(.small) { font-size: 1.04rem; line-height: 1.6; }
+    #archive .doc-card .doc-title { font-size: 1.04rem; }
+    #archive .doc-card .doc-desc { font-size: 0.96rem; line-height: 1.55; }
+    #archive .doc-card .doc-type { font-size: 0.82rem; }
+
+/* ── First-paint optimization (June 2026) ───────────────────────────────
+   index.html is a tabbed SPA: only the active .page panel (#glance, the
+   landing tab) is painted on load; every other section.page panel is
+   display:none until its nav tab is chosen, so those cost nothing to render
+   and need no treatment here. The heaviest paint items on the landing panel
+   are its large below-the-fold figures — the inline 1180x720 "research
+   overview" infographic (.infographic-wrap) and the two embedded SVG charts
+   (.aag-chart). content-visibility:auto lets the browser skip their
+   layout/paint until they scroll near the viewport, cutting first-paint work
+   with no change to markup, in-page anchors, or SEO (content stays in the
+   DOM and is find-in-page searchable). contain-intrinsic-size reserves an
+   approximate placeholder so the scrollbar does not jump; the `auto` keyword
+   lets the browser remember the real size after the first reveal. Scoped to
+   #glance so it never touches the hidden tab panels. */
+#glance .infographic-wrap {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+#glance .aag-chart {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+  

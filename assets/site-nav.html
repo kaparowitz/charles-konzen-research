@@ -1,0 +1,114 @@
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders ({{ROOT}}) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="{{ROOT}}abstract.html" role="menuitem">Abstract</a>
+      <a href="{{ROOT}}claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="{{ROOT}}birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="{{ROOT}}surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="{{ROOT}}origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="{{ROOT}}occupation-records.html" role="menuitem">Occupation across the records</a>
+      <a href="{{ROOT}}search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="{{ROOT}}negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="{{ROOT}}open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}index.html" role="menuitem">Home</a>
+      <a href="{{ROOT}}stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="{{ROOT}}cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="{{ROOT}}germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="{{ROOT}}germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="{{ROOT}}germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="{{ROOT}}towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="{{ROOT}}charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="{{ROOT}}civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}people/index.html" role="menuitem">People in the story</a>
+      <a href="{{ROOT}}children/index.html" role="menuitem">The seven children</a>
+      <a href="{{ROOT}}who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="{{ROOT}}sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="{{ROOT}}sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="{{ROOT}}dna.html" role="menuitem">DNA evidence</a>
+      <a href="{{ROOT}}correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}methodology.html" role="menuitem">Methodology</a>
+      <a href="{{ROOT}}bibliography.html" role="menuitem">Bibliography</a>
+      <a href="{{ROOT}}errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="{{ROOT}}glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="{{ROOT}}tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="{{ROOT}}interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="{{ROOT}}Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="{{ROOT}}Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="{{ROOT}}family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}about.html" role="menuitem">About this project</a>
+      <a href="{{ROOT}}contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="{{ROOT}}faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="{{ROOT}}changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>

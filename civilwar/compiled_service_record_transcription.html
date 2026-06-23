@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Civil War — Compiled Service Record Transcription · Charles Gannsen</title>
+<link rel="canonical" href="https://charles-research.netlify.app/civilwar/compiled_service_record_transcription.html">
+<style>
+  *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Iowan Old Style', Georgia, 'Times New Roman', serif; background:#f6f1e7; color:#2c2620; line-height:1.55; }
+  ::selection { background:#d8b366; color:#1f1a14; }
+  a { color:#8a6420; text-decoration:none; border-bottom:1px dotted #c9a76a; }
+  a:hover { color:#74420f; }
+
+  header.cw-hero { background:linear-gradient(135deg, #1f1a14 0%, #3a2f1e 100%); color:#f6f1e7; padding:1.6rem 1.5rem 1.4rem; border-bottom:4px double #d8b366; }
+  header.cw-hero .crumbs { font-size:0.82rem; color:#c8b896; margin-bottom:0.4rem; }
+  header.cw-hero .crumbs a { color:#d8b366; border-bottom:none; }
+  header.cw-hero h1 { color:#f6f1e7; font-size:2.0rem; line-height:1.2; }
+  header.cw-hero .sub { color:#c8b896; font-style:italic; margin-top:0.3rem; }
+
+  main { max-width: 1180px; margin: 0 auto; padding: 1.6rem 1.4rem 4rem; }
+
+  .toc { background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:1rem 1.2rem; margin-bottom:1.6rem; }
+  .toc h3 { color:#3a2f1e; margin-bottom:0.5rem; font-size:1.05rem; border-bottom:1px solid #c9a76a; padding-bottom:0.3rem; }
+  .toc ol { padding-left:1.6rem; columns: 2; column-gap: 1.6rem; font-size:0.9rem; }
+  .toc li { margin-bottom:0.2rem; }
+
+  .access-bar { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border:1px solid #d8b366; border-radius:6px; padding:1rem 1.2rem; margin-bottom:1.6rem; display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center; justify-content:space-between; }
+  .access-bar .label { font-weight:700; color:#3a2f1e; }
+  .access-bar a.btn { display:inline-block; background:#2c2620; color:#d8b366; border:1px solid #d8b366; border-radius:3px; padding:0.45rem 0.9rem; font-weight:600; letter-spacing:0.04em; border-bottom:none; font-size:0.9rem; }
+  .access-bar a.btn:hover { background:#d8b366; color:#1f1a14; }
+
+  .page-card { background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:1.1rem 1.3rem; margin-bottom:1.6rem; display:grid; grid-template-columns: 360px 1fr; gap:1.2rem; }
+  .page-card.full { grid-template-columns: 1fr; }
+  .page-card .img-col { text-align:center; }
+  .page-card .img-col img { display:block; max-width:100%; max-height:520px; margin:0 auto; border:1px solid #d8c8a8; box-shadow:0 2px 12px rgba(0,0,0,0.12); cursor:zoom-in; }
+  .page-card .img-col figcaption { font-size:0.78rem; color:#6a5a42; margin-top:0.4rem; font-style:italic; }
+  .page-card .text-col h4 { color:#1f1a14; font-size:1.05rem; margin-bottom:0.2rem; }
+  .page-card .text-col .ptype { font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:#8a7858; margin-bottom:0.6rem; font-weight:700; }
+  .page-card .text-col .badge { display:inline-block; font-size: 0.76rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:2px 8px; border-radius:3px; margin-left:0.4rem; vertical-align:middle; }
+  .page-card .text-col .badge.muster { background:#4a76c8; color:#fff; }
+  .page-card .text-col .badge.order { background:#8a4a4a; color:#fff; }
+  .page-card .text-col .badge.index { background:#5a8a4a; color:#fff; }
+  .page-card .text-col .badge.cover { background:#8a7858; color:#fff; }
+  .page-card .text-col .badge.special { background:#d8b366; color:#1f1a14; }
+  .page-card .text-col dl { font-size:0.92rem; margin-top:0.4rem; }
+  .page-card .text-col dl dt { font-weight:700; color:#5a4a32; margin-top:0.5rem; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; }
+  .page-card .text-col dl dd { margin-left:0; margin-bottom:0.3rem; color:#2c2620; }
+  .page-card .text-col .verbatim { background:#f6ebd2; border-left:3px solid #c9a76a; padding:0.5rem 0.8rem; margin-top:0.5rem; font-style:italic; font-size:0.9rem; color:#3a2f1e; }
+  .page-card .text-col .note { font-size:0.85rem; color:#6a5a42; margin-top:0.5rem; font-style:italic; }
+
+  .legend { background:#f6ebd2; border:1px solid #c9a76a; border-radius:5px; padding:0.7rem 1rem; margin-bottom:1.4rem; font-size:0.86rem; color:#5a4a32; }
+  .legend strong { color:#3a2f1e; }
+
+  footer.back-nav { margin-top:2rem; text-align:center; padding:1rem; }
+  footer.back-nav a { display:inline-block; padding:0.5rem 1rem; background:#2c2620; color:#d8b366; border:1px solid #d8b366; border-radius:3px; font-weight:600; letter-spacing:0.04em; border-bottom:none; }
+  footer.back-nav a:hover { background:#d8b366; color:#1f1a14; }
+
+  @media (max-width: 720px) {
+    .page-card { grid-template-columns: 1fr; }
+    .toc ol { columns: 1; }
+  }
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Charles Research">
+  <meta property="og:title" content="Civil War — Compiled Service Record Transcription · Charles Gannsen">
+  <meta property="og:description" content="NARA M405 · Roll 0327 · 1st &amp; 3d Battery B, 2d Regiment Missouri Light Artillery · 25 pages, Fold3 image #228767500">
+  <meta property="og:url" content="https://charles-research.netlify.app/civilwar/compiled_service_record_transcription.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/civilwar.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/civilwar.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Civil War — Compiled Service Record Transcription · Charles Gannsen">
+  <meta name="twitter:description" content="NARA M405 · Roll 0327 · 1st &amp; 3d Battery B, 2d Regiment Missouri Light Artillery · 25 pages, Fold3 image #228767500">
+  <meta name="description" content="NARA M405 · Roll 0327 · 1st &amp; 3d Battery B, 2d Regiment Missouri Light Artillery · 25 pages, Fold3 image #228767500">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css">
+<script defer src="../assets/site-nav.js"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
+<script defer src="../assets/cite-widget.js"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css">
+<script defer src="../assets/deep-zoom.js"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Civil War",
+      "item": "https://charles-research.netlify.app/civilwar/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Compiled Service Record Transcription"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/civilwar/compiled_service_record_transcription.html#article",
+  "headline": "Civil War — Compiled Service Record Transcription · Charles Gannsen",
+  "url": "https://charles-research.netlify.app/civilwar/compiled_service_record_transcription.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "en-US",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17",
+  "description": "NARA M405 · Roll 0327 · 1st & 3d Battery B, 2d Regiment Missouri Light Artillery · 25 pages, Fold3 image #228767500"
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../abstract.html" role="menuitem">Abstract</a>
+      <a href="../claims-dashboard.html" role="menuitem">Claims dashboard</a>
+      <a href="../birthdate-records.html" role="menuitem">Birth date across the records</a>
+      <a href="../surname-records.html" role="menuitem">Surname across the records</a>
+      <a href="../origin-records.html" role="menuitem">Origin across the records</a>
+      <a href="../search-coverage.html" role="menuitem">Parish search coverage</a>
+      <a href="../negative-results.html" role="menuitem">Negative-results audit</a>
+      <a href="../open-questions.html" role="menuitem">Open Questions</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="story">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../charles-in-america.html" role="menuitem">Charles in America</a>
+      <a href="../civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="visualizations">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../tree-interactive.html" role="menuitem">Family tree — interactive</a>
+      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
+      <a href="../Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
+      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
+      <a href="../family-poster.html" role="menuitem">Family poster</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<header class="cw-hero cinema-section-hero" data-tone="civilwar">
+  <div class="crumbs"><a href="../index.html#civilwar">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#civilwar">Civil War</a> &nbsp;/&nbsp; Compiled Service Record</div>
+  <h1>Compiled Service Record · Full Transcription</h1>
+  <div class="sub">NARA M405 · Roll 0327 · 1st &amp; 3d Battery B, 2d Regiment Missouri Light Artillery · 25 pages, Fold3 image #228767500</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<div class="access-bar">
+  <div><span class="label">Original PDF:</span> <a href="../Fold3_MO_Volunteer_Union_Service_Records.pdf" target="_blank" class="btn" rel="noopener noreferrer">↓ Open the 25-page PDF</a></div>
+  <div><span class="label">Fold3 source:</span> <a href="https://www.fold3.com/image/228767500" target="_blank" class="btn" rel="noopener noreferrer">→ fold3.com/228767500</a></div>
+  <div><span class="label">NARA catalog:</span> <a href="https://catalog.archives.gov/id/300398" target="_blank" class="btn" rel="noopener noreferrer">→ Catalog #300398</a></div>
+</div>
+
+<div class="legend">
+  <strong>How to read this page.</strong> Each of the 25 PDF pages is shown below in its original order, with the scanned image on the left and a structured transcription on the right. The cards are 19th-century clerk transcriptions in cursive and many fields are partially illegible — illegible portions are marked with <em>[illeg.]</em>; uncertain readings appear in <em>[brackets]</em>. The chronology runs <em>backwards</em> through the packet: the latest event (muster-out, Aug 1865) is on page 2; the earliest (enlistment, Dec 1862) is on page 21.
+</div>
+
+<div class="toc">
+  <h2>Page index</h2>
+  <ol>
+    <li><a href="#p1">Page 1 — Index card (file #1757)</a></li>
+    <li><a href="#p2">Page 2 — Muster-out roll, Aug 1865</a></li>
+    <li><a href="#p3">Page 3 — Muster Sept &amp; Oct 1864</a></li>
+    <li><a href="#p4">Page 4 — Muster July &amp; Aug 1865</a></li>
+    <li><a href="#p5">Page 5 — Muster May &amp; June 1865</a></li>
+    <li><a href="#p6">Page 6 — Muster Mch &amp; Apr 1865</a></li>
+    <li><a href="#p7">Page 7 — Muster Jan &amp; Feb 1865</a></li>
+    <li><a href="#p8">Page 8 — Muster July &amp; Aug 1864</a></li>
+    <li><a href="#p9">Page 9 — Muster Sept &amp; Oct 1864 (dup.)</a></li>
+    <li><a href="#p10">Page 10 — Muster May &amp; June 1864</a></li>
+    <li><a href="#p11">Page 11 — Muster Mch &amp; Apr 1864</a></li>
+    <li><a href="#p12">Page 12 — Muster Jan &amp; Feb 1864</a></li>
+    <li><a href="#p13">Page 13 — Muster Nov &amp; Dec 1863 (promotion)</a></li>
+    <li><a href="#p14">Page 14 — Muster May &amp; June 1864 (dup.)</a></li>
+    <li><a href="#p15">Page 15 — Muster Sept &amp; Oct 1863 (re-org)</a></li>
+    <li><a href="#p16">Page 16 — Muster July &amp; Aug 1863</a></li>
+    <li><a href="#p17">Page 17 — Muster May &amp; June 1863</a></li>
+    <li><a href="#p18">Page 18 — Muster Mch &amp; Apr 1863</a></li>
+    <li><a href="#p19">Page 19 — Special Muster, 10 Apr 1863 (smallpox hosp.)</a></li>
+    <li><a href="#p20">Page 20 — Muster Jan &amp; Feb 1863 (smallpox hosp.)</a></li>
+    <li><a href="#p21">Page 21 — Muster Nov &amp; Dec 1862 (enlistment)</a></li>
+    <li><a href="#p22">Page 22 — Enclosures card</a></li>
+    <li><a href="#p23">Page 23 — Manuscript fragment</a></li>
+    <li><a href="#p24">Page 24 — Special Order No. 92, 12 June 1865</a></li>
+    <li><a href="#p25">Page 25 — Fold3 source-information cover</a></li>
+  </ol>
+</div>
+
+<!-- ========== PAGE 1 ========== -->
+<div id="p1" class="page-card">
+  <figure class="img-col"><a href="page_images/page-01.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-01.webp" alt="Page 1 — Index card" loading="lazy" width="2125" height="2750"></a><figcaption>Page 1 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 1 — File Index Card <span class="badge index">INDEX</span></h2>
+    <div class="ptype">Filing card · NARA file #1757</div>
+    <dl>
+      <dt>Soldier</dt><dd>Gannsen, Charles</dd>
+      <dt>Unit</dt><dd>Batt'y B, 2 Mo. L. Art'y. (2nd Regiment Missouri Light Artillery, Battery B)</dd>
+      <dt>Rank</dt><dd>Pvt. (Private)</dd>
+      <dt>File number</dt><dd>1757 (handwritten in upper right)</dd>
+      <dt>Card numbers (right column)</dt><dd>List of ~18 NARA card-control numbers in the 525,000s — the index strings together every individual carded record (pages 2–21) into one packet. Numbers visible include 525135, 525208, 525244, 525285, 525382, 525702, 525540, 525233, 525234 and others (handwritten, several illegible).</dd>
+      <dt>Bookmark</dt><dd>(blank)</dd>
+      <dt>See also</dt><dd>(blank)</dd>
+    </dl>
+    <p class="note">This is the cover/finder card the NARA compilation clerk created so all of Charles's individual carded records could be retrieved as one bundle.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 2 ========== -->
+<div id="p2" class="page-card">
+  <figure class="img-col"><a href="page_images/page-02.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-02.webp" alt="Page 2 — Muster-out Roll" loading="lazy" width="2125" height="2750"></a><figcaption>Page 2 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 2 — Muster-out Roll <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">Battery Muster-out Roll · St. Louis · Aug 1865</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Rank / Unit</dt><dd>Pvt., 3d Battery B, 2 Reg't Mo. Lt. Art'y.</dd>
+      <dt>Roll dated</dt><dd>St. Louis, Mo., August 28, 1865</dd>
+      <dt>Muster-out to date</dt><dd>August 20, 1865</dd>
+      <dt>Last paid to</dt><dd>December 31, 186[4]</dd>
+      <dt>Clothing acct. last settled</dt><dd>December 31, 186[4]; drawn since $[illeg.]</dd>
+      <dt>Due soldier / Due U.S.</dt><dd>$[illeg.] / $[illeg.]</dd>
+      <dt>Am't for cloth'g in kind or money adv'd</dt><dd>$26.[illeg.]</dd>
+      <dt>Due U.S. for arms, equipments &amp;c.</dt><dd>$[illeg.]</dd>
+      <dt>Bounty paid / due</dt><dd>$2 paid / $7 due</dd>
+      <dt>Valuation of horse / horse equipments</dt><dd>$[illeg.] / $[illeg.]</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"Due Soldier — Sergeant of Reg', enl'd Nov 11, '63 [when] reduced to rank … [per] Gen. Order 28."</span></dd>
+      <dt>Copyist signature</dt><dd>P. F. [Eames? / Cames?]</dd>
+    </dl>
+    <p class="note">This is the final muster-out card — the chronologically <em>last</em> event in the packet despite being filed near the front. <strong>Two reading notes.</strong> (1) This roll is dated late August 1865 and its "muster-out to date" field reads <em>August&nbsp;20,&nbsp;1865</em>, but the project's canonical discharge date is <strong>20&nbsp;December&nbsp;1865</strong> — the date carried by the later separation action (Special Order No.&nbsp;92, Nov&nbsp;1865) and read as "to date Dec.&nbsp;20,&nbsp;1865" on the cleaner NARA scan (an earlier Fold3 reading had this field as Dec.&nbsp;7). Charles's return to St.&nbsp;Louis and his 7&nbsp;January&nbsp;1866 marriage are consistent with a December 1865 separation. (2) The "enl'd Nov&nbsp;11,&nbsp;'63" in the Remarks line is part of the rank / Gen.-Order-28 pay entry on this card; Charles's promotion to Sergeant is dated <em>7&nbsp;November&nbsp;1863</em> on the dedicated promotion card (Page&nbsp;8). See the <a href="service-timeline.html">service timeline</a>.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 3 ========== -->
+<div id="p3" class="page-card">
+  <figure class="img-col"><a href="page_images/page-03.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-03.webp" alt="Page 3 — Muster Sept & Oct 1864" loading="lazy" width="2125" height="2750"></a><figcaption>Page 3 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 3 — Battery Muster Roll, Sept &amp; Oct 1864 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Rank / Unit</dt><dd>Pvt., 3d Battery B, 2 Reg't Missouri L. Art'y.</dd>
+      <dt>Period</dt><dd>September &amp; October, 1864</dd>
+      <dt>Present or absent</dt><dd>Absent</dd>
+      <dt>Stoppage / Due Gov't / Valuation</dt><dd>$[illeg.] / $[illeg.] / $[illeg.]</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"On Det[ached] service at Dept. of the Mo., St. Louis, Mo., by order of Maj. Gen. [Curtis]. [Reduced to ranks of Pvt., G[en.] O[rder] 28]."</span></dd>
+      <dt>Copyist signature</dt><dd>P. S. Eames (or similar)</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 4 ========== -->
+<div id="p4" class="page-card">
+  <figure class="img-col"><a href="page_images/page-04.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-04.webp" alt="Page 4 — Muster July & Aug 1865" loading="lazy" width="2125" height="2750"></a><figcaption>Page 4 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 4 — Battery Muster Roll, July &amp; Aug 1865 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Rank / Unit</dt><dd>Pvt., 3d Battery B, 2 Reg't Missouri L. Art'y.</dd>
+      <dt>Period</dt><dd>July &amp; August, 1865</dd>
+      <dt>Present or absent</dt><dd>Absent</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"On det[ached] serv at Depot Co., St. Louis, Mo. A. D. Mo. — No. 159. July 6, '65 transferred on Sept. until Master to be when reduced to Ranks Gen. O. 28."</span></dd>
+      <dt>Copyist signature</dt><dd>P. F. [Eames? / Cames?]</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 5 ========== -->
+<div id="p5" class="page-card">
+  <figure class="img-col"><a href="page_images/page-05.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-05.webp" alt="Page 5 — Muster May & June 1865" loading="lazy" width="2125" height="2750"></a><figcaption>Page 5 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 5 — Battery Muster Roll, May &amp; June 1865 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>May &amp; June, 1865</dd>
+      <dt>Present or absent</dt><dd>Absent</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"On det. serv. at H[d.] Q[rs.] Mr. R. He B [Reg't] of the M[o.] M[ar.] 22, '65"</span> <em>(reading uncertain — appears to be a Headquarters detail starting March 22, 1865)</em></dd>
+      <dt>Copyist signature</dt><dd>P. S. Clark</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 6 ========== -->
+<div id="p6" class="page-card">
+  <figure class="img-col"><a href="page_images/page-06.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-06.webp" alt="Page 6 — Muster Mch & Apr 1865" loading="lazy" width="2125" height="2750"></a><figcaption>Page 6 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 6 — Battery Muster Roll, Mch &amp; Apr 1865 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>March &amp; April, 1865</dd>
+      <dt>Present or absent</dt><dd>Absent</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"On det. serv at H[d. Q.] Mr. R. He B. Reg't of M.[o.] [Mar.] 22, '65"</span></dd>
+      <dt>Copyist signature</dt><dd>P. S. Clark</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 7 ========== -->
+<div id="p7" class="page-card">
+  <figure class="img-col"><a href="page_images/page-07.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-07.webp" alt="Page 7 — Muster Jan & Feb 1865" loading="lazy" width="2125" height="2750"></a><figcaption>Page 7 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 7 — Battery Muster Roll, Jan &amp; Feb 1865 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>January &amp; February, 1865</dd>
+      <dt>Present or absent</dt><dd>Present</dd>
+      <dt>Due Gov't</dt><dd>$3.[?] for $[illeg.]</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"Out det. for Order [No.] 95 —"</span></dd>
+      <dt>Footnote / margin</dt><dd>"* Roll term[s]"</dd>
+      <dt>Copyist signature</dt><dd>P. S. Clark</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 8 ========== -->
+<div id="p8" class="page-card">
+  <figure class="img-col"><a href="page_images/page-08.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-08.webp" alt="Page 8 — Muster July & Aug 1864" loading="lazy" width="2125" height="2750"></a><figcaption>Page 8 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 8 — Battery Muster Roll, July &amp; Aug 1864 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>July &amp; August, 1864</dd>
+      <dt>Present or absent</dt><dd>[Present]</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"Same MS [muster?] for End B. Due $[illeg.] for ordnance &amp;c."</span></dd>
+      <dt>Bookmark</dt><dd>"J. Will" (?)</dd>
+      <dt>Copyist signature</dt><dd>Lacery (or similar)</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 9 ========== -->
+<div id="p9" class="page-card">
+  <figure class="img-col"><a href="page_images/page-09.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-09.webp" alt="Page 9 — Muster Sept & Oct 1864" loading="lazy" width="2125" height="2750"></a><figcaption>Page 9 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 9 — Battery Muster Roll, Sept &amp; Oct 1864 (duplicate / parallel record) <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>September &amp; October, 1864</dd>
+      <dt>Present or absent</dt><dd>Absent</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"Sub. Mo. R for Mo Sgt B Pl 30 for ordn[ance] [illeg.]"</span></dd>
+      <dt>Copyist signature</dt><dd>Lacery</dd>
+    </dl>
+    <p class="note">Likely a parallel record from a separate muster-roll source covering the same Sept–Oct 1864 period as page 3.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 10 ========== -->
+<div id="p10" class="page-card">
+  <figure class="img-col"><a href="page_images/page-10.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-10.webp" alt="Page 10 — Muster May & June 1864" loading="lazy" width="2125" height="2750"></a><figcaption>Page 10 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 10 — Battery Muster Roll, May &amp; June 1864 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>May &amp; June, 1864</dd>
+      <dt>Present or absent</dt><dd>Present</dd>
+      <dt>Remarks</dt><dd>(blank)</dd>
+      <dt>Copyist signature</dt><dd>P. S. Clark</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 11 ========== -->
+<div id="p11" class="page-card">
+  <figure class="img-col"><a href="page_images/page-11.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-11.webp" alt="Page 11 — Muster Mch & Apr 1864" loading="lazy" width="2125" height="2750"></a><figcaption>Page 11 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 11 — Battery Muster Roll, Mch &amp; Apr 1864 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>March &amp; April, 1864</dd>
+      <dt>Present or absent</dt><dd>Absent</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"On det. service at New Madrid, Mo. since Apl. 24/64."</span></dd>
+      <dt>Copyist signature</dt><dd>Lacery</dd>
+    </dl>
+    <p class="note">Documents Charles's detached assignment to New Madrid, Missouri starting 24 April 1864.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 12 ========== -->
+<div id="p12" class="page-card">
+  <figure class="img-col"><a href="page_images/page-12.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-12.webp" alt="Page 12 — Muster Jan & Feb 1864" loading="lazy" width="2125" height="2750"></a><figcaption>Page 12 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 12 — Battery Muster Roll, Jan &amp; Feb 1864 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>January &amp; February, 1864</dd>
+      <dt>Present or absent</dt><dd>Present</dd>
+      <dt>Remarks</dt><dd>(blank)</dd>
+      <dt>Copyist signature</dt><dd>[J. J. C.] [illeg.]</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 13 ========== -->
+<div id="p13" class="page-card">
+  <figure class="img-col"><a href="page_images/page-13.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-13.webp" alt="Page 13 — Muster Nov & Dec 1863 — Promotion" loading="lazy" width="2125" height="2750"></a><figcaption>Page 13 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 13 — Battery Muster Roll, Nov &amp; Dec 1863 <span class="badge muster">MUSTER</span> <span class="badge special">PROMOTION</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>November &amp; December, 1863</dd>
+      <dt>Present or absent</dt><dd>Present</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"Promoted from Corporal to Sergeant Nov. 7, 1863."</span></dd>
+      <dt>Copyist signature</dt><dd>[J. J. C.] [illeg.]</dd>
+    </dl>
+    <p class="note">Key promotion event: Charles became a Sergeant on 7 November 1863 — a rank he held until reduction (per Gen. Order 28, captured on pages 2–4) sometime in 1864–65.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 14 ========== -->
+<div id="p14" class="page-card">
+  <figure class="img-col"><a href="page_images/page-14.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-14.webp" alt="Page 14 — Muster May & June 1864" loading="lazy" width="2125" height="2750"></a><figcaption>Page 14 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 14 — Battery Muster Roll, May &amp; June 1864 (duplicate / parallel) <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>May &amp; June, 1864</dd>
+      <dt>Present or absent</dt><dd>Absent</dd>
+      <dt>Remarks</dt><dd>(blank)</dd>
+      <dt>Copyist signature</dt><dd>Lacery</dd>
+    </dl>
+    <p class="note">Parallel record covering the same period as page 10; the contradicting "Present" vs "Absent" likely reflects two separate source rolls (regimental and battery-level).</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 15 ========== -->
+<div id="p15" class="page-card">
+  <figure class="img-col"><a href="page_images/page-15.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-15.webp" alt="Page 15 — Muster Sept & Oct 1863 — Reorganization" loading="lazy" width="2125" height="2750"></a><figcaption>Page 15 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 15 — Battery Muster Roll, Sept &amp; Oct 1863 <span class="badge muster">MUSTER</span> <span class="badge special">REORG</span></h2>
+    <div class="ptype">3d Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>September &amp; October, 1863</dd>
+      <dt>Present or absent</dt><dd>Present</dd>
+      <dt>Remarks</dt><dd>(blank)</dd>
+      <dt>Footnote</dt>
+      <dd><span class="verbatim">"This battery was formed of 1st Battery B Sept. 20, 1863."</span></dd>
+      <dt>Copyist signature</dt><dd>[J. J. C.]</dd>
+    </dl>
+    <p class="note">Records the unit reorganization: 3d Battery B was created out of 1st Battery B on 20 September 1863.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 16 ========== -->
+<div id="p16" class="page-card">
+  <figure class="img-col"><a href="page_images/page-16.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-16.webp" alt="Page 16 — Muster July & Aug 1863" loading="lazy" width="2125" height="2750"></a><figcaption>Page 16 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 16 — Battery Muster Roll, July &amp; Aug 1863 <span class="badge muster">MUSTER</span> <span class="badge special">REORG</span></h2>
+    <div class="ptype">1st Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>July &amp; August, 1863</dd>
+      <dt>Present or absent</dt><dd>Present</dd>
+      <dt>Remarks</dt><dd>(blank)</dd>
+      <dt>Footnote</dt>
+      <dd><span class="verbatim">"This battery became 3d Battery B Sept. 20, 1863."</span></dd>
+      <dt>Copyist signature</dt><dd>Goose (or similar)</dd>
+    </dl>
+    <p class="note">Mirror image of page 15 from the original-unit side: 1st Battery B → 3d Battery B reorganization.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 17 ========== -->
+<div id="p17" class="page-card">
+  <figure class="img-col"><a href="page_images/page-17.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-17.webp" alt="Page 17 — Muster May & June 1863" loading="lazy" width="2125" height="2750"></a><figcaption>Page 17 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 17 — Battery Muster Roll, May &amp; June 1863 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">1st Battery B, 2 Reg't Missouri L. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>May &amp; June, 1863</dd>
+      <dt>Present or absent</dt><dd>Present</dd>
+      <dt>Remarks</dt><dd>(blank)</dd>
+      <dt>Copyist signature</dt><dd>Goose</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 18 ========== -->
+<div id="p18" class="page-card">
+  <figure class="img-col"><a href="page_images/page-18.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-18.webp" alt="Page 18 — Muster Mch & Apr 1863" loading="lazy" width="2125" height="2750"></a><figcaption>Page 18 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 18 — Battery Muster Roll, Mch &amp; Apr 1863 <span class="badge muster">MUSTER</span></h2>
+    <div class="ptype">1st Battery B, 2 Reg't Missouri Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>March &amp; April, 1863</dd>
+      <dt>Present or absent</dt><dd>Present</dd>
+      <dt>Remarks</dt><dd>(blank)</dd>
+      <dt>Copyist signature</dt><dd>Goose (or similar)</dd>
+    </dl>
+  </div>
+</div>
+
+<!-- ========== PAGE 19 ========== -->
+<div id="p19" class="page-card">
+  <figure class="img-col"><a href="page_images/page-19.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-19.webp" alt="Page 19 — Special Muster, 10 Apr 1863, Smallpox Hospital" loading="lazy" width="2125" height="2750"></a><figcaption>Page 19 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 19 — Special Muster Roll, 10 April 1863 <span class="badge special">SPECIAL</span></h2>
+    <div class="ptype">1st Battery B, 2 Reg't Mo. Lt. Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Roll type</dt><dd>Special Muster Roll</dd>
+      <dt>Date</dt><dd>April 10, 1863</dd>
+      <dt>Present or absent</dt><dd>Absent</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"Detached to Small Pox Hospital by order of Maj. Gen. Curtis."</span></dd>
+      <dt>Copyist signature</dt><dd>Black</dd>
+    </dl>
+    <p class="note">Documents Charles's smallpox-hospital detail by personal order of Maj. Gen. Samuel R. Curtis, commander of the Department of the Missouri.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 20 ========== -->
+<div id="p20" class="page-card">
+  <figure class="img-col"><a href="page_images/page-20.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-20.webp" alt="Page 20 — Muster Jan & Feb 1863, Smallpox Hospital" loading="lazy" width="2125" height="2750"></a><figcaption>Page 20 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 20 — Battery Muster Roll, Jan &amp; Feb 1863 <span class="badge muster">MUSTER</span> <span class="badge special">SMALLPOX</span></h2>
+    <div class="ptype">1st Battery B, 2 Reg't Missouri Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>January &amp; February, 1863</dd>
+      <dt>Present or absent</dt><dd>Absent</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"On det service at Small Pox Hospital since Feb. 20, 1863, by order of Maj. Gen. Curtis."</span></dd>
+      <dt>Copyist signature</dt><dd>Black</dd>
+    </dl>
+    <p class="note">Confirms the smallpox-detail start date: 20 February 1863.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 21 ========== -->
+<div id="p21" class="page-card">
+  <figure class="img-col"><a href="page_images/page-21.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-21.webp" alt="Page 21 — Muster Nov & Dec 1862 — Enlistment" loading="lazy" width="2125" height="2750"></a><figcaption>Page 21 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 21 — Battery Muster Roll, Nov &amp; Dec 1862 <span class="badge muster">MUSTER</span> <span class="badge special">ENLISTMENT</span></h2>
+    <div class="ptype">1st Battery B, 2 Reg't Missouri Art'y.</div>
+    <dl>
+      <dt>Soldier</dt><dd>Charles Gannsen</dd>
+      <dt>Period</dt><dd>November &amp; December, 1862</dd>
+      <dt>Present or absent</dt><dd>Present</dd>
+      <dt>Remarks</dt>
+      <dd><span class="verbatim">"Sick in hospital since Dec 22, 1862. (Enrolled Dec 2, 1862, St. Louis, Mo. for 3 yrs. Mustered in Dec 02, 1862, St. Louis, Mo.)"</span></dd>
+      <dt>Copyist signature</dt><dd>Black</dd>
+    </dl>
+    <p class="note">The chronological <em>start</em> of Charles's service: <strong>enrolled and mustered in on 2 December 1862 at St. Louis, MO, for a 3-year term</strong>; reported sick in hospital from 22 Dec 1862. This is the earliest US-government dated record of Charles Gannsen.</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 22 ========== -->
+<div id="p22" class="page-card">
+  <figure class="img-col"><a href="page_images/page-22.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-22.webp" alt="Page 22 — Enclosures card" loading="lazy" width="2125" height="2750"></a><figcaption>Page 22 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 22 — Enclosures Card <span class="badge index">INDEX</span></h2>
+    <div class="ptype">Packet enclosures index</div>
+    <dl>
+      <dt>Soldier</dt><dd>Gannsen, C. D.</dd>
+      <dt>Unit</dt><dd>2 Reg M. L. Art. (2nd Regiment Missouri Light Artillery)</dd>
+      <dt>Enclosures (left column, all unchecked)</dt>
+      <dd>Bed Cards · Burial Records · Cert. of Dis. for Discharge · C. M. Charges · Descriptive Lists · Discharge Certificates · Enlistment Papers · Final Statements · Furloughs or L. of A · Med. Certificates · Med. Des. Lists · Orders · Pris. of War Record · Resignations</dd>
+      <dt>Other papers relating to (right column)</dt>
+      <dd>Admission to Hosp'l · Casualty Sheet · Confinement · Contracts · Death or Effects · Desertion · Discharge from Hosp'l · Discharge from Service · Duty · Furlough or L. of A · Med. Examination · <strong>Misc. Information ✓</strong> · Pay or Clothing · Personal Reports · Rank · Transfer to Hosp'l · Transfer to V. R. C. · Transportation</dd>
+    </dl>
+    <p class="note">Tells us what's <em>in</em> Charles's NARA file beyond the muster cards: the only checked box is "Misc. Information," which corresponds to the Special Order on page 24. Note also: this card preserves the middle initial "<strong>C. D.</strong> Gannsen."</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 23 ========== -->
+<div id="p23" class="page-card">
+  <figure class="img-col"><a href="page_images/page-23.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-23.webp" alt="Page 23 — Manuscript fragment" loading="lazy" width="2125" height="2750"></a><figcaption>Page 23 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 23 — Manuscript Fragment <span class="badge order">FRAGMENT</span></h2>
+    <div class="ptype">Handwritten endorsement / cover slip</div>
+    <dl>
+      <dt>Visible content</dt>
+      <dd><span class="verbatim">"H. Q. Dpts of the Mo. / St. Louis Mo. June[?] 12, '65 / Special Order No 92 / Relieving Pvt. C. Gannsen of the 2nd Mo. L. Arty / duty as A.A.G. [?] / Date as H.Q. Dpts of the Mo. / Gannsen, C. D."</span></dd>
+    </dl>
+    <p class="note">Looks like the routing/endorsement slip that travelled with the Special Order on the next page (page 24). Cross-references the same date (12 June 1865), the same order number (92), and the same name format ("C. D. Gannsen").</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 24 ========== -->
+<div id="p24" class="page-card">
+  <figure class="img-col"><a href="page_images/page-24.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-24.webp" alt="Page 24 — Special Order No. 92" loading="lazy" width="2125" height="2750"></a><figcaption>Page 24 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 24 — Special Order No. 92, Department of the Missouri, 12 June 1865 <span class="badge order">SPECIAL ORDER</span></h2>
+    <div class="ptype">Original endorsed order · Maj. Gen. Pope's headquarters</div>
+    <dl>
+      <dt>Header</dt>
+      <dd>Head Quarters, Department of the Missouri<br>St. Louis, Mo., June 12, 1865<br>SPECIAL ORDERS, No. 92 — Extract</dd>
+      <dt>Body</dt>
+      <dd><span class="verbatim">"3 ___ The following named enlisted men are hereby relieved from special service at these Head Quarters, and will report forthwith to their respective Company Commanders for duty, to wit: Private C. D. Gannsen, 2 Mo. Arty. The Q. M. Department will furnish the necessary transportation."</span></dd>
+      <dt>Issued by</dt><dd>By Command of <strong>Major General Pope</strong> (Maj. Gen. John Pope, then commanding Dept. of the Missouri)</dd>
+      <dt>Signed</dt><dd><strong>Sm. [Samuel] Williams</strong>, Assistant Adjutant General</dd>
+      <dt>Endorsement / file</dt><dd>"Lindell Office, 2 Mo. Arty" (or similar — refers to the regimental office at the Lindell Hotel/Barracks complex in St. Louis)</dd>
+    </dl>
+    <p class="note">The <em>only</em> non-card document in the packet — and arguably the most historically rich. Pope's order returns Pvt. Gannsen from special HQ duty back to his battery. The transcription of "C. D." (rather than "Charles") is consistent with the index card on page 22 and the endorsement on page 23.</p>
+    <p class="note"><strong>Reading discrepancy (flagged June 2026):</strong> this Fold3 scan is transcribed here as <em>S.O. No. 92, 12 June 1865</em>, signed <em>Sm. Williams</em>, naming "C. D. Gannsen." The cleaner <a href="../sources/nara-service-record-packet.html#np04">NARA mail-order scan (PG 04)</a> of what appears to be the same order reads it as <em>4 November 1865</em>, signed <em>J. W. Williams</em>, naming "C. L. Gannsen." The date and signer-initials are therefore <strong>contested between the two scans and unresolved</strong>; both are recorded pending a side-by-side image re-read. (Either way, the order only relieves Charles from special/detached service — it is not the source of his rank reduction, which is independently dated 15 March 1865 by G.O. No. 82.)</p>
+  </div>
+</div>
+
+<!-- ========== PAGE 25 ========== -->
+<div id="p25" class="page-card">
+  <figure class="img-col"><a href="page_images/page-25.webp" target="_blank" rel="noopener noreferrer"><img src="page_images/page-25.webp" alt="Page 25 — Fold3 source-information cover" loading="lazy" width="2125" height="2750"></a><figcaption>Page 25 · click to open at full resolution</figcaption></figure>
+  <div class="text-col">
+    <h2>Page 25 — Fold3 Source Information Cover <span class="badge cover">COVER</span></h2>
+    <div class="ptype">Fold3 print-export cover sheet</div>
+    <dl>
+      <dt>Image URL</dt><dd><a href="https://www.fold3.com/image/228767500" target="_blank" rel="noopener noreferrer">https://www.fold3.com/image/228767500</a></dd>
+      <dt>Publication number</dt><dd>M405</dd>
+      <dt>Publication title</dt><dd>Compiled Service Records of Volunteer Union Soldiers Who Served in Organizations From the State of Missouri</dd>
+      <dt>Content source</dt><dd>NARA</dd>
+      <dt>National Archives Catalog ID</dt><dd>300398</dd>
+      <dt>Catalog title</dt><dd>Carded Records Showing Military Service of Soldiers Who Fought in Volunteer Organizations During the American Civil War, compiled 1890–1912, documenting the period 1861–1866</dd>
+      <dt>Record group</dt><dd>94</dd>
+      <dt>State</dt><dd>Missouri</dd>
+      <dt>Roll</dt><dd>0327</dd>
+      <dt>Military unit</dt><dd>Second Light Artillery, Fo–Gh</dd>
+      <dt>Given name / Surname</dt><dd>Charles / Gannsen</dd>
+      <dt>Age / Year</dt><dd>23 / 1865</dd>
+      <dt>Original data from</dt><dd>The National Archives (<a href="https://www.archives.gov/" target="_blank" rel="noopener noreferrer">archives.gov</a>)</dd>
+    </dl>
+  </div>
+</div>
+
+</main>
+
+<footer class="back-nav">
+  <a href="../index.html#civilwar">↩ Back to Civil War tab</a>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

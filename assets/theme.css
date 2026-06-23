@@ -1,0 +1,665 @@
+/* ============================================================
+   Charles Gannsen Research · unified theme tokens
+   Built 3 May 2026 from the design audit. Single source of truth
+   for color, type, spacing, and component primitives.
+   ============================================================ */
+/* Body serif with a true medium weight (added 30 May 2026 for legibility —
+   Iowan Old Style / Georgia have no medium, so prose could not be thickened.
+   Source Serif 4 is a sturdy, low-contrast, screen-optimised book serif. */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ---------- Brand (now aligned with the cinematic gilt palette
+     so the site has ONE gold instead of two slightly-different ones.
+     Refined 8 May 2026.) ---------- */
+  --brand:           #d8b366;     /* gilt — aligned with cinematic.css --gilt */
+  --brand-dark:      #8a6420;     /* gilt-deep — used as default link colour */
+  --brand-light:     #f1cf85;     /* gilt-bright */
+  --brand-tint:      #f8ecc8;     /* warm vellum */
+
+  /* ---------- Section accent colors — period-print palette
+     (refined 8 May 2026 from "modern web brights" to 19th-c. book-binding tones,
+     so the tiles read as the same world as the cinematic heroes.
+     Each accent passes WCAG AA against #f6f1e7 paper.) ---------- */
+  --section-civilwar:    #a04030;     /* oxblood — military leather binding */
+  --section-civilwar-d:  #6a2820;     /* deep oxblood */
+  --section-civilwar-t:  #faeee5;     /* warm pink-vellum */
+
+  --section-immigration: #3a5a8c;     /* Prussian / atlas blue */
+  --section-immigration-d:#243f66;    /* deep navy */
+  --section-immigration-t:#eef0f5;    /* cool linen-cream */
+
+  --section-germany:     #4a6e34;     /* Hessian forest green */
+  --section-germany-d:   #2c4a1c;     /* deep moss */
+  --section-germany-t:   #f1f3e8;     /* warm sage cream */
+
+  --section-charles:     #b06820;     /* aged copper · distinct from brand gold */
+  --section-charles-d:   #74420f;     /* deep copper */
+  --section-charles-t:   #fbecd4;     /* warm vellum */
+
+  --section-schrader:    #6e4818;     /* aged sepia / book-binding brown */
+  --section-schrader-d:  #422c08;     /* dark sepia */
+  --section-schrader-t:  #fbf3e2;     /* warm cream */
+
+  /* ---------- Status colors (used inside tile grids · color + icon paired in markup) ---------- */
+  --status-confirmed:    #4a8a4a;     /* green ✓ */
+  --status-eliminated:   #8a4a4a;     /* red ✕ */
+  --status-eliminated-t: #fbeef3;
+  --status-open:         #c87a30;     /* amber ★ (now distinct from brand gold) */
+  --status-open-t:       #fdf2e0;
+  --status-active:       #5a4a8a;     /* purple ▶ */
+  --status-active-t:     #f0eaf6;
+  --status-context:      #5a4a32;     /* neutral grey-brown */
+
+  /* ---------- Neutrals ---------- */
+  --bg-page:        #f6f1e7;     /* paper */
+  --bg-card:        #fffaf0;     /* lighter paper */
+  --bg-card-tint:   #f6ebd2;     /* cream */
+  --bg-elevated:    #fffdf6;
+  --bg-deep:        #14110c;     /* deep ink — aligned with cinematic.css --ink-night */
+  --bg-deep-grad:   #1d180f;     /* deep ink shadow */
+
+  --text-primary:   #1f1a14;
+  --text-body:      #2c2620;
+  --text-strong:    #3a2f1e;
+  --text-meta:      #4a3a22;     /* WCAG AA on bg-card */
+  --text-muted:     #6a5a42;     /* italic captions, AA-large */
+  --text-on-dark:   #f6f1e7;
+  --text-on-dark-d: #c8b896;
+  --text-heading:   #8a6420;     /* H1/H2/H3 — gilt-deep in light, bright gilt in dark (rebound) */
+
+  --border-light:   #d8c8a8;
+  --border-medium:  #a88a4a;     /* darkened from #c9a76a — now passes AA-3:1 */
+  --border-strong:  #8a7858;
+  --divider:        #ede4d0;
+
+  /* ---------- Typography ---------- */
+  --font-serif:     'Source Serif 4', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-mono:      'SF Mono', Menlo, Consolas, monospace;
+
+  /* Type scale (1.25× ratio · clearer hierarchy than the previous compressed scale) */
+  --type-h1:        2.0rem;       /* 32px */
+  --type-h2:        1.6rem;       /* 25.6px */
+  --type-h3:        1.28rem;      /* 20.5px */
+  --type-h4:        1.05rem;      /* 16.8px */
+  --type-body:      1.05rem;      /* 16.8px — 25 May 2026 legibility bump */
+  --type-small:     0.88rem;      /* 14px */
+  --type-meta:      0.82rem;      /* 13.1px — 25 May 2026 legibility bump (was 0.78rem) */
+  --type-pill:      0.75rem;      /* 12px  — 25 May 2026 legibility bump (was 0.7rem) */
+
+  /* ---------- Border-left widths (standardized) ---------- */
+  --bl-card:        3px;          /* non-clickable cards */
+  --bl-tile:        4px;          /* clickable tiles */
+  --bl-banner:      5px;          /* hero strips, status banners */
+
+  /* ---------- Hover transition (canonical · apply everywhere) ---------- */
+  --hover-shadow:   0 2px 10px rgba(0,0,0,0.10);
+  --hover-shadow-l: 0 4px 14px rgba(0,0,0,0.14);
+  --hover-lift:     translateY(-1px);
+  --transition:     all 0.15s ease;
+}
+
+/* ============================================================
+   Sitewide body typography — added 10 May 2026
+   Matches the overview tab's intended look: a warm serif body
+   font (Iowan Old Style with Georgia fallback) under the
+   cinematic display headings (Cormorant) and Inter UI labels.
+   Without this rule, browsers fall back to Times New Roman and
+   the cinematic accents look out of place on plain prose.
+   ============================================================ */
+body {
+  font-family: var(--font-serif);
+  font-size: var(--type-body);
+  font-weight: 500;            /* 30 May 2026: medium body weight for easier reading (Source Serif 4 has a true 500) */
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+/* Permanent map town/city labels (30 May 2026) — used on the Leaflet maps, which
+   run on label-free basemaps so the project owns every place name and it always
+   shows above its pin instead of being hidden under a marker. Global so the home
+   SPA maps and the standalone map pages share one definition. */
+.leaflet-tooltip.town-label {
+  background: rgba(255, 250, 240, 0.86);
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+  color: #2c2620;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.73rem;
+  padding: 0 5px;
+  white-space: nowrap;
+}
+.leaflet-tooltip.town-label::before { display: none; }
+:root.theme-dark .leaflet-tooltip.town-label { background: rgba(26, 22, 16, 0.86); color: #f1ead7; }
+
+/* Deepen the basemap (30 May 2026): the light CARTO canvas read as washed-out, so
+   the raster tiles get a saturation/contrast/brightness boost. Targets only the
+   tile images — markers, route lines, and town labels (separate panes) are untouched. */
+.leaflet-tile { filter: saturate(1.45) contrast(1.1) brightness(0.93); }
+:root.theme-dark .leaflet-tile { filter: saturate(1.3) contrast(1.05) brightness(0.9); }
+/* The transatlantic immigration map is mostly ocean and read too white — give it
+   a deeper, higher-contrast tile treatment (30 May 2026). Wins via #id specificity. */
+#im-fmap .leaflet-tile { filter: saturate(1.55) contrast(1.24) brightness(0.84); }
+
+/* River label for the Civil War map's Mississippi polyline (30 May 2026). */
+.leaflet-tooltip.river-label { background: transparent; border: none; box-shadow: none; color: #2a5a8a; font-family: var(--font-serif); font-style: italic; font-weight: 700; font-size: 0.8rem; }
+.leaflet-tooltip.river-label::before { display: none; }
+:root.theme-dark .leaflet-tooltip.river-label { color: #8ec5ff; }
+
+/* At-a-Glance charts (life timeline + candidate-elimination funnel) — give them a
+   dark background in dark mode (30 May 2026). The SVGs have an opaque light canvas,
+   so invert+hue-rotate(180) flips light↔dark while preserving the chart's hues; the
+   figure frame + caption colours are darkened to match. */
+:root.theme-dark .aag-chart { background: #241f17 !important; border-color: #4a3f2e !important; }
+:root.theme-dark .aag-chart > div { color: #e6c47a !important; }
+:root.theme-dark .aag-chart figcaption { color: #c8b896 !important; }
+:root.theme-dark .aag-chart figcaption a { color: #fadea0 !important; }
+:root.theme-dark .aag-chart object,
+:root.theme-dark .aag-chart img { filter: invert(1) hue-rotate(180deg); }
+
+/* Leaflet zoom (+/−) and bar controls — recolour for dark mode (30 May 2026);
+   the default white buttons glared against the dark map. */
+:root.theme-dark .leaflet-bar a,
+:root.theme-dark .leaflet-bar a:link,
+:root.theme-dark .leaflet-bar a:visited { background: #2a2519; color: #f1ead7; border-bottom-color: #4a3f2e; }
+:root.theme-dark .leaflet-bar a:hover { background: #3a3322; color: #fff; }
+:root.theme-dark .leaflet-bar a.leaflet-disabled { background: #211d15; color: #6a5f4e; }
+:root.theme-dark .leaflet-bar { border-color: rgba(212,160,23,0.25); }
+:root.theme-dark .leaflet-control-attribution { background: rgba(30,26,22,0.85); color: #b6a583; }
+:root.theme-dark .leaflet-control-attribution a { color: #d8b366; }
+
+/* .ge-place-table — promoted to global (30 May 2026) so the alternative-toponym
+   table, folded from germany-and-origins into the SPA #germany section, keeps its styling. */
+.ge-place-table { width: 100%; border-collapse: collapse; font-size: 1rem; margin: 0.3rem 0 0.7rem; background: transparent; }
+.ge-place-table th, .ge-place-table td { padding: 0.6rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border-light); color: var(--text-body); line-height: 1.55; }
+.ge-place-table th { background: var(--bg-card-tint); color: var(--brand-dark); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; border-bottom: 2px solid var(--border-medium); }
+.ge-place-table td em { color: var(--text-strong); }
+
+/* ============================================================
+   Universal hover behavior — single source of truth
+   ============================================================ */
+.tile,
+.cw-tile,
+.ca-tile,
+.im-tile,
+.ge-tile,
+.ge-tile,
+.schrader-tile,
+.person-card,
+.child-card,
+.doc-card,
+.actor-card {
+  transition: var(--transition);
+}
+
+/* Print-only adjustments handled in each shared.css */
+
+
+/* ============================================================
+   .map-link — St. Louis residence addresses linked to Google Maps.
+   Subtle visual cue: pin marker + slightly different underline.
+   Added 8 May 2026.
+   ============================================================ */
+a.map-link { color: inherit; border-bottom: 1px dashed rgba(212,160,23,0.6); padding-bottom: 1px; transition: border-color 0.15s, color 0.15s; white-space: nowrap; }
+a.map-link::before { content: '✦'; font-size: 0.85em; margin-right: 0.18em; opacity: 0.8; }
+a.map-link:hover { color: #74420f; border-bottom-color: #8a6420; }
+a.map-link:hover::before { opacity: 1; }
+/* Inside dark headers — light cream pin */
+header.src-hero a.map-link, header.fam-hero a.map-link, header.cw-hero a.map-link { color: #f6f1e7; border-bottom-color: rgba(212,160,23,0.55); }
+header.src-hero a.map-link:hover, header.fam-hero a.map-link:hover, header.cw-hero a.map-link:hover { color: #d8b366; }
+
+
+/* ============================================================
+   Print stylesheet — global rules for clean monograph output.
+   Added 7 May 2026. Any page that links assets/theme.css inherits
+   these. Page-level overrides remain in each page's own <style>.
+   ============================================================ */
+@media print {
+  /* Page geometry */
+  @page { size: A4; margin: 18mm 16mm 20mm; }
+
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  /* Strip dark hero treatments — replace with simple rule */
+  header.site-header,
+  header.method-hero,
+  header.oq-hero,
+  header.nf-hero,
+  header.cw-hero,
+  header.src-hero,
+  header.fam-hero,
+  header.sg-hero {
+    background: none !important;
+    color: #000 !important;
+    border-bottom: 1.5pt solid #555 !important;
+    padding: 0 0 6pt !important;
+    text-align: left !important;
+  }
+  header.site-header h1,
+  header.method-hero h1,
+  header.oq-hero h1,
+  header.cw-hero h1,
+  header.fam-hero h1,
+  header.src-hero h1 { color: #000 !important; font-size: 18pt; text-shadow: none !important; }
+
+  header .crumbs, header .crumbs a, header .sub, header .tag, header .meta {
+    color: #555 !important;
+    border-bottom: none !important;
+  }
+
+  /* Hide site-wide chrome that doesn't print */
+  nav.tabs,
+  nav.toc,
+  .skip-link,
+  .search-bar,
+  .nav-grid,
+  footer.site-foot .sitemap,
+  button { display: none !important; }
+
+  /* Tighten layout */
+  main { max-width: none !important; padding: 0 !important; }
+  section.page { display: block !important; page-break-before: auto; }
+
+  /* Show URLs after links so the printed monograph is verifiable offline */
+  a[href]:not([href^="#"]):not([href^="javascript:"])::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #555;
+    word-break: break-all;
+  }
+  a { color: #000 !important; border-bottom: none !important; text-decoration: underline; }
+
+  /* Cards and tiles — flatten */
+  .card, .convention, .citation-block, .oq, .summary-strip, .conf-key, .tab-open-q, .whats-new {
+    background: none !important;
+    box-shadow: none !important;
+    border: 0.5pt solid #999 !important;
+    border-left-width: 1.5pt !important;
+    page-break-inside: avoid;
+  }
+
+  /* Confidence pills — outline only, ink-saving */
+  .conf, .conf-pill, .badge, .oq-pill {
+    background: none !important;
+    color: #000 !important;
+    border: 0.6pt solid #000 !important;
+    padding: 1pt 4pt !important;
+  }
+
+  /* Headings stay together with following paragraph */
+  h1, h2, h3, h4 { page-break-after: avoid; }
+  table, figure, .infographic-wrap { page-break-inside: avoid; }
+
+  /* Drop background images / SVG fills that waste ink */
+  svg [fill="#2c2620"], svg [fill="url(#oceanGrad)"], svg [fill="url(#hesseGrad)"], svg [fill="url(#usaGrad)"] {
+    fill: #ddd !important;
+  }
+}
+
+/* ============================================================
+   Background utility tokens — added 16 May 2026 (dark-mode purge pass)
+   ------------------------------------------------------------
+   These classes are the canonical replacements for hundreds of
+   inline `style="background:#…"` attributes scattered across
+   index.html and the standalone pages. Each utility binds to a
+   CSS custom property defined in :root above, so dark-mode.css
+   re-binding the token automatically inverts the surface — no
+   per-page override needed.
+
+   Usage:
+     <div class="callout bg-civilwar-tint"> … </div>
+     <a class="tile bg-page" data-section="germany"> … </a>
+
+   Pair with the .tile / .callout primitives below for full
+   layout + border treatment. Use .bg-* alone when you only need
+   a surface swap on an existing component.
+   ============================================================ */
+
+/* Neutral surfaces */
+.bg-page        { background: var(--bg-page); }
+.bg-card        { background: var(--bg-card);      border-color: var(--border-light); }
+.bg-card-tint   { background: var(--bg-card-tint); border-color: var(--border-light); }
+.bg-elevated    { background: var(--bg-elevated);  border-color: var(--border-light); }
+.bg-deep        { background: var(--bg-deep);      color: var(--text-on-dark); }
+
+/* Gold-cast variant of card-tint (used for "★ Charles" hero strips, brand pills) */
+.bg-gold-tint   { background: var(--bg-card-tint); border-color: var(--brand); }
+
+/* Section tints (auto-invert in dark mode via --section-*-t rebinding) */
+.bg-civilwar-tint    { background: var(--section-civilwar-t);    border-color: var(--section-civilwar); }
+.bg-immigration-tint { background: var(--section-immigration-t); border-color: var(--section-immigration); }
+.bg-germany-tint     { background: var(--section-germany-t);     border-color: var(--section-germany); }
+.bg-charles-tint     { background: var(--section-charles-t);     border-color: var(--section-charles); }
+.bg-schrader-tint    { background: var(--section-schrader-t);    border-color: var(--section-schrader); }
+
+/* Status tints (paired with the confidence-pill colours from theme.css) */
+.bg-confirmed-tint   { background: var(--bg-card-tint);          border-color: var(--status-confirmed); }
+.bg-open-tint        { background: var(--status-open-t);         border-color: var(--status-open); }
+.bg-eliminated-tint  { background: var(--status-eliminated-t);   border-color: var(--status-eliminated); }
+.bg-active-tint      { background: var(--status-active-t);       border-color: var(--status-active); }
+
+
+/* ============================================================
+   Tile + callout primitives — added 16 May 2026
+   ------------------------------------------------------------
+   Single canonical .tile and .callout components, replacing the
+   per-section zoo of .ge-tile / .ca-tile / .cw-tile / .im-tile /
+   .schrader-tile / .person-card / .whats-new / .smoking-gun /
+   .konsen-feature / .friedrich-callout / .peter-quote.
+
+   Section accent is set via the [data-section] attribute so the
+   same .tile rule paints the correct border-left for every page:
+     <a class="tile" data-section="germany"> … </a>
+     <a class="tile" data-section="civilwar"> … </a>
+
+   Both primitives are theme-aware — they read from --bg-card,
+   --section-*, --brand, --status-* tokens that get re-bound in
+   dark-mode.css, so no light/dark duplication is needed.
+   ============================================================ */
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: var(--bg-card);
+  color: var(--text-body);
+  border: 1px solid var(--border-light);
+  border-left: var(--bl-tile) solid var(--brand);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.tile:hover {
+  transform: var(--hover-lift);
+  box-shadow: var(--hover-shadow);
+  border-left-color: var(--brand-dark);
+}
+.tile[data-section="civilwar"]    { border-left-color: var(--section-civilwar); }
+.tile[data-section="immigration"] { border-left-color: var(--section-immigration); }
+.tile[data-section="germany"]     { border-left-color: var(--section-germany); }
+.tile[data-section="charles"]     { border-left-color: var(--section-charles); }
+.tile[data-section="schrader"]    { border-left-color: var(--section-schrader); }
+.tile[data-section="civilwar"]:hover    { border-left-color: var(--section-civilwar-d); }
+.tile[data-section="immigration"]:hover { border-left-color: var(--section-immigration-d); }
+.tile[data-section="germany"]:hover     { border-left-color: var(--section-germany-d); }
+.tile[data-section="charles"]:hover     { border-left-color: var(--section-charles-d); }
+.tile[data-section="schrader"]:hover    { border-left-color: var(--section-schrader-d); }
+
+/* .tile inner labels — eyebrow, title, sub */
+.tile__label {
+  font-size: var(--type-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--text-meta);
+  margin-bottom: 0.15rem;
+}
+.tile[data-section="civilwar"]    .tile__label { color: var(--section-civilwar-d); }
+.tile[data-section="immigration"] .tile__label { color: var(--section-immigration-d); }
+.tile[data-section="germany"]     .tile__label { color: var(--section-germany-d); }
+.tile[data-section="charles"]     .tile__label { color: var(--section-charles-d); }
+.tile[data-section="schrader"]    .tile__label { color: var(--section-schrader-d); }
+.tile__title {
+  font-family: var(--font-serif);
+  font-size: var(--type-h4);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+.tile__sub {
+  font-size: var(--type-small);
+  color: var(--text-meta);
+  line-height: 1.4;
+}
+
+/* .tile--keystone — heavier border, status-open accent (for "key evidence" tiles) */
+.tile.tile--keystone {
+  border: 2px solid var(--status-open);
+  border-left: var(--bl-banner) solid var(--status-open);
+  background: var(--status-open-t);
+}
+.tile.tile--keystone:hover {
+  border-left-color: var(--status-open);
+  box-shadow: var(--hover-shadow-l);
+}
+
+
+.callout {
+  display: block;
+  padding: 1.1rem 1.3rem;
+  background: var(--bg-card-tint);
+  color: var(--text-body);
+  border: 1px solid var(--border-light);
+  border-left: var(--bl-tile) solid var(--brand);
+  border-radius: 4px;
+  margin: 0 0 1rem;
+}
+.callout__label {
+  display: block;
+  font-size: var(--type-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--text-meta);
+  margin-bottom: 0.35rem;
+}
+.callout__title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin: 0 0 0.4rem;
+}
+.callout__body {
+  line-height: 1.6;
+  color: var(--text-body);
+  margin: 0;
+}
+
+/* Callout variants */
+.callout.callout--confirmed {
+  border-left-color: var(--status-confirmed);
+  background: var(--bg-card-tint);
+}
+.callout.callout--confirmed .callout__label { color: var(--status-confirmed); }
+
+.callout.callout--open {
+  border-left-color: var(--status-open);
+  background: var(--status-open-t);
+}
+.callout.callout--open .callout__label { color: var(--status-open); }
+
+.callout.callout--milestone {
+  border-left-color: var(--section-civilwar);
+  background: var(--section-civilwar-t);
+}
+.callout.callout--milestone .callout__label,
+.callout.callout--milestone .callout__title { color: var(--section-civilwar-d); }
+
+
+/* ============================================================
+   .see-also — "Read next" footer for leaf pages (added 16 May 2026)
+   ------------------------------------------------------------
+   Token-driven: gold border-top, .bg-card-tint surface, small
+   uppercase eyebrow. Drops in before </main> on standalone leaf
+   pages (towns/, sources/, people/, children/) to give readers
+   2-3 next-step links without bespoke per-page markup.
+   ============================================================ */
+.see-also {
+  margin-top: 2rem;
+  padding: 1rem 1.25rem 1.1rem;
+  background: var(--bg-card-tint);
+  border: 1px solid var(--border-light);
+  border-top: 3px solid var(--brand);
+  border-radius: 0 0 4px 4px;
+}
+.see-also__label {
+  display: block;
+  font-size: var(--type-meta, 0.78rem);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--text-meta);
+  margin-bottom: 0.5rem;
+}
+.see-also ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.4rem;
+}
+.see-also li {
+  margin: 0;
+  padding: 0;
+  line-height: 1.45;
+}
+.see-also a {
+  color: var(--text-primary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--brand);
+  font-weight: 600;
+}
+.see-also a:hover {
+  border-bottom-style: solid;
+  border-bottom-color: var(--brand-dark);
+}
+
+
+/* .pill — inline-block CTA chip. Pairs with .bg-*-tint utilities for accent.
+   Replaces the per-page inline `background:#fffaf0; border-left:4px solid …`
+   pattern on "Browse" / call-to-action links. */
+.pill {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  background: var(--bg-card);
+  color: var(--text-body);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--brand);
+  border-radius: 3px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.pill:hover {
+  background: var(--bg-card-tint);
+  border-left-color: var(--brand-dark);
+}
+.pill[data-section="civilwar"]    { border-left-color: var(--section-civilwar); }
+.pill[data-section="immigration"] { border-left-color: var(--section-immigration); }
+.pill[data-section="germany"]     { border-left-color: var(--section-germany); }
+.pill[data-section="charles"]     { border-left-color: var(--section-charles); }
+.pill[data-section="schrader"]    { border-left-color: var(--section-schrader); }
+
+/* Solid status-pill variants — replace inline `background:#a3441f;color:#fff` chips
+   across research_logs/, sources/, towns/. Token-driven so dark-mode picks them up. */
+.pill.pill--solid              { color: #fff; border: 1px solid transparent; border-left: 4px solid transparent; background: var(--text-meta); }
+.pill.pill--eliminated         { color: #fff; border-color: var(--status-eliminated);  background: var(--status-eliminated); }
+.pill.pill--confirmed          { color: #fff; border-color: var(--status-confirmed);   background: var(--status-confirmed); }
+.pill.pill--open               { color: #fff; border-color: var(--status-open);        background: var(--status-open); }
+.pill.pill--active             { color: #fff; border-color: var(--status-active);      background: var(--status-active); }
+.pill.pill--brand              { color: var(--text-primary); border-color: var(--brand); background: var(--bg-card-tint); }
+
+
+/* ============================================================
+   "Last updated" line is now LATEST-FINDINGS-ONLY (added 9 May 2026).
+   Hide every .tab-meta site-wide, then re-enable it inside the
+   Latest Findings sections — section#overview (the SPA tab in
+   index.html) and #overview-static (the standalone latest-findings.html
+   page). Other landed pages still carry the markup but it's not rendered.
+   ------------------------------------------------------------ */
+.tab-meta { display: none !important; }
+section#overview > .tab-meta,
+#overview-static > .tab-meta {
+  display: block !important;
+}
+
+/* ============================================================
+   Table-cell utility classes — replacement for ~60 repeated
+   inline style="padding:X rem Y rem; border-bottom:1px solid
+   var(--border-light);" attributes on index.html and other pages.
+   Added 17 May 2026 audit-fix pass (F-16 migration).
+   ============================================================ */
+.tbl-cell {
+  padding: 0.35rem 0.6rem;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
+.tbl-cell--tight {
+  padding: 0.3rem 0.55rem;
+}
+.tbl-cell--left { text-align: left; }
+.tbl-cell--mono { font-family: var(--font-mono, ui-monospace, "SF Mono", Menlo, Consolas, monospace); }
+.tbl-cell--roomy { padding: 0.45rem 0.65rem; }
+.tbl-cell--strong { font-weight: 700; }
+
+/* ============================================================
+   Auto-glossary link styling (inserted by scripts/auto-glossary.py).
+   First-occurrence-per-page glossary term gets a subtle dotted
+   underline so family readers can hover for a quick definition
+   without disrupting the reading flow.
+   ============================================================ */
+.glossary-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--brand-dark, #8a6420);
+  cursor: help;
+}
+.glossary-link:hover,
+.glossary-link:focus {
+  background: var(--bg-card-tint, #fdf5d8);
+  border-bottom-color: var(--brand, #d8b366);
+  border-bottom-style: solid;
+}
+:root.theme-dark .glossary-link,
+:root:not(.theme-light) .glossary-link {
+  border-bottom-color: var(--brand-light, #f1cf85);
+}
+:root.theme-dark .glossary-link:hover,
+:root:not(.theme-light) .glossary-link:hover {
+  background: rgba(216, 179, 102, 0.15);
+}
+
+/* ============================================================
+   Identification-confidence pills (added 21 June 2026)
+   ------------------------------------------------------------
+   Global base + color variants for the .conf-pill chips used on
+   the People section (index.html) and the people/*.html profiles.
+   The methodology page (#confidence) carries its own inline copy;
+   these rules make the same chips render everywhere else. Colors
+   bind to the shared --status-* / --brand tokens so dark-mode.css
+   (which already overrides .conf-pill.working / .confirmed) keeps
+   contrast. States used here: confirmed (green), working (gold),
+   open (amber) — the falsifiable rungs of the source-rating
+   taxonomy applied to *individual identification*.
+   ============================================================ */
+.conf-pill {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+  color: #fff;
+  white-space: nowrap;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+.conf-pill.confirmed { background: var(--status-confirmed); color: #fff; }
+.conf-pill.working   { background: var(--brand);          color: #3a2f1e; }
+.conf-pill.open      { background: var(--status-open);    color: #fff; }
+
+/* The per-card confidence line wrapper on the People tiles */
+.conf-line { margin: 0 0 0.4rem; }
+.conf-legend { line-height: 1.7; }
+.conf-legend .conf-pill { margin: 0 0.15rem 0 0.35rem; }

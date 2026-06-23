@@ -1,0 +1,967 @@
+/* =============================================================
+   germany.css — page styles for germany-and-origins.html
+   Extracted from 32 inline <style> blocks on 13 May 2026.
+   Loads after theme.css / cinematic.css / dark-mode.css and
+   builds on their CSS custom properties (--bg-card, --text-body,
+   --brand-dark, --section-germany, etc).
+   ============================================================= */
+
+/* ---------- 1. Page frame --------------------------------- */
+body.cine-typography { background: var(--bg-page, #f6f1e7); color: var(--text-body, #2c2620); }
+
+header.tab-hero { background: linear-gradient(135deg, #1f1a14 0%, #3a2f1e 100%); color: #f6f1e7; padding: 2rem 1.5rem 1.4rem; border-bottom: 4px double #d8b366; }
+header.tab-hero .crumbs { font-size: 0.84rem; color: #d8c8a8; margin-bottom: 0.5rem; }
+header.tab-hero .crumbs a { color: #d8b366; border-bottom: none; }
+header.tab-hero h1 { color: #f6f1e7; font-size: 2.2rem; }
+header.tab-hero .sub { color: #d8c8a8; font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+header.tab-hero .full-link { margin-top: 0.6rem; font-size: 0.86rem; }
+header.tab-hero .full-link a { color: #d8b366; border: 1px solid #d8b366; padding: 2px 9px; border-radius: 3px; text-decoration: none; }
+
+main.tab-body { max-width: 1100px; margin: 0 auto; padding: 1.6rem 1.4rem 3rem; }
+
+.tab-pager { max-width: 1100px; margin: 1.4rem auto 0; padding: 1rem 1.4rem; display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--border-light, #e8dcc0); font-size: 0.92rem; }
+.tab-pager a { color: var(--brand-dark, #8a6420); border: 1px solid var(--border-medium, #d8c8a8); border-radius: 3px; padding: 0.6rem 0.9rem; max-width: 46%; background: var(--bg-card, #fff); text-decoration: none; }
+.tab-pager a:hover { background: var(--brand-tint, #fffaee); }
+.tab-pager .nlabel { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted, #7a6f5e); }
+.tab-pager .nlabel + span { display: block; color: var(--text-strong, #1f1a14); margin-top: 0.15rem; }
+
+/* ---------- 2. Utilities ---------------------------------- */
+.skip-to-content {
+  position: absolute; top: -100px; left: 0.5rem; z-index: 9999;
+  background: #1f1a14; color: #f6f1e7;
+  padding: 0.55rem 0.95rem;
+  border: 2px solid #d8b366; border-radius: 4px;
+  text-decoration: none; font-weight: 700; font-size: 0.92rem;
+  transition: top 0.15s ease;
+}
+.skip-to-content:focus { top: 0.5rem; outline: 2px solid #d8b366; outline-offset: 2px; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important; height: 1px !important;
+  padding: 0 !important; margin: -1px !important;
+  overflow: hidden !important; clip: rect(0,0,0,0) !important;
+  white-space: nowrap !important; border: 0 !important;
+}
+
+.svg-defs-hidden { position: absolute; width: 0; height: 0; overflow: hidden; }
+.fs-small        { font-size: 0.88rem; }
+.fs-small-margin { font-size: 0.88rem; margin-top: 0.4rem; }
+.fs-mid          { font-size: 0.92rem; }
+.fs-mid-link     { font-size: 0.95rem; margin-top: 0.8rem; }
+.mt-small        { margin-top: 0.6rem; }
+
+/* Decorative star prefix — used to mark featured items (Trendelburg, the
+   "★ Charles speaks" rows, etc). CSS-only so the visible character isn't
+   announced by screen readers. New utility; existing inline `<span
+   aria-hidden="true">★ </span>` markup is left in place for backward
+   compatibility and can be migrated gradually. */
+.ge-star::before { content: "★ "; speak: none; }
+
+/* ---------- 3. Print -------------------------------------- */
+@media print {
+  :root, html, body { background:#fff !important; color:#000 !important; }
+  :root.theme-dark *, :root:not(.theme-light) * { color:#000 !important; background-color:transparent !important; background-image:none !important; }
+  .skip-to-content,
+  nav.tabs,
+  header.site-header,
+  nav.tab-pager,
+  .ge-fleuron,
+  .ge-tile-arrow,
+  #ge-fmap,
+  .leaflet-control-container,
+  .leaflet-pane,
+  .ge-map-hint,
+  .cite-widget,
+  footer.site-foot-shared .foot-inner,
+  footer.site-foot-shared .foot-meta { display:none !important; }
+  .map-wrap::before {
+    content:"[Interactive map omitted from print — see static SVG below and legend for the four pinned locations: Trendelburg, Deisel, Kassel, and Bremen]";
+    display:block; font-style:italic; color:#444; padding:1rem; border:1px dashed #888; border-radius:4px; margin-bottom:1rem;
+  }
+  details, details[open] { display:block !important; }
+  details > summary { font-weight:bold; }
+  details > *:not(summary) { display:block !important; }
+  h1, h2, h3 { page-break-after:avoid; }
+  figure, .ge-surname-step, .card.confirmed, .card.open, .ge-visit-card { page-break-inside:avoid; }
+  .card, .ge-tile, .ge-town-mini, .ge-visit-card, .ge-surname-step, .ge-img-gallery figure { box-shadow:none !important; }
+  a[href^="http"]::after { content:" (" attr(href) ")"; font-size:0.85em; color:#444; word-break:break-all; }
+  a[href^="#"]::after  { content:""; }
+  body, main, p, li { font-size:11pt; line-height:1.45; }
+}
+
+/* ---------- 4. Keyboard focus & reduced motion ------------ */
+.cite-inline:focus-visible,
+.ge-town-mini:focus-visible,
+.ge-tile:focus-visible,
+.ge-img-gallery figure a:focus-visible,
+.ge-img-gallery details summary:focus-visible,
+.ge-timeline-prose summary:focus-visible,
+.surname-chronology table a:focus-visible,
+.ge-threads a:focus-visible,
+.ge-confidence:focus-visible {
+  outline: 2px solid #d8b366;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skip-to-content { transition: none; }
+  .ge-metrics .metric,
+  .ge-metrics a.metric:hover,
+  .ge-metrics a.metric:focus-visible,
+  .ge-town-mini, .ge-town-mini:hover,
+  .ge-tile, .ge-tile:hover,
+  .ge-img-gallery figure,
+  .ge-surname-step,
+  .ge-visit-card,
+  .card.confirmed, .card.open {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---------- 5. Hook / overview metrics / as-of ----------- */
+.ge-hook { font-size:1.12rem; color:var(--text-strong, #3a2f1e); line-height:1.6; margin:1rem 0 1.4rem; padding:0.95rem 1.2rem; background:var(--bg-card, #fffaf0); border-left:3px solid var(--brand-dark, #8a6420); border-radius:0 4px 4px 0; }
+.ge-hook strong { color:var(--text-heading, #1f1a14); }
+.ge-hook em { font-style:italic; color:var(--text-meta, #6a5a42); }
+
+.ge-metrics { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:0.6rem; margin:1.4rem 0 1.8rem; padding:0; background:transparent; border:none; border-radius:0; }
+.ge-metrics .metric { display:flex; flex-direction:column; align-items:flex-start; gap:0.1rem; padding:0.6rem 0.85rem; background:var(--bg-card, #fffaf0); border:1px solid var(--border-light, #d8c8a8); border-left:3px solid var(--section-germany, #3a6a2a); border-radius:3px; text-decoration:none; color:inherit; cursor:pointer; transition:transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+.ge-metrics a.metric:hover, .ge-metrics a.metric:focus-visible { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,0.12); border-color:var(--brand, #d8b366); text-decoration:none; }
+.ge-metrics a.metric:focus-visible { outline:2px solid var(--brand, #d8b366); outline-offset:2px; }
+.ge-metrics .metric .num { font-family:'Iowan Old Style', Georgia, serif; font-size:1.55rem; font-weight:700; color:var(--section-germany, #3a6a2a); line-height:1.05; }
+.ge-metrics .metric .lbl { font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-meta, #6a5a42); line-height:1.3; font-weight:600; }
+.ge-metrics .metric.pending { border-left-color:var(--status-eliminated, #a3441f); }
+.ge-metrics .metric.pending .num { color:var(--status-eliminated, #a3441f); }
+
+.ge-asof { display:inline-block; font-size: 0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-meta, #6a5a42); font-weight:700; background:var(--bg-card-tint, #f4ecd6); padding:0.15rem 0.5rem; border-radius:2px; margin-left:0.6rem; vertical-align:0.12em; }
+
+/* ---------- 6. Section spacing ---------------------------- */
+main.tab-body h3.mt-section {
+  margin-top: 2.6rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--border-light, #d8c8a8);
+  font-size: 1.32rem;
+}
+main.tab-body h3.mt-section:first-of-type {
+  margin-top: 1.8rem; border-top: none; padding-top: 0;
+}
+main.tab-body p.lede { font-size: 1.05rem; line-height: 1.6; margin: 1rem 0 1.2rem; }
+main.tab-body .grid-2.mt-1rem { gap: 1.3rem; margin-top: 1.3rem; }
+
+main.tab-body .card.confirmed,
+main.tab-body .card.open {
+  padding: 1.2rem 1.35rem 1.1rem;
+  border-radius: 5px;
+}
+main.tab-body .card.confirmed h3,
+main.tab-body .card.open h3 {
+  font-size: 1.06rem; margin: 0 0 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-light, #e8dcc0);
+}
+main.tab-body .card.confirmed ul.pl-list-tight,
+main.tab-body .card.open ul.pl-list-tight {
+  padding-left: 1.15rem; margin: 0;
+}
+main.tab-body .card.confirmed ul.pl-list-tight li,
+main.tab-body .card.open ul.pl-list-tight li {
+  margin-bottom: 0.75rem; line-height: 1.55;
+}
+main.tab-body .card.confirmed ul.pl-list-tight li:last-child,
+main.tab-body .card.open ul.pl-list-tight li:last-child {
+  margin-bottom: 0;
+}
+
+main.tab-body figure.ge-timeline { padding: 1.2rem 1rem; margin: 1.4rem 0 1.2rem; }
+main.tab-body .ge-surname-grid { gap: 1.4rem; margin: 1.4rem 0; }
+main.tab-body .ge-surname-card { padding: 1.1rem 1.3rem; }
+main.tab-body .ge-surname-card h4 { font-size: 1.05rem; margin-bottom: 0.75rem; }
+main.tab-body .ge-surname-card p { line-height: 1.6; margin-bottom: 0.7rem; }
+
+/* ---------- 7. Confidence badge (NEW, May 2026) ----------- */
+.ge-confidence {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.7rem;
+  padding: 0.32rem 0.65rem 0.32rem 0.55rem;
+  background: var(--bg-card-tint, #fff5dd);
+  border: 1px solid var(--border-medium, #d8c8a8);
+  border-left: 3px solid var(--brand-dark, #8a6420);
+  border-radius: 3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-strong, #3a2f1e);
+  text-decoration: none;
+  line-height: 1.3;
+}
+.ge-confidence:hover,
+.ge-confidence:focus-visible { background: var(--bg-card, #fffaf0); border-color: var(--brand, #d8b366); }
+.ge-confidence:hover .conf-help,
+.ge-confidence:focus-visible .conf-help { text-decoration: underline; text-underline-offset: 2px; color: var(--brand-dark, #8a6420); }
+.ge-confidence .conf-dot { flex: 0 0 10px; width: 10px; height: 10px; border-radius: 50%; background: var(--brand-dark, #8a6420); }
+.ge-confidence .conf-label { text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.07em; color: var(--text-meta, #6a5a42); font-weight: 700; margin-right: 0.2rem; }
+.ge-confidence .conf-level { color: var(--text-strong, #1f1a14); }
+.ge-confidence .conf-help { font-size: 0.76rem; color: var(--text-meta, #6a5a42); font-weight: 500; }
+.ge-confidence.proven { border-left-color: var(--section-germany, #3a6a2a); }
+.ge-confidence.proven .conf-dot { background: var(--section-germany, #3a6a2a); }
+.ge-confidence.preponderance { border-left-color: var(--brand-dark, #8a6420); }
+.ge-confidence.preponderance .conf-dot { background: var(--brand-dark, #8a6420); }
+.ge-confidence.open { border-left-color: var(--status-eliminated, #a3441f); }
+.ge-confidence.open .conf-dot { background: var(--status-eliminated, #a3441f); }
+
+/* ---------- 8. Surname crosswalk (NEW, May 2026) ---------- */
+/* Mini version — orientation card near the page top. Two sentences only,
+   linking down to the full two-table key in the surname investigation
+   section. Keeps the top of the page light. */
+.ge-crosswalk-mini {
+  display: block;
+  margin: 0.9rem 0 1.4rem;
+  padding: 0.7rem 1rem;
+  background: var(--bg-card, #fffaf0);
+  border: 1px solid var(--border-light, #d8c8a8);
+  border-left: 3px solid var(--brand-dark, #8a6420);
+  border-radius: 4px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-body, #3a2f1e);
+}
+.ge-crosswalk-mini .cm-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--section-germany, #3a6a2a);
+  font-weight: 700;
+  margin-right: 0.55rem;
+  padding: 0.05rem 0.4rem;
+  background: var(--bg-card-tint, #fff5dd);
+  border-radius: 2px;
+  vertical-align: 0.12em;
+}
+.ge-crosswalk-mini strong { color: var(--text-strong, #1f1a14); }
+.ge-crosswalk-mini a { color: var(--brand-dark, #8a6420); font-weight: 700; white-space: nowrap; }
+:root.theme-dark .ge-crosswalk-mini, :root:not(.theme-light) .ge-crosswalk-mini {
+  background: var(--bg-card, #24201a); border-color: var(--border-light, #6a5a40); color: var(--text-body, #e8dfc8);
+}
+:root.theme-dark .ge-crosswalk-mini .cm-eyebrow, :root:not(.theme-light) .ge-crosswalk-mini .cm-eyebrow {
+  background: var(--bg-card-tint, #2c261d); color: var(--brand, #d8b366);
+}
+:root.theme-dark .ge-crosswalk-mini strong, :root:not(.theme-light) .ge-crosswalk-mini strong { color: var(--text-heading, #f1cf85); }
+:root.theme-dark .ge-crosswalk-mini a, :root:not(.theme-light) .ge-crosswalk-mini a { color: var(--brand-light, #f1cf85); }
+
+.ge-crosswalk {
+  margin: 1.2rem 0 1.6rem;
+  background: var(--bg-card, #fffaf0);
+  border: 1px solid var(--border-light, #d8c8a8);
+  border-left: 3px solid var(--brand-dark, #8a6420);
+  border-radius: 5px;
+  padding: 1rem 1.2rem;
+}
+.ge-crosswalk h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.02rem;
+  color: var(--brand-dark, #8a6420);
+  font-weight: 700;
+}
+.ge-crosswalk p.lede {
+  font-size: 0.93rem !important;
+  margin: 0 0 0.7rem !important;
+  line-height: 1.5 !important;
+  color: var(--text-body, #3a2f1e);
+}
+.ge-crosswalk table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.ge-crosswalk th,
+.ge-crosswalk td {
+  padding: 0.45rem 0.65rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light, #e8dcc0);
+  line-height: 1.5;
+  vertical-align: top;
+}
+.ge-crosswalk th {
+  background: var(--bg-card-tint, #fff5dd);
+  color: var(--section-germany, #3a6a2a);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-medium, #d8c8a8);
+}
+.ge-crosswalk td.var {
+  font-family: var(--font-mono, 'SF Mono', Menlo, monospace);
+  font-weight: 700;
+  color: var(--brand-dark, #8a6420);
+  white-space: nowrap;
+}
+.ge-crosswalk td.var.target { color: var(--status-eliminated, #a3441f); }
+.ge-crosswalk td.var.target::after { content: " ★"; color: var(--brand, #d8b366); }
+.ge-crosswalk td.where { font-size: 0.84rem; color: var(--text-meta, #6a5a42); font-style: italic; }
+.ge-crosswalk caption.visually-hidden { /* visually hidden helper covers this */ }
+.ge-crosswalk-foot { font-size: 0.85rem; margin: 0.6rem 0 0; color: var(--text-meta, #6a5a42); line-height: 1.55; }
+.ge-crosswalk-sublabel {
+  margin: 0.95rem 0 0.3rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--section-germany, #3a6a2a);
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border-light, #d8c8a8);
+}
+.ge-crosswalk-sublabel strong { color: var(--text-strong, #1f1a14); font-weight: 700; text-transform: none; letter-spacing: 0; font-size: 0.92rem; }
+.ge-crosswalk-sublabel { font-weight: 600; }
+.ge-crosswalk > table:not(:first-of-type) { margin-top: 0.25rem; }
+:root.theme-dark .ge-crosswalk-foot, :root:not(.theme-light) .ge-crosswalk-foot { color: var(--text-meta, #c8b896); }
+:root.theme-dark .ge-crosswalk-sublabel, :root:not(.theme-light) .ge-crosswalk-sublabel { color: var(--brand, #d8b366); border-bottom-color: var(--border-light, #6a5a40); }
+:root.theme-dark .ge-crosswalk-sublabel strong, :root:not(.theme-light) .ge-crosswalk-sublabel strong { color: var(--text-body, #e8dfc8); }
+
+/* ---------- 9. Page decorations --------------------------- */
+.ge-fleuron { display:flex; justify-content:center; align-items:center; margin:2.8rem 0 1.4rem; color:var(--brand-dark, #8a6420); pointer-events:none; }
+.ge-fleuron svg { width:340px; max-width:75%; height:auto; }
+
+p.ge-dropcap { overflow:hidden; }
+p.ge-dropcap::first-letter {
+  font-family:'Iowan Old Style', Georgia, serif;
+  font-size:3.6em; font-weight:700;
+  float:left; line-height:0.85;
+  margin:0.18rem 0.5rem 0 0;
+  color:var(--brand-dark, #8a6420);
+  font-style:italic;
+}
+
+.ge-wappen-row { display:flex; gap:1.1rem; align-items:flex-start; margin:1.6rem 0 0.6rem; padding-top:0.4rem; border-top:1px solid var(--border-light, #d8c8a8); }
+.ge-wappen-row .ge-wappen { width:60px; height:78px; flex-shrink:0; margin-top:0.1rem; }
+.ge-wappen-row h2 { margin:0 !important; border-top:none !important; padding-top:0 !important; font-size:1.32rem; }
+.ge-wappen-row h3 { margin:0 !important; border-top:none !important; padding-top:0 !important; font-size:1.32rem; }
+.ge-wappen-row + p.lede { margin-top:0.6rem; }
+/* On narrow screens shrink the shield so the long em-dashed H2 has room. */
+@media (max-width: 460px) {
+  .ge-wappen-row { gap: 0.7rem; }
+  .ge-wappen-row .ge-wappen { width: 42px; height: 55px; }
+  .ge-wappen-row h2,
+  .ge-wappen-row h3 { font-size: 1.12rem; line-height: 1.3; }
+}
+
+
+.ge-chrono-strip-wrap { background:linear-gradient(140deg, var(--bg-card, #fffaf0), var(--bg-card-tint, #fff5dd)); border:1px solid var(--border-light, #d8c8a8); border-radius:5px; padding:0.5rem 0.8rem 0.2rem; margin:0.7rem 0 0.4rem; }
+.ge-chrono-strip { width:100%; height:auto; display:block; color:var(--brand-dark, #8a6420); }
+.ge-chrono-strip text.cs-year, .ge-chrono-strip text.cs-label, .ge-chrono-strip text.cs-gap { fill:currentColor; }
+.ge-chrono-strip .cs-baseline { stroke:currentColor; stroke-width:1.2; opacity:0.4; }
+.ge-chrono-strip .cs-marker { fill:currentColor; }
+.ge-chrono-strip .cs-bookend { fill:var(--status-eliminated, #a3441f); }
+.ge-chrono-strip .cs-bookend-inner { fill:#fff5dd; }
+
+/* ---------- 10. Badges, cite-inline, contribute ----------- */
+.ge-badge { display:inline-block; font-size: 0.72rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; padding:0.1rem 0.5rem; border-radius:10px; margin-left:0.25rem; vertical-align:0.12em; white-space:nowrap; }
+.ge-badge.active { background:#3a6a2a; color:#fff5dd; }
+.ge-badge.searching { background:#8a6a14; color:#fff5dd; }
+.ge-badge.awaiting { background:#3a5878; color:#fff5dd; }
+.ge-badge.marburg { background:#7a3416; color:#fff5dd; }
+
+.cite-inline { display:inline-block; font-size:0.72rem; color:#6a5a42; text-decoration:none; border:1px solid #d8c8a8; border-radius:2px; padding:0 0.3rem; margin-left:0.25rem; background:#fff8ea; vertical-align:0.12em; }
+.cite-inline:hover { background:#fef3d6; color:#3a2f1e; }
+.cite-inline.kb { color: #3a6a2a; }
+.cite-inline.archion::before { content: "Archion · "; font-style: italic; font-weight: 600; color: var(--brand-dark, #8a6420); }
+
+.ge-contribute { background:linear-gradient(140deg, #fff5dd, #fef3d6); border:1px solid #d8b366; border-left:4px solid #8a6420; border-radius:4px; padding:0.75rem 1rem; margin:1rem 0 1.4rem; font-size:0.9rem; color:#3a2f1e; line-height:1.55; }
+.ge-contribute strong { color:#7a3416; }
+.ge-contribute a { color:#8a6420; font-weight:700; }
+
+/* ---------- 11. Surname investigation -------------------- */
+.ge-surname-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin:1rem 0; }
+.ge-surname-card { background:#fffaf0; border:1px solid #d8c8a8; border-left:3px solid #5a8a4a; border-radius:5px; padding:0.85rem 1rem; box-shadow:0 1px 2px rgba(0,0,0,0.05); color:#3a2f1e; }
+.ge-surname-card.status { border-left-color:#a3441f; background:linear-gradient(140deg, #fffaf0, #fff5dd); }
+.ge-surname-card h4 { color:#3a6a2a; font-size:0.98rem; margin:0 0 0.55rem; padding:0; border:0; }
+.ge-surname-card.status h4 { color:#7a3416; }
+.ge-surname-card p { font-size:0.9rem; line-height:1.55; margin:0 0 0.55rem; color:#3a2f1e; }
+.ge-surname-card p:last-child { margin-bottom:0; }
+
+.ge-surname-table { width:100%; border-collapse:collapse; font-size:0.92rem; margin:0.3rem 0 0.4rem; background:transparent; }
+.ge-surname-table th, .ge-surname-table td { padding:0.5rem 0.7rem; text-align:left; border-bottom:1px solid #e8dcc0; color:#3a2f1e; }
+.ge-surname-table th { background:#fff8ea; color:#3a6a2a; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; border-bottom:2px solid #d8c8a8; }
+.ge-surname-table tr.self td { background:#fff5dd; }
+.ge-surname-table tr.self td:first-child { font-weight:700; color:#8a6420; }
+.ge-surname-table .star { color:#a3441f; font-weight:700; font-size:1.05rem; }
+.ge-surname-table .meta { font-size:0.86rem; color:#6a5a42; font-style:italic; }
+.ge-surname-table tfoot td { font-size:0.82rem; color:#6a5a42; font-style:italic; background:transparent; border-bottom:0; padding-top:0.6rem; }
+
+.ge-pool-diagram { display:block; width:100%; max-width:560px; height:auto; margin:0.6rem auto 0.3rem; }
+/* The pool diagram's per-box labels shrink below WCAG-readable size on
+   very narrow viewports. Constrain its lower-bound width so labels stay
+   legible, and let the SVG overflow into the surrounding scroll wrapper. */
+@media (max-width: 420px) {
+  .ge-pool-diagram-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0.6rem -0.5rem; padding: 0 0.5rem; }
+  .ge-pool-diagram { min-width: 480px; }
+}
+.ge-pool-diagram .root-bg { fill:#3a2f1e; }
+.ge-pool-diagram .root-label-small { fill:#d8c8a8; }
+.ge-pool-diagram .root-label-big { fill:#d8b366; }
+.ge-pool-diagram .variant-box { fill:#fffaf0; stroke:#8a6a14; }
+.ge-pool-diagram .variant-box.highlight { fill:#fff5dd; stroke:#a3441f; }
+.ge-pool-diagram .variant-name { fill:#3a2f1e; }
+.ge-pool-diagram .variant-name.highlight { fill:#a3441f; }
+.ge-pool-diagram .variant-meta { fill:#6a5a42; }
+.ge-pool-diagram .variant-meta.highlight { fill:#7a3416; }
+.ge-pool-diagram .connector { stroke:#8a6a14; }
+.ge-pool-diagram .connector.highlight { stroke:#a3441f; }
+
+/* ---------- 12. Place section ---------------------------- */
+.ge-place-quote { background:var(--bg-card-tint, #fff5dd); border-left:3px solid var(--brand-dark, #8a6420); padding:0.95rem 1.2rem; margin:0.6rem 0 0.7rem; font-family:'Iowan Old Style', Georgia, serif; font-size:1.15rem; line-height:1.5; color:var(--text-strong, #1f1a14); border-radius:0 4px 4px 0; }
+.ge-place-quote .quote-cite { display:block; font-size:1.02rem; color:var(--text-meta, #6a5a42); margin-top:0.5rem; font-style:italic; }
+.ge-place-table { width:100%; border-collapse:collapse; font-size:1rem; margin:0.3rem 0 0.7rem; background:transparent; }
+.ge-place-table th, .ge-place-table td { padding:0.6rem 0.85rem; text-align:left; border-bottom:1px solid var(--border-light, #e8dcc0); color:var(--text-body, #3a2f1e); line-height:1.55; }
+.ge-place-table td em { font-size:1.06rem; color:var(--text-strong, #1f1a14); }
+.ge-surname-step p em, .ge-surname-step blockquote em { font-size:1.04em; }
+.ge-place-table th { background:var(--bg-card-tint, #fff8ea); color:var(--section-germany, #3a6a2a); font-size: 0.78rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; border-bottom:2px solid var(--border-medium, #d8c8a8); }
+
+/* ---------- 13. Chronology key --------------------------- */
+
+/* ---------- 14. Surname chronology table ---------------- */
+.surname-chronology { margin: 0.8rem 0 0.6rem; overflow-x: auto; }
+.surname-chronology table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.surname-chronology th, .surname-chronology td { text-align: left; padding: 0.62rem 0.85rem; border-bottom: 1px solid var(--border-light, #d8c8a8); vertical-align: top; line-height: 1.5; }
+.surname-chronology th { font-family: var(--font-ui, Inter, sans-serif); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-meta, #6a5a42); font-weight: 700; background: var(--bg-card-tint, #f6ebd2); }
+.surname-chronology td.surname { font-family: var(--font-mono, 'SF Mono', Menlo, monospace); font-weight: 700; color: var(--brand-dark, #8a6420); font-size: 1.08rem; }
+.surname-chronology td.surname.cluster { color: #3a6a2a; }
+.surname-chronology td em { font-size: 0.95rem; }
+.surname-chronology tr.charles-speaker td { background: rgba(216, 179, 102, 0.10); }
+.surname-chronology .speaker-flag { display: inline-block; padding: 0.12rem 0.5rem; background: rgba(74, 138, 74, 0.20); color: #3a6a2a; border-radius: 3px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; }
+
+/* ---------- 15. Surname step (component used in place & surname sections) ---- */
+.ge-surname-step { display:grid; grid-template-columns:auto 1fr; gap:1rem 1.2rem; margin:1.4rem 0; padding:1.1rem 1.3rem; background:var(--bg-card, #fffaf0); border:1px solid var(--border-light, #d8c8a8); border-left:3px solid var(--section-germany, #5a8a4a); border-radius:5px; }
+.ge-surname-step.verdict { border-left-color:var(--brand-dark, #8a6420); background:linear-gradient(140deg, var(--bg-card, #fffaf0), var(--bg-card-tint, #fff5dd)); }
+.ge-surname-step .step-num { width:34px; height:34px; border-radius:50%; background:var(--section-germany, #3a6a2a); color:#fff5dd; font-family:'Iowan Old Style', Georgia, serif; font-size:1.15rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 34px; }
+.ge-surname-step.verdict .step-num { background:var(--brand-dark, #8a6420); }
+.ge-surname-step .step-body { min-width:0; }
+.ge-surname-step h3 { color:var(--section-germany, #3a6a2a); font-size:1.08rem; margin:0 0 0.55rem; padding:0; border:0; font-weight:700; }
+.ge-surname-step.verdict h3 { color:var(--brand-dark, #8a6420); }
+.ge-surname-step p { font-size:0.95rem; line-height:1.6; margin:0 0 0.8rem; color:var(--text-body, #3a2f1e); }
+.ge-surname-step p:last-child { margin-bottom:0; }
+.ge-surname-step .verdict-line { font-family:'Iowan Old Style', Georgia, serif; font-size:1.4rem; line-height:1.4; margin:0.2rem 0 0.9rem; color:var(--text-strong, #1f1a14); }
+.ge-surname-step .verdict-line strong { font-size:1.7rem; letter-spacing:0.04em; color:var(--status-eliminated, #a3441f); }
+.ge-surname-step .verdict-foot { font-size:0.92rem; margin-top:0.6rem; }
+.ge-surname-step .ge-surname-table { margin:0.5rem 0 0; }
+.ge-surname-step .ge-pool-diagram { max-width:640px; }
+.ge-threads { margin:0.6rem 0 0; padding-left:1.2rem; }
+.ge-threads li { margin-bottom:0.55rem; line-height:1.55; }
+.ge-threads li:last-child { margin-bottom:0; }
+@media (max-width: 560px) {
+  .ge-surname-step { grid-template-columns:1fr; gap:0.6rem; padding:0.95rem 1.05rem; }
+  .ge-surname-step .step-num { width:28px; height:28px; flex:0 0 28px; font-size:1rem; }
+}
+
+/* ---------- 16. Leaflet map + fallback ------------------- */
+/* Use aspect-ratio for predictable rendering across viewports.
+   Falls back to min/max-height clamps on tall portrait or short landscape screens. */
+#ge-fmap { aspect-ratio: 16/9; min-height: 380px; max-height: 640px; border: 2px solid #5a8a4a; border-radius: 6px; box-shadow: 0 4px 14px rgba(74, 58, 34, 0.18); margin: 1rem 0 1.4rem; }
+#ge-fmap .leaflet-popup-content-wrapper { background:#fffaf0; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.18); }
+#ge-fmap .leaflet-popup-content { font-family:'Iowan Old Style', Georgia, serif; color:#3a2f1e; font-size:0.92rem; line-height:1.45; margin:0.7rem 0.9rem; }
+#ge-fmap .leaflet-popup-content h3 { color:#3a6a2a; font-size:1rem; margin:0 0 0.25rem; padding-bottom:0.2rem; border-bottom:1px solid #c9d8b8; font-weight:700; }
+#ge-fmap .leaflet-popup-content .yr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:0.78rem; color:#3a6a2a; font-weight:700; letter-spacing:0.03em; display:inline-block; margin-bottom:0.3rem; }
+#ge-fmap .leaflet-popup-content .body { font-size:0.88rem; color:#3a2f1e; }
+#ge-fmap .leaflet-popup-content a { color:#3a6a2a; border-bottom:1px dotted #c9d8b8; }
+#ge-fmap .leaflet-popup-content .openmap { display:inline-block; margin-top:0.4rem; font-size:0.82rem; color:#3a6a2a; border-bottom:1px dashed #5a8a4a; }
+#ge-fmap .leaflet-popup-tip { background:#fffaf0; }
+
+.ge-map-legend { background:#fffaf0; border:1px solid #d8c8a8; border-radius:4px; padding:0.9rem 1.1rem; margin:0 0 1.4rem; font-size:0.88rem; }
+.ge-map-legend h3 { font-size:0.95rem; color: var(--brand-dark); margin-bottom:0.5rem; padding-bottom:0.25rem; border-bottom:1px solid #d8c8a8; }
+.ge-map-legend .legend-row { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.35rem; }
+.ge-map-legend .legend-row:last-child { margin-bottom:0; }
+.ge-map-legend .swatch { flex:0 0 18px; width:18px; height:18px; border-radius:50%; border:2px solid #fffaf0; box-shadow:0 0 0 1px #5a4a32; display:inline-block; }
+.ge-map-legend .swatch.origin { background:#5a8a4a; }
+.ge-map-legend .swatch.regional { background:#8a6a14; }
+.ge-map-legend .swatch.port { background:#3a5878; }
+.ge-map-legend .legend-label { color:#3a2f1e; font-size:0.86rem; }
+.ge-map-legend .legend-label .small { color:#6a5a42; font-size:0.76rem; }
+.ge-map-legend .legend-line { flex:0 0 22px; width:22px; height:0; border-top:2px dashed #5a8a4a; display:inline-block; }
+.ge-map-legend .legend-line.route { border-top-color:#a3441f; border-top-style:dashed; }
+
+.ge-map-fallback { background:#fffaf0; border:1px solid #d8c8a8; border-left:3px solid #5a8a4a; border-radius:5px; padding:1rem 1.2rem; margin:0 0 1rem; font-size:0.94rem; line-height:1.55; color:#3a2f1e; }
+.ge-map-fallback p { margin:0 0 0.6rem; }
+.ge-map-fallback ul { margin:0; padding-left:1.2rem; }
+.ge-map-fallback li { margin-bottom:0.35rem; }
+
+.ge-map-hint { font-size:0.88rem; color:var(--text-meta, #6a5a42); font-style:italic; margin:-0.6rem 0 1rem; }
+.ge-map-hint strong { font-style:normal; color:var(--text-strong, #3a2f1e); }
+
+/* ---------- 16b. Static print/no-JS map figure (NEW) ------ */
+.ge-static-map {
+  margin: 1rem 0 1.4rem;
+  background: var(--bg-card, #fffaf0);
+  border: 1px solid var(--border-light, #d8c8a8);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  display: none;                /* hidden on screen; revealed in print + no-JS */
+}
+.ge-static-map svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+.ge-static-map figcaption { font-size: 0.84rem; color: var(--text-meta, #6a5a42); margin-top: 0.4rem; text-align: center; font-style: italic; }
+@media print { .ge-static-map { display: block; } }
+.no-js .ge-static-map { display: block; }
+
+/* ---------- 17. Map-overlay legend (when in .map-wrap) --- */
+.map-wrap { position: relative; }
+.map-wrap > .ge-map-legend,
+.map-wrap > .ca-map-legend,
+.map-wrap > .cw-map-legend,
+.map-wrap > .im-map-legend,
+.map-wrap > .map-legend,
+.map-wrap > .towns-legend,
+.map-wrap > aside.legend {
+  position: absolute;
+  top: 14px; right: 14px;
+  z-index: 500;
+  max-width: 280px;
+  background: rgba(255, 250, 240, 0.96);
+  border: 1px solid var(--border-medium, #a88a4a);
+  border-radius: 4px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.82rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
+  margin: 0;
+  color: var(--text-strong, #1f1a14);
+}
+/* The absolute-positioned legend covers the map and the arc midpoint pill
+   on tablet-width viewports. Drop to a below-map static layout at 900px
+   (was 700px) so split-window and small-tablet sizes don't overlap. */
+@media (max-width: 900px) {
+  .map-wrap > .ge-map-legend,
+  .map-wrap > .ca-map-legend,
+  .map-wrap > .cw-map-legend,
+  .map-wrap > .im-map-legend,
+  .map-wrap > .map-legend,
+  .map-wrap > .towns-legend,
+  .map-wrap > aside.legend {
+    position: static;
+    max-width: none;
+    margin: 0.6rem 0 0;
+  }
+}
+
+/* Zoom hint inside the legend — surfaced because scrollWheelZoom is off. */
+.ge-map-legend .legend-zoom-hint {
+  display: block;
+  margin-top: 0.5rem;
+  padding-top: 0.4rem;
+  border-top: 1px dotted var(--border-light, #d8c8a8);
+  font-size: 0.78rem;
+  color: var(--text-meta, #6a5a42);
+  font-style: italic;
+}
+.ge-map-legend .legend-zoom-hint kbd {
+  display: inline-block;
+  font-family: var(--font-mono, 'SF Mono', Menlo, monospace);
+  font-size: 0.72rem;
+  padding: 0 0.3rem;
+  margin: 0 0.05rem;
+  background: var(--bg-card-tint, #fff5dd);
+  border: 1px solid var(--border-medium, #d8c8a8);
+  border-radius: 2px;
+  color: var(--text-strong, #1f1a14);
+  vertical-align: 0.05em;
+}
+
+/* ---------- 18. Image gallery ---------------------------- */
+.ge-img-gallery { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.1rem; margin:0 0 1.5rem; }
+.ge-img-gallery figure { margin:0; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:0.75rem; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+.ge-img-gallery figure img { width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; display:block; border-radius:3px; background:#3a2f1e; }
+#fig-trendelburg-map img { aspect-ratio: 5/4; object-fit: contain; }
+#fig-deisel img,
+#fig-trendelburg-today img,
+#fig-kassel img,
+#fig-bremen-port img { aspect-ratio: 3/2; }
+.ge-img-gallery figure figcaption { font-size:0.86rem; color:#3a2f1e; line-height:1.5; margin-top:0.55rem; }
+.ge-img-gallery figure figcaption strong { color:#3a6a2a; }
+.ge-img-gallery figure figcaption details { margin-top:0.45rem; font-size:0.82rem; }
+.ge-img-gallery figure figcaption details summary { cursor:pointer; color:#3a6a2a; font-weight:700; }
+.ge-img-gallery figure figcaption details[open] summary { margin-bottom:0.3rem; }
+.ge-img-gallery figure figcaption details p { margin:0.3rem 0; line-height:1.5; }
+.ge-img-gallery figure figcaption .credit { display:block; margin-top:0.35rem; font-size: 0.78rem; color:#6a5a42; font-style:italic; }
+
+/* ---------- 18b. SVG figure (used by Kassel & Bremen) ----- */
+/* Inline SVG illustrations that match the page's existing decorative
+   aesthetic. Used in the image gallery for fig-kassel and fig-bremen-port,
+   replacing photo placeholders that depended on external URLs. */
+.ge-svg-figure .ge-figure-svg { width:100%; height:auto; aspect-ratio:3/2; display:block; border-radius:3px; background:#f4ead0; }
+.ge-figure-svg .svg-bg-sky    { fill:#f4ead0; }
+.ge-figure-svg .svg-hills-far { fill:#c8b896; }
+.ge-figure-svg .svg-hills-mid { fill:#a89878; }
+.ge-figure-svg .svg-wall      { fill:#8a6a48; }
+.ge-figure-svg .svg-roofs     { fill:#7a3416; }
+.ge-figure-svg .svg-schloss   { fill:#a89878; stroke:#5a4a32; stroke-width:1; }
+.ge-figure-svg .svg-spire     { fill:#a89878; stroke:#5a4a32; stroke-width:1; }
+.ge-figure-svg .svg-spire rect:first-of-type { fill:#a89878; }
+.ge-figure-svg .svg-spire polygon { fill:#7a3416; }
+.ge-figure-svg .svg-spire line { stroke:#5a4a32; stroke-width:1; }
+.ge-figure-svg .svg-spire circle { fill:#d8b366; }
+.ge-figure-svg .svg-window    { fill:#3a2f1e; }
+.ge-figure-svg .svg-river,
+.ge-figure-svg .svg-water     { fill:#9ab4c8; }
+.ge-figure-svg .svg-river-line,
+.ge-figure-svg .svg-water-line { stroke:#7896a8; stroke-width:1.2; opacity:0.6; }
+.ge-figure-svg .svg-river-label { fill:#3a5878; }
+.ge-figure-svg .svg-quay      { fill:#8a6a48; }
+.ge-figure-svg .svg-quay-edge { stroke:#3a2f1e; stroke-width:1.4; }
+.ge-figure-svg .svg-bg-skyline polygon,
+.ge-figure-svg .svg-bg-skyline rect { fill:#a89878; }
+.ge-figure-svg .svg-ship path { fill:#5a3a22; stroke:#3a2f1e; stroke-width:1; }
+.ge-figure-svg .svg-ship-line { stroke:#d8b366; stroke-width:1.2; }
+.ge-figure-svg .svg-mast      { stroke:#3a2f1e; stroke-width:1.4; }
+.ge-figure-svg .svg-sail      { fill:#fff5dd; stroke:#5a4a32; stroke-width:0.6; }
+.ge-figure-svg .svg-flag      { fill:#a3441f; }
+.ge-figure-svg .svg-city-title { fill:#3a2f1e; }
+.ge-figure-svg .svg-city-sub   { fill:#6a5a42; }
+
+:root.theme-dark .ge-svg-figure .ge-figure-svg,
+:root:not(.theme-light) .ge-svg-figure .ge-figure-svg { background:#3a2f1e; }
+:root.theme-dark .ge-figure-svg .svg-bg-sky,
+:root:not(.theme-light) .ge-figure-svg .svg-bg-sky    { fill:#3a2f1e; }
+:root.theme-dark .ge-figure-svg .svg-hills-far,
+:root:not(.theme-light) .ge-figure-svg .svg-hills-far { fill:#5a4a32; }
+:root.theme-dark .ge-figure-svg .svg-hills-mid,
+:root:not(.theme-light) .ge-figure-svg .svg-hills-mid { fill:#6a5a42; }
+:root.theme-dark .ge-figure-svg .svg-wall,
+:root:not(.theme-light) .ge-figure-svg .svg-wall      { fill:#8a6a48; }
+:root.theme-dark .ge-figure-svg .svg-roofs,
+:root:not(.theme-light) .ge-figure-svg .svg-roofs     { fill:#a3441f; }
+:root.theme-dark .ge-figure-svg .svg-schloss,
+:root:not(.theme-light) .ge-figure-svg .svg-schloss,
+:root.theme-dark .ge-figure-svg .svg-spire,
+:root:not(.theme-light) .ge-figure-svg .svg-spire     { fill:#7a6a4a; stroke:#3a2f1e; }
+:root.theme-dark .ge-figure-svg .svg-window,
+:root:not(.theme-light) .ge-figure-svg .svg-window    { fill:#1f1a14; }
+:root.theme-dark .ge-figure-svg .svg-river,
+:root:not(.theme-light) .ge-figure-svg .svg-river,
+:root.theme-dark .ge-figure-svg .svg-water,
+:root:not(.theme-light) .ge-figure-svg .svg-water     { fill:#3a5878; }
+:root.theme-dark .ge-figure-svg .svg-river-line,
+:root:not(.theme-light) .ge-figure-svg .svg-river-line,
+:root.theme-dark .ge-figure-svg .svg-water-line,
+:root:not(.theme-light) .ge-figure-svg .svg-water-line { stroke:#5a7898; }
+:root.theme-dark .ge-figure-svg .svg-river-label,
+:root:not(.theme-light) .ge-figure-svg .svg-river-label { fill:#9ab4c8; }
+:root.theme-dark .ge-figure-svg .svg-quay,
+:root:not(.theme-light) .ge-figure-svg .svg-quay      { fill:#5a4a32; }
+:root.theme-dark .ge-figure-svg .svg-bg-skyline polygon,
+:root:not(.theme-light) .ge-figure-svg .svg-bg-skyline polygon,
+:root.theme-dark .ge-figure-svg .svg-bg-skyline rect,
+:root:not(.theme-light) .ge-figure-svg .svg-bg-skyline rect { fill:#7a6a4a; }
+:root.theme-dark .ge-figure-svg .svg-sail,
+:root:not(.theme-light) .ge-figure-svg .svg-sail      { fill:#e8dfc8; stroke:#3a2f1e; }
+:root.theme-dark .ge-figure-svg .svg-city-title,
+:root:not(.theme-light) .ge-figure-svg .svg-city-title { fill:#f4ead0; }
+:root.theme-dark .ge-figure-svg .svg-city-sub,
+:root:not(.theme-light) .ge-figure-svg .svg-city-sub  { fill:#c8b896; }
+
+/* ---------- 19. Timeline (desktop + mobile + prose) ------- */
+.ge-timeline { background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:0.6rem 0.8rem; margin:0.8rem 0 0.6rem; }
+.ge-timeline svg { width:100%; height:auto; display:block; }
+.ge-timeline svg .svg-title      { fill: #3a2f1e; }
+.ge-timeline svg .svg-sub        { fill: #6a5a42; }
+.ge-timeline svg .svg-year       { fill: #3a2f1e; }
+.ge-timeline svg .svg-age        { fill: #6a5a42; }
+.ge-timeline svg .svg-event      { fill: #6a5a42; }
+.ge-timeline svg .svg-tick       { stroke: #3a2f1e; }
+.ge-timeline svg .svg-pivot-year { fill: #a3441f; }
+.ge-timeline svg .svg-pivot-age  { fill: #a3441f; }
+.ge-timeline svg .svg-pivot-event{ fill: #a3441f; }
+.ge-timeline svg .svg-pivot-tick { stroke: #a3441f; }
+
+.ge-timeline-prose { background:#fffaf0; border:1px solid #d8c8a8; border-radius:4px; padding:0; margin:0.4rem 0 0.8rem; }
+.ge-timeline-prose summary { padding:0.55rem 0.9rem; cursor:pointer; font-weight:700; color:#3a6a2a; font-size:0.92rem; }
+.ge-timeline-prose[open] summary { border-bottom:1px solid #d8c8a8; }
+.ge-timeline-prose .body { padding:0.7rem 1rem; font-size:0.92rem; line-height:1.6; color:#3a2f1e; }
+.ge-timeline-prose .body p { margin:0 0 0.6rem; }
+.ge-timeline-prose .body p:last-child { margin-bottom:0; }
+
+.ge-timeline-mobile { display:none; padding:0.6rem 0.8rem; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; margin:0.8rem 0 0.6rem; }
+.ge-timeline-mobile ol { margin:0; padding:0; list-style:none; }
+.ge-timeline-mobile ol li { position:relative; padding:0.45rem 0 0.45rem 1.1rem; margin-left:0.5rem; border-left:2px solid #d8c8a8; line-height:1.45; font-size:0.88rem; color:#3a2f1e; }
+.ge-timeline-mobile ol li:last-child { border-left-color:transparent; }
+.ge-timeline-mobile ol li::before { content:""; position:absolute; left:-7px; top:0.85rem; width:10px; height:10px; border-radius:50%; background:#3a2f1e; border:2px solid #fffaf0; box-shadow:0 0 0 1px #3a2f1e; }
+.ge-timeline-mobile ol li.pivot::before { background:#a3441f; box-shadow:0 0 0 1px #a3441f; width:13px; height:13px; left:-8px; top:0.78rem; }
+.ge-timeline-mobile ol li .yr { font-family:'Iowan Old Style', Georgia, serif; font-size:1rem; font-weight:700; color:#1f1a14; }
+.ge-timeline-mobile ol li.pivot .yr { color:#a3441f; }
+.ge-timeline-mobile ol li .age { font-size:0.76rem; color:#6a5a42; margin-left:0.3rem; }
+.ge-timeline-mobile ol li .band { display:inline-block; font-size: 0.72rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; padding:0.1rem 0.45rem; border-radius:3px; margin:0.15rem 0.35rem 0.15rem 0; vertical-align:0.05em; color:#fff5dd; }
+.ge-timeline-mobile ol li .band.kurhessen { background:#8a6a14; }
+.ge-timeline-mobile ol li .band.nassau { background:#3a5878; }
+.ge-timeline-mobile ol li .band.empire { background:#5a3a2a; }
+.ge-timeline-mobile ol li .band.america { background:#3a6a2a; }
+@media (max-width: 600px) {
+  .ge-timeline { display:none; }
+  .ge-timeline-mobile { display:block; }
+}
+
+/* ---------- 20. Visit card ------------------------------- */
+.ge-visit-card { background:#fffaf0; border:1px solid #c9d8b8; border-left:4px solid #5a8a4a; border-radius:6px; padding:0.95rem 1.2rem; margin:0 0 0.9rem; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
+.ge-visit-card h3 { color:#3a6a2a; font-size:1.05rem; margin:0 0 0.45rem; padding:0; border:0; }
+.ge-visit-card h4 { color:#3a6a2a; font-size:1.05rem; margin:0 0 0.45rem; padding:0; border:0; }
+.ge-visit-card p { font-size:0.92rem; color:#3a2f1e; line-height:1.55; margin:0 0 0.55rem; }
+.ge-visit-card p:last-child { margin-bottom:0; }
+.ge-visit-card a { color:#3a6a2a; }
+
+/* ---------- 21. Explore — group labels, towns, tiles ----- */
+.ge-explore-section { margin-top:1.2rem; }
+.ge-explore-section .group-label { font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:#3a6a2a; margin:1rem 0 0.5rem; padding-bottom:0.3rem; border-bottom:1px solid #c9d8b8; font-weight:700; }
+.ge-towns-strip { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:0.55rem; margin:0.7rem 0; }
+.ge-town-mini { display:flex; flex-direction:column; gap:0.2rem; padding:0.65rem 0.8rem; background:#fffaf0; border:1px solid #c9d8b8; border-left:3px solid #5a8a4a; border-radius:5px; text-decoration:none; color:#3a2f1e; transition:all 0.15s; min-height:78px; box-shadow:0 1px 2px rgba(0,0,0,0.05); }
+.ge-town-mini:hover { background:#f4f9ee; box-shadow:0 2px 6px rgba(0,0,0,0.10); transform:translateY(-1px); }
+.ge-town-mini.origin { border-left-color:#d8b366; background:linear-gradient(140deg, #fffaf0, #fff5dd); }
+.ge-town-mini.regional { border-left-color:#8a6a14; }
+.ge-town-mini.pending { border-left-color:#a3441f; opacity:0.92; }
+.ge-town-mini .name { font-weight:700; font-size:0.95rem; color:#1f1a14; line-height:1.2; }
+.ge-town-mini .role { font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#6a5a42; font-weight:700; line-height:1.3; display:flex; align-items:center; gap:0.35rem; }
+.ge-town-mini .role::before { content:""; flex:0 0 8px; width:8px; height:8px; border-radius:50%; background:#5a8a4a; box-shadow:0 0 0 1px #fffaf0, 0 0 0 2px #5a8a4a; }
+.ge-town-mini.origin .role { color:#8a6420; }
+.ge-town-mini.origin .role::before { background:#d8b366; box-shadow:0 0 0 1px #fffaf0, 0 0 0 2px #d8b366; }
+.ge-town-mini.regional .role { color:#5a4a14; }
+.ge-town-mini.regional .role::before { background:#8a6a14; box-shadow:0 0 0 1px #fffaf0, 0 0 0 2px #8a6a14; }
+.ge-town-mini.pending .role { color:#7a3416; }
+.ge-town-mini.pending .role::before { background:#a3441f; box-shadow:0 0 0 1px #fffaf0, 0 0 0 2px #a3441f; }
+
+/* ---------- 22. Explore tile icon (sized for inline SVG) -- */
+.ge-tile .ge-tile-icon { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; color: var(--brand-dark, #8a6420); }
+.ge-tile .ge-tile-icon svg { width: 100%; height: 100%; }
+
+/* ============================================================
+   ============== DARK-MODE OVERRIDES ===========================
+   Everything below applies only when :root has .theme-dark, or
+   when the user has not opted into .theme-light. Light mode is
+   untouched.
+   ============================================================ */
+
+:root.theme-dark .ge-fleuron,
+:root:not(.theme-light) .ge-fleuron { color:var(--brand, #d8b366); opacity:0.85; }
+
+:root.theme-dark p.ge-dropcap::first-letter,
+:root:not(.theme-light) p.ge-dropcap::first-letter { color:var(--brand-light, #f1cf85); }
+
+:root.theme-dark .ge-wappen-row,
+:root:not(.theme-light) .ge-wappen-row { border-top-color:var(--border-light, #6a5a40); }
+
+:root.theme-dark .ge-chrono-strip-wrap,
+:root:not(.theme-light) .ge-chrono-strip-wrap { background:linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); border-color:var(--border-light); }
+:root.theme-dark .ge-chrono-strip,
+:root:not(.theme-light) .ge-chrono-strip { color:var(--brand, #d8b366); }
+:root.theme-dark .ge-chrono-strip .cs-bookend,
+:root:not(.theme-light) .ge-chrono-strip .cs-bookend { fill:#f08060; }
+:root.theme-dark .ge-chrono-strip .cs-bookend-inner,
+:root:not(.theme-light) .ge-chrono-strip .cs-bookend-inner { fill:#2c211a; }
+
+
+:root.theme-dark .surname-chronology th { background: var(--bg-elevated, #2a2519); color: var(--text-meta, #c8b896); border-bottom-color: var(--border-medium, #6a5a40); }
+:root.theme-dark .surname-chronology td { border-bottom-color: var(--border-medium, #6a5a40); color: var(--text-body, #e8dfc8); }
+:root.theme-dark .surname-chronology td.surname { color: var(--brand-light, #fadea0); }
+:root.theme-dark .surname-chronology td.surname.cluster { color: #b8e0a4; }
+:root.theme-dark .surname-chronology tr.charles-speaker td { background: rgba(216, 179, 102, 0.14); }
+:root.theme-dark .surname-chronology .speaker-flag { background: rgba(108, 176, 96, 0.22); color: #b8e0a4; }
+
+:root.theme-dark .ge-surname-card { background: var(--bg-card); border-color: var(--border-light); border-left-color: var(--brand-dark); color: var(--text-body); }
+:root.theme-dark .ge-surname-card.status { background: linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); border-left-color: var(--status-eliminated); }
+:root.theme-dark .ge-surname-card h4 { color: var(--brand); }
+:root.theme-dark .ge-surname-card.status h4 { color: var(--status-eliminated); }
+:root.theme-dark .ge-surname-card p { color: var(--text-body); }
+
+:root.theme-dark .ge-surname-table th, :root.theme-dark .ge-surname-table td { color: var(--text-body); border-bottom-color: var(--border-light); }
+:root.theme-dark .ge-surname-table th { background: var(--bg-card-tint); color: var(--brand); border-bottom-color: var(--border-medium); }
+:root.theme-dark .ge-surname-table tr.self td { background: var(--bg-elevated); }
+:root.theme-dark .ge-surname-table tr.self td:first-child { color: var(--brand-light); }
+:root.theme-dark .ge-surname-table .star { color: var(--brand); }
+:root.theme-dark .ge-surname-table .meta { color: var(--text-meta); }
+:root.theme-dark .ge-surname-table tfoot td { color: var(--text-meta); }
+:root.theme-dark .ge-surname-table tfoot td a { color: var(--brand); }
+
+:root.theme-dark .ge-pool-diagram .root-bg { fill: var(--bg-deep); }
+:root.theme-dark .ge-pool-diagram .root-label-small { fill: var(--text-meta); }
+:root.theme-dark .ge-pool-diagram .root-label-big { fill: var(--brand-light); }
+:root.theme-dark .ge-pool-diagram .variant-box { fill: var(--bg-card-tint); stroke: var(--brand-dark); }
+:root.theme-dark .ge-pool-diagram .variant-box.highlight { fill: var(--bg-elevated); stroke: var(--status-eliminated); }
+:root.theme-dark .ge-pool-diagram .variant-name { fill: var(--text-strong); }
+:root.theme-dark .ge-pool-diagram .variant-name.highlight { fill: var(--status-eliminated); }
+:root.theme-dark .ge-pool-diagram .variant-meta { fill: var(--text-meta); }
+:root.theme-dark .ge-pool-diagram .variant-meta.highlight { fill: var(--status-eliminated); }
+:root.theme-dark .ge-pool-diagram .connector { stroke: var(--brand-dark); }
+:root.theme-dark .ge-pool-diagram .connector.highlight { stroke: var(--status-eliminated); }
+
+:root.theme-dark .ge-place-quote,
+:root:not(.theme-light) .ge-place-quote {
+  background: #1f1a12 !important;
+  color: var(--text-body, #e8dfc8) !important;
+  border-left-color: var(--brand, #d8b366) !important;
+}
+:root.theme-dark .ge-place-quote .quote-cite,
+:root:not(.theme-light) .ge-place-quote .quote-cite { color: var(--text-meta, #c8b896) !important; }
+:root.theme-dark .ge-place-quote strong,
+:root:not(.theme-light) .ge-place-quote strong { color: var(--text-strong, #f4ead0) !important; }
+:root.theme-dark .ge-place-table th { background:var(--bg-card-tint); color:var(--brand); }
+:root.theme-dark .ge-place-table th, :root.theme-dark .ge-place-table td { color:var(--text-body); border-bottom-color:var(--border-light); }
+
+/* "What's confirmed / what's open" investigation-status boxes — force dark
+   backgrounds so the cream .card.confirmed and .card.open panels read as
+   evidence cards on a dark page. */
+:root.theme-dark .card.confirmed,
+:root:not(.theme-light) .card.confirmed,
+:root.theme-dark .card.open,
+:root:not(.theme-light) .card.open {
+  background: #1f1a12 !important;
+  color: var(--text-body, #e8dfc8) !important;
+  border-color: var(--border-light, #3c352a) !important;
+}
+:root.theme-dark .card.confirmed h3,
+:root:not(.theme-light) .card.confirmed h3,
+:root.theme-dark .card.open h3,
+:root:not(.theme-light) .card.open h3 {
+  color: var(--brand, #d8b366) !important;
+}
+:root.theme-dark .card.confirmed strong,
+:root:not(.theme-light) .card.confirmed strong,
+:root.theme-dark .card.open strong,
+:root:not(.theme-light) .card.open strong {
+  color: var(--text-strong, #f4ead0) !important;
+}
+
+:root.theme-dark .ge-surname-step { background:var(--bg-card); border-color:var(--border-light); }
+:root.theme-dark .ge-surname-step.verdict { background:linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); border-left-color:var(--brand); }
+:root.theme-dark .ge-surname-step h3 { color:var(--brand); }
+:root.theme-dark .ge-surname-step.verdict h3 { color:var(--brand-light); }
+:root.theme-dark .ge-surname-step p { color:var(--text-body); }
+:root.theme-dark .ge-surname-step .verdict-line { color:var(--text-strong); }
+:root.theme-dark .ge-surname-step .verdict-line strong { color:var(--brand-light); }
+
+:root.theme-dark .ge-timeline,
+:root:not(.theme-light) .ge-timeline,
+:root.theme-dark figure.ge-timeline,
+:root:not(.theme-light) figure.ge-timeline,
+:root.theme-dark .ge-timeline-mobile,
+:root:not(.theme-light) .ge-timeline-mobile,
+:root.theme-dark .ge-timeline-prose,
+:root:not(.theme-light) .ge-timeline-prose {
+  background: var(--bg-card, #24201a);
+  border-color: var(--border-light, #6a5a40);
+  color: var(--text-body, #e8dfc8);
+}
+:root.theme-dark .ge-timeline-prose summary,
+:root:not(.theme-light) .ge-timeline-prose summary,
+:root.theme-dark .ge-timeline-prose .body,
+:root.theme-dark .ge-timeline-prose .body p,
+:root:not(.theme-light) .ge-timeline-prose .body,
+:root:not(.theme-light) .ge-timeline-prose .body p { color: var(--text-body, #e8dfc8); background: transparent; }
+:root.theme-dark .ge-timeline-mobile ol li,
+:root:not(.theme-light) .ge-timeline-mobile ol li { color: var(--text-body, #e8dfc8); border-left-color: var(--border-light, #6a5a40); }
+:root.theme-dark .ge-timeline-mobile ol li .yr,
+:root:not(.theme-light) .ge-timeline-mobile ol li .yr { color: var(--text-strong, #f4ead0); }
+
+:root.theme-dark .ge-timeline svg .svg-title,
+:root:not(.theme-light) .ge-timeline svg .svg-title       { fill: #f4ead0; }
+:root.theme-dark .ge-timeline svg .svg-sub,
+:root:not(.theme-light) .ge-timeline svg .svg-sub         { fill: #c8b896; }
+:root.theme-dark .ge-timeline svg .svg-year,
+:root:not(.theme-light) .ge-timeline svg .svg-year        { fill: #f1cf85; }
+:root.theme-dark .ge-timeline svg .svg-age,
+:root:not(.theme-light) .ge-timeline svg .svg-age         { fill: #c8b896; }
+:root.theme-dark .ge-timeline svg .svg-event,
+:root:not(.theme-light) .ge-timeline svg .svg-event       { fill: #e8dfc8; }
+:root.theme-dark .ge-timeline svg .svg-tick,
+:root:not(.theme-light) .ge-timeline svg .svg-tick        { stroke: #c8b896; }
+:root.theme-dark .ge-timeline svg .svg-pivot-year,
+:root:not(.theme-light) .ge-timeline svg .svg-pivot-year  { fill: #f08060; }
+:root.theme-dark .ge-timeline svg .svg-pivot-age,
+:root:not(.theme-light) .ge-timeline svg .svg-pivot-age   { fill: #f08060; }
+:root.theme-dark .ge-timeline svg .svg-pivot-event,
+:root:not(.theme-light) .ge-timeline svg .svg-pivot-event { fill: #f08060; }
+:root.theme-dark .ge-timeline svg .svg-pivot-tick,
+:root:not(.theme-light) .ge-timeline svg .svg-pivot-tick  { stroke: #f08060; }
+
+:root.theme-dark .ge-map-fallback,
+:root:not(.theme-light) .ge-map-fallback { background:var(--bg-card, #24201a); border-color:var(--border-light, #6a5a40); color:var(--text-body, #e8dfc8); }
+
+:root.theme-dark .ge-static-map,
+:root:not(.theme-light) .ge-static-map { background:var(--bg-card, #24201a); border-color:var(--border-light, #6a5a40); }
+
+:root.theme-dark .map-wrap > .ge-map-legend,
+:root.theme-dark .map-wrap > .ca-map-legend,
+:root.theme-dark .map-wrap > .cw-map-legend,
+:root.theme-dark .map-wrap > .im-map-legend,
+:root.theme-dark .map-wrap > .map-legend,
+:root.theme-dark .map-wrap > .towns-legend,
+:root.theme-dark .map-wrap > aside.legend,
+:root:not(.theme-light) .map-wrap > .ge-map-legend,
+:root:not(.theme-light) .map-wrap > .ca-map-legend,
+:root:not(.theme-light) .map-wrap > .cw-map-legend,
+:root:not(.theme-light) .map-wrap > .im-map-legend,
+:root:not(.theme-light) .map-wrap > .map-legend,
+:root:not(.theme-light) .map-wrap > .towns-legend,
+:root:not(.theme-light) .map-wrap > aside.legend {
+  background: rgba(28, 22, 16, 0.92);
+  border-color: var(--border-medium, #6a5a40);
+  color: var(--text-body, #e8dfc8);
+}
+
+/* Dark-mode box backgrounds — explicit class enumeration replaces
+   the runtime DOM-sweep that used to live in dark-boxes-sweep <script>.
+   Light mode is untouched. */
+:root:not(.theme-light) .summary-card, :root.theme-dark .summary-card,
+:root:not(.theme-light) .child-card, :root.theme-dark .child-card,
+:root:not(.theme-light) .friedrich-callout, :root.theme-dark .friedrich-callout,
+:root:not(.theme-light) .card, :root.theme-dark .card,
+:root:not(.theme-light) .hypothesis, :root.theme-dark .hypothesis,
+:root:not(.theme-light) .ht-row, :root.theme-dark .ht-row,
+:root:not(.theme-light) .tab-open-q, :root.theme-dark .tab-open-q,
+:root:not(.theme-light) .map-legend, :root.theme-dark .map-legend,
+:root:not(.theme-light) .ge-map-legend, :root.theme-dark .ge-map-legend,
+:root:not(.theme-light) .ge-contribute, :root.theme-dark .ge-contribute,
+:root:not(.theme-light) .ge-pullquote, :root.theme-dark .ge-pullquote,
+:root:not(.theme-light) .ge-surname-card, :root.theme-dark .ge-surname-card,
+:root:not(.theme-light) .ge-visit-card, :root.theme-dark .ge-visit-card,
+:root:not(.theme-light) .ge-metrics, :root.theme-dark .ge-metrics,
+:root:not(.theme-light) .ge-hook, :root.theme-dark .ge-hook,
+:root:not(.theme-light) .ge-crosswalk, :root.theme-dark .ge-crosswalk,
+:root:not(.theme-light) .ge-confidence, :root.theme-dark .ge-confidence,
+:root:not(.theme-light) .konze-status-banner, :root.theme-dark .konze-status-banner,
+:root:not(.theme-light) .konzen-tag, :root.theme-dark .konzen-tag,
+:root:not(.theme-light) .embed-frame, :root.theme-dark .embed-frame,
+:root:not(.theme-light) .tl-event, :root.theme-dark .tl-event,
+:root:not(.theme-light) .person-card, :root.theme-dark .person-card,
+:root:not(.theme-light) .actor-card, :root.theme-dark .actor-card,
+:root:not(.theme-light) .doc-card, :root.theme-dark .doc-card,
+:root:not(.theme-light) .witness-card, :root.theme-dark .witness-card,
+:root:not(.theme-light) .posting-card, :root.theme-dark .posting-card,
+:root:not(.theme-light) .cw-summary-card, :root.theme-dark .cw-summary-card,
+:root:not(.theme-light) .cw-callout, :root.theme-dark .cw-callout {
+  background: var(--bg-card, #24201a);
+  background-image: none;
+  border-color: var(--border-light, #6a5a40);
+  color: var(--text-body, #e8dfc8);
+}
+
+:root:not(.theme-light) .ge-asof, :root.theme-dark .ge-asof,
+:root:not(.theme-light) .cite-inline, :root.theme-dark .cite-inline {
+  background: #2c261d;
+  color: #f1cf85;
+  border-color: #6a5a40;
+}
+:root:not(.theme-light) .cite-inline:hover, :root.theme-dark .cite-inline:hover {
+  background: #3a3024; color: #fadea0; border-color: #8a6420;
+}
+
+:root:not(.theme-light) .summary-card h2, :root:not(.theme-light) .summary-card h3, :root:not(.theme-light) .summary-card h4,
+:root.theme-dark .summary-card h2, :root.theme-dark .summary-card h3, :root.theme-dark .summary-card h4,
+:root:not(.theme-light) .summary-card strong, :root.theme-dark .summary-card strong,
+:root:not(.theme-light) .child-card strong, :root.theme-dark .child-card strong,
+:root:not(.theme-light) .friedrich-callout strong, :root.theme-dark .friedrich-callout strong,
+:root:not(.theme-light) .card h2, :root:not(.theme-light) .card h3, :root:not(.theme-light) .card h4,
+:root.theme-dark .card h2, :root.theme-dark .card h3, :root.theme-dark .card h4,
+:root:not(.theme-light) .card strong, :root.theme-dark .card strong,
+:root:not(.theme-light) .hypothesis strong, :root.theme-dark .hypothesis strong,
+:root:not(.theme-light) .ge-metrics .num, :root.theme-dark .ge-metrics .num,
+:root:not(.theme-light) .konze-status-banner strong, :root.theme-dark .konze-status-banner strong {
+  color: var(--text-heading, #f1cf85);
+}

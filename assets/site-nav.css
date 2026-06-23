@@ -1,0 +1,182 @@
+/* ============================================================
+   Site nav + footer (shared partials)
+   Charles Research · added 8 May 2026 (audit-fix pass)
+   ============================================================
+   Styles extracted from index.html and adapted to work on
+   standalone pages. The visual language matches the home page
+   exactly — sticky dark bar, gold accent, grouped dropdowns —
+   so the nav looks the same regardless of which page you land on.
+   ------------------------------------------------------------ */
+
+.site-nav-shared {
+  background: #2c2620;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #d8b366;
+  position: sticky;
+  top: 0;
+  /* Above Leaflet's panes (which run 200–800) so the sticky nav
+     isn't covered by map markers / popups when the user scrolls
+     a tall map (towns/index.html, Immigration Journey, etc.). */
+  z-index: 1100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  font-family: 'Iowan Old Style', 'Georgia', 'Times New Roman', serif;
+}
+.site-nav-shared .tab-group { position: relative; display: flex; }
+.site-nav-shared .group-btn {
+  background: transparent;
+  border: none;
+  color: #c8b896;
+  padding: 0.95rem 1.4rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.18s ease;
+  position: relative;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.site-nav-shared .group-btn::after {
+  content: ' \25BE';
+  font-size: 0.76rem;
+  color: #a89878;
+  margin-left: 0.35rem;
+  transition: transform 0.18s ease, color 0.18s ease;
+  display: inline-block;
+}
+.site-nav-shared .group-btn:hover { color: #f6f1e7; background: rgba(212,160,23,0.08); }
+.site-nav-shared .group-btn:hover::after { color: #d8b366; }
+.site-nav-shared .group-btn[aria-expanded="true"] { background: rgba(212,160,23,0.20); color: #f6f1e7; }
+.site-nav-shared .group-btn[aria-expanded="true"]::after { transform: rotate(180deg); color: #d8b366; }
+
+.site-nav-shared .group-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #2c2620;
+  border: 1px solid #d8b366;
+  border-top: none;
+  min-width: 240px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  /* Sit above the nav bar itself (1100) and any Leaflet panes. */
+  z-index: 1110;
+  padding: 0.3rem 0;
+  /* Cap height so the menu doesn't run off the bottom of the viewport
+     on shorter screens; long lists scroll inside the dropdown. */
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+.site-nav-shared .group-menu[hidden] { display: none; }
+
+/* Right-edge overflow handling: dropdowns near the right edge of the
+   nav can extend past the viewport. Flip the last two tab-groups so
+   their menus open to the LEFT of the button rather than the right. */
+.site-nav-shared .tab-group:nth-last-child(-n+2) .group-menu {
+  left: auto;
+  right: 0;
+}
+.site-nav-shared .group-menu a {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #c8b896;
+  padding: 0.55rem 1.05rem;
+  font-family: inherit;
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: all 0.12s ease;
+  border-left: 3px solid transparent;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.site-nav-shared .group-menu a:hover,
+.site-nav-shared .group-menu a:focus {
+  background: rgba(212,160,23,0.10); color: #f6f1e7; outline: none;
+}
+.site-nav-shared .group-menu .menu-divider {
+  height: 1px;
+  margin: 0.3rem 0.6rem;
+  background: rgba(212,160,23,0.18);
+}
+
+@media (max-width: 720px) {
+  .site-nav-shared .group-btn { padding: 0.7rem 0.85rem; font-size: 0.82rem; }
+  .site-nav-shared .group-btn::after { display: none; }
+  .site-nav-shared .group-menu { min-width: 200px; }
+}
+
+/* ------------------------------------------------------------
+   Site footer (shared) — appears on every page
+   ------------------------------------------------------------ */
+
+.site-foot-shared {
+  margin-top: 4rem;
+  padding: 1.8rem 1.5rem 1.4rem;
+  background: linear-gradient(135deg, #1f1a14 0%, #3a2f1e 100%);
+  color: #c8b896;
+  border-top: 4px double #d8b366;
+  font-family: 'Iowan Old Style', 'Georgia', 'Times New Roman', serif;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+.site-foot-shared .foot-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 1.4rem;
+  align-items: start;
+}
+.site-foot-shared h4,
+.site-foot-shared .foot-group-label {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #d8b366;
+  margin: 0 0 0.5rem;
+  border: none;
+  padding: 0;
+}
+.site-foot-shared ul { list-style: none; padding: 0; margin: 0; }
+.site-foot-shared li { margin: 0.18rem 0; }
+.site-foot-shared a { color: #c8b896; text-decoration: none; border-bottom: 1px dotted rgba(212,160,23,0.35); }
+.site-foot-shared a:hover { color: #d8b366; border-bottom-color: #d8b366; }
+
+.site-foot-shared .foot-blurb { font-style: italic; color: #c8b896; }
+.site-foot-shared .foot-blurb strong { color: #f6f1e7; font-style: normal; }
+
+.site-foot-shared .foot-meta {
+  max-width: 1100px;
+  margin: 1.6rem auto 0;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(212,160,23,0.2);
+  font-size: 0.78rem;
+  color: #a89878;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+.site-foot-shared .foot-meta a { color: #a89878; }
+.site-foot-shared .foot-meta a:hover { color: #d8b366; }
+
+@media (max-width: 760px) {
+  .site-foot-shared .foot-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .site-foot-shared .foot-inner { grid-template-columns: 1fr; }
+  .site-foot-shared .foot-meta { flex-direction: column; }
+}
+
+/* "Start here" — highlighted researcher front-door tab (added 20 Jun 2026).
+   Gold-accented so the core-items entry point stands out from the section tabs. */
+.site-nav-shared .tab-group[data-group="start"] .group-btn { color: #e8cd8a; font-weight: 700; }
+.site-nav-shared .tab-group[data-group="start"] .group-btn:hover { color: #fff7e6; background: rgba(212,160,23,0.16); }
+.site-nav-shared .tab-group[data-group="start"] .group-btn[aria-expanded="true"] { background: rgba(212,160,23,0.26); color: #fff7e6; }

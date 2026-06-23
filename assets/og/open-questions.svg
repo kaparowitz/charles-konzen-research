@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f1a14"/>
+      <stop offset="100%" stop-color="#3a2f1e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c87a30" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#c87a30" stop-opacity="0.45"/>
+    </linearGradient>
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#d8b366" fill-opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="url(#accent)"/>
+  <rect x="0" y="6" width="1200" height="2" fill="#d8b366" fill-opacity="0.6"/>
+
+  <!-- Bottom double-rule (matches the cinematic 4px-double brand-color borders) -->
+  <rect x="0" y="618" width="1200" height="3" fill="#d8b366" fill-opacity="0.5"/>
+  <rect x="0" y="624" width="1200" height="2" fill="#d8b366"/>
+
+  <!-- Side accent column -->
+  <rect x="0" y="0" width="6" height="630" fill="#c87a30"/>
+
+  <!-- Project mark (small caps eyebrow) -->
+  <text x="80" y="138" fill="#d8b366" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="22" letter-spacing="6">A GENEALOGICAL INVESTIGATION</text>
+
+  <!-- Eyebrow label -->
+  <text x="80" y="220" fill="#c87a30" font-family="Cormorant Garamond, Georgia, serif" font-weight="700" font-size="28" letter-spacing="3" font-style="italic">What we haven't found</text>
+
+  <!-- Main title -->
+  <text x="80" y="380" fill="#f6f1e7" font-family="Cormorant Garamond, Georgia, serif" font-weight="700" font-size="88">Open Questions</text>
+
+  <!-- Project signature -->
+  <text x="80" y="555" fill="#c8b896" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-style="italic">Charles Research</text>
+  <text x="80" y="582" fill="#8a7858" font-family="Inter, Arial, sans-serif" font-size="18">charles-research.netlify.app</text>
+
+  <!-- Decorative gilt seal (top-right) -->
+  <g transform="translate(1050, 130)">
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#d8b366" stroke-width="1.5" stroke-opacity="0.75"/>
+    <circle cx="0" cy="0" r="48" fill="none" stroke="#d8b366" stroke-width="0.6" stroke-opacity="0.5"/>
+    <text x="0" y="6" fill="#d8b366" font-family="Cormorant Garamond, Georgia, serif" font-size="34" font-style="italic" text-anchor="middle">CK</text>
+  </g>
+</svg>

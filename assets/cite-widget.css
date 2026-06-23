@@ -1,0 +1,157 @@
+/* ============================================================
+   Cite-this-page widget — Charles Research
+   Added 8 May 2026 — appears at the top of the shared footer.
+   ============================================================ */
+.cite-widget {
+  background: var(--bg-card-tint, #fff8e8);
+  border-top: 1px solid var(--border-medium, #d8c8a8);
+  border-bottom: 1px solid var(--border-light, #e8dcc0);
+  padding: 0.7rem 1.4rem;
+  font-family: var(--font-serif, 'Iowan Old Style', Georgia, serif);
+  font-size: 0.92rem;
+}
+.cite-widget summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-strong, #1f1a14);
+  user-select: none;
+  outline-offset: 4px;
+}
+.cite-widget summary::-webkit-details-marker { display: none; }
+.cite-widget summary::before {
+  content: '▸';
+  font-size: 0.78rem;
+  color: var(--brand-dark, #8a6420);
+  transition: transform 0.18s ease;
+  display: inline-block;
+}
+.cite-widget[open] summary::before { transform: rotate(90deg); }
+.cite-widget summary .cite-icon { font-size: 1.05rem; line-height: 1; }
+.cite-widget summary strong { font-weight: 700; }
+.cite-widget summary .cite-hint {
+  color: var(--text-muted, #7a6f5e);
+  font-style: italic;
+  font-size: 0.85rem;
+  margin-left: 0.3rem;
+}
+@media (max-width: 540px) {
+  .cite-widget summary .cite-hint { display: none; }
+}
+
+.cite-body {
+  margin-top: 0.7rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed var(--border-medium, #d8c8a8);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cite-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "lbl btn" "out btn";
+  column-gap: 0.6rem;
+  row-gap: 0.2rem;
+  align-items: start;
+}
+.cite-row .cite-lbl {
+  grid-area: lbl;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brand-dark, #8a6420);
+  font-weight: 700;
+}
+.cite-row .cite-out {
+  grid-area: out;
+  background: var(--bg-page, #f6f1e7);
+  border: 1px solid var(--border-light, #e8dcc0);
+  border-radius: 3px;
+  padding: 0.5rem 0.7rem;
+  font-family: var(--font-serif, 'Iowan Old Style', Georgia, serif);
+  font-size: 0.88rem;
+  color: var(--text-body, #2c2620);
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+.cite-row .cite-copy {
+  grid-area: btn;
+  align-self: end;
+  background: var(--brand, #c9a76a);
+  color: var(--text-strong, #1f1a14);
+  border: 1px solid var(--brand-dark, #8a6420);
+  border-radius: 3px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  font-family: inherit;
+  min-width: 64px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.cite-row .cite-copy:hover {
+  background: var(--brand-dark, #8a6420);
+  color: #fff;
+}
+.cite-row .cite-copy.copied {
+  background: #5a8a4a;
+  color: #fff;
+  border-color: #4a7a4a;
+}
+
+.cite-foot {
+  font-size: 0.82rem;
+  color: var(--text-muted, #7a6f5e);
+  font-style: italic;
+  margin: 0.3rem 0 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .cite-widget { background: rgba(60, 40, 20, 0.18); }
+  .cite-row .cite-out {
+    background: rgba(40, 28, 14, 0.4);
+    color: var(--text-body);
+    border-color: rgba(216, 179, 102, 0.18);
+  }
+}
+
+/* ------------------------------------------------------------
+   Footer override — the shared footer (.site-foot-shared) is ALWAYS
+   dark in both light and dark site themes, so the cite-widget that
+   lives inside it must always use light-on-dark colours. Without this,
+   in light mode (or when the OS prefers-color-scheme disagrees with the
+   site's theme toggle) the widget inherited dark text from the theme
+   variables and rendered dark-on-dark — unreadable. These rules are
+   scoped to the footer and win over both the base rules and the
+   prefers-color-scheme block above, in every theme/OS combination.
+   ------------------------------------------------------------ */
+.site-foot-shared .cite-widget {
+  background: rgba(0, 0, 0, 0.22);
+  border-top-color: rgba(212, 160, 23, 0.28);
+  border-bottom-color: rgba(212, 160, 23, 0.18);
+}
+.site-foot-shared .cite-widget summary { color: #f6f1e7; }
+.site-foot-shared .cite-widget summary::before { color: #d8b366; }
+.site-foot-shared .cite-widget summary .cite-hint { color: #c8b896; }
+.site-foot-shared .cite-widget .cite-body { border-top-color: rgba(212, 160, 23, 0.25); }
+.site-foot-shared .cite-widget .cite-lbl { color: #d8b366; }
+.site-foot-shared .cite-widget .cite-out {
+  background: rgba(0, 0, 0, 0.34);
+  color: #ece3d0;
+  border-color: rgba(212, 160, 23, 0.2);
+}
+.site-foot-shared .cite-widget .cite-foot { color: #b6a583; }
+.site-foot-shared .cite-widget .cite-foot a,
+.site-foot-shared .cite-widget .cite-out a { color: #d8b366; }
+/* the gold Copy button already has dark text on a gold fill — readable as-is */
+
+@media print {
+  .cite-widget { display: none; }
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" role="img"
+     aria-label="Eight distinct Konze and Kontzen men tested as Charles's possible father. Six are eliminated — including Entry 195 of Deisel KB 218842, closed 4 May 2026 by Peter Schräder's Kurrent re-reading (father is Köster, not Konze; child died unbaptized). Two candidates remain inconclusive; a ninth card, the '[?]ard colonist,' was withdrawn 8 June 2026 as a misread of Andreas Konze (b. 1795). No open candidate remains.">
+  <defs>
+    <style>
+      .ct-title { font: 700 26px 'Cormorant Garamond', Georgia, serif; fill: #3a2f1e; }
+      .ct-sub { font: italic 18.5px 'Iowan Old Style', Georgia, serif; fill: #6a5a42; }
+      .ct-q-fill { fill: #3a2f1e; }
+      .ct-q-text { font: 700 21.5px 'Cormorant Garamond', Georgia, serif; fill: #f4e2b0; }
+      .ct-q-meta { font: 14.5px 'SF Mono', Menlo, Consolas, monospace; fill: #d8b366; letter-spacing: 0.08em; }
+      .ct-col-head { font: 700 18px 'Inter', sans-serif; letter-spacing: 0.12em; }
+      .ct-col-elim { fill: #a3441f; }
+      .ct-col-inc  { fill: #8a6420; }
+      .ct-col-count { font: 700 15px 'SF Mono', Menlo, Consolas, monospace; letter-spacing: 0.05em; fill: #6a5a42; }
+      .ct-card-name { font: 700 19px 'Cormorant Garamond', Georgia, serif; fill: #2c2620; }
+      .ct-card-meta { font: italic 14.5px 'Iowan Old Style', Georgia, serif; fill: #6a5a42; }
+      .ct-card-basis { font: 14.5px 'Inter', sans-serif; fill: #3a2f1e; }
+      .ct-spine-elim { stroke: #c84a4a; stroke-width: 1.4; fill: none; }
+      .ct-spine-inc  { stroke: #d8b366; stroke-width: 1.4; fill: none; }
+      .ct-card { stroke-width: 1.4; }
+      .ct-card-elim { fill: #fbeae5; stroke: #c84a4a; }
+      .ct-card-inc  { fill: #fdf5e0; stroke: #d8b366; }
+      .ct-verdict-chip { font: 700 13.5px 'Inter', sans-serif; letter-spacing: 0.06em; }
+      .ct-verdict-elim { fill: #a3441f; }
+      .ct-verdict-inc  { fill: #8a6420; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1200" height="1100" fill="#f6f1e7"/>
+
+  <!-- Root question pill (centered, viewBox center = 600) -->
+  <rect class="ct-q-fill" x="370" y="30" width="460" height="68" rx="6"/>
+  <text class="ct-q-meta" x="600" y="52" text-anchor="middle">THE QUESTION · APRIL 2026 SCHRÄDER VERDICT</text>
+  <text class="ct-q-text" x="600" y="78" text-anchor="middle">Who fathered Charles? (b. 26 Jan 1835)</text>
+
+  <!-- Spines from question pill to the two column headers — columns centered at x=300 and x=900 -->
+  <path class="ct-spine-elim" d="M 600 98 Q 600 130 300 130 L 300 168"/>
+  <path class="ct-spine-inc"  d="M 600 98 Q 600 130 900 130 L 900 168"/>
+
+  <!-- Column headers -->
+  <text class="ct-col-head ct-col-elim" x="300" y="180" text-anchor="middle">✗ ELIMINATED</text>
+  <text class="ct-col-count"            x="300" y="200" text-anchor="middle">6 candidates · date, sex, or death preclude</text>
+  <text class="ct-col-head ct-col-inc"  x="900" y="180" text-anchor="middle">? INCONCLUSIVE</text>
+  <text class="ct-col-count"            x="900" y="200" text-anchor="middle">2 candidates · open paternity window</text>
+
+  <!-- ===== ELIMINATED column (6 cards), x=120 to x=480, all h=104 except Entry 195 h=146 ===== -->
+  <g><rect class="ct-card ct-card-elim" x="120" y="220" width="360" height="104" rx="4"/>
+    <text class="ct-verdict-chip ct-verdict-elim" x="132" y="240">✗ ELIMINATED · DIED 1830</text>
+    <text class="ct-card-name" x="132" y="262">Andreas Konze "A"</text>
+    <text class="ct-card-meta" x="132" y="278">Trendelburg · b. 1787</text>
+    <text class="ct-card-basis" x="132" y="296">Died Oct 1830 — five years before</text>
+    <text class="ct-card-basis" x="132" y="310">Charles's 1835 birth.</text></g>
+
+  <g><rect class="ct-card ct-card-elim" x="120" y="340" width="360" height="104" rx="4"/>
+    <text class="ct-verdict-chip ct-verdict-elim" x="132" y="360">✗ ELIMINATED · WRONG GENERATION</text>
+    <text class="ct-card-name" x="132" y="382">Andreas Konze, Ackermann</text>
+    <text class="ct-card-meta" x="132" y="398">Deisel · b. ~1810</text>
+    <text class="ct-card-basis" x="132" y="416">Son Johannes (b. 1810, d. 1835)</text>
+    <text class="ct-card-basis" x="132" y="430">too young to be Charles.</text></g>
+
+  <g><rect class="ct-card ct-card-elim" x="120" y="460" width="360" height="104" rx="4"/>
+    <text class="ct-verdict-chip ct-verdict-elim" x="132" y="480">✗ ELIMINATED · TOO YOUNG</text>
+    <text class="ct-card-name" x="132" y="502">Karl Wilhelm Konze, Einlieger</text>
+    <text class="ct-card-meta" x="132" y="518">Trendelburg · b. 1831</text>
+    <text class="ct-card-basis" x="132" y="536">Only 4 yrs old in 1835 —</text>
+    <text class="ct-card-basis" x="132" y="550">could not father Charles.</text></g>
+
+  <g><rect class="ct-card ct-card-elim" x="120" y="580" width="360" height="104" rx="4"/>
+    <text class="ct-verdict-chip ct-verdict-elim" x="132" y="600">✗ ELIMINATED · TOO YOUNG</text>
+    <text class="ct-card-name" x="132" y="622">Joh. Christoph Konze, Schieferdecker</text>
+    <text class="ct-card-meta" x="132" y="638">Trendelburg · b. ~1825</text>
+    <text class="ct-card-basis" x="132" y="656">~10 yrs old in 1835 — too young</text>
+    <text class="ct-card-basis" x="132" y="670">to father Charles.</text></g>
+
+  <g><rect class="ct-card ct-card-elim" x="120" y="700" width="360" height="104" rx="4"/>
+    <text class="ct-verdict-chip ct-verdict-elim" x="132" y="720">✗ ELIMINATED · DIFFERENT CHILD</text>
+    <text class="ct-card-name" x="132" y="742">Ludwig Friedrich Konze</text>
+    <text class="ct-card-meta" x="132" y="758">Deisel · b. ~10 Jan 1835 (Entry 194)</text>
+    <text class="ct-card-basis" x="132" y="776">Baptized 18 Jan, ~2 wks before —</text>
+    <text class="ct-card-basis" x="132" y="790">a different child, not the father.</text></g>
+
+  <g><rect class="ct-card ct-card-elim" x="120" y="820" width="360" height="146" rx="4"/>
+    <text class="ct-verdict-chip ct-verdict-elim" x="132" y="840">✗ ELIMINATED · NOT EVEN A KONZE</text>
+    <text class="ct-card-name" x="132" y="862">Entry 195 — unnamed Köster infant</text>
+    <text class="ct-card-meta" x="132" y="878">Deisel KB 218842 · b. 20 Jan 1835</text>
+    <text class="ct-card-basis" x="132" y="898">Peter Schräder's Kurrent re-reading</text>
+    <text class="ct-card-basis" x="132" y="912">(4 May 2026): father is Köster, not</text>
+    <text class="ct-card-basis" x="132" y="926">Konze; child received no name; the</text>
+    <text class="ct-card-basis" x="132" y="940">field previously read as "Justus" is</text>
+    <text class="ct-card-basis" x="132" y="954">"männlich" — died unbaptized.</text></g>
+
+  <!-- ===== INCONCLUSIVE column (3 cards), x=720 to x=1080 ===== -->
+  <g><rect class="ct-card ct-card-inc" x="720" y="220" width="360" height="104" rx="4"/>
+    <text class="ct-verdict-chip ct-verdict-inc" x="732" y="240">? INCONCLUSIVE</text>
+    <text class="ct-card-name" x="732" y="262">Andreas Konze "C"</text>
+    <text class="ct-card-meta" x="732" y="278">Trendelburg / Friedrichsfeld · b. 1795</text>
+    <text class="ct-card-basis" x="732" y="296">Disappeared 1835–43; died Mainz 1854.</text>
+    <text class="ct-card-basis" x="732" y="310">Children documented; no Charles.</text></g>
+
+  <g><rect class="ct-card ct-card-inc" x="720" y="340" width="360" height="104" rx="4"/>
+    <text class="ct-verdict-chip ct-verdict-inc" x="732" y="360">? INCONCLUSIVE</text>
+    <text class="ct-card-name" x="732" y="382">Carl Ludwig Konze, Ackerbürger</text>
+    <text class="ct-card-meta" x="732" y="398">Trendelburg · b. ~1800</text>
+    <text class="ct-card-basis" x="732" y="416">Father of Carl Wilhelm (1831). Window</text>
+    <text class="ct-card-basis" x="732" y="430">for Charles open; no parish record.</text></g>
+
+  <g><rect class="ct-card" x="720" y="460" width="360" height="104" rx="4" fill="#3a2f1e" opacity="0.045" stroke="#bbb1a0" stroke-width="1.2" stroke-dasharray="5 4"/>
+    <text class="ct-verdict-chip" x="732" y="480" fill="#8a7a5a">✓ WITHDRAWN · 8 JUN 2026</text>
+    <text class="ct-card-name" x="732" y="502" style="text-decoration:line-through;">[?]ard Kontze, Colonist</text>
+    <text class="ct-card-meta" x="732" y="520">A misread of Andreas "C" (above):</text>
+    <text class="ct-card-basis" x="732" y="538">Entry 28 = Maria Sabina Kontze (b. 1834),</text>
+    <text class="ct-card-basis" x="732" y="552">his infant daughter — no separate man.</text></g>
+
+  <!-- Footer band — centered, well inside viewBox -->
+  <rect x="60" y="984" width="1080" height="106" rx="4" fill="#3a2f1e" opacity="0.06" stroke="#d8b366" stroke-width="1"/>
+  <text class="ct-title" x="600" y="1010" text-anchor="middle">Working position · updated June 2026</text>
+  <text class="ct-sub"   x="600" y="1034" text-anchor="middle">Of 8 distinct Konze men tested, 6 are eliminated and 2 remain inconclusive — none a confirmed match.</text>
+  <text class="ct-sub"   x="600" y="1056" text-anchor="middle">Entry 195 was closed (father Köster, not Konze); the "colonist" card is withdrawn as a misread of Andreas "C".</text>
+  <text class="ct-sub"   x="600" y="1078" text-anchor="middle">With the May 2026 Y-DNA result, the working position is now relationship, not paternity.</text>
+</svg>
