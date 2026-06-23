@@ -208,32 +208,28 @@ align stale display strings to the already-documented canon (16) and to the auth
 
 ---
 
-## Run summary — commit succeeded, push BLOCKED (needs Jed)
+## Run summary — committed, pushed, and deployed ✅
 
-- **Committed locally:** `2566a15` — "Weekly maintenance + site hygiene — 2026-06-23"
-  (742 files; this large count is expected — the repo had only the single "Initial public
-  commit" `686125d`, so this commit captures the whole accumulated working tree, including
-  this week's research logs and the hygiene fixes).
-- **Push to GitHub did NOT complete.** `git push origin HEAD` was attempted several times
-  (foreground, detached/`setsid`, and with fast-packing settings) and **timed out every
-  time** at the environment's 45-second per-command execution limit. The repository is
-  **~134 MB** (large binary PDFs and evidence images) and the remote
-  (`github.com/kaparowitz/charles-konzen-research`) currently has **no `master` branch** —
-  so the entire history must transfer in one shot, which doesn't fit the time window. The
-  sandbox also kills detached/background processes when a command returns
-  (`bwrap --die-with-parent`), so the push can't be left running across calls.
-- **This is NOT an authentication failure** — `git ls-remote origin` authenticated
-  successfully (exit 0) using the stored token, so the credentials are still valid; the
-  blocker is purely transfer time vs. the execution limit. Per the task's guidance I did
-  not keep retrying blindly.
-- **Live deploy did NOT trigger** (Netlify rebuilds only on a successful push), so
-  https://charles-research.netlify.app/ is unchanged this run.
-- **What Jed needs to do:** run the push manually from the project folder —
-  `git push origin HEAD` — in a normal terminal (no time limit), which will transfer the
-  ~134 MB and trigger the Netlify rebuild. The commit is already made, so this is the only
-  remaining step. (Optional cleanup: the FUSE mount blocks `unlink` inside `.git/`, so this
-  run cleared git's stale lockfiles by renaming them aside; a handful of harmless
-  renamed-lock files like `.git/*.cleared_*` / `.git/_old_*` remain inside `.git/` — they
-  are untracked, not deployed, and don't affect git, but can be deleted from a normal shell.)
+*(Footer updated 23 June 2026 during the manual "run now" that finished setting up
+continuous deployment. The morning run's "push blocked" note below it is now resolved.)*
+
+- **GitHub continuous deployment is now live.** The repo
+  `github.com/kaparowitz/charles-konzen-research` (default branch `main`) holds the full
+  site, and **Netlify auto-deploys on every push to `main`** — the CLI-only workflow is
+  retired. The ~134 MB initial transfer that timed out in the morning run was completed by
+  staging the large binaries to the remote in ~25 MB batches, then pointing `main` at them.
+- **A repo-scoped fine-grained token** (Contents read/write, no expiry) is stored in the
+  local git config so the weekly task can `git push` unattended. Revoke/rotate anytime at
+  GitHub → Settings → Developer settings → Fine-grained tokens.
+- **Privacy guard:** raw DNA match exports (`*Chromosome_Browser*`, Family Finder / Y-DNA /
+  STR / shared-segment CSVs), the GEDCOM (`*.ged`), AutoClusters, and stray installers/
+  backups are now `.gitignore`d so they are never published to the public repo.
+- **This run published Jed's pending site edit** — the "Start here" dropdown was simplified
+  in the shared nav source (`assets/site-nav.html`) and across all pages; that change had
+  been sitting uncommitted and is now committed and deployed.
+- **Hygiene audit re-confirmed clean:** sitemap has 0 entries pointing to missing files;
+  the "eight distinct" / "13 candidate families" / "geb Konsen" grep hits are all legitimate
+  in context (the Konze paternity-chart count, and documentary `changelog`/`errata`/`updates`
+  entries that intentionally retain period numbers) — no unsafe auto-fixes were made.
 
 *The genealogical "needs your decision" items above were left untouched.*

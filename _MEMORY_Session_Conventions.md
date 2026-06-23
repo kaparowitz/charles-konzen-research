@@ -94,15 +94,20 @@ deep-dive landing pages like `civilwar/places-served.html`,
   the Seite 243 transcription.
 - **Jungkonze** (compound surname) is attested in Trendelburg 1829 baptisms
   as a separate father-surname variant.
-- **Hümme Kontze cluster (22 June 2026):** three resident Kontze fathers
-  documented — Johannes (Leineweber, origin contested "Stammen"/"Naumann";
-  Stammen = adjacent parish, the likely reading; twice married — 1st Catharine
-  Elisabeth geb. Lichtefeld [mother of Heinrich b.1823], 2nd Marie Magdalene geb.
-  Uffelmann; DIED ~mid-1834, leaving posthumous dau Wilhelmine Friederike),
-  (Johann) Heinrich (×Büngener), and Georg Friedrich (Tagelöhner, ×Kuhlmann). The Hümme Taufen 1830-1863 register's own index lists
-  ~10 Kontze baptisms, so the line was NOT extinct — earlier "no Kontze baptism
-  1830-58" finding is overturned. Detail + permalinks in
-  `germany/huemme-research-log.html`.
+- **Hümme Kontze cluster (complete 23 June 2026):** a substantial multi-household
+  Kontze population, NOT extinct (earlier "no Kontze baptism 1830-58" finding
+  overturned). All 10 indexed Kontze baptisms in Taufen 1830-1863 pulled & cited;
+  FIVE father-households: (1) Johannes the Leineweber (×Lichtefeld → Heinrich
+  b.1823; then ×Marie Magdalene Uffelmann → Conrad 1833, Wilh. Friederike 1834
+  posth.; DIED ~mid-1834); (2) a SECOND Johannes (Leineweber/Tagelöhner) ×Marie
+  Christine Hofedietz "von Naumann" → Friedrich 1841; (3) Georg Friedrich
+  (Tagelöhner/Bauaufseher) ×Kuhlmann v.Eberschütz → Anne Rosine 1830, Heinrich
+  Friedrich 1843, Wilhelm 1848; (4) Friedrich ×Wilhelmine Büngener → Conrad 1844,
+  Christoph Heinrich 1847, Elise Amalie 1852; (5) Wilhelm (Leineweber) ×geb. Busch
+  → Maria 1852; plus Heinrich ×Marie Elisabeth Büngener (confirmation reg).
+  "Naumann" is confirmed a REAL place (S81 entry), reopening Naumann-vs-Stammen
+  for Johannes-the-Leineweber's origin. Full table + permalinks in
+  `germany/huemme-research-log.html` and `germany/219532_image-seite-map.md`.
 - **Surname canon = nine distinct American spellings** (updated June 2026, was
   eight): Gonnson · Gansen · Gonsen · Konsen · Gonson · Jansen · Konzen ·
   **Gannsen** · Conson. The count is data-driven from
@@ -142,28 +147,27 @@ deep-dive landing pages like `civilwar/places-served.html`,
   on unused letter pages (K→img 2054/2055→C img 2048→Z imgs 2068–69); S.92–117 unindexed.
 - 218842: image ≈ Seite+1 (drifts to +2 from ~S.210); index K img 272 → C img 265 → X img 284.
 - 220093: baptisms start img ~709 (S.1=1708); own name-register at S.251 (img 835, letter K).
-- 219532 (Hümme Taufen 1830-1863, 1492 imgs; verified Session 22 June 2026): Hümme Taufen TITLE page = img 1206; baptism Nro 1 (1830) = img 1209; early-1830 baptisms run ~img 1209-1215. Alphabetical name-index ("mit Register") bound at the END with leaves OUT OF ORDER — the K/I leaf is img 1476 (permalink p/695988191b). Index lists ~10 Kontze baptisms 1830-1863. Verified: Anne Rosine Kontze bapt. 1 Mar 1830 (Nro 15, img 1212, permalink p/55c3f399a7), father Georg Friedrich Kontze (Tagelöhner) × Marie Christine geb. Kuhlmann "gebürtig von Eberschütz". Page-field navigation is flaky here (reverts); use the |<< first-page button + thumbnail clicks instead.
-  WARNING — 219532 body is SHUFFLED *and* DUPLICATED end-to-end: image number does NOT reliably track
-  printed Seite, sequential scan hits repeats, and the offset SHIFTS by region (≈image=Seite+1208 in
-  the early run and again in the 1847 block; ≈+1248 across a mid-1840s duplicate block). Anchors
-  (printed Seite@image): 1212=S4,1214=S6,1220=S12(true),1227=S19,1229=S21,1230=S22,1232=S24,1240=S32,
-  1340=S92,1328=S120,1329=S121,1327=S122. DUPLICATES: S22@1213/1230/1233; S12@1220/1228; S121@1329/1331.
-  DISPLACED: S20 leaf (Conrad Kontze) gone from natural slot (1228 holds the S12 dup); S120/121/122
-  out of order ~1847. Index ref numbers = printed Seiten (index "4"=S4=Anne Rosine).
-  PULLED + cited (Kontze baptisms): S4 Anne Rosine 1830 (img1212, p/55c3f399a7, father Georg Friedrich
-  Kontze Tagelöhner ×Marie Christine Kuhlmann v.Eberschütz); S32 Wilhelmine Friederike 1834 (img1240,
-  p/aac9a2afde, posthumous dau of Johannes Kontze Leineweber ×Marie Magdalene Uffelmann — note "born
-  3 months after father's death" ⇒ JOHANNES KONTZE THE LEINEWEBER DIED ~mid-1834).
-  STILL TO PULL (each on a shuffled/dup leaf, hunt individually): S20 Conrad, S81 Friedrich, S96 Heinrich
-  Friedrich, S101 Conrad#2, S119 Christoph Heinrich, S127 Wilhelm, S178 Maria, S178 Elise Amalie.
-  UPDATE (2nd marathon, 22 Jun): more anchors — 1333=S124,1336=S126,1337=S129,1340=S92,1450=S130; and a
-  CHAOTIC BLOCK at imgs ~1338-1449 mixing the LATEST pages (1338=S243/1861!) with displaced mid pages
-  (1340=S92). Baptism Seiten run to ~243 (1861), so S178 is MID-register, not near the end. Targets
-  S119/S123/S125/S127/S128 are pulled out of the 1847-48 run (1337 jumps S126→S129) into the chaos.
-  CONCLUSION: this reel has NO navigable order for the displaced leaves; random targeting ≈0% hit rate.
-  The only reliable method left = a FULL systematic image-by-image sweep recording each img's printed
-  Seite into a map file (resume across sessions), THEN jump to the mapped images. Or request an Archion
-  re-scan. Do NOT keep random-probing — it wastes the budget.
+- 219532 (Hümme Taufen 1830-1863, 1492 imgs; **COMPLETE 23 June 2026**): register is WELL-ORDERED at
+  **image = Seite + 1208** (title page img 1206; baptism Nro1/Seite1 = img 1209; alphabetical K index
+  leaf = img 1476, p/695988191b). ⚠️ The "shuffle/duplicate chaos" logged on 22 June was a STALE-CANVAS
+  ARTIFACT, NOT real: after typing an image number the viewer shows the PREVIOUS leaf until a zoom action
+  forces a redraw, so immediate screenshots read the wrong page. **FIX: after every page-number jump,
+  click a zoom +/− button to force a redraw, THEN read the Seite header.** With that, all targets sat
+  exactly at image=Seite+1208. (Lesson: trust SEQUENTIAL next-page reads; always redraw after a jump.)
+  ALL 10 indexed Kontze baptisms pulled & cited (full table in germany/219532_image-seite-map.md and the
+  research log): S4 Anne Rosine 1830 (img1212 p/55c3f399a7); S20 Conrad 1833 (1228 p/0636506e1e); S32
+  Wilhelmine Friederike 1834 posth. (1240 p/aac9a2afde); S81 Friedrich 1841 (1289 p/a94361a969); S96
+  Heinrich Friedrich 1843 (1304 p/84af9a31f5); S101 Conrad 1844 (1309 p/ca6fea7790); S119 Christoph
+  Heinrich 1847 (1327 p/2982e4389d); S127 Wilhelm 1848 (1335 p/0ca790f2cf); Maria 1852 + Elise Amalie
+  1852 (both Seite ~175, img1386 p/1107ea6d56). FIVE father-households: (1) Johannes Kontze Leineweber
+  ×Lichtefeld(son Heinrich b.1823) then ×Marie Magdalene Uffelmann (Conrad 1833, Wilh. Friederike 1834),
+  DIED ~mid-1834; (2) a SECOND Johannes Kontze (Leineweber/Tagelöhner) ×Marie Christine Hofedietz "von
+  Naumann" (Friedrich 1841 — alive then, distinct man); (3) Georg Friedrich Kontze (Tagelöhner/Bauaufseher)
+  ×Marie Christine Kuhlmann v.Eberschütz (Anne Rosine 1830, Heinrich Friedrich 1843, Wilhelm 1848); (4)
+  Friedrich Kontze ×Wilhelmine Büngener (Conrad 1844, Christoph Heinrich 1847, Elise Amalie 1852; prob.
+  the Friedrich w/ 1843 marriage); (5) Wilhelm Kontze (Leineweber) ×geb. Busch (Maria 1852). NOTE: S81
+  proves "Naumann" is a REAL place (Marie Christine Hofedietz "von Naumann") — reopens Naumann-vs-Stammen
+  for the 1837 confirmation entry (219529 img16).
 - 205541 (Nürnberg-St. Sebald Taufen 1770-1800, Bayern; 657 imgs, normal chronological order,
   ≈1.9 written pages/image): img 165 = pp.320/321 (1777 Aug); img 183 = pp.354/355 (June 1778);
   **img 184 = pp.356/357 (July 1778)**; img 226 = pp.438/439 (Aug 1780); img 249 = pp.480/481 (Apr 1781).
@@ -177,7 +181,11 @@ deep-dive landing pages like `civilwar/places-served.html`,
   1846/47 slot). Each class lists boys (Knaben) 1..N first, then "Mädchen". Permalink minting: chain icon →
   wait → single "Create" click (the first click after the panel opens often doesn't register — click again) →
   the short p/<hash> URL renders in the panel. Per-class permalinks in `germany/gottsbueren-research-log.html`.
-  1846/47 + 1853-55 leaves still unpinned (shuffle); prime 1849-50 cohort fully read.
+  MORE anchors (residual pass 22 Jun): img1789=1853(boys), 1790-91=1853(girls), 1792=1853-tally/1854-header,
+  1793=1854(full), 1794=1855, 1796=1856; dups 1773=1852, 1787=1852, 1788=1845. FULL SWEEP DONE: every class
+  1844-1856 read. The book runs 1844,1845, then 1848…1856 — a clean 1845→1848 gap, NO 1846/47 class (parallels
+  the 1831→1834 gap; likely a vacancy). So Gottsbüren Konfirmationen is saturated end-to-end for Charles's window;
+  no boy b.1831-42 with a Konze-type surname exists in the book.
 - 253444 (Grifte Taufen 1830-1883, "Amt Gudensberg", Kirchenkreis Fritzlar; 1239 imgs; verified 22 Jun 2026):
   baptism section title page = img 960; continuous Nro numbering (NOT reset yearly). Leaves partly out of
   Seite-order with DUPLICATE scans, so de-dup by the printed Jahr/Seite header. The 1833-1841 window is

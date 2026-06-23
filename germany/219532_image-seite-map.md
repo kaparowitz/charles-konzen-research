@@ -1,77 +1,62 @@
-# Register 219532 (Hümme Taufen 1830–1863) — image→Seite sweep map
+# Register 219532 (Hümme Taufen 1830–1863) — image→Seite map & Kontze baptisms
 
-**Purpose.** This reel is pathologically imaged: leaves are shuffled *and*
-duplicated, the image→Seite offset shifts by region, and the displaced target
-leaves are scattered in a chaotic block with no navigable order. Random
-targeting ≈ 0 % hit rate. The only reliable way to pull the remaining indexed
-Kontze baptisms is to sweep the body image-by-image, record each leaf's printed
-*Seite* + year here, then jump straight to the mapped images. This file is the
-running map — **resume the sweep from the "NEXT TO SWEEP" line below.**
+**STATUS: COMPLETE (23 June 2026).** All ten indexed Kontze baptisms pulled,
+read against the image, and cited.
 
-Method per image: read the printed Seite (top-right of the right page) + the
-year header; note any Kontze child (col. 5) or geb.-Kontze parent/godparent.
+## The key lesson (read this first)
+The register is **well-ordered**: **image = Seite + 1208**
+(title page = img 1206; baptism Nro 1 / Seite 1 = img 1209; alphabetical K
+index leaf = img 1476). The "shuffle + duplicate chaos" recorded on 22 June was
+**NOT real** — it was a **stale-canvas artifact**: after typing an image number
+in the page box, the viewer keeps showing the *previous* leaf until a zoom
+action forces a redraw, so screenshots taken immediately after a jump showed the
+wrong page. **Fix: after every page-number jump, click a zoom +/− button to force
+a redraw, THEN read the Seite header.** With that, every target sat exactly at
+image = Seite + 1208.
 
-Kontze baptism targets from the K index leaf (img 1476, permalink p/695988191b),
-by Seite: **4 ✓, 20, 32 ✓, 81, 96, 101, 119, 127, 178, 178.**
-(✓ = pulled & cited.)
-
-## Pulled & cited
-| Seite | Child | Image | Permalink | Parents / notes |
+## All ten Kontze baptisms (pulled & cited)
+| Seite | Image | Permalink | Child (b./bapt.) | Father × mother |
 |---|---|---|---|---|
-| 4 | Anne Rosine Kontze (b.28 Feb, bapt.1 Mar 1830) | 1212 | p/55c3f399a7 | Georg Friedrich Kontze (Tagelöhner) × Marie Christine geb. Kuhlmann v. Eberschütz |
-| 32 | Wilhelmine Friederike Kontze (bapt. Sep/Oct 1834) | 1240 | p/aac9a2afde | Johannes Kontze (Leineweber, **d. ~mid-1834**) × Marie Magdalene geb. Uffelmann; posthumous child |
+| 4 | 1212 | p/55c3f399a7 | Anne Rosine Kontze (b.28 Feb, bapt.1 Mar 1830) | Georg Friedrich Kontze (Tagelöhner) × Marie Christine geb. Kuhlmann v. Eberschütz |
+| 20 | 1228 | p/0636506e1e | Conrad Kontze (b.17 Mar 1833) | Johannes Kontze (Leineweber) × Marie Magdalene geb. Uffelmann |
+| 32 | 1240 | p/aac9a2afde | Wilhelmine Friederike Kontze (bapt. Sep/Oct 1834, posthumous) | Johannes Kontze (Leineweber, **d. ~mid-1834**) × Marie Magdalene geb. Uffelmann |
+| 81 | 1289 | p/a94361a969 | Friedrich Kontze (b.21 May, bapt.28 May 1841) | Johannes Kontze (Leineweber u. Tagelöhner) × Marie Christine geb. Hofedietz **"von Naumann"**; godf. Georg Friedrich Kontze |
+| 96 | 1304 | p/84af9a31f5 | Heinrich Friedrich Kontze (b.30 Oct, bapt.6 Nov 1843) | Georg Friedrich Kontze (Tagelöhner u. Bauaufseher) × Marie Christine geb. Kuhlmann v. Eberschütz |
+| 101 | 1309 | p/ca6fea7790 | Conrad Kontze (b.25 May, bapt.2 Jun 1844) | Friedrich Kontze × Wilhelmine geb. Büngener |
+| 119 | 1327 | p/2982e4389d | Christoph Heinrich Kontze (b.20 Mar, bapt.1 Apr 1847) | Friedrich Kontze (Leineweber u. Tagelöhner) × Wilhelmine geb. Büngener |
+| 127 | 1335 | p/0ca790f2cf | Wilhelm Kontze (b.9 Mar, bapt.12 Mar 1848) | Georg Friedrich Kontze × Marie Christine geb. Kuhlmann v. Eberschütz |
+| ~175 (idx "178") | 1386 | p/1107ea6d56 | Maria Kontze (1852) | Wilhelm Kontze (Leineweber) × geb. Busch |
+| ~175 (idx "178") | 1386 | p/1107ea6d56 | Elise Amalie Kontze (1852) | Friedrich Kontze × Wilhelmine geb. Büngener |
 
-## Still to pull
-Seiten 20 (Conrad), 81 (Friedrich), 96 (Heinrich Friedrich), 101 (Conrad #2),
-119 (Christoph Heinrich), 127 (Wilhelm), 178 (Maria), 178 (Elise Amalie).
-Known displaced: S20 (slot at img1228 holds a S12 dup); S119/S123/S125/S127/S128
-pulled out of the 1847–48 run (1337 jumps S126→S129); displaced leaves land in
-the chaotic block imgs ~1338–1449 (mixes S243/1861 at 1338 with S92/1843 at 1340).
+(The index leaf, img 1476 = permalink p/695988191b. Its "178" entries are
+actually on Seite ~175, the single opening at img 1386.)
 
-## Confirmed image→Seite map (read directly)
-| Image | Seite | Year | Notes |
-|---|---|---|---|
-| 1206 | — | — | Hümme Taufen title page |
-| 1207 | — | — | Taufbuch title |
-| 1209 | 1 | 1830 | Nro 1–4 |
-| 1210 | 2 | 1830 | Nro 5–9 |
-| 1212 | 4 | 1830 | **KONTZE Anne Rosine** (Nro 15) |
-| 1213 | 22 | 1833 | **DUP** of 1230 |
-| 1214 | 6 | 1831 | |
-| 1215 | 7 | 1831 | Schüler "geb. von Stammen" |
-| 1216 | 8 | 1831 | |
-| 1217 | 9 | 1831 | Lichtefeld |
-| 1218 | 10 | 1831–32 | godmother Cath. Elis. geb. Lichtefeld (Johannes Kontze's wife) |
-| 1219 | 11 | 1832 | |
-| 1220 | 12 | 1832 | Nro 47–50 (true S12) |
-| 1221 | 13 | 1832 | |
-| 1222 | 14 | 1832 | |
-| 1223 | 15 | 1832 | Friedrich Laubert (mother geb. Kontze) |
-| 1224 | 16 | 1832–33 | |
-| 1225 | 17 | 1832–33 | |
-| 1226 | 18 | 1833 | |
-| 1227 | 19 | 1833 | geb. Kontze godmother |
-| 1228 | 12 | 1832 | **DUP** of 1220 (displaces S20 slot) |
-| 1229 | 21 | 1833 | |
-| 1230 | 22 | 1833 | |
-| 1232 | 24 | 1833 | |
-| 1233 | 22 | 1833 | **DUP** |
-| 1236 | 37 | 1835 | |
-| 1240 | 32 | 1834 | **KONTZE Wilhelmine Friederike** (Nro 123) |
-| 1244 | 36 | 1835 | |
-| 1289 | ~33 | 1834 | Nro 126–129 (Oct 1834) |
-| 1327 | 122 | 1847 | |
-| 1328 | 120 | 1847 | |
-| 1329 | 121 | 1847 | |
-| 1331 | 121 | 1847 | **DUP** |
-| 1333 | 124 | 1847 | |
-| 1336 | 126 | 1848 | |
-| 1337 | 129 | 1848 | jumps S126→S129 (S127/128 displaced) |
-| 1338 | 243 | 1861 | chaotic-block start |
-| 1340 | 92 | 1843 | displaced into chaotic block |
-| 1450 | 130 | 1848 | |
-| 1476 | — | — | alphabetical K index leaf (p/695988191b) |
+## Five Kontze father-households (1830–1863)
+1. **Johannes Kontze** the Leineweber — 1st w. Catharine Elisabeth geb. Lichtefeld
+   (son Heinrich b.1823); 2nd w. Marie Magdalene geb. Uffelmann (Conrad 1833,
+   Wilhelmine Friederike 1834 posth.); **DIED ~mid-1834.**
+2. **A second Johannes Kontze** (Leineweber u. Tagelöhner) × Marie Christine geb.
+   Hofedietz "von Naumann" — son Friedrich 1841 (alive 1841 ⇒ a different man).
+3. **Georg Friedrich Kontze** (Tagelöhner/Bauaufseher) × Marie Christine geb.
+   Kuhlmann v. Eberschütz — Anne Rosine 1830, Heinrich Friedrich 1843, Wilhelm 1848.
+4. **Friedrich Kontze** (Leineweber u. Tagelöhner) × Wilhelmine geb. Büngener —
+   Conrad 1844, Christoph Heinrich 1847, Elise Amalie 1852 (likely the Friedrich
+   Kontze whose 1843 marriage is already logged).
+5. **Wilhelm Kontze** (Leineweber) × geb. Busch — Maria 1852 (plausibly the
+   Wilhelm confirmed 1841, son of Heinrich).
+Plus **Heinrich Kontze** × Marie Elisabeth geb. Büngener (from the confirmation
+register).
 
-## Sweep progress
-- Swept & recorded: 1206–1233 (contiguous), plus scattered probes above.
-- **NEXT TO SWEEP: image 1234 forward** (gap 1234–1326 unmapped; then 1341–1449 chaotic block; then 1451–1475).
+## Note: "Naumann" is a real place
+The S.81 entry clearly records Marie Christine Hofedietz as "von Naumann" — so
+"Naumann" is a genuine local place-name, reopening the Naumann-vs-Stammen reading
+of Johannes Kontze's origin in the 1837 confirmation entry (219529 img 16).
+
+## Collateral noted during the sweep
+- img 1218 (S.10): godmother Catharine Elisabeth geb. Lichtefeld (Johannes
+  Kontze's 1st wife). [The "d.30 Mar 1840" note there belongs to the *child*
+  Wiegand, not the godmother.]
+- img 1223 (S.15): Friedrich Laubert bapt. ~Oct 1832, mother Marie Elisabeth
+  geb. Kontze (Laubert household; Kontze as maiden name only).
+- img 1215 (S.7): a Schüler family "geb. von Stammen" (Stammen is also a real
+  neighbouring place).

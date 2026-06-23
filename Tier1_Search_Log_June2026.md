@@ -665,3 +665,28 @@ Reached Martina Lüdicke, *"Verschwunden ist der Strand …"* (Deisel emigrants 
 - **Konze appears only as a maiden name** (mothers): geb. Konze on Deisel S.94–95 (mother of Carl Julius Köster) and the C/K-ambiguous "geb. Konze/Conza" on Trendelburg S.67 (Enders) — both already flagged in Session 6; nothing new.
 - **Calibration reminder still stands** (Session 6): these six images are window **edges**, not the 1835 core. The true cores (Deisel 1849–50, Trendelburg 1849) were deep-zoom-read in Session 9 and likewise yielded **no Gansen/Konze Carl** (the "Ganzen" scare resolved to **Henze**).
 - **No Archion action queued** (quota exhausted). Nothing further to monitor on these six pages — they are fully read and stable. The scheduled monitor can be retired or pointed at new pages if/when a fresh transcription allotment is obtained.
+
+---
+
+## Session 12 — 23 June 2026 (AUTOMATED scheduled-task run: re-check the six queued transcriptions)
+
+**Run by:** scheduled task "check-archion-transcriptions" (autonomous; Jed not present). Read-only on Archion; signed in via the Chrome extension (account header present, full-resolution register images load). Nothing was changed on Archion.
+
+### Headline
+- **Could not surface machine-transcription text this run by either method.** The in-image bottom **"txt" overlay renders blank** (same as Sessions 6 & 11), and the top-toolbar **"Erkannter Text" document-icon panel** toggled to its active (red) state but produced **no recognized-text content** — confirmed by full DOM inspection (the OCR overlay container `.ocrtext.active .pagewrap` held only the image label, and no transcription text existed anywhere in the page, including off-screen right of the 1400px screenshot crop within the 1990px viewport).
+- **No "Bisher keine Texterkennung" / "Texterkennung steht an" message was shown either** — the panel simply rendered empty.
+- **Net effect: no new read, no new candidate.** This does NOT overturn the established record: Sessions 6, 9, and 11 already read all six pages in full (via the Erkannter Text panel, which was rendering then) and reached a definitive negative result. The likeliest explanation for today's empty panel is that Archion's AI recognition data was not loading for these pages this session (the feature has rendered inconsistently throughout — see Session 6 note that the in-image overlay always renders blank).
+
+### Per-register state this run
+| Register | Image | Live read this run | Established result (Sessions 6/9/11) |
+|---|---|---|---|
+| Deisel 218836 | 946 | overlay blank; panel empty (no text rendered) | title leaf — no confirmands |
+| Deisel 218836 | 947 | overlay blank; panel empty | Karl Drönner (b.1838), Karl Niemeyer (b.1840), Carl A. Köster (b.1841), Carl W.F. Koch (b.1841) — none n-s-n/Konze |
+| Deisel 218836 | 948 | overlay blank; panel empty | Joh. Carl L. Weifenbach (b.1841); Carl Julius Köster (b.17 Jan 1841, mo. *geb. Konze* — maiden name only) |
+| Trendelburg 220102 | 2259 | overlay blank; panel empty | Carl W.J.F. [Auster] (b.1829); Chr. H. Carl W. Aderholz (b.1830) — none n-s-n |
+| Trendelburg 220102 | 2260 | overlay blank; panel empty | no Carl |
+| Trendelburg 220102 | 2261 | overlay blank; panel empty | Carl Louis Herwig (b.1831); Georg Carl Quentin (b.1831, unehel.) — none n-s-n; "geb. Konze/Conza" on Enders entry (maiden name) |
+
+### Conclusion / recommendation
+- **No Carl with a Gansen / Konze / \*n-s-n surname** on any of the six pages — unchanged from Sessions 6/9/11. Konze appears only as a **maiden name** of two mothers; every Carl carries a non-matching local surname and births sit on the 1829–31 / 1840–41 window edges, not the 26-Jan-1835 core.
+- These six pages are **fully read and stable**; there is nothing left to monitor on them. The scheduled monitor should be **retired** (or repointed at genuinely new/un-read pages if a fresh Archion transcription allotment is obtained). Today's empty panel is a rendering/availability issue, not a new "pending" state.
