@@ -86,6 +86,18 @@
   .pill.r-queue { background: #3f6079; color: #fff; }   /* AI transcription queued */
   .pill.r-todo  { background: #6d6256; color: #fff; }   /* not yet searched */
   .pill.r-cand  { background: #b54a4a; color: #fff; }   /* live candidate found */
+  /* confirmation-sweep column pills — answers "was the confirmation register swept?" */
+  .pill.c-swept  { background: #3c7a4e; color: #fff; }   /* confirmation classes read */
+  .pill.c-folds  { background: #4a6f86; color: #fff; }   /* no own book — confirmands fold into a swept parish */
+  .pill.c-nobook { background: #6d6256; color: #fff; }   /* no confirmation book for window — baptisms read instead */
+  .pill.c-bapt   { background: #8a7327; color: #fff; }   /* confirmations not swept — cleared on baptism window */
+  .pill.c-nodig  { background: #a3502a; color: #fff; }   /* register not digitised — on-site */
+  .pill.c-na     { background: #7c7c7c; color: #fff; }   /* not a confirmation search (toponym test) */
+  /* open-task flag — the at-a-glance "still to do" marker */
+  td.otask { font-size: 0.84rem; color: var(--text-body); }
+  td.otask.none { color: var(--text-muted); }
+  .flag { display: inline-block; font-weight: 700; color: #b54a4a; margin-right: 0.3rem; }
+  html.theme-dark .flag { color: #e08a7a; }
   table.bd tr.sect td { background: var(--bg-card-tint) !important; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); padding-top: 0.7rem; }
   table.bd tr.sect td .src { text-transform: none; letter-spacing: 0; font-weight: 400; }
 
@@ -132,7 +144,7 @@
   "headline": "Parish Search Coverage — German Confirmation Registers",
   "description": "A scannable record of which Hessian parish confirmation registers have been searched for Charles's birth, with window, method, and result.",
   "datePublished": "2026-06-20",
-  "dateModified": "2026-06-23",
+  "dateModified": "2026-06-24",
   "url": "https://charles-research.netlify.app/search-coverage.html",
   "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
   "about": { "@id": "https://charles-research.netlify.app/#charles" },
@@ -304,16 +316,21 @@
 
 <div class="summary-strip">
   <div class="stat"><span class="num">36</span><span class="lab">parishes searched</span></div>
-  <div class="stat"><span class="num">20+</span><span class="lab">boys named Carl found in window</span></div>
-  <div class="stat"><span class="num">0</span><span class="lab">with a Konze / *n-s-n surname</span></div>
-  <div class="stat"><span class="num">1833&ndash;1841</span><span class="lab">birth window searched</span></div>
+  <div class="stat"><span class="num">12</span><span class="lab">confirmation registers swept</span></div>
+  <div class="stat"><span class="num">2</span><span class="lab">open tasks remaining</span></div>
+  <div class="stat"><span class="num">0</span><span class="lab">Carls with a Konze / *n-s-n surname</span></div>
+</div>
+
+<div class="callout" style="border-left-color:#3c7a4e;">
+  <div class="ttl" style="color:#3c7a4e;">At a glance &mdash; confirmation sweep</div>
+  <p style="margin:0; font-size:0.92rem;"><strong>12 parishes</strong> have had their confirmation register read class-by-class across the 1847&ndash;1855 window (Deisel, Trendelburg, Stammen, H&uuml;mme, Gottsb&uuml;ren, Helmarshausen, Sielen, Sch&ouml;neberg, Hofgeismar town, Gudensberg, Liebenau, Ebersch&uuml;tz). <strong>2</strong> more keep no separate book &mdash; their confirmands fold into a swept parish (Friedrichsfeld &rarr; Deisel/Trendelburg; Lamerden &rarr; Stammen). <strong>2</strong> have no confirmation book for the window, so the baptisms were read instead (Dissen, Grifte, both complete). The remaining parishes were caught by the <em>baptism-window</em> net rather than a confirmation sweep. <strong>Only two parishes carry an open task:</strong> <a href="germany/heisebeck-research-log.html">Heisebeck</a> (the Wehmann candidate + a pre-1845 register not on Archion) and <a href="germany/schoeneberg-research-log.html">Sch&ouml;neberg</a> (its pre-1822 volume not digitised) &mdash; both on-site / gated-record work. Per-parish status and the &ldquo;Open task&rdquo; column are in the table below.</p>
 </div>
 
 <div class="callout verify">
-  <div class="ttl">Open-web recheck &mdash; 23 Jun 2026 (all parishes)</div>
-  <p style="margin:0 0 0.6rem; font-size:0.9rem;">Automated open-web pass across all 36 parishes (open sources only &mdash; Archion / Ancestry / FamilySearch gated images remain on the in-browser workflow). <strong>No new confirmation-class match for a Konze-type Carl surfaced, and no parish status changed.</strong> Two compiled-index data points stand from the open web:</p>
-  <p style="margin:0 0 0.6rem; font-size:0.9rem;">&bull; <strong>Heisebeck (new, 23 Jun 2026).</strong> The published <em>Ortssippenbuch Heisebeck und Arenborn</em> (Klaus Kunze, Uslar 2000 &mdash; a full evaluation of the local church books) has its complete name register online; it lists <strong>no</strong> Konze / Konzen / Kontze / Gansen / Gonsen surname (the established Heisebeck families &mdash; Schulze, Klinge, Thiele, Wienecke, Helwig, Sch&auml;fer &mdash; are all present, so the index is genuinely there). This corroborates that the surname was <em>not native</em> to Heisebeck &mdash; consistent with the standing Heisebeck candidate being the illegitimate <em>Wehmann</em> child, not a Konze. The open Wehmann forward-trace (a Carl/Charles Wehmann b.&nbsp;~1835) again returned nothing on the open web.</p>
-  <p style="margin:0; font-size:0.9rem;">&bull; <strong>Helmarshausen (carried).</strong> The published <em>Ortssippenbuch Helmarshausen</em> surname register lists <strong>Konze</strong> (family nos.&nbsp;67, 96, 302, 406) and <strong>Jungkontz / Jungkonze</strong> (nos.&nbsp;297, 507, 468) &mdash; an open-web corroboration of the surname in Helmarshausen. Both are secondary compiled indexes; their entries must still be checked against the original registers before any status changes. Detail in the <a href="germany/heisebeck-research-log.html">Heisebeck</a> and <a href="germany/helmarshausen-research-log.html">Helmarshausen</a> logs.</p>
+  <div class="ttl">Open-web recheck &mdash; 24 Jun 2026 (all parishes)</div>
+  <p style="margin:0 0 0.6rem; font-size:0.9rem;">Automated open-web pass across all 36 parishes (open sources only &mdash; Archion / Ancestry / FamilySearch gated images remain on the in-browser workflow). <strong>No new confirmation-class match for a Konze-type Carl surfaced, and no parish status changed.</strong> The two standing compiled-index data points were re-verified and still hold:</p>
+  <p style="margin:0 0 0.6rem; font-size:0.9rem;">&bull; <strong>Helmarshausen (re-checked 24 Jun 2026).</strong> The published <em>Ortssippenbuch Helmarshausen</em> name register (<a href="https://klauskunze.com/heikun/hel/register.htm" target="_blank" rel="noopener noreferrer">klauskunze.com</a>) was re-read this pass: it still carries <strong>Konze</strong> (family nos.&nbsp;67, 96, 302, 406) and <strong>Jungkontz / Jungkonze</strong> (nos.&nbsp;297, 507, 468), and <strong>no</strong> Gansen / Gonsen / Ganssen variant &mdash; the open-web corroboration of the surname in Helmarshausen. A secondary compiled index; its entries must still be checked against the original registers before any status changes.</p>
+  <p style="margin:0; font-size:0.9rem;">&bull; <strong>Heisebeck (carried).</strong> The published <em>Ortssippenbuch Heisebeck und Arenborn</em> (Klaus Kunze, Uslar 2000) name register lists <strong>no</strong> Konze / Konzen / Kontze / Gansen / Gonsen surname (the established Heisebeck families &mdash; Schulze, Klinge, Thiele, Wienecke, Helwig, Sch&auml;fer &mdash; are all present, so the index is genuinely there), corroborating that the surname was <em>not native</em> to Heisebeck &mdash; consistent with the standing Heisebeck candidate being the illegitimate <em>Wehmann</em> child, not a Konze. The open Wehmann forward-trace (a Carl/Charles Wehmann b.&nbsp;~1835) again returned nothing on the open web. Detail in the <a href="germany/heisebeck-research-log.html">Heisebeck</a> and <a href="germany/helmarshausen-research-log.html">Helmarshausen</a> logs.</p>
 </div>
 
 <h2 id="what">What this sweep was looking for</h2>
@@ -328,9 +345,18 @@
 <h2 id="coverage">Coverage &mdash; all 36 parishes searched</h2>
 <p style="font-size:0.92rem;color:var(--text-meta);">Every parish examined for Charles &mdash; <strong>36 in all</strong> &mdash; grouped by the kind of search done: the Konze-pool cluster, the confirmation-register sweep, the wider 1835 baptism-window sweep, the Catholic Westphalia border, and the distant toponym / family-trail tests. The full per-parish detail &mdash; register searched, classes read, birth window, and result &mdash; lives on each parish&rsquo;s own <strong>research log</strong>, beside its Archion source citations, all reachable from the <a href="germany/parish-map.html">Hessian parish map</a>. To avoid maintaining the same row twice, this page keeps only the at-a-glance status and links straight through to each log.</p>
 
+<p style="font-size:0.8rem; color:var(--text-meta); text-transform:uppercase; letter-spacing:0.06em; font-weight:700; margin:0.6rem 0 0.2rem;">Confirmations column &mdash; was the confirmation register swept?</p>
+<div class="legend">
+  <span><span class="pill c-swept">Swept</span> confirmation classes 1847&ndash;1855 read</span>
+  <span><span class="pill c-folds">Folds in</span> no own book; confirmands in a swept parish's register</span>
+  <span><span class="pill c-nobook">No conf. book</span> none for the window &mdash; baptisms read instead</span>
+  <span><span class="pill c-bapt">Baptisms only</span> confirmations not swept; cleared on the 1835 baptism window</span>
+  <span><span class="pill c-nodig">Not digitised</span> register not on Archion &mdash; on-site</span>
+  <span><span class="pill c-na">N/A</span> place-name or family-trail test &mdash; not a confirmation search</span>
+</div>
+<p style="font-size:0.8rem; color:var(--text-meta); text-transform:uppercase; letter-spacing:0.06em; font-weight:700; margin:1rem 0 0.2rem;">Result column &mdash; what the search found</p>
 <div class="legend">
   <span><span class="pill r-clear">Searched</span> read; no Carl in window</span>
-  <span><span class="pill r-clear">Covered</span> no register of its own; confirmands searched in another parish's book</span>
   <span><span class="pill r-carl">Carl found</span> a Carl, but non-matching surname</span>
   <span><span class="pill r-cand">Candidate</span> a possible match surfaced</span>
   <span><span class="pill r-part">Partial</span> some classes read, others outstanding</span>
@@ -340,196 +366,268 @@
 
 <table class="bd">
   <thead>
-    <tr><th>Parish</th><th>Status</th><th>Full detail</th></tr>
+    <tr><th>Parish</th><th>Confirmations</th><th>Result</th><th>Open task</th><th>Detail</th></tr>
   </thead>
   <tbody>
-    <tr class="sect"><td colspan="3">Konze-pool cluster <span class="src">&mdash; the Diemel-valley parishes where the surname actually occurs; searched across all record types, confirmation classes included (where a separate book exists). Exception: Friedrichsfeld kept no confirmation book (its confirmands fold into Deisel/Trendelburg). Gottsbüren&rsquo;s Konfirmationen 1831&ndash;1932 (reg. 219046) was read live on 22 Jun 2026 &mdash; every class across the window (1848&ndash;1855; the book runs 1844&ndash;45 then 1848&ndash;56, no 1846/47 class), with the 1849&ndash;1850 prime cohort and 1853&ndash;1855 read in full &mdash; closing the earlier gap where it had been cleared on baptism/marriage/burial books alone.</span></td></tr>
+    <tr class="sect"><td colspan="5">Konze-pool cluster <span class="src">&mdash; the Diemel-valley parishes where the surname actually occurs; searched across all record types, confirmation classes included (where a separate book exists). Exception: Friedrichsfeld kept no confirmation book (its confirmands fold into Deisel/Trendelburg). Gottsbüren&rsquo;s Konfirmationen 1831&ndash;1932 (reg. 219046) was read live on 22 Jun 2026 &mdash; every class across the window (1848&ndash;1855; the book runs 1844&ndash;45 then 1848&ndash;56, no 1846/47 class), with the 1849&ndash;1850 prime cohort and 1853&ndash;1855 read in full &mdash; closing the earlier gap where it had been cleared on baptism/marriage/burial books alone.</span></td></tr>
     <tr>
       <td class="rec">Deisel <span class="src">(Charles's stated origin)</span></td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/deisel-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Trendelburg <span class="src">(working hypothesis)</span></td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/trendelburg-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Friedrichsfeld <span class="src">(Andreas Kontze line &mdash; leading lead)</span></td>
+      <td><span class="pill c-folds">Folds in</span></td>
       <td><span class="pill r-clear">Covered</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/friedrichsfeld-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Stammen</td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/stammen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Hümme</td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span><span class="pill r-carl">Carl found</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/huemme-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Gottsbüren</td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span><span class="pill r-carl">Carls found</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/gottsbueren-research-log.html">Research log &rarr;</a></td>
     </tr>
 
-    <tr class="sect"><td colspan="3">Confirmation-register sweep <span class="src">&mdash; the &ldquo;any Carl, 1833&ndash;1841&rdquo; class reads (incl. Tier-3 &ldquo;Deissen&rdquo; parishes)</span></td></tr>
+    <tr class="sect"><td colspan="5">Confirmation-register sweep <span class="src">&mdash; the &ldquo;any Carl, 1833&ndash;1841&rdquo; class reads (incl. Tier-3 &ldquo;Deissen&rdquo; parishes)</span></td></tr>
     <tr>
       <td class="rec">Helmarshausen</td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span><span class="pill r-carl">Carl found</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/helmarshausen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Sielen</td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/sielen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Schöneberg</td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span><span class="pill r-carl">Carls found</span></td>
+      <td class="otask"><span class="flag">&#9873;</span>pre-1822 volume not digitised &mdash; on-site</td>
       <td><a class="src" href="germany/schoeneberg-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Hofgeismar (town)</td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/hofgeismar-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Gudensberg <span class="src">(Tier-3 &mdash; James's &ldquo;Deissen&rdquo;)</span></td>
+      <td><span class="pill c-swept">Swept</span></td>
       <td><span class="pill r-clear">Searched</span><span class="pill r-carl">Carls found</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/gudensberg-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Dissen <span class="src">(Tier-3 &mdash; James's &ldquo;Deissen&rdquo;)</span></td>
+      <td><span class="pill c-nobook">No conf. book</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/dissen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Grifte <span class="src">(Tier-3 &mdash; James's &ldquo;Deissen&rdquo;)</span></td>
+      <td><span class="pill c-nobook">No conf. book</span></td>
       <td><span class="pill r-clear">Searched</span><span class="pill r-carl">Carl found</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/grifte-research-log.html">Research log &rarr;</a></td>
     </tr>
 
-    <tr class="sect"><td colspan="3">1835 baptism-window sweep <span class="src">&mdash; surrounding Kreis Hofgeismar parishes, Jan&ndash;Feb/Mar 1835 baptisms read</span></td></tr>
+    <tr class="sect"><td colspan="5">1835 baptism-window sweep <span class="src">&mdash; surrounding Kreis Hofgeismar parishes, Jan&ndash;Feb/Mar 1835 baptisms read. Confirmation classes were <em>not</em> separately swept here unless noted (Liebenau and Ebersch&uuml;tz were); these parishes were cleared by the baptism-window net.</span></td></tr>
     <tr>
       <td class="rec">Heisebeck</td>
+      <td><span class="pill c-nodig">Not digitised</span></td>
       <td><span class="pill r-clear">Searched</span><span class="pill r-cand">Candidate</span></td>
+      <td class="otask"><span class="flag">&#9873;</span>Wehmann candidate forward-trace (gated US records); pre-1845 register on-site</td>
       <td><a class="src" href="germany/heisebeck-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
-      <td class="rec">Liebenau</td>
-      <td><span class="pill r-clear">Searched</span></td>
+      <td class="rec">Liebenau <span class="src">(baptism window + confirmations 1847&ndash;55)</span></td>
+      <td><span class="pill c-swept">Swept</span></td>
+      <td><span class="pill r-clear">Searched</span><span class="pill r-carl">Carls found</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/liebenau-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Lamerden</td>
+      <td><span class="pill c-folds">Folds in</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/lamerden-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
-      <td class="rec">Eberschütz</td>
-      <td><span class="pill r-clear">Searched</span></td>
+      <td class="rec">Eberschütz <span class="src">(+ confirmation sweep)</span></td>
+      <td><span class="pill c-swept">Swept</span></td>
+      <td><span class="pill r-clear">Searched</span><span class="pill r-carl">Carl found</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/eberschuetz-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Gieselwerder <span class="src">(Oberweser)</span></td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/gieselwerder-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Hofgeismar-Kelze</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/kelze-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Gewissenruh</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/gewissenruh-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Grebenstein</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/grebenstein-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Veckerhagen</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/veckerhagen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Immenhausen</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/immenhausen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Marzhausen <span class="src">(Kr. Witzenhausen)</span></td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/marzhausen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Bad Karlshafen</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/karlshafen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Hombressen</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/hombressen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Haueda</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/haueda-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Ostheim</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/ostheim-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Niedermeiser</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/niedermeiser-research-log.html">Research log &rarr;</a></td>
     </tr>
 
-    <tr class="sect"><td colspan="3">Catholic Westphalia border <span class="src">&mdash; cross-border parishes checked via Matricula</span></td></tr>
+    <tr class="sect"><td colspan="5">Catholic Westphalia border <span class="src">&mdash; cross-border parishes checked via Matricula (Catholic baptism registers; no Lutheran confirmation track applies)</span></td></tr>
     <tr>
       <td class="rec">Herstelle <span class="src">(covers Würgassen)</span></td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/herstelle-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Beverungen</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/beverungen-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Dalhausen</td>
+      <td><span class="pill c-bapt">Baptisms only</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/dalhausen-research-log.html">Research log &rarr;</a></td>
     </tr>
 
-    <tr class="sect"><td colspan="3">Toponym &amp; family-trail tests <span class="src">&mdash; distant alternative readings of &ldquo;Deisse&rdquo; and the Konze family's later settlements</span></td></tr>
+    <tr class="sect"><td colspan="5">Toponym &amp; family-trail tests <span class="src">&mdash; distant alternative readings of &ldquo;Deisse&rdquo; and the Konze family's later settlements; not confirmation searches</span></td></tr>
     <tr>
       <td class="rec">Freudenberg <span class="src">(Schierstein, Rhine)</span></td>
+      <td><span class="pill c-na">N/A</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/schierstein-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Diez <span class="src">(Lahn)</span></td>
+      <td><span class="pill c-na">N/A</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/diez-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Dies <span class="src">(Rhein-Lahn)</span></td>
+      <td><span class="pill c-na">N/A</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/dies-research-log.html">Research log &rarr;</a></td>
     </tr>
     <tr>
       <td class="rec">Mainz <span class="src">(family trail &mdash; Andreas Kontze d. 1854)</span></td>
+      <td><span class="pill c-na">N/A</span></td>
       <td><span class="pill r-clear">Searched</span></td>
+      <td class="otask none">&mdash;</td>
       <td><a class="src" href="germany/mainz-research-log.html">Research log &rarr;</a></td>
     </tr>
   </tbody>
@@ -591,6 +689,10 @@
     <h3>Schöneberg &mdash; four Carls across 1847&ndash;1853, b. 1833/1836/1836/1839 <span class="pill r-carl">non-matching surnames</span></h3>
     <p>The Schöneberg Konfirmationen (reg. <code>220012</code>) were read leaf-by-leaf on 23 June 2026 (Session 114), clearing the previously jumble-blocked &ldquo;Not yet&rdquo; cell. The four Carls are <strong>Carl Wilhelm Siebert</strong> (1847, b. 8 Apr 1833; <a href="https://www.archion.de/p/b11e520893/" target="_blank" rel="noopener noreferrer">p/b11e520893</a>), <strong>Carl Heinrich Jacob Theodor Küthen</strong> (1850, b. 1836) and <strong>Carl Ludwig Grandjot</strong> (1851, b. 13 Oct 1836; both <a href="https://www.archion.de/p/6a60e0d34a/" target="_blank" rel="noopener noreferrer">p/6a60e0d34a</a>), and <strong>Carl Wilhelm Wagner</strong> (1853, b. 23 Aug 1839; <a href="https://www.archion.de/p/02153ef938/" target="_blank" rel="noopener noreferrer">p/02153ef938</a>) &mdash; all local surnames. <strong>Carl Ludwig Grandjot is not a new lead</strong>: he is the focal candidate <a href="family_pages/fam-grandjot.html">already eliminated 4 March 2026</a> (FS PCXG-W9M; d. 12 Feb 1901 Schöneberg, never emigrated) &mdash; the confirmation entry (father Johann Daniel Grandjot, mother Maria Elisabeth Martin, b. 13 Oct 1836) merely corroborates his vitals. Decisively, the <strong>anchor 1848 and 1849 classes hold no Carl at all</strong> (the 1849 cohort &mdash; the exact group for a boy born 26 Jan 1835 &mdash; has 4 boys: Johann Peter, Wilhelm Friedrich Nolte, Friedrich Uffelmann, Christian Klein; <a href="https://www.archion.de/p/669e6bc394/" target="_blank" rel="noopener noreferrer">p/669e6bc394</a>, verified to Bild 1708), and <strong>no Carl is born in 1834 or 1835</strong> anywhere in the register.</p>
   </li>
+  <li>
+    <h3>Carl Wilhelm Höbener &mdash; Eberschütz, b. Oct 1839 <span class="pill r-carl">non-matching surname</span></h3>
+    <p>The Eberschütz Konfirmationen (reg. <code>218884</code>) were read class-by-class for the full 1847&ndash;1854 span on 23 June 2026 &mdash; the first confirmation-register sweep of this parish (it had previously been searched only on its Jan&ndash;Feb 1835 baptisms). Across the whole register the single boy named Carl is <strong>Carl Wilhelm Höbener</strong> (1854 class, Nro 290, b. Oct 1839, son of the shoemaker Johann Christoph Höbener; <a href="https://www.archion.de/p/84cbde3c42/" target="_blank" rel="noopener noreferrer">p/84cbde3c42</a>, Bild 893) &mdash; a local <em>-ener</em> surname, four-plus years too young. Decisively, the <strong>prime 1849 class</strong> &mdash; the exact cohort for a boy born 26 Jan 1835 &mdash; holds <strong>no Carl at all</strong> (10 confirmands: 3 boys [Christian Ludwig Rode, Heinrich Wilhelm Pfingst, Heinrich Wilhelm Alborn], 7 girls; <a href="https://www.archion.de/p/27e3438e7b/" target="_blank" rel="noopener noreferrer">p/27e3438e7b</a>, Bild 886), and no Konze / <em>*n-s-n</em> surname occurs anywhere in the book.</p>
+  </li>
 </ol>
 
 <div class="callout verify">
@@ -603,7 +705,7 @@
 
 <h2 id="reading">What the sweep means so far</h2>
 
-<p>As of the live reads of 22&ndash;23 June 2026, the tabular confirmation books are now <strong>saturated</strong>: <strong>Helmarshausen 1848&ndash;1855, Sielen 1847&ndash;1855, Hümme 1848 + 1850, Gudensberg 1848&ndash;1855, and Schöneberg 1847&ndash;1853</strong> have all been read &mdash; the full span of classes where a boy born in the 1830s would be confirmed. The result is uniform: <strong>the forename Carl recurs in nearly every class, but never once on a Konze-type or <em>*n-s-n</em> surname, and no Carl with Charles's surname appears in any prime (births ~1834&ndash;1836) cohort.</strong> The most probative cohorts &mdash; the Sielen and Hümme <strong>1850 classes</strong> and the Schöneberg <strong>1849 class</strong>, the exact groups for a boy born 26 Jan 1835 &mdash; were each read in full and held <em>no Carl at all</em>; Gudensberg's 1850 class (strongest of James Gunnis's three &ldquo;Deissen&rdquo; candidates) produced one Carl on the wrong surname. That is a meaningful, well-saturated negative. The only residual unread cells are jumble-blocked window-edge or duplicate leaves. It points away from these already-digitised parishes and toward the emigration side, the un-digitised gaps (Heisebeck, Liebenau, Schöneberg pre-1822), and the remaining Dissen baptism scan (Grifte is now read in full, 1833&ndash;1841 &mdash; negative) &mdash; the natural work for an on-site visit.</p>
+<p>As of the live reads of 22&ndash;23 June 2026, the tabular confirmation books are now <strong>saturated</strong>: <strong>Helmarshausen 1848&ndash;1855, Sielen 1847&ndash;1855, Hümme 1848 + 1850, Gudensberg 1848&ndash;1855, Schöneberg 1847&ndash;1853, and Liebenau 1847&ndash;1855</strong> have all been read &mdash; the full span of classes where a boy born in the 1830s would be confirmed. The result is uniform: <strong>the forename Carl recurs in nearly every class, but never once on a Konze-type or <em>*n-s-n</em> surname, and no Carl with Charles's surname appears in any prime (births ~1834&ndash;1836) cohort.</strong> The most probative cohorts &mdash; the Sielen, Hümme and <strong>Liebenau 1850 classes</strong> and the Schöneberg <strong>1849 class</strong>, the exact groups for a boy born 26 Jan 1835 &mdash; were each read in full and held <em>no Carl at all</em> (Liebenau&rsquo;s 1849 class held only <em>Carl August Büster</em>, b. 11 Jun 1835, on the wrong surname); Gudensberg's 1850 class (strongest of James Gunnis's three &ldquo;Deissen&rdquo; candidates) produced one Carl on the wrong surname. That is a meaningful, well-saturated negative. The only residual unread cells are jumble-blocked window-edge or duplicate leaves. It points away from these already-digitised parishes and toward the emigration side, the un-digitised gaps (Heisebeck, Schöneberg pre-1822), and the remaining Dissen baptism scan (Grifte is now read in full, 1833&ndash;1841 &mdash; negative) &mdash; the natural work for an on-site visit.</p>
 
 <h2 id="open">What remains &mdash; the gaps this sweep does not close</h2>
 
@@ -612,7 +714,7 @@
   <div class="box"><h4>Tabular classes &mdash; now read</h4><p>The residual Helmarshausen (1848&ndash;1855), Sielen (1847&ndash;1855), Hümme (1848 + 1850) and Gudensberg (1848&ndash;1855) classes were read live on 22 June 2026. The only cells left unread are <strong>jumble-blocked window-edge or duplicate leaves</strong> (the registers render leaves out of Seite order); not a coverage gap of substance.</p></div>
   <div class="box"><h4>Tier-3 baptism scans &mdash; now complete</h4><p>Dissen (<code>253403</code>) and Grifte (<code>253444</code>) have <em>no</em> confirmation book for the window; their baptisms are online instead, and <strong>both are now read in full.</strong> <strong>Grifte 1833&ndash;1841</strong> (~157 baptisms; per-year permalinks in its <a href="germany/grifte-research-log.html">log</a>) &mdash; one incidental <em>third</em>-name &ldquo;Carl&rdquo; (1834) on a non-matching surname, otherwise none. <strong>Dissen 1834&ndash;1841</strong> (images 113&ndash;136, ~110 baptisms; per-year permalinks in its <a href="germany/dissen-research-log.html">log</a>, added 22 June 2026) &mdash; <strong>not one male Carl/Karl</strong> (the lone near-miss is a <em>female</em> &ldquo;Maria Carolina,&rdquo; 1841). No Konze / <em>*n&middot;s&middot;n</em> surname in either. Tier-3 baptism scans are closed.</p></div>
   <div class="box"><h4>Schöneberg &mdash; now read</h4><p>Schöneberg's 1847&ndash;55 confirmations are in reg. <code>220012</code> (the combined Tauf-/Konfirmations-/Trauungs-/Todten-Buch; tables from ~image 1701), <em>not</em> 220009 &mdash; whose Konfirmationen list ends at the 1835 class. <strong>Read leaf-by-leaf on 23 June 2026 (Session 114)</strong> with per-class permalinks: the 1848 and 1849 anchor classes hold no Carl, no Carl is born 1834/1835, and the four Carls present (b. 1833&ndash;1839) all bear local surnames. The pre-1822 Schöneberg volume remains undigitised &mdash; an on-site target.</p></div>
-  <div class="box"><h4>Not digitised &mdash; the on-site Tier</h4><p>Heisebeck (pre-1845), Liebenau (1835), and Schöneberg (pre-1822) are not on Archion &mdash; core targets for the archive trip. (The Tier-3 &ldquo;Deissen&rdquo; parishes Dissen, Grifte &amp; Gudensberg turned out to <em>be</em> on Archion &mdash; now mapped and partly read above.) See <a href="open-questions.html">Open Questions</a>.</p></div>
+  <div class="box"><h4>Not digitised &mdash; the on-site Tier</h4><p>Heisebeck (pre-1845) and Schöneberg (pre-1822) are not on Archion &mdash; core targets for the archive trip. (<strong>Liebenau is now off this list</strong>: both its Taufen 1830&ndash;1890 (<code>219745</code>) and its Konfirmationen 1831&ndash;2013 (<code>219742</code>) are on Archion, and the 1847&ndash;1855 confirmation classes were swept 23 June 2026. The Tier-3 &ldquo;Deissen&rdquo; parishes Dissen, Grifte &amp; Gudensberg likewise turned out to <em>be</em> on Archion &mdash; mapped and read above.) See <a href="open-questions.html">Open Questions</a>.</p></div>
 </div>
 
 <p style="margin-top:1.4rem; padding:0.8rem 1rem; background:var(--bg-card-tint); border-left:4px solid var(--brand); border-radius:3px; font-size:0.95rem;"><strong>Related.</strong> Everything searched on one screen is <a href="negative-results.html#coverage-glance">Research completed at a glance</a> (36 parishes · 16 families · Peter Schräder's database queries), within the full <a href="negative-results.html">negative-results audit</a>; the <em>surname</em> spellings these classes are matched against are on <a href="surname-records.html">Surname across the records</a> and the place-name <em>interpretations</em> on <a href="origin-records.html#interpretations">Origin across the records</a>; the conflicting U.S. birth figures driving the 1833&ndash;1841 window are on <a href="birthdate-records.html">Birth date across the records</a>; the standing questions and on-site Tier are on <a href="open-questions.html">Open Questions</a>.</p>
