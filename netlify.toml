@@ -146,3 +146,20 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "interest-cohort=()"
+
+# Retired visualization pages (Jun 2026) — folded out of the nav and deleted.
+[[redirects]]
+  from = "/tree-interactive.html"
+  to = "/people/index.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/Kontze_Family_Tree_Graphic.html"
+  to = "/germany/konze-family-by-town.html"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/family-poster.html"
+  to = "/visualize.html"
+  status = 301
+  force = true

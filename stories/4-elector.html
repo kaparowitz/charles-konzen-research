@@ -744,11 +744,8 @@
   Path placeholders (../) are rewritten per page by
   scripts/inject-site-nav.py based on the page's depth.
 
-  IA (restructured June 2026): each page appears in exactly ONE group;
-  section groups link to their standalone hub pages (germany/, civilwar/,
-  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
-  and audits live under "Start here"; a "Visualizations" group gives the
-  tree/poster/explorer pages a single home.
+  IA (Jun 2026): story pages (Overview, Stories, Cast) live under
+  "Start here"; the standalone visualisation pages were retired.
 -->
 <a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
 <nav class="site-nav-shared" role="navigation" aria-label="Site sections">
@@ -756,13 +753,7 @@
     <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
     <div class="group-menu" role="menu" hidden>
       <a href="../start.html" role="menuitem">★ For researchers — start here</a>
-    </div>
-  </div>
-
-  <div class="tab-group" data-group="story">
-    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
-    <div class="group-menu" role="menu" hidden>
-      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../index.html" role="menuitem">Overview</a>
       <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
       <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
     </div>
@@ -815,17 +806,6 @@
       <a href="../bibliography.html" role="menuitem">Bibliography</a>
       <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
       <a href="../glossary.html" role="menuitem">Glossary</a>
-    </div>
-  </div>
-
-  <div class="tab-group" data-group="visualizations">
-    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
-    <div class="group-menu" role="menu" hidden>
-      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
-      <div class="menu-divider" role="separator" aria-hidden="true"></div>
-      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
-      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
-      <a href="../family-poster.html" role="menuitem">Family poster</a>
     </div>
   </div>
 

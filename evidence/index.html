@@ -152,11 +152,8 @@
   Path placeholders (../) are rewritten per page by
   scripts/inject-site-nav.py based on the page's depth.
 
-  IA (restructured June 2026): each page appears in exactly ONE group;
-  section groups link to their standalone hub pages (germany/, civilwar/,
-  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
-  and audits live under "Start here"; a "Visualizations" group gives the
-  tree/poster/explorer pages a single home.
+  IA (Jun 2026): story pages (Overview, Stories, Cast) live under
+  "Start here"; the standalone visualisation pages were retired.
 -->
 <a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
 <nav class="site-nav-shared" role="navigation" aria-label="Site sections">
@@ -164,13 +161,7 @@
     <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
     <div class="group-menu" role="menu" hidden>
       <a href="../start.html" role="menuitem">★ For researchers — start here</a>
-    </div>
-  </div>
-
-  <div class="tab-group" data-group="story">
-    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">The story</button>
-    <div class="group-menu" role="menu" hidden>
-      <a href="../index.html" role="menuitem">Home</a>
+      <a href="../index.html" role="menuitem">Overview</a>
       <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
       <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
     </div>
@@ -223,17 +214,6 @@
       <a href="../bibliography.html" role="menuitem">Bibliography</a>
       <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
       <a href="../glossary.html" role="menuitem">Glossary</a>
-    </div>
-  </div>
-
-  <div class="tab-group" data-group="visualizations">
-    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Visualizations</button>
-    <div class="group-menu" role="menu" hidden>
-      <a href="../visualize.html" role="menuitem">★ Visualize — index</a>
-      <div class="menu-divider" role="separator" aria-hidden="true"></div>
-      <a href="../interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
-      <a href="../Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
-      <a href="../family-poster.html" role="menuitem">Family poster</a>
     </div>
   </div>
 
@@ -354,10 +334,13 @@
 <h2>For researchers — the address chronology</h2>
 
 <div class="ev-grid">
-  <article class="ev-card" style="border-left-color: var(--section-civilwar);">
-    <div class="num">Researcher resource · directory-mined</div>
+  <article class="ev-card" data-cat="legal">
+    <div class="ev-card__top">
+      <span class="badge">★</span>
+      <span class="chip">Researcher · Directory-mined</span>
+      <span class="when">Pension + 1880/1900 censuses + directories · Jun 2026</span>
+    </div>
     <h3>Charles's St. Louis addresses — 1865–1903, chronological &amp; sourced</h3>
-    <div class="when">Pension file + 1880/1900 censuses + St. Louis directories · updated June 2026</div>
     <p>Every documented residence in chronological order, each with an outside link to verify it. A June 2026 FamilySearch Full-Text sweep of the St. Louis directories added two entries the project did not previously have: the <strong>1872–73</strong> and the <strong>1876</strong> "718 Gate" listings — the 1876 "<em>Gonson Charles, driver, 718 Gate</em>" entry (the <em>Gonson</em> spelling matching the 1880 census) <strong>extends that tenure to 1876</strong> and re-places the long-lost Gate Street at Carondelet Avenue near Pestalozzi (Benton Park). The sweep also pinned the 1895 "<em>Gannsen Charles, watch, r. rear 2407 DeKalb</em>" entry. Together with Charles's own handwritten pension address-letter (c. 1898) and the 1880/1900 federal censuses, this gives a fully-sourced residence timeline across 38 years.</p>
     <div class="links">
       <a href="../charles_america/st-louis-residences.html">Open the address chronology →</a>
