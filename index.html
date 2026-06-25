@@ -192,7 +192,8 @@
 (function(){var TABS={glance:1,foundation:1,charles:1,civilwar:1,people:1,immigration:1,germany:1,tree:1,evidence:1,schrader:1,archive:1};var h=(location.hash||"").replace("#","");if(h==="overview")h="glance";if(TABS[h])document.documentElement.setAttribute("data-deeplink-tab",h);})();
 </script>
 <style id="deeplink-tab-style">
-html[data-deeplink-tab] section.page.active{display:none!important;animation:none!important;}
+html[data-deeplink-tab] section.page{animation:none!important;}
+html[data-deeplink-tab] section.page.active{display:none!important;}
 html[data-deeplink-tab] section.page:target{display:block!important;}
 </style>
 </head>
@@ -5457,7 +5458,7 @@ Investigation." Accessed [DATE]. https://charles-research.netlify.app/.</code>
     }
   }
   handleHash();
-  document.documentElement.removeAttribute('data-deeplink-tab');
+  (function(){var dl=document.documentElement.getAttribute('data-deeplink-tab');if(dl){var el=document.getElementById(dl);if(el)el.style.animation='none';}document.documentElement.removeAttribute('data-deeplink-tab');})();
   window.addEventListener('hashchange', handleHash);
 
   // Stat-tile click-to-expand
