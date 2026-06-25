@@ -258,8 +258,8 @@ html.spa-ready section.page{animation:none!important;}
     <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
     <div class="group-menu" role="menu" hidden>
       <a href="immigration/index.html" role="menuitem" class="menu-external">Immigration journey</a>
-      <a href="charles-in-america.html" role="menuitem" class="menu-external">Charles in America</a>
-      <a href="civilwar/index.html" role="menuitem" class="menu-external">Civil War — Battery B, 2nd Missouri</a>
+      <a href="#charles" role="menuitem">Charles in America</a>
+      <a href="#civilwar" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
     </div>
   </div>
 
@@ -4100,7 +4100,7 @@ html.spa-ready section.page{animation:none!important;}
     <div class="ev-links">
       <span class="ev-links-label">Sources:</span>
       <a href="https://www.familysearch.org/ark:/61903/1:1:66HP-TJPB" target="_blank" rel="noopener noreferrer">FamilySearch index · Charles Gonnson &amp; Augusta Kreichelt, 7 Jan 1866</a>
-      <a href="charles-in-america.html">Charles in America — St. Louis records</a>
+      <a href="#charles">Charles in America — St. Louis records</a>
     </div>
   </article>
 
@@ -5192,7 +5192,7 @@ Investigation." Accessed [DATE]. https://charles-research.netlify.app/.</code>
         <li><a href="changelog.html">Changelog</a> · <a href="feed.xml">Atom feed ↗</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="germany/index.html">Germany section landing</a></li>
-        <li><a href="civilwar/index.html">Civil War section landing</a></li>
+        <li><a href="#civilwar">Civil War section landing</a></li>
         <li><a href="immigration/index.html">Immigration section landing</a></li>
         <li><a href="evidence/index.html">Key Evidence section landing</a></li>
         <li><a href="germany/parish-map.html">Hessian parish map</a></li>
@@ -5254,6 +5254,7 @@ Investigation." Accessed [DATE]. https://charles-research.netlify.app/.</code>
   }
 
   function showTab(id, doScrollTop) {
+    document.documentElement.classList.add('spa-ready');
     tabBtns.forEach(b => {
       const isActive = b.dataset.target === id;
       b.classList.toggle('active', isActive);
