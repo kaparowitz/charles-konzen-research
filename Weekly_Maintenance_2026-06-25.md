@@ -112,10 +112,48 @@ No other changes were required — links, dates, branding, and rigor-canon were 
 the deployed content pages, so there was nothing unambiguous-and-safe left to fix. (Per the
 task's safe-fixes-only rule, I made no judgment-call or genealogical-conclusion edits.)
 
-Note: the commit in Part 4 also publishes the week's already-staged research work that was
-sitting uncommitted in the working tree — 11 new session logs (Sessions 115–121) and ~26
-modified research-log / town / per-parish pages plus the updated `_MEMORY_Session_Conventions.md`
-and `Tier1_Search_Log_June2026.md`. These are Jed's research outputs, not maintenance edits.
+Note: the commit also captured the week's already-staged research work that was sitting
+uncommitted in the working tree — 11 new session logs (Sessions 115–121) and ~26 modified
+research-log / town / per-parish pages plus the updated `_MEMORY_Session_Conventions.md` and
+`Tier1_Search_Log_June2026.md`. These are Jed's research outputs, not maintenance edits.
+
+---
+
+## Deploy status — ✅ LIVE on `main` (merge commit `24b901d`)
+
+**Published.** The run is committed and deployed to `main`; Netlify will rebuild
+https://charles-research.netlify.app/ (HTTP 200 at hand-off).
+
+What happened along the way, for the record:
+
+- **My commit:** `9272423` — "Weekly maintenance + site hygiene — 2026-06-25" (38 files).
+- **Divergence:** while this run was working, a parallel session advanced `origin/main` to
+  `4a73962` ("search-coverage: publish confirmation-sweep reconciliation"), changing exactly
+  one file — `search-coverage.html` — to a *newer, more polished* version (16 registers + the
+  At-a-glance callout) than the in-progress copy in my working tree. So `main` had diverged and
+  a plain push was correctly rejected (non-fast-forward — **not** an auth problem; token is fine).
+- **Environment hazard:** this sandbox's working folder is a FUSE mount that **cannot delete
+  files** (only rename) and was intermittently **corrupting working-tree files** (stripping
+  lines) during git's lock-heavy merge machinery. The committed objects and the remote were
+  never affected.
+- **How it was resolved safely:** rather than risk a working-tree merge, I built the merge
+  **entirely from the intact object store** using git plumbing with a temporary index on the
+  sandbox-local `/tmp` (never touching the corrupted working tree): loaded `9272423`'s tree,
+  swapped in `origin/main`'s authoritative `search-coverage.html` blob, and wrote merge commit
+  **`24b901d`** with both parents (`9272423` + `4a73962`). Integrity was verified from the
+  object store (all files full length; `search-coverage.html` = remote's version; report and
+  session logs present) **before** pushing. The push was a clean fast-forward
+  `4a73962..24b901d`. The temporary `auto/weekly-maintenance-2026-06-25` side branch (a
+  belt-and-braces backup) was deleted after the merge landed.
+
+**Two housekeeping notes for Jed (do these from a healthy git environment / a fresh session):**
+
+1. **This session's local working tree is corrupted** by the FUSE environment (many files lost
+   a few lines). The git *history* and the *remote* are clean. Before doing any local work,
+   refresh the tree: `git fetch origin && git reset --hard origin/main`.
+2. **Leftover junk in `.git/`** (files named `zz_*`, `*.zzlk_*`, `*.moved.*`, `probe_*`,
+   `index.lock.stale`) couldn't be deleted from the sandbox (FUSE blocks unlink). They sit
+   outside `refs/` and `objects/` so git ignores them, but you can `rm` them from a normal shell.
 
 ---
 
