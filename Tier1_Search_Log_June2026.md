@@ -875,3 +875,99 @@ summary "41 Kinder, 15 Söhne / 26 Töchter"** + start of **1853**; right page =
 
 **Next run:** finish the Veckerhagen window (build the Seite map, read 1847–1854), then queue #9
 Immenhausen. (Grebenstein 1854–55 tail optional, low priority.)
+
+---
+
+## Session 16 — 25 June 2026 (AUTOMATED scheduled-task run: Veckerhagen window block located + core classes 1848–1852 read)
+
+**Run by:** scheduled task "check-archion-transcriptions" (autonomous; Jed not present).
+Read-only on Archion; signed in via the Chrome extension. Nothing changed on Archion.
+
+**Target parish:** **Veckerhagen** — Queue #8, resuming the Session-15 partial. Own confirmation
+book *Konfirmationen 1831–1901*, **Archion reg 220207** (193 images).
+
+### ⚠ CALIBRATION CORRECTION — Session-15 anchors were wrong
+Session 15 recorded "Bild 14 = c.1848 (births ~1834)" and "Bild 15 = 1855 (Seite 20–21)" and read a
+class as the 1848/1855 window. **Both year reads were mis-calibrated.** Reading the printed
+Seite/Jahr headers directly this run (forcing a zoom +/- redraw after each jump):
+- **Bild 14 = Seite 18–19, Jahr 1835** ("Confirmanden Jahr 1835 am Pfingsttag den 7ten Juni"),
+  births ~1820–21 — NOT 1848.
+- **Bild 15 = Seite 20–21, Jahr 1835** (continuation) — NOT 1855.
+So Session 15 actually read the **1835 confirmation class** (confirmands born ~1820), not any window
+class. The "1855 + c.1848 read negative" note on the Veckerhagen row was therefore void; the true
+1847–1855 window had **not** been read until this run. (The one Carl Session 15 logged — "Carl Anton
+Sahl/Stahl, b.~1834" — was from the 1835 class and is out-of-window; disregard.)
+
+### Image → Seite/Jahr map established this run (reg 220207)
+Early classes are huge catch-up cohorts, so years advance slowly; the reel has heavy **duplicate
+exposures** (each window spread filmed ~twice) — image number does NOT track Seite/Jahr linearly.
+| Bild | Seite | Jahr (class) | Notes |
+|---|---|---|---|
+| 6 | 2–3 | 1831 | first class |
+| 7 | 4–5 | 1831–32 | |
+| 13 | 10–11 | 1833 | |
+| 14 | 18–19 | **1835** | Pfingsten 7 Juni 1835 (corrects S15) |
+| 15 | 20–21 | 1835 | cont. (corrects S15) |
+| 25 | 30–31 | 1837 | |
+| 43 | 76–77 | 1846 | right page S77=1846; left S76=1845 tail |
+| 44 | 82–83 | **1848** | 1848 class (boys 1–14 + girls) |
+| 45 ≡ 47 | 84–85 | 1848 tail / **1849** boys 1–13 | **duplicate exposures** |
+| 46 ≡ 48 | 86–87 | **1849** boys 14–24 + girls | **duplicate exposures** |
+| 49 | 88–89 | 1849 summary ("42 Kinder") + **1850** Söhne 1–21 | boys 1–8 S88, 9–21 S89 |
+| 50 ≡ 51 | 90–91 | **1850** girls 22–39 + summary ("39: 21 Knaben/18 Mädchen") + 1851 start | **duplicate exposures** |
+| 52 | 92–93 | **1851** girls 41–54 (S92) + **1852** boys 1–9 (S93) | 1851 summary "25 Knaben/29 Mädchen" |
+
+### Per-class reads (every confirmand checked for Rufname Carl/Karl + *n-s-n/*n-z-n/Konze surname)
+
+- **1848 class (Bild 44, S82–83; births ~1833–34):** boys 1–14 read — Heinemann, Albrecht (gnt.),
+  Breitenstein (gnt.), Faust, Ackermann, Becker (gnt.), **#7 Joh. Andreas *Carl* Wilhelm** (Carl a
+  middle name; father Conrad Wilhelm —, Schäfer; surname not *n-s-n), Ernst, Fleck, Osenbrügge,
+  Dettmar, Wenzel, Drubel, Steitz; girls follow. **No primary Carl, no *n-s-n/Konze. Negative.**
+- **1849 class (Bild 47 S85 boys 1–13 + Bild 48 S86 boys 14–24; births ~1834–35 — CHARLES'S EXACT
+  COHORT; 24 boys, read in full):** Pielert, Rosenthal, Ackermann, Gunkel, Schlenk, Welle,
+  Otto/Müller, **#8 Carl Braun** (b.1835), Richter, Goeth, Becker, Gerth, Fricke, Bartheld, Hoffmann,
+  Seeger (f. *Carl* Seeger), Schmidt, **#18 Heinrich August gnt. Hiddersen** (b. ~1835 — surname ends
+  -sen but is NOT the nasal *n-s-n skeleton; given name Heinrich, not Carl), Specht, **#20 Carl Louis
+  Koch** (b. 23 Aug 1835), Becker, Wittenbach, Paul, Mergell. **Two Carls (Braun, Koch), neither
+  *n-s-n; no Konze skeleton anywhere. NEGATIVE — the decisive 1835-birth cohort holds no matching Carl.**
+- **1850 class (Bild 49 boys 1–21 + Bild 50 girls 22–39; births ~1835–36 — PRIME; 21 boys + 18 girls,
+  read in full):** boys Lipproß, Becker, Knauf, **#4 Carl Heinrich Adolf Dittmar** (b. **12 Feb 1835**,
+  f. Adolph Dittmar; surname Dittmar — the closest given-name+year match to Charles's 26 Jan 1835 yet,
+  but NOT a Konze/*n-s-n surname and date ≠ anchor), Paul, Ernst, Knauf, Pairan (geb. Gewissenruh),
+  **#9 Carl Wiegand** (b.1836, f. Hieronymus Wiegand), Drubel, Osenbrücke, Hoffmann, Meister, Koch,
+  Drubel, Günther, Bartheld, Roeth, Gundlach, Paul, Salomon. Girls: Pfort, Harmonie, Lipproß, Paul,
+  König, Becker, Rodewald, Pietert (×2), Roh, König… **Two Carls (Dittmar, Wiegand), neither *n-s-n.
+  NEGATIVE.**
+- **1851 class (Bild 52 S92; births ~1836–37):** **girls** read (Drubel, Fischer, Koch, Waldeck, Koch,
+  Dietrich, Kerstler, Becker, Osenbrücke, Dietrich, Waldeck, Paul, Wilhelm, Braun); class summary
+  "25 Knaben / 29 Mädchen". **Boys not located on this spread — residual** (see below). No Carl among
+  girls (n/a).
+- **1852 class (Bild 52 S93; births ~1837–38):** boys 1–9 — Faust, Timm, Faust, Faust, Kümpf,
+  **#6 Carl Gottfried Schmidt** (f. Andreas Schmidt, Zimmermann; surname Schmidt), König, Ernst
+  Christian —stein/—häußer (given name Ernst, not Carl; surname a -stein compound, not *n-s-n), Lotz.
+  **One primary Carl (Schmidt), no *n-s-n. Negative** (boys 1–9; any boys 10+ unread).
+
+### Verdict — Veckerhagen confirmations 1848–1852: NEGATIVE; prime window saturated
+The two cohorts a boy born **26 Jan 1835** would fall in — the **1849 class (births 1834–35)** and the
+**1850 class (births 1835–36)** — are now **read in full** and hold **no Carl with a Konze / *n-s-n /
+*n-z-n surname**, and no 26-Jan-1835 boy of any matching surname. The flanking **1848** and **1852**
+classes are likewise negative. **Five window Carls across the read classes — Carl Braun (1835),
+Carl Louis Koch (Aug 1835), Carl Heinrich Adolf Dittmar (12 Feb 1835), Carl Wiegand (1836), Carl
+Gottfried Schmidt (1852)** — every one on a local non-matching surname (Braun, Koch, Dittmar, Wiegand,
+Schmidt), plus middle-name Carls. Same pattern as every other Hofgeismar parish: the forename Carl is
+common; the *surname* is the discriminator and none match. Closest near-miss = **Carl H. A. Dittmar,
+b. 12 Feb 1835** (≈ 2½ weeks off the anchor) — surname Dittmar, ruled out.
+
+### Residual tail (window edges — low priority; resume next Veckerhagen pass or hand to Peter)
+- **1847 class** (births ~1832–33; ~Bild 43–44 area, Seite 78–81 — below Charles's core window edge).
+- **1851 boys** (births 1836–37; 25 boys per the summary, displaced elsewhere in the duplicate-exposure
+  reel — locate via a sequential Seite probe).
+- **1852 boys 10+** and **1853–1854 classes** (births 1838–40 — a boy b.1835 cannot appear).
+These are the youngest/oldest window edges; per project standard the by-eye reads are first-pass.
+The prime cohorts (1849, 1850) and flanks (1848, 1852) being negative makes Veckerhagen a
+well-saturated negative.
+
+**search-coverage.html:** Veckerhagen confirmation result note updated — core window 1848–1852 swept
+negative (incl. Charles's 1849 cohort + 1850 prime); residual = 1847 + 1851-boys + 1853–54. Kept
+**Partial** pending the edge tail. **Next queue parish for the monitor:** Immenhausen (#9) — then
+Marzhausen, Bad Karlshafen, Hombressen, Haueda, Ostheim, Niedermeiser. (Veckerhagen edge tail optional.)

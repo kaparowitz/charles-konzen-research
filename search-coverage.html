@@ -103,6 +103,16 @@
 
   .legend { display: flex; flex-wrap: wrap; gap: 0.6rem 1.1rem; font-size: 0.84rem; color: var(--text-meta); margin: 0.4rem 0 1rem; }
   .legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  /* Coverage key — card layout for the two column legends */
+  .keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1rem; margin: 1.1rem 0 1.6rem; }
+  .keycard { background: var(--bg-card); border: 1px solid var(--border-medium); border-radius: 8px; padding: 0.95rem 1.15rem 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+  .keycard > .ttl { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--brand-dark); font-weight: 700; margin: 0 0 0.7rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-light); }
+  .keycard > .ttl .q { text-transform: none; letter-spacing: 0; color: var(--text-meta); font-weight: 400; font-style: italic; }
+  .keycard .keyitem { display: grid; grid-template-columns: 8.6rem 1fr; align-items: start; gap: 0.65rem; padding: 0.34rem 0; }
+  .keycard .keyitem + .keyitem { border-top: 1px solid var(--border-light); }
+  .keycard .keyitem .pill { justify-self: start; margin-top: 0.04rem; }
+  .keycard .keyitem .desc { font-size: 0.85rem; color: var(--text-meta); line-height: 1.45; }
+  html.theme-dark .keycard > .ttl { color: #e8cd8a; }
 
   .sie { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; margin: 1rem 0 1.2rem; }
   .sie .box { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 3px solid var(--brand); border-radius: 4px; padding: 0.8rem 1rem; }
@@ -255,7 +265,6 @@
       <div class="menu-divider" role="separator" aria-hidden="true"></div>
       <a href="tree-interactive.html" role="menuitem">Family tree — interactive</a>
       <a href="interactive-name-trail.html" role="menuitem">Surname &amp; birth-date explorer</a>
-      <a href="Family_Tree_All_Families.html" role="menuitem">All-families tree</a>
       <a href="Kontze_Family_Tree_Graphic.html" role="menuitem">Kontze family-tree graphic</a>
       <a href="family-poster.html" role="menuitem">Family poster</a>
     </div>
@@ -321,20 +330,6 @@
   <div class="stat"><span class="num">0</span><span class="lab">Carls with a Konze / *n-s-n surname</span></div>
 </div>
 
-<div class="callout" style="border-left-color:#3c7a4e;">
-  <div class="ttl" style="color:#3c7a4e;">At a glance &mdash; confirmation sweep</div>
-  <p style="margin:0; font-size:0.92rem;"><strong>16 parishes</strong> have had their confirmation register read class-by-class across the 1847&ndash;1855 window (Deisel, Trendelburg, Stammen, H&uuml;mme, Gottsb&uuml;ren, Helmarshausen, Sielen, Sch&ouml;neberg, Hofgeismar town, Gudensberg, Liebenau, Ebersch&uuml;tz, Gieselwerder, Hofgeismar-Kelze, Gewissenruh, Lamerden) &mdash; the <strong>24 June 2026 sweep</strong> closed Gieselwerder, Hofgeismar-Kelze, Gewissenruh and Lamerden at the leaf level, and read Grebenstein&rsquo;s prime 1848&ndash;1850 cohort (its 1851&ndash;55 classes remain to be read). <strong>1</strong> more keeps no separate book &mdash; its confirmands fold into a swept parish (Friedrichsfeld &rarr; Deisel/Trendelburg). <strong>2</strong> have no confirmation book for the window, so the baptisms were read instead (Dissen, Grifte, both complete). The remaining parishes were caught by the <em>baptism-window</em> net rather than a confirmation sweep. <strong>Only two parishes carry a substantive open task:</strong> <a href="germany/heisebeck-research-log.html">Heisebeck</a> (the Wehmann candidate + a pre-1845 register not on Archion) and <a href="germany/schoeneberg-research-log.html">Sch&ouml;neberg</a> (its pre-1822 volume not digitised) &mdash; both on-site / gated-record work. Per-parish status and the &ldquo;Open task&rdquo; column are in the table below.</p>
-</div>
-
-<div class="callout verify">
-  <div class="ttl">Latest sweep &amp; recheck &mdash; 24 Jun 2026 (all parishes)</div>
-  <p style="margin:0 0 0.6rem; font-size:0.9rem;">Automated open-web pass across all 36 parishes (open sources only &mdash; Archion / Ancestry / FamilySearch gated images remain on the in-browser workflow). <strong>No new confirmation-class match for a Konze-type Carl surfaced, and no parish status changed.</strong> The two standing compiled-index data points were re-verified and still hold:</p>
-  <p style="margin:0 0 0.6rem; font-size:0.9rem;">&bull; <strong>Helmarshausen (re-checked 24 Jun 2026).</strong> The published <em>Ortssippenbuch Helmarshausen</em> name register (<a href="https://klauskunze.com/heikun/hel/register.htm" target="_blank" rel="noopener noreferrer">klauskunze.com</a>) was re-read this pass: it still carries <strong>Konze</strong> (family nos.&nbsp;67, 96, 302, 406) and <strong>Jungkontz / Jungkonze</strong> (nos.&nbsp;297, 507, 468), and <strong>no</strong> Gansen / Gonsen / Ganssen variant &mdash; the open-web corroboration of the surname in Helmarshausen. A secondary compiled index; its entries must still be checked against the original registers before any status changes.</p>
-  <p style="margin:0; font-size:0.9rem;">&bull; <strong>Heisebeck (carried).</strong> The published <em>Ortssippenbuch Heisebeck und Arenborn</em> (Klaus Kunze, Uslar 2000) name register lists <strong>no</strong> Konze / Konzen / Kontze / Gansen / Gonsen surname (the established Heisebeck families &mdash; Schulze, Klinge, Thiele, Wienecke, Helwig, Sch&auml;fer &mdash; are all present, so the index is genuinely there), corroborating that the surname was <em>not native</em> to Heisebeck &mdash; consistent with the standing Heisebeck candidate being the illegitimate <em>Wehmann</em> child, not a Konze. The open Wehmann forward-trace (a Carl/Charles Wehmann b.&nbsp;~1835) again returned nothing on the open web. Detail in the <a href="germany/heisebeck-research-log.html">Heisebeck</a> and <a href="germany/helmarshausen-research-log.html">Helmarshausen</a> logs.</p>
-  <p style="margin:0.6rem 0 0; font-size:0.9rem;">&bull; <strong>Eberschütz &mdash; live Archion (separate session, 24 Jun 2026).</strong> Outside this open-web pass, the Eberschütz Konfirmationen (reg.&nbsp;218884) <strong>1855&ndash;1856 tail</strong> was read leaf-by-leaf in the in-browser viewer, closing the parish's 1833&ndash;1841 birth window at the leaf level. The 1855 class (Summa 14 = 7 boys/7 girls; <a href="https://www.archion.de/p/99fab7d71a/" target="_blank" rel="noopener noreferrer">p/99fab7d71a</a>) holds no Carl; the 1856 class runs into 1842 births and adds one non-matching Carl (Carl Scheele, b.&nbsp;1842; <a href="https://www.archion.de/p/0b98119acc/" target="_blank" rel="noopener noreferrer">p/0b98119acc</a>). Negative; parish stays eliminated. Detail in the <a href="germany/eberschuetz-research-log.html">Eberschütz</a> log.</p>
-  <p style="margin:0.6rem 0 0; font-size:0.9rem;">&bull; <strong>Confirmation sweep &mdash; live Archion (24 Jun 2026).</strong> Four more confirmation registers were read class-by-class in the in-browser viewer and came back <strong>negative</strong> for a Konze-type Carl: <a href="germany/gieselwerder-research-log.html">Gieselwerder</a> (reg.&nbsp;219013, 1847&ndash;55; one Carl &mdash; Carl Friedr. Wilhelm Marunde, b.&nbsp;1839 &mdash; <a href="https://www.archion.de/p/b4d6bfe1ba/" target="_blank" rel="noopener noreferrer">p/b4d6bfe1ba</a>), <a href="germany/kelze-research-log.html">Hofgeismar-Kelze</a> (combined KB reg.&nbsp;219634, 1847&ndash;55; one Carl &mdash; Carl Wilhelm Homburg, b.&nbsp;4&nbsp;Dec&nbsp;1835 &mdash; <a href="https://www.archion.de/p/cf5d171aae/" target="_blank" rel="noopener noreferrer">p/cf5d171aae</a>), <a href="germany/gewissenruh-research-log.html">Gewissenruh</a> (reg.&nbsp;219001, 1847&ndash;55; one Carl &mdash; Johann Karl Jouquenal, b.&nbsp;1&nbsp;Aug&nbsp;1834), and <a href="germany/lamerden-research-log.html">Lamerden</a> (its <em>own</em> book, reg.&nbsp;219673, full 1846&ndash;55 window; ~15 Carls, none on a Konze surname). <a href="germany/grebenstein-research-log.html">Grebenstein</a>&rsquo;s prime cohort (reg.&nbsp;219097, classes 1848&ndash;1850) was also read &mdash; three Carls (Junge, Studt, Lahrenbach), none matching; its 1851&ndash;55 classes remain. In every class the forename Carl recurs on local surnames and never on a Konze / <em>*n-s-n</em> one; each parish&rsquo;s prior elimination now stands on both the baptism and the confirmation track. Surname reads are by-eye Kurrent, to be certified by <a href="index.html#schrader">Peter Schräder</a>.</p>
-</div>
-
 <h2 id="what">What this sweep was looking for</h2>
 
 <p>The earlier searches (logged in the <a href="negative-results.html">negative-results audit</a>) filtered on the <strong>surname</strong> &mdash; they looked for a <em>Konze</em>-family child, and outside the core parishes they narrowed to roughly January&ndash;February 1835. A <a href="negative-results.html">negative-results re-audit</a> exposed two blind spots in that approach, so this sweep deliberately widened all four criteria &mdash; given name as the anchor, surname open, the full 1833&ndash;1841 window, and both confessions &mdash; as set out in the search-terms card above.</p>
@@ -347,23 +342,25 @@
 <h2 id="coverage">Coverage &mdash; all 36 parishes searched</h2>
 <p style="font-size:0.92rem;color:var(--text-meta);">Every parish examined for Charles &mdash; <strong>36 in all</strong> &mdash; grouped by the kind of search done: the Konze-pool cluster, the confirmation-register sweep, the wider 1835 baptism-window sweep, the Catholic Westphalia border, and the distant toponym / family-trail tests. The full per-parish detail &mdash; register searched, classes read, birth window, and result &mdash; lives on each parish&rsquo;s own <strong>research log</strong>, beside its Archion source citations, all reachable from the <a href="germany/parish-map.html">Hessian parish map</a>. To avoid maintaining the same row twice, this page keeps only the at-a-glance status and links straight through to each log.</p>
 
-<p style="font-size:0.8rem; color:var(--text-meta); text-transform:uppercase; letter-spacing:0.06em; font-weight:700; margin:0.6rem 0 0.2rem;">Confirmations column &mdash; was the confirmation register swept?</p>
-<div class="legend">
-  <span><span class="pill c-swept">Swept</span> confirmation classes 1847&ndash;1855 read</span>
-  <span><span class="pill c-folds">Folds in</span> no own book; confirmands in a swept parish's register</span>
-  <span><span class="pill c-nobook">No conf. book</span> none for the window &mdash; baptisms read instead</span>
-  <span><span class="pill c-bapt">Baptisms only</span> confirmations not swept; cleared on the 1835 baptism window</span>
-  <span><span class="pill c-nodig">Not digitised</span> register not on Archion &mdash; on-site</span>
-  <span><span class="pill c-na">N/A</span> place-name or family-trail test &mdash; not a confirmation search</span>
-</div>
-<p style="font-size:0.8rem; color:var(--text-meta); text-transform:uppercase; letter-spacing:0.06em; font-weight:700; margin:1rem 0 0.2rem;">Result column &mdash; what the search found</p>
-<div class="legend">
-  <span><span class="pill r-clear">Searched</span> read; no Carl in window</span>
-  <span><span class="pill r-carl">Carl found</span> a Carl, but non-matching surname</span>
-  <span><span class="pill r-cand">Candidate</span> a possible match surfaced</span>
-  <span><span class="pill r-part">Partial</span> some classes read, others outstanding</span>
-  <span><span class="pill r-queue">Queued</span> AI transcription requested</span>
-  <span><span class="pill r-todo">Not yet</span> located but unread</span>
+<div class="keys">
+  <div class="keycard">
+    <div class="ttl">Confirmations column <span class="q">&mdash; was the register swept?</span></div>
+    <div class="keyitem"><span class="pill c-swept">Swept</span><span class="desc">confirmation classes 1847&ndash;1855 read</span></div>
+    <div class="keyitem"><span class="pill c-folds">Folds in</span><span class="desc">no own book; confirmands in a swept parish&rsquo;s register</span></div>
+    <div class="keyitem"><span class="pill c-nobook">No conf. book</span><span class="desc">none for the window &mdash; baptisms read instead</span></div>
+    <div class="keyitem"><span class="pill c-bapt">Baptisms only</span><span class="desc">confirmations not swept; cleared on the 1835 baptism window</span></div>
+    <div class="keyitem"><span class="pill c-nodig">Not digitised</span><span class="desc">register not on Archion &mdash; on-site</span></div>
+    <div class="keyitem"><span class="pill c-na">N/A</span><span class="desc">place-name or family-trail test &mdash; not a confirmation search</span></div>
+  </div>
+  <div class="keycard">
+    <div class="ttl">Result column <span class="q">&mdash; what the search found</span></div>
+    <div class="keyitem"><span class="pill r-clear">Searched</span><span class="desc">read; no Carl in window</span></div>
+    <div class="keyitem"><span class="pill r-carl">Carl found</span><span class="desc">a Carl, but non-matching surname</span></div>
+    <div class="keyitem"><span class="pill r-cand">Candidate</span><span class="desc">a possible match surfaced</span></div>
+    <div class="keyitem"><span class="pill r-part">Partial</span><span class="desc">some classes read, others outstanding</span></div>
+    <div class="keyitem"><span class="pill r-queue">Queued</span><span class="desc">AI transcription requested</span></div>
+    <div class="keyitem"><span class="pill r-todo">Not yet</span><span class="desc">located but unread</span></div>
+  </div>
 </div>
 
 <table class="bd">
@@ -637,90 +634,12 @@
 
 <p style="font-size:0.84rem; color:var(--text-meta);">Archive: Landeskirchliches Archiv der Evangelischen Kirche von Kurhessen-Waldeck, via <a href="https://www.archion.de/" target="_blank" rel="noopener noreferrer">Archion</a>. Each register link opens the digitised book in the Archion viewer (a subscription is required to view images).</p>
 
-<h2 id="carls">The boys named Carl that turned up</h2>
-
-<p>The forename <em>Carl</em> is common in these villages &mdash; which is the point. Across the now-saturated 1848&ndash;1855 confirmation classes the name recurs more than a dozen times; the given name does not narrow the field. The <strong>surname</strong> is the discriminator, and <strong>not one</strong> of the Carls found carries a surname resembling Charles's American names (Gannsen / Gonson / Konzen) or an <em>*n-s-n</em> ending.</p>
-
-<p style="font-weight:600; margin:1rem 0 0.2rem;">Closest to Charles's date &mdash; the prime window, births ~1834&ndash;1836:</p>
-<ol class="rank">
-  <li>
-    <h3>Carl Schäfer &mdash; Gudensberg, b. 1835 <span class="pill r-carl">non-matching surname</span></h3>
-    <p>The one primary Carl in Gudensberg's 1849 class (entry 9 of ~33 boys); born 1835, the canonical year. Surname <strong>Schäfer</strong> &mdash; not an <em>*n-s-n</em> ending. Two further classes (1850, 1851) carried only middle-name Carls (Friedrich Carl Hildebrand, Philipp Carl Junge).</p>
-  </li>
-  <li>
-    <h3>Carl Wilhelm Wilmes &mdash; Hümme, b. 12 March 1834 <span class="pill r-carl">non-matching surname</span></h3>
-    <p>Read clearly off the &ldquo;Geburts Jahr und Tag&rdquo; column of the 1849 class. Father David Wilmes, a day-labourer; mother Margarethe Elisabeth née Tille. Squarely in the window, but the surname is <strong>Wilmes</strong>.</p>
-  </li>
-  <li>
-    <h3>Carl Julius Bringemann &mdash; Helmarshausen, b. 1836 <span class="pill r-carl">non-matching surname</span></h3>
-    <p>From the 1849 class; father Johannes Bringemann, a farmer. In the window, but <strong>Bringemann</strong> is a local family with several confirmands in the same book.</p>
-  </li>
-  <li>
-    <h3>Carl Wilhelm Tiltner &mdash; Gudensberg, b. 1836 <span class="pill r-carl">non-matching surname</span></h3>
-    <p>The single Carl in Gudensberg's 1850 class (boys 1&ndash;20, read in full); father Daniel, a master mason. In the window, but the surname reads <strong>Tiltner</strong> &mdash; nothing like an <em>*n-s-n</em> ending. This was the most probative class to read for a boy born 26 Jan 1835, and it yields no Konze-type Carl.</p>
-  </li>
-  <li>
-    <h3>Carl Schäfer &mdash; Helmarshausen, b. 19 Nov 1836 <span class="pill r-carl">non-matching surname</span></h3>
-    <p>From Helmarshausen's 1851 class (read live 22 Jun 2026). A second, distinct Carl Schäfer &mdash; in the window, but again surname <strong>Schäfer</strong>.</p>
-  </li>
-</ol>
-
-<p style="font-weight:600; margin:1.3rem 0 0.2rem;">Wider window &mdash; births ~1838&ndash;1841, from the residual 1852&ndash;1855 classes read 22 Jun 2026:</p>
-<ol class="rank">
-  <li>
-    <h3>Carl August Hofmeister &mdash; Helmarshausen, b. 1838 <span class="pill r-carl">non-matching surname</span></h3>
-    <p>Entry 8 of the 1852 class. Older than any date Charles gave, and surname <strong>Hofmeister</strong>.</p>
-  </li>
-  <li>
-    <h3>Carl Ludwig B&ouml;&szlig;ler &mdash; Sielen, b. 19 Mar 1839 <span class="pill r-carl">non-matching surname</span></h3>
-    <p>The 1853 class, entry 5 (Seite 49). <strong>This resolves the earlier unverified &ldquo;Carl Ludwig&rdquo; at Sielen</strong> &mdash; logged tentatively as &ldquo;D&ouml;&szlig;ler / Basser&rdquo; before the Sielen calibration slip was corrected. Re-read live 22 Jun 2026 (Session 112) it is Carl Ludwig <strong>B&ouml;&szlig;ler</strong>, son of Friedr. Wilhelm B&ouml;&szlig;ler (Leineweber), b. 19 Mar 1839 &mdash; a B-form surname, no match, and too young. Permalink <a href="https://www.archion.de/p/edc4e8bcbe/" target="_blank" rel="noopener noreferrer">archion.de/p/edc4e8bcbe</a>.</p>
-  </li>
-  <li>
-    <h3>Sielen 1854 class &mdash; two more Carls, b. 1840 <span class="pill r-carl">non-matching surnames</span></h3>
-    <p>Found on the same 22 Jun 2026 pass (Session 112), Seite 51: <strong>Heinrich Carl Storch</strong> and <strong>Carl Ludwig [Stein]</strong>, both b. 1840, local surnames. Confirms the pattern &mdash; the only Carls in Sielen&rsquo;s window are born 1839&ndash;40; the anchor-core 1848&ndash;1850 classes (births 1834&ndash;36) have no Carl at all. Permalink <a href="https://www.archion.de/p/00ce7acdf9/" target="_blank" rel="noopener noreferrer">archion.de/p/00ce7acdf9</a>.</p>
-  </li>
-  <li>
-    <h3>Carl Christian Weinrich &mdash; Gudensberg, b. 1841 <span class="pill r-carl">non-matching surname</span></h3>
-    <p>Boys 1&ndash;5 of the 1855 class (the read that closed the Gudensberg sweep). Surname <strong>Weinrich</strong>; b. 1841, 5&ndash;6 years younger than any record Charles gave.</p>
-  </li>
-  <li>
-    <h3>Helmarshausen 1854&ndash;1855 cluster <span class="pill r-carl">non-matching surnames</span></h3>
-    <p>The window-edge classes carried several more primary Carls &mdash; <strong>Carl Eduard Wagner, Carl Heinr. Mayer, Ferdinand Carl Gunge, Carl Eduard Hülse</strong> (b. ~1839&ndash;1841). All confirm the pattern: the forename is everywhere, the surnames never match.</p>
-  </li>
-  <li>
-    <h3>Schöneberg &mdash; four Carls across 1847&ndash;1853, b. 1833/1836/1836/1839 <span class="pill r-carl">non-matching surnames</span></h3>
-    <p>The Schöneberg Konfirmationen (reg. <code>220012</code>) were read leaf-by-leaf on 23 June 2026 (Session 114), clearing the previously jumble-blocked &ldquo;Not yet&rdquo; cell. The four Carls are <strong>Carl Wilhelm Siebert</strong> (1847, b. 8 Apr 1833; <a href="https://www.archion.de/p/b11e520893/" target="_blank" rel="noopener noreferrer">p/b11e520893</a>), <strong>Carl Heinrich Jacob Theodor Küthen</strong> (1850, b. 1836) and <strong>Carl Ludwig Grandjot</strong> (1851, b. 13 Oct 1836; both <a href="https://www.archion.de/p/6a60e0d34a/" target="_blank" rel="noopener noreferrer">p/6a60e0d34a</a>), and <strong>Carl Wilhelm Wagner</strong> (1853, b. 23 Aug 1839; <a href="https://www.archion.de/p/02153ef938/" target="_blank" rel="noopener noreferrer">p/02153ef938</a>) &mdash; all local surnames. <strong>Carl Ludwig Grandjot is not a new lead</strong>: he is the focal candidate <a href="family_pages/fam-grandjot.html">already eliminated 4 March 2026</a> (FS PCXG-W9M; d. 12 Feb 1901 Schöneberg, never emigrated) &mdash; the confirmation entry (father Johann Daniel Grandjot, mother Maria Elisabeth Martin, b. 13 Oct 1836) merely corroborates his vitals. Decisively, the <strong>anchor 1848 and 1849 classes hold no Carl at all</strong> (the 1849 cohort &mdash; the exact group for a boy born 26 Jan 1835 &mdash; has 4 boys: Johann Peter, Wilhelm Friedrich Nolte, Friedrich Uffelmann, Christian Klein; <a href="https://www.archion.de/p/669e6bc394/" target="_blank" rel="noopener noreferrer">p/669e6bc394</a>, verified to Bild 1708), and <strong>no Carl is born in 1834 or 1835</strong> anywhere in the register.</p>
-  </li>
-  <li>
-    <h3>Eberschütz Carls &mdash; Höbener (b. Oct 1839) &amp; Scheele (b. 1842) <span class="pill r-carl">non-matching surnames</span></h3>
-    <p>The Eberschütz Konfirmationen (reg. <code>218884</code>) were read class-by-class for the full 1847&ndash;1856 span (1847&ndash;1854 on 23 June 2026; the <strong>1855&ndash;1856 tail closed 24 June 2026</strong>) &mdash; the first confirmation-register sweep of this parish (it had previously been searched only on its Jan&ndash;Feb 1835 baptisms). Across the whole register only <strong>two</strong> boys named Carl appear: <strong>Carl Wilhelm Höbener</strong> (1854 class, Nro 290, b. Oct 1839, son of the shoemaker Johann Christoph Höbener; <a href="https://www.archion.de/p/84cbde3c42/" target="_blank" rel="noopener noreferrer">p/84cbde3c42</a>, Bild 893) and <strong>Carl Scheele</strong> (1856 class, Nro 332, b. 1842, of an Eberschütz Scheele family; <a href="https://www.archion.de/p/0b98119acc/" target="_blank" rel="noopener noreferrer">p/0b98119acc</a>, Bild 897) &mdash; both local surnames, both too young. Decisively, the <strong>prime 1849 class</strong> &mdash; the exact cohort for a boy born 26 Jan 1835 &mdash; holds <strong>no Carl at all</strong> (10 confirmands: 3 boys [Christian Ludwig Rode, Heinrich Wilhelm Pfingst, Heinrich Wilhelm Alborn], 7 girls; <a href="https://www.archion.de/p/27e3438e7b/" target="_blank" rel="noopener noreferrer">p/27e3438e7b</a>, Bild 886). The <strong>1855 class</strong> (Nro 310&ndash;323, Summa 14 = 7 boys/7 girls; <a href="https://www.archion.de/p/99fab7d71a/" target="_blank" rel="noopener noreferrer">p/99fab7d71a</a>, Bild 896) &mdash; the cohort that would hold a boy born 1841 &mdash; has <strong>no Carl</strong> (boys: Vechel, Aschermann, Engelbrecht, Hattenbach, Bohle, Engelbrecht, Scheele), and the 1856 class is already into 1842 births, so the full <strong>1833&ndash;1841 birth window is now closed at the leaf level</strong>. No Konze / <em>*n-s-n</em> surname occurs anywhere in the book.</p>
-  </li>
-  <li>
-    <h3>24 June 2026 confirmation sweep &mdash; Gieselwerder, Kelze, Gewissenruh, Lamerden, Grebenstein <span class="pill r-carl">non-matching surnames</span></h3>
-    <p>Five more confirmation registers were read in the live Archion viewer, each on its own 1847&ndash;1855 classes. The pattern held everywhere: the forename Carl recurs, the surname never matches. <strong>Gieselwerder</strong> (reg. <code>219013</code>) &mdash; one Carl in the whole window, <strong>Carl Friedrich Wilhelm Marunde</strong>, b. 21 Mar 1839 (1853 class; <a href="https://www.archion.de/p/b4d6bfe1ba/" target="_blank" rel="noopener noreferrer">p/b4d6bfe1ba</a>), local surname; the prime 1849 and 1850 cohorts (births 1835&ndash;36) hold no Carl. <strong>Hofgeismar-Kelze</strong> (combined KB reg. <code>219634</code>, a former Huguenot colony) &mdash; one Carl, <strong>Carl Wilhelm Homburg</strong>, b. 4 Dec 1835 (1850 class; <a href="https://www.archion.de/p/cf5d171aae/" target="_blank" rel="noopener noreferrer">p/cf5d171aae</a>), wrong surname and born December, not 26 January; the 1849 cohort holds no Carl. <strong>Gewissenruh</strong> (reg. <code>219001</code>) &mdash; one Carl, <strong>Johann Karl Jouquenal</strong>, b. 1 Aug 1834, a Huguenot surname. <strong>Lamerden</strong> (its own book, reg. <code>219673</code>, full 1846&ndash;1855 window) &mdash; the forename Carl recurs ~15 times (Jordan, Lölle, Küstermeister, Ellermann, Lange, Büchler, Weninger, Naße, Vinckhäuser, Lotze, &hellip;), <strong>not one</strong> on a Konze / <em>*n-s-n</em> surname; the prime 1849&ndash;1850 cohort holds only Carl Ludwig Lange (b. 4 Apr 1835) and Carl Friedrich Büchler (b. 24 Oct 1835), both wrong surnames. <strong>Grebenstein</strong> (reg. <code>219097</code>, prime cohort 1848&ndash;1850) &mdash; three Carls (<strong>Carl Junge</strong> illeg. b. 1834, <strong>Carl Adolph Studt</strong> b. 1834, <strong>Carl Lahrenbach</strong> b. 1836), none a Konze; its exact 1849 cohort &mdash; the group for a boy born 26 Jan 1835 &mdash; contains <strong>no Carl at all</strong> (its 1851&ndash;55 classes remain to be read). No Konze / <em>*n-s-n</em> surname appears in any of the five.</p>
-  </li>
-</ol>
-
 <div class="callout verify">
   <div class="ttl">Method &amp; reliability &mdash; read this before trusting a row</div>
   <p>The registers were read in Archion's high-resolution viewer. Two limits shape how far the by-eye reads can be trusted:</p>
   <p>&bull; <strong>The given name is reliable; the exact birth year is not.</strong> Distinguishing <em>Carl</em> from <em>Johann</em> or <em>Conrad</em> in Kurrent script is dependable, so &ldquo;is there a boy named Carl in this class?&rdquo; is a sound result. Reading the <em>year</em> numerals is not &mdash; a calibration slip of several years was caught and corrected mid-search at Sielen. Exact birth dates here should be confirmed against the AI transcription or by a Kurrent reader.</p>
   <p>&bull; <strong>Surnames in Kurrent warrant a second eye.</strong> Given names and dates read more cleanly than surnames; any surname above is a best reading, not a certified transcription.</p>
   <p>For these reasons the precise page-maps (register, image, class) are kept in the project's working log and are best handed to <a href="index.html#schrader">Peter Schräder</a> (Kurrent specialist) or read on the September archive trip, rather than treated as final from the by-eye pass alone.</p>
-</div>
-
-<h2 id="reading">What the sweep means so far</h2>
-
-<p>As of the live reads of 22&ndash;24 June 2026, the tabular confirmation books are now <strong>saturated</strong>: <strong>Helmarshausen 1847&ndash;1855 (every leaf), Sielen 1847&ndash;1855, Hümme 1848 + 1850, Gudensberg 1848&ndash;1855, Schöneberg 1847&ndash;1853, Liebenau 1847&ndash;1855, Eberschütz 1847&ndash;1856, Gieselwerder 1847&ndash;1855, Hofgeismar-Kelze 1847&ndash;1855, Gewissenruh 1847&ndash;1855, and Lamerden 1846&ndash;1855</strong> have all been read &mdash; the full span of classes where a boy born in the 1830s would be confirmed (Grebenstein&rsquo;s prime 1848&ndash;1850 cohort joins them, with its 1851&ndash;55 classes still to read). The result is uniform: <strong>the forename Carl recurs in nearly every class, but never once on a Konze-type or <em>*n-s-n</em> surname, and no Carl with Charles's surname appears in any prime (births ~1834&ndash;1836) cohort.</strong> The most probative cohorts &mdash; the Sielen, Hümme and <strong>Liebenau 1850 classes</strong> and the Schöneberg <strong>1849 class</strong>, the exact groups for a boy born 26 Jan 1835 &mdash; were each read in full and held <em>no Carl at all</em> (Liebenau&rsquo;s 1849 class held only <em>Carl August Büster</em>, b. 11 Jun 1835, on the wrong surname); Gudensberg's 1850 class (strongest of James Gunnis's three &ldquo;Deissen&rdquo; candidates) produced one Carl on the wrong surname. That is a meaningful, well-saturated negative. The only residual unread cells are jumble-blocked window-edge or duplicate leaves. It points away from these already-digitised parishes and toward the emigration side, the un-digitised gaps (Heisebeck, Schöneberg pre-1822), and the remaining Dissen baptism scan (Grifte is now read in full, 1833&ndash;1841 &mdash; negative) &mdash; the natural work for an on-site visit.</p>
-
-<h2 id="open">What remains &mdash; the gaps this sweep does not close</h2>
-
-<div class="sie">
-  <div class="box"><h4>Confirmation transcriptions &mdash; read, none outstanding</h4><p>Both queued books have now been read and are negative for Charles. Deisel (<code>218836</code>, images 946&ndash;948) and Trendelburg (<code>220102</code>, images 2259&ndash;2261) were read in full (Deisel via AI transcription, Trendelburg live on 22 June 2026) &mdash; no Carl with a Konze / *n-s-n surname; &ldquo;Konze&rdquo; appears only as a mother&rsquo;s maiden name. Nothing is awaiting transcription. The daily Archion monitor has been repointed at the remaining <strong>unread</strong> 1835-window confirmation registers (Liebenau and the Session&nbsp;114 queue).</p></div>
-  <div class="box"><h4>Tabular classes &mdash; now read</h4><p>The residual Helmarshausen (1848&ndash;1855), Sielen (1847&ndash;1855), Hümme (1848 + 1850) and Gudensberg (1848&ndash;1855) classes were read live on 22 June 2026. <strong>Helmarshausen's three jumble-blocked window-edge leaves &mdash; the 1847 class and the boys-halves of the 1849 and 1850 classes &mdash; were then located and read leaf-by-leaf live on 24 June 2026</strong> (permalinks <a href="https://www.archion.de/p/258c511a31/" target="_blank" rel="noopener noreferrer">p/258c511a31</a>, <a href="https://www.archion.de/p/3070969599/" target="_blank" rel="noopener noreferrer">p/3070969599</a>, <a href="https://www.archion.de/p/282ec58033/" target="_blank" rel="noopener noreferrer">p/282ec58033</a>): eight more boys named Carl, none on a Konze / <em>*n-s-n</em> surname &mdash; the 1850 prime cohort opens with Carl Wilhelm <strong>Theis</strong> (b. 1836), wrong surname. Helmarshausen now has <strong>no unread cell</strong>; any remaining jumble-blocked leaves are in other parishes.</p></div>
-  <div class="box"><h4>Tier-3 baptism scans &mdash; now complete</h4><p>Dissen (<code>253403</code>) and Grifte (<code>253444</code>) have <em>no</em> confirmation book for the window; their baptisms are online instead, and <strong>both are now read in full.</strong> <strong>Grifte 1833&ndash;1841</strong> (~157 baptisms; per-year permalinks in its <a href="germany/grifte-research-log.html">log</a>) &mdash; one incidental <em>third</em>-name &ldquo;Carl&rdquo; (1834) on a non-matching surname, otherwise none. <strong>Dissen 1834&ndash;1841</strong> (images 113&ndash;136, ~110 baptisms; per-year permalinks in its <a href="germany/dissen-research-log.html">log</a>, added 22 June 2026) &mdash; <strong>not one male Carl/Karl</strong> (the lone near-miss is a <em>female</em> &ldquo;Maria Carolina,&rdquo; 1841). No Konze / <em>*n&middot;s&middot;n</em> surname in either. Tier-3 baptism scans are closed.</p></div>
-  <div class="box"><h4>Schöneberg &mdash; now read</h4><p>Schöneberg's 1847&ndash;55 confirmations are in reg. <code>220012</code> (the combined Tauf-/Konfirmations-/Trauungs-/Todten-Buch; tables from ~image 1701), <em>not</em> 220009 &mdash; whose Konfirmationen list ends at the 1835 class. <strong>Read leaf-by-leaf on 23 June 2026 (Session 114)</strong> with per-class permalinks: the 1848 and 1849 anchor classes hold no Carl, no Carl is born 1834/1835, and the four Carls present (b. 1833&ndash;1839) all bear local surnames. The pre-1822 Schöneberg volume remains undigitised &mdash; an on-site target.</p></div>
-  <div class="box"><h4>Not digitised &mdash; the on-site Tier</h4><p>Heisebeck (pre-1845) and Schöneberg (pre-1822) are not on Archion &mdash; core targets for the archive trip. (<strong>Liebenau is now off this list</strong>: both its Taufen 1830&ndash;1890 (<code>219745</code>) and its Konfirmationen 1831&ndash;2013 (<code>219742</code>) are on Archion, and the 1847&ndash;1855 confirmation classes were swept 23 June 2026. The Tier-3 &ldquo;Deissen&rdquo; parishes Dissen, Grifte &amp; Gudensberg likewise turned out to <em>be</em> on Archion &mdash; mapped and read above.) See <a href="open-questions.html">Open Questions</a>.</p></div>
 </div>
 
 <p style="margin-top:1.4rem; padding:0.8rem 1rem; background:var(--bg-card-tint); border-left:4px solid var(--brand); border-radius:3px; font-size:0.95rem;"><strong>Related.</strong> Everything searched on one screen is <a href="negative-results.html#coverage-glance">Research completed at a glance</a> (36 parishes · 16 families · Peter Schräder's database queries), within the full <a href="negative-results.html">negative-results audit</a>; the <em>surname</em> spellings these classes are matched against are on <a href="surname-records.html">Surname across the records</a> and the place-name <em>interpretations</em> on <a href="origin-records.html#interpretations">Origin across the records</a>; the conflicting U.S. birth figures driving the 1833&ndash;1841 window are on <a href="birthdate-records.html">Birth date across the records</a>; the standing questions and on-site Tier are on <a href="open-questions.html">Open Questions</a>.</p>

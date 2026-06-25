@@ -24,13 +24,32 @@ newspaper and immigration sites).
   `nimble:nimble-crawl-reference` (multi-page collections),
   `nimble:nimble-extract-reference` (pull fields out of a record page),
   `nimble:local-places` (places / addresses).
+  **Auth state (25 Jun 2026):** connected as a **Cowork connector** (OAuth via
+  `Customize → Connectors → Nimble`), so auth **persists at the account level
+  across sessions** — including unattended scheduled runs. The MCP tools appear
+  as `mcp__plugin_nimble_nimble__*` (e.g. `nimble_search`, `nimble_extract`).
+  If a run reports them missing, the connector just needs re-authorizing in
+  Connectors. This is the preferred tool for the unattended daily sweep because
+  it survives sandbox resets.
 - **Bright Data** — alternative web-data toolkit (search, scrape, scraper
-  builder). *Authenticated June 2026.* Skills include `brightdata-plugin:search`,
-  `brightdata-plugin:scrape`, `brightdata-plugin:scraper-builder`. The CLI runs
-  in the sandbox; if a session reports it isn't logged in, re-auth with
-  `bdata login --api-key <Jed's key>` (key lives in the Bright Data dashboard,
-  not stored here). Note: the API key works for search/scrape but lacks
-  `bdata budget` permission — ignore the 403 on balance checks.
+  builder). Skills include `brightdata-plugin:search`,
+  `brightdata-plugin:scrape`, `brightdata-plugin:scraper-builder`.
+  **Auth state (25 Jun 2026):** CLI re-installed + logged in. Two routes:
+  - **CLI (sandbox):** installed via `npm install -g @brightdata/cli` to a
+    user prefix (`npm config set prefix ~/.npm-global`; add `~/.npm-global/bin`
+    to PATH). Auth with `bdata login --api-key <key>`. ⚠️ The sandbox **resets
+    between sessions**, so for scheduled/unattended runs the CLI must be
+    **re-installed and re-authed each run** — do this at the start of the run.
+  - **MCP connector (durable):** add `https://mcp.brightdata.com/mcp?token=<key>`
+    as a connector in `Customize → Connectors`. Persists like Nimble; preferred
+    if Bright Data is needed in unattended runs.
+  - **Where the key lives:** Jed's Bright Data dashboard →
+    `brightdata.com/cp/setting/users` → *API keys* (Admin user
+    `jedsjohnson@gmail.com`; active key id begins `b34f…`, expires 21-09-2026).
+    The full key is **not stored in this repo** — read it from the dashboard
+    (in-browser, Jed must be logged in). Zones `cli_unlocker` + `cli_browser`
+    already exist. The key works for search/scrape but lacks `bdata budget`
+    permission — ignore the 403 on balance checks.
 
 When a task needs live web data, prefer these over generic fetching. Use the
 narrowest skill: extract for a known record page, crawl for a paginated
