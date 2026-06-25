@@ -30,8 +30,8 @@
   .child-card h3 { font-size:1.05rem; color: var(--text-strong, #1f1a14); margin:0; line-height:1.25; display:inline; }
   :root.theme-dark .child-card h3, :root:not(.theme-light) .child-card h3 { color: var(--text-heading, #f1cf85) !important; }
   .child-card .lifespan { font-size:0.84rem; color: var(--text-muted, #6a5a42); font-style:italic; margin-top:0.45rem; }
-  .child-card .surname-pill { display:inline-block; font-size:0.72rem; font-weight:700; background:#1f1a14; color:#d8b366; padding:2px 8px; border-radius:2px; letter-spacing:0.04em; margin-top:0.55rem; }
-  .child-card.subject .surname-pill { background:#d8b366; color:#1f1a14; }
+  .child-card .surname-pill { display:inline-block; font-size:0.72rem; font-weight:700; background:rgba(216,179,102,0.18); color:var(--brand-dark, #8a6420); border:1px solid var(--brand, #d8b366); padding:2px 8px; border-radius:3px; letter-spacing:0.04em; margin-top:0.55rem; }
+  .child-card.subject .surname-pill { background:var(--brand, #d8b366); color:#1f1a14; border-color:var(--brand-dark, #8a6420); }
   .child-card .note { font-size:0.86rem; color: var(--text-body, #5a4a32); margin-top:0.5rem; line-height:1.45; }
   .child-card .sponsors { font-size:0.78rem; color: var(--text-muted, #6a5a42); margin-top:0.45rem; line-height:1.4; }
   .child-card .sponsors strong { color: var(--text-strong, #1f1a14); font-weight:600; }
@@ -82,8 +82,8 @@
   .surname-trail-card p { color: #5a4a32; }
   :root.theme-dark .surname-trail-card p, :root:not(.theme-light) .surname-trail-card p { color: var(--text-body, #e8dfc8) !important; }
   .surname-strip { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.7rem; }
-  .surname-strip span { background: #1f1a14; color: #d8b366; padding: 0.28rem 0.65rem; border-radius: 2px; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.04em; }
-  .surname-strip span.bold-konsen { background: #d8b366; color: #1f1a14; }
+  .surname-strip span { background: rgba(216,179,102,0.18); color: var(--brand-dark, #8a6420); border: 1px solid var(--brand, #d8b366); padding: 0.28rem 0.65rem; border-radius: 3px; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.04em; }
+  .surname-strip span.bold-konsen { background: var(--brand, #d8b366); color: #1f1a14; border-color: var(--brand-dark, #8a6420); }
 
   /* Section H2 dark-mode bumps */
   :root.theme-dark .section h2, :root:not(.theme-light) .section h2 { color: var(--text-heading, #f1cf85) !important; }
@@ -306,6 +306,65 @@
 </section>
 
 <section class="section">
+  <h2 id="all-children">The seven children</h2>
+  <p>Click any tile for the full St. Marcus baptism record, named sponsors (godparents), the family tree, and the surname spelling the parish clerk wrote on the day.</p>
+
+  <div class="children-grid">
+
+    <a class="child-card died-young" href="friedrich-wilhelm.html">
+      <span class="order">1</span><h3>Friedrich Wilhelm Gonnson</h3>
+      <div class="lifespan">b. 20 Jun 1866 &middot; d. ~Oct 1867 &middot; <strong>died as infant (16 mo)</strong></div>
+      <span class="surname-pill">Gonnson</span>
+      <div class="note">&starf; Named for <em>Friedrich Wilhelm I</em>, the deposed Elector of Hesse-Kassel &mdash; three months after Charles's homeland lost its independence to Prussia.</div>
+      <div class="sponsors"><strong>Sponsors:</strong> Friedrich Wilhelm Pillmann &middot; Wilhelmine Ebling Leue &middot; Georg &amp; Henriette Kreichelt</div>
+    </a>
+
+    <a class="child-card died-young" href="josephine-maria.html">
+      <span class="order">2</span><h3>Maria Josephine Gonnson</h3>
+      <div class="lifespan">b. 1868 &middot; d. 1890 &middot; <strong>died at 22, unmarried</strong></div>
+      <span class="surname-pill">Gonnson</span>
+      <div class="note">Died the same year as her younger sister Auguste &mdash; the 1890 double-loss for Charles and Auguste.</div>
+    </a>
+
+    <a class="child-card" href="katherine-carolina.html">
+      <span class="order">3</span><h3>Friedrike Catharina Caroline Amalia <em>Gansen</em></h3>
+      <div class="lifespan">b. 1870 &middot; d. 1949 &middot; <strong>lived to 79</strong></div>
+      <span class="surname-pill">Gansen</span>
+      <div class="note">Later <strong>"Kate Ruddy"</strong> &mdash; married name. Four given names at baptism.</div>
+    </a>
+
+    <a class="child-card died-young" href="auguste.html">
+      <span class="order">4</span><h3>Auguste Gonsen</h3>
+      <div class="lifespan">b. 1872 &middot; d. 1890 &middot; <strong>died at 18</strong></div>
+      <span class="surname-pill">Gonsen</span>
+      <div class="note">Named for her mother. Died the same year as her older sister Maria Josephine.</div>
+    </a>
+
+    <a class="child-card" href="louise.html">
+      <span class="order">5</span><h3>Louise Jansen</h3>
+      <div class="lifespan">b. 1873 &middot; d. 1947 &middot; <strong>lived to 73</strong></div>
+      <span class="surname-pill">Jansen</span>
+      <div class="note">Later <strong>"Louise Foster"</strong> &mdash; married name.</div>
+    </a>
+
+    <a class="child-card subject" href="erwin-carl-konsen.html">
+      <span class="order">6</span><h3>&starf; Erwin Carl <em>Konsen</em></h3>
+      <div class="lifespan">b. 27 Aug 1875 &middot; d. 1950 &middot; <strong>lived to 74</strong></div>
+      <span class="surname-pill">Konsen</span>
+      <div class="note"><strong>The surname-preservation evidence.</strong> The only child whose 1875 baptism preserved the Hessian-style <em>Konsen</em> spelling &mdash; the strongest single American-side pointer back to the Konze / Konsen / Konzen line of Trendelburg / Deisel. Later <strong>"Charles Johnson Jr."</strong>; married Katherine Misch.</div>
+    </a>
+
+    <a class="child-card" href="bertha.html">
+      <span class="order">7</span><h3>Bertha Jansen</h3>
+      <div class="lifespan">b. 1880 &middot; d. 1959 &middot; <strong>the youngest, lived to 78</strong></div>
+      <span class="surname-pill">Jansen</span>
+      <div class="note">The last of the seven. Born when Charles was 45 and Auguste was 40. Outlived her firstborn brother by ninety-three years.</div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section">
   <h2 id="lifespan-timeline">Lifespan timeline &middot; 1835 to 1960</h2>
   <p>Seven children across one mother (Auguste, who outlived the eldest by 29 years and died before the four longest-lived saw the new century) and one father (Charles, who outlived three of his seven). Each bar is one life from birth to death; red bars are the three who died young, green bars the four who outlived the 20th century. Gold bars at the top show Charles and Auguste's own lifespans for reference.</p>
 
@@ -446,65 +505,6 @@
       <span>Jansen &middot; 1881</span>
       <span>Conson &middot; 1896</span>
     </div>
-  </div>
-</section>
-
-<section class="section">
-  <h2 id="all-children">The seven children</h2>
-  <p>Click any tile for the full St. Marcus baptism record, named sponsors (godparents), the family tree, and the surname spelling the parish clerk wrote on the day.</p>
-
-  <div class="children-grid">
-
-    <a class="child-card died-young" href="friedrich-wilhelm.html">
-      <span class="order">1</span><h3>Friedrich Wilhelm Gonnson</h3>
-      <div class="lifespan">b. 20 Jun 1866 &middot; d. ~Oct 1867 &middot; <strong>died as infant (16 mo)</strong></div>
-      <span class="surname-pill">Gonnson</span>
-      <div class="note">&starf; Named for <em>Friedrich Wilhelm I</em>, the deposed Elector of Hesse-Kassel &mdash; three months after Charles's homeland lost its independence to Prussia.</div>
-      <div class="sponsors"><strong>Sponsors:</strong> Friedrich Wilhelm Pillmann &middot; Wilhelmine Ebling Leue &middot; Georg &amp; Henriette Kreichelt</div>
-    </a>
-
-    <a class="child-card died-young" href="josephine-maria.html">
-      <span class="order">2</span><h3>Maria Josephine Gonnson</h3>
-      <div class="lifespan">b. 1868 &middot; d. 1890 &middot; <strong>died at 22, unmarried</strong></div>
-      <span class="surname-pill">Gonnson</span>
-      <div class="note">Died the same year as her younger sister Auguste &mdash; the 1890 double-loss for Charles and Auguste.</div>
-    </a>
-
-    <a class="child-card" href="katherine-carolina.html">
-      <span class="order">3</span><h3>Friedrike Catharina Caroline Amalia <em>Gansen</em></h3>
-      <div class="lifespan">b. 1870 &middot; d. 1949 &middot; <strong>lived to 79</strong></div>
-      <span class="surname-pill">Gansen</span>
-      <div class="note">Later <strong>"Kate Ruddy"</strong> &mdash; married name. Four given names at baptism.</div>
-    </a>
-
-    <a class="child-card died-young" href="auguste.html">
-      <span class="order">4</span><h3>Auguste Gonsen</h3>
-      <div class="lifespan">b. 1872 &middot; d. 1890 &middot; <strong>died at 18</strong></div>
-      <span class="surname-pill">Gonsen</span>
-      <div class="note">Named for her mother. Died the same year as her older sister Maria Josephine.</div>
-    </a>
-
-    <a class="child-card" href="louise.html">
-      <span class="order">5</span><h3>Louise Jansen</h3>
-      <div class="lifespan">b. 1873 &middot; d. 1947 &middot; <strong>lived to 73</strong></div>
-      <span class="surname-pill">Jansen</span>
-      <div class="note">Later <strong>"Louise Foster"</strong> &mdash; married name.</div>
-    </a>
-
-    <a class="child-card subject" href="erwin-carl-konsen.html">
-      <span class="order">6</span><h3>&starf; Erwin Carl <em>Konsen</em></h3>
-      <div class="lifespan">b. 27 Aug 1875 &middot; d. 1950 &middot; <strong>lived to 74</strong></div>
-      <span class="surname-pill">Konsen</span>
-      <div class="note"><strong>The surname-preservation evidence.</strong> The only child whose 1875 baptism preserved the Hessian-style <em>Konsen</em> spelling &mdash; the strongest single American-side pointer back to the Konze / Konsen / Konzen line of Trendelburg / Deisel. Later <strong>"Charles Johnson Jr."</strong>; married Katherine Misch.</div>
-    </a>
-
-    <a class="child-card" href="bertha.html">
-      <span class="order">7</span><h3>Bertha Jansen</h3>
-      <div class="lifespan">b. 1880 &middot; d. 1959 &middot; <strong>the youngest, lived to 78</strong></div>
-      <span class="surname-pill">Jansen</span>
-      <div class="note">The last of the seven. Born when Charles was 45 and Auguste was 40. Outlived her firstborn brother by ninety-three years.</div>
-    </a>
-
   </div>
 </section>
 

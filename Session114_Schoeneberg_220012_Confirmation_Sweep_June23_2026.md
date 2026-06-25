@@ -103,7 +103,10 @@ born 26 Jan 1835 (age 14) — has no Carl at all** (its 4 boys are Johann Peter,
 Wilhelm Friedrich Nolte, Friedrich Uffelmann, Christian Klein). **No Carl is born
 in 1834 or 1835 anywhere in the register.** Every Carl that appears is born 1833,
 1836, 1836, or 1839 and carries a **local Schöneberg surname** (Siebert, Küthen,
-Grandjot, Wagner) — never a Konze / Kontze / Gannsen / *n·s·n* variant.
+Grandjot, Wagner) — never a Konze / Kontze / Gannsen / *n·s·n* variant. (And the
+1836 Grandjot Carl was **already eliminated** as focal candidate PCXG-W9M in March
+2026 — see note above — so the sweep adds three incidental Carls plus a
+corroboration of a known elimination, not four new leads.)
 
 This **resolves the previously jumble-blocked / "Not yet" status** that Session
 109 had to hand off, and **strengthens the ELIMINATED verdict** for Schöneberg

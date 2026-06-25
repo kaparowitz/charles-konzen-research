@@ -24,19 +24,97 @@
 <script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
 <script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
 <style>
-  body { background:#f6f1e7; }
   main { max-width:1100px; margin:0 auto; padding:1.6rem 1.4rem 4rem; }
-  .person-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1rem; margin-top:1rem; align-items: stretch; }
-  .person-card { display:flex; flex-direction:column; background:#fffaf0; border:1px solid #d8c8a8; border-radius:6px; padding:1rem; text-decoration:none; color:#2c2620; transition:all 0.15s; border-left:4px solid #d8b366; }
-  .person-card:hover { background:#fff4d8; border-left-color:#8a6420; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
-  .person-card:hover h3 { color:#8a6420; text-decoration:underline; }
-  .person-card.battery { border-left-color:#c84a4a; }
-  .person-card.battery:hover { border-left-color:#8a3a3a; }
-  .person-card .role { display:block; font-size: 0.76rem; text-transform:uppercase; letter-spacing:0.06em; color:#8a6420; font-weight:700; margin:0 0 0.5rem; padding:0.18rem 0.45rem; background:rgba(212,160,23,0.12); border-radius:3px; align-self:flex-start; max-width:100%; line-height:1.35; }
-  .person-card .role.battery { color:#8a3a3a; background:rgba(200,74,74,0.12); }
-  .person-card h3 { color:#1f1a14; font-size:1.05rem; font-weight:700; margin:0 0 0.45rem; line-height:1.25; clear:both; }
-  .person-card .summary { font-size:0.88rem; line-height:1.45; color:#4a3a22; margin:0 0 0.5rem; flex:1; }
-  .person-card .meta { font-size:0.78rem; color:#6a5a42; font-style:italic; margin-top:auto; }
+
+  /* ------------------------------------------------------------------
+     People-index tile cards.
+     Rewritten June 2026: the markup uses the shared .tile primitive
+     (theme.css), so the inner role / title / summary / meta elements
+     are styled here. All colours come from design tokens so the cards
+     render correctly in both light and dark mode. The old rules were
+     scoped to .person-card (a class this page no longer uses) and so
+     never applied — leaving the chips and meta lines unstyled.
+     ------------------------------------------------------------------ */
+  .person-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    gap:1.1rem;
+    margin-top:1.1rem;
+    align-items:stretch;
+  }
+  .person-grid .tile { height:100%; padding:1.1rem 1.2rem; gap:0; }
+
+  /* Confidence chip line sits flush at the top */
+  .person-grid .tile .conf-line { margin:0 0 0.55rem; }
+
+  /* Role — small uppercase eyebrow chip */
+  .person-grid .tile .role {
+    display:inline-block;
+    align-self:flex-start;
+    max-width:100%;
+    font-family:var(--font-serif);
+    font-size:0.74rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.07em;
+    line-height:1.35;
+    color:var(--brand-dark);
+    background:rgba(216,179,102,0.16);
+    padding:0.2rem 0.5rem;
+    border-radius:3px;
+    margin:0 0 0.55rem;
+  }
+  .person-grid .tile .role.battery,
+  .person-grid .tile.battery .role {
+    color:var(--section-civilwar-d);
+    background:rgba(160,64,48,0.14);
+  }
+  .person-grid .tile .role.open-id,
+  .person-grid .tile.open-id .role {
+    color:var(--status-open);
+    background:rgba(200,122,48,0.16);
+  }
+
+  /* Name / title */
+  .person-grid .tile h3 {
+    font-family:var(--font-serif);
+    font-size:1.12rem;
+    font-weight:700;
+    line-height:1.28;
+    color:var(--text-primary);
+    margin:0 0 0.5rem;
+  }
+  .person-grid .tile:hover h3 { color:var(--brand-dark); }
+
+  /* Summary body — fills the card so meta lines bottom-align */
+  .person-grid .tile .summary {
+    flex:1 1 auto;
+    font-size:0.9rem;
+    line-height:1.5;
+    color:var(--text-body);
+    margin:0 0 0.65rem;
+  }
+  .person-grid .tile .summary strong { color:var(--text-primary); }
+
+  /* Meta footer — small italic, divider above */
+  .person-grid .tile .meta {
+    margin-top:auto;
+    padding-top:0.55rem;
+    border-top:1px solid var(--border-light);
+    font-size:0.78rem;
+    font-style:italic;
+    color:var(--text-muted);
+    line-height:1.4;
+  }
+
+  /* Section accents for the two non-standard tile families */
+  .person-grid .tile.battery { border-left-color:var(--section-civilwar); }
+  .person-grid .tile.battery:hover { border-left-color:var(--section-civilwar-d); }
+  .person-grid .tile.open-id { border-left-color:var(--status-open); }
+
+  @media (max-width:640px) {
+    .person-grid { grid-template-columns:1fr; gap:0.9rem; }
+  }
   /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -425,8 +503,8 @@
       <div class="summary">Sole named sponsor at the 1875 Erwin Carl Konsen baptism — the direct namesake of Charles &amp; Auguste's sixth child. Born ~1848 Baden, Germany (per the June 1889 obituary; FS tree currently records 1841). Married Anna Maria Grassner 12 November 1868 St. Louis (one son Frank b. 1869). <strong>Superintendent of the Anheuser-Busch Brewing Association</strong> at his death — the most senior trade title at one of St. Louis's largest German-immigrant employers. Lived at 1340 S 9th Street in Soulard / Frenchtown, walking distance from the brewery and ~2 miles from the Gannsen residences. Died 19 June 1889 St. Louis aged 41 of post-operative complications from a left-shoulder abscess (Dr. Mudd performed surgery). Predeceased Charles by 14 years. Per Jed (Dec 2025): Charles chose Spraul "because he was a successful fellow immigrant" — now sharpened by the obituary to "successful at the very top of the brewing trade." Erwin's biological line ended in 1894 with son Frank's death; godson Erwin Carl Konsen carries the name forward. <strong>Two-generation Anheuser-Busch employment bridge:</strong> Charles's grandson <strong>Frederick Charles Johnson</strong> (Charles Jr.'s son, b. 1905, FamilySearch KLBX-VR1) later worked as a Bottler at Anheuser-Busch.</div>
       <div class="meta">FamilySearch KLP1-N62 · ~1848–1889 · Anheuser-Busch Supt.</div>
     </a>
-    <a class="tile" data-section="charles" href="../index.html#charles" style="border-left-color:#c84a4a;">
-      <div class="role" style="color:#8a3a3a;">Co-sponsor 1875 · "the father of the child"</div>
+    <a class="tile battery" data-section="charles" href="../index.html#charles">
+      <div class="role battery">Co-sponsor 1875 · "the father of the child"</div>
       <h3>Charles Gannsen (himself)</h3>
       <div class="summary">The 1875 St. Marcus baptism register lists "the father of the child" — i.e. Charles Gannsen himself — as a co-sponsor alongside Erwin Spraul. This is unusual: the father is not normally also the godfather of his own child. Two competing readings: (a) parish-clerk shorthand for "no second sponsor present," or (b) a deliberate choice by Charles to mark the child as the carrier of his Hessian surname identity — the only Gannsen baptism with the spelling <strong>Konsen</strong>. Either way, this is the <strong>only</strong> Gannsen baptism with no maternal-Kreichelt-side sponsor. The strongest direct surname link between Charles in St. Louis and the Konze line in Hesse. <strong>→ See the Charles in America tab</strong> on the main site for the full life-of-Charles overview.</div>
       <div class="meta">FamilySearch LZXC-6GB · 1835–1903 · subject of the entire investigation</div>

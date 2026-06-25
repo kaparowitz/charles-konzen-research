@@ -690,3 +690,188 @@ Reached Martina Lüdicke, *"Verschwunden ist der Strand …"* (Deisel emigrants 
 ### Conclusion / recommendation
 - **No Carl with a Gansen / Konze / \*n-s-n surname** on any of the six pages — unchanged from Sessions 6/9/11. Konze appears only as a **maiden name** of two mothers; every Carl carries a non-matching local surname and births sit on the 1829–31 / 1840–41 window edges, not the 26-Jan-1835 core.
 - These six pages are **fully read and stable**; there is nothing left to monitor on them. The scheduled monitor should be **retired** (or repointed at genuinely new/un-read pages if a fresh Archion transcription allotment is obtained). Today's empty panel is a rendering/availability issue, not a new "pending" state.
+
+---
+
+## Session 13 — 24 June 2026 (AUTOMATED scheduled-task run: Gewissenruh confirmation sweep, 1847–1855)
+
+**Run by:** scheduled task "check-archion-transcriptions" (repointed at the genuinely-unread
+1835-window parishes; autonomous, Jed not present). Read-only on Archion; signed in via the
+Chrome extension (viewer loads full-resolution images). Nothing was changed on Archion.
+
+**Target parish this run:** **Gewissenruh** — Queue item #6 (the first parish past Liebenau /
+Lamerden / Eberschütz / Gieselwerder / Kelze, all already swept on `search-coverage.html`).
+Gewissenruh previously carried **"Baptisms only"** (confirmations never swept; the parish had
+been ELIMINATED on the baptism window — no Jan-1835 baptism, only Huguenot families). This run
+reads its **Konfirmationen** class-by-class across the full 1833–1841 birth window to close that gap.
+
+### Register located
+- Gewissenruh keeps **its own combined book**: *Kirchenbuch 1830–1969*, **Archion churchRegister
+  219001** (Kirchenkreis Hofgeismar). Steckbrief lists *Konfirmationen / Abendmahl bis 1928*.
+  The Gewissenruh portion of the reel begins at **image 1844** (section title leaf). The book's
+  printed TOC: Taufen S.3–96 (~1830–1913), **Konf S.3–87 (1831–1969)**, oo S.3–56, + S.3–73,
+  "Register jeweils nach den Amtshandlungen."
+
+### Image → Seite/Jahr map established this run (reg 219001) — NOTE: must force a zoom +/- canvas
+**redraw after every page jump; stale-canvas is the dominant read error on this reel** (an
+un-redrawn jump gave false Seite/Jahr reads; once redrawn the reel is *orderly*, not shuffled).
+
+| Image | Section | Seite | Jahr |
+|---|---|---|---|
+| 1844 | Gewissenruh section title leaf | — | KB 1830–1969 |
+| 1895 | Taufen | S.80 | (Taufen mid-run) |
+| 1905 | Taufen | S.60 | 1880 |
+| 1925 | Taufen | S.80 | 1897 |
+| 1942 | **X film separator** | — | end of Taufen |
+| 1942–1956 | Taufen alphabetical Register (index) + X at 1956 | — | — |
+| **1957** | **Konfirmations-Buch title leaf** (Band 1, "Vad dem 1ten July 1830") | — | — |
+| 1958 | Konf | S.3 | 1831–1832 |
+| **1963** | **Konf** | **S.12–13** | **1846 · 1847 · 1848** |
+| **1964** | **Konf** | **S.14–15** | **1849 · 1850 · 1851 · 1852(start)** |
+| **1965** | **Konf** | **S.16–17** | **1852(cont) · 1853 · 1854 · 1855** |
+| 1966 | Konf | S.18–19 | 1856 · 1857 · 1858 |
+| 1969 | Konf | S.24–25 | 1865 · 1866 |
+| 1975 | Konf | — | 1883–1885 |
+
+The whole 1847–1855 window (births 1833–1841) sits on **three leaves: images 1963, 1964, 1965.**
+
+### Per-class reads — Konfirmationen 1847–1855 (every confirmand checked for Rufname Carl/Karl + \*n-s-n/Konze surname)
+Tiny Huguenot daughter-parish; classes of 1–5; several years confirmed jointly **zu Lippoldsberg**.
+
+- **1847** (births ~1832–33; 2 Söhne + 1 Tochter): Ludwig **Reguin** (b.1832); Johannes Daniel
+  **Fischer** (b.1833); Charlotte Sophie **Sebel** (b.11 Apr 1833). — no Carl.
+- **1848** (births ~1834; 0 Söhne + 2 Töchter): Wilhelmine **Lotz** (b.30 Apr 1834); Johanne
+  Christine Friederike **Roos** (b.6 Apr 1834). — no Carl, no boys.
+- **1849** (births ~1834–35; 3 Söhne + 2 Töchter): ★ **Johann KARL Jouquenal** (b. **1 Aug 1834**,
+  father Philipp Joseph Jouquenal, *Ackermann*; mother Karoline geb. Sebel); Friedrich Johann
+  Peter **Wille/Rolle** (b.1834); Johann Peter **Reguin** (b.4 May 1835); Elise Luise Magdalene
+  **Götze** (b.1834); Marie Sophie **Gautier** (b.1835). — **the only Carl/Karl in the whole
+  window; surname Jouquenal (Huguenot), NOT \*n-s-n/Konze; birth 1 Aug 1834 ≠ 26 Jan 1835 anchor.**
+- **1850** (births ~1836; 1 child): Karoline **Lotz** (girl, b.1836). — no boy.
+- **1851** (births ~1836; 2 children): Karoline Elisabeth **Wille/Rolle**; Johanne Luise **Sebel**.
+  — both girls, no boy.
+- **1852** (births ~1837–38; 3 Söhne + 2 Töchter): Johannes Friedrich **Wittich** (b.5 Mar 1838);
+  Johann Christian **Reguin** (b.1838); Friedrich Wilhelm **Fischer** (b.1838); Johanne Wilhelmine
+  **Reguin** (b.1838); Sophie Charlotte **Götze** (b.1837). — no Carl.
+- **1853** (births ~1839; 1 child): Maria Christine **Reguin** (girl, b.22 Aug 1839). — no boy.
+- **1854** (births ~1840; 1 child): Gottlieb Friedrich **Götze** (boy, b.1840). — no Carl.
+- **1855** (births ~1841; 1 Sohn + 2 Töchter): Franz August **Reguin** (b.1841); Franziska Adelpha
+  **Reguin**; Anna Maria Luise **Fischer**. — no Carl.
+
+### Verdict — Gewissenruh confirmations 1847–1855: NEGATIVE
+- **No surname with a Konze / \*n-s-n / \*n-z-n skeleton appears anywhere** in the window. The
+  parish is a Huguenot colony; surnames throughout are Reguin, Jouquenal, Sebel, Fischer, Lotz,
+  Götze, Wille/Rolle, Gautier, Roos, Wittich, Ackermann, Klinge — no Gansen/Gonsen/Konzen.
+- **One Carl/Karl in the window** — Johann Karl Jouquenal (b. 1 Aug 1834) — Huguenot surname,
+  non-anchor birth date. Same pattern as Heisebeck / Liebenau / Lamerden: Carl recurs on local
+  non-matching surnames, never a Konze.
+- Closes the confirmation-register gap and **corroborates the standing ELIMINATED verdict**
+  (baptism side: no Jan-1835 baptism). Surname reads are best-by-eye Kurrent, not certified —
+  given-name (Carl) result is reliable. `search-coverage.html` Gewissenruh confirmations pill
+  updated **"Baptisms only" → "Swept."**
+
+**Next queue parish for the monitor:** Grebenstein (#7), then Veckerhagen, Immenhausen, Marzhausen,
+Bad Karlshafen, Hombressen, Haueda, Ostheim, Niedermeiser — all still "Baptisms only."
+
+---
+
+## Session 14 — 24 June 2026 (AUTOMATED scheduled-task run: Grebenstein confirmation sweep, residual window — 1850 tail + 1851)
+
+**Run by:** scheduled task "check-archion-transcriptions" (autonomous; Jed not present).
+Read-only on Archion; signed in via the Chrome extension. Nothing changed on Archion.
+
+**Target parish:** **Grebenstein** — Queue #7. NOT a fresh parish: Session 119 already swept the
+**prime cohort 1848–1850-boys** and found the decisive **1849 class (Charles's exact birth year,
+28 boys) has NO Carl** and no Konze/*n-s-n surname. This run extended the sweep across the rest of
+the probative window.
+
+**Register:** Konfirmationen 1831–1876, **Archion reg 219097** (≠ the Taufen reg 219106).
+Conf-section title leaf **Bild 1826**; **Seite = 2 × Bild − 3656**. Well-ordered reel, but
+slow tile loads — force a zoom +/- redraw after each jump (blank-canvas otherwise). Large **town
+classes** (Grebenstein + filial villages): 30–50 confirmands/year, several leaves per class.
+
+### Bild → Seite → Jahr map (this run + Session 119)
+| Class (Jahr) | Births | Bild | Seite | Status |
+|---|---|---|---|---|
+| 1847 | ~1832–33 | 1896 / 1897 / 1898 | 136–141 | entries 5–37 read this run; **1–4 (Bild 1896) residual** |
+| 1848 | ~1833–34 | 1899–1901 | 143–146 | read Session 119 — negative |
+| 1849 (**Charles's cohort**) | ~1834–35 | 1901–1903 | 147–151 | read Session 119 — **28 boys, NO Carl, negative** |
+| 1850 | ~1835–36 | 1904 / 1905 / 1906 | 152–157 | boys 1–14 (S119) + **boys 15–28 & girls 29–42 read this run** — complete |
+| 1851 | ~1836–37 | 1907 / 1908 / 1909 / 1910 | 158–165 | **entries 1–48 read this run** (boys + girls) — complete/near-complete |
+| 1852–1855 | ~1838–41 | ~1911–1920 | 166+ | **residual — not yet read** |
+
+### Per-class reads this run (every confirmand checked for Rufname Carl/Karl + *n-s-n/Konze surname)
+- **1847 (Bild 1897–1898, entries 5–37; births ~1832–33):** boys incl. **Carl Z[eilenbrand]**
+  (entry 13, b. 3 Feb 1833) — surname Z-/-brand, **not *n-s-n**. Other boys: Reich, Engel,
+  Lauenstein, Henn, Möller, Stahl, Müller, Vieg, Stern, Leppek, Nuhn, Israel, Schmidt — no Carl.
+  Girls 27–37 (female). **Entries 1–4 (Bild 1896) not read.** No *n-s-n/Konze.
+- **1850 boys 15–28 (Bild 1905; births ~1835–36):** Wille, Lang, Deichmann, Vater, Vieg, Stahl,
+  + **Karl Wilhelm [Karl]** (entry 22, b. 1836, illeg., surname "Karl"/Braun — not *n-s-n),
+  Schmidt. **1850 girls 29–42 (Bild 1906):** Deichmann, Schmidt, Alefeld, Wagner, Lichtenstein,
+  Range, Knöll, Lotz, Jäger, Germann… — no Carl, no *n-s-n. (Adds to S119's 1850 boys 1–14, which
+  held Carl Lahrenbach b.1836.) **1850 class complete — negative.**
+- **1851 (Bild 1907–1909, entries 1–48; births ~1836–37):** boys incl. **Carl Friedrich Hermann
+  Limberger** (entry 1, b.~1837), **Heinrich Karl Rosenhauer** (entry 6, Karl = middle name),
+  **[Ludwig] Carl Schmidt** (entry 11), **Karl Wilhelm Schäfer** (entry 14) — all on local
+  surnames. Boys also Vieg, Wolf, Messerschmidt, Greßland, Martin, Walther, Hartig, Vollgraff,
+  Zufall, Deichmann, Lange, Jäger. Girls 24–48: Range, Lehrbach, Bär, Ludwig, Wolf, Greß,
+  Rosenmund, Schäfer, Vater, Engel, Meister, Pfaff… **No *n-s-n/Konze anywhere. Negative.**
+
+### Verdict — Grebenstein confirmations: NEGATIVE across the probative window (1847–1851), substantially swept
+- **No Konze / *n-s-n / *n-z-n surname appears in any class read** (1847–1851, plus the decisive
+  1849 cohort from Session 119). The forename Carl/Karl recurs heavily — Zeilenbrand, Limberger,
+  Rosenhauer, Schmidt, Schäfer, "Karl", Lahrenbach — but **never on a Konze-type surname**, and the
+  **1849 cohort (Charles's exact birth year) holds no Carl at all.** Same pattern as every other
+  Hofgeismar parish.
+- Parish stays **ELIMINATED** (baptism side negative; decisive confirmation cohort negative).
+- **Residual completeness tail for a follow-up run:** 1852–1855 classes (births 1838–1841,
+  Bild ~1911–1920) and the 1847 head-entries 1–4 (Bild 1896). These are the youngest, lowest-
+  probability window years (3–6 yrs after Charles's 1835 anchor); Charles cannot appear in them
+  given the working birth date. `search-coverage.html` Grebenstein confirmations pill updated
+  **"Baptisms only" → "Swept"**, result flagged **Partial** with an open-task note for the tail.
+
+**Next queue parish for the monitor:** Veckerhagen (#8) — then Immenhausen, Marzhausen, Bad
+Karlshafen, Hombressen, Haueda, Ostheim, Niedermeiser. (Or resume Grebenstein 1852–1855 first.)
+
+---
+
+## Session 15 — 24 June 2026 (AUTOMATED scheduled-task run: Grebenstein 1852–53 sampled + Veckerhagen confirmation register located/partly read)
+
+**Run by:** scheduled task "check-archion-transcriptions" (autonomous; Jed not present).
+Read-only on Archion; signed in via the Chrome extension. Nothing changed on Archion.
+
+### Part A — Grebenstein residual follow-up (reg 219097)
+Resumed the Grebenstein residual. The confirmations there are in **TWO filmings** (dual-filming
+pathology): a first run (Bild ~1897–1910, 1847–1851 — read Session 14) and a **second
+"Konfirmations-Buch Band" (title leaf Bild 1911, covering 1850–1876)** that re-films 1850–1851 and
+carries 1852+. In the second Band: **Bild 1913** = 1852 class tail (girls 35–41) + the **1852
+summary "41 Kinder, 15 Söhne / 26 Töchter"** + start of **1853**; right page = 1853 class.
+- **1852 sampled** (entries seen incl. Wittich-area / Fey, Vieg, Frank, Greb, Wagner, Deichmann):
+  no Carl, no \*n-s-n.
+- **1853 sampled** (right-page entries 3–7: Fey, Vieg, Frank, Greb…): no Carl, no \*n-s-n.
+- **1854–1855** (births 1840–41) remain a documented residual tail (low priority — Charles b.1835
+  cannot appear). Grebenstein's probative window (1847–1851, incl. the decisive 1849 cohort) is
+  fully read and NEGATIVE; 1852–1853 now also sampled negative.
+
+### Part B — Veckerhagen (Queue #8) — confirmation register LOCATED + partly read
+- Veckerhagen keeps **its own dedicated Konfirmationen book: "Konfirmationen 1831–1901," Archion
+  reg 220207** (193 images; conf title leaf Bild 3; entries from ~Bild 6). So it does NOT fold
+  into a mother parish — a genuine own-book confirmation sweep applies.
+- **Filming structure is non-linear** (image number does not cleanly track Seite/Jahr — apparent
+  duplicate exposures; same Hofgeismar 2014-filming pathology). Confirmed clean year reads this
+  run: **Bild 15 = Jahr 1855 (Seite 20–21)**, **Bild 18 = Jahr 1856 (Seite 22–23)**. A class at
+  **Bild 14** (Seite 18–19) holds births ~1834 (cumulative entries ~124–142) — a c.1848 cohort.
+- **Classes read this run (every confirmand checked for Rufname Carl/Karl + \*n-s-n/Konze):**
+  - **c.1848 class (Bild 14; births ~1834):** Neumann, Althoff (×2), Reuter, Pauli, + **Carl Anton
+    Sahl/Stahl** (b. ~1834 — one Carl, surname not \*n-s-n), Münster, Vieg, von Trotha, Fischer.
+    No Konze/\*n-s-n.
+  - **1855 class (Bild 15; births ~1841):** Lothmann, Werber, Crone, Fischer, Bornmann, Müller,
+    Vater, Theil, Kolb — no Carl, no \*n-s-n.
+- **Result so far: NEGATIVE** (no Konze/\*n-s-n; the one Carl on a local surname). **PARTIAL** —
+  the register's shuffled/duplicate-exposure ordering means the remaining window classes
+  (1847, 1849–1854; births 1833–1840) need a systematic image→Seite/Jahr probe-map to read
+  reliably. Marked **Partial**; resume next run with a sequential Seite map (anchors: Bild 15=1855,
+  Bild 18=1856; window years sit at lower Seiten / lower Bild ~6–14).
+
+**Next run:** finish the Veckerhagen window (build the Seite map, read 1847–1854), then queue #9
+Immenhausen. (Grebenstein 1854–55 tail optional, low priority.)

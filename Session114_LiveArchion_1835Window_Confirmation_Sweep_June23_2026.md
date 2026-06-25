@@ -119,13 +119,80 @@ has TWO copies of the run; the readable, in-order window block is at **images 19
   surnames Kümpel / Schäfer. Local surname **"von Dißen"** appears (entries 1, 3) — a
   resident family, NOT Konze. **No \*n-s-n / Konze.**
 
-**Verdict so far — Liebenau confirmations: NEGATIVE in the read classes**, consistent with
-Heisebeck and with the baptism side (219745, 1835 window clean — `liebenau-research-log.html`).
-The forename Carl again recurs on non-matching surnames (Kümpel, Schäfer). **Still to read
-to fully close the window:** 1850 boys 1–6 (S58, img-1991 leaf), the 1849 class (births
-1835, S55–57), the 1847–1848 classes (births 1833–34), and 1852–1855 (births 1838–41).
-The img-1991/1993 leaves are stale-canvas-prone — re-pull via thumbnail click, or hand the
-precise leaf list (reg 219742, S55–58) to Peter Schräder.
+**Classes read in full or near-full this session (all NEGATIVE for a Konze-type Carl):**
+- **1848 (img 1991, S53–54; births 1833–34):** entries 7–16 read — Julius Meister (m, b.1833)
+  + girls (Achenmüller, Storck, Haar, Ackermann, Walter, Lange, Winnefeld). Summary
+  "Confirmanden vom Jahr 1848". Boys 1–6 (S52) on the img-1990 leaf — not cleanly pulled
+  (render glitch; a confirmand b. 18 Aug 1835 is visible in a garbled fragment — re-pull).
+- **1850 (img 1992 left, S59; births 1835–36, PRIME):** ~10 confirmands; tail 7–10 read
+  (Achenmüller-Schäfer b. 25 Jan 1836, Jungham b. 1835, +2 girls). No Carl/\*n-s-n. Boys 1–6
+  (S58) displaced — outstanding.
+- **1851 (img 1992 right S60 + img 1993 left S61; births 1836–37): FULL** — 19 confirmands
+  (10 boys, 9 girls). Two Carls: **Carl Conrad Kümpel** (b. 29 Oct 1836), **Wilhelm Carl
+  Schäfer** (b. 6 Feb 1837). Local surname **"von Dißen"** present (not Konze). No \*n-s-n.
+- **1852 (img 1993 right S63 + img 1994 left; births 1838): FULL** — one Carl: **Carl Ludwig
+  Dietrich** (b. May 1838). No \*n-s-n.
+- **1853 (img 1994 right S65; births 1838–39): FULL (boys)** — one Carl: **Carl Wilhelm
+  Kümpel** (b. 26 Jun 1839). Surnames Ackermann/Achenmüller/Hesse/Salzer. No \*n-s-n.
+
+**Verdict — Liebenau confirmations: NEGATIVE across all read classes (1848, 1850–1853).**
+Identical pattern to Heisebeck: the forename Carl recurs on local non-matching surnames
+(Kümpel, Schäfer, Dietrich), never a Konze / \*n-s-n / \*n-z-n. Corroborated by the clean
+baptism side (219745, 1835 window — `liebenau-research-log.html`).
+
+**Outstanding displaced leaves (hand to a dedicated sweep run or Peter Schräder):** the
+**1849 class (births 1835, S55–57)**, **1850 boys 1–6 (S58)**, **1848 boys 1–6 (S52)**, and
+**1854–1855 (births 1840–41, S66+)**. These printed Seiten are NOT in their natural slot in
+the orderly block (imgs 1990–1996 jump S54→S59); the reel's second filming (imgs 1998+) is
+itself chaotic (1841→1857→1858 across imgs 1998–2000). Locating them needs a full sequential
+Seite-map of reg 219742. NOTE: confirmation pages here are NOT AI-transcribed despite the
+parish "komplett transkribiert" label, so no full-text shortcut.
+
+---
+
+## Lamerden — Konfirmationen 1831–2013 (Archion register 219673) — PRIME read, NEGATIVE
+
+Same **dual-filming + index** structure as Liebenau (both "Verfilmt 2014"): a first run
+(imgs 676–691, ≈1831–1846) then a second title page "Lamerden Konf … mit Register" at
+**img 692**, with the 1847+ window classes in the second filming. Second filming is the
+chaotic one (S26/1849 @ 697, S42/1850 @ 698, S46/1852 @ 700 — non-linear Seiten). Pages
+render with occasional double-exposure ghosting but are readable. Confirmation pages NOT
+AI-transcribed despite "komplett transkribiert" label. Cumulative confirmand numbering
+(entries ~129–222 across these leaves), classes are small.
+
+**Prime window read (the most probative cohort — births 1835–36):**
+- **1849 class (img 697, S26, "28 Mai"; births 1835):** entries 129–131 — Johann Heinrich
+  **Brede** (b. Jul 1835), **Carl Ludwig Lange** (b. 4 Apr 1835, father Carl Ludwig Lange,
+  *Schneider*), Heinrich Wilhelm **Tinnes** (b. 1835). **One Carl — surname Lange, not
+  \*n-s-n.** (Closest date-match yet to Charles's 1835, but a known local Lange tailor's
+  son, given name Carl Ludwig — ruled out.)
+- **1850 class (img 698, S42, "1 April"; births 1835–36):** entries 216–222 — Blücher,
+  Zelt(?), **Carl Friedrich [Büchler]** (b. 24 Oct 1835), **Carl Wilhelm [Weninger]**
+  (b. 10 Mar 1836), Schröder, + girls. **Two Carls — surnames Büchler / Weninger, not
+  \*n-s-n.**
+
+**Verdict — Lamerden prime cohort (1849–1850, births 1835–36): NEGATIVE.** Three Carls
+across the two anchor classes (Lange, Büchler, Weninger), **none** on a Konze / \*n-s-n /
+\*n-z-n surname — identical pattern to Heisebeck and Liebenau. **Still to read for full
+window closure:** 1847–1848 (births 1833–34) and 1851–1855 (births 1837–41), located in the
+chaotic second filming near imgs 695–703 (map via the S26/S42/S46 anchors above).
+
+---
+
+## STRUCTURAL FINDING (applies to the whole queue)
+
+All Kirchenkreis Hofgeismar confirmation reels checked so far (Heisebeck 219172, Liebenau
+219742, Lamerden 219673) share the **same 2014-filming pathology**: leaves are shuffled /
+duplicated, frequently a **dual filming** with a spliced alphabetical **name register**, and
+the **confirmation pages are NOT AI-transcribed** even when the parish is tagged "komplett
+transkribiert." There is **no reliable year-navigation**; locating a given class needs a
+by-eye Seite/Jahr probe sweep, and prime leaves are stale-canvas-prone (re-pull via
+thumbnail + a 4 s wait). Implication: each parish is ~15–30 viewer reads to cover the full
+window; the 13 remaining parishes are realistically a **multi-run effort**, and a dedicated
+**systematic-sweep scheduled task** (or handing the mapped leaf-lists to Peter Schräder /
+requesting Archion re-scans) is the efficient path. RESULT PATTERN is highly consistent:
+the forename Carl is everywhere; a Konze / \*n-s-n surname appears **nowhere** in any class
+read.
 
 ---
 
