@@ -195,6 +195,7 @@
 html[data-deeplink-tab] section.page{animation:none!important;}
 html[data-deeplink-tab] section.page.active{display:none!important;}
 html[data-deeplink-tab] section.page:target{display:block!important;}
+html.spa-ready section.page{animation:none!important;}
 </style>
 </head>
 <body class="cine-typography">
@@ -5284,6 +5285,7 @@ Investigation." Accessed [DATE]. https://charles-research.netlify.app/.</code>
   // Sub-tab clicks — switch the visible section
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
+      document.documentElement.classList.add('spa-ready');
       showTab(btn.dataset.target, true);
       history.replaceState(null, '', '#' + btn.dataset.target);
     });
@@ -5444,6 +5446,7 @@ Investigation." Accessed [DATE]. https://charles-research.netlify.app/.</code>
   // Handle hash on load and on hashchange.
   function handleHash() {
     if (!window.location.hash) return;
+    document.documentElement.classList.add('spa-ready');
     var id = window.location.hash.slice(1);
     if (id === 'overview') id = 'glance'; // legacy Home-tab links (tab removed June 2026)
     var tabBtn = document.querySelector('nav.tabs button[data-target="' + id + '"]');
