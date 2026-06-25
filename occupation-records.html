@@ -127,6 +127,18 @@
 </head>
 <body class="cine-typography">
 <!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (restructured June 2026): each page appears in exactly ONE group;
+  section groups link to their standalone hub pages (germany/, civilwar/,
+  towns/, …) rather than in-page SPA tab anchors; the cross-record analyses
+  and audits live under "Start here"; a "Visualizations" group gives the
+  tree/poster/explorer pages a single home.
+-->
 <a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
 <nav class="site-nav-shared" role="navigation" aria-label="Site sections">
   <div class="tab-group" data-group="start">
@@ -160,8 +172,8 @@
     <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
     <div class="group-menu" role="menu" hidden>
       <a href="immigration/index.html" role="menuitem">Immigration journey</a>
-      <a href="charles-in-america.html" role="menuitem">Charles in America</a>
-      <a href="civilwar/index.html" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+      <a href="index.html#charles" role="menuitem">Charles in America</a>
+      <a href="index.html#civilwar" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
     </div>
   </div>
 
@@ -368,6 +380,12 @@
 </footer>
 
 <!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
 <footer class="site-foot-shared" role="contentinfo">
   <details class="cite-widget" id="cite-this-page">
     <summary>
