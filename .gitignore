@@ -76,3 +76,4 @@ autoclusters_*/
 *.dmg
 *.gz
 *.last
+*.backup_*.html
