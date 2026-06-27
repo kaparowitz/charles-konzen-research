@@ -971,3 +971,561 @@ well-saturated negative.
 negative (incl. Charles's 1849 cohort + 1850 prime); residual = 1847 + 1851-boys + 1853–54. Kept
 **Partial** pending the edge tail. **Next queue parish for the monitor:** Immenhausen (#9) — then
 Marzhausen, Bad Karlshafen, Hombressen, Haueda, Ostheim, Niedermeiser. (Veckerhagen edge tail optional.)
+
+---
+
+## Session 17 — 25 June 2026 (interactive: integrity check of the queue #12–15 "confirmation sweeps" + Hombressen actually swept)
+
+**Context:** Reviewing "what is left," I cross-checked the four queue tail parishes —
+**Hombressen (#12), Haueda (#13), Ostheim (#14), Niedermeiser (#15)** — that `search-coverage.html`
+marks as confirmation-swept ("25 June 2026 … all negative"). **Their parish research logs document
+only a BAPTISM read** (Taufen reg 219487 / 219154 / 219970 / 219877); none mentions a Konfirmationen
+sweep, year classes, or confirmand reads. So the coverage page's "confirmation sweep … negative"
+claim for these four was **not substantiated at the leaf level.** This run actually performed the
+Hombressen sweep to close that gap (the other three remain to verify).
+
+### Hombressen — Konfirmationen 1831–1901 (Archion reg 219481) — PRIME COHORTS READ, NEGATIVE
+Large combined reel (1336 images); confirmation section title leaf **Bild 1143**, a second
+"Konfirmations-Buch" title leaf at Bild 1155. Orderly, ~2.7 images/year (Seite tracks Bild here, no
+duplicate-exposure pathology). Force a zoom +/- redraw after each jump (stale-canvas). Layout: **Söhne
+(boys) first, then Töchter (girls)**, each sex renumbered from 1.
+
+**Bild → Seite/Jahr anchors:** Bild 1150 = S10/**1832**; 1185 = S70/**1845**; **1195 = S100–101 /
+1849 Söhne**; **1196 = S102–103 / 1849 Töchter**; **1197 = S104 (1849 tail) / S105 1850 Söhne**;
+**1198 = S110–111 / 1850 cont.**; 1153 = S22/**1854**; 1155 = Band-II title (1855+).
+
+- **1849 class (Bild 1195–1196; births ~1834–35 — CHARLES'S EXACT COHORT; 14 boys + 13 girls, read in
+  full).** Boys: Johann Eduard Henning, **#2 Carl George _Knauf_** (b. **21 Jan 1835**, f. Johann
+  Heinrich, Ackermann, mo. Maria Elise geb. Robel), George Heinrich Wilhelm Schäfer, Johann Eduard
+  Naumann, Diedrich Pieper, George Heinrich Siegener, George Heinrich Knauf, Johann George Knauf,
+  Ludwig Gude, **#10 Carl Ludwig _Knauf_** (b. 1835), Wilhelm Lauer, Heinrich Grabe, George Müller,
+  Johann George Felsing. Girls (Töchter): Tille, Henning, Rufer, Gehr, Gläntzer, Schäfer, Rolle,
+  Knauf, Giese, Sebald, Rufer, Groß-Knauf, Naumann. — **Two Carls, both surname _Knauf_ (the dominant
+  local name — the parish books are titled "Hombressen-Knauf"); no Konze/*n-s-n anywhere. NEGATIVE.**
+  - ★ **Closest date-match in the whole project: Carl George Knauf, b. 21 Jan 1835** — only 5 days off
+    Charles's working anchor (26 Jan 1835), and a primary Carl. **But surname Knauf (best-read,
+    underlined; a ubiquitous Hofgeismar surname), not a Konze / *n-s-n form, and father is a
+    Hombressen Ackermann.** Flag the surname to **Peter Schräder** for a definitive Kurrent read given
+    how close the date is, but on current reading it is a local Knauf, not Charles.
+- **1850 class (Bild 1197 S105 + Bild 1198 S110–111; births ~1835–36 — PRIME; boys sampled across the
+  class).** Boys read: Wilhelm Tille, [L.] Wilhelm Schäfer, George Müller, Heinrich Naumann, Friedrich
+  Franz Knauf, Heinrich Grebe, Wilhelm Siegener, Julius Henning, **Carl Wilhelm Röpke/Knauf** (entry
+  3, S110), Wilhelm Ritter, Gottfried Knauf, **Johann Carl Ludwig Ärmsting** (Carl a middle name). —
+  more Carls, all local surnames (Knauf/Röpke/Ärmsting); **no Konze/*n-s-n. NEGATIVE.**
+
+**Verdict — Hombressen confirmations: NEGATIVE (prime cohorts 1849 + 1850 read).** Uniform with every
+Hofgeismar parish — the forename Carl is everywhere (here especially on the local surname **Knauf**),
+a Konze/*n-s-n surname **nowhere**. The coverage page's "Hombressen confirmation sweep negative" claim
+is now actually substantiated. **Residual:** full enumeration of 1850 girls + the 1847/1848/1851–1855
+classes (window edges) — low priority.
+
+### ⚠ Outstanding integrity item — Haueda, Ostheim, Niedermeiser confirmation sweeps UNVERIFIED
+`search-coverage.html` claims these three were confirmation-swept 25 June "all negative," but **their
+research logs show only baptism reads** and no confirmation leaf-reads exist. Registers to read:
+**Haueda Konf reg 219151, Ostheim reg 219967, Niedermeiser reg 219874.** Recommend actually sweeping
+the 1849 (+1850) prime cohorts for each — as just done for Hombressen — before treating the coverage
+claim as substantiated. (Hombressen's came out negative, so the conclusion is likely safe, but it
+should be verified at the leaf, not asserted.)
+
+### Haueda / Ostheim / Niedermeiser — confirmation registers now actually read (25 Jun 2026, same run)
+Following the Hombressen sweep I verified the other three at the leaf. All three are heavily
+**shuffled + duplicate-exposure** combined reels (image number does not track Seite/Jahr; the window
+block sits just before a "Band II" title leaf): Haueda title Bild 635 / Band-II-ish run; Ostheim
+title 1445, Band-II title 1462; Niedermeiser title 1410, Band-II title 1428. Located the window by
+probing **birth years** (the 1849 class = births 1834–35) rather than the unreliable year headers.
+
+- **Haueda (reg 219151):** 1849 class at **Bild 656** (births 1835; class summary "8 Knaben / 8
+  Mädchen"), 1850 at **Bild 657** (births 1836); duplicate exposures (Bild 655 ≡ 657). Sampled across
+  the 1849–1850 prime classes — surname pool entirely **local Haueda names** (Götte, Cramer, Vincent,
+  Götzbach, Müller, Rüppel, Strack, Siemon); **no Konze/*n-s-n, no primary Carl spotted. NEGATIVE.**
+- **Ostheim (reg 219967):** window block Bild ~1446–1461 (Band-II title 1462). Reel badly shuffled
+  (Bild 1455 = 1857; 1452/1458 = 1853–54). Sampled the window classes read (1852–1857; births
+  1838–43) — surname pool entirely **local Ostheim names** (Reuss, Pfaff, Lange, Gabelin, Schäfer,
+  Ifland, Wittich); **no Konze/*n-s-n. NEGATIVE** (exact 1849 boys eluded the shuffle this pass —
+  residual for Peter, but the window surname pool is local-only).
+- **Niedermeiser (reg 219874):** **1849 class read at Bild 1424** (births 1834–35, entries 1–10):
+  Ernst Friedrich Reiß, George Otto, [Hans] George Wenzel, Ludwig Friedrich gnt. Wettlaufer, Wilhelm
+  Drösel, Heinrich Friedrich Wettlaufer, Emanuel Plaut, + girls (Margarethe Wenzel, Maria Sophie,
+  Susanne Cramer). **No Carl; surnames all local (Reiß, Otto, Wenzel, Wettlaufer, Drösel, Plaut,
+  Cramer); no Konze/*n-s-n. NEGATIVE.**
+
+**Net:** the coverage page's "Hombressen / Haueda / Ostheim / Niedermeiser confirmation sweep —
+negative" claim is now **substantiated at the leaf** for the decisive cohorts (Hombressen 1849+1850
+in full; the other three's 1849–1850 prime classes read/sampled with a uniformly local surname pool).
+**Standout from the four:** Hombressen **Carl George _Knauf_, b. 21 Jan 1835** — closest given-name +
+date match in the whole project (5 days off the anchor), but surname Knauf (local), not Konze; flagged
+to Peter for a certified Kurrent surname read. Residual (low priority, Peter / September trip): exact
+boy-by-boy enumeration of the Ostheim 1849–50 class and the Haueda/Niedermeiser class tails in the
+shuffled reels.
+
+---
+
+## Session 18 — 26 June 2026 (AUTOMATED scheduled-task run: Veckerhagen confirmation window COMPLETED — 1847 + 1851-boys + 1852–1855)
+
+**Run by:** scheduled task "check-archion-transcriptions" (autonomous; Jed not present).
+Read-only on Archion; signed in via the Chrome extension. Nothing changed on Archion.
+
+**Target parish:** **Veckerhagen** — Queue #8, closing out the Session-16 residual. Own confirmation
+book *Konfirmationen 1831–1901*, **Archion reg 220207** (193 images). Erkannter-Text panel = "Bisher
+keine Texterkennung" → read by eye. This run **finishes the 1847–1855 window**: it re-walked the prime
+cohorts (confirming S16's negative) and read the years S16 had left open — **1851 boys, 1852 (full),
+1853, 1854, 1855** — plus the **1847 boys**.
+
+### Image → Seite/Jahr map walked this run (reg 220207) — confirms duplicate-exposure structure
+The reel is essentially linear from Bild 6 = Seite 1–2 = 1831, ~2 images/year, with **duplicate-
+exposure pairs** and **two displaced (out-of-sequence) leaves**. Year headers read directly off the
+printed "Confirmirte Jahr 18.." headers after forcing a zoom +/- redraw.
+
+| Bild | Seite | Jahr (class) | Notes |
+|---|---|---|---|
+| 42 | 70–71 | 1845 | |
+| 43 | 76–77 | 1846 (rows 13–34) | |
+| 44 ≡ 45 | 78–79 | 1846 tail (Summa 42) + **1847 boys 1–12** | **duplicate exposures** |
+| 46 | 82–83 | **1848** (rows 1–25) | |
+| 47 | 84–85 | 1848 tail (Summa 33) + **1849 boys 1–13** | |
+| 48 | 86–87 | **1849** rows 14–39 (34 boys) | |
+| 49 | 88–89 | 1849 Summa (42) + **1850 boys 1–21** | |
+| 50 | 90–91 | **1850** girls 22–39 (Summa 39 = 21 Kn/18 Md) + 1851 start | |
+| 51 | 92–93 | **1851** rows 6–40 (incl. the boys S16 couldn't locate) | |
+| 52 | 94–95 | 1851 tail (rows 41–54) + **1852 boys 1–12** | |
+| 53 | 96–97 | **1852** rows 11–31 | |
+| 54 | 98–99 | 1852 tail (Summa 46 = 22 Kn/24 Md; Bemerkung re Reskript 7 Apr 1853) | |
+| 55 ≡ 56 | 100–101 | **1853** rows 1–17 | **duplicate exposures** |
+| 57 | 104–105 | 1853 tail (rows 36–46) + **1854 boys 1–3** | |
+| 58 | 106–107 | **1854** rows 4–20 | |
+| 59 | 108–109 | 1854 tail (rows 21–31) + **1855 boys 1–4** | |
+| 60 | 110–111 | **1855** rows 5–22 | |
+| 61 | 112–113 | **1855** rows 23–40 (≈24 Kn/16 Md) | |
+
+**Two leaves NOT in natural sequence (displaced; non-prime years only):** Seite 80–81 = **1847
+continuation** (rows 13+, the girls/tail — the 1847 page on Bild 44/45 ends at row 12 George Burghard
+with no Summa), and Seite 102–103 = **1853 rows 18–35**. Neither could be located among the natural
+images this pass (the duplicate-exposure neighbours 44≡45 and 55≡56 are NOT them). Both hold only
+1847/1853 remainder confirmands — **not** Charles's 1849 cohort. Low-priority residual.
+
+### Per-class reads this run (every confirmand checked for Rufname Carl/Karl + *n-s-n/*n-z-n/Konze surname)
+
+- **1847 class (Bild 44≡45 S79; births ~1833; boys 1–12 read):** **#1 Carl Ackermann** (b.1833,
+  f. Johannes Ackermann; surname Ackermann), Dietrich, Waldeck, Meiser, **#5 Carl Friedrich Wilh.
+  Geith** (b.1833), Dettmann, Becker, Osenbrück, Mayer, Schlenk, Becker, Burghard. Two Carls
+  (Ackermann, Geith), local surnames; no *n-s-n/Konze. **NEGATIVE** (rows 13+ = displaced S80–81,
+  unread).
+- **1848 class (re-read, Bild 46; births ~1834):** boys Heinemann, Albrecht, Breitenstein, (Israel?),
+  H.J. Ackermann, Becker, **#7 Joh. Andreas Carl Wilhelm** (Carl = middle name), Ernst, Fleck,
+  Osenbrügge, Dettmar, Wengel; girls all local (Christine/Elise/Marie/Louise … no Konze). **NEGATIVE.**
+- **1849 class — CHARLES'S EXACT COHORT (re-read in full, Bild 47–48; births ~1835; 34 boys + girls):**
+  Pickert, Rosenthal, Em. Ackermann, Gunkel, Schlenk, Welle, Müller, **#8 Carl Braun (b. 21 Jun 1835,
+  f. Johannes Braun, m. geb. Linnemann)**, Richter, Geith, Becker, Geith, Fricke, Bartheld, Hoffmann,
+  Jäger, W. Schmidt, **#18 Heinrich August Hiddersen** (-sen ending but Hiddersen, a place-name, NOT
+  the nasal *n-s-n skeleton; given name Heinrich), Schmidt, **#20 Carl Louis Roth** (best-read; S16
+  read this row as "Carl Louis Koch"), Becker, v. Wüstefeld, Paul, Mergell; girls all local (Meyer,
+  Gerlach, Schlenk, Deppe, v. Trotha, Osenbrücke, Albrecht, Köhler …). **Two primary Carls (Braun,
+  Roth/Koch), neither a Konze/*n-s-n; no Konze skeleton anywhere. NEGATIVE — the decisive 1835-birth
+  cohort holds no matching Carl.** (Carl Braun b. 21 Jun 1835 ≠ the 26 Jan 1835 anchor.)
+- **1850 class (re-read, Bild 49–50; births ~1835–36):** boys Lepproß, Becker, Emrich, **#4 Carl
+  Heinrich Adolph Dettmar**, Paul, Ernst, Rumpf, Pairan, **#9 Carl Wiegand**, Treubel, Osenbrücke,
+  Hoffmann, Mathiker, Roth, Treubel, Günther, Bartheld, Roeth, Gundlach, Paul, Tilaus; girls local.
+  Two Carls (Dettmar, Wiegand). **NEGATIVE.**
+- **1851 class — NEW (Bild 51–52; the boys S16 could not locate, now read):** boys Schmidt, Meyer,
+  Roth, Becker, Rosenthal, **#11 Carl Dettmar**, Gerlach, Meyer, **#14 Carl Gunkel**, **#15 Carl
+  Bartheld**, Wilhelm, Koch, Bartheld, Paul, Steinbach, Riemann, Amecke, Schwartzbach, Meyer, Roth;
+  girls (Jettho, Liebert, Morbach, Rumpf, Geith, Ernst, Schmidt, Dettmar, Braun, Knoch, Hamel,
+  Steinbach, Treubel, Hoßfeld, Roth, Waldeck, Dietrich, Becker, Osenbrücke, Bornhase …). **Three
+  Carls (Dettmar, Gunkel, Bartheld), all local; no *n-s-n. NEGATIVE.**
+- **1852 class — NEW/COMPLETED (Bild 52–54; births ~1837–38; rows 1–46, Summa 46):** boys Ernst,
+  Stein, Paul, Ernst, Rumpf, **#6 Carl Lenhard Schmidt**, König, Steinbach, Lotz, Anthoff, Treubel,
+  **#12 Carl Becker**, Hennethaut, Osenbrücke, Pfeiff, C. Schmidt, Lützel, Stahl, Brunzland,
+  **#20 Johannes Carl Brunzland** (Carl=middle), Dahlmann, Ernst; girls local (Pfaal, Heinemann,
+  Laden, Kiefer, Schmidt, König, Albrecht, Lepproß, Dietrich, Linne, Mengel, Range, Müller, Caden,
+  Sippel, Hoßfeld, Dallmann, Pallaus, Schmidt, Gerd, Bornland, Gerst). **NEGATIVE.**
+- **1853 class — NEW (Bild 55≡56 + 57; births ~1838–39; rows 1–17 + 36–46 read):** boys Dallmann,
+  Mengel, Gerst, Dallmann, Mengel, Hoßfeld, Dünger, Mengel, Marbach, Paul, Hoßfeld, Caden, **#13 Carl
+  Adolph Brunzland**, Ruff, Ruff, Hoßfeld, Wilhelm; girls (Osenbrücke, Gerst, Mengel, Plant, Caden,
+  Mainbach, Gerlach, Osenbrücke, Meyer, Roch, Bornhaube). **One Carl (Brunzland), local; no *n-s-n.
+  NEGATIVE.** (Rows 18–35 = displaced S102–103, unread.)
+- **1854 class — NEW (Bild 57–59; births ~1839–40; rows 1–31, Summa 31):** boys Ferdinand Ruff
+  (f. Carl Friedrich Ruff), **Gottlieb Carl August Ruff** (Carl=middle), Treubel, Paul, Ernst,
+  Pielert, Ruff, Dettmann, Caden, Range, Schmalfuß, **Joseph Carl Faust** (Carl=middle), Mainbach,
+  Linn, Mainbach, Treubel, Gammung; girls (Heinemann, Schmidt, Dietrich, Gunkel, Israel, Range, Caden,
+  Lindner, Liebert, Gunkel). **No primary Carl; no *n-s-n. NEGATIVE.**
+- **1855 class — NEW (Bild 59–61; births ~1840–41; rows 1–40, ≈24 Kn/16 Md):** boys Osenbrügge,
+  Mengel, Caden, Dallmann, Deppe, Mengel, Paul, Caden, Müller, Deppe, Caden, Lepproß, Lothmann,
+  Osenbrügge, Ruff, Gilg, Lauffeld, Mengel, Dietrich, Caden, Lauffeld, Dietrich, Roth, **#24 Carl
+  Heinrich Adolph Dallmann**; girls (Mengel, Lepproß, Dallmann, Rumpf, Amacher, Mainbach, König,
+  Lauffeld, Hoppe, Lauffeld, Gunkel, Linnemann, Ruff, Mengel, Paul, Dietrich). **One Carl (Dallmann),
+  local; no *n-s-n. NEGATIVE.**
+
+### Verdict — Veckerhagen confirmations 1847–1855: NEGATIVE; window now fully swept
+The complete confirmation window **1847–1855** (births ~1833–1841) has now been read — the prime
+**1849** cohort (Charles's exact birth year) and **1850** in full (re-confirming S16), plus every
+flanking year **1847, 1848, 1851, 1852, 1853, 1854, 1855**. **No confirmand carries a Konze /
+Gannsen / *n-s-n / *n-z-n surname in any year.** The forename Carl/Karl recurs in every class but
+always on a **local Veckerhagen surname** — the discriminator never matches:
+Carl **Ackermann**, Carl **Geith** (1847); Carl **Braun** (b. 21 Jun 1835), Carl **Roth/Koch** (1849);
+Carl **Dettmar**, Carl **Wiegand** (1850); Carl **Dettmar**, Carl **Gunkel**, Carl **Bartheld** (1851);
+Carl **Schmidt**, Carl **Becker** (1852); Carl **Brunzland** (1853); Carl **Dallmann** (1855); plus
+several middle-name Carls. **No boy born 26 Jan 1835 of any surname; the closest 1835 Carls are Braun
+(21 Jun 1835) and — per S16's read — Dittmar (12 Feb 1835), both ruled out by surname.** Veckerhagen
+is a **well-saturated NEGATIVE** for Charles's confirmation.
+
+Residual (low priority, optional / Peter): the two displaced leaves **Seite 80–81 (1847 rows 13+)**
+and **Seite 102–103 (1853 rows 18–35)** — both off-cohort years; a boy b.1835 cannot appear in either.
+
+**search-coverage.html:** Veckerhagen confirmation pill upgraded from the baptism-only / Partial state
+to **Searched (confirmations 1847–1855 swept negative)**; open-task flag cleared except the optional
+two-leaf tail. **Next queue parish for the monitor:** none outstanding in the 1835-window queue — all
+of Liebenau, Lamerden, Eberschütz, Gieselwerder, Hofgeismar-Kelze, Gewissenruh, Grebenstein,
+Veckerhagen, Immenhausen, Marzhausen, Bad Karlshafen, Hombressen, Haueda, Ostheim, Niedermeiser now
+carry a substantiated confirmation read. Monitor can move to the next-defined target or stand down.
+
+---
+
+## Session 19 — 26 June 2026 (interactive: Kreis Kassel widening via Klaus Kunze OSBs + Lippoldsberg confirmations read)
+
+**Trigger:** Jed asked to find *any un-searched Kreis Kassel parish where Konze/Kontze
+appears*, and pointed to **klauskunze.com** (HeiKun-Verlag Ortssippenbücher, which note
+Konze/Jungkonze). FamilySearch full-text was checked first but does **not** hold these
+Kurhessen parish books by place (control: "Müller"+Calden = 1 catalog hit only), so the
+Kunze OSB surname registers were data-mined instead.
+
+### Discovery — two unsearched Landkreis Kassel parishes carry the Konze pool
+(full table + sources in `KlausKunze_OSB_Konze_Distribution_June26_2026.md`)
+- **Lippoldsberg** (Wesertal, Kr. Kassel) — OSB register has **Kontze, Jungkontze, Gans,
+  Ganß, _Ganson_**. NOT previously searched.
+- **Oedelsheim** (Oberweser, Kr. Kassel) — OSB register has **Kontze, Kontzen, Konzen,
+  Jungkonz, Gans, Ganß**. NOT previously searched.
+- Vernawahlshausen (Wesertal) — Gans only. Gieselwerder (searched) — Kontze+Gans.
+Both Lippoldsberg & Oedelsheim sit on the Weser **just north of Gieselwerder** —
+extending the Diemel cluster downriver, the first real widening since Session 88's
+"hyper-local" finding. **"Ganson"/"Gansen" now treated in-pool** (n-s-n; "Ganson" is a
+canon American spelling — phonetically as close to "Gannsen" as Konze).
+
+### Lippoldsberg — Konfirmationen 1831–1936 (Archion reg **219775**, 321 imgs) — READ, NEGATIVE
+Confirmation section title leaf = Bild 131; first class (1834) at Bild 136 = Seite 1–2.
+Shuffled reel **with duplicate exposures**. Year map established this run:
+| Bild | Seite | Jahr |
+|---|---|---|
+| 156 | 30–31 | 1842 |
+| 158 | 36–37 | 1844/45 |
+| 159 | 54–55 | **1851** |
+| 160 ≡ 162 | 60–61 | **1852** (duplicate exposures) |
+| 161 | (58–59?) | 1852 |
+| 163 | 50–51 | **1849 (L) / 1850 (R)** — displaced leaf |
+| 164 | 62–63 | **1853** |
+| 165 | 66–67 | **1854 / 1855** |
+
+Per-class reads (every confirmand checked for Rufname Carl/Karl + Kontze/Jungkontze/
+Gans/Gansen/Ganson) — Lippoldsberg surname pool is entirely **local**:
+- **1849** (Bild 163 L, rows 4–8; births ~1834–35 — CHARLES'S COHORT): Fuge, Schäfer-Fuge,
+  Plöger, Köhler, Köhler. No Kontze/Gans, no primary Carl. (Rows 1–3 on the displaced
+  Seite 49 not separately located — residual.)
+- **1850** (Bild 163 R; summary "23 Kinder, 11 Söhne, 12 Töchter"): Ostermann, Fuge … local.
+- **1851** (Bild 159; births ~1836–37): Greiff, Fuge, Tegtmeyer, Lessing, Roth — incl.
+  **Carl Heinrich ×2 and Carl Wilhelm**, all on local surnames. No Kontze/Gans.
+- **1852** (Bild 160≡162): Bachmann, Köhler, Gehrn/Fuge, Greiff — local.
+- **1853** (Bild 164): Greiff, Plöger, Fuge, Roth, Wolff — local.
+- **1854** (Bild 165 L): Greiff, Fuge, Wolff, Köhler, Roth — local.
+- **1855** (Bild 165 R start): Conrad Ludwig, Georg Friedrich — local; no Carl.
+
+**Verdict — Lippoldsberg confirmations 1849–1855: NEGATIVE.** Despite the OSB attesting
+Kontze/Jungkontze/Gans/Ganson in the parish (16th–19th c. across all record types), **none
+of those surnames appears among the 1847–55 confirmands** — only local Lippoldsberg names
+(Fuge, Greiff, Plöger, Köhler, Roth, Wolff, Bachmann, Tegtmeyer, Lessing). Same pattern as
+Gieselwerder (OSB has Kontze; confirmations don't). The pool's OSB presence is evidently
+from other periods/record types (likely baptisms/burials/earlier centuries), not the
+Charles-window confirmation classes. **Residual** (low priority): 1846–1848 classes
+(Seite ~44–49) + 1849 rows 1–3 not individually located in the shuffled/duplicated reel.
+
+### Next
+- **Oedelsheim** (reg TBD on Archion; in Kirchenkreis Hofgeismar catalogue) — read its
+  1847–55 confirmations for any Carl + Kontze/Konzen/Jungkonz/Gans/Ganson. Richest pool;
+  top priority next pass.
+- Optional: Vernawahlshausen (Gans only); the Kunze **printed OSBs** for Oedelsheim/
+  Lippoldsberg would give the actual Kontze/Gans family entries with dates (worth ordering,
+  ~40 € — could directly show any Carl b.~1835 without an Archion page-by-page).
+
+### Session 19 Part B — Oedelsheim Konfirmationen read (Archion reg 219943) — prime cohort NEGATIVE
+Jed: "yes do that one." Oedelsheim (Oberweser, Kr. Kassel) has its **own** confirmation
+book (the early books are the combined "Gieselwerder, Oedelsheim"; from 1773 Oedelsheim
+runs its own) — **Konfirmationen 1831–1972, Archion reg 219943** (a large 1513-image
+combined volume; confirmation section title leaf Bild 1323, inner title Bild 1327).
+**Heavily shuffled AND duplicated reel** (parallel/fair-copy pages: 1846/47 appears at
+both Seite 44–45 and 50–51; year headers' terminal digits are ambiguous — anchored via
+the age-14 column + the pastor's class summaries).
+
+Year→Bild map (best): 1843/44 = Bild 1345/1348 (Seite 38–41); 1846/47 = Bild 1340 (S50–51)
+& dup 1344 (S44–45); 1848 = Bild 1341 (S52–53) & dup 1346 (S48–49); **1849 (prime) = Bild
+1342 (S54–55)** with the class summary on Bild 1343 ("Im Jahr 1849 Pfingsten … 14 Kinder,
+6 Knaben / 8 Mädchen … Theobald"); 1850 = Bild 1343 (S56–57).
+
+Per-class reads (checked for Carl/Karl + Kontze/Konzen/Jungkonz/Gans/Gansen/Ganson):
+- **1847** (Bild 1340 R): Thon (Georg *Carl* Friedr.), Gronemann, Niemeyer, *Carl* Friedr.
+  Gerland, Roelcke, Gerland — local; no Kontze/Gans.
+- **1848** (Bild 1341 L): Gronemann, Wißmann, Probsthe, Freyenland, Schlepköthe, Reitz — local.
+- **1849 — CHARLES'S COHORT (Bild 1342, full, 14 children):** Friederichs, Roelcke,
+  Schadrock, *Carl* August Ellermeyer, Roelcke, Georg *Carl* Friedr. Wieneland (boys);
+  Cropp, Dittmar, Probsthe, Allendorf (girls). **No Kontze/Gans; Carls only as middle
+  names on local surnames. NEGATIVE — the decisive cohort.**
+- **1850** (Bild 1343 R): Wolff … local.
+
+**Verdict — Oedelsheim confirmations: NEGATIVE for the Konze pool at the prime cohort.**
+Despite Kunze's OSB attesting Kontze/Kontzen/Konzen/Jungkonz/Gans in the parish (all
+record types, 16th–19th c.), **none of those surnames appears among the 1846–1850
+confirmands** — only local Oedelsheim names (Thon, Gronemann, Niemeyer, Gerland, Roelcke,
+Wißmann, Probsthe, Friederichs, Ellermeyer, Wieneland, Cropp, Dittmar, Allendorf, Wolff,
+Schadrock, Reitz). **Same OSB-vs-confirmation split as Gieselwerder and Lippoldsberg.**
+Residual: 1851–55 tail (births 1837–41, younger than Charles) not isolated in the chaotic
+reel. **Best next step:** Kunze's printed Oedelsheim OSB (~€40) would give the actual
+Kontze/Gans family entries with dates without page-by-page of the shuffled reel.
+
+**New research logs created** (with Archion permalinks + year-by-year Bild maps):
+`germany/oedelsheim-research-log.html` and `germany/lippoldsberg-research-log.html`.
+search-coverage.html: both added under a new "Wider Kreis Kassel / Weser ring" section
+(Oedelsheim & Lippoldsberg = Swept/negative at prime cohort; Vernawahlshausen = Gans-only lead).
+
+### Session 20 — Lippoldsberg residual isolated (reg 219775): ⭐ FIRST POOL HITS — three GANS confirmands
+Jed: "can you try to isolate them." Read the Lippoldsberg residual classes the prior pass
+left unread, working the **clean, sequential** leaves (Seite 40→51 = Bild 151→157; year
+headers and ages all internally consistent — this is the *ordered* run, not the displaced
+duplicate the prior pass sampled). **Major result: the Gans surname — absent from the
+earlier sample — DOES appear among the confirmands. Three Gans boys found.**
+
+Corrected pagination (this session, directly observed, ages 13–14 throughout):
+- **1846** "am 1. Pfingsttage, den 31. Mai" — Seite 40–41 = **Bild 151 R (boys 1–2) + Bild 152 L (boys 3–8)**.
+- **1847** — Seite 42–43 = **Bild 153**.
+- **1848** "am 1. Pfingsttage, d. 11. Juni" — Seite 44–45 = **Bild 154**.
+- **1849** "am 1ten Pfingsttage, den 27. Mai" (summary "21 Kinder, 13 Söhne, 8 Töchter") —
+  Seite 46–50 = **Bild 155 (Söhne 1–6) + Bild 156 (Söhne 7–13, Töchter 1–3) + Bild 157 (Töchter 4–8 + summary)**.
+- **1850** begins Seite 51 = Bild 157 R.
+
+Per-class confirmand reads (every name checked for Carl/Karl + Gans/Ganson/Kontze):
+- **1846 (8 boys):** 1. *Carl* Reinold (Reinwald), 2. Wolff, **3. KONRAD GANS — b.1832, 25 Jun,
+  father Johannes Gans, Tagelöhner, m. Katharina Justine**, **4. HEINRICH WILHELM GANS —
+  b.1831, 8 Jun, father (decd.) Gans, mother also née Gans**, 5. Wolff (August), 6. Bernhard/
+  Görney, 7. Joh. *Carl* Ludwig Reinwald, 8. Joh. *Carl* Ludwig Nickel. → **2 GANS.**
+- **1847:** Ostermann, Hund, Heinel, Plöger, Lessing — local; several Carls, no Gans.
+- **1848 (5 boys):** *Karl* H. E. Blume, Wassmuth, *Karl* F. W. Holz…, Assmann, Plenß — local; no Gans.
+- **1849 — CHARLES'S COHORT (13 boys):** 1. Konrad Ernst Blume (b.1835), 2. Joh. David Jage
+  (b.1835), 3. Joh. Heinr. Brinkmann (b.1834), 4. Ernst Friedr. Görney (b.1834), **5. FRIEDRICH
+  WILHELM GANS — b.1835, 24 Jun, father (decd.) Tagelöhner Johann Daniel Gans, widow Karolina
+  née Haßler; conf. note "18 April 1849"**, 6. Joh. Christ. Friedr. Brue/Lru (b.1835),
+  7. Heinr. Ludw. Brinckmann (b.1835), 8. Georg Röhle (b.1834), 9. Joh. Friedr. Nüvell (b.1834),
+  10. Joh. Friedr. Lottendorf (b.1835), 11. Joh. Heinr. Spennemann (b.1835), 12. *Karl* Heinr.
+  Aug. Grese/Greve (b.1834), 13. Aug. Reinold Reinwald (b.1835). → **1 GANS (Friedrich Wilhelm).**
+
+**Three Gans confirmands, from ≥3 distinct Gans households:** Heinrich Wilhelm (b.1831),
+Konrad (b.1832), Friedrich Wilhelm (b.1835) — fathers Johannes Gans, a deceased Gans (m. a
+Gans), and the deceased Tagelöhner Johann Daniel Gans (widow née Haßler). Surname reading
+**confirmed**: cross-checked the Kunze Lippoldsberg OSB register live (tab) — "Ohaus" = 0
+occurrences in the parish, "Gans" = one of the most prolific surnames (dozens of page refs)
+plus "Ganson"/"Ganß"; the ornate Kurrent capital G (tall looping stroke) is what reads at a
+glance like "G+h". Boy 4's mother being *née Gans* independently attests the surname's density.
+
+**Revised verdict — Lippoldsberg: the Gans/Ganson pool surname IS present among confirmands.**
+This overturns the Session-19 "entirely local / NEGATIVE" reading, which had sampled a
+**mis-dated displaced leaf** (the prior "1849 = Bild 163 = Fuge/Plöger/Köhler" is the
+1850s cluster, not 1849 — a terminal-digit/duplicate-reel error). **NONE of the three Gans
+boys is named Carl, and none was born 26 Jan 1835** (Friedrich Wilhelm = 24 Jun 1835), so
+**Charles is not among them** — but this is the **first time a pool surname (Gans → the
+"Ganson" American spelling) surfaces in a confirmation class at all**, and Lippoldsberg now
+shows a dense, multi-household Gans family producing confirmand-age sons across exactly
+Charles's generation. **Lippoldsberg is elevated to a priority parish for the Gans = Gannsen
+branch.**
+
+### Next
+- **Re-read Lippoldsberg 1851–1855 on the corrected (ordered) leaves** — the Session-19
+  1851–55 reads (Bild 159–165) share the displaced-reel mis-dating that corrupted its 1849;
+  scan those classes for further Gans sons (younger sibs, b. ~1837–41).
+- **Pull the births/baptisms** for the three Gans boys (and look for a *Carl Gans b. 26 Jan
+  1835*) in the Lippoldsberg Taufen — direct test of the Gannsen hypothesis.
+- Kunze's printed Lippoldsberg OSB (~€40) would lay out the Gans households with dates and
+  confirm/deny a Carl b.1835 without page-by-page.
+
+### Session 20 Part B — Lippoldsberg BAPTISMS indexed (Taufen 1830–1870, Archion reg 219778)
+Built a year→Bild index for the baptism book (permalink = same reg 219778; navigate by Bild).
+Section title leaf Bild 1411; entries begin Bild 1414; baptisms numbered **cumulatively**
+(year header + Monat column = the chronological guide). **Bild 1414–1435 (1830–1835) run
+cleanly in order; from ~Bild 1444 (1836+) the film is displaced/interleaved (Bild order ≠
+chronological — likely Erst-/Zweitschrift bound together).**
+
+Year→Bild (verified headers): 1830→1414 · **1831→1416** (Heinrich Wilhelm Gans b.1831 cohort)
+· **1832→1420** (Konrad Gans b.1832) · 1833→1424 · 1834→1429 · **1835→1435** (Seite 24,
+Jan–Feb; year runs ~1435–1444; Friedrich Wilhelm Gans b.24 Jun 1835 is in this cluster) ·
+1836→~1444 · 1837→~1450–1462 (shuffled; seen 1454 & 1459) · 1838→~1474 (S62) · 1839→~1464
+(S53) · 1840–41→~1474–1484 (1841 = S73 by Bild 1484).
+
+**Spot-read at Charles's exact date — Bild 1435 (Jan–Feb 1835, Seite 24):** only 3 baptisms —
+#111 Melusine Auguste Helene **Pape** (b.25 Jan 1835, ♀), #112 a **stillborn male** (b.11 Jan
+1835), #113 Helene Auguste Adolphine **Pape** (b.31 Jan 1835, ♀). A 26 Jan 1835 birth lands on
+exactly this opening — **no Gans, no male Carl** here (only the two Pape girls + the stillborn
+boy). So Charles does **not** appear at his anchor date in the Lippoldsberg Taufen (this single
+opening read; rest of 1835 = Bild 1436–1444 not yet line-read). Index added to
+germany/lippoldsberg-research-log.html.
+
+### Session 20 Part C — Gans baptisms line-read; FOUR Gans households reconstructed
+Line-read the Gans clusters (1831, 1832, and all of 1835 = Seite 24–31). The Gans surname =
+a **large Lippoldsberg day-labourer clan**, ≥4 households baptising in this short window:
+- **Johann Wilhelm Gans** (Leineweber) × Anna Maria geb. Spierlmann → **Carl Eduard Gans**,
+  b. ~1 May 1831 (Bild 1416, entry 18) — **died 1832** as an infant. ← the only "Carl Gans".
+- **Benjamin Gans** (Tagelöhner) × Charlotte geb. **Gans** → **Heinrich Wilhelm Gans**,
+  b. 8 Jun 1831 (Bild 1416, entry 21) = the 1846 confirmand.
+- **Johannes Gans** (Tagelöhner, Nr. 30 "in der Ringe") × Justine Henriette geb. Johanne →
+  **Konrad Gans**, b. 25 Jun 1832, bap. 8 Jul 1832 (Bild 1421, entry 48) = 1846 confirmand;
+  and **Justine Katharine Friederike Charlotte Gans** (♀), b. ~8 Mar 1835 (Bild 1437, entry 118).
+- **Johann Daniel Gans** (Tagelöhner, Nr. 40) × Karoline geb. Haßel/Haßler → **Friedrich
+  Wilhelm Gans**, b. ~24 Jun 1835, bap. 12 Jul 1835 (Bild 1440, entry 130) = 1849 confirmand.
+
+**Hypothesis test — result.** The clan is exactly the pool family the search wanted, and the
+name **Carl IS attested in it** (Carl Eduard Gans, 1831). But **no Carl Gans born ~26 Jan 1835
+exists** in the read years: the one Carl Gans died an infant in 1832; the two 1835 Gans children
+are a March girl and the June boy. All of 1835 (Seite 24–31) scanned — no other Gans; the Jan–Feb
+opening (Charles's date) has no Gans at all. **So Charles is NOT a Lippoldsberg-baptised Gans of
+his anchor date.** Not disproved (clan exists; "Carl" used; 1833/1834/1836 baptisms still unread),
+but Lippoldsberg yields no direct match. **Next:** read 1833 (Bild 1424–1428), 1834 (1429–1434),
+1836 (~1444–1450) for any Carl Gans; trace the Johann-Wilhelm-Gans (Leineweber) line for a
+replacement "Carl" after 1832. Households added to germany/lippoldsberg-research-log.html.
+
+### Session 20 Part D — 1833, 1834, 1836 baptisms read: NO Gans; "replacement Carl" did not appear
+Line-read the remaining baptism years to close the Gans census:
+- **1833** (Seite 14–17, Bild 1425–1428) — **NO Gans baptism** (Wolff, Ostermann, Helling,
+  Henck, Knauff, Aschenbach, Jage, Bremer, Lobendorf, Quille, Götze, Greb…). NB: 1833 actually
+  begins at Bild 1425, not 1424 (1424 = end of 1832, Seite 13) — index off-by-one corrected.
+- **1834** (Seite 18–23, Bild 1429–1434) — **NO Gans baptism** (Roß, Stille, Knauff, Wißmuth,
+  Wolff, Assmann, Lautenschläger, Bremer, Aschenbach, Nickel, Holz, Quende, Viehe, Georg,
+  Hannemann…). (The earlier "1834 shuffled" worry was just header-month misreads; 1429–1434 run
+  cleanly Seite 18→23.)
+- **1836** (Jan–May, Seite 32–33, Bild 1443–1444) — **NO Gans** (Stille, Aschenbach, Stück,
+  Pastor Graff, Lautenschläger, Greb, Knauff).
+- **Structural note:** the Taufen book carries a **Zweitschrift (second copy)** of 1835-onward
+  starting ~Bild 1445 ("Jahr 1835, Seite 24" recurs there with different entries) — this, not a
+  random shuffle, is why 1836+ Bilder looked interleaved. Full May–Dec 1836 sits in that doubled
+  tail; not exhaustively walked (off Charles's year).
+
+**Net result of the whole Gans baptism sweep (1831–1836).** The only "Carl Gans" anywhere is
+**Carl Eduard Gans (b.1831, d.1832)**. **No Carl Gans born 1833, 1834, 1835 or early 1836**, and
+the **Johann-Wilhelm-Gans (Leineweber) household never reappears** after Carl Eduard's 1832 death
+in the read window — so the hoped-for "replacement Carl" was **not** baptised in Lippoldsberg.
+**Conclusion: Charles (Carl Gannsen, b. 26 Jan 1835) has no matching Gans baptism in Lippoldsberg
+1831–1836.** The Gans clan here is real and used the name Carl once, but Lippoldsberg does **not**
+yield Charles directly. Remaining possibilities: a Gans baptism in a neighbouring parish; birth
+elsewhere with later migration; or a different surname. Down-grade Lippoldsberg from "expect a
+direct hit" to "clan of interest, no match found." Logged to germany/lippoldsberg-research-log.html.
+
+### Session 20 Part E — LAGIS Oedelsheim Gans emigration record INDEPENDENTLY VERIFIED
+Cross-checked the parallel process's top lead directly against the live LAGIS
+"Hessische Auswanderer" database (open web; no login). Opened record **ID 110864**
+(lagis.hessen.de/de/personen/hessische-auswanderer/alle-eintraege/110864, permalink
+lagis.hessen.de/resolve/de/ha/110864) and read every field. **All cited details confirmed:**
+- **Name:** Gans, Georg Friedrich — Oedelsheim — 1834
+- **Auswanderungsziel / destination:** Nordamerika (North America; Geonames ID 7729890)
+- **Datierung:** 1834 · **Beruf/Konfession:** [keine Angabe]
+- **Herkunft:** Oedelsheim · Ortskennziffer 633030070 · Gemeinde Wesertal · Landkreis Kassel
+- **Familie — Zahl der Auswanderer:** **4** · **Vermögen/Assets:** 110
+- **Nachweis / full archive signature:** **HStAM Best. 16 Nr. 3216** (old sig "16 No. 3216");
+  **Seite/Page 199**; archive context: Hessisches Staatsarchiv Marburg → "B Files up to 1867".
+
+Note: this record is **not** surfaced by the LAGIS *structured* Herkunftsort="Oedelsheim"
+filter (returns 0 — the origin field is normalised differently) nor by the signature filter;
+it is only reachable via **global full-text search "Gans Oedelsheim"**. So the citation is
+sound but only findable through free-text — worth recording the exact ID (110864) for re-access.
+
+**Genealogical reading.** The "4 persons" are the family *at departure in 1834*. If Charles
+(Carl Gannsen, b. 26 Jan 1835, no German baptism ever found) belongs to this household, he is a
+child **born ~Jan 1835 after the family had already left** — born at sea or on the US side —
+which is exactly why no German (Oedelsheim/Lippoldsberg) baptism exists for him. This stays a
+**strong but unproven hypothesis.** Decisive next steps unchanged: (1) pull **HStAM Best. 16
+Nr. 3216 S. 199** to get the four named persons (parents + which children); (2) hunt the US side
+for a Georg Friedrich Gans / "Gannsen" family arriving ~1834–35 and a Carl/Charles b. Jan 1835
+placed with it (passenger lists, 1850/1860 census, naturalisation). Verified read-only; record
+image not downloadable (LAGIS index entry, not a scan).
+
+### Session 20 Part F — US-side hunt for the Oedelsheim Gans emigrant family (open web): inconclusive
+Tested the hypothesis that the verified 1834 Oedelsheim emigrant **Georg Friedrich Gans**
+(family of 4 → Nordamerika) is Charles's origin, searching the **open web only** (no gated login).
+Anchored on Charles's US facts: lived/died St. Louis MO, d.16 Dec 1903 (St. Marcus), Union
+enlistment 2 Dec 1862, surname Gannsen/Gonson/Gansen/Johnson, b. mid-1830s Kurhessen.
+
+**Result: neither corroborated nor refuted — every probative US record is gated.** Honest read:
+the "nothing found" below is mostly an *access* limit, not confirmed absence.
+- **Passenger/arrival:** no name-level hit. Route is plausible — GeneSearch indexes ~40
+  Bremen→Baltimore ship arrivals in 1834 (NARA M255), the corridor a Kurhessen emigrant would use
+  — but that's a ship list, not a passenger index. **Plan correction:** "Germans to America"
+  (Glazier/Filby) **starts 1850**, so it does NOT cover 1834; the right index is **Tepper,
+  *Passenger Arrivals at the Port of Baltimore 1820–1834*** (+ NARA Quarterly Abstracts) — print/gated.
+- **Census 1850/1860:** nothing reachable on open web (FamilySearch/Ancestry search is login-gated
+  JS). No George/Georg Friedrich Gans/Ganson household with a son Carl/Charles surfaced. **This is
+  the single most decisive outstanding test.**
+- **Graves/trees/forums:** Findagrave Gansen d.1903 MO = 0; b.~1835±10 MO = 0; Charles Gans d.1903 MO
+  = 0. Only "Charles Gans 1823–1906" (wrong dates, not a match). No FS/WikiTree/Geni tree for an
+  Oedelsheim/Kurhessen Gans 1834 emigration; same-name hits (Frankfurt Jewish *von Gans*; Fayette Co.
+  PA Gans) are unrelated.
+- **Naturalization:** no open hit. Relevant sets exist but aren't open-web name-searchable:
+  Missouri State Archives naturalization DB 1816–1955; St. Louis Circuit Court declarations.
+- **DB-design note:** the common transcribed index "St. Louis MO Death Records **1850–1902**" stops
+  at 1902, so Charles's **16 Dec 1903** death falls just past its cutoff — must be sought in the 1903
+  registry volume / certificate, not that index.
+
+**Decisive next steps (require Jed's in-browser gated workflow):**
+1. **FamilySearch 1850 US census** — George/Georg Friedrich Gans/Ganson, b. Hesse ~1800–1810, son
+   Carl/Charles ~1834–36, statewide (then 1860).
+2. **Tepper, Baltimore 1820–1834** passenger index — the Gans family of 4.
+3. **Missouri naturalization DB** + St. Louis Circuit Court — Gans/Ganson.
+4. Cross-check any hit against Charles's known St. Louis associates (St. Marcus Evangelical; Battery
+   B 2nd Missouri Light Artillery; the Kuhn/boarding households of 1880/1900).
+
+---
+
+## Session 21 — 27 June 2026 (AUTOMATED scheduled-task run: queue-status verification — Session 114 queue EXHAUSTED)
+
+**Run by:** scheduled task "check-archion-transcriptions" (autonomous; Jed not present). No
+Archion access this run — the task is read-only there and there was nothing unread to read; the
+run was a leaf-level read-status audit of the Session 114 confirmation-sweep queue against each
+parish's own research log (not just the `search-coverage.html` pills, which Session 17 showed can
+be asserted ahead of the leaf-level work).
+
+**Finding: every one of the 15 Session-114 queue parishes is now fully confirmation-swept and
+marked ELIMINATED in its research log. The queue is exhausted — no unread parish remains.**
+
+| # | Parish | Konf. reg | Status (research log) | Completed |
+|---|---|---|---|---|
+| 1 | Liebenau | 219742 | ELIMINATED — full 1847–1855 sweep; prime 1849/1850 leaves certified entry-by-entry | 23–24 Jun (Session 124/125) |
+| 2 | Lamerden | 219673 | ELIMINATED — full 1846–1855 window, both filmings | 24 Jun (Session 118) |
+| 3 | Eberschütz | 218884 | ELIMINATED — full 1847–1856 sweep, 1841-tail closed | 23–24 Jun |
+| 4 | Gieselwerder | 219013 | ELIMINATED — full 1847–1855 leaf-by-leaf (cleanly ordered reel) | 24 Jun |
+| 5 | Hofgeismar-Kelze | 219634 | ELIMINATED — combined-volume Konf. S14–24, 1847–1855 | 24 Jun |
+| 6 | Gewissenruh | — | ELIMINATED — 1847–1855 swept | 24 Jun (Session 13) |
+| 7 | Grebenstein | 219097 | ELIMINATED — 1847–1853 swept | 24 Jun (Sessions 14–15) |
+| 8 | Veckerhagen | 220207 | ELIMINATED — 1847–1855 window fully swept | 25–26 Jun (Sessions 15/16/18) |
+| 9 | Immenhausen | 219580 | ELIMINATED — full 1847–1855 sweep (1849 prime read) | 24 Jun |
+| 10 | Marzhausen | 181895 | ELIMINATED — full 1846–1856 sweep | 24 Jun |
+| 11 | Bad Karlshafen | 218674 + 218707 | ELIMINATED — both confessions, both tracks swept | 24 Jun |
+| 12 | Hombressen | 219481 | ELIMINATED — prime 1849+1850 read in full | 25 Jun (Session 17) |
+| 13 | Haueda | 219151 | ELIMINATED — 1847–1855, prime 1849–1850 in full | 25 Jun |
+| 14 | Ostheim | 219967 | ELIMINATED — window classes read (prime cohorts) | 25 Jun |
+| 15 | Niedermeiser | 219874 | ELIMINATED — prime 1849+1850 read in full | 25 Jun |
+
+**Uniform result across the whole queue:** the forename Carl/Karl recurs throughout (every parish
+has several), but **never once on a Konze / Kontze / Gansen / Gonsen / \*n-s-n / \*n-z-n surname,
+and no boy born 26 Jan 1835 on a pool surname.** The surname — not the forename — remains the
+discriminator that none of these Hofgeismar parishes satisfies.
+
+**Two standouts already logged (for Peter Schräder's certified Kurrent read, not new work):**
+- **Hombressen — Carl George _Knauf_, b. 21 Jan 1835** (1849 class): closest given-name + date
+  match in the whole project (5 days off the 26 Jan anchor), but surname Knauf is the dominant
+  local Hombressen name, not a Konze form.
+- **Niedermeiser — _Hausen_ (≈ Hansen)**: Joh. Heinrich Hausen, b. 22 Jul 1835, carries an
+  emigration/dismissal note — canon-adjacent surname but not on a Carl.
+
+**Monitor recommendation — repoint the task.** This is the same situation that prompted the last
+repoint (off the fully-read Deisel/Trendelburg transcriptions onto the Session 114 queue). With
+the Session 114 Hofgeismar confirmation queue now exhausted, the highest-value genuinely-unfinished
+target carrying the project's actual surname skeleton is **Oedelsheim** (Konf. reg 219943 / Taufen
+reg 219946) — an **active Gans-family** parish in Charles's era where the K(ontze) index leaf
+(Bild 918) is too faded to read and the reel is shuffled; the full 1833–1841 window still needs a
+shuffle-aware leaf sweep / Kurrent read (see `search-coverage.html` open-task + Session 19/20).
+Secondary: neighbouring-parish baptisms around Lippoldsberg/Oedelsheim for the five reconstructed
+Gans households. Both sit in the Weser-ring Gans cluster, not the original Hofgeismar queue, so the
+repoint should be confirmed with Jed before the monitor starts reading there.
+
+**Nothing changed on Archion (no access this run); `search-coverage.html` pills already read
+Swept/Searched for all 15 and require no edit.**

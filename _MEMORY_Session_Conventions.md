@@ -186,6 +186,43 @@ deep-dive landing pages like `civilwar/places-served.html`,
   1844-1856 read. The book runs 1844,1845, then 1848…1856 — a clean 1845→1848 gap, NO 1846/47 class (parallels
   the 1831→1834 gap; likely a vacancy). So Gottsbüren Konfirmationen is saturated end-to-end for Charles's window;
   no boy b.1831-42 with a Konze-type surname exists in the book.
+- 219049 (Gottsbüren **Taufen** 1830-1867; 1078 imgs; **calibrated + window-swept 26 Jun 2026, Session-this**):
+  WELL-ORDERED, chronological, ONE written Seite per image at **Seite = Bild − 793** (verified: Bild814=S21 1832 Sept;
+  Bild818=S25 1833 Jan; Bild842=S49 Dec1834/Jan1835; Bild843=S50 Jan1835; Bild844=S51 Feb1835; Bild850=S57 1835 Jun).
+  Taufen section title card = **Bild 791**; entries open ~Bild794 (1830). Nro CONTINUOUS (not reset yearly); ~3-5
+  entries/Seite, ≈45-55 baptisms/yr (parish covers filial hamlets — long Aschener/Gerland/Dettmar clans). Image↔year
+  drifts (NOT a clean 13 leaves/yr) — always read the written "Jahr 18XX / Monat" header, don't extrapolate.
+  VIEWER QUIRKS: inline viewer maxes at a low-res 812px thumbnail — **must use "Vollbild"/full-screen** for hi-res
+  tiles. Zoom +/- buttons JUMP between fit and one high level (no smooth steps) and are erratic after a page-number
+  jump (stale-canvas + lands at max zoom, panned to gutter); **the reliable rhythm = navigate with the prev/next
+  ARROWS (top ~58,34 / ~223,34), which preserve zoom AND redraw cleanly**, then read. At "+3 from fit" (slider ~472)
+  one Seite's header-row + 4-5 entries fit; at fit, a screenshot-zoom of the child-name column [~640-1010 px] is just
+  legible. ⚠️ fit-view CUTS the bottom 1-2 entries of dense leaves (causes small Nro gaps) — pan/scroll for the tail.
+  ALPHABETICAL "mit Register" INDEX = **Bild 1053 (A) → 1076 (Z)** (preceded by an "X" divider card at Bild 1052).
+  ⚠️ **RE-READ A–Z 26 Jun 2026 (Session 127): the index is BOUND OUT OF ORDER, with DUPLICATE + one BLANK leaf** —
+  the letters do NOT advance cleanly per spread (e.g. Bild 1062 is a **D | K** spread; G repeats at 1067; S repeats at
+  1074; blank ruled leaf at 1068). The old "K = Bild 1062R / index 1053-1062 / G=1057-59" note was only coincidentally
+  right for K. Read each leaf via the viewer's AI **"Erkannter Text"** panel (transcribes these index leaves well),
+  scan for kon[sz]/kont/gans/gons/gann/conso/con[tz]e/jung, verify hits vs image. Letter→Bild map (verified live):
+  A=1053-54, B=1055-56, D=1057, E/F=1058, **G=1059 + 1060L (dup 1067)**, H=1060R-1061, **K=1062R + 1063**, M=1064,
+  N=1065-66, R=1069-70, S=1071-72+1074(dup), U/V=1073, W=1075, Z=1076. **NO own page for C, I, J, L, O, P, Q, T, X, Y.**
+  ⭐ RESULT (Charles search): **NO Konze/Kontze/Konsen/Konzen** (K = Köster, Kurth, King, Köhler, Kaufmann, Kirschknecht,
+  Kämpfe, Kümmel, Kümpel, König, Kunst, Kraft, Kluthe, Kindbe, Bury); **NO Gansen/Gonsen/Gonson/Gannsen/Gans/Ganß**
+  (G = Gerland-native, Götze, Grabe, Gante, Gödchen, Gemmern, Garte, Grek, Gödecke); **NO Jungkonze** (there is NO I/J
+  leaf at all — alphabet runs H→K→M); C-variants (Conson) would file under K (B→D jump, no C page) — cleared. Only
+  regex false-positive = "Blankenberg, *Kons.*" (B, an abbreviation, NOT a surname). ⇒ no Konze-pool surname in
+  Gottsbüren baptisms 1830-1867 (corroborates the parish's other Kontze-free books). **Index permalinks (reg.219049):
+  A-start Bild1053 p/bd8ea39bc5; G Bild1059 p/7c7f01d0ca; G/H Bild1060 p/e60d78dc37; K Bild1062 p/00940fbb92; K-cont
+  Bild1063 p/04f2eea26d.** Detail: Session127 log + germany/gottsbueren-research-log.html.
+  Chronological reads (Charles b. 26 Jan 1835): **1833 Jan-~Aug (S25-36) read leaf-by-leaf = NEG** (Carls all local:
+  Carl Friedr. Wilh. Gerland Nro129; Carl Friedr. August Gerland Nro134; illeg. Carl Heinrich Wiechard Nro139).
+  **Jan 1835 (S49-50, Nro196-201) FULLY read = NEG** — the only Jan-1835 males are Heinrich Ludwig Baumann (b.21) &
+  Johann Ludwig Wiegand (both solid local families); NO male b.26 Jan, NO Carl, NO Konze. **1835 Feb-Dec scanned**
+  (S51-64): only Carl-child = **illeg. "Johann Carl," b. 15 Feb 1835, bapt. 22 Feb, mother Gertrude Elisabeth Schröder**
+  (S52 Nro205) — a NEAR-MISS (illegitimate Carl, early 1835) but wrong date (15 Feb≠26 Jan), Schröder = common local
+  family, no Konze link ⇒ NOT Charles. 1834 (autumn) + Jan 1836 sampled = same local pattern, no rufname-Carl/Konze.
+  Verdict: Gottsbüren ELIMINATED on the BAPTISM track too (it was already eliminated on conf./marriage/burial).
+  Full entry-by-entry of 1836-1841 left as optional follow-up (index already rules out the Konze surname there).
 - 253444 (Grifte Taufen 1830-1883, "Amt Gudensberg", Kirchenkreis Fritzlar; 1239 imgs; verified 22 Jun 2026):
   baptism section title page = img 960; continuous Nro numbering (NOT reset yearly). Leaves partly out of
   Seite-order with DUPLICATE scans, so de-dup by the printed Jahr/Seite header. The 1833-1841 window is
@@ -381,6 +418,382 @@ deep-dive landing pages like `civilwar/places-served.html`,
   two-page spread at once; anchor years off the legible **Geburtsjahr column** (1833,1834,1835…) not arithmetic. Permalink
   minting: chain icon ~(1122,140) → "Erstellen"; FIRST click triggers DE→EN re-render → click "Create" again → p/<hash>.
   Both confessions now ELIMINATED on baptism AND confirmation tracks; detail in germany/karlshafen-research-log.html.
+
+- 219214 (Helmarshausen Taufen 1830-1856 "mit Register", Kirchenkreis Hofgeismar; 598 imgs; **baptism index re-read
+  26 June 2026, Session 124**): reel bundles other books — baptism title page = **Bild 312**; baptisms run ~Bild 313-410
+  and are **LINEAR/chronological**, ~1 written Seite per image, ~13 imgs/yr. Year anchors: **1833 ≈ Bild 337** (Mai/Juni,
+  Seite 25, Nro 111-116); **Jan 1835 ≈ Bild 356** (year header "1834-35", 1835 opens Nro 201 at Bild 356/Seite 42; late
+  Jan 1835 = Bild 357/Seite 43). ⚠️ STALE-CANVAS after a page-number jump (shows the previous leaf until a zoom +/− forces
+  a redraw — same fix as 219532); the prev/next **arrows keep zoom & redraw cleanly**, so single-step with arrows. The
+  **alphabetical name-index sits at the END, Bild ~579-585**, two pages per opening, one letter per page (580 = G left / H
+  right; 581 = I/J; 582 = H-tail left / **K** right; 583 = K-tail left / L right); within each letter, Männlich then
+  Weiblich sub-columns with Seite numbers; **no separate C page** (alphabet jumps B→D, so C-variants would file under K).
+  The on-screen `zoom`-region tool DRIFTS on this viewer (DPR mismatch) — to read tiny index text, instead DRAG the target
+  column to center + click the in-viewer "+" 2-3× + take a normal screenshot. RESULT (re-read of the April index-only
+  elimination, now at higher resolution + the newly-in-pool Gans/Ganson surname): **NEGATIVE on all of K, I/J and G** — no
+  Konze/Kontze (K = Kraft, Köhler, Kayster, Kassmann, Kaß, Knipsfeld, Kolbe, Kothe, Klages, Kuhlmann, Klöckner, Kühnemann,
+  Kayser, Kiethe, Kelle, Kuhle), no Jungkonze (I/J = Jungandreas, Jürgens, Jungmann), no Gans/Ganson (G = Gehre, Golf,
+  Gronau, **Gauer**, Gofmannrecht, Gerland, Giller, Geyer, Gille; the only near-shape "Gauer, Friedrich Carl" sits at Seite
+  19 ≈ 1832, pre-window, non-pool). The 1835 birth window read page-level (Bild 356-357): Gräßel/Dilling/Dietz/Heitz/Goda,
+  **no Konze and no male Carl across the claimed 26 Jan 1835 date**. Permalinks: **K-index Bild 582 = p/61e1f2999b**; **Jan
+  1835 leaf Bild 357 = p/c2e212421e**. The Helmarshausen OSB Konze (fam. 67/96/302/406) + Jungkontz (297/507/468) families
+  therefore fall OUTSIDE this Taufen book (pre-1830 or in marriage/burial registers). Helmarshausen stays ELIMINATED on
+  baptism (index + 1835 leaf), confirmation (219208), and OSB tracks. Detail in germany/helmarshausen-research-log.html +
+  Session124 log.
+
+- 220042 (Sielen Taufen 1830-1876, Kirchenkreis Hofgeismar; reel of 2112 imgs; **swept 1833-1841 on 26 Jun 2026,
+  Session 125**): WELL-ORDERED, **one written Seite per image ⇒ image = Seite + 1828**. Title page = Bild 1826;
+  column-header template = Bild 1828; 1830 begins Bild 1829 = Seite 1. Window map: 1833 = S9-12 (Bild 1837-1840);
+  **1835 birth-core = Seite 16 = Bild 1844**; 1841 ends Seite 52 = Bild 1880 (year tally "Geboren im Jahr 1841: 21").
+  Stale-canvas after a page-number jump (force a redraw with a zoom +/-); sequential next-arrow reads are clean.
+  ⭐ **This reel exposes the viewer's AI "Erkannter Text" panel** (document icon in the toolbar) — lists each child as
+  "Knabe/Mädchen, <name>" (switches to "Männlich/Weiblich" from Seite 52 / 1842). Fast workflow: read the panel per
+  leaf, scan child names for Carl/Karl + the full panel text for Konze-type surnames, verify hits against the image.
+  Extract the panel cleanly with JS (find the div containing /KI-basiert|AI-generated/ + /Jahr 18|Year 18/, smallest
+  such node, slice after "einzublenden."/"transcription."). Permalink minting: chain icon (fullscreen toolbar ~1060,35)
+  → "Erstellen"; FIRST click triggers a DE→EN re-render (button becomes "Create"), click again → p/<hash>.
+  RESULT (1833-1841, **NEGATIVE for Charles**): the 1835 birth-core leaf (Seite 16, p/700c4c0c76) has ONE boy only =
+  an **unnamed stillborn "Knabe —", b. 18 Jan 1835, Hausnr 101** (rest girls + Friedrich Wilhelm Blum); NO boy b. 26
+  Jan 1835. **NO Konze/Kontze/Gansen/*n·s·n surname ANYWHERE** in 1833-1841 (child, parent, or godparent). FOUR
+  Carl/Karl children, all non-matching: Karl Wilhelm Hofeditz b.2 Nov 1838 (S35/Bild1863, p/85edffbfa4); **Carl Ludwig
+  Bößler b.19 Mar 1839, father Friedr. Wilhelm Bößler Leineweber (S38/Bild1866, p/f7d0dfe887) — = the 1853 confirmand
+  from Session 112, cross-confirmed; the baptism AI mis-read the surname as "Köhler", image confirms Bößler**; Karl
+  Wilhelm illegit. b.26 Oct 1839 (mother Wassermeier/father Baumann, S41/Bild1869 Nro188); Karl Ludwig Thöne bapt.9
+  Aug 1840 (S46/Bild1874 Nro206). Sielen now negative on BOTH baptism (220042) and confirmation (220039) tracks plus
+  early-KB burials (220033) → stays ELIMINATED. Detail: Session125 log + germany/sielen-research-log.html.
+  **BAPTISM NAME-INDEX checked (26 Jun 2026):** 220042 is "mit Register" — alphabetical baptism name-index at END of reel,
+  Bild ~2094-2100, two letters per opening, each page split Männlich/Seite/Weiblich/Seite, entries ordered BY Seite (so the
+  1833-41 window = Seite 1-52 sits at the head of each letter). K spans TWO pages (early Bild2097-right covers the window
+  Seiten 6,12,13,18…; later Bild2098-left runs S162-267). Read K/I·J/G for the Konze pool = NEGATIVE: **G index page is BLANK**
+  (only G surname in the whole register = "Grunemann" S248 ~1875, on a late-overflow leaf) → no Gans/Ganß/Ganson; **I·J = Jordan
+  & Jaeger only** (lone Carl = Carl Wilhelm Jordan S128 ~1857) → no Jungkonze; **K = Köster/Köste, Koch, Krause, Koßmann, Krome,
+  Krone, Klein, Klöre** → no Konze/Kontze/Konsen. No separate C page (alphabet …G,H,I·J,K,L… → C-variants file under K, clear).
+  Index independently corroborates the leaf sweep. Permalinks: G/H Bild2094 = p/8a6f4f25e0; I·J/H Bild2096 = p/0f16cc9960;
+  K-early+overflow Bild2097 = p/8d9230dfde; K-late/L Bild2098 = p/e2c3dd800b. (Index hand read by eye — Konze-pool absence
+  unambiguous.)
+
+- 219265 + 219364 (**HOFGEISMAR TOWN baptisms — Altstädter + Neustädter; swept COMPLETE 27 June 2026, Session 126**):
+  ⚠️ Naming caution — the older "219253/219256/219295/219382" numbers are the Altstadt KB/Trauungen + Neustadt Trauungen
+  (marriage) books, NOT baptisms. The TOWN TAUFEN registers are: **Altstädter Taufen 1830-1843 = 219265**; **Neustädter
+  Taufen 1830-1863 = 219364**. BOTH carry "Bem.: mit Register" → alphabetical baptism name-index at the END of the reel,
+  spanning the whole register (so the K/G/I·J/C letter-sections settle 1833-1841 in one pass).
+  • **219265 (Altstädter, reel 1000 imgs):** title page Bild 714; baptisms start Bild 717 = Seite 2 (Aug 1830);
+    **Seite = Bild − 715** (Bild 820 = S105 = Oct 1835). Index at end: C=Bild977, G=981, H/I·J=983, **K=984**, M=986,
+    N/O=988, Q/R=991, U/V=995. Jan 1835 birth-core = Seite 85-86 = Bild 800-801 (Nro 288-297). RESULT NEGATIVE: K-pool
+    Köhler/Krome/Kratzenberg/Koth/Knüppel/Koppen/Kleinschmidt/Kuenne/Kühn/Klaus/Kroll/Kersting/König/Knauf/Kurre/Kraft/
+    Kayser — no Konze; G-pool Gueth/Grau/Guempel/Grebe/Gante/Goldbeck/Gülke/Giese/Groese/George — no Gansen; C-pool
+    Claus/Collmann/Carriere/Clobes/Croll — no Conson; local "Janson" family in I·J but J-boys at Seiten 21,33,46 then a
+    GAP to 110 (no J-boy 1833-35). Jan 1835 leaf: no boy b.26 Jan (Koehler b.1Jan, Richter b.8Jan, Deichmann b.~5Jan,
+    + girls Erdmann/Witzel/von Reinhardt).
+  • **219364 (Neustädter, reel 1160 imgs):** title page Bild 874; **Seite = Bild − 878** (Bild 920 = S42 = Aug 1838;
+    Bild 927 = S49 = Juni/Juli 1839; ~5-9 Seiten/yr, grows over time). Index at end: B=Bild1138(L), C/D=1138(R)/1139,
+    F=1141, G=1142, H/I·J=1143, **K/L=1145**, P/Q=1150. RESULT NEGATIVE: K-pool Köhler/Kloppmann/Kahler/Kessling/Koch/
+    Kohlhepp/Knabel/Kümpel/Kreszweber/Knoche/Kohlstaedt/Krome/Kreis/Kratzenberg/Kraft/Kleinschmidt/Krampe — no Konze;
+    G-pool Grasse/Gnecht/Goldbeck/Gemmecke/Grappe/Grau/Gundlach/Gümpel — no Gansen; C folded into K (B→D, no separate C
+    page) = clean; I·J = Israel/Janson/Jung/Jordan/Jäger/Jeppe/Ilse — "Janson Johannes" S49 (~1839) + "Janson Carl
+    Friedrich" S203 (~1860), NO Carl-Janson b.~1835.
+  BOTTOM LINE: Hofgeismar TOWN now ELIMINATED on the baptism track too (was already out on marriage + confirmation).
+  No Konze/Kontze/Gansen/Gonsen/Conson in either town parish; the "Janson" burgher family is a distinct local line, not
+  Charles. Index-leaf permalinks: Altst C p/0b3c5d4e22, G p/577f7942e0, I·J p/7753503cce, K p/9aa7751abd; Neust G
+  p/5288df68a4, I·J p/cce1846251, K·L p/a703fdefff. Detail: Session126 log + germany/hofgeismar-research-log.html.
+
+- **Four-parish baptism-INDEX checks (26 June 2026, Session 125)** — read the K / I-J / G index
+  sections of each Taufen register for Konze/Kontze/Jungkonze/Gans/Ganson, 1833-1841 window. Register
+  numbers (corrected): **Heisebeck Taufen = 219175** (219172 is the Konfirmationen); **Liebenau Taufen =
+  219745** (219742 = Konf.); **Lamerden Taufen = 219676**; **Eberschütz Taufen = 218887**. Each has a
+  built-in alphabetical Register at the END of the Taufen section (two letters per opening). RESULT =
+  NO Konze/Kontze/Jungkonze in any; G pages empty at Liebenau (Bild 1702)/Lamerden (Bild 448)/Eberschütz
+  (Bild 596). I/J = Jungheim (Liebenau Bild 1703), Jacobi/Jaspe/Jericke (Heisebeck Bild 1506),
+  Jaeger/Jorden (Eberschütz Bild 597) — no Jungkonze. K sections = local K-names only (Heisebeck:
+  Koch/Klinge/Küster/Klemme/Kassau, Bild 1507-08; Liebenau: Köster/Kümpel/Kniep/Plate, Bild 1706;
+  Lamerden: Plate/Klage/Klö/Krote/Rückert, Bild 451-52; Eberschütz: Kraft/Küster/Klappe/Roß/Reichel,
+  Bild 599) — no Konze. Liebenau/Lamerden indexes have hard Kurrent hands (K reads best-effort by eye;
+  certify via Peter Schräder if ever needed). All four stay ELIMINATED on Konze/Kontze/Jungkonze.
+  Detail in Session125 log + each parish research log.
+- ⭐ **HEISEBECK GANS — corrected & upgraded (Session 127, 26 Jun 2026).** The Session-125 claim that
+  Heisebeck Gans is "only from ~1866, out of window" was WRONG — it read only the LATE tail of the G
+  index (Bild 1505, Seiten 145-253). The G section spans **Bild 1503-1505; the early Gans entries are
+  on Bild 1504.** Calibration: **Seite ≈ Bild − 1237; Bild 1283 = Seite 46 = Jahr 1839** (verified).
+  The **OSB Heisebeck-Arenborn** (klauskunze.com/heikun/hei/heisebeck_register.htm) lists **"Gans" ×~33
+  family numbers** = major native multi-century Heisebeck surname. **Gans baptisms IN the 1833-1841
+  window:** Christine Wilhelmine Gans (f, S.41 ~1838); **Eduard Gottlieb Gans (m, S.46, bapt. 16 Jun
+  1839; father Heinrich Wilhelm Gans, Schneider × Dorothea; p/efb5066fa2)**; Johann Friedrich Gans
+  (m, S.56 ~1840-41). TWO+ Gans households: Heinrich Wilhelm Gans (Schneider)×Dorothea, and Tagelöhner
+  **Ernst Wilhelm Ganß** (his line = illeg. Wilhelm S.165/1866, Adolf S.196). For CHARLES: still no Gans
+  son b.~26 Jan 1835 (first Gans = S.41 ~1838; Seite 19=1835 has no Gans) — not a direct match, but
+  Heisebeck is now a STRONG Gans-pool locus (Diemel/Weser corridor; Gans≈Gannsen). Follow-ups: OSB
+  family-page mining, Heisebeck Trauungen ~1836-38 (Gans marriages → fathers/origin), pre-1830 Heisebeck
+  Taufen volume. Detail: Session127 log + germany/heisebeck-research-log.html.
+
+- **Baptism-index checks: Lippoldsberg / Oedelsheim / Vernawahlshausen (Session 126, 26 Jun 2026).** Three
+  Weser-valley parishes whose BAPTISMS were unsearched (confirmations done earlier). OSB Konze-pool surnames:
+  Lippoldsberg=Kontze/Jungkontze/Gans/Ganß/Ganson; Oedelsheim=Kontze/Kontzen/Konzen/Jungkonz/Gans/Ganß;
+  Vernawahlshausen=Gans only.
+  • **219778 Lippoldsberg Taufen 1830-1870 — NEGATIVE (clean, via index).** Baptism **Seite = image − 1411**
+    (Bild 1510 = S99 = 1846); window 1833-41 ≈ Seite 20-72. Alphabetical index A–Z ≈ Bild 1665-1695; **K=Bild
+    1680-81, G=1678, H=1679** (legible + AI-transcribed). K section = NO Kontze/Konze/Jungkontze (only Käse,
+    Kahle, Krapf, Koch, Knuth, Knipping, Kettler, Kramer, Kuhlmann, Kühne, Kraft, Kluges). **G section: a Gans
+    family IS indexed but earliest Seite 99 = 1846 — ALL Gans baptisms postdate the window**; the two Carl/Karl
+    Gans boys are Seite 152 (~1854) & 162 (~1856). Only in-window Carl of note = Klages Karl Friedrich Wilhelm
+    S55 (~1838, non-Konze). Lippoldsberg baptisms ELIMINATED for 1833-41.
+  • **219946 Oedelsheim Taufen 1830-1877 — PARTIAL / NOT cleared (OPEN).** Title Bild 646; baptism pages legible
+    & AI-transcribed BUT reel is **SHUFFLED** (year ≠ image order; e.g. Bild 705="1831" sits after 693≈1836/37)
+    and OCR noisy. Index at end (~911-933): **K(ontze) leaf = Bild 918 is FADED — AI returns 0 K entries** (ink
+    loss + bleed-through), so Kontze can't be confirmed/excluded from the index; G=Bild 915 (Gronemann, Gassmann
+    — no "Gans" seen), H=916 transcribes. Sampled baptism leaves 664-678 & 693 (incl. **Charles's exact Jan-Feb
+    1835 window**) = NO baptized Kontze/Konze/Gans child; Carls all local (Heinrich Carl Schraeder b.Oct1834;
+    Friedrich Carl WESSEL Hausnr21 b.~25 Feb 1835 [rufname Friedrich]; Carl Dettmar a father). **⚠️ BUT the Gans
+    surname is present locally as GODPARENTS in the 1830s ("Carl August Gans", "Andreas Gans"), children's fathers
+    = Lindner/Schnadhorst/Süg/Koch.** So Oedelsheim is NOT a clean negative — FLAGGED FOLLOW-UP: shuffle-aware
+    full-window leaf sweep + Kurrent read of the faded K-index leaf Bild 918 (or Kunze's printed Oedelsheim OSB).
+  • **220261 Vernawahlshausen Taufen 1830-1869 — clean NEGATIVE (index fully read, Session 127).** **Seite =
+    image − 1296** (title Bild 1296); roughly LINEAR/not shuffled. Reel is **"mit Register"**: legible
+    alphabetical index at reel END (~Bild 1560-1567), two letters/opening, AND the index leaves DO AI-transcribe
+    via `get_page_text` (the S126 "faint & out of order 1564=M/1568=L" was a STALE-CANVAS mis-read). Letter map:
+    1560 B|C, 1561 C|D, 1563 E|F, **1564 F|G**, **1567 K**. **G (Gans) = Bild 1564 = p/a36232f645** → Gebrunner/
+    Goerder/Giebert only, **NO Gans/Ganß/Ganson**; **K (Konze) = Bild 1567 = p/24fd3271ea** → Kummel/Klinge/
+    Küchemann/Koch only, **NO Konze/Kontze**; C empty (no Conson). OSB-attested "Gans" does NOT appear in the
+    Vernawahlshausen baptism index 1830-1869 at all. (Earlier S126 8-leaf window sweep Bild 1328-1351 also neg.)
+  • **220258 Vernawahlshausen Konfirmationen 1831-1948 — NEGATIVE (newly searched, Session 127).** Parish page
+    `…/vernawahlshausen/220258`. Reel 1318 imgs; section title **Bild 1127**, classes from 1128; NOT
+    AI-transcribed (read by eye); well-ordered chronological, ≈1.6 img/class; each class "Confirmierte Jahr 18XX",
+    **A.Söhne then B.Töchter** + year-end "Summa". Window map: 1847=1152-53, 1848=1154-56, **1849=Bild 1157 (PRIME,
+    p/e4a98e1045), 1850=Bild 1158 (PRIME)**, 1851=1159, 1853=1161, 1855/56=1163; reel ends blank (~1309+), no
+    end-index. **1849 prime class = ONLY 2 boys: Pfütz b.20 Nov 1834 + Funke b.26 MÄRZ 1835 — neither a Carl,
+    neither Gans/Konze, 1835 boy born 26 Mar not 26 Jan.** 1850's only Carl = **Carl Wilhelm Wißmann b.1835
+    (Wißmann Ackermann clan)** — wrong surname/date. No Gans/Konze confirmand 1847-1856; Carl recurs only on local
+    surnames (Gnann, Grobold, Nolte, Hosenhaus) or as fathers. Vernawahlshausen ELIMINATED on BOTH tracks.
+  RESULT: no Charles (Carl b.26 Jan 1835 on a Konze/Gans surname) in any of the three. Lippoldsberg clean negative;
+  **Vernawahlshausen now clean NEGATIVE on baptism index + confirmations (Session 127)**; **Oedelsheim stays OPEN**
+  (Gans present as godparents + faded K-index). Detail: Session126 + Session127 logs. NB Archion index leaves are
+  inconsistently AI-transcribed — but 220261's index DID transcribe cleanly; faint leaves (Oedelsheim K) don't.
+
+- **⭐ OEDELSHEIM UPDATE (Session 127, 26 Jun 2026) — ACTIVE GANS FAMILY FOUND; now a PRIORITY LEAD.** Did the full
+  leaf-by-leaf 1834-1836 sweep of 219946. The reel is shuffled, so anchor on each leaf's written "Jahr" header; the
+  **main chronological 1834-36 run = Bild 673-693** (670=1832, 671-72=1833, 673-77=1834, 678-86=1835, 687-93=1836,
+  694=1837), read complete (displaced leaves seen were OLDER: Bild 689=1830, cf S126 705=1831 — not 1834-36). This
+  **overturns the "pool left before the 1840s" idea:** a real Gans baptism exists — **Andreas August Gans, b. 25 Feb
+  1835, bapt. 15 Mar 1835, Oedelsheim Hausnr 2** (Bild 679/Seite 28, **p/075cc0099a**, image-verified). Father
+  **Georg Friedrich Gans, Drechslermeister** (turner) × Johanne Marie Elisabeth geb. Kohlschein; godfather **Carl
+  August Gans**, son of the **Gastwirth (innkeeper) Andreas Gans**. ≥3 Gans men in town in the 1830s (Georg Friedrich
+  the turner; Andreas the innkeeper; Carl August the innkeeper's grown son ~b.1810-18; + a George Andreas Gans
+  Stellmacher as godparent); "Gans" recurs as godparents through 1834-36. **STILL no Carl Gans:** no boy rufname
+  Carl/Karl on a Gans surname, no Gans child b.26 Jan 1835 (Jan 1835 read in full; closest = George Heinrich Westerman
+  b.24 Jan 1835, non-Gans). So Charles ≠ the 1835 Oedelsheim Gans baptism on record — BUT a living Gans family in the
+  right place/decade makes Oedelsheim the **top Gans→Gannsen lead**. NEXT: reconstruct BOTH Gans households across ALL
+  years in 219946 (hunt a Carl Gans + emigration ~1850s); Oedelsheim marriages/burials; Kunze's printed OSB; re-try the
+  faded K-index (Bild 918). Detail: Session127 log + germany/oedelsheim-research-log.html (status now ⭐ PRIORITY LEAD).
+
+- **⭐⭐ OEDELSHEIM GANS = MULTI-HOUSEHOLD POPULATION (Session 128, 26 Jun 2026).** Extending the Gans baptism sweep
+  (219946) to 1837-1839 shows the Gans family is SEVERAL households (weight comparable to the Hümme Kontze cluster):
+  **(A) Georg Friedrich Gans, Drechslermeister (turner), Hausnr 2 × Johanne Marie Elisabeth Kohlschein** → Andreas
+  August (b.25 Feb 1835, p/075cc0099a) + Sophie Rosine Charlotte (b.~Jun 1837, Bild 696); **(C) Friedrich Wilhelm Gans,
+  Tagelöhner, Hausnr 11 × Anna Christine Herwig** → Friedrich Wilhelm Gans (b.~Jan 1839, Bild 707/Seite 56,
+  image-verified); **(B) Andreas Gans, Gastwirth (innkeeper)** → son Carl August Gans (adult godparent b.~1810-18);
+  + George Andreas Gans, Stellmacher (godparent). STILL no Carl Gans child (Gans sons = Andreas August, Friedrich
+  Wilhelm; only "Carl Gans" is the ~1810s innkeeper's son, ~20 yrs too old) → Charles NOT a documented 1835 Oedelsheim
+  Gans baptism, but this is the project's strongest Gans→Gannsen lead (a Gans son emigrating ~1850s, not an 1835
+  baptism). 219946 SHUFFLE map: main 1830-38 run = Bild 670-699, displaced 1831 leaves 700-705, resumes 1838/39 at 706;
+  index G/K leaves too faded to read → reconstruct by leaf-sweep on the "Jahr" header. FOLLOW-UP: finish Gans sweep
+  1830-33 + 1840-77 (all 3 households, every son); Oedelsheim Trauungen (Gans marriages) + Beerdigungen 219952 (deaths/
+  emigration gap); Carl August Gans bapt in KB 1810-1830 reg.219940; Bremen/Hamburg passenger lists ~1850-59. Full doc:
+  Oedelsheim_Gans_Family_Reconstruction_June26_2026.md.
+  • **More baptisms found (S128 cont.):** Sophie Rosine Charlotte Gans (b.~Jun 1837, Hausnr 2, Household A); Reinhard/
+    Theodor Gans (b.~1839, Bild 709/entry 269, Hausnr 14). Gans sons = Andreas August, Friedrich Wilhelm, Reinhard —
+    STILL no Carl child.
+  • **⭐ BURIAL SIGNAL = EMIGRATION (Oedelsheim Beerdigungen 1830-1899, reg 219952):** the burial index IS legible
+    (title "Todten- und Register"; G-section = Bild 2456, R = 2465, L = 2459). The G-section is DOMINATED by Gronemann;
+    **Gans deaths are strikingly SPARSE — essentially "Gans, Martin" Seite 116 only.** A large 1830s-40s Gans baptism
+    population leaving almost no Gans deaths across 69 years = the **emigration signature** (the young Gans sons survived
+    & left). Strongly consistent with a Gans son → "Gannsen" emigrating ~1850s = Charles. NEXT: pull the "Gans Martin"
+    S116 burial; list which Gans children have NO death record; find Gans marriages (Oedelsheim has NO standalone
+    Trauungen reg — marriages are in the combined KB vols, e.g. Kirchenbuch 1840-1852 = reg 352562, + a pre-1840 vol);
+    Bremen/Hamburg passenger lists. NB the 219952 burial INDEX is mostly legible (unlike the faded Taufen 219946 index).
+
+- **⭐⭐⭐ BREAKTHROUGH (Session 128, 26 Jun 2026) — a GANS FAMILY EMIGRATED OEDELSHEIM → NORTH AMERICA in 1834.**
+  Source: **LAGIS "Hessische Auswanderer"** DB (lagis.hessen.de/de/personen/hessische-auswanderer — searchable by
+  name/place; free open web; client-rendered so use the BROWSER not web_fetch). Record: **"Gans, Georg Friedrich,
+  Oedelsheim, 1834"** (ID 110864, permalink lagis.hessen.de/resolve/de/ha/110864): Ziel **Nordamerika**, **4
+  Auswandernde** (family of four), Vermögen 110, **HStAM Best. 16 Nr. 3216 S. 199** (Marburg; Innenministerium
+  emigration/Untertanenentlassung files). Part of a **Weser-valley Gans emigration cluster** (all Lkr. Kassel):
+  Oedelsheim 1834, Heisebeck 1840 & 1846 ("Frau des Henrich Wilhelm Gans"), Gieselwerder 1846 (Christine Charlotte
+  Gans; Georg Wilhelm Gans; "Frau des Henrich Ferdinand Gans"). **KEY:** the Oedelsheim TURNER Georg Friedrich Gans
+  STAYED (baptised kids 1835-37), so the 1834 emigrant is a SEPARATE/namesake Gans household that LEFT. **WORKING
+  HYPOTHESIS (strong, unproven):** Charles Gannsen (b.26 Jan 1835, surname→Gannsen, NO German baptism ever found) was a
+  child of this emigrant Gans family, **born 1835 AFTER they left Germany** → explains the missing baptism (and fits
+  the read evidence: ALL Jan-1835 Oedelsheim baptisms searched = no Carl Gans). NEXT: (1) order/scan **HStAM Best.16
+  Nr.3216 S.199** — names the 4 + ages + exact date; (2) US side — a Georg Friedrich Gans/"Gannsen" family arriving
+  ~1834-35 → Missouri, Charles as their next/American-born son; (3) reconcile Charles's US-stated birthplace (if
+  "Germany", test a 1835 departure with 1834 permit date); (4) check Heisebeck/Gieselwerder Gans emigrant records.
+  Full detail: Oedelsheim_Gans_Family_Reconstruction_June26_2026.md.
+  • **US-SIDE CORROBORATION + SHARPENED HYPOTHESIS (S128, via Jed's Ancestry login).** A SECOND independent index
+    confirms it: Ancestry **"U.S. and Canada, Passenger & Immigration Lists Index"** (coll. 7486, rec. 129797) =
+    **Georg Friedrich Gans, arrival 1834 America, "Wife & 3 children"**, annotation "All from counties of the province
+    Nether-Hesse, NE part of former Hesse-Cassel" (= the Oedelsheim/Weser zone). Source = **Kurt Günther, "Hessian
+    Emigrants to America," Germanic Genealogist no.15 (1978) p.375** (1833-34). So the emigrant G.F. Gans (wife + 3
+    children, left 1834) is a SEPARATE household from the Oedelsheim TURNER G.F. Gans (who stayed, kids from 1835).
+    **SHARPENED HYPOTHESIS: Charles (Carl) was likely one of the emigrant family's 3 CHILDREN — born in Kurhessen
+    ~1832-34, emigrated as a toddler 1834** (fits family belief "born in Kurhessen", death-cert "born 1834",
+    Gans→Gannsen; the "26 Jan 1835" is one post-mortem family estimate, maybe a yr off). DECISIVE NEXT: (1) find the
+    emigrant family's 3 children's BAPTISMS in Oedelsheim/Niederhessen ~1826-34 — a G.F. Gans father whose wife is NOT
+    Kohlschein, hunt a son Carl (KB 1810-1830 reg 219940 + 1830-34 part of 219946; + nearby filial parishes if
+    "Oedelsheim"=Amt); (2) get Günther's article (Germanic Genealogist no.15, 1978, pp.374-377) — may NAME the wife+3
+    children; (3) US 1840/1850 census for this Gans family (Ohio? cf. "George W. Ganse, b.Hesse-Cassel, naturalised 1852
+    Cleveland OH"; or Missouri) → find Charles among the children. NB the project's MAIN thesis was Konze (Trendelburg/
+    Deisel); this literal-Gans-from-Oedelsheim thread is a strong COMPETING origin hypothesis. Detail: reconstruction doc.
+  • **⚠️ CORRECTION (27 Jun 2026) — the "emigration" is most likely an UNUSED PERMIT; hypothesis WEAKENED.** Checked
+    KB 1810-1830 (reg 219940): the LAGIS/Günther entries are PERMIT records (Entlassung aus dem Untertanenverband =
+    release-from-subject-status APPLICATIONS, not verified US arrivals). The ONLY Georg Friedrich Gans documented in
+    Oedelsheim = the TURNER × Kohlschein, and he STAYED: son Georg Friedrich Wilhelm Gans bapt. 28 Mar 1821 (Bild 536,
+    †Oedelsheim 12 Feb 1845) + Andreas August (1835) + Sophie (1837). A man baptising kids in Oedelsheim 1835/1837 did
+    NOT emigrate 1834 → the 1834 "emigration (wife+3 children)" was almost certainly his UNUSED permit. So there was
+    probably NO actual 1834 Gans emigration, and the US-arrival lead is a spurious permit (1850 US census also found NO
+    Gans family born Germany / no Charles Gans — consistent). NET: the "Gans family emigrated 1834 → Charles" story is
+    substantially weakened / probably wrong. What survives: Oedelsheim has a real large Gans population (right place/era);
+    only thin remaining route = a single Gans son named Carl emigrating ALONE — but no Carl Gans found 1834-41, and a
+    staying family fits "no family found" poorly. LESSON: emigration-DB hits = PERMITS; always verify against parish
+    records before believing. KB 1810-1830 (219940): combined vol, Taufen S.1-104 (~Bild 482-555) each section w/ its own
+    family-name index after it; confirmations ~Bild 560; **NO AI "Erkannter Text" panel on this register — read by image.**
+    TODO if pursued: read the Taufen family-name index for the COMPLETE Gans-children list (is there a 2nd G.F. Gans? a
+    Carl Gans son?); the turner's pre-1834 children aren't fully listed. Status downgraded from "TOP LEAD" to OPEN/WEAK.
+  • **INDEX-READ ATTEMPT (27 Jun 2026) — BLOCKED by legibility.** Tried to read the KB 1810-1830 (219940) Taufen
+    family-name index for the complete Gans list. Found it (G/K/L columns ≈ Bild 542-545; baptism entries + index
+    columns are INTERLEAVED/jumbled), but it's **faint iron-gall ink with NO AI panel + stale-canvas + confusable
+    Kurrent G/K** → could NOT get a clean, reliable read of all "Gans" entries. The "Carl August" entries I could read
+    are on NON-Gans surnames (a K-surname Seite 10; a B-surname) — no Gans+Carl confirmed, but not cleanly ruled out
+    either. NB Bild 536 = the turner's son Georg Friedrich Wilhelm Gans bapt. 1821 (reinforces turner stayed). To
+    DEFINITIVELY close/revive the lead, the full Gans-children list needs: a Kurrent specialist (Peter Schräder) reading
+    of the KB 1810-1830 Taufen index/entries, OR Kunze's PRINTED Oedelsheim OSB (lists the Gans families w/ dates), OR a
+    full-res download of the index leaf (Bild ~545) for offline enhancement. Automated viewer read = not feasible here.
+
+## Klaus Kunze (HeiKun-Verlag) OSB online registers — Konze/Gans surname pool (Session 127, 27 Jun 2026)
+Klaus Kunze (klauskunze.com/heikun) publishes Ortssippenbücher for many Weser/Diemel parishes, and puts the
+**Namen-/Orts-/Sachregister ONLINE** (free, instantly searchable; family entries with DATES are book-only). Several
+are project candidate parishes. **Swept the online registers for the pool** — surname→family-number index:
+- **Helmarshausen** `hel/register.htm` (OSB 1521-1950, 4500 fam, €60, ISBN 978-3-933334-21-3): Konze 67,96,302,406;
+  Contzen 450; Jungkontz 297,507; Jungkonze 468; Gans 67,199,302,453; Ganß 186,556. ⭐ **fam 67 & 302 are indexed under
+  BOTH Konze AND Gans.**
+- **Oedelsheim** `os/oedelsheim_register.htm`: Contze, Contzen, Kontze, Kontzen, Konzen, Jungkonz, Gans, Ganß (name-list,
+  no nos.) — confirms the OPEN Oedelsheim Gans/Kontze pool is real & dense (reinforces the ⭐ PRIORITY LEAD + "get Kunze's
+  printed Oedelsheim OSB" next-step).
+- **Lippoldsberg** `os/lippoldsberg_register.htm`: Contze 53,119,261,384; Kontze 262; Jungkontze 226; huge Gans (~50)+
+  Ganß (~30); **Ganson 186** (the literal Ganson spelling!).
+- **Karlshafen** `kf/namenregister.htm` (OSB 1699-1945): Konze 37,61,68,285,287,342; Kontze 287; Conze 99; Consens 181;
+  Jungkonze 308; Gans (8 fam). fam 287 = Konze AND Kontze.
+- **Gieselwerder** `os_gi/register.htm`: Contze (11 fam) + Contzen (8) + Kontzen (6) + Conze 214; huge Gans+Ganß; several
+  fams carry both Contze & Contzen.
+- **Sielen** OSB *1714-1831* (Rolf Nowak data, ed. Kunze 2009): **FREE FULL-TEXT PDF** at
+  `klauskunze.com/heikun/sielen/OSB Sielen.pdf` (NOT in FamilySearch catalogue). **FULLY MINED 27 Jun 2026** (PDF+txt
+  archived: `sources/OSB_Sielen_1714-1831_Nowak-Kunze.pdf`, `notes/sielen_osb_1714-1831_fulltext.txt`). Stops 4 yrs
+  before Charles b.1835. RESULT: **NO native Konze/Kontze household and NO Gans/Ganß/Ganson at all** in Sielen
+  1714-1831 — the Konze name enters ONLY by in-marriage, from the project's two core Konze locales: **=973= Johann
+  Heinrich Konze, Ackermann, *in Trendelburg** (daughter Maria Elisabeth Konze ∞ Lorentz Becker, Sielen, 5.3.1809,
+  fam=133=) and **=974= Johann Christoph Konze, Richter (judge) zu Hümme** (∞ Anna Catharina Schüßler; daughter Anna
+  Catharina Kontze *1748 †1800 Sielen) — the latter an early-1700s Hümme Konze, possible forebear of the 1830s Hümme
+  Kontze cluster. Plus Wilhelmine Friederike Kontze ∞ Conrad Becker (fam=131=). Corroborates Sielen ELIMINATION; NEW
+  LEADS = the Trendelburg Ackermann-Konze and the Hümme Richter-Konze lines.
+  **CROSS-REF (27 Jun, folded into konze-trendelburg.html + konze-huemme.html):** =973= Trendelburg Konze **= the documented
+  Johann Henrich Kontze, b.~1740 d.1804** (son of Arnold Philipp Kontze, Rathsverwandter); his daughter **Maria Elisabetha
+  b.28 Apr 1779** is the 1809 Sielen bride — OSB supplies her previously-unknown marriage to Lorentz Becker. =974= **Joh.
+  Christoph Konze, Richter zu Hümme** = a NEW earliest Hümme Konze (a generation+ above Joh. Christoph Kontze b.1763; name
+  recurs → possible direct line). Sielen Becker bride **Wilhelmine Friederike Kontze (=131=) = the Hümme posthumous daughter**
+  (b.~Sep 1834, of Johannes Kontze ×Uffelmann, m. Conrad Becker 1856) — confirms the Hümme→Sielen-Becker marriage. So the
+  Nowak OSB ties into the project tree at THREE points (Trendelburg dau's fate + new Hümme progenitor + Hümme-Becker confirm).
+  ⭐ **HÜMME EARLY BOOKS (newly catalogued 27 Jun — the project pages had ONLY listed 219526 KB 1765-1831):** Archion holds
+  **Hümme KB 1640-1724 = 219520**, **KB 1720-1765 = 219523**, and an **alphabetical KB-Register 1720-1765 = 398631** (index),
+  plus Beerd. 1830-74=219538, Trau. 1830-91=219547. Parish "komplett transkribiert" (AI text). ⇒ The OSB "Johann Christoph
+  Konze, Richter zu Hümme" (daughter b.1748) + family fall INSIDE KB 1720-1765 and ARE verifiable. **NEXT: search index 398631 +
+  KB 219523 (and 219520 for the prior generation) for Konze/Kontze — verify the Richter, find Anna Catharina's 1748 baptism,
+  bridge down to Joh. Christoph Kontze b.1763 + the 1830s cluster.** (konze-huemme.html holdings line corrected.)
+  ⭐⭐ **INDEX 398631 SEARCHED (27 Jun) — KEY RESULT:** the KB-Register 1720-1765 is a clean TYPED index (15 imgs); K-page =
+  **Bild 5 = p/d461c3f04a**. It lists **"Jungkontze / Jungcuntze" on KB pp. 40, 56, 69, 145, 202, 205, 233, 289, 295, 310, 321**
+  and **NO plain "Kontze/Konze" entry at all**. ⇒ In Hümme 1720-1765 the family is the COMPOUND **Jungkontze** form — so the OSB
+  "Konze, Richter zu Hümme" = the Hümme **Jungkontze** line (Nowak simplified it). This (a) proves an early-18th-c HÜMME Jungkontze
+  family — bears on the OPEN "Hümme-vs-Stammen" Jungkonze question (FS labels the line "Hümme"); (b) ties the new Richter into the
+  konze-jungkonze branch. Folded into konze-huemme.html (Richter row) + konze-jungkonze.html (new Hümme-connection note).
+  **NEXT (not yet done): read KB 1720-1765 (219523) at the Jungkontze pages** (need to calibrate 219523 image=Seite; handwritten
+  Kurrent) to pin Anna Catharina's 1748 baptism + the Richter's name/household + sons, and test the bridge to Joh. Christoph
+  Kontze b.1763 and the Trendelburg/Stammen Jungkonze.
+  **KB 219523 OPENED (27 Jun) — structure + calibration for the handoff:** reel 802 imgs; "1720-1765" title page = **Bild 617**;
+  it is a COMBINED book (Taufen + Konf + Trauungen + Todten, "ohne Register"). NOT AI-transcribed (text panel only offers
+  "Texterkennung beauftragen" — the "komplett transkribiert" tag covers the 1830+ books, NOT this one). Anchors read live:
+  **Bild 762 = baptisms year "A° 1726"**; burials section by **Bild 783-784** (entries give "alt X Jahr" death-ages) ⇒ the
+  **1748 baptisms sit ~Bild 770-780**. Hand is difficult early-Kurrent + faded. ⚠️ Extracting Anna Catharina Jungkontze's exact
+  1748 baptism + confirming father "Joh. Christoph (Jung)kontze" + sons (bridge to Joh. Christoph Kontze b.1763) is a **Kurrent-
+  SPECIALIST read (→ Peter Schräder)** — do NOT trust a screenshot transcription for the tree. Hand him: index Seite refs
+  (Jungkontze pp. 40,56,69,145,202,205,233,289,295,310,321 of 398631) + these Bild anchors. Index K-page permalink p/d461c3f04a.
+⚠️ **RIGOR CAVEAT:** a family number under BOTH "Konze" and "Gans" in an index = EITHER a true spelling-variant family
+(Konze gen./alias Gans) OR Konze-head married a née-Gans woman (intermarriage). The index can't tell them apart — the
+**book's family entry** is needed to confirm the variant equivalence. Promising, NOT proof. Access full records via:
+FamilySearch Library (Kunze's books are in the FHL catalog) · email heikun-verlag@klauskunze.com with family nos. · or buy.
+Full table + next steps: `Session127_Kunze_OSB_Online_Registers_Konze-Gans_Crosslink_June27_2026.md`.
+
+## Lippoldsberg's neighbours — Kunze registers + Bodenfelde re-verify (Session 130, 27 Jun 2026)
+Jed: "for lippoldsberg do the neighbouring parishes and check klauskunze town registers as well."
+Lippoldsberg already neg (Taufen 219778 + Konf 219775). Worked the **un-searched cross-Weser
+(Hannover-province) neighbours** + mined Kunze OSB registers (both **JS-rendered** — render in
+browser; `web_fetch` shows only a shell):
+- **Bursfelde + Glashütte** (`os/bursfelderegister.htm`; Hann.-Münden/Hemeln, Lkr. Göttingen):
+  **Gans = fams 110, 113, 125, 136** (+Ganz 136, Gaus 130); **NO Konze/Kontze/Contze.** ARCHION
+  (Session 130): 1800s parish = **Fürstenhagen (Kirchenkreis Uslar)** — NOT a standalone
+  "Bursfelde" book; place-search "Bursfelde" returns only KB 1639-1746 (under Fürstenhagen), but
+  Fürstenhagen's later books carry an **"Ort" column and "Bursfelder Glashütte" appears there**.
+  Registers: **KB 1832-1852 reg 359377** (Taufen tabulated + Ort col), **Namensregister 1793-1911
+  reg 359381** (alpha index, forename-first/faint). **1835 Taufen read (reg 359377, Bild 11-13):
+  Jan 1835 = Offensen children only (no Bursfelde child b.~26 Jan); the Bursfelder-Glashütte 1835
+  baptisms (Nro 12-13, ~Apr) are NON-Gans (e.g. "Georg Ludwig", Wittler/Müller-type).** ⇒ no Carl
+  Gans b.26 Jan 1835 in Bursfelde → the 4 Gans fams are historical OSB families, not an 1835
+  cohort. STILL TO DO: Namensregister 359381 G-section (every Gans + years) / printed OSB for the
+  Gans-family timing + emigration gap. NB this viewer's page-field concatenates digits — clear
+  with triple-click; jumps misfire, so verify the on-image year header.
+- **Bodenfelde** (`bf/register-osb-bodenfelde.htm`; Lkr. Northeim, Kirchenkreis Uslar): the OSB
+  **IS published/online** (the `bodenfelde.htm` "in Arbeit nicht vor 2012" page is stale).
+  **Gans = 15 fams: 13,95,118,141,155,170,171,196,197,229,256,453,456,480,538** (+Gansberg 170,
+  Ganske 171, Gante 171/196) AND **Contze = fam 178** (only real Konze-pool surname; all other
+  Kon/Con hits are occupations — Konditor/Konrektor/Konteradmiral/Kontoristin etc.). ⇒ **densest
+  Gans pop. of the ring + one Contze** — UPGRADES/CORRECTS the older "Gans/Ganß only, Konze=false"
+  note. Fam 178 (Contze) and the Gans fams share no number (not an obvious Gans=Contze variant link).
+- **Bodenfelde on Archion** (Kirchenkreis Uslar; Taufen reg **359334**, Kartei Männer **359346**,
+  Namensregister 1815-1836 **359342**, + Familienbuch 1797-1899, Konf 1848-1875, Taufen-Konf
+  1837-1852): **1835 Taufen RE-VERIFIED NEGATIVE** (corroborates `bodenfelde-research-log`). My 1835
+  read sits at **img ~320-324** (header "1835") — **~14 imgs earlier than the log's "334-340"** ⇒
+  the combined vol almost certainly has an **Erst- AND Zweitschrift** of the 1830s Taufen (1835
+  appears twice; both read the same — reconcile the image map). **Jan 1835 in full:** 8 Jan (Witte,
+  Wasmuth, "Carl August Ferd. Gehringer") → 22 Jan (Husemann, f, Nr5) → 8 Feb (Brauns, f, Nr6) —
+  **no 26-Jan birth, no Gans/Contze/Konze**; "Carl" pervasive but all local (Gehringer, Streitwolf,
+  Biermeier, Spieß). **Kartei Männer 359346 G-section** = F(Fräter/Fleißner/Fröhlich)→**Gante/
+  Gautier** (img184)→Geiler/Geers/Gerke — **no dense Gans card** at the F→G boundary (sparse/faint;
+  not certifiable). Namensregister 359342 = thumb-indexed, **filmed out of order** (img21=E after
+  img19=F), G/Contze leaf not cleanly isolated — follow-up.
+- ⇒ Bodenfelde mirrors **Oedelsheim**: a real Weser Gans population whose **1835 cohort yields no
+  Carl Gans** → keeps the corridor "Gans→Gannsen emigrated ~1850s, not an 1835 baptism" reading.
+- **STILL TO DO (full sweep, one-at-a-time per Jed):** **Wahmbeck on Archion (not started)**;
+  finish **Bursfelde** Gans-timing (Fürstenhagen Namensregister 359381 G-section / printed OSB);
+  Bodenfelde Familienbuch/Kartei Gans + Contze-178 generations + Konf books. Niedersachsen
+  emigration DB (not LAGIS-Hessen) for any Weser Gans leaving ~1850s. Detail:
+  `Session130_Lippoldsberg_Neighbors_Bodenfelde_Bursfelde_June27_2026.md`.
+
+## Fulda / Gastmann garrison-parish sweep (Session 129, 27 Jun 2026)
+Followed up the Fulda "Dassen" near-miss (Karl Friedrich **Gastmann**, b.26 Feb 1838 Fulda,
+father Michael, Feldwebel 2.Inf-Rgt 1.Comp). Lead stays ELIMINATED as Charles; completeness pass.
+- **Archion has NO name/full-text search** (place search only; advanced filter = record TYPE).
+  Pre-1866 Kurhessen indexes are bound out-of-order + duplicated + X-card-separated → no shortcut;
+  a literal exhaustive civilian-parish read across the 5 garrison towns is impractical.
+- **Garrison soldiers' families = dedicated military congregations.** Only **Kassel
+  (Garnisongemeinde)** covers the pre-1866 window (Taufen 1833-42/1843-51/1852-65 regs
+  174005/174008/—; Trauungen 1833-65 reg 174029; Beerdigungen 1833-65). Marburg (Garnisonsgemeinde
+  1896 / Soldaten 1939) and Bad Hersfeld (Militärgemeinde 1866) are all too late; Ziegenhain &
+  Hanau have NO separate garrison congregation.
+- **RESULT:** **Kassel Garn. Trauungen 1833-65 = NO Gastmann marriage** (complete A-Z thumb-tabbed
+  index; G leaf Bild 568 blank; H leaf has a real "Hartmann Conrad", not our man). **Hanau
+  Marienkirche (ref.) Taufen 1837-42 = NO Gastmann** (full G index Bild 1006-07). Kassel Garn.
+  Taufen 1833-42/1843-51 indexes sparse/broken — no Gastmann surfaced, Karl was at Fulda anyway.
+  ⇒ Michael Gastmann did NOT marry/baptise-Karl at the Kassel garrison; the family tracked the
+  company's station, not Kassel.
+- NEXT (low priority): localise the 1.Comp's station via Kurhessen military rolls (Hof-/Staats-
+  Handbuch, Ranglisten, Stammrollen — ORKA Uni-Kassel, some OCR-searchable), then read only that
+  town. Detail: `Session129_Fulda_Garrison_Parish_Sweep_June27_2026.md` +
+  `germany/fulda-research-log.html`.
 
 ## Downloaded sources log
 - **13 Jun 2026 — Rabus baptism (FS KZFV-DRQ).** Johann Wolfgang Martin Rabus, bapt. **12 July 1778**,
