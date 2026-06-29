@@ -12,13 +12,15 @@
 <link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
 <link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
 <script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<meta name="description" content="An interactive geographic map of all thirty-six parishes investigated for Charles Konzen's German baptism — Trendelburg, Deisel, Friedrichsfeld, Helmarshausen, Hofgeismar, the surrounding villages of the Kreis Hofgeismar, the cross-border Catholic parishes, and the far-south place-name alternatives (Mainz, Diez, the Tier-3 'Deissen' parishes).">
+<meta name="description" content="An interactive geographic map of all forty parishes investigated for Charles Konzen's German baptism — Trendelburg, Deisel, Friedrichsfeld, Helmarshausen, Hofgeismar, the surrounding villages of the Kreis Hofgeismar, the wider Kreis Kassel / Weser ring (Lippoldsberg, Oedelsheim, Bodenfelde, Bursfelde, Wahmbeck), the cross-border Catholic parishes, and the far-south place-name alternatives (Mainz, Diez, the Tier-3 'Deissen' parishes).">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Charles Research">
 <meta property="og:title" content="Hessian Parish Map — Charles Research">
-<meta property="og:description" content="Interactive map of all thirty-six parishes investigated for Charles Konzen's German baptism, colour-coded by candidate status — thirty-two eliminated; one new candidate (Heisebeck, June 2026).">
+<meta property="og:description" content="Interactive map of all forty parishes investigated for Charles Konzen's German baptism, colour-coded by candidate status — thirty-four eliminated; three open leads (Heisebeck candidate, Oedelsheim & Bursfelde Gans-pool).">
 <meta property="og:url" content="https://charles-research.netlify.app/germany/parish-map.html">
 <meta property="og:image" content="https://charles-research.netlify.app/assets/og/germany_parish-map.png">
 <style>
@@ -320,12 +322,12 @@
 <script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
 <script defer src="../assets/cinematic.js"></script>
 <!-- BEGIN-INJECTED-NAV-ASSETS -->
-<link rel="stylesheet" href="../assets/site-nav.css">
-<script defer src="../assets/site-nav.js"></script>
-<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
-<script defer src="../assets/cite-widget.js"></script>
-<link rel="stylesheet" href="../assets/deep-zoom.css">
-<script defer src="../assets/deep-zoom.js"></script>
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
 <!-- END-INJECTED-NAV-ASSETS -->
   <!-- BEGIN-INJECTED-ANALYTICS -->
 <!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
@@ -505,11 +507,11 @@
 
 <!-- ============ Status summary strip ============ -->
 <div class="status-summary" role="status" aria-label="Parish-search summary">
-  <strong>36 parishes investigated:</strong>
+  <strong>40 parishes investigated:</strong>
   <span class="ss-pill charles">1 stated origin</span>
   <span class="ss-pill working">2 working hypotheses</span>
-  <span class="ss-pill open">1 open lead</span>
-  <span class="ss-pill eliminated">32 eliminated</span>
+  <span class="ss-pill open">3 open leads</span>
+  <span class="ss-pill eliminated">34 eliminated</span>
 </div>
 
 <!-- ============ Full-width hero map with overlay legend ============ -->
@@ -528,7 +530,7 @@
 </div>
 
 <p class="map-tip" style="margin:0.5rem 0 1.2rem; font-size:0.85rem; color:var(--text-muted); line-height:1.45;">
-  <strong>Tip:</strong> the map opens centred on the Diemel-valley parish cluster, so the far-south toponym checks sit off-screen. Press the <strong>&ldquo;&#8853;&nbsp;36&rdquo;</strong> button (top-left of the map) or zoom out to bring all 36 parishes into one view. A few sit almost on top of one another &mdash; <strong>Diez and Dies</strong> are only ~3&nbsp;km apart, so their dots overlap until you zoom in to separate them.
+  <strong>Tip:</strong> the map opens centred on the Diemel-valley parish cluster, so the southern toponym checks sit off-screen. Press the <strong>&ldquo;&#8853;&nbsp;45&rdquo;</strong> button (top-left of the map) or zoom out to bring all 40 parishes (plus the 5 toponym checks &mdash; the 4 far-south Lahn/Rhine readings and James's &ldquo;Dassen&rdquo; near Fulda) into one view. A few sit almost on top of one another &mdash; <strong>Diez and Dies</strong> are only ~3&nbsp;km apart, so their dots overlap until you zoom in to separate them.
 </p>
 
 <div class="callout" style="background:var(--bg-card-tint); border:1px solid var(--border-light); border-left:4px solid #d8b366; border-radius:4px; padding:0.9rem 1.1rem; margin:0 0 1.4rem;">
@@ -544,7 +546,7 @@
 <h2>Parish-by-parish status</h2>
 
 <!-- ============ Charles's stated origin ============ -->
-<h3 class="status-section-h">Charles's stated origin <span class="count">1 of 36</span></h3>
+<h3 class="status-section-h">Charles's stated origin <span class="count">1 of 40</span></h3>
 <div class="parish-grid">
   <article class="parish-card charles" data-parish="deisel">
     <h3 class="parish-h">Deisel <span class="pill charles">Charles's village</span></h3>
@@ -557,7 +559,7 @@
 </div>
 
 <!-- ============ Working hypotheses ============ -->
-<h3 class="status-section-h">Working hypotheses <span class="count">2 of 36 · Konze surname pool</span></h3>
+<h3 class="status-section-h">Working hypotheses <span class="count">2 of 40 · Konze surname pool</span></h3>
 <div class="parish-grid">
   <article class="parish-card working" data-parish="trendelburg">
     <h3 class="parish-h">Trendelburg <span class="pill working">Working hypothesis</span></h3>
@@ -579,7 +581,7 @@
 </div>
 
 <!-- ============ Priority open lead ============ -->
-<h3 class="status-section-h priority" id="open-leads">★ Priority open leads <span class="count">1 of 36 · Heisebeck candidate</span></h3>
+<h3 class="status-section-h priority" id="open-leads">★ Priority open leads <span class="count">3 of 40 · Heisebeck, Oedelsheim &amp; Bursfelde</span></h3>
 <div class="parish-grid">
   <article class="parish-card open" data-parish="heisebeck">
     <h3 class="parish-h">Heisebeck <span class="pill open">Open · candidate found</span></h3>
@@ -589,12 +591,63 @@
       <div class="plog"><a href="heisebeck-research-log.html">Research log &rarr;</a></div>
   </article>
 
+  <article class="parish-card open" data-parish="oedelsheim">
+    <h3 class="parish-h">Oedelsheim <span class="pill open">Open · priority Gans lead</span></h3>
+    <div style="display:inline-block; margin:0.15rem 0 0.35rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7a5a12; background:#f3e3b0; border:1px solid #d8b366; border-radius:3px; padding:1px 7px;">✦ Konze family documented here</div>
+    <div class="pmeta">51.592 N · 9.561 E · reg. 219946 (Taufen) · 219943 (Konf.)</div>
+    <div class="pdist">~10 km E <span class="dist-bar" style="--dist-pct: 80%;" aria-hidden="true"></span></div>
+    <div class="pdesc"><strong>Active Gans family</strong> baptising here in Charles's era (turner Georg Friedrich Gans; innkeeper Andreas Gans + son Carl August). Nearest near-miss <strong>Andreas August Gans, b. 25 Feb 1835</strong> — wrong forename, 30 days off the 26-Jan anchor. Confirmations 1847–55 negative; baptisms 1834–36 swept. The faded K(ontze) index leaf (reg. 219946 Bild 918) + shuffled reel still need a Kurrent read — the strongest live Gans/Konze lead.</div>
+      <div class="plog"><a href="oedelsheim-research-log.html">Research log &rarr;</a></div>
+  </article>
+
+  <article class="parish-card open" data-parish="bursfelde">
+    <h3 class="parish-h">Bursfelde + Glashütte <span class="pill open">Open · not yet digitised</span></h3>
+    <div class="pmeta">51.548 N · 9.648 E · Lkr. Göttingen (Hann.-Münden / Hemeln)</div>
+    <div class="pdist">~16 km E <span class="dist-bar" style="--dist-pct: 95%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Kunze OSB carries a native <strong>Gans</strong> population (fam. 110/113/125/136) but <strong>no Konze</strong>. The only Bursfelde book on Archion is 1639–1746 (pre-window); the 1833–41 register, if digitised, sits under Hann.-Münden/Hemeln — otherwise on-site/OSB-only. Outstanding: the four Gans families' baptisms.</div>
+    <div class="plog"><a href="bursfelde-research-log.html">Research log &rarr;</a></div>
+  </article>
+
 </div>
 
 <!-- ============ Eliminated ============ -->
-<h3 class="status-section-h" id="eliminated">Eliminated <span class="count">32 of 36 · all searches negative — adjacent, border, toponym &amp; Tier-3 sweeps included</span></h3>
+<h3 class="status-section-h" id="eliminated">Eliminated <span class="count">34 of 40 · all searches negative — adjacent, border, cross-Weser, Tier-3 &amp; toponym sweeps included</span></h3>
 <p style="margin:-0.2rem 0 0.6rem; font-size:0.82rem; color:var(--text-muted); font-style:italic;">Ordered nearest-to-farthest from Deisel — parishes lower in the list are progressively more distant and less likely to be relevant (Marzhausen, last, is ~40 km and was checked only for completeness). A gold ring marks any parish where the Konze surname is documented.</p>
 <div class="parish-grid">
+  <article class="parish-card eliminated" data-parish="lippoldsberg">
+    <h3 class="parish-h">Lippoldsberg <span class="pill eliminated">Eliminated · Gans clan, no match</span></h3>
+    <div style="display:inline-block; margin:0.15rem 0 0.35rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7a5a12; background:#f3e3b0; border:1px solid #d8b366; border-radius:3px; padding:1px 7px;">✦ Konze family documented here</div>
+    <div class="pmeta">51.645 N · 9.578 E · reg. 219778 (Taufen) · 219775 (Konf.)</div>
+    <div class="pdist">~14 km NE <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">OSB carries Kontze / Jungkontze / Gans / Ganson. Baptism index 1830–1870 + confirmations 1847–55 read: the Gans family baptises only from 1846 (Carl Gans boys 1854/1856), no Kontze, no Carl Gans b. 1835. A clan of interest — but no Charles match.</div>
+      <div class="plog"><a href="lippoldsberg-research-log.html">Research log &rarr;</a></div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="vernawahlshausen">
+    <h3 class="parish-h">Vernawahlshausen <span class="pill eliminated">Eliminated · both tracks</span></h3>
+    <div class="pmeta">51.629 N · 9.554 E · reg. 220261 (Taufen) · 220258 (Konf.)</div>
+    <div class="pdist">~11 km NE <span class="dist-bar" style="--dist-pct: 92%;" aria-hidden="true"></span></div>
+    <div class="pdesc">OSB attests Gans only. The baptism &ldquo;mit Register&rdquo; index 1830–1869 carries no Gans at all, and confirmations 1847–56 no pool surname — negative on both tracks.</div>
+      <div class="plog"><a href="vernawahlshausen-research-log.html">Research log &rarr;</a></div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="bodenfelde">
+    <h3 class="parish-h">Bodenfelde <span class="pill eliminated">Eliminated · window negative</span></h3>
+    <div style="display:inline-block; margin:0.15rem 0 0.35rem; font-size:0.7rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:#7a5a12; background:#f3e3b0; border:1px solid #d8b366; border-radius:3px; padding:1px 7px;">✦ Konze (Contze) family documented here</div>
+    <div class="pmeta">51.649 N · 9.556 E · reg. 359334 · Lkr. Northeim (Hannover)</div>
+    <div class="pdist">~13 km NE <span class="dist-bar" style="--dist-pct: 96%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Across the Weser. Kunze OSB carries Gans ×15 + a genuine Contze (fam. 178), but the re-verified 1835 baptisms and the Kartei Männer hold no Gans/Contze child — the pool is historical, not baptising in the window.</div>
+      <div class="plog"><a href="bodenfelde-research-log.html">Research log &rarr;</a></div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="wahmbeck">
+    <h3 class="parish-h">Wahmbeck <span class="pill eliminated">Eliminated · provisional</span></h3>
+    <div class="pmeta">51.661 N · 9.544 E · reg. 359497</div>
+    <div class="pdist">~14 km N <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">Kirchenbuch 1790–1845 located; a by-eye scan of the Geburts-Register window leaves shows an entirely local surname pool (König, Otte, Kettler, Hesse…) and no Gans/Konze. No Kunze OSB. Archion OCR ordered to certify the Jan-1835 head + full leaf-by-leaf.</div>
+    <div class="plog"><a href="wahmbeck-research-log.html">Research log &rarr;</a></div>
+  </article>
+
   <article class="parish-card eliminated" data-parish="liebenau">
     <h3 class="parish-h">Liebenau (+ Grimelsheim) <span class="pill eliminated">Eliminated · now digitised</span></h3>
     <div class="pmeta">51.496 N · 9.276 E · reg. 219745</div>
@@ -765,6 +818,13 @@
     <div class="pdesc">Tiny Huguenot parish (~3 births/yr). No January 1835 baptism at all; the only window entry is female. <strong>Confirmations 1847–1855 also swept</strong> (reg. 219001): no Konze-pool surname, and the sole window Carl is Johann Karl Jouquenal (b. 1 Aug 1834, Huguenot surname) — negative on both tracks.</div>
       <div class="plog"><a href="../towns/gewissenruh.html">Parish page &rarr;</a> &nbsp;&middot;&nbsp; <a href="gewissenruh-research-log.html">Research log &rarr;</a></div>
   </article>
+  <article class="parish-card eliminated" data-parish="gottstreu">
+    <h3 class="parish-h">Gottstreu <span class="pill eliminated">Eliminated · June 2026</span></h3>
+    <div class="pmeta">51.577 N · 9.586 E · reg. 219073</div>
+    <div class="pdist">~12 km E <span class="dist-bar" style="--dist-pct: 98%;" aria-hidden="true"></span></div>
+    <div class="pdesc">1722 Waldensian colony (twin of Gewissenruh) with its <strong>own</strong> Archion register (reg. 219073) — not folded into Gewissenruh or Lippoldsberg. The 1835 baptisms and the whole-book alphabetical index were read: <strong>no Gans/Konze pool surname anywhere</strong>, and no male born 26 Jan 1835 (only twin Bock girls in January). Confirmations 1847–1855 also swept — negative on both tracks.</div>
+      <div class="plog"><a href="gottstreu-research-log.html">Research log &rarr;</a></div>
+  </article>
 
   <article class="parish-card eliminated" data-parish="grebenstein">
     <h3 class="parish-h">Grebenstein <span class="pill eliminated">Eliminated · June 2026</span></h3>
@@ -827,6 +887,21 @@
     <div class="pmeta">50.555 N · 9.681 E · Stadt Fulda · Kirchenkreis Fulda</div>
     <div class="pdist">~90 km SE — far outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
     <div class="pdesc">James Gunnis's "Dassen"&rarr;Fulda EV reading of "Deissen" (June 2026). The flagged baptism is real and verified (reg. <code>168326</code>, Bild 852, 1838: <strong>Karl Friedrich Gastmann</strong>, son of Michael Gastmann, a <em>Feldwebel</em>) — but <strong>not Charles</strong>: surname Gastmann (not *n&middot;s&middot;n), Kreis Fulda not Cassel, born 1838. The 1851&ndash;1853 confirmation classes hold no Gastmann (garrison family, moved on). Forward-trace: regiment = Kurhessen 2. Inf.-Rgt. ("Landgraf Wilhelm"); FamilySearch + Ancestry negative; one unconfirmable hit (a "Carl Gestmann," farmer, b.~1837 "Hessen," to NY 1867 &mdash; can't be Charles, who was in the US by 1862).</div>
+      <div class="plog"><a href="fulda-research-log.html">Research log &rarr;</a></div>
+  </article>
+
+  <article class="parish-card eliminated" data-parish="dassen">
+    <h3 class="parish-h">Dassen (Künzell, Kr. Fulda) <span class="pill eliminated">Eliminated · Tier-3 "Deissen"&rarr;"Dassen"</span></h3>
+    <div class="pmeta">50.509 N · 9.772 E · Ortsteil of Künzell · Landkreis Fulda · served by Fulda (Stadt, ev.)</div>
+    <div class="pdist">~95 km SE — far outside the rim <span class="dist-bar" style="--dist-pct: 100%;" aria-hidden="true"></span></div>
+    <div class="pdesc">The actual toponym behind James Gunnis's "Deissen"&rarr;"Dassen" reading (June 2026): a ~50-person scattered hamlet in a Catholic district, with <strong>no EV parish of its own</strong> — its Protestants were served by the <strong>Evangelical town church in Fulda</strong>, where the search was run.
+      <ul style="margin:0.4rem 0 0.4rem 1.1rem;padding:0;font-size:0.92em;">
+        <li><strong>Baptism — verified.</strong> Fulda EV Taufen, Archion reg. <code>168326</code>, <strong>Bild 852</strong> (Seite 64, Eintrag 298), permalink <a href="https://www.archion.de/p/bf75a813e2/" target="_blank" rel="noopener noreferrer"><code>p/bf75a813e2</code></a>: <strong>Karl Friedrich Gastmann</strong>, legit. 1. Sohn, b. 26 (Feb) 1838 Petersgasse, bapt. 3 Mar 1838; father <em>Michael Gastmann, Feldwebel, 1. Comp. 2. Inf.-Rgt.</em> (machine OCR misread "Hartmann" — handwriting is a clear capital G).</li>
+        <li><strong>Confirmations.</strong> Fulda EV Konf., reg. <code>168320</code>, <strong>Bild 37</strong> (1852 + 1853 classes) — no Gastmann.</li>
+        <li><strong>Garrison forward-trace (Kurhessen 2. Inf.-Rgt.).</strong> Kassel (Garnisongemeinde) Trauungen 1833&ndash;65, reg. <code>174029</code> (G leaf <strong>Bild 568</strong>, blank — no Gastmann marriage); Taufen reg. <code>174005</code> (G <strong>Bild 2060</strong> / K <strong>Bild 2064&ndash;65</strong>), reg. <code>174008</code> (G <strong>Bild 2251</strong> / K <strong>Bild 2256</strong>), reg. <code>174011</code> (1852&ndash;65, sparse); Hanau (Marienkirche, ref.) Taufen 1837&ndash;42, reg. <code>285709</code> (G <strong>Bild 1006&ndash;07</strong>). <strong>No Gastmann and no Konze/Konzen/Kontze</strong> in any of them.</li>
+        <li><strong>Emigration.</strong> One unconfirmable near-name hit — a "Carl Gestmann," farmer, b. ~1837 "Hessen," to New York 18 May 1867 (FS <em>Germans to America</em> ark KD3K-Y9Z) — region only, no town, travelling alone; can't be Charles (in the US by 1862).</li>
+      </ul>
+      <strong>Not Charles:</strong> surname Gastmann (not a Konze/Gansen <em>*n&middot;s&middot;n</em> name) and Kreis Fulda, not the "Kreis Cassel" Charles gave his pastor — though the 1838 birth sits comfortably <em>inside</em> the 1833&ndash;1841 search window. A clean, fully-traced near-miss.</div>
       <div class="plog"><a href="fulda-research-log.html">Research log &rarr;</a></div>
   </article>
 
@@ -939,6 +1014,9 @@ document.addEventListener('DOMContentLoaded', function () {
     { id: 'gewissenruh',    name: 'Gewissenruh',    lat: 51.6230, lng: 9.5620, status: 'eliminated',
       desc: '<strong>Eliminated · June 2026</strong> — no January 1835 baptism at all (reg. 219001); window entry female. Confirmations 1847–1855 also swept — no Konze surname; sole Carl is Huguenot (Jouquenal, b. 1834).'
     },
+    { id: 'gottstreu',      name: 'Gottstreu',      lat: 51.5772, lng: 9.5860, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026</strong> — 1722 Waldensian colony (Kirchspiel Lippoldsberg) with its OWN Archion register (reg. 219073). 1835 baptisms + whole-book alphabetical index read: no Gans/Konze pool surname anywhere, no male born 26 Jan 1835 (only twin Bock girls). Confirmations 1847–1855 also negative. <a href="gottstreu-research-log.html">Research log →</a>'
+    },
     { id: 'grebenstein',    name: 'Grebenstein',    lat: 51.4470, lng: 9.4110, status: 'eliminated',
       desc: '<strong>Eliminated · June 2026</strong> — Jan–Feb 1835 baptisms (reg. 219106): one illegitimate January birth but female; no Konze-pool male. Confirmations 1848–1850 (reg. 219097) also swept — Charles\'s exact 1849 cohort holds no Carl, no Konze surname.'
     },
@@ -990,7 +1068,29 @@ document.addEventListener('DOMContentLoaded', function () {
       desc: '<strong>Eliminated · June 2026 (Tier-3 "Deissen")</strong> — Edermünde place-name candidate; searched, negative. No Konze pool.'
     },
     { id: 'fulda',         name: 'Fulda (Stadt, ev.)', lat: 50.5550, lng: 9.6810, status: 'eliminated',
-      desc: '<strong>Eliminated · June 2026 (Tier-3 "Deissen"&rarr;"Dassen")</strong> — James Gunnis\'s Dassen&rarr;Fulda EV reading. Baptism verified (reg. 168326, Bild 852, 1838: Karl Friedrich Gastmann, son of Michael Gastmann, a Feldwebel) but not Charles — surname Gastmann, Kreis Fulda not Cassel, born 1838. 1851–53 confirmations: no Gastmann. ~90 km SE.'
+      desc: '<strong>Eliminated · June 2026 (Tier-3 "Deissen"&rarr;"Dassen")</strong> — James Gunnis\'s Dassen&rarr;Fulda EV reading. Baptism verified (reg. 168326, Bild 852, 1838: Karl Friedrich Gastmann, son of Michael Gastmann, a Feldwebel) but not Charles — surname Gastmann, Kreis Fulda not Cassel (the 1838 birth is in-window). 1851–53 confirmations + Kassel garrison registers (regs. 174029/174005/174008/174011) + Hanau (285709): no Gastmann, no Konze. ~90 km SE.'
+    },
+    { id: 'dassen',        name: 'Dassen (Künzell, Kr. Fulda)', lat: 50.5089, lng: 9.7717, status: 'eliminated',
+      desc: '<strong>Eliminated · June 2026 (Tier-3 "Deissen"&rarr;"Dassen")</strong> — the actual toponym James Gunnis decoded: a ~50-person Catholic-district hamlet with no own EV parish, so its Protestants used the Fulda EV church. Baptism verified there (reg. 168326, Bild 852, <a href="https://www.archion.de/p/bf75a813e2/" target="_blank" rel="noopener noreferrer">p/bf75a813e2</a>: Karl Friedrich Gastmann, 1838, son of Michael Gastmann, Feldwebel) but not Charles — surname Gastmann, Kreis Fulda not Cassel (the 1838 birth IS in the 1833–41 window). Forward-trace through the Kurhessen 2. Inf.-Rgt. garrison registers — Kassel Garnisongemeinde marriages (reg. 174029, G Bild 568) + Taufen (regs. 174005/174008/174011, G & K) + Hanau Marienkirche (reg. 285709) — all negative for Gastmann and Konze. Emigration: one unconfirmable "Carl Gestmann" (NY 1867). ~95 km SE. <a href="fulda-research-log.html">Research log →</a>'
+    },
+    // ---- Wider Kreis Kassel / Weser ring — Konze/Gans pool downriver of Gieselwerder (Klaus Kunze OSBs), incl. cross-Weser Hannover neighbours ----
+    { id: 'lippoldsberg', konze: 'yes', name: 'Lippoldsberg', lat: 51.6453, lng: 9.5778, status: 'eliminated',
+      desc: '<strong>Gans clan documented, no Charles match</strong> — OSB carries Kontze / Jungkontze / Gans / Ganson. Baptisms 1830–1870 (reg. 219778) index-read + confirmations 1847–55 (219775): the Gans family baptises only from 1846; no Kontze, no Carl Gans b. 1835. <a href="lippoldsberg-research-log.html">Research log →</a>'
+    },
+    { id: 'oedelsheim', konze: 'yes', name: 'Oedelsheim', lat: 51.5919, lng: 9.5611, status: 'open',
+      desc: '<strong>Priority Gans lead</strong> — an active Gans family baptising here in Charles\'s era (turner Georg Friedrich Gans; innkeeper Andreas Gans + son Carl August). Nearest near-miss Andreas August Gans b. 25 Feb 1835 (not Carl). Faded K(ontze) index leaf (reg. 219946 Bild 918) + shuffled reel still need a Kurrent read. <a href="oedelsheim-research-log.html">Research log →</a>'
+    },
+    { id: 'vernawahlshausen', konze: 'claimed', name: 'Vernawahlshausen', lat: 51.6286, lng: 9.5536, status: 'eliminated',
+      desc: '<strong>Eliminated — both tracks negative</strong>. OSB attests Gans only; the baptism "mit Register" index 1830–1869 (reg. 220261) carries no Gans at all, and confirmations 1847–56 (220258) no pool surname. <a href="vernawahlshausen-research-log.html">Research log →</a>'
+    },
+    { id: 'bodenfelde', konze: 'yes', name: 'Bodenfelde', lat: 51.6489, lng: 9.5558, status: 'eliminated',
+      desc: '<strong>Eliminated for the window</strong> (across the Weser, Lkr. Northeim, Landeskirche Hannovers). Kunze OSB carries Gans ×15 families + a genuine Contze (178), but the 1835 baptisms (reg. 359334, re-verified) and Kartei Männer hold no Gans/Contze child — the pool is historical, not baptising in 1835. <a href="bodenfelde-research-log.html">Research log →</a>'
+    },
+    { id: 'bursfelde', name: 'Bursfelde + Glashütte', lat: 51.5483, lng: 9.6478, status: 'open',
+      desc: '<strong>OSB Gans ×4, Archion window not digitised</strong> (east bank, Lkr. Göttingen / Hann.-Münden-Hemeln). Kunze OSB has Gans (fam. 110/113/125/136) but no Konze; the only Bursfelde book online is 1639–1746 (pre-window). The 1833–41 register, if digitised, sits under Hann.-Münden/Hemeln — else on-site/OSB-only. <a href="bursfelde-research-log.html">Research log →</a>'
+    },
+    { id: 'wahmbeck', name: 'Wahmbeck', lat: 51.6614, lng: 9.5439, status: 'eliminated',
+      desc: '<strong>Eliminated (provisional)</strong> — Kirchenbuch 1790–1845 (reg. 359497) located; by-eye scan of the Geburts-Register window leaves shows an entirely local surname pool (König, Otte, Kettler, Hesse…) and no Gans/Konze. No Kunze OSB. Archion OCR ordered to certify the Jan-1835 head + full leaf-by-leaf. <a href="wahmbeck-research-log.html">Research log →</a>'
     },
     // ---- Hessen-Nassau toponym-alternatives — place-name reading checks, far south, all negative ----
     { id: 'diez',          name: 'Diez',           lat: 50.3692, lng: 8.0161, status: 'eliminated',
@@ -1088,7 +1188,7 @@ document.addEventListener('DOMContentLoaded', function () {
     eberschuetz:    { direction: 'bottom', offset: [0, 10]  },  // top spilled into the Sielen dot
     gieselwerder:   { direction: 'right',  offset: [10, 0]  },  // bottom label was still grazing Stammen's right label; east is clear
     kelze:          { direction: 'left',   offset: [-10, 0] },  // clears Hofgeismar's bottom label
-    gewissenruh:    { direction: 'top',    offset: [0, -10] },
+    gewissenruh:    { direction: 'right',  offset: [10, 0]  },  // top collided with Vernawahlshausen; east is clear
     grebenstein:    { direction: 'left',   offset: [-10, 0] },  // clears Immenhausen
     veckerhagen:    { direction: 'right',  offset: [10, 0]  },
     immenhausen:    { direction: 'bottom', offset: [0, 10]  },
@@ -1102,7 +1202,24 @@ document.addEventListener('DOMContentLoaded', function () {
     herstelle:      { direction: 'top',    offset: [0, -10] },  // clears Dalhausen (W) and Karlshafen (E)
     liebenau:       { direction: 'left',   offset: [-10, 0] },  // SW corner, west empty
     beverungen:     { direction: 'top',    offset: [0, -10] },  // northern edge
-    dalhausen:      { direction: 'left',   offset: [-10, 0] }   // west side empty
+    dalhausen:      { direction: 'left',   offset: [-10, 0] },  // west side empty
+    // 28 June 2026 Weser-ring sweep — the new NE cluster all defaulted to 'top'
+    // and stacked on each other (Bodenfelde etc.); fan them into open space:
+    wahmbeck:         { direction: 'top',    offset: [0, -10] },  // northernmost of the cluster; nothing above
+    bodenfelde:       { direction: 'left',   offset: [-10, 0] },  // west empty; clears Lippoldsberg (E) + Wahmbeck (NW)
+    lippoldsberg:     { direction: 'right',  offset: [10, 0]  },  // easternmost of the north group; east clear
+    vernawahlshausen: { direction: 'left',   offset: [-10, 0] },  // west empty; clears Bodenfelde/Gewissenruh
+    oedelsheim:       { direction: 'top',    offset: [0, -10] },  // 3.5 km gap above to Gewissenruh
+    gottstreu:        { direction: 'bottom', offset: [0, 10]  },  // S of Oedelsheim; south open to Bursfelde
+    bursfelde:        { direction: 'bottom', offset: [0, 10]  },  // isolated SE; south empty
+    // 28 June 2026 — southern Gudensberg trio (~2-3 km apart) also all defaulted
+    // to 'top' and overlapped; fan them out:
+    grifte:           { direction: 'top',    offset: [0, -10] },  // northernmost of the trio
+    dissen:           { direction: 'left',   offset: [-10, 0] },  // middle; west empty
+    gudensberg:       { direction: 'bottom', offset: [0, 10]  },  // SE corner; south empty
+    // 28 June 2026 — far-south Diez/Dies pair (~2.7 km apart) both defaulted to 'top':
+    diez:             { direction: 'top',    offset: [0, -10] },  // northern of the pair
+    dies:             { direction: 'bottom', offset: [0, 10]  }   // southern of the pair
   };
   PARISHES.forEach(function (p) {
     // Visual hierarchy on the map: Deisel anchors with a halo + larger radius;
@@ -1171,8 +1288,8 @@ document.addEventListener('DOMContentLoaded', function () {
     parishMarkers[p.id] = marker;
   });
 
-  // ============ "Fit all 36" control — zoom out so every dot (incl. far-south
-  //   Diez / Dies / Mainz) is visible and countable in one view ============
+  // ============ "Fit all 45" control — zoom out so every dot (incl. far-south
+  //   Diez / Dies / Mainz, and Dassen near Fulda) is visible and countable in one view ============
   var allBounds = L.latLngBounds(PARISHES.map(function (p) { return [p.lat, p.lng]; }));
   var FitAll = L.Control.extend({
     options: { position: 'topleft' },
@@ -1180,10 +1297,10 @@ document.addEventListener('DOMContentLoaded', function () {
       var c = L.DomUtil.create('div', 'leaflet-bar fit-all-ctl');
       var a = L.DomUtil.create('a', '', c);
       a.href = '#';
-      a.title = 'Zoom out to show all 36 parishes';
+      a.title = 'Zoom out to show all 45 markers (40 parishes + 5 toponym tests)';
       a.setAttribute('role', 'button');
-      a.setAttribute('aria-label', 'Show all 36 parishes');
-      a.innerHTML = '\u2295 36';
+      a.setAttribute('aria-label', 'Show all 45 markers');
+      a.innerHTML = '\u2295 45';
       L.DomEvent.on(a, 'click', L.DomEvent.stop)
                 .on(a, 'click', function () { map.fitBounds(allBounds, { padding: [30, 30] }); });
       return c;

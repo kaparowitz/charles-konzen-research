@@ -13,13 +13,9 @@
 <link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
 <link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
 <script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
 <script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
-<link rel="stylesheet" href="../assets/site-nav.css">
-<script defer src="../assets/site-nav.js"></script>
-<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
-<script defer src="../assets/cite-widget.js"></script>
-<link rel="stylesheet" href="../assets/deep-zoom.css">
-<script defer src="../assets/deep-zoom.js"></script>
 <style>
   .crumbs{font-size:0.84rem;color:var(--text-muted);margin-bottom:0.6rem}
   .pl-meta{font-family:var(--font-mono,monospace);font-size:0.82rem;color:var(--text-muted);margin:0.1rem 0 0.7rem}
@@ -44,16 +40,25 @@
   footer.back-nav{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border-light,#e6dcc4);font-size:0.9rem}
 </style>
 <!-- BEGIN-INJECTED-NAV-ASSETS -->
-<link rel="stylesheet" href="../assets/site-nav.css">
-<script defer src="../assets/site-nav.js"></script>
-<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
-<script defer src="../assets/cite-widget.js"></script>
-<link rel="stylesheet" href="../assets/deep-zoom.css">
-<script defer src="../assets/deep-zoom.js"></script>
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
 <!-- END-INJECTED-NAV-ASSETS -->
 </head>
 <body class="cine-typography">
 <!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (Jun 2026): story pages (Overview, Stories, Cast) live under
+  "Start here"; the standalone visualisation pages were retired.
+-->
 <a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
 <nav class="site-nav-shared" role="navigation" aria-label="Site sections">
   <div class="tab-group" data-group="start">
@@ -141,6 +146,14 @@
   <p><strong>Bottom line.</strong> No Carl/Karl b. 26 Jan 1835 on a Konze/Gans surname; the pool surname &ldquo;Gans&rdquo; is absent from both registers entirely. Confirmations move &ldquo;Not yet&rdquo; &rarr; <strong>Swept (negative)</strong>; the baptism index moves &ldquo;effectively negative (sampled)&rdquo; &rarr; <strong>clean negative (index fully read)</strong>. <strong>Vernawahlshausen is eliminated.</strong></p>
 </div>
 
+<h2 class="sec">Sources checked</h2>
+<table class="src"><thead><tr><th>Register</th><th>Image</th><th>Archion permalink</th><th>Record at this image</th></tr></thead><tbody>
+<tr><td>Vernawahlshausen Konfirmationen 1831–1948 <span style="color:var(--text-meta)">(220258)</span></td><td class="img">1157</td><td><a href="https://www.archion.de/p/e4a98e1045/" target="_blank" rel="noopener">https://www.archion.de/p/e4a98e1045/</a></td><td>1849 prime class (Pfingsten 27 Mai, births 1834–35) — only two boys: Pfütz (b. 20 Nov 1834) and Funke (<strong>b. 26 März 1835</strong>); neither a Carl, neither Gans/Konze; the lone 1835 boy born 26 <em>March</em>, not 26 January. Per-year class table below</td></tr>
+<tr><td>Vernawahlshausen Taufen 1830–1869 <span style="color:var(--text-meta)">(220261)</span></td><td class="img">1567</td><td><a href="https://www.archion.de/p/24fd3271ea/" target="_blank" rel="noopener">https://www.archion.de/p/24fd3271ea/</a></td><td>Baptism name-index, K leaf — Kummel, Klinge, Küchemann, Koch only; <strong>no Konze/Kontze/Jungkonze</strong></td></tr>
+<tr><td>Vernawahlshausen Taufen 1830–1869 <span style="color:var(--text-meta)">(220261)</span></td><td class="img">1564</td><td><a href="https://www.archion.de/p/a36232f645/" target="_blank" rel="noopener">https://www.archion.de/p/a36232f645/</a></td><td>Baptism name-index, G leaf — Gebrunner, Görder, Giebert only; <strong>no Gans/Ganß/Ganson</strong> (the C leaf, Bild 1560, is essentially empty — no Conson/Conze)</td></tr>
+</tbody></table>
+<p class="note">Each permalink opens directly to the cited image in the Archion viewer (subscription required); image numbers are per-microfilm-reel. The full baptism name-index and the per-year confirmation sweep are tabled below. Given names read reliably; surnames are best by-eye / AI readings.</p>
+
 <h2 class="sec">Baptism index — Taufen 1830–1869 (reg. 220261)</h2>
 <p>The reel is <em>&ldquo;mit Register&rdquo;</em>: a legible alphabetical name-index sits at the <strong>end of the reel (&asymp; Bild 1560&ndash;1567)</strong>, two letters per opening (columns <em>Männlich | Seite | Weiblich | Seite</em> per letter). On a clean redraw the index reads in plain alphabetical order and the viewer&rsquo;s AI &ldquo;Erkannter Text&rdquo; panel transcribes the leaves reliably. Letter map: 1560 = B|C, 1561 = C|D, 1563 = E|F, <strong>1564 = F|G</strong>, … <strong>1567 = K</strong>. Baptism leaves calibrate <strong>Seite = image − 1296</strong>.</p>
 <table class="src"><thead><tr><th>Pool letter</th><th>What the index holds</th></tr></thead><tbody>
@@ -179,6 +192,12 @@
 <footer class="back-nav"><a href="parish-map.html">&larr; Back to the Hessian parish map</a></footer>
 </main>
 <!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
 <footer class="site-foot-shared" role="contentinfo">
   <details class="cite-widget" id="cite-this-page">
     <summary>

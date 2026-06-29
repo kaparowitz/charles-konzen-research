@@ -1,0 +1,295 @@
+<!DOCTYPE html><html lang="de"><head>
+<meta charset="UTF-8">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/note.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/note.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/note.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forschungsnotiz &mdash; Charles-Forschung</title>
+<link rel="canonical" href="https://charles-research.netlify.app/de/note.html">
+<meta name="robots" content="noindex,follow">
+<meta name="description" content="Ansichtsfähige Darstellung einer internen Forschungs- bzw. Sitzungsnotiz aus dem genealogischen Projekt Charles Konzen, mit einem Link zur ursprünglichen Markdown-Quelle.">
+<style>
+  :root{
+    --bg-page:#f6f1e7; --bg-card:#fffaf0; --text-body:#2c2620;
+    --text-heading:#8a6420; --text-muted:#6a5a42; --brand:#d8b366;
+    --brand-dark:#8a6420; --brand-tint:#f8ecc8; --rule:#e3d8bf;
+  }
+  .note-wrap{max-width:48rem;margin:2.5rem auto 4rem;padding:0 1.15rem;
+    font-family:Georgia,"Times New Roman",serif;color:var(--text-body);
+    line-height:1.65;font-size:1.02rem;}
+  .note-source{background:var(--brand-tint);border:1px solid var(--brand);
+    border-radius:8px;padding:0.85rem 1.05rem;margin:0 0 1.8rem;
+    display:flex;flex-wrap:wrap;align-items:center;gap:0.5rem 0.9rem;
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;font-size:0.9rem;}
+  .note-source .label{color:var(--brand-dark);font-weight:700;
+    text-transform:uppercase;letter-spacing:0.04em;font-size:0.74rem;}
+  .note-source code{background:#fff;border:1px solid var(--rule);
+    border-radius:4px;padding:0.1rem 0.4rem;font-size:0.86rem;color:#3a2f1e;}
+  .note-source a.raw{margin-left:auto;background:var(--brand-dark);color:#fff;
+    text-decoration:none;font-weight:600;padding:0.4rem 0.85rem;border-radius:6px;
+    white-space:nowrap;}
+  .note-source a.raw:hover{background:#6f4f17;}
+  .note-back{display:inline-block;margin-bottom:1.1rem;color:var(--brand-dark);
+    text-decoration:none;font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:0.9rem;font-weight:600;}
+  .note-back:hover{text-decoration:underline;}
+  .note-body{background:var(--bg-card);border:1px solid var(--rule);
+    border-radius:10px;padding:1.6rem 1.9rem;box-shadow:0 1px 4px rgba(60,45,20,.06);}
+  .note-body h1,.note-body h2,.note-body h3,.note-body h4{
+    color:var(--text-heading);line-height:1.25;margin:1.6em 0 0.5em;}
+  .note-body h1{font-size:1.7rem;border-bottom:2px solid var(--brand);
+    padding-bottom:0.3em;margin-top:0;}
+  .note-body h2{font-size:1.35rem;border-bottom:1px solid var(--rule);padding-bottom:0.2em;}
+  .note-body h3{font-size:1.13rem;}
+  .note-body a{color:var(--brand-dark);}
+  .note-body code{background:#f3ecda;border:1px solid var(--rule);border-radius:3px;
+    padding:0.08em 0.34em;font-size:0.86em;}
+  .note-body pre{background:#2c261d;color:#f1ead7;border-radius:8px;padding:1rem 1.15rem;
+    overflow:auto;}
+  .note-body pre code{background:none;border:none;color:inherit;padding:0;}
+  .note-body table{border-collapse:collapse;width:100%;margin:1.1em 0;font-size:0.94rem;}
+  .note-body th,.note-body td{border:1px solid var(--rule);padding:0.45em 0.7em;text-align:left;vertical-align:top;}
+  .note-body th{background:var(--brand-tint);color:var(--brand-dark);}
+  .note-body tr:nth-child(even) td{background:#fbf6ea;}
+  .note-body blockquote{border-left:3px solid var(--brand);margin:1em 0;padding:0.2em 1em;
+    color:var(--text-muted);background:#fbf6ea;}
+  .note-body img{max-width:100%;height:auto;}
+  .note-err{background:#fbe9e7;border:1px solid #d9a39c;border-radius:8px;
+    padding:1rem 1.2rem;color:#7a2e22;}
+</style>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
+</head><body style="background:var(--bg-page,#f6f1e7);margin:0;">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../de/index.html" role="menuitem">Überblick</a>
+      <a href="../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodik</a>
+      <a href="../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+<!-- BEGIN-INJECTED-SKIP-ANCHOR --><a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a><!-- END-INJECTED-SKIP-ANCHOR -->
+<main class="note-wrap">
+  <a class="note-back" href="changelog.html">&larr; Zurück zum Changelog</a>
+  <div class="note-source">
+    <span class="label">Quellnotiz</span>
+    <code id="src-name">&hellip;</code>
+    <a class="raw" id="src-link" href="#" download>Original-.md herunterladen</a>
+  </div>
+  <article class="note-body" id="content">
+    <p>Forschungsnotiz wird geladen&hellip;</p>
+  </article>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+<script>
+(function(){
+  var params = new URLSearchParams(location.search);
+  var f = params.get('f') || params.get('file') || '';
+  var content = document.getElementById('content');
+  var srcName = document.getElementById('src-name');
+  var srcLink = document.getElementById('src-link');
+
+  // Only allow a bare filename ending in .md (no slashes, no traversal).
+  var safe = /^[A-Za-z0-9._-]+\.md$/.test(f);
+  if(!safe){
+    srcName.textContent = '(keine angegeben)';
+    srcLink.style.display = 'none';
+    content.innerHTML = '<div class="note-err">Es wurde keine gültige Notiz angegeben. ' +
+      'Öffnen Sie diese Seite über einen Link im <a href="changelog.html">Changelog</a>.</div>';
+    return;
+  }
+
+  srcName.textContent = f;
+  srcLink.setAttribute('href', f);
+  document.title = f + ' — Charles-Forschung';
+
+  fetch(f, {cache:'no-cache'}).then(function(r){
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    return r.text();
+  }).then(function(md){
+    var html = marked.parse(md, {gfm:true, breaks:false});
+    content.innerHTML = DOMPurify.sanitize(html);
+  }).catch(function(e){
+    content.innerHTML = '<div class="note-err"><code>' + f +
+      '</code> konnte nicht geladen werden (' + e.message + '). Sie können dennoch ' +
+      '<a href="../' + f + '" download>die ursprüngliche .md-Datei herunterladen</a>.</div>';
+  });
+})();
+</script>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../de/index.html">Startseite</a></li>
+        <li><a href="../de/stories.html">Geschichten</a></li>
+        <li><a href="../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../methodology.html">Methodik</a></li>
+        <li><a href="../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../de/glossary.html">Glossar</a></li>
+        <li><a href="../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../de/about.html">Über</a></li>
+        <li><a href="../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body></html>

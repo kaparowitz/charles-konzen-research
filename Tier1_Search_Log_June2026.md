@@ -1529,3 +1529,193 @@ repoint should be confirmed with Jed before the monitor starts reading there.
 
 **Nothing changed on Archion (no access this run); `search-coverage.html` pills already read
 Swept/Searched for all 15 and require no edit.**
+
+---
+
+## Session 22 — 27 June 2026 (interactive: monitor repointed to Oedelsheim — faded K-index leaf + baptism-track AI-text sweep)
+
+**Run by:** Jed present ("go ahead" to the Session 21 repoint). Live Archion via the Chrome
+extension (Jed logged in); **read-only — nothing changed on Archion.** Target = the two
+genuinely-unfinished Oedelsheim baptism-track threads carrying the project's surname skeleton:
+the faded K(ontze) index leaf, and the unread in-window baptism years.
+
+### 1. Faded K-index leaf — Taufen reg 219946, **Bild 918** (K left / L right) — RE-EXAMINED, still illegible
+Opened the permalink (`archion.de/p/0f5fc4997a`) and read the K page at full deep-zoom (Vollbild)
+with the viewer's contrast control applied. The **L** column (right) is dense and legible (Lange,
+Lücke, Lindner, Langhans, Linz, Lohmann, Lenz…), confirming this is the surname index. The **K**
+column (left) holds **only ~3–4 severely ink-faded male entries + a few female**, the rest blank;
+at maximum magnification the **surnames are not recoverable by eye** — fragmentary strokes with
+heavy bleed-through (mirror show-through from the facing leaf). **No Kontze/Konze is positively
+legible, and none can be excluded.** This independently re-confirms the prior state (AI
+transcription returns 0 K entries; by-eye defeated). **Conclusion: the K-index leaf is not
+resolvable autonomously — needs a Kurrent specialist or image processing**, OR can be sidestepped
+(see 2).
+
+### 2. METHOD UNLOCK — the chronological Taufen pages DO carry extractable AI text
+Unlike the confirmation pages (and the faded index), the **Oedelsheim Taufen leaves have an
+"Erkannter Text" panel** with machine transcription, retrievable in bulk via the browser's
+page-text extraction. So the faded index can be **bypassed**: scan the AI text year-by-year for
+Gans / Kontze / Konze / Carl. **Caveat — the reel is genuinely shuffled** (not just duplicated):
+verified live this run — **Bild 670 = volume title page; 671 = Jahr 1834 (entries 98–102);
+672 = Jahr 1833 year-end (entries 95–97 + year summary); 710 = Jahr 1839 Fortsetzung → Aug 1840.**
+So a full scan must be Bild-mapped, not sequential.
+
+### 3. In-window leaves scanned (AI text) — NO Gans/Kontze; the Carls are all local surnames
+- **Bild 672 — Jahr 1833 year-end (entries 95–97 + Summa):** surnames Schraeder, Goette/Goetze,
+  Niemeyer, Diedrichs, Ripp, Müller, Meneeke. Entries = a stillborn male (Nro 2), Johann Friedrich
+  August (Nro 84), and Caroline Charlotte Diedrichs (f). **No Gans/Kontze; no primary Carl.**
+- **Bild 671 — Jahr 1834 (entries 98–102):** ★ one in-window Carl — **Carl August Gerland,
+  illegitimate male, b. ~March 1834, Oedelsheim Nro 103**, mother Christine Sophie Gerland (daughter
+  of the former shoemaker Johann Christoph Gerland). **Surname Gerland — non-pool, and wrong date
+  (Mar 1834 ≠ 26 Jan 1835) — not Charles**, logged per the "any Carl" rule. Other entries: Conrad
+  Friedrich Breide, Rosine Charlotte Breide, Conrad Henricus; surnames Wolf, Breide, Goetze,
+  Gerland, Wessel, Schnadhorst. **No Gans/Kontze.**
+- **Bild 710 — Jahr 1839 Fortsetzung → Aug 1840 (entries ~272–276):** one Carl — **Carl August
+  Roelcke, b. July 1839, Oedelsheim Nro 91** (father Henricus Roelcke). Surname Roelcke — non-pool,
+  too young. Other surnames: Schnadhorst, Henne, Schlaf, Semmelroth, Jung, Schraeder, Stucke,
+  Kaufmann, Krantz, Born, Bartmann, Muentzel, Scheedroth, Gerland, Kramer. **No Gans/Kontze.**
+
+**Net (Session 22):** consistent with the prior full 1834–1839 sweep — a living Gans family in
+Oedelsheim but **no Carl Gans baptism, and no Gans/Kontze child on any leaf scanned**; the recurrent
+forename Carl sits on local surnames (Gerland, Roelcke). The faded K-index leaf is re-confirmed
+not autonomously readable.
+
+**Important scope note for the next run:** Oedelsheim's **confirmation** sweep 1846–1855 was a
+COMPLETE NEGATIVE, and that span confirms every 1833–1841 *survivor*. So a full baptism year-sweep
+(the scattered 1833 entries 1–94, plus 1840–41) has **low marginal value for finding Charles** —
+its only value is Gans-family completeness / the emigration hypothesis, whose decisive evidence is
+**US-side (gated: the Battery B pension/service file) and HStAM Best. 16 Nr. 3216 S. 199 (Marburg)**,
+not more Oedelsheim baptism leaves. Recommend the monitor treat the Hofgeismar confirmation queue as
+closed and **hand the Oedelsheim/Gans emigration thread to the gated US-records workflow** rather
+than continued autonomous Archion reading.
+
+**Reconciliation (per `oedelsheim-research-log.html`, updated same day):** the gated US-records pass
+has in fact already been run, and the **Oedelsheim-Gans "born-in-US" emigration hypothesis is now
+CLOSED** — Charles immigrated 1859 and alone (1900 census + pension file), the 1834 Gans departed as
+a complete family ("wife & 3 children," Günther *Hessian Emigrants* permit index), and no Carl/Charles
+Gans b.~1835 appears in US/Missouri census. So the residual Oedelsheim baptism leaves and the faded
+K-index leaf are now **low-priority completeness items**, not active leads; the leading origin reverts
+to **Konzen-of-Deisel** (with "Gans" as the Deisel Hausname). The monitor has no remaining active
+Archion queue — recommend it be paused or repointed only if a new parish lead surfaces.
+
+---
+
+## Session 23 — 27 June 2026 (interactive: cleared the two coverage-page open tasks — Bursfelde + Wehmann)
+
+**Run by:** Jed present ("continue with the open tasks"). Live Chrome (Jed logged into Archion &
+FamilySearch); **read-only — nothing changed on either site.**
+
+### Task 1 — Bursfelde Archion sweep → RESOLVED: not digitised (on-site/OSB-only)
+Browsed the Archion tree to **Niedersachsen → Landeskirche Hannovers → Kirchenkreis Münden**. The
+filter box on the browse tree accepts typed input (unlike the React Ortssuche box). **Bursfelde is
+listed but greyed "Keine verfügbaren Digitalisate" — Archion holds NO Bursfelde registers at all.**
+The neighbouring **Hemeln** parish has a window-covering **Kirchenbuch 1822–1852**, but Bursfelde +
+Glashütte formed their own parish (per the Kunze OSB title "Bursfelde u. Glashütte"), so the Hemeln
+book is not the Bursfelde register. **Conclusion: the 1833–41 Bursfelde register is on-site/OSB-only
+— not sweepable on Archion.** The Kunze OSB already gave the decisive surname result (native Gans
+×4 — fam. 110/113/125/136 — but **no Konze/Kontze**), so Archion adds nothing. Optional neighbour
+check left open: Hemeln KB 1822–1852.
+
+### Task 2 — Wehmann US forward-trace → RESOLVED: NEGATIVE (FamilySearch, logged-in)
+The candidate = **Carl Friedrich August (Wehmann), illegitimate, b. 29 Jan 1835 Heisebeck** (3 days
+off Charles's anchor) — the Archion side was already done (birth verified; confirmation-absence =
+emigrant pattern). Ran the previously-untried **gated US lane** on FamilySearch:
+- **Missouri filter (77 hits):** the only St. Louis "Charles Wehmann" is a **later man** — military
+  service 1917–1919 (Enlisted/Officer Muster Rolls) + 1893 city directory, i.e. born ~1880s–90s, not
+  our Charles (d. 1903). **No Carl/Charles Wehmann b.~1835 Hesse in St. Louis** matching Charles.
+- **US-wide:** the one **Carl Wehmann b. 1835 Germany died in Brooklyn NY 18 Jul 1901, named parents
+  Carl & Anna Wehmann** (legitimate → not the illegitimate Heisebeck child; Brooklyn ≠ St. Louis).
+  Other Carl Wehmann arrivals (Germans to America) landed NY / New Orleans **~Oct 1860, b. 1834**.
+- **Structural:** an 1859 Bremen emigrant leaves no Bremen manifest (pre-1874 Bremen lists destroyed).
+
+**Net:** the Heisebeck Wehmann does **not** trace to Charles. With Charles firmly recorded as
+Gannsen/Gonson/Johnson in St. Louis and Wehmann→Gannsen phonetically implausible, the candidate is a
+**same-profile coincidence, not a corroborated identity** — downgraded from a live lead. Residual
+(optional, low value): Ancestry census-image review + NARA AAD "Wehmann."
+
+### Coverage page updated
+`search-coverage.html`: Heisebeck open-task → Wehmann trace DONE/negative; Bursfelde open-task →
+Archion check complete (not digitised); summary strip **2 → 1 substantive open task**, the remainder
+being the **Wahmbeck window read** (reg. 359497 located per Session 131, read still outstanding —
+OCR was ordered). With Bursfelde and Wehmann cleared, Wahmbeck is the lone live Archion-side task.
+
+---
+
+## Session 24 — 27 June 2026 (interactive: Wahmbeck 1835 January head read — the last open Archion task)
+
+**Run by:** Jed present ("ok check"). Live Archion (logged in); read-only.
+
+**OCR status:** the Texterkennung ordered in Session 131 has **NOT processed** — the panel still
+reads "Bisher keine Texterkennung." Read by eye instead. **Calibration correction:** Session 131's
+year map was off by one — Bild 96 is **1836** (not 1835); the 1835 Geburts-Register runs **Bild 93
+(right, Seite 92 = entries 1–6, the Jan head) → 94 (entries 7–21) → 95 (entries 22–29 + 1836 start).**
+Stale-canvas glitch confirmed on page jumps — toggle txt off and click a zoom button to force a
+redraw before reading.
+
+**1835 January head (Bild 93 right, entries 1–6) — read at deep zoom, the leaf S131 left outstanding:**
+1. Johann Ludewig Wilhelm **Elend** (m, b. 7 Jan; f. Christian Elend)
+2. Caroline **König** (f, b. 18 Jan)
+3. Hanne Caroline Wilhelmine **Böger** (f, b. 24 Jan)
+4. Johanne Caroline Margarethe **Bunzendahl** (f, b. 27 Jan)
+5. **Caroline Charlotte _Gans_** (f, b. 8 Feb, **illegitimate** — mother Caroline Bremer, illegitimate
+   daughter of the late Tagelöhner Conrad Bremer; **alleged father George Christian Gans** "aus
+   Gestelwarder" [?Gieselwerder]; child **d. 1836**)
+6. Friedrich Wilhelm **Carl** Schrader (m, b. 13 Feb; f. Carl Schrader, Jäger)
+
+**Decisive result:** **no male born 26 Jan 1835** (the late-January births 18/24/27 Jan are all
+girls — König, Böger, Bunzendahl); **no Carl on a pool surname** (the one Gans is a girl who died
+1836; the only male Carl is a Schrader). **NEGATIVE for Charles.** *But* — overturning Session 131's
+provisional "no Gans/Konze on any leaf" — **the Gans pool surname IS present at Wahmbeck in the
+window** (illegitimate, alleged father George Christian Gans, possibly ex Gieselwerder). So Wahmbeck
+**joins the Weser-ring Gans cluster** (Lippoldsberg, Oedelsheim, Heisebeck, Vernawahlshausen,
+Bodenfelde, Bursfelde) — another parish with a Gans presence but no matching Carl. Best-readings on
+the surnames per project standard; the OCR (still queued) or Peter Schräder can certify.
+
+**Coverage page:** Wahmbeck row → baptism pill "1835 head read", result "Searched + Gans found",
+open-task note rewritten; summary strip **1 → 0 substantive open tasks** (only minor OCR-pending /
+completeness residuals remain across Wahmbeck other years, Oedelsheim, Bursfelde). The original
+Hofgeismar confirmation queue plus all listed coverage-page open tasks are now cleared.
+
+---
+
+## Session 25 — 28 June 2026 (AUTOMATED scheduled-task run: confirmation-monitor QUEUE EXHAUSTED — verification only)
+
+**Run by:** unattended scheduled task (`check-archion-transcriptions`). No live Archion access used — nothing unread to read.
+
+**Finding:** the repointed Session-114 "1835-window" Kirchenkreis Hofgeismar confirmation-sweep
+queue (15 parishes) is **fully worked and negative**. Cross-checked three independent records this
+run and all agree:
+- **search-coverage.html** (modified 28 Jun): every one of the 15 queue parishes carries the
+  `c-swept "Swept"` + `r-clear "Searched"` pills. No `r-todo`/`r-part` remains on any queue row.
+- **Tier1 master table** (this file, the Session-18 "QUEUE STATUS" table): all 15 listed
+  **ELIMINATED** with register IDs and read-dates (23–26 Jun, Sessions 13–18 / 118 / 124–125).
+- **Liebenau** (#1, the chaotic/duplicated reel that the monitor was told to map): research log
+  shows **ELIMINATED** — full 1835 baptism window + Konfirmationen 1847–1855 swept leaf-by-leaf,
+  prime **1849** (Carl August Büster, b. 11 Jun 1835 — wrong surname & date) and **1850** (no Carl)
+  leaves re-read at high zoom and certified entry-by-entry (24 Jun). No further mapping needed.
+
+**Queue disposition (all ELIMINATED, no Carl on a Konze / \*n‑s‑n surname matching Charles
+b. 26 Jan 1835):** 1 Liebenau (219742) · 2 Lamerden (219673) · 3 Eberschütz (218884) ·
+4 Gieselwerder (219013) · 5 Hofgeismar-Kelze (219634) · 6 Gewissenruh · 7 Grebenstein (219097) ·
+8 Veckerhagen (220207) · 9 Immenhausen (219580) · 10 Marzhausen (181895) ·
+11 Bad Karlshafen (218674+218707) · 12 Hombressen (219481) · 13 Haueda (219151) ·
+14 Ostheim (219967) · 15 Niedermeiser (219874).
+
+**Closest near-misses on record (already logged, all non-matching):** Hombressen — *Carl George
+Knauf*, b. 21 Jan 1835 (right given name, 5 days off the anchor, but surname Knauf, a local name);
+Niedermeiser — a *Hausen* (≈ Hansen) confirmand, Joh. Heinrich, b. 22 Jul 1835 (wrong given name,
+wrong date). Neither is a Konze form; both stay eliminated.
+
+**No changes made** to search-coverage.html (all 15 pills already correct) or to Archion (read-only;
+nothing unread to open).
+
+**Recommendation for the maintainer:** this monitor's confirmation-sweep queue is now empty — every
+parish it was pointed at is read. To keep the scheduled task useful it should be **repointed or
+retired**. Candidate next targets, if continued: (a) the *baptism* deeper tier flagged on
+open-questions.html (the parishes presently cleared on a confirmation/index pass but not a full
+1833–41 baptism read); (b) the residual gated/Kurrent items that are not AI-readable and were handed
+to Peter Schräder — Gieselwerder Warnecke burial date (reg. 219022), Schöneberg Konze-vs-Ronze
+final reading, Oedelsheim faded K-index leaf (Bild 918), Wahmbeck reg. 359498 OCR; (c) on-site-only
+registers (Bursfelde/Glashütte — not on Archion). None of these are within this monitor's
+"read an unread Archion confirmation register" remit, so they need an explicit repoint, not a silent
+continuation.

@@ -66,3 +66,30 @@ Paternal German cluster, matches >30 cM (all unchanged from last week):
 "Has Theory of Family Relativity™" filter on DNA Matches: **no matches qualify** (no active theory for this kit). Unchanged.
 
 _Read-only scan: no matches confirmed/rejected, no messages sent, no settings changed._
+
+---
+
+## 2026-06-28 (Sunday)
+
+Weekly monitoring run. **No change vs the 2026-06-21 scan.** Smart Matches and the DNA cluster are identical. One newly-surfaced DNA match above 30 cM appears in the "most recent" sort but carries no target surname — and is managed by the same Scandinavian researcher (Anders Smith-Eriksson) noted last week, so it is the same unrelated line.
+
+### Smart Matches — surname scan (Pending)
+Re-searched all target variants. Same two hits as the prior two weeks, no change:
+- **Kreichelt** — 3 people / 5 matches: Auguste Johnson (born Kreichelt, b. 1847) [3 matches], August Kreichelt (1844–1877) [1], Julius August Kreichelt (b. 1855) [1].
+- **Gonnson** — Friederich Wilhelm Gonnson (1866–1867), infant son of Charles & Auguste [1 match; new info = birth place].
+- No Smart Matches for: Konze, Kontze, Konzen, Gannsen, Gannson, Lipphardt, Sasse, Kielhorn, Eickenberg, Lüke, Lueke, Hillebrand, Hildebrand, Grandjot, Herwig (these return the no-match fallback — the full value-sorted list of unrelated medieval gateway ancestors).
+
+### DNA Matches — cluster surname scan (kit AN-92FA83)
+Paternal German cluster, matches >30 cM (all unchanged from last week):
+- **Rolf Lipphardt** — 55.1 cM, 1 seg, "Parent's 3rd cousin," Germany. *Established key lead — still present.*
+- **Melanie N** — 60.5 cM, 4 seg (largest 30.4), "3rd–4th cousin," Germany & Iowa USA; appears under both Eickenberg & Lüke. *Highest cM in cluster — still present.*
+- **Birgit Haase** (née Eickenberg) — 52.5 cM, 3 seg (largest 30.9), "4th cousin / Parent's 3rd cousin," Germany. *Established key lead — still present.*
+- Surname result counts (DNA Matches): Eickenberg 4, Sasse 8, Kielhorn 2, Lüke 2, Lipphardt 1; Konze 0, Kreichelt 0, Lueke 0. Lower-cM cluster names (all <20 cM, unchanged): Matthias Haase (19.0), Monika Verhaege Kielhorn (18.9), Cathy Carter (18.1), Dennis Linden (14.0).
+
+### New DNA match >30 cM (most-recent sort) — NOT a target surname
+- **Ulla Nordström** (DNA managed by Anders Smith-Eriksson, Sweden) — 33.8 cM, 2 seg (largest 27.7), est. "Parent's 4th cousin." Scandinavian; tiny 4-person tree; no target surname or German cluster place. Same manager as last week's Anders Smith-Eriksson (35.4 cM) match, i.e. the same unrelated Swedish line. Low priority for the Konze/Gannsen research; noted only per the >30 cM monitoring criterion.
+
+### Theory of Family Relativity
+"Has Theory of Family Relativity™" filter on DNA Matches: **no matches qualify** (no active theory for this kit). Unchanged. The standing ToFR banner remains a generic call-to-action, not an active theory.
+
+_Read-only scan: no matches confirmed/rejected, no messages sent, no settings changed._

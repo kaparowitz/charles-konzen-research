@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="x-translated-from" content="children/index.html">
+<meta name="x-translated-source-sha" content="b629a7dcbc36158f3533879bf52fbfe9f59d73e6af925b0dc86015eb35b385ea">
+<meta name="x-translated-date" content="2026-06-28">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/children/index.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/children/index.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/children/index.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Die sieben Kinder — Charles-Forschung</title>
+<link rel="canonical" href="https://charles-research.netlify.app/children/">
+<link rel="stylesheet" href="../../children/_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../../assets/dark-mode.css?v=20260530c">
+<script defer src="../../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../../assets/de-pages.js?v=20260628"></script>
+<script defer src="../../assets/lang-toggle.js?v=20260628"></script>
+<script defer src="../../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  /* ===== Seven Children — rebuilt 10 May 2026 ===== */
+  .children-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:0.9rem; margin-top:1rem; }
+  .child-card { display:block; text-decoration:none; color:inherit; background: var(--bg-card, #fffaf0); border:1.5px solid var(--border-light, #c9a76a); border-radius:6px; padding:0.95rem 1.1rem; transition:all 0.18s; box-shadow:0 1px 2px rgba(0,0,0,0.04); }
+  .child-card:hover { border-color: var(--brand-dark, #8a6420); transform:translateY(-2px); box-shadow:0 4px 14px rgba(0,0,0,0.10); }
+  .child-card.subject { background: linear-gradient(140deg, var(--bg-card-tint, #fdf5d8), var(--bg-elevated, #f6ebd2)); border-color: var(--brand, #d8b366); border-width:2px; }
+  .child-card.died-young { background:#fbeef3; border-color:#c8a4a4; }
+  .child-card.died-young:hover { border-color:#8a3a3a; }
+  :root.theme-dark .child-card, :root:not(.theme-light) .child-card { background: var(--bg-card, #24201a) !important; border-color: var(--border-medium, #6a5a40) !important; color: var(--text-body, #e8dfc8) !important; }
+  :root.theme-dark .child-card.subject, :root:not(.theme-light) .child-card.subject { background: var(--bg-card-tint, #2c261d) !important; background-image: none !important; border-color: var(--brand, #d8b366) !important; }
+  :root.theme-dark .child-card.died-young, :root:not(.theme-light) .child-card.died-young { background: #2a1818 !important; border-color: #6a3a3a !important; }
+  .child-card .order { display:inline-block; width:24px; height:24px; line-height:24px; border-radius:50%; background:#8a6420; color:#fff; font-size:0.78rem; font-weight:700; text-align:center; margin-right:0.5rem; vertical-align:middle; }
+  .child-card.subject .order { background:#d8b366; color:#1f1a14; }
+  .child-card.died-young .order { background:#8a3a3a; }
+  .child-card h3 { font-size:1.05rem; color: var(--text-strong, #1f1a14); margin:0; line-height:1.25; display:inline; }
+  :root.theme-dark .child-card h3, :root:not(.theme-light) .child-card h3 { color: var(--text-heading, #f1cf85) !important; }
+  .child-card .lifespan { font-size:0.84rem; color: var(--text-muted, #6a5a42); font-style:italic; margin-top:0.45rem; }
+  .child-card .surname-pill { display:inline-block; font-size:0.72rem; font-weight:700; background:rgba(216,179,102,0.18); color:var(--brand-dark, #8a6420); border:1px solid var(--brand, #d8b366); padding:2px 8px; border-radius:3px; letter-spacing:0.04em; margin-top:0.55rem; }
+  .child-card.subject .surname-pill { background:var(--brand, #d8b366); color:#1f1a14; border-color:var(--brand-dark, #8a6420); }
+  .child-card .note { font-size:0.86rem; color: var(--text-body, #5a4a32); margin-top:0.5rem; line-height:1.45; }
+  .child-card .sponsors { font-size:0.78rem; color: var(--text-muted, #6a5a42); margin-top:0.45rem; line-height:1.4; }
+  .child-card .sponsors strong { color: var(--text-strong, #1f1a14); font-weight:600; }
+  :root.theme-dark .child-card .sponsors strong, :root:not(.theme-light) .child-card .sponsors strong { color: var(--text-heading, #f1cf85) !important; }
+
+  /* Stats bar — six clickable tiles, matches the pattern used in Charles in America / Civil War / Germany */
+  .seven-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.7rem; margin: 1rem 0 1.8rem; }
+  .seven-stats .stat { display: block; background: #d8c088; border: 1px solid #a8884c; border-radius: 5px; padding: 1.05rem 0.7rem; text-align: center; text-decoration: none; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease; }
+  .seven-stats .stat:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.30); border-color: #f0c878; }
+  .seven-stats .stat-num { font-family: var(--font-serif); font-size: 2.1rem; font-weight: 700; color: #5a3a08; line-height: 1.1; }
+  .seven-stats .stat-lbl { font-size: 0.9rem; color: #2c2010; margin-top: 0.35rem; line-height: 1.4; }
+  :root.theme-dark .seven-stats .stat, :root:not(.theme-light) .seven-stats .stat { background: #18140e !important; border-color: #5a4628 !important; }
+  :root.theme-dark .seven-stats .stat-num, :root:not(.theme-light) .seven-stats .stat-num { color: var(--brand-light, #f1cf85) !important; }
+  :root.theme-dark .seven-stats .stat-lbl, :root:not(.theme-light) .seven-stats .stat-lbl { color: var(--text-body, #e8dfc8) !important; }
+  :root.theme-dark .seven-stats .stat:hover, :root:not(.theme-light) .seven-stats .stat:hover { border-color: var(--brand, #d8b366) !important; box-shadow: 0 4px 14px rgba(216, 179, 102, 0.25) !important; }
+
+  /* Featured 1875 Konsen baptism callout */
+  .konsen-feature { background: linear-gradient(140deg, #fff5d6, #fde8b0); border: 2px solid #d8b366; border-left: 5px solid #c08400; border-radius: 6px; padding: 1.1rem 1.3rem; margin: 1rem 0 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+  .konsen-feature .feature-eyebrow { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: #c08400; font-weight: 700; margin-bottom: 0.4rem; }
+  .konsen-feature h3 { font-size: 1.25rem; color: #5a3a08; margin: 0 0 0.55rem; }
+  .konsen-feature p { font-size: 1.02rem; color: #3a2f1e; line-height: 1.6; margin: 0 0 0.6rem; }
+  .konsen-feature p:last-child { margin-bottom: 0; }
+  .konsen-feature em { font-style: italic; }
+  .konsen-feature strong { color: #5a3a08; }
+  :root.theme-dark .konsen-feature, :root:not(.theme-light) .konsen-feature { background: linear-gradient(140deg, #2c1f0d, #1a140a) !important; border-color: #c08400 !important; }
+  :root.theme-dark .konsen-feature .feature-eyebrow, :root:not(.theme-light) .konsen-feature .feature-eyebrow { color: #f0c878 !important; }
+  :root.theme-dark .konsen-feature h3, :root:not(.theme-light) .konsen-feature h3 { color: var(--text-heading, #f1cf85) !important; }
+  :root.theme-dark .konsen-feature p, :root:not(.theme-light) .konsen-feature p { color: var(--text-body, #e8dfc8) !important; }
+  :root.theme-dark .konsen-feature strong, :root:not(.theme-light) .konsen-feature strong { color: var(--text-heading, #f1cf85) !important; }
+
+  /* Lifespan timeline figure */
+  .lifespan-fig { background: var(--bg-card, #fffaf0); border: 1px solid var(--border-light, #d8c8a8); border-radius: 6px; padding: 0.7rem; margin: 1rem 0 1.4rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .lifespan-fig svg { display: block; width: 100%; height: auto; max-height: 380px; }
+  .lifespan-fig figcaption { font-size: 0.95rem; color: var(--text-muted, #5a4a32); margin-top: 0.5rem; font-style: italic; padding: 0 0.3rem; line-height: 1.5; }
+
+  /* Narrative block */
+  .seven-narrative { background: var(--bg-card, #fffaf0); border-left: 3px solid #d8b366; padding: 1rem 1.3rem; margin: 0.6rem 0 1.5rem; border-radius: 0 4px 4px 0; }
+  .seven-narrative p { font-family: var(--font-serif); font-size: 1.08rem; line-height: 1.7; color: var(--text-body, #2c2620); margin: 0 0 1rem; }
+  .seven-narrative p:last-child { margin-bottom: 0; }
+  .seven-narrative strong { color: var(--text-strong, #1f1a14); }
+  :root.theme-dark .seven-narrative p, :root:not(.theme-light) .seven-narrative p { color: var(--text-body, #e8dfc8) !important; }
+  :root.theme-dark .seven-narrative strong, :root:not(.theme-light) .seven-narrative strong { color: var(--text-heading, #f1cf85) !important; }
+
+  .surname-trail-card { background: linear-gradient(140deg, #fffaf0, #f6ebd2); border: 2px solid #d8b366; border-radius: 6px; padding: 0.95rem 1.2rem; margin-top: 1rem; }
+  :root.theme-dark .surname-trail-card, :root:not(.theme-light) .surname-trail-card { background: var(--bg-card, #24201a) !important; background-image: none !important; border-color: var(--brand, #d8b366) !important; }
+  .surname-trail-card h3 { color: #8a6420; margin-top: 0; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  :root.theme-dark .surname-trail-card h3, :root:not(.theme-light) .surname-trail-card h3 { color: var(--brand-light, #f1cf85) !important; }
+  .surname-trail-card p { color: #5a4a32; }
+  :root.theme-dark .surname-trail-card p, :root:not(.theme-light) .surname-trail-card p { color: var(--text-body, #e8dfc8) !important; }
+  .surname-strip { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.7rem; }
+  .surname-strip span { background: rgba(216,179,102,0.18); color: var(--brand-dark, #8a6420); border: 1px solid var(--brand, #d8b366); padding: 0.28rem 0.65rem; border-radius: 3px; font-weight: 700; font-size: 0.84rem; letter-spacing: 0.04em; }
+  .surname-strip span.bold-konsen { background: var(--brand, #d8b366); color: #1f1a14; border-color: var(--brand-dark, #8a6420); }
+
+  /* Section H2 dark-mode bumps */
+  :root.theme-dark .section h2, :root:not(.theme-light) .section h2 { color: var(--text-heading, #f1cf85) !important; }
+
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  </style>
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Charles-Forschung">
+  <meta property="og:title" content="Die sieben Kinder — Charles-Forschung">
+  <meta property="og:description" content="Alle getauft in der St.-Marcus-Gemeinde (deutsch-evangelisch) in St. Louis · die Schreibweise des Familiennamens schwankte über fünf voneinander unterschiedene Taufregister-Wiedergaben (Gonnson · Gansen · Gonsen · Jansen · Konsen) — der Tauf-Teilbereich der neunfach bezeugten Namensspur.">
+  <meta property="og:url" content="https://charles-research.netlify.app/de/children/index.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/children.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/children.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Die sieben Kinder — Charles-Forschung">
+  <meta name="twitter:description" content="Alle getauft in der St.-Marcus-Gemeinde (deutsch-evangelisch) in St. Louis · die Schreibweise des Familiennamens schwankte über fünf voneinander unterschiedene Taufregister-Wiedergaben — der Tauf-Teilbereich der neunfach bezeugten Namensspur.">
+  <meta name="description" content="Alle getauft in der St.-Marcus-Gemeinde (deutsch-evangelisch) in St. Louis · die Schreibweise des Familiennamens schwankte über fünf voneinander unterschiedene Taufregister-Wiedergaben — der Tauf-Teilbereich der neunfach bezeugten Namensspur.">
+<script defer src="../../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../../assets/site-nav.css?v=20260629sticky">
+<script defer src="../../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/children/index.html#article",
+  "headline": "Die sieben Kinder",
+  "url": "https://charles-research.netlify.app/de/children/index.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17",
+  "description": "Alle getauft in der St.-Marcus-Gemeinde (deutsch-evangelisch) in St. Louis · die Schreibweise des Familiennamens schwankte über fünf voneinander unterschiedene Taufregister-Wiedergaben — der Tauf-Teilbereich der neunfach bezeugten Namensspur."
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../../de/index.html" role="menuitem">Überblick</a>
+      <a href="../../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../methodology.html" role="menuitem">Methodik</a>
+      <a href="../../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="child-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html">← Charles-Forschung</a> &nbsp;/&nbsp; <a href="../index.html#charles">Charles in Amerika</a> &nbsp;/&nbsp; Die sieben Kinder</div>
+  <h1>Die sieben Kinder von Charles Konzen &amp; Auguste Kreichelt</h1>
+  <div class="sub">Alle getauft in der St.-Marcus-Gemeinde (deutsch-evangelisch) in St. Louis · die Schreibweise des Familiennamens schwankte über <strong>fünf voneinander unterschiedene Taufregister-Wiedergaben</strong> — der Tauf-Teilbereich der <a href="../index.html#card1">neunfach bezeugten Namensspur</a>.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="section">
+  <h2>Die sieben Kinder von Charles und Auguste</h2>
+  <p>Charles und Auguste heirateten am 7. Januar 1866 in der St.-Marcus-Gemeinde (deutsch-evangelisch). In den folgenden vierzehn Jahren bekamen sie sieben Kinder &mdash; vier Töchter und drei Söhne. Das älteste, Friedrich Wilhelm, starb als Säugling. Zwei Töchter &mdash; Maria Josephine und Auguste &mdash; starben jung, Anfang zwanzig, beide im selben Jahr (1890). Die übrigen vier Kinder &mdash; Katherine Carolina, Louise, Erwin Carl und Bertha &mdash; erlebten das zwanzigste Jahrhundert; drei von ihnen wurden über siebzig Jahre alt. Jedes Kind wird im Folgenden in der Reihenfolge der Geburt vorgestellt.</p>
+
+  <p style="margin-top:0.6rem; font-size:0.97rem; color:var(--text-muted, #5a4a32);">Eine Anmerkung zu den Familiennamen, die Ihnen auf diesen Seiten begegnen: Sechs der sieben Taufen verwendeten eine jeweils andere Schreibweise des Familiennamens &mdash; nur die Taufe von <strong>Erwin Carl Konsen</strong> im Jahr 1875 bewahrte die hessische K-Form (die dem ursprünglichen Deutsch am nächsten kommende Schreibweise). Die Vielfalt ist selbst der Beleg: Sie zeigt, dass die Schreibweise aus Charles' gesprochener Aussprache hervorging und nicht aus der Feder eines einzelnen Pastors. Siehe <a href="../index.html#card1">Key Evidence, Karte 1</a> für die vollständige Argumentation zur Namensspur.</p>
+
+  <!-- Stats bar — 6 clickable tiles -->
+  <div class="seven-stats" aria-label="Die sieben Kinder auf einen Blick">
+    <a class="stat" href="#all-children" title="Zu den Kinderkarten springen"><div class="stat-num">7</div><div class="stat-lbl">Kinder getauft<br>in St. Marcus</div></a>
+    <a class="stat" href="#lifespan-timeline" title="Die Lebensspannen-Zeitleiste ansehen"><div class="stat-num">15 J.</div><div class="stat-lbl">erstes bis siebtes<br>1866 &rarr; 1880</div></a>
+    <a class="stat" href="#lifespan-timeline" title="Die Lebensspannen-Zeitleiste ansehen"><div class="stat-num">3</div><div class="stat-lbl">jung gestorben<br>(Säugling &middot; 22 &middot; 18)</div></a>
+    <a class="stat" href="#lifespan-timeline" title="Die Lebensspannen-Zeitleiste ansehen"><div class="stat-num">4</div><div class="stat-lbl">erlebten das<br>20. Jahrhundert</div></a>
+    <a class="stat" href="#surname-trail" title="Zur Schreibweisen-Spur des Familiennamens springen"><div class="stat-num">5</div><div class="stat-lbl">Schreibweisen der<br>Taufschreiber</div></a>
+    <a class="stat" href="../../children/erwin-carl-konsen.html" title="Erwin Carl Konsen öffnen — der Beleg für die Namensbewahrung"><div class="stat-num">1</div><div class="stat-lbl">&starf; Konsen<br>Taufe 1875</div></a>
+  </div>
+
+  <!-- Featured 1875 Konsen baptism callout — the keystone evidence -->
+  <div class="konsen-feature" id="konsen-feature">
+    <div class="feature-eyebrow">&starf; Die den Familiennamen bewahrende Taufe</div>
+    <h3>1875 &middot; Erwin Carl <em>Konsen</em></h3>
+    <p>Von den sieben Kindern wurde nur eines unter der hessischen Schreibweise getauft. Am <strong>27. August 1875</strong> trug der Schreiber der St.-Marcus-Gemeinde Charles und Augustes sechstes Kind als <strong>Erwin Carl Konsen</strong> ein &mdash; die Form „K“ + „-en“, die zum Namenspool Konze / Konsen / Konzen der Kirchenbücher des Kirchenkreises Hofgeismar (ab 1773) passt. Über alle sieben Taufen und den Begräbniseintrag von 1896 hinweg ist dies die einzige Schreibweise, die nach Hause weist.</p>
+    <p>Erwin wurde 74 Jahre alt (er sollte sich später zu <em>Charles Johnson Jr.</em> anglisieren) und heiratete <a href="../../people/katherine-misch.html">Katherine Misch</a>. <a href="../../children/erwin-carl-konsen.html"><strong>&rarr; Sein Profil öffnen</strong></a> für den vollständigen Taufeintrag, die Paten und die Linie der dritten Generation.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2 id="all-children">Die sieben Kinder</h2>
+  <p>Klicken Sie auf eine Kachel, um den vollständigen St.-Marcus-Taufeintrag, die namentlich genannten Paten, den Stammbaum und die Schreibweise des Familiennamens zu sehen, die der Gemeindeschreiber an jenem Tag notierte.</p>
+
+  <div class="children-grid">
+
+    <a class="child-card died-young" href="../../children/friedrich-wilhelm.html">
+      <span class="order">1</span><h3>Friedrich Wilhelm Gonnson</h3>
+      <div class="lifespan">geb. 20. Juni 1866 &middot; gest. ~Okt. 1867 &middot; <strong>als Säugling gestorben (16 Mon.)</strong></div>
+      <span class="surname-pill">Gonnson</span>
+      <div class="note">&starf; Benannt nach <em>Friedrich Wilhelm I.</em>, dem abgesetzten Kurfürsten von Hessen-Kassel &mdash; drei Monate nachdem Charles' Heimat ihre Unabhängigkeit an Preußen verloren hatte.</div>
+      <div class="sponsors"><strong>Paten:</strong> Friedrich Wilhelm Pillmann &middot; Wilhelmine Ebling Leue &middot; Georg &amp; Henriette Kreichelt</div>
+    </a>
+
+    <a class="child-card died-young" href="../../children/josephine-maria.html">
+      <span class="order">2</span><h3>Maria Josephine Gonnson</h3>
+      <div class="lifespan">geb. 1868 &middot; gest. 1890 &middot; <strong>mit 22 gestorben, unverheiratet</strong></div>
+      <span class="surname-pill">Gonnson</span>
+      <div class="note">Im selben Jahr gestorben wie ihre jüngere Schwester Auguste &mdash; der doppelte Verlust des Jahres 1890 für Charles und Auguste.</div>
+    </a>
+
+    <a class="child-card" href="../../children/katherine-carolina.html">
+      <span class="order">3</span><h3>Friedrike Catharina Caroline Amalia <em>Gansen</em></h3>
+      <div class="lifespan">geb. 1870 &middot; gest. 1949 &middot; <strong>wurde 79 Jahre alt</strong></div>
+      <span class="surname-pill">Gansen</span>
+      <div class="note">Später <strong>„Kate Ruddy“</strong> &mdash; Name nach der Heirat. Vier Vornamen bei der Taufe.</div>
+    </a>
+
+    <a class="child-card died-young" href="../../children/auguste.html">
+      <span class="order">4</span><h3>Auguste Gonsen</h3>
+      <div class="lifespan">geb. 1872 &middot; gest. 1890 &middot; <strong>mit 18 gestorben</strong></div>
+      <span class="surname-pill">Gonsen</span>
+      <div class="note">Nach ihrer Mutter benannt. Im selben Jahr gestorben wie ihre ältere Schwester Maria Josephine.</div>
+    </a>
+
+    <a class="child-card" href="../../children/louise.html">
+      <span class="order">5</span><h3>Louise Jansen</h3>
+      <div class="lifespan">geb. 1873 &middot; gest. 1947 &middot; <strong>wurde 73 Jahre alt</strong></div>
+      <span class="surname-pill">Jansen</span>
+      <div class="note">Später <strong>„Louise Foster“</strong> &mdash; Name nach der Heirat.</div>
+    </a>
+
+    <a class="child-card subject" href="../../children/erwin-carl-konsen.html">
+      <span class="order">6</span><h3>&starf; Erwin Carl <em>Konsen</em></h3>
+      <div class="lifespan">geb. 27. Aug. 1875 &middot; gest. 1950 &middot; <strong>wurde 74 Jahre alt</strong></div>
+      <span class="surname-pill">Konsen</span>
+      <div class="note"><strong>Der Beleg für die Namensbewahrung.</strong> Das einzige Kind, dessen Taufe von 1875 die hessisch geprägte Schreibweise <em>Konsen</em> bewahrte &mdash; der stärkste einzelne Hinweis von amerikanischer Seite zurück auf die Linie Konze / Konsen / Konzen aus Trendelburg / Deisel. Später <strong>„Charles Johnson Jr.“</strong>; heiratete Katherine Misch.</div>
+    </a>
+
+    <a class="child-card" href="../../children/bertha.html">
+      <span class="order">7</span><h3>Bertha Jansen</h3>
+      <div class="lifespan">geb. 1880 &middot; gest. 1959 &middot; <strong>die Jüngste, wurde 78 Jahre alt</strong></div>
+      <span class="surname-pill">Jansen</span>
+      <div class="note">Das letzte der sieben. Geboren, als Charles 45 und Auguste 40 Jahre alt war. Überlebte ihren erstgeborenen Bruder um dreiundneunzig Jahre.</div>
+    </a>
+
+  </div>
+</section>
+
+<section class="section">
+  <h2 id="lifespan-timeline">Lebensspannen-Zeitleiste &middot; 1835 bis 1960</h2>
+  <p>Sieben Kinder, eine Mutter (Auguste, die das älteste um 29 Jahre überlebte und starb, bevor die vier am längsten Lebenden das neue Jahrhundert sahen) und ein Vater (Charles, der drei seiner sieben überlebte). Jeder Balken steht für ein Leben von der Geburt bis zum Tod; rote Balken sind die drei, die jung starben, grüne Balken die vier, die das 20. Jahrhundert überdauerten. Die goldenen Balken oben zeigen zum Vergleich die Lebensspannen von Charles und Auguste selbst.</p>
+
+  <figure class="lifespan-fig">
+    <svg viewBox="0 0 1100 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Waagerechte Lebensspannen-Zeitleiste mit Charles Konzen 1835–1903, Auguste Kreichelt 1847–1896 und ihren sieben Kindern, deren Geburts-/Sterbespannen nach dem Überlebensausgang farblich gekennzeichnet sind.">
+      <style>
+        .lf-axis { stroke: var(--text-muted, #5a4a32); stroke-width: 1.2; fill: none; }
+        .lf-tick { stroke: var(--brand-dark, #8a6420); stroke-width: 1; }
+        .lf-yr { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; fill: var(--text-muted, #6a5a42); }
+        .lf-band-parent { fill: #8a6420; opacity: 0.85; }
+        .lf-band-died { fill: #c84a4a; opacity: 0.85; }
+        .lf-band-survived { fill: #5a8a4a; opacity: 0.85; }
+        .lf-band-keystone { fill: #d8b366; opacity: 0.92; stroke: #c08400; stroke-width: 1.5; }
+        .lf-name { font-family: var(--font-serif); font-size: 12px; fill: var(--text-strong, #1f1a14); }
+        .lf-name.keystone { fill: #c08400; font-weight: 700; }
+        .lf-life { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 10px; fill: var(--text-muted, #6a5a42); }
+        .lf-endpoint { font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 9px; fill: var(--text-body, #2c2620); }
+        :root.theme-dark .lf-name, :root:not(.theme-light) .lf-name { fill: var(--text-body, #e8dfc8); }
+        :root.theme-dark .lf-name.keystone, :root:not(.theme-light) .lf-name.keystone { fill: var(--brand-light, #f1cf85); }
+        :root.theme-dark .lf-life, :root:not(.theme-light) .lf-life { fill: var(--text-muted, #b89c70); }
+        :root.theme-dark .lf-endpoint, :root:not(.theme-light) .lf-endpoint { fill: var(--text-body, #e8dfc8); }
+        :root.theme-dark .lf-yr, :root:not(.theme-light) .lf-yr { fill: var(--text-muted, #b89c70); }
+      </style>
+      <!-- Year axis 1835 to 1960 (125 years), x = 200 + (year-1835)*6.4. Total width 800px for years. -->
+      <!-- Decade tick marks + labels at y=358 -->
+      <line class="lf-axis" x1="200" y1="350" x2="1000" y2="350"/>
+      <line class="lf-tick" x1="200" y1="350" x2="200" y2="356"/><text class="lf-yr" x="200" y="370" text-anchor="middle">1835</text>
+      <line class="lf-tick" x1="296" y1="350" x2="296" y2="356"/><text class="lf-yr" x="296" y="370" text-anchor="middle">1850</text>
+      <line class="lf-tick" x1="392" y1="350" x2="392" y2="356"/><text class="lf-yr" x="392" y="370" text-anchor="middle">1865</text>
+      <line class="lf-tick" x1="488" y1="350" x2="488" y2="356"/><text class="lf-yr" x="488" y="370" text-anchor="middle">1880</text>
+      <line class="lf-tick" x1="584" y1="350" x2="584" y2="356"/><text class="lf-yr" x="584" y="370" text-anchor="middle">1895</text>
+      <line class="lf-tick" x1="680" y1="350" x2="680" y2="356"/><text class="lf-yr" x="680" y="370" text-anchor="middle">1910</text>
+      <line class="lf-tick" x1="776" y1="350" x2="776" y2="356"/><text class="lf-yr" x="776" y="370" text-anchor="middle">1925</text>
+      <line class="lf-tick" x1="872" y1="350" x2="872" y2="356"/><text class="lf-yr" x="872" y="370" text-anchor="middle">1940</text>
+      <line class="lf-tick" x1="968" y1="350" x2="968" y2="356"/><text class="lf-yr" x="968" y="370" text-anchor="middle">1955</text>
+
+      <!-- Parents row labels at left (text-anchor=end at x=190) -->
+      <!-- Charles: 1835-1903 → x=200 + 0*6.4 = 200, x=200 + 68*6.4 = 635.2. Width = 435.2 -->
+      <text class="lf-name" x="190" y="33" text-anchor="end" font-weight="700">Charles Konzen (Vater)</text>
+      <rect class="lf-band-parent" x="200" y="22" width="435" height="16" rx="2"/>
+      <text class="lf-endpoint" x="195" y="33" text-anchor="end" fill="#8a6420">1835</text>
+      <text class="lf-endpoint" x="640" y="33" text-anchor="start" fill="#8a6420">1903 &middot; 68 Jahre</text>
+
+      <!-- Auguste: 1847-1896 → x=200+12*6.4=276.8, x=200+61*6.4=590.4. Width = 314 -->
+      <text class="lf-name" x="190" y="56" text-anchor="end" font-weight="700">Auguste Kreichelt (Mutter)</text>
+      <rect class="lf-band-parent" x="277" y="45" width="314" height="16" rx="2"/>
+      <text class="lf-endpoint" x="272" y="56" text-anchor="end" fill="#8a6420">1847</text>
+      <text class="lf-endpoint" x="595" y="56" text-anchor="start" fill="#8a6420">1896 &middot; 49 Jahre</text>
+
+      <!-- Divider line -->
+      <line x1="50" y1="76" x2="1050" y2="76" stroke="var(--border-light, #d8c8a8)" stroke-width="1" stroke-dasharray="3,3"/>
+      <text class="lf-life" x="50" y="89" font-style="italic">Die sieben Kinder</text>
+
+      <!-- Child 1: Friedrich Wilhelm 1866-1867 (died as infant 16mo) → x=398.4, x=405. Width = 7 (tiny!) -->
+      <text class="lf-name" x="190" y="106" text-anchor="end">1 &middot; Friedrich Wilhelm</text>
+      <rect class="lf-band-died" x="398" y="95" width="9" height="14" rx="2"/>
+      <text class="lf-endpoint" x="410" y="106" text-anchor="start" fill="#c84a4a">1866&ndash;1867 &middot; 16 Mon.</text>
+
+      <!-- Child 2: Maria Josephine 1868-1890 (died 22) → x=411.2, x=552. Width = 141 -->
+      <text class="lf-name" x="190" y="129" text-anchor="end">2 &middot; Maria Josephine</text>
+      <rect class="lf-band-died" x="411" y="118" width="141" height="14" rx="2"/>
+      <text class="lf-endpoint" x="557" y="129" text-anchor="start" fill="#c84a4a">1868&ndash;1890 &middot; 22 Jahre</text>
+
+      <!-- Child 3: Friedrike Catharina (Kate Ruddy) 1870-1949 → x=424, x=931.6. Width = 508 -->
+      <text class="lf-name" x="190" y="152" text-anchor="end">3 &middot; Friedrike Catharina</text>
+      <rect class="lf-band-survived" x="424" y="141" width="508" height="14" rx="2"/>
+      <text class="lf-endpoint" x="937" y="152" text-anchor="start" fill="#5a8a4a">1949 &middot; 79 Jahre</text>
+
+      <!-- Child 4: Auguste (daughter) 1872-1890 (died 18) → x=436.8, x=552. Width = 115 -->
+      <text class="lf-name" x="190" y="175" text-anchor="end">4 &middot; Auguste</text>
+      <rect class="lf-band-died" x="437" y="164" width="115" height="14" rx="2"/>
+      <text class="lf-endpoint" x="557" y="175" text-anchor="start" fill="#c84a4a">1872&ndash;1890 &middot; 18 Jahre</text>
+
+      <!-- Child 5: Louise (Foster) 1873-1947 → x=443.2, x=918.8. Width = 476 -->
+      <text class="lf-name" x="190" y="198" text-anchor="end">5 &middot; Louise</text>
+      <rect class="lf-band-survived" x="443" y="187" width="476" height="14" rx="2"/>
+      <text class="lf-endpoint" x="924" y="198" text-anchor="start" fill="#5a8a4a">1947 &middot; 73 Jahre</text>
+
+      <!-- Child 6: ★ Erwin Carl KONSEN (Charles Johnson Jr.) 1875-1950 → x=456, x=937.8. Width = 482 -->
+      <text class="lf-name keystone" x="190" y="221" text-anchor="end">&starf; 6 &middot; Erwin Carl Konsen</text>
+      <rect class="lf-band-keystone" x="456" y="210" width="482" height="14" rx="2"/>
+      <text class="lf-endpoint" x="943" y="221" text-anchor="start" fill="#c08400" font-weight="700">1950 &middot; 74 Jahre</text>
+
+      <!-- Child 7: Bertha 1880-1959 → x=488, x=998.6. Width = 511 -->
+      <text class="lf-name" x="190" y="244" text-anchor="end">7 &middot; Bertha</text>
+      <rect class="lf-band-survived" x="488" y="233" width="511" height="14" rx="2"/>
+      <text class="lf-endpoint" x="1004" y="244" text-anchor="start" fill="#5a8a4a">1959 &middot; 78 Jahre</text>
+
+      <!-- Vertical reference line: 1896 — Auguste's death (the mother's death cuts through 4 of the children's lives) -->
+      <line x1="590" y1="92" x2="590" y2="252" stroke="#c84a4a" stroke-width="1" stroke-dasharray="3,3" opacity="0.55"/>
+      <text class="lf-yr" x="590" y="268" text-anchor="middle" fill="#c84a4a" font-weight="700">Auguste &dagger; 1896</text>
+
+      <!-- Vertical reference line: 1903 — Charles's death -->
+      <line x1="635" y1="92" x2="635" y2="252" stroke="#8a3a3a" stroke-width="1" stroke-dasharray="3,3" opacity="0.55"/>
+      <text class="lf-yr" x="635" y="282" text-anchor="middle" fill="#8a3a3a" font-weight="700">Charles &dagger; 1903</text>
+
+      <!-- Legend (top right) -->
+      <g transform="translate(740, 92)">
+        <rect class="lf-band-parent" x="0" y="0" width="14" height="10" rx="2"/>
+        <text class="lf-life" x="20" y="9">Eltern</text>
+        <rect class="lf-band-died" x="80" y="0" width="14" height="10" rx="2"/>
+        <text class="lf-life" x="100" y="9">Jung gestorben</text>
+        <rect class="lf-band-survived" x="180" y="0" width="14" height="10" rx="2"/>
+        <text class="lf-life" x="200" y="9">Überlebt</text>
+        <rect class="lf-band-keystone" x="270" y="0" width="14" height="10" rx="2"/>
+        <text class="lf-life" x="290" y="9">&starf; Konsen</text>
+      </g>
+    </svg>
+    <figcaption>Lebensspannen von der Geburt bis zum Tod für alle sieben. <strong>Drei der sieben Kinder starben jung</strong> &mdash; Friedrich Wilhelm mit sechzehn Monaten im Jahr 1867; danach Maria Josephine und Auguste beide im Jahr 1890, innerhalb weniger Monate voneinander, mit zweiundzwanzig und achtzehn Jahren. <em>Die Todesursachen der beiden 1890 verstorbenen Töchter sind in den im Projekt erschlossenen Akten nicht verzeichnet und bleiben eine offene Frage;</em> die Sterblichkeit von Kindern und jungen Erwachsenen war in jener Zeit im deutschen Süden von St. Louis hoch, doch eine bestimmte Ursache ist hier nicht dokumentiert. Auguste, die Mutter, starb 1896; Charles überlebte drei seiner sieben und starb 1903 an Magenkrebs. <strong>Die vier, die überlebten</strong> &mdash; Catharina, Louise, Erwin Carl und Bertha &mdash; überschritten alle die Schwelle zu 1900 und erlebten das Radiozeitalter; Bertha erlebte noch, wie sich das Jahrzehnt der Mondlandung näherte.</figcaption>
+  </figure>
+</section>
+
+<section class="section">
+  <h2 id="seven-narrative">Ein Bogen über 15 Jahre</h2>
+  <div class="seven-narrative">
+    <p>Die sieben Kinder wurden zwischen Juni 1866 und 1880 geboren &mdash; eine Spanne von fünfzehn Jahren, eingefasst von Charles' Entlassung aus der Battery B im Jahr 1865 und Augustes letzter Schwangerschaft 1880 im Alter von vierzig Jahren. <strong>Friedrich Wilhelm Gonnson</strong>, der Erstgeborene, kam am 20. Juni 1866 zur Welt &mdash; drei Monate nach Ausbruch des Deutschen Krieges, drei Monate bevor der Kurfürst von Charles' Heimat seinen Thron an Preußen verlor. Sein Name &mdash; <em>Friedrich Wilhelm I.</em> &mdash; war ein Akt der gedenkenden Namensgebung. Er starb mit sechzehn Monaten.</p>
+
+    <p>Jedes der sieben wurde in der <strong>St.-Marcus-Gemeinde (deutsch-evangelisch)</strong> im Süden von St. Louis getauft. Dieselbe Gemeinde, die Charles und Auguste am 7. Januar 1866 traute, taufte fünf Monate später ihr erstes Kind und vierzehn Jahre danach ihr letztes &mdash; eine Gemeinde, ein Taufstein, ein Kreis von Paten und Zeugen, geschöpft aus Charles' Kameraden der Battery B und dem Netzwerk der Kreichelt-Verwandtschaft.</p>
+
+    <p>Der Schreiber der St.-Marcus-Gemeinde notierte den deutschen Familiennamen der Familie über die sieben Taufen hinweg auf fünf verschiedene Weisen &mdash; <em>Gonnson</em> 1866 und 1868, <em>Gansen</em> 1870, <em>Gonsen</em> 1872, <em>Jansen</em> bei den Taufen 1874 und 1881 (Louise und Bertha, geboren 1873 und 1880) und nur ein einziges Mal &mdash; bei der sechsten Taufe, am 27. August 1875 &mdash; das hessisch geprägte <strong>Konsen</strong>. Diese eine Schreibweise von 1875 ist der stärkste auf die Heimat weisende Beleg, den wir von amerikanischer Seite besitzen. Einundzwanzig Jahre später, als Auguste 1896 von derselben Gemeinde bestattet wurde, wurde der Familienname erneut als <strong>Konzen</strong> geschrieben &mdash; die beiden selbstbezeugten Formen rahmen die Frage ein.</p>
+
+    <p>Von den sieben starben drei jung: Friedrich Wilhelm als Säugling, dann Maria Josephine und Auguste beide 1890 mit zweiundzwanzig und achtzehn Jahren, innerhalb weniger Monate voneinander. Die vier, die überlebten &mdash; <strong>Friedrike Catharina</strong> (Kate Ruddy), <strong>Louise</strong> (Foster), <strong>Erwin Carl Konsen</strong> (Charles Johnson Jr.) und <strong>Bertha</strong> &mdash; erlebten alle das 20. Jahrhundert. Bertha, die Jüngste, lebte bis 1959, dreiundneunzig Jahre nachdem ihr erstgeborener Bruder als Baby gestorben war.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2 id="surname-trail">Die Namensspur durch die Familienakten &middot; 1866 &rarr; 1896</h2>
+  <div class="surname-trail-card">
+    <h3>Eine Familie, fünf voneinander unterschiedene Schreibweisen der Taufschreiber (zuzüglich der selbstbezeugten Wiedergaben bei Heirat und Begräbnis)</h3>
+    <p style="margin:0.3rem 0 0; font-size:1rem;">Ein anderer Familienname bei fast jedem Besuch in St. Marcus. Die Wiedergabe <strong>Konsen</strong> von 1875 bewahrt das heimatlich geprägte Suffix „K“ + „-en“ und ist der stärkste einzelne Beleg für die Namensbewahrung. Das <strong>Conson</strong> von 1896 bei Augustes Begräbnis schließt die Klammer der Spanne, in der „Charles als Auskunftgeber“ auftritt: Sowohl 1875 als auch 1896 lieferte Charles selbst den Familiennamen.</p>
+    <div class="surname-strip">
+      <span>Gonnson &middot; 1866</span>
+      <span>Gonnson &middot; 1868</span>
+      <span>Gansen &middot; 1870</span>
+      <span>Gonsen &middot; 1872</span>
+      <span>Jansen &middot; 1874</span>
+      <span class="bold-konsen">Konsen &middot; 1875 &starf;</span>
+      <span>Jansen &middot; 1881</span>
+      <span>Conson &middot; 1896</span>
+    </div>
+  </div>
+</section>
+
+<footer class="back-nav">
+  <a href="../index.html#charles">← Zurück zu Charles in Amerika</a>
+  <a href="../index.html">Startseite</a>
+</footer>
+
+</main>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../../de/index.html">Startseite</a></li>
+        <li><a href="../../de/stories.html">Geschichten</a></li>
+        <li><a href="../../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../../methodology.html">Methodik</a></li>
+        <li><a href="../../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../../de/glossary.html">Glossar</a></li>
+        <li><a href="../../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../../de/about.html">Über</a></li>
+        <li><a href="../../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

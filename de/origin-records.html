@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/origin-records.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/origin-records.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/origin-records.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Where Charles Said He Was From — the U.S. Records — Charles Research</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/de/origin-records.html">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
+<meta name="description" content="Every U.S. record in which Charles named or implied where he was from — the 1862 enlistment ('Freundburg, Kurhessen') and 1866 marriage ('Deisse, Kreis Cassel, Churhessen'), the naturalization and firstborn naming, and the country-level census and death records — by date, sourced, linked, and ranked by genealogical confidence. Only two records name a specific place; both decode to the Trendelburg / Deisel area.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Where Charles Said He Was From — the U.S. Records — Charles Research">
+<meta property="og:description" content="Charles named a specific German place only twice in forty years of records — both decode to the same corner of Kurhessen. Every origin statement, sourced and ranked.">
+<meta property="og:url" content="https://charles-research.netlify.app/de/origin-records.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.bd-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.bd-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.bd-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.bd-hero h1 { color: var(--text-on-dark); font-size: 2.2rem; letter-spacing: 0.02em; max-width: 880px; }
+  header.bd-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 820px; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  h2 { font-size: 1.45rem; color: var(--text-primary); margin: 2.4rem 0 0.8rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.1rem; color: var(--text-primary); margin: 1.4rem 0 0.3rem; }
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.07rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.4rem; }
+
+  .summary-strip {
+    background: var(--bg-card-tint); border: 1px solid var(--border-medium); border-radius: 4px;
+    padding: 0.9rem 1.1rem; margin: 1.2rem 0 1.8rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.8rem;
+  }
+  .summary-strip .stat { text-align: center; }
+  .summary-strip .stat .num { font-size: 1.6rem; font-weight: 700; color: var(--brand-dark); display: block; line-height: 1.05; }
+  .summary-strip .stat .lab { font-size: 0.76rem; color: var(--text-meta); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
+
+  .callout { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 4px solid var(--brand); border-radius: 4px; padding: 1rem 1.2rem; margin: 1.4rem 0; }
+  .callout.verify { border-left-color: var(--status-active, #b48a3a); background: linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); }
+  .callout .ttl { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.4rem; }
+
+  table.bd { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.6rem 0 1.2rem; }
+  table.bd thead tr { background: var(--bg-card-tint); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-meta); }
+  table.bd th, table.bd td { padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); }
+  table.bd tbody tr:nth-child(even) td { background: var(--bg-card); }
+  table.bd .num { font-weight: 700; color: var(--brand-dark); text-align: center; font-family: var(--font-mono); width: 2rem; }
+  table.bd .date { white-space: nowrap; font-weight: 700; color: var(--text-strong); }
+  table.bd .said { font-weight: 700; color: var(--text-strong); }
+  table.bd .said .dec { display:block; font-weight: 400; font-size: 0.8rem; color: var(--text-meta); font-style: italic; margin-top: 0.15rem; }
+  table.bd .src { font-size: 0.82rem; color: var(--text-meta); }
+  .vlink { font-weight: 700; white-space: nowrap; }
+
+  .pill { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+  .pill.high { background: #5a8a4a; color: #fff; }
+  .pill.mod  { background: #d4a017; color: #2c2620; }
+  .pill.low  { background: #b48a3a; color: #2c2620; }
+  .pill.elim { background: #8a6f63; color: #fff; }
+  .gtag { display: block; margin-top: 0.35rem; font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-meta); text-transform: none; letter-spacing: 0; line-height: 1.3; }
+
+  html.theme-dark table.bd .num,
+  html.theme-dark .summary-strip .stat .num,
+  html.theme-dark .callout .ttl,
+  html.theme-dark .sie .box h4 { color: #e8cd8a; }
+  html.theme-dark .gtag { color: #b9a98a; }
+
+  .sie { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.8rem; margin: 1rem 0 1.2rem; }
+  .sie .box { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 3px solid var(--brand); border-radius: 4px; padding: 0.8rem 1rem; }
+  .sie .box h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brand-dark); margin: 0 0 0.3rem; }
+  .sie .box p { font-size: 0.88rem; margin: 0; }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.bd-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.bd-hero h1, header.bd-hero .sub, header.bd-hero .crumbs, header.bd-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+    .pill { border: 1px solid #000; color: #000 !important; background: none !important; }
+  }
+</style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/origin-records.html#article",
+  "headline": "Where Charles Said He Was From — the U.S. Records",
+  "description": "Every U.S. record in which Charles named or implied his origin, by date, with the statement as written, the informant, a verification link, a confidence level, and its evidence classification.",
+  "datePublished": "2026-06-20",
+  "dateModified": "2026-06-20",
+  "url": "https://charles-research.netlify.app/de/origin-records.html",
+  "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+  "about": { "@id": "https://charles-research.netlify.app/#charles" },
+  "author": [
+    { "@type": "Person", "name": "Jed Johnson" },
+    { "@type": "Person", "name": "Peter Schräder" }
+  ],
+  "publisher": { "@type": "Person", "name": "Jed Johnson", "url": "https://charles-research.netlify.app/about.html" },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../de/index.html" role="menuitem">Überblick</a>
+      <a href="../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodik</a>
+      <a href="../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="bd-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles Research</a> &nbsp;/&nbsp; Where He Said He Was From</div>
+  <h1>Where Charles Said He Was From — the U.S. Records</h1>
+  <div class="sub">In forty years of American records, Charles named a specific German place in just <strong>three</strong> of them &mdash; two distinct statements, &ldquo;Freundburg&rdquo; and &ldquo;Deisse&rdquo; (the latter recorded twice in 1866), both decoding to the same corner of Kurhessen. Every other record places him only at region or country level. Each statement by date, sourced, linked, and ranked by genealogical confidence.</div>
+</header>
+
+<!-- BEGIN-INJECTED-SKIP-ANCHOR --><a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a><!-- END-INJECTED-SKIP-ANCHOR -->
+<main>
+
+<p class="lede">This is the companion to <a href="birthdate-records.html">Birth date across the records</a> and <a href="../surname-records.html">Surname across the records</a>, applying the same evidence model to the question that drives the whole search: <em>where in Germany was Charles born?</em> He never named his parish. The closest he ever came are the two town-level statements at the top of this page &mdash; both phonetic, both pointing to the <strong>Trendelburg / Deisel</strong> area &mdash; which is exactly why the German search is concentrated there (<a href="../search-coverage.html">Parish search coverage</a>).</p>
+
+<div class="summary-strip">
+  <div class="stat"><span class="num">3</span><span class="lab">records naming a specific place</span></div>
+  <div class="stat"><span class="num">Trendelburg / Deisel</span><span class="lab">where both decode</span></div>
+  <div class="stat"><span class="num">2</span><span class="lab">records name &ldquo;Deisse&rdquo; (church + civil)</span></div>
+  <div class="stat"><span class="num">0</span><span class="lab">parishes named in any record</span></div>
+</div>
+
+<h2 id="standard">How these are rated &mdash; by genealogical standards</h2>
+
+<p>Each statement is classified with the same <strong>Source &middot; Information &middot; Evidence</strong> framework and <strong>Genealogical Proof Standard</strong> used on the birth-date and surname pages. For origin, two things drive confidence:</p>
+
+<div class="sie">
+  <div class="box"><h4>Specificity</h4><p>Does the record name a <strong>town / Kreis</strong>, a <strong>region</strong> (Kurhessen / Hesse-Cassel), or only a <strong>country</strong> (&ldquo;Germany&rdquo;)? A town-level statement does far more work than &ldquo;Germany.&rdquo;</p></div>
+  <div class="box"><h4>Informant &amp; directness</h4><p>Did <strong>Charles himself</strong> give it (enlistment, marriage, naturalization, 1900 census) or a survivor / household member? And is it <span class="ev-direct">direct</span> (a stated place) or <span class="ev-indirect">indirect</span> (inferred from an act, like whom he named a son after or which sovereign he renounced)?</p></div>
+  <div class="box"><h4>The town is an interpretation</h4><p>What the records actually contain is the <em>recorded spelling</em> &mdash; &ldquo;Freundburg,&rdquo; &ldquo;Deisse.&rdquo; The modern villages (<strong>Trendelburg, Deisel</strong>) are Peter Schr&auml;der&rsquo;s <strong>phonetic interpretation</strong> &mdash; a strong reading, but <em>not</em> a recorded fact, and one a researcher could read differently. The confidence below is <strong>High*</strong> for <em>specificity</em>; the asterisk marks exactly this decode dependency.</p></div>
+</div>
+
+<h2 id="specific">The records that name a place</h2>
+
+<table class="bd">
+  <thead>
+    <tr><th>#</th><th>Date</th><th>As stated / decoded</th><th>Record &amp; who supplied it</th><th>Verify</th><th>Confidence</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="num">1</td><td class="date">2 Dec 1862</td>
+      <td class="said">&ldquo;Freundburg, Kurhessen&rdquo;<span class="dec">&rarr; <strong>interpreted</strong> as Trendelburg (Schr&auml;der phonetic decode, 2026) &mdash; a reading, <em>not</em> a recorded fact; other decodings are possible.</span></td>
+      <td>Civil War enlistment &mdash; Regimental Descriptive Book card (in the Compiled Service Record, NARA M405). <span class="src">Self-reported by Charles at enlistment; clerk-written. The first place named anywhere in his record.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/1:1:FF1S-VV6" target="_blank" rel="noopener noreferrer">FamilySearch &#x2197;</a><br><a href="../evidence/card-2-civil-war-enlistment.html">Card 2</a> · <a href="../sources/military-record.html">Doc O</a></td>
+      <td><span class="pill high">High*</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self) · <span class="ev-direct">direct</span> (town)</span></td>
+    </tr>
+    <tr>
+      <td class="num">2</td><td class="date">Jan 1866</td>
+      <td class="said">&ldquo;Deisse, Kreis Cassel, Churhessen&rdquo;<span class="dec">&rarr; <strong>interpreted</strong> as Deisel, Kreis Hofgeismar (Hesse-Cassel) &mdash; a phonetic reading, not certain.</span></td>
+      <td>St.&nbsp;Marcus <strong>church</strong> marriage register, p.&nbsp;135 no.&nbsp;676 (Doc&nbsp;F; to Auguste Kreichelt). <span class="src">Supplied by <strong>Charles as groom</strong> &mdash; the most precise origin statement he ever gave.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/search/catalog/results?q.text=St.%20Marcus%20Evangelical%20St.%20Louis" target="_blank" rel="noopener noreferrer">St. Marcus reg. &#x2197;</a><br><a href="index.html#evidence">Card 3</a></td>
+      <td><span class="pill high">High*</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self) · <span class="ev-direct">direct</span> (town + Kreis)</span></td>
+    </tr>
+    <tr>
+      <td class="num">3</td><td class="date">1866</td>
+      <td class="said">&ldquo;of Deisse, Churhessen&rdquo;<span class="dec">&rarr; same spelling as Doc&nbsp;F; <strong>interpreted</strong> as Deisel &mdash; an independent second record of &ldquo;Deisse.&rdquo;</span></td>
+      <td>St.&nbsp;Louis <strong>civil (state) Marriage Register</strong>, 1866 (Doc&nbsp;E) &mdash; &ldquo;Charles Gonnson of Deisse, Churhessen&rdquo; &amp; Augusta Kreichelt. <span class="src">A <strong>separate civil record</strong> from the church register above &mdash; Charles as groom &mdash; so &ldquo;Deisse&rdquo; is attested <em>twice</em> in 1866, by two different offices.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/tree/person/sources/LZXC-6GB" target="_blank" rel="noopener noreferrer">FamilySearch sources &#x2197;</a></td>
+      <td><span class="pill high">High*</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg; info</span> (self) · <span class="ev-direct">direct</span> (town)</span></td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-size:0.84rem; color:var(--text-meta);">*The <strong>High*</strong> rating reflects the <em>specificity</em> of the <strong>recorded place-name</strong> (these are the only town-level statements) &mdash; <strong>not</strong> certainty about which modern village it is. &ldquo;Freundburg&rdquo; and &ldquo;Deisse&rdquo; are misheard spellings; the identifications <em>Trendelburg</em> and <em>Deisel</em> are <a href="../germany/konzen-puzzle.html">phonetic interpretations</a> a researcher could read differently. The 1866 &ldquo;Deisse&rdquo; is independently attested <strong>twice</strong> &mdash; the St.&nbsp;Marcus church register (Doc&nbsp;F) and the St.&nbsp;Louis civil register (Doc&nbsp;E), two different offices &mdash; which strengthens the reading. Note &ldquo;Deisse&rdquo; sits in Kreis Hofgeismar; &ldquo;Kreis Cassel&rdquo; is Charles&rsquo;s looser name for the wider Hesse-Cassel region.</p>
+
+<h2 id="interpretations">How &ldquo;Freundburg&rdquo; and &ldquo;Deisse&rdquo; have been read</h2>
+
+<p>Because neither spelling matches a real place, the town behind each is an <strong>interpretation</strong>. Three researchers have proposed readings; here they are with the reasoning, ranked under the project&rsquo;s <a href="methodology.html#confidence">Working / Open / Eliminated</a> taxonomy. &ldquo;Working&rdquo; is the current best reading driving the search &mdash; not a proven identification.</p>
+
+<h3>&ldquo;Freundburg&rdquo; &mdash; the 1862 enlistment</h3>
+<table class="bd">
+  <thead><tr><th>Reading</th><th>Proposed by</th><th>Reasoning</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="said">Trendelburg</td>
+      <td>Peter Schr&auml;der <span class="src">(emails, Dec 2025)</span>; also wondered by AncestryProGenealogists <span class="src">(2020)</span></td>
+      <td>Charles said &ldquo;Trendelburg&rdquo;; the English-speaking clerk heard the first syllable <em>Trendel</em> as the English word <em>friend</em> and wrote its German equivalent <em>Freund</em> &mdash; &ldquo;Freund&rdquo;&#8202;+&#8202;&ldquo;-burg.&rdquo; Trendelburg adjoins Deisel inside the Konze-cluster radius. The 2020 journal independently raised Trendelburg as a possible reading.</td>
+      <td><span class="pill high">★ Working</span><span class="gtag">project anchor &mdash; an inference, not a confirmed identification</span></td>
+    </tr>
+    <tr>
+      <td class="said">Not Trendelburg<span class="dec">&mdash; left open</span></td>
+      <td>James Gunnis <span class="src">(Ancestry messages, Jun 2026)</span></td>
+      <td>Skeptical of the decode: &ldquo;one is 2 syllables and the other 3,&rdquo; and the U.S. Army clerk likely just wrote what he heard with no German-to-English translation; the enlistment chit may also be a mass transcription where errors crept in. Keeps Freundburg an open question within Hesse-Cassel.</td>
+      <td><span class="pill mod">Open</span><span class="gtag">a caution against over-reading the decode</span></td>
+    </tr>
+    <tr>
+      <td class="said">Freudenberg<span class="dec">near Schierstein, on the Rhine (~160 mi SW of Deisel)</span></td>
+      <td>AncestryProGenealogists <span class="src">(2020 journal)</span></td>
+      <td>First instinct: read &ldquo;Freundburg&rdquo; as <em>Freudenberg</em>, near Schierstein &mdash; ~160 miles south-west of Deisel, but <strong>right on the Rhine.</strong> So while it&rsquo;s ruled out as his birthplace, Charles could plausibly have lived there briefly before taking the river downstream to an emigration port for the steamship to America.</td>
+      <td><span class="pill elim">Eliminated</span><span class="gtag">as <em>origin</em> &mdash; no candidate in the Schierstein 1830s register; survives only as a possible Rhine-route waypoint</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>&ldquo;Deisse&rdquo; / &ldquo;Deissen&rdquo; &mdash; the 1866 marriage (church + civil)</h3>
+<table class="bd">
+  <thead><tr><th>Reading</th><th>Proposed by</th><th>Reasoning</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr>
+      <td class="said">Deisel<span class="dec">Kreis Hofgeismar</span></td>
+      <td>Thomas Blumenstein (2019) &rarr; Peter Schr&auml;der; <strong>AncestryProGenealogists</strong> (2020)</td>
+      <td>&ldquo;Deisse&rdquo; &rarr; <em>Deisel</em>, the village beside Trendelburg with a documented Konze cluster &mdash; the closest legal place-name to the spelling. The 2020 journal reached the same conclusion <em>after</em> weighing the Hessen-Nassau candidates Dies and Diez (next row).</td>
+      <td><span class="pill high">★ Working</span><span class="gtag">project anchor &mdash; independent researchers converge here</span></td>
+    </tr>
+    <tr>
+      <td class="said">Dissen<span class="dec">+ Grifte / Gudensberg, Kreis-Kassel ring</span></td>
+      <td>James Gunnis <span class="src">(Ancestry messages, Jun 2026)</span></td>
+      <td>Reads it as &ldquo;Deissen&rdquo; and proposes <em>Dissen</em> (Grifte is its 1912 parish), taking &ldquo;Kreis Cassel&rdquo; literally &mdash; a place <em>near Kassel</em>, perhaps a village later absorbed &mdash; plus a wider Kreis-Kassel ring.</td>
+      <td><span class="pill mod">Open</span><span class="gtag">widens the search beyond Deisel; now part of the <a href="../search-coverage.html#open">Tier-3 plan</a></span></td>
+    </tr>
+    <tr>
+      <td class="said">Dies &middot; Diez<span class="dec">Hessen-Nassau (Unterwesterwald / Unterlahn)</span></td>
+      <td>AncestryProGenealogists <span class="src">(2020, considered)</span></td>
+      <td>Two Rhine-area candidates weighed for &ldquo;Deisse&rdquo;: <em>Dies</em>, Unterwesterwaldkreis (Lutheran parish Holzappel, Unterlahnkreis), and <em>Diez</em>, Unterlahnkreis (Lutheran parish Freiendiez) &mdash; both in Hessen-Nassau, well south of Kurhessen.</td>
+      <td><span class="pill elim">Eliminated</span><span class="gtag">set aside by the same journal in favour of Deisel; outside Hesse-Cassel</span></td>
+    </tr>
+    <tr>
+      <td class="said">No exact match</td>
+      <td>Jens M&uuml;ller <span class="src">(2018)</span></td>
+      <td>The record &ldquo;very clearly says <em>Deisse, Kreis Cassel, Churhessen</em>,&rdquo; but no place matches that exact form &mdash; the problem the other readings try to solve.</td>
+      <td><span class="pill low">Baseline</span><span class="gtag">the unsolved starting point</span></td>
+    </tr>
+  </tbody>
+</table>
+<p style="font-size:0.84rem; color:var(--text-meta);">Sources: James Gunnis&rsquo;s readings are from his Ancestry correspondence (June 2026); Peter Schr&auml;der&rsquo;s from his December 2025 emails; the AncestryProGenealogists readings (Freudenberg for &ldquo;Freundburg&rdquo;; Dies and Diez weighed, but <strong>Deisel concluded</strong>, for &ldquo;Deisse&rdquo;) from their 2020 journal. The two leading readings (Trendelburg, Deisel) are adjacent villages, so both &ldquo;Working&rdquo; statements point to the same corner of Kurhessen; James&rsquo;s &ldquo;Open&rdquo; alternatives (Dissen, Grifte, Gudensberg) sit a little south, toward Kassel, and are folded into the widened search.</p>
+
+<div class="callout">
+  <div class="ttl">&ldquo;From&rdquo; is not &ldquo;born in&rdquo;</div>
+  <p style="margin:0; font-size:0.92rem;">A caution AncestryProGenealogists raised and James Gunnis echoed: a man saying he was <em>from</em> Deisse / Deisel tells us where he considered home or last lived &mdash; <strong>not necessarily where he was baptized.</strong> He could have been born in one parish and raised in another (James: &ldquo;if Charles was born somewhere else but lived there a long time&hellip;&rdquo;). It also means the Rhine reading isn&rsquo;t fully dead as <em>biography</em> even though it&rsquo;s dead as <em>origin</em>. This gap is exactly why the search leans on <a href="../search-coverage.html">confirmation registers</a>, which record each child&rsquo;s <em>birth date and place</em> regardless of where the family later moved.</p>
+</div>
+
+<h2 id="region">Region &amp; country &mdash; the corroborating records</h2>
+
+<p>The remaining records agree he was Hessian but name no town. Two are <span class="ev-indirect">indirect</span> &mdash; origin inferred from an act rather than a stated place &mdash; and the censuses and death certificate drop to country level.</p>
+
+<table class="bd">
+  <thead>
+    <tr><th>#</th><th>Date</th><th>As stated / implied</th><th>Record &amp; who supplied it</th><th>Verify</th><th>Confidence</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="num">4</td><td class="date">1866</td>
+      <td class="said">Hesse-Cassel <span class="dec">(implied)</span></td>
+      <td>Firstborn son named <strong>Friedrich Wilhelm</strong> &mdash; after Friedrich Wilhelm I, the reigning Elector of Hesse-Cassel. <span class="src">An act of Charles&rsquo;s, not a stated place: loyalty to a specific sovereign &amp; state.</span></td>
+      <td class="src vlink"><a href="../children/friedrich-wilhelm.html">Child page</a></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg;</span> (self) · <span class="ev-indirect">indirect</span> (region)</span></td>
+    </tr>
+    <tr>
+      <td class="num">5</td><td class="date">21 Oct 1868</td>
+      <td class="said">Hesse-Cassel / Kurhessen <span class="dec">(implied)</span></td>
+      <td>U.S. naturalization &mdash; renounces allegiance to <strong>&ldquo;the King of Prussia,&rdquo;</strong> not the Elector of Hesse. <span class="src">Prussia had annexed Hesse-Cassel in 1866; Charles&rsquo;s renunciation shows he knew his homeland had been absorbed.</span></td>
+      <td class="src vlink"><a href="../evidence/card-5-naturalization.html">Card 5</a> <span class="src">(NARA)</span></td>
+      <td><span class="pill mod">Moderate</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg;</span> (self) · <span class="ev-indirect">indirect</span> (region)</span></td>
+    </tr>
+    <tr>
+      <td class="num">6</td><td class="date">1880</td>
+      <td class="said">Germany <span class="dec">(country level)</span></td>
+      <td>U.S. Federal Census, 1534 Jackson St., St.&nbsp;Louis. <span class="src">Birthplace column reads <strong>&ldquo;Germany&rdquo;</strong> (confirmed); informant unrecorded.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/1:1:M6N9-XYL" target="_blank" rel="noopener noreferrer">FamilySearch &#x2197;</a></td>
+      <td><span class="pill low">Low</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg;</span> (household) · <span class="ev-direct">direct</span> (country)</span></td>
+    </tr>
+    <tr>
+      <td class="num">7</td><td class="date">1900</td>
+      <td class="said">Germany <span class="dec">(country level)</span></td>
+      <td>U.S. Federal Census, Peter Kuhn household. <span class="src">Charles answered this census himself (he gave his 1859 arrival); the birthplace field reads <strong>&ldquo;Germany&rdquo;</strong> (confirmed) &mdash; country only.</span></td>
+      <td class="src vlink"><a href="https://www.familysearch.org/ark:/61903/1:1:M38T-XV2" target="_blank" rel="noopener noreferrer">FamilySearch &#x2197;</a></td>
+      <td><span class="pill low">Low&ndash;Mod</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-primary">1&deg;</span> (self) · <span class="ev-direct">direct</span> (country)</span></td>
+    </tr>
+    <tr>
+      <td class="num">8</td><td class="date">17 Dec 1903</td>
+      <td class="said">Germany <span class="dec">(country level)</span></td>
+      <td>City of St.&nbsp;Louis death certificate no.&nbsp;10619. <span class="src">Birthplace reads <strong>&ldquo;Germany&rdquo;</strong> (confirmed), given post-mortem by a survivor.</span></td>
+      <td class="src vlink"><a href="https://www.ancestry.com/imageviewer/collections/1172/images/vrmmo1833_c10513-0714?ssrc=&amp;usePUB=true&amp;pId=7145333" target="_blank" rel="noopener noreferrer">Ancestry image &#x2197;</a></td>
+      <td><span class="pill low">Low</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg;</span> (survivor) · <span class="ev-direct">direct</span> (country)</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="callout">
+  <div class="ttl">A telling silence &mdash; the pension file</div>
+  <p style="margin:0; font-size:0.9rem;">Charles&rsquo;s 40-page <a href="../sources/pension-file.html">pension file</a> (1890&ndash;1903) is the single richest body of his own sworn testimony &mdash; and a page-by-page audit found <strong>no self-stated birthplace anywhere in it.</strong> Even where he had every reason to give it, he never named his German home again after 1868. That silence is itself part of the record.</p>
+</div>
+
+<h2 id="takeaway">What the statements point to</h2>
+
+<p>Strip out the country-level &ldquo;Germany&rdquo; entries and only the town statements carry real geographic information &mdash; and they <em>converge</em>: &ldquo;Freundburg&rdquo; (1862) decodes to <strong>Trendelburg</strong>, and &ldquo;Deisse, Kreis Cassel&rdquo; (1866, recorded in <em>both</em> the church and the civil marriage registers) decodes to <strong>Deisel</strong> &mdash; two adjacent villages in the same <a class="glossary-link" href="glossary.html#g-kreis" title="Glossary: Kreis Hofgeismar">Kreis Hofgeismar</a> corner of the former Electorate of Hesse-Cassel. Every other record is consistent with that and contradicts none of it. That convergence is the working geographic anchor of the whole investigation and the reason the <a href="../search-coverage.html">parish search</a> is centred on Trendelburg and Deisel. The decoding itself &mdash; how <em>Trendelburg</em> becomes <em>Freundburg</em> to an English-speaking clerk &mdash; is laid out on <a href="../germany/konzen-puzzle.html">The Konzen Puzzle</a>.</p>
+
+<p style="margin-top:1.4rem; padding:0.8rem 1rem; background:var(--bg-card-tint); border-left:4px solid var(--brand); border-radius:3px; font-size:0.95rem;"><strong>Related.</strong> The conflicting <em>birth dates</em> are on <a href="birthdate-records.html">Birth date across the records</a>; the <em>surname</em> spellings on <a href="../surname-records.html">Surname across the records</a>; the phonetic decoding on <a href="../germany/konzen-puzzle.html">The Konzen Puzzle</a>; and what these places have been searched against on <a href="../search-coverage.html">Parish search coverage</a>.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="birthdate-records.html">Birth date</a> · <a href="../surname-records.html">Surname</a> · <a href="../search-coverage.html">Parish search coverage</a> · <a href="../germany/konzen-puzzle.html">The Konzen Puzzle</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../de/index.html">Startseite</a></li>
+        <li><a href="../de/stories.html">Geschichten</a></li>
+        <li><a href="../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../methodology.html">Methodik</a></li>
+        <li><a href="../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../de/glossary.html">Glossar</a></li>
+        <li><a href="../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../de/about.html">Über</a></li>
+        <li><a href="../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

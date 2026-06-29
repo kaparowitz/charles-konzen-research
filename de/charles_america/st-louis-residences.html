@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/charles_america/st-louis-residences.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/charles_america/st-louis-residences.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/charles_america/st-louis-residences.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>St. Louis Residences — Charles Gannsen in America</title>
+<link rel="canonical" href="https://charles-research.netlify.app/de/charles_america/st-louis-residences.html">
+<link rel="stylesheet" href="../../charles_america/_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../../assets/dark-mode.css?v=20260530c">
+<script defer src="../../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../../assets/de-pages.js?v=20260628"></script>
+<script defer src="../../assets/lang-toggle.js?v=20260628"></script>
+<script defer src="../../assets/site-search.js?v=20260529-mobilesearch"></script>
+<!-- Leaflet 1.9.4 from unpkg CDN (no API key required) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  table.kv td a { color:#8a6420; }
+  .pl-list-tight { list-style:disc; padding-left:1.4rem; }
+  .pl-list-tight li { margin-bottom:0.3rem; font-size:0.92rem; line-height:1.5; }
+  .card.accent { background:linear-gradient(140deg, #fffaf0, #f6ebd2); border:1px solid #d8b366; border-left:4px solid #d8b366; padding:0.9rem 1.1rem; margin:1rem 0; border-radius:4px; }
+  .card.accent h3 { color:#8a6420; margin:0 0 0.5rem; padding:0; border:none; }
+  .tab-open-q { background:#fff8e8; border:1px solid #d8b366; border-left:4px solid #d8b366; border-radius:4px; padding:0.8rem 1rem; margin-top:1rem; }
+  .tab-open-q h4 { color:#8a6420; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 0.5rem; }
+  .tab-open-q ul { padding-left:1.2rem; font-size:0.88rem; }
+  .small { font-size:0.85rem; }
+  .mt-1rem { margin-top:1rem; }
+
+  /* Leaflet map container */
+  #fmap { height: 70vh; min-height: 480px; border: 2px solid #d8b366; border-radius: 6px; box-shadow: 0 4px 14px rgba(74, 58, 34, 0.18); margin: 1rem 0 1.4rem; }
+  .leaflet-popup-content-wrapper { background:#fffaf0; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.18); }
+  .leaflet-popup-content { font-family:var(--font-serif); color:#3a2f1e; font-size:0.92rem; line-height:1.45; margin:0.7rem 0.9rem; }
+  .leaflet-popup-content h4 { color:#8a6420; font-size:1rem; margin-bottom:0.25rem; padding-bottom:0.2rem; border-bottom:1px solid #d8c8a8; }
+  .leaflet-popup-content .yr { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:0.78rem; color:#8a6420; font-weight:700; letter-spacing:0.03em; display:inline-block; margin-bottom:0.3rem; }
+  .leaflet-popup-content .body { font-size:0.88rem; color:#3a2f1e; }
+  .leaflet-popup-content a { color:#8a6420; border-bottom:1px dotted #d8c8a8; }
+  .leaflet-popup-content .openmap { display:inline-block; margin-top:0.4rem; font-size:0.82rem; color:#8a6420; border-bottom:1px dashed #d8b366; }
+  .leaflet-popup-tip { background:#fffaf0; }
+
+  /* Map legend tile */
+  .map-legend { background:#fffaf0; border:1px solid #d8c8a8; border-radius:4px; padding:0.9rem 1.1rem; margin:0 0 1.4rem; font-size:0.88rem; }
+  .map-legend h3 { font-size:0.95rem; color:#1f1a14; margin-bottom:0.5rem; padding-bottom:0.25rem; border-bottom:1px solid #d8c8a8; }
+  .map-legend .legend-row { display:flex; align-items:center; gap:0.55rem; margin-bottom:0.35rem; }
+  .map-legend .legend-row:last-child { margin-bottom:0; }
+  .map-legend .swatch { flex:0 0 18px; width:18px; height:18px; border-radius:50%; border:2px solid #fffaf0; box-shadow:0 0 0 1px #5a4a32; display:inline-block; }
+  .map-legend .swatch.house { background:#d8b366; }
+  .map-legend .swatch.last { background:#a04020; }
+  .map-legend .swatch.church { background:#5a4a8a; }
+  .map-legend .swatch.cemetery { background:#3a4a3a; }
+  .map-legend .swatch.neighbor { background:#5a8a4a; }
+  .map-legend .swatch.child { background:#3a6090; }
+  .map-legend .swatch.witness { background:#a76a30; }
+  .map-legend .swatch.sponsor { background:#8a6a14; }
+  .map-legend .swatch.inlaw { background:#7a3a8a; }
+  .map-legend .swatch.approx { background:#c8b896; border-style:dashed; }
+  .map-legend .legend-label { color:#3a2f1e; font-size:0.86rem; }
+  .map-legend .legend-label .small { color:#6a5a42; font-size:0.76rem; }
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Charles Research">
+  <meta property="og:title" content="St. Louis Residences — Charles Gannsen in America">
+  <meta property="og:description" content="Charles's residences across thirty-eight years in St. Louis (1865–1903), reconciled across three independent record sets: (a) his own handwritten address-history letter inside the Civil War pension file (Page 29, c. 1898); (b) the 1880 and 1900 federal censuses; and (c) the 1871 and 1895 St. Louis c">
+  <meta property="og:url" content="https://charles-research.netlify.app/de/charles_america/st-louis-residences.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/charles_america.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/charles_america.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="St. Louis Residences — Charles Gannsen in America">
+  <meta name="twitter:description" content="Charles's residences across thirty-eight years in St. Louis (1865–1903), reconciled across three independent record sets: (a) his own handwritten address-history letter inside the Civil War pension file (Page 29, c. 1898); (b) the 1880 and 1900 federal censuses; and (c) the 1871 and 1895 St. Louis c">
+  <meta name="description" content="Charles's residences across thirty-eight years in St. Louis (1865–1903), reconciled across three independent record sets: (a) his own handwritten address-history letter inside the Civil War pension file (Page 29, c. 1898); (b) the 1880 and 1900 federal censuses; and (c) the 1871 and 1895 St. Louis c">
+<script defer src="../../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../../assets/site-nav.css?v=20260629sticky">
+<script defer src="../../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+
+<!-- BEGIN-MAP-OVERLAY-LEGEND -->
+<style>
+  .map-wrap { position: relative; }
+  .map-wrap > .ge-map-legend,
+  .map-wrap > .ca-map-legend,
+  .map-wrap > .cw-map-legend,
+  .map-wrap > .im-map-legend,
+  .map-wrap > .map-legend,
+  .map-wrap > .towns-legend,
+  .map-wrap > aside.legend {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 500;
+    max-width: 280px;
+    background: rgba(255, 250, 240, 0.96) !important;
+    border: 1px solid var(--border-medium, #a88a4a) !important;
+    border-radius: 4px;
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.82rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
+    margin: 0 !important;
+    color: var(--text-strong, #1f1a14);
+  }
+  :root.theme-dark .map-wrap > .ge-map-legend,
+  :root.theme-dark .map-wrap > .ca-map-legend,
+  :root.theme-dark .map-wrap > .cw-map-legend,
+  :root.theme-dark .map-wrap > .im-map-legend,
+  :root.theme-dark .map-wrap > .map-legend,
+  :root.theme-dark .map-wrap > .towns-legend,
+  :root.theme-dark .map-wrap > aside.legend,
+  :root:not(.theme-light) .map-wrap > .ge-map-legend,
+  :root:not(.theme-light) .map-wrap > .ca-map-legend,
+  :root:not(.theme-light) .map-wrap > .cw-map-legend,
+  :root:not(.theme-light) .map-wrap > .im-map-legend,
+  :root:not(.theme-light) .map-wrap > .map-legend,
+  :root:not(.theme-light) .map-wrap > .towns-legend,
+  :root:not(.theme-light) .map-wrap > aside.legend {
+    background: rgba(28, 22, 16, 0.92) !important;
+    border-color: var(--border-medium, #6a5a40) !important;
+    color: var(--text-body, #e8dfc8);
+  }
+  @media (max-width: 700px) {
+    .map-wrap > .ge-map-legend,
+    .map-wrap > .ca-map-legend,
+    .map-wrap > .cw-map-legend,
+    .map-wrap > .im-map-legend,
+    .map-wrap > .map-legend,
+    .map-wrap > .towns-legend,
+    .map-wrap > aside.legend {
+      position: static;
+      max-width: none;
+      margin: 0.6rem 0 0 !important;
+    }
+  }
+</style>
+<!-- END-MAP-OVERLAY-LEGEND -->
+<style>
+  /* Page-specific fix (21 Jun 2026): the residence map has pins in every
+     quadrant, so a top-right overlay legend covered the north-side pins.
+     Render this map's legend as a normal tile BELOW the map instead, so it
+     can never hide a circle. Overrides the shared MAP-OVERLAY-LEGEND block. */
+  .map-wrap > .map-legend {
+    position: static !important;
+    top: auto !important; right: auto !important; left: auto !important;
+    max-width: none !important;
+    margin: 0.9rem 0 0 !important;
+    box-shadow: none !important;
+  }
+  /* Lay the legend rows out in a compact, wrapping grid below the map. */
+  .map-wrap > .map-legend .legend-row {
+    display: inline-flex;
+    width: auto;
+    vertical-align: top;
+    margin: 0 1.4rem 0.45rem 0;
+    max-width: 340px;
+  }
+</style>
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Charles in America",
+      "item": "https://charles-research.netlify.app/index.html#charles"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "St. Louis Residences"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/charles_america/st-louis-residences.html#article",
+  "headline": "St. Louis Residences — Charles Gannsen in America",
+  "url": "https://charles-research.netlify.app/de/charles_america/st-louis-residences.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-06-21",
+  "description": "Charles's residences across thirty-eight years in St. Louis (1865–1903), reconciled across three independent record sets: (a) his own handwritten address-history letter inside the Civil War pension file (Page 29, c. 1898); (b) the 1880 and 1900 federal censuses; and (c) the 1871 and 1895 St. Louis c"
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../../de/index.html" role="menuitem">Überblick</a>
+      <a href="../../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../methodology.html" role="menuitem">Methodik</a>
+      <a href="../../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="ca-hero cinema-section-hero" data-tone="stlouis">
+  <div class="crumbs"><a href="../index.html#charles">← Charles Research</a> &nbsp;/&nbsp; <a href="../index.html#charles">Charles in America</a> &nbsp;/&nbsp; St. Louis Residences</div>
+  <h1>St. Louis Residences — 1865 to 1903</h1>
+  <div class="sub">Six documented addresses across 38 years · LaSalle Park / Soulard → Kosciusko (with one 1880 north-side detour to Baden)</div>
+  <div class="meta-row"><span class="badge battery">CHARLES IN AMERICA</span><span class="date">Reconciled across pension file, 2 censuses, 2 directories</span></div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="summary-card">
+  <h2>★ At a Glance</h2>
+  <p class="bottom-line">Charles's residences across thirty-eight years in St. Louis (1865–1903), reconciled across three independent record sets: <strong>(a)</strong> his own handwritten address-history letter inside the <a href="../../sources/pension-file.html#p29">Civil War pension file (Page 29, c. 1898)</a>; <strong>(b)</strong> the 1880 and 1900 federal censuses; and <strong>(c)</strong> the 1871 and 1895 St. Louis city directories. Six of the seven verified addresses cluster on the south side of St. Louis, between downtown and the river: 1518 S. 7th in <strong>LaSalle Park</strong> (1865–69), then 2409 S. Broadway, 2412 S. 2nd, 2408 DeKalb, and 168/170 Sidney all in modern <strong>Kosciusko</strong> (1874–1903). The 1880 census places the family at 1534 Jackson Street — in the south-central Ward 9 district, where the period Jackson Street ran between Columbus and DeKalb across Sidney St (not the modern north-side Jackson Street in Baden). The two DeKalb Street numbers visible in the secondary records (2405 rear, 2407 front) are adjacent buildings on the same lot.</p>
+</section>
+
+<h3 class="mt-section" id="st-louis-residences-mapped">St. Louis residences — mapped</h3>
+  <p>Charles's residences across thirty-eight years in St. Louis (1865–1903), reconciled across three independent record sets: <strong>(a)</strong> his own handwritten address-history letter inside the <a href="../../sources/pension-file.html#p29">Civil War pension file (Page 29, c. 1898)</a>; <strong>(b)</strong> the 1880 and 1900 federal censuses; and <strong>(c)</strong> the 1871 and 1895 St. Louis city directories. The earliest addresses cluster in the historically-German <strong>Soulard / LaSalle Park</strong> district south of downtown; the family then settled long-term on the <strong>Kosciusko</strong> blocks closer to the river — DeKalb Street and Sidney Street — where Charles spent most of his post-1890 life. The two DeKalb Street numbers visible in the secondary records (2405 rear, 2407 front) are adjacent buildings on the same lot — though the pension file itself uses "2408 DeKalb" as the canonical address through the entire 1890–1898 period. The interactive map below plots every documented address; click any pin for source detail and an "Open in Google Maps" link.</p>
+
+  <!-- BEGIN-MAP-WRAP -->
+<div class="map-wrap">
+<div id="fmap" role="img" aria-label="Interactive map of Charles Gannsen family addresses in St. Louis"></div>
+
+  <div class="map-legend">
+    <h3>Legend</h3>
+    <div class="legend-row"><span class="swatch house"></span><span class="legend-label"><strong>Charles's residences</strong> <span class="small">— gold pins, in chronological order</span></span></div>
+
+    <div class="legend-row"><span class="swatch last"></span><span class="legend-label"><strong>168 Sidney — last residence at death</strong> <span class="small">(1903)</span></span></div>
+    <div class="legend-row"><span class="swatch church"></span><span class="legend-label"><strong>St. Marcus Evangelical Church</strong> <span class="small">— marriage 1866 + 7 baptisms 1866–1881</span></span></div>
+    <div class="legend-row"><span class="swatch cemetery"></span><span class="legend-label"><strong>Old St. Marcus Cemetery</strong> <span class="small">— burial 1903</span></span></div>
+</div>
+</div>
+<!-- END-MAP-WRAP -->
+
+  <script>
+  /* Wrapped in DOMContentLoaded — Leaflet CDN <script> is defer'd (16 May 2026). */
+  document.addEventListener('DOMContentLoaded', function () {
+    var pins = [
+      { ll:[38.6160435,-90.1963046], cls:"house",    title:"1518 South 7th Street",                  yr:"1865–1869",  body:"Post-Civil War return. Charles's first documented St. Louis residence after his December 1865 discharge. Soulard / LaSalle Park. Pension declaration writes the address as '1516 So. 7th St.'", gmaps:"https://www.google.com/maps/search/?api=1&query=1518+S+7th+St+St+Louis+MO+63104" },
+      { ll:[38.5946,-90.2178], cls:"house",    title:"718 Gate(s) Street",                     yr:"1869–1876",  body:"Charles's <strong>only directory-confirmed address</strong> — a St.&nbsp;Louis Railroad horse-car workers' building, where he is named year by year under four surname spellings (1871 &amp; 1872&ndash;73 Johnson, 1874 Konsen, 1876 Gonson). &ldquo;Gate&rdquo; street, long lost from maps, is now located at <strong>Carondelet Av near Pestalozzi (Benton Park, 1870 Ward 1)</strong> via the directory call-box lists — pin approximate. See the <a href='../research_logs/1870-census.html'>1870-census research log</a>.", gmaps:"https://www.google.com/maps/search/?api=1&query=Carondelet+Ave+and+Pestalozzi+St+Louis+MO" },
+      { ll:[38.6022530,-90.2057871], cls:"house",    title:"2409 South Broadway",                    yr:"~1874–1877", body:"Pension file: family lived here 'about 3 years.' Kosciusko neighborhood.", gmaps:"https://www.google.com/maps/search/?api=1&query=2409+S+Broadway+St+Louis+MO" },
+      { ll:[38.6008107,-90.2015054], cls:"house",    title:"2412 South 2nd Street",                  yr:"~1877–1880", body:"Short residence before the move to north St. Louis (the 1880 census Jackson Street address).", gmaps:"https://www.google.com/maps/search/?api=1&query=2412+S+2nd+St+St+Louis+MO" },
+      { ll:[38.5984303,-90.2015038], cls:"house",    title:"2408 DeKalb Street",                     yr:"1890–1900",  body:"The long-tenure address of Charles's later life — Kosciusko. Recorded across pension declarations, depositions, and the Surgeon's certificate of examination through 1898. Adjacent variants 2405 (rear) and 2407 appear in the 1890 Veterans Schedule and 1895 City Directory. Gould's 1895 directory lists 'Gannsen Charles, watchmaker, r. rear 2407 DeKalb' and, directly beneath, 'Gannsen Charles, jr., laborer' at the same address — the first documentary trace of a son, Charles Jr.", gmaps:"https://www.google.com/maps/search/?api=1&query=2408+DeKalb+St+St+Louis+MO" },
+      { ll:[38.5976971,-90.2014151], cls:"house",    title:"170 Sidney Street",                      yr:"June 1900",       body:"1900 federal census — recorded as a boarder in the Peter Kuhn household after Auguste's death in 1896. Listed: 'Charles Johnson, boarder; widowed; immig. 1859; naturalized; retired.'", gmaps:"https://www.google.com/maps/search/?api=1&query=170+Sidney+St+St+Louis+MO" },
+      { ll:[38.5978135,-90.2012588], cls:"last",     title:"168 Sidney Street — last residence", yr:"16 Dec 1903",    body:"Last residence of record on the 1903 death certificate (cert dates death 17 Dec; canonical 16 Dec per parish burial register #3393 — a 1-day source discrepancy logged on the Doc A–O crosswalk). Charles died of stomach cancer at age 68 (calculated; cert records 69). Buried three days later at Old St. Marcus Cemetery.", gmaps:"https://www.google.com/maps/search/?api=1&query=168+Sidney+St+St+Louis+MO" },
+      { ll:[38.6096104,-90.2176383], cls:"church",   title:"St. Marcus Evangelical Church",          yr:"1866–1881",  body:"Site of Charles &amp; Auguste's wedding (7 January 1866) and the baptisms of all seven Gannsen children (1866–1881). Pin shows the 1880s rebuild at 2102 Russell Boulevard (Saint Marcus United Church of Christ today). The original 1860s sanctuary stood at 9th &amp; Wash Streets in downtown — that intersection no longer exists.", gmaps:"https://www.google.com/maps/search/?api=1&query=2102+Russell+Blvd+St+Louis+MO" },
+      { ll:[38.5711760,-90.2837910], cls:"cemetery", title:"Old St. Marcus Cemetery",                yr:"19 Dec 1903",     body:"Charles's burial site. 6800 Gravois Avenue, Princeton Heights. The same parish that married him and baptized his seven children buried him 37 years later.", gmaps:"https://www.google.com/maps/search/?api=1&query=6800+Gravois+Ave+St+Louis+MO" },
+    ];
+
+    var COLORS = { house:"#d8b366", last:"#a04020", church:"#5a4a8a", cemetery:"#3a4a3a", neighbor:"#5a8a4a", child:"#3a6090", witness:"#a76a30", sponsor:"#8a6a14", inlaw:"#7a3a8a", approx:"#c8b896" };
+
+    function makeIcon(color, dashed) {
+      var border = dashed ? "2px dashed #5a4a32" : "2px solid #fffaf0";
+      var html = '<div style="background:' + color + '; width:18px; height:18px; border-radius:50%; ' +
+                 'border:' + border + '; box-shadow:0 0 0 1px #5a4a32, 0 2px 5px rgba(0,0,0,0.35);"></div>';
+      return L.divIcon({ html:html, className:"fmap-pin", iconSize:[22,22], iconAnchor:[11,11], popupAnchor:[0,-8] });
+    }
+
+    var map = L.map('fmap', { scrollWheelZoom:false }).setView([38.6080, -90.2050], 13);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var bounds = L.latLngBounds([]);
+    pins.forEach(function(p) {
+      var marker = L.marker(p.ll, { icon: makeIcon(COLORS[p.cls] || "#d8b366", p.cls === "approx"), title: p.title }).addTo(map);
+      marker.bindPopup(
+        '<h4>' + p.title + '</h4>' +
+        '<div class="yr">' + p.yr + '</div>' +
+        '<div class="body">' + p.body + '</div>' +
+        '<a class="openmap" href="../../charles_america/' + p.gmaps + '" target="_blank" rel="noopener noreferrer">✦ Open in Google Maps</a>',
+        { maxWidth: 320 }
+      );
+      bounds.extend(p.ll);
+    });
+    if (bounds.isValid()) map.fitBounds(bounds, { padding:[40,40], maxZoom:14 });
+  });
+  </script>
+
+  <style>
+  /* Address ledger — mirrors the "Surname across the records" table format */
+  table.bd { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.6rem 0 0.8rem; }
+  table.bd thead tr { background: var(--bg-card-tint); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-meta); }
+  table.bd th, table.bd td { padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); }
+  table.bd tbody tr:nth-child(even) td { background: var(--bg-card); }
+  table.bd .date { white-space: nowrap; font-weight: 700; color: var(--text-strong); }
+  table.bd .addr { font-weight: 700; color: var(--text-strong); }
+  table.bd .src  { font-size: 0.82rem; color: var(--text-meta); line-height: 1.45; }
+  table.bd .vlink { font-weight: 700; white-space: nowrap; font-size: 0.82rem; }
+  table.bd .pill { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; border: none; border-left: none; white-space: nowrap; }
+  table.bd .pill.high { background: #5a8a4a; color: #fff; }
+  table.bd .pill.low  { background: #b48a3a; color: #2c2620; }
+  table.bd .gtag { display: block; margin-top: 0.35rem; font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-meta); text-transform: none; letter-spacing: 0; line-height: 1.3; }
+  html.theme-dark table.bd .gtag { color: #b9a98a; }
+  .conf-key { font-size: 0.8rem; color: var(--text-meta); margin: 0 0 1.2rem; }
+  .conf-key .pill { display:inline-block; font-size:0.66rem; font-weight:700; text-transform:uppercase; padding:1px 6px; border-radius:3px; border:none; }
+  .conf-key .pill.high { background:#5a8a4a; color:#fff; }
+  .conf-key .pill.low  { background:#b48a3a; color:#2c2620; }
+  @media print { table.bd .pill { border: 1px solid #000; color: #000 !important; background: none !important; } }
+  </style>
+  <h3 style="margin-top:1.4rem;" id="address-timeline-sources">Address timeline &amp; sources</h3>
+  <p class="small" style="color:#5a4a32; font-style:italic; margin-bottom:0.6rem;">The sequence below has been reconciled against three independent authorities: (a) Charles's own handwritten address-history letter inside the <a href="../../sources/pension-file.html#p29">Civil War pension file (Page 29)</a>, dated circa 1898; (b) the U.S. federal census records of 1880, 1890, and 1900; and (c) the St. Louis city directories. Where the three disagree, the disagreement is shown.</p>
+  <table class="bd">
+    <thead>
+      <tr><th>Years</th><th>Address</th><th>Record &amp; who supplied it</th><th>Verify</th><th>Confidence</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="date">~1865&ndash;1869</td>
+        <td class="addr"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=1518+S+7th+St+St+Louis+MO+63104" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">1518 (or 1516) S. 7th St.</a><br><span class="small" style="font-weight:400;color:var(--text-meta);">Soulard / LaSalle Park</span></td>
+        <td class="src">First address after discharge (20 Dec 1865) per Charles's own address-history letter, <em>c.&nbsp;1898</em> — written ~30 years later, giving the number as "1516 So. 7th St." A June 2026 Full-Text sweep found <strong>no</strong> contemporaneous listing for him (any spelling) at 1516/1518 S. 7th; the 1870&ndash;71 directory lists tailors <em>Albert &amp; Jacob Schweikert</em> there, not Charles. Number and dates are approximate.</td>
+        <td class="vlink"><a href="../../sources/pension-file.html#p29">Pension p.29</a></td>
+        <td><span class="pill low">Recollection</span><span class="gtag">Self-report · <span class="ev-primary">1&deg; info</span> · ~30 yrs after · uncorroborated</span></td>
+      </tr>
+      <tr>
+        <td class="date">1869&ndash;1876</td>
+        <td class="addr">718 Gate(s) St.<br><span class="small" style="font-weight:400;color:var(--text-meta);">Benton Park</span></td>
+        <td class="src">The <strong>only one of his early (pre-1880) addresses with a contemporaneous source</strong> — the surrounding 1860s&ndash;70s addresses rest on recollection alone. The St.&nbsp;Louis city directories name him here year by year under four spellings — <em>1871 &amp; 1872&ndash;73</em> Johnson (conductor), <em>1874</em> Konsen (driver — the same spelling as the 1875 baptism), <em>1876</em> Gonson (matching the 1880 census). A St.&nbsp;Louis R.R. horse-car workers' building. The directories run two years past the pension letter's "moved ~1874," so that recollection is slightly off. <em>(His later addresses — 1880 &amp; 1900 censuses and 2408 DeKalb — are independently documented too; only the early cluster hinges on this one source.)</em></td>
+        <td class="vlink"><a href="https://www.familysearch.org/ark:/61903/3:1:3QHK-XQZY-TLHN?view=fullText&amp;keywords=718+Gate&amp;lang=en" target="_blank" rel="noopener noreferrer">1872&ndash;73 ↗</a><br><a href="https://www.familysearch.org/ark:/61903/3:1:3QHK-LQZY-B4P9?view=fullText&amp;keywords=718+Gate&amp;lang=en" target="_blank" rel="noopener noreferrer">1874 ↗</a><br><a href="https://www.familysearch.org/search/full-text/results?q.text=%22718%20Gate%22" target="_blank" rel="noopener noreferrer">all ↗</a></td>
+        <td><span class="pill high">Confirmed</span><span class="gtag"><span class="ev-original">Original</span> · contemporaneous directories (4 yrs) + pension · <span class="ev-direct">direct</span></span></td>
+      </tr>
+      <tr>
+        <td class="date">1874&ndash;~1877</td>
+        <td class="addr"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=2409+S+Broadway+St+Louis+MO" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">2409 S. Broadway</a><br><span class="small" style="font-weight:400;color:var(--text-meta);">Soulard, riverfront arterial</span></td>
+        <td class="src">In Charles's 1898 pension letter he lived here "about 3 years" from 1874. Not found in any directory or census. Overlaps the 718 Gate directory tenure — one was likely the family's, the other a work or interim address.</td>
+        <td class="vlink"><a href="../../sources/pension-file.html#p29">Pension p.29</a></td>
+        <td><span class="pill low">Recollection</span><span class="gtag">Self-report · <span class="ev-primary">1&deg; info</span> · uncorroborated</span></td>
+      </tr>
+      <tr>
+        <td class="date">~late 1870s</td>
+        <td class="addr"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=2412+S+2nd+St+St+Louis+MO" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">2412 S. 2nd St.</a></td>
+        <td class="src">The next address in the 1898 letter, between 2409 Broadway and the move to DeKalb. Not independently sourced.</td>
+        <td class="vlink"><a href="../../sources/pension-file.html#p29">Pension p.29</a></td>
+        <td><span class="pill low">Recollection</span><span class="gtag">Self-report · <span class="ev-primary">1&deg; info</span> · uncorroborated</span></td>
+      </tr>
+      <tr>
+        <td class="date">1880</td>
+        <td class="addr">1534 Jackson St.<br><span class="small" style="font-weight:400;color:var(--text-meta);">North St. Louis</span></td>
+        <td class="src">1880 U.S. Census: "<em>Charles Gonson, 39, cotton-press worker; wife Guissie [sic], 36; children Joseph, Katy, Gussie, Lewise, Charly.</em>" ED&nbsp;137, sheet&nbsp;4D, dwelling&nbsp;15, family&nbsp;37 (AncestryProGenealogists journal Doc&nbsp;D).</td>
+        <td class="vlink"><a href="https://www.familysearch.org/ark:/61903/1:1:M6N9-XYL?lang=en" target="_blank" rel="noopener noreferrer">1880 census ↗</a></td>
+        <td><span class="pill high">Confirmed</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg; info</span> (household) · <span class="ev-direct">direct</span></span></td>
+      </tr>
+      <tr>
+        <td class="date">~1887&ndash;1900</td>
+        <td class="addr"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=2408+DeKalb+St+St+Louis+MO" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">2408 DeKalb St.</a> (rear 2407)<br><span class="small" style="font-weight:400;color:var(--text-meta);">Kosciusko, south side</span></td>
+        <td class="src">His primary residence for over a decade. Pension file gives 2408 DeKalb repeatedly — the 1890 &amp; 1891 declarations (<a href="../../sources/pension-file.html#p14">p.14</a>, <a href="../../sources/pension-file.html#p11">p.11</a>), docket (<a href="../../sources/pension-file.html#p32">p.32</a>), surgeon's cert (<a href="../../sources/pension-file.html#p33">p.33</a>), index cards (<a href="../../sources/pension-file.html#p37">pp.37&ndash;38</a>). Directories independently place him in the rear unit from 1887: <em>1887</em> Johnson "watch", <em>1895</em> Gannsen "watchmaker" &mdash; with a second entry directly beneath, "<em>Gannsen Charles, jr., laborer</em>," at the same rear unit, the first documentary trace of a son Charles&nbsp;Jr. The 1890 schedule's "2405 DeKalb (rear)" and "rear 2407" are the same single-lot complex (2405/2407/2408).</td>
+        <td class="vlink"><a href="https://www.familysearch.org/ark:/61903/3:1:3QHV-V38V-P919-P?view=fullText&amp;keywords=rear+2407+DeKalb&amp;lang=en" target="_blank" rel="noopener noreferrer">1887 ↗</a><br><a href="https://www.familysearch.org/search/full-text/results?q.text=%22rear%202407%20DeKalb%22" target="_blank" rel="noopener noreferrer">all ↗</a></td>
+        <td><span class="pill high">Confirmed</span><span class="gtag"><span class="ev-original">Original</span> · contemporaneous pension + directories · <span class="ev-direct">direct</span></span></td>
+      </tr>
+      <tr>
+        <td class="date">June 1900</td>
+        <td class="addr"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=170+Sidney+St+St+Louis+MO" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">170 Sidney St.</a><br><span class="small" style="font-weight:400;color:var(--text-meta);">boarder, Peter Kuhn household · Ward 9</span></td>
+        <td class="src">1900 U.S. Census: "<em>Charles Johnson, boarder; Nov 1836; 63; widowed; immig. 1859; naturalized; retired.</em>" ED&nbsp;129, sheet&nbsp;5B, dwelling&nbsp;59, family&nbsp;103 (AncestryProGenealogists journal Doc&nbsp;B).</td>
+        <td class="vlink"><a href="https://www.familysearch.org/ark:/61903/1:1:M38T-XV2?lang=en" target="_blank" rel="noopener noreferrer">1900 census ↗</a></td>
+        <td><span class="pill high">Confirmed</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-secondary">2&deg; info</span> · <span class="ev-direct">direct</span></span></td>
+      </tr>
+      <tr>
+        <td class="date">Oct 1900&ndash;1903</td>
+        <td class="addr">Danville Branch, National Home for Disabled Volunteer Soldiers<br><span class="small" style="font-weight:400;color:var(--text-meta);">Danville, Illinois</span></td>
+        <td class="src">Admitted 18 Oct 1900. The Branch Treasurer reported the admission to the Pension Office and moved the pension agency from Topeka to Chicago (Form 103, signed by Treasurer W.&nbsp;C.&nbsp;Tuttle). Independently confirmed by the <strong>Historical Register of National Homes</strong> (NARA M1749), which records "<em>Charles Gannson</em>" — a clerk's vowel away from his official <em>Gannsen</em> (the same name) — birthplace Germany, enlisted St.&nbsp;Louis 2&nbsp;Dec&nbsp;1862, discharged St.&nbsp;Louis 20&nbsp;Dec&nbsp;1865, Co.&nbsp;B, with the enlistment and discharge dates matching Charles exactly. That's <strong>expected, not a free choice</strong>: the Home admission was processed through his pension, so it carried his locked <em>official-records</em> surname rather than an Americanized form.</td>
+        <td class="vlink"><a href="../../sources/pension-file.html#p06">Pension p.06</a><br><a href="https://www.ancestry.com/search/collections/1200/records/111917" target="_blank" rel="noopener noreferrer">Soldiers' Home ↗</a></td>
+        <td><span class="pill high">Confirmed</span><span class="gtag"><span class="ev-original">Original</span> · contemporaneous (pension) · <span class="ev-direct">direct</span></span></td>
+      </tr>
+      <tr>
+        <td class="date">16 Dec 1903</td>
+        <td class="addr"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=168+Sidney+St+St+Louis+MO" target="_blank" rel="noopener noreferrer" title="Open in Google Maps">168 Sidney St.</a><br><span class="small" style="font-weight:400;color:var(--text-meta);">last residence of record (death)</span></td>
+        <td class="src">Returned to St.&nbsp;Louis from the Soldiers' Home in his final months; died of stomach carcinoma at 68. St.&nbsp;Louis Health Dept. Certificate of Death no.&nbsp;10619 (AncestryProGenealogists journal Doc&nbsp;A). Pension certificate returned 4 Jan 1904 (<a href="../../sources/pension-file.html#p04">p.04</a>); "Pensioner Dropped" 18 Jan 1904 (<a href="../../sources/pension-file.html#p03">p.03</a>).</td>
+        <td class="vlink">Death cert</td>
+        <td><span class="pill high">Confirmed</span><span class="gtag"><span class="ev-original">Original</span> · <span class="ev-direct">direct</span></span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="conf-key"><strong>Confidence:</strong> <span class="pill high">Confirmed</span> named in a contemporaneous record (directory, census, pension, or certificate) &nbsp;·&nbsp; <span class="pill low">Recollection</span> rests only on Charles's <em>c.</em>&nbsp;1898 pension memory, no contemporaneous source found — number and dates approximate.</p>
+
+  <div class="card accent mt-1rem">
+    <h3 id="address-sources">Address sources</h3>
+    <p>The address timeline above has been reconciled across the following primary sources. Where two records gave conflicting house numbers (e.g., 2405 / 2407 / 2408 DeKalb), the pension file is treated as the canonical record because it carries Charles's own sworn signature.</p>
+    <ul class="pl-list-tight">
+      <li><strong>Civil War pension file F41-523680269E</strong> (40 pages) — Charles's handwritten address-history letter of c. 1898 (<a href="../../sources/pension-file.html#p29">Page 29</a>) is the spine of the timeline; declarations on <a href="../../sources/pension-file.html#p11">Page 11</a> (1891) and <a href="../../sources/pension-file.html#p14">Page 14</a> (1890), the Pension Bureau docket on <a href="../../sources/pension-file.html#p32">Page 32</a>, and the Surgeon's Certificate of Examination on <a href="../../sources/pension-file.html#p33">Page 33</a> all confirm "2408 DeKalb St." through the 1890s. Page 06 records the 18 Oct 1900 admission to the Danville Soldiers' Home. <a href="../../sources/pension-file.html">→ Open the full pension-file viewer (with page-by-page transcription)</a></li>
+      <li><strong>1880 U.S. Federal Census</strong> · ED 137, Sheet 4D, Dwelling 15, Family 37 — "Charles Gonson household, 1534 Jackson St." (corrected from this site's earlier mistranscription as "1534 Jackson"). <a class="fsn" href="https://www.familysearch.org/ark:/61903/1:1:M6N9-XYL?lang=en" target="_blank" rel="noopener noreferrer">→ FamilySearch · 1880 census record ↗</a></li>
+      <li><strong>1900 U.S. Federal Census</strong> · ED 129, Sheet 5B, Dwelling 59, Family 103, Peter Kuhn household — Charles a boarder at 170 Sidney St. <a class="fsn" href="https://www.familysearch.org/ark:/61903/1:1:M38T-XV2?lang=en" target="_blank" rel="noopener noreferrer">→ FamilySearch · 1900 census record ↗</a></li>
+      <li><strong>National Homes for Disabled Volunteer Soldiers, Historical Register</strong> (NARA M1749) — "Charles Gannson," Danville Branch, admitted 1900; birthplace Germany, enlisted/discharged St. Louis 2 Dec 1862 &ndash; 20 Dec 1865, Co. B — service dates matching Charles exactly. <a class="fsn" href="https://www.ancestry.com/search/collections/1200/records/111917" target="_blank" rel="noopener noreferrer">→ Ancestry · Soldiers' Home register ↗</a></li>
+      <li><strong>1890 Veterans Schedule</strong> · "Charles Gonnsen, sergeant; Co. B, 2nd MO Vols" — secondary source recording "2405 DeKalb (rear)" for the 1890 reading. The 1890 federal population census schedule was destroyed by fire; only the Veterans Schedule survives.</li>
+      <li><strong>St. Louis City Directories</strong> (mined via FamilySearch Full-Text, June 2026) — the <strong>only contemporaneous sources for his early addresses</strong>, naming him at 718 Gate year by year under four surname spellings, plus the 1895 DeKalb entry:
+        <ul class="pl-list-tight" style="margin-top:0.3rem;">
+          <li><strong>1871</strong> <em>Edwards' Directory</em> p.&nbsp;352 — "<em>Johnson, Charles, conductor, St. Louis R.R., r. 718 Gate</em>"</li>
+          <li><strong>1872&ndash;73</strong> — "<em>Johnson Charles, conductor, r. 718 Gate</em>" — <a class="fsn" href="https://www.familysearch.org/ark:/61903/3:1:3QHK-XQZY-TLHN?view=fullText&amp;keywords=718+Gate&amp;lang=en" target="_blank" rel="noopener noreferrer">direct record ↗</a></li>
+          <li><strong>1874</strong> — "<em>Konsen Charles, driver, r. 718 Gate</em>" <span style="color:#3a6a2a;">(newly found — the <em>Konsen</em> spelling, matching the 1875 baptism)</span> — <a class="fsn" href="https://www.familysearch.org/ark:/61903/3:1:3QHK-LQZY-B4P9?view=fullText&amp;keywords=718+Gate&amp;lang=en" target="_blank" rel="noopener noreferrer">direct record ↗</a></li>
+          <li><strong>1876</strong> — "<em>Gonson Charles, driver, 718 Gate</em>" <span style="color:#3a6a2a;">(newly found — the <em>Gonson</em> spelling, matching the 1880 census; extends the tenure to 1876)</span></li>
+          <li><strong>1895 / 1895&ndash;96</strong> — "<em>Gannsen Charles, watch, r. rear 2407 DeKalb</em>" (+ Charles Jr., lab.)</li>
+        </ul>
+        All reproducible via FamilySearch Full-Text: <a class="fsn" href="https://www.familysearch.org/search/full-text/results?q.text=%22718%20Gate%22" target="_blank" rel="noopener noreferrer">→ "718 Gate"</a> &middot; <a class="fsn" href="https://www.familysearch.org/search/full-text/results?q.text=Gannsen" target="_blank" rel="noopener noreferrer">→ "Gannsen"</a>. The full annual directory run is also browsable in the <a class="fsn" href="https://www.familysearch.org/search/catalog/results?count=20&amp;query=%2Bplace%3A%22United%20States%2C%20Missouri%2C%20St.%20Louis%22%20%2Bsubject%3A%22directories%22" target="_blank" rel="noopener noreferrer">FamilySearch catalog</a>.
+        <br><span class="small" style="color:#a04020;"><strong>Note on 1518 S. 7th (1865–69):</strong> no directory or census entry for Charles at that address has been found under any spelling — it is attested <em>only</em> by his c.&nbsp;1898 pension recollection ("1516 So. 7th"), so its house number and dates are approximate.</span></li>
+      <li><strong>Death Certificate no. 10619</strong> · St. Louis Health Department — "Last residence 168 Sidney" at death on 16 Dec 1903.</li>
+      <li><strong>FamilySearch profile <a class="fsn pid" href="https://www.familysearch.org/tree/person/details/LZXC-6GB" target="_blank" rel="noopener noreferrer">LZXC-6GB</a></strong> · Charles Johnson Sr. — 41 attached source records cross-link the residences above, the seven children, and the spouse Auguste Kreichelt (<a class="fsn pid" href="https://www.familysearch.org/tree/person/details/LZKV-9F5" target="_blank" rel="noopener noreferrer">LZKV-9F5</a>).</li>
+    </ul>
+  </div>
+  <div class="tab-open-q" aria-label="Open questions">
+    <h4>Open questions in this section</h4>
+    <ul>
+      <li>What occupations did Charles hold between his 1865 discharge (1518 S. 7th St.) and the 1871 directory (railroad conductor at 718 Gates)?</li>
+      <li>Why does the 1900 census list him as a boarder in the Peter Kuhn household — was Kuhn a relation, a former Battery B comrade, or simply a landlord?</li>
+      <li>Are any earlier (1860, 1870) U.S. censuses identifiable for Charles under any of the surname-variant spellings (Gonnson, Gonson, Konsen, Johnson)?</li>
+      <li>Where, if anywhere, do Charles's seven children's post-1900 lives lead back to evidence of his German origin?</li>
+    </ul>
+  </div>
+
+
+
+</main>
+
+<footer class="back-nav">
+  <a href="../index.html#charles">↩ Back to Charles in America on the main site</a>
+</footer>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../../de/index.html">Startseite</a></li>
+        <li><a href="../../de/stories.html">Geschichten</a></li>
+        <li><a href="../../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../../methodology.html">Methodik</a></li>
+        <li><a href="../../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../../de/glossary.html">Glossar</a></li>
+        <li><a href="../../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../../de/about.html">Über</a></li>
+        <li><a href="../../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

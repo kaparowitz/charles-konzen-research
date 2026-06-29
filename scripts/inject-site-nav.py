@@ -12,6 +12,7 @@ Usage:
     python3 scripts/inject-site-nav.py
 """
 from __future__ import annotations
+import hashlib
 import os
 import re
 import sys
@@ -30,8 +31,42 @@ FOOT_END = "<!-- END-INJECTED-FOOTER -->"
 CSS_LINK_BEGIN = "<!-- BEGIN-INJECTED-NAV-ASSETS -->"
 CSS_LINK_END = "<!-- END-INJECTED-NAV-ASSETS -->"
 
-SKIP_PREFIXES = ("notes/", "_archive", "_backup_originals/")
+# ---- automatic cache-busting -------------------------------------------------
+# The injected nav assets used to be referenced with no ?v= query, so browsers
+# cached an old copy and every page kept serving stale CSS/JS (the sticky nav
+# would "scroll away", dropdowns would mis-behave, etc.). We now stamp each
+# injected asset with a short hash of its *content*, so the URL changes
+# automatically whenever the file changes — and stays identical when it
+# doesn't. Just rerun this script after editing any nav asset.
+_VER_CACHE: dict[str, str] = {}
+
+
+def asset_ver(rel_asset: str) -> str:
+    """Return a short content hash (cache-buster) for an asset under ROOT.
+
+    Degrades gracefully to '' if the file can't be read, so a missing file
+    never breaks injection — the reference is just emitted without a query.
+    """
+    if rel_asset not in _VER_CACHE:
+        try:
+            _VER_CACHE[rel_asset] = hashlib.md5(
+                (ROOT / rel_asset).read_bytes()
+            ).hexdigest()[:10]
+        except OSError:
+            _VER_CACHE[rel_asset] = ""
+    return _VER_CACHE[rel_asset]
+
+
+def versioned(rel_asset: str) -> str:
+    """'assets/site-nav.css' -> 'assets/site-nav.css?v=<hash>' (root-relative)."""
+    v = asset_ver(rel_asset)
+    return f"{rel_asset}?v={v}" if v else rel_asset
+
+SKIP_PREFIXES = ("notes/", "_archive", "_backup_originals/", "de/")
 SKIP_FILES = {"index.html"}  # the home page has its own SPA nav
+# NOTE: "de/" is skipped because the German mirror has its own nav/footer,
+# applied by scripts/inject-site-nav-de.py (German labels + /de/ links).
+# Running this English injector over /de/ would overwrite the German nav.
 
 
 def relative_root_for(page: Path) -> str:
@@ -51,12 +86,12 @@ def head_inject_assets(content: str, root_prefix: str) -> str:
     """Insert <link> + <script> for the shared nav, cite-widget, and deep-zoom assets in <head>, idempotently."""
     block = (
         f"{CSS_LINK_BEGIN}\n"
-        f'<link rel="stylesheet" href="{root_prefix}assets/site-nav.css">\n'
-        f'<script defer src="{root_prefix}assets/site-nav.js"></script>\n'
-        f'<link rel="stylesheet" href="{root_prefix}assets/cite-widget.css?v=20260530-citecontrast">\n'
-        f'<script defer src="{root_prefix}assets/cite-widget.js"></script>\n'
-        f'<link rel="stylesheet" href="{root_prefix}assets/deep-zoom.css">\n'
-        f'<script defer src="{root_prefix}assets/deep-zoom.js"></script>\n'
+        f'<link rel="stylesheet" href="{root_prefix}{versioned("assets/site-nav.css")}">\n'
+        f'<script defer src="{root_prefix}{versioned("assets/site-nav.js")}"></script>\n'
+        f'<link rel="stylesheet" href="{root_prefix}{versioned("assets/cite-widget.css")}">\n'
+        f'<script defer src="{root_prefix}{versioned("assets/cite-widget.js")}"></script>\n'
+        f'<link rel="stylesheet" href="{root_prefix}{versioned("assets/deep-zoom.css")}">\n'
+        f'<script defer src="{root_prefix}{versioned("assets/deep-zoom.js")}"></script>\n'
         f"{CSS_LINK_END}"
     )
     # If markers already present, replace.

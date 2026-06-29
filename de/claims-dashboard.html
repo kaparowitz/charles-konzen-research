@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="x-translated-from" content="claims-dashboard.html">
+<meta name="x-translated-source-sha" content="178a421176b5940e8ccc0fb72117648f53bfb589643c1c46156e75cfc7908e85">
+<meta name="x-translated-date" content="2026-06-29">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/claims-dashboard.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/claims-dashboard.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/claims-dashboard.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Thesen-Übersicht — Charles-Forschung</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/de/claims-dashboard.html">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
+<meta name="description" content="Die tragenden Thesen des Projekts auf einem Bildschirm — Zuverlässigkeit, Primärquelle und der konkrete Beleg, der jede These ändern würde. Die eine Seite, die ein Fachgutachter lesen kann, um zu beurteilen, was die Untersuchung zu verteidigen bereit ist.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Thesen-Übersicht — Charles-Forschung">
+<meta property="og:description" content="Jede tragende These der Untersuchung auf einem Bildschirm — Zuverlässigkeit, Primärquelle und der konkrete Beleg, der sie ändern würde.">
+<meta property="og:url" content="https://charles-research.netlify.app/de/claims-dashboard.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thesen-Übersicht — Charles-Forschung">
+<meta name="twitter:description" content="Jede tragende These der Untersuchung auf einem Bildschirm — Zuverlässigkeit, Primärquelle und der konkrete Beleg, der sie ändern würde.">
+<meta name="description" content="Jede tragende These der Untersuchung auf einem Bildschirm — Zuverlässigkeit, Primärquelle und der konkrete Beleg, der sie ändern würde.">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.55; }
+
+  header.cd-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.cd-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.cd-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.cd-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; letter-spacing: 0.02em; }
+  header.cd-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 820px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+  h2 { font-size: 1.5rem; color: var(--text-primary); margin: 2.4rem 0 0.8rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.06rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.6rem; max-width: 820px; }
+
+  /* Summary strip */
+  .cd-summary {
+    background: var(--bg-card-tint);
+    border: 1px solid var(--border-medium);
+    border-radius: 4px;
+    padding: 0.9rem 1.1rem;
+    margin: 1rem 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.8rem;
+  }
+  .cd-summary .stat { text-align: center; }
+  .cd-summary .stat .num { font-size: 1.8rem; font-weight: 700; color: var(--brand-dark); display: block; line-height: 1; }
+  .cd-summary .stat .lab { font-size: 0.78rem; color: var(--text-meta); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.3rem; }
+
+  /* Dashboard table — responsive: table on wide, cards on narrow */
+  .cd-table-wrap { overflow-x: auto; margin: 1rem 0 2rem; border: 1px solid var(--border-light); border-radius: 4px; background: var(--bg-card); }
+  table.cd-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
+  table.cd-table thead { background: var(--bg-card-tint); }
+  table.cd-table th { padding: 0.7rem 0.85rem; text-align: left; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); border-bottom: 2px solid var(--border-medium); font-weight: 700; }
+  table.cd-table td { padding: 0.85rem 0.85rem; vertical-align: top; border-bottom: 1px solid var(--border-light); line-height: 1.45; }
+  table.cd-table tbody tr:last-child td { border-bottom: none; }
+  table.cd-table tbody tr:hover { background: var(--bg-card-tint); }
+  .cd-claim { font-weight: 600; color: var(--text-strong); }
+  .cd-claim small { display: block; font-weight: 400; color: var(--text-muted); font-size: 0.82rem; margin-top: 0.18rem; font-style: italic; }
+
+  /* Confidence pills — match site convention */
+  .cd-pill { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; white-space: nowrap; display: inline-block; }
+  .cd-pill.confirmed { background: #5a8a4a; color: #fff; }
+  .cd-pill.working   { background: #d4a017; color: #2c2620; }
+  .cd-pill.open      { background: #a3441f; color: #fff; }
+  .cd-pill.retracted { background: #6a5a42; color: #fff; }
+  .cd-pill.interpretive { background: #5a6a8a; color: #fff; }
+
+  .cd-source { font-size: 0.88rem; color: var(--text-body); }
+  .cd-source a { color: var(--brand-dark); }
+  .cd-changes { font-size: 0.88rem; color: var(--text-meta); font-style: italic; }
+
+  /* Section headings inside table */
+  tr.cd-section-head td { background: var(--bg-deep); color: var(--text-on-dark); padding: 0.5rem 0.85rem; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; border-bottom: 1px solid var(--border-medium); }
+  tr.cd-section-head td a { color: var(--brand); border-bottom: none; }
+
+  /* Legend strip */
+  .cd-legend { display: flex; flex-wrap: wrap; gap: 0.8rem 1.5rem; padding: 0.7rem 1rem; margin: 0 0 1.4rem; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 4px; font-size: 0.83rem; color: var(--text-meta); }
+  .cd-legend .lg { display: flex; align-items: center; gap: 0.45rem; }
+  .cd-legend .lg-text { color: var(--text-body); }
+
+  /* Footnote box at bottom */
+  .cd-footnote { background: var(--bg-card-tint); border-left: 3px solid var(--brand); padding: 0.9rem 1.1rem; margin: 1.6rem 0; border-radius: 0 4px 4px 0; font-size: 0.92rem; }
+  .cd-footnote strong { color: var(--text-strong); }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media (max-width: 720px) {
+    table.cd-table thead { display: none; }
+    table.cd-table tr { display: block; border: 1px solid var(--border-light); margin-bottom: 0.8rem; border-radius: 4px; padding: 0.7rem 0.9rem; }
+    table.cd-table td { display: block; border: none; padding: 0.3rem 0; }
+    table.cd-table td::before { content: attr(data-label); display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); margin-bottom: 0.15rem; }
+    tr.cd-section-head { padding: 0.4rem 0.7rem; margin-top: 1rem; border-radius: 4px; }
+    tr.cd-section-head td { background: none; color: var(--text-on-dark); padding: 0; }
+  }
+
+  @media print {
+    header.cd-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.cd-hero h1, header.cd-hero .sub, header.cd-hero .crumbs, header.cd-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+    .cd-pill { border: 1px solid #000; color: #000 !important; background: none !important; }
+    tr.cd-section-head td { background: none !important; color: #000 !important; border-bottom: 1px solid #888; }
+  }
+</style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/claims-dashboard.html#article",
+  "headline": "Thesen-Übersicht — Charles-Forschung",
+  "description": "Jede tragende These der Untersuchung auf einem Bildschirm — Zuverlässigkeit, Primärquelle und der konkrete Beleg, der jede These ändern würde.",
+  "datePublished": "2026-05-27",
+  "dateModified": "2026-06-21",
+  "url": "https://charles-research.netlify.app/de/claims-dashboard.html",
+  "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+  "author": [
+    { "@type": "Person", "name": "Jed Johnson" },
+    { "@type": "Person", "name": "Peter Schräder" }
+  ],
+  "publisher": { "@type": "Person", "name": "Jed Johnson", "url": "https://charles-research.netlify.app/about.html" },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://charles-research.netlify.app/" },
+    { "@type": "ListItem", "position": 2, "name": "Thesen-Übersicht" }
+  ]
+}
+</script>
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../de/index.html" role="menuitem">Überblick</a>
+      <a href="../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodik</a>
+      <a href="../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+
+<header class="cd-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">Charles-Forschung</a> &nbsp;/&nbsp; Thesen-Übersicht</div>
+  <h1>Thesen-Übersicht</h1>
+  <p class="sub">Jede tragende These der Untersuchung auf einem Bildschirm — was das Projekt als <em>Bestätigt</em>, <em>In Arbeit</em> oder <em>Offen</em> zu verteidigen bereit ist; die Primärquelle für jede; und der konkrete Beleg, der sie ändern würde.</p>
+</header>
+
+<main id="main">
+
+<aside aria-label="Neu in v1.1.0" style="margin:0 0 1.4rem; padding:0.85rem 1.1rem; background:linear-gradient(140deg, var(--bg-card-tint, #fdf5d8), var(--bg-elevated, #f6ebd2)); border:1px solid var(--brand, #d8b366); border-left:5px solid var(--brand, #d8b366); border-radius:4px; font-size:0.93rem;">
+  <div style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--brand-dark, #8a6420); font-weight:700; margin-bottom:0.35rem;">★ Neu in v1.1.0 · 29. Mai 2026</div>
+  <p style="margin:0; line-height:1.55; color:var(--text-strong, #1f1a14);">Diese Thesen-Übersicht ist neu in v1.1.0. Ebenso das durchgearbeitete Beispiel der <a href="index.html#andreas-disentanglement">Identitätsentflechtung von Andreas Konze</a> auf Deutschland &amp; Herkunft, der <a href="index.html#doc-crosswalk">Querverweis Dok A&ndash;O</a>, der die eintägige Sterbedatums-Diskrepanz zwischen Dok&nbsp;A und Dok&nbsp;N verankert, sowie ein Wartungsgerüst vor der Veröffentlichung, das jede Freigabe an Prüfungen der kanonischen Thesen und der internen Verlinkung knüpft. Siehe <a href="../errata.html#2026">Errata · 2026</a> für die Änderungshistorie oder <a href="changelog.html">Änderungsprotokoll</a> für das datierte Protokoll.</p>
+</aside>
+
+<p class="lede">Die Frage eines Fachgutachters — <em>„Was genau glauben Sie, und auf welcher Grundlage?“</em> — beantwortet in einer einzigen Tabelle. Jede Zeile verweist auf die Beleg-Seite, die sie stützt, und (sofern zutreffend) auf den Errata-Eintrag, der ihre Höherstufungsgeschichte festhält.</p>
+
+<div class="cd-summary" aria-label="Zusammenfassung der Thesen-Zuverlässigkeit">
+  <div class="stat"><span class="num">5</span><span class="lab">Bestätigt</span></div>
+  <div class="stat"><span class="num">10</span><span class="lab">In Arbeit</span></div>
+  <div class="stat"><span class="num">1</span><span class="lab">Offen</span></div>
+  <div class="stat"><span class="num">1</span><span class="lab">Deutend</span></div>
+  <div class="stat"><span class="num">17</span><span class="lab">Tragende Thesen</span></div>
+</div>
+
+<div class="cd-legend">
+  <span class="lg"><span class="cd-pill confirmed">Bestätigt</span><span class="lg-text">primärquellengestützter Nachweis; mehrere unabhängige Bestätigungen</span></span>
+  <span class="lg"><span class="cd-pill working">In Arbeit</span><span class="lg-text">starke konvergente Belege; Einzelquelle oder noch ausstehende Bestätigung</span></span>
+  <span class="lg"><span class="cd-pill open">Offen</span><span class="lg-text">kein konkreter Kandidat identifiziert; dokumentierter Suchraum</span></span>
+  <span class="lg"><span class="cd-pill interpretive">Deutend</span><span class="lg-text">Deutung von Motiv oder Kontext; mit den Belegen vereinbar, keine widerlegbare Tatsachenbehauptung</span></span>
+  <span style="font-size:0.83rem; color:var(--text-meta); font-style:italic;">&middot; Siehe <a href="../methodology.html#confidence">die vollständige Zuverlässigkeitstaxonomie</a> für die Höherstufungskriterien.</span>
+</div>
+
+<h2 id="dashboard">Tragende Thesen</h2>
+
+<div class="cd-table-wrap">
+<table class="cd-table" aria-describedby="dashboard">
+  <thead>
+    <tr>
+      <th style="width: 32%;">These</th>
+      <th style="width: 12%;">Zuverlässigkeit</th>
+      <th style="width: 28%;">Primärquelle</th>
+      <th style="width: 28%;">Was sie ändern würde</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr class="cd-section-head"><td colspan="4">Identität — wer Charles war</td></tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Das Rückgrat der amerikanischen Lebensidentität: der Angeworbene von 1862 &ldquo;Charles Gannsen&rdquo; ≡ der Tauf-Informant von 1875 ≡ der Verstorbene von 1903 &ldquo;Charles Johnson&rdquo; — ein Mann über den gesamten US-Aktenbestand hinweg.
+        <small>Dies ist der Teil der Identitätsgleichung, der von einer durchgehenden amerikanischen Dokumentenkette getragen wird. Er benennt <em>nicht</em> für sich genommen den deutschen Familiennamen oder die Herkunft — diese sind die gesonderte These „In Arbeit“ weiter unten.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill confirmed">Bestätigt</span></td>
+      <td data-label="Primärquelle" class="cd-source">Pensionsakte F41-523680269E + St. Marcus-Kirchenbücher + Volkszählung 1900 (durchgehende Dokumentenkette). Siehe <a href="bibliography.html#military">Bibliografie &rsaquo; Militär &amp; Pension</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Ein dokumentierter zweiter &ldquo;Charles Gannsen&rdquo; im wehrfähigen Alter im St. Louis von 1862 — keiner ist in NARA, Fold3 oder der Indexierung des Staates Missouri aufgetaucht.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">…und derselbe amerikanische Mann wird als <strong>Charles Konzen aus der Konze-Familie des Trendelburger Komplexes</strong> identifiziert.
+        <small>Die deutsche Hälfte der Identitätsgleichung. Da sie von der Schlussfolgerung zum Familiennamen und von der Herkunft aus Trendelburg/Deisel abhängt — beide unten als <em>In Arbeit</em> geführt — kann die Gleichung <em>auf Konzen</em> nicht stärker sein als ihr schwächstes Glied und wird als „In Arbeit“ angegeben, statt in das bestätigte amerikanische Rückgrat oben eingegliedert zu werden.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source">Konvergente indirekte Belege: die Namensspur (Karte 1), die Herkunftsentschlüsselungen &ldquo;Freundburg&rdquo;/&ldquo;Deisse&rdquo; (Karten 2–3) und die Pfarreikonzentration des Konze-Bestandes. Keine deutsche Taufe, die Charles benennt, wurde aufgefunden. <a href="../methodology.html#dna">DNA-Tests</a> (Y-DNA + autosomal) sind mit einer hessischen Herkunft vereinbar, haben aber keinen Treffer in der Konze-Linie erbracht; die nächsten Treffer der Y-Linie sind überwiegend aschkenasische Abstammungslinien, was eine <a href="dna.html#match-cluster">Frage zur tiefen väterlichen Herkunft</a> aufwirft. Siehe auch <a href="../negative-results.html">Audit der Negativergebnisse</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Eine hessische Taufe, die Charles in einer Konze- / Kontzen-Familie benennt, oder ein Y-DNA- / autosomaler Treffer zu einem dokumentierten Konze-Nachkommen (siehe <a href="open-questions.html#dna">Offene Fragen · DNA</a>), würde dies auf <em>Bestätigt</em> höherstufen.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Geburt um den 26. Januar 1835, im Gebiet von Kurhessen / Kirchenkreis Hofgeismar.
+        <small>Tag und Monat aus dem Begräbniseintrag des kirchlichen Sterberegisters; das Jahr wird in den Akten <em>uneinheitlich</em> angegeben — die Volkszählung 1880 nennt Alter 39 (&rarr; geb. 1841), die Volkszählung 1900 geb. Nov. 1836, und Charles' Pensionserklärungen Alter 53&ndash;56 (&rarr; 1834&ndash;1838); nur das Begräbnisregister kommt auf 1835. <strong>Vorsicht beim Informanten:</strong> diese Akten sind unabhängige <em>Dokumente</em>, aber keine unabhängigen <em>Informationen</em> — die Alters-/Geburtsdaten in den Volkszählungen, der Pension und dem Begräbnis gehen alle auf Charles selbst oder seinen Haushalt zurück, sodass sie die Konsistenz seiner eigenen Aussage bestätigen, nicht aber das Jahr aus einer zweiten Quelle belegen.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source">St. Marcus-Begräbnisregister Nr. 3393 (26. Jan. 1835; Alter 68 bei Tod; Informant die Familie); US-Volkszählung 1900 (geb. Nov. 1836; Haushalts-Informant); US-Volkszählung 1880 (Alter 39 &rarr; geb. 1841); Erklärungen aus der Pensionsakte (Charles, Alter 53&ndash;56). Siehe <a href="index.html#doc-crosswalk">Querverweis Dok A–O</a> und den vollständigen aktenweisen Vergleich, <a href="birthdate-records.html">Geburtsdatum über die US-Akten hinweg</a>. <small>(Volkszählungszahlen FamilySearch-verifiziert gegen Profil LZXC-6GB, 19. Juni 2026: 1880 indexiertes Alter 39 / geschätzt 1841; 1900 indexierte Geburt Nov. 1836.)</small></td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Ein hessischer Taufeintrag, der Charles unmittelbar mit einem Datum benennt — eine unabhängige Quelle statt Charles' eigener, wiederholter Aussage — würde die These auf <em>Bestätigt</em> höherstufen. Keiner aufgefunden; siehe <a href="../negative-results.html">Audit der Negativergebnisse</a>.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Der Familienname wird als <strong>KONZEN</strong> erschlossen, die im Trendelburger Pfarreikomplex dokumentierte Form der Kontzen-Familie.
+        <small>Die Schlussfolgerung ersetzt die frühere Hypothese der &ldquo;Konze-Linie&rdquo; (zurückgezogen am 4. Mai 2026 nach Peter Schräders Urteil zu Eintrag 195).</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source">Neun verschiedene Schreibweisen in <strong>14 US-Akten</strong> (1862–1896) von 5+ Schreibern — zwei <strong>von Charles selbst unterzeichnet</strong> (Musterung, Pension) — sowie die Taufen aller sieben Kinder. Siehe <a href="../surname-records.html">Der Familienname über die Akten hinweg</a> und <a href="index.html#card1">Karte 1</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Ein hessischer Taufeintrag, der Charles in einer Konze- / Kontzen- / Contze-Familie benennt. Würde auf <em>Bestätigt</em> höherstufen. Siehe <a href="../errata.html#er-2026-05-25-rigor-pass">Errata · Strenge-Durchgang 25. Mai 2026</a>.</td>
+    </tr>
+
+    <tr class="cd-section-head"><td colspan="4">Geografie — woher Charles kam</td></tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Die Herkunftspfarrei ist <strong>TRENDELBURG</strong> (Kreis Hofgeismar, Kurfürstentum Hessen).
+        <small>Entschlüsselt aus &ldquo;Freundburg&rdquo; im Musterungsregister von 1862 durch phonetische Verschiebung nach Schreibers Gehör (Trend → Friend → Freund).</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source"><a href="../evidence/card-2-civil-war-enlistment.html">Karte 2 · Musterungsregister 1862</a> (&ldquo;Freundburg, Kurhessen&rdquo;); unabhängig verankert durch das St. Marcus-Heiratsregister von 1866 &ldquo;Deisse, Churhessen.&rdquo;</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Eine abweichende Entschlüsselung von &ldquo;Freundburg&rdquo; oder eine Taufe, die Charles außerhalb Trendelburgs benennt. Die Lesart Trendelburg ist eine <strong>Deutung</strong>, keine verzeichnete Tatsache — konkurrierende Lesarten sind auf <a href="../origin-records.html#interpretations">Herkunft über die Akten hinweg</a> eingeordnet (AncestryPros Freudenberg/Schierstein und Dies/Diez ausgeschlossen; James Gunnis' Dissen offen).</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Das Herkunftsdorf ist <strong>DEISEL</strong> (ein Dorf innerhalb der Pfarrei Trendelburg).
+        <small>Unabhängige Bezeugung aus dem St.-Louis-Heiratsregister von 1866 (&ldquo;Deisse, Churhessen&rdquo;), vier Jahre nach der Bezeugung &ldquo;Freundburg&rdquo; von 1862.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source"><a href="../evidence/card-3-marriage-register.html">Karte 3 · St. Marcus-Heiratsregister 1866</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Eine abweichende Entschlüsselung von &ldquo;Deisse.&rdquo; Drei unabhängige Forscher (Blumenstein, Schräder, AncestryProGenealogists) lesen es als <strong>Deisel</strong>; James Gunnis' <em>Dissen / Grifte</em> bleibt eine offene Alternative (<a href="../origin-records.html#interpretations">Deutungen</a>). Eine Taufe, die Charles in einer benachbarten Pfarrei benennt, würde es ebenfalls revidieren.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Kein Taufregistereintrag, der Charles in den Konze-Familienlinien der Pfarrei Trendelburg benennt, wurde aufgefunden.
+        <small>Der deutsche Taufeintrag — die mögliche Primärquelle für Eltern und genaues Geburtsdatum — bleibt das zentrale, nicht aufgefundene Dokument. Ein Abgleich mit dem FamilySearch-Stammbaum vom Juni 2026 grenzte das Feld durch Negativbelege ein: von jedem dokumentierten Konze-Mann aus Charles' Generation blieben und starben alle bis auf einen im Pfarreikomplex (einschließlich des gleichnamigen <strong>Carl Wilhelm Konze</strong>, geb. 1831, ausgeschlossen durch seinen Tod in Trendelburg am 30. Okt. 1869). Der einzige Mann, der keine erwachsene deutsche Spur hinterlässt, ist <strong>Justus Ernst Konze</strong> (geb. 14. Nov. 1829) — doch mit ~5–6 Jahren mehr als Charles' angegebener Geburt 1835 fällt er <em>außerhalb</em> des Geburtsfensters, und auch eine erschöpfende Auswanderungssuche fand keine Spur von ihm, sodass er ein Hinweis <strong>geringer Wahrscheinlichkeit</strong> ist, keine bestätigte Identität.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill open">Offen</span></td>
+      <td data-label="Primärquelle" class="cd-source">Dokumentierte Negativsuchen über <strong>36 Pfarreien</strong> und <strong>16 Kandidatenfamilien</strong> (einschließlich Peter Schräders wiederholter Datenbankabfragen und einer Prüfung der jüdischen Linie); der erweiterte <em>Konfirmationsregister</em>-Durchgang vom Juni 2026 durchsuchte die Hofgeismarer Jahrgänge nach <strong>jedem Carl geb. 1833–1841, Familienname offen, beide Konfessionen</strong> — mehrere lokale Carls, aber keiner Konze / *n-s-n; und der FamilySearch-Stammbaum-Abgleich zeigt Justus Ernst Konze als in jedem durchsuchbaren deutschen Sterbe- und Auswanderungsindex abwesend. Siehe <a href="../negative-results.html#coverage-glance">abgeschlossene Forschung auf einen Blick</a>, <a href="../negative-results.html#families">Kandidatenfamilien</a> und <a href="../search-coverage.html">Pfarrei-Suchabdeckung</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Zwei entscheidende <strong>Offline</strong>-Prüfungen führen nun: eine seitenweise Durchsicht des nicht indexierten <strong>Stammener Begräbnisregisters</strong> (Archion 220072, ~1843–1875, wo zwei von Justus Ernsts Geschwistern starben) und eine einzelne Auswanderungs- / Entlassungsakte aus dem Staatsverband im <strong>HStAM Bestand 180 Hofgeismar</strong>. Dahinter die Sichtdurchsicht von <strong>Heisebeck</strong> (nur vor Ort), die <strong>Stammrolle 1855</strong> (HStAM Bestand 4h) und der <strong>Auswanderer-Beleg 1859</strong>. Siehe <a href="open-questions.html">offene Fragen</a>.</td>
+    </tr>
+
+    <tr class="cd-section-head"><td colspan="4">Amerikanisches Leben — Dienst, Familie, Tod</td></tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Auswanderung in die USA im Jahr <strong>1859</strong>, Niederlassung in St. Louis.
+        <small>Volkszählung 1900 &ldquo;Einwanderungsjahr: 1859&rdquo;; das &ldquo;seit sieben Jahren in St. Louis&rdquo; des Heiratsregisters von 1866 weist auf dasselbe Jahr. Beide sind jedoch <em>Charles' eigene</em> Angaben — ein Informant, zwei Akten — und die Überfahrt selbst ist nicht dokumentiert.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source">US-Bundesvolkszählung 1900 (Haushalt Peter Kuhn, 170 Sidney St.); Wohnsitzangabe im St. Marcus-Heiratsregister 1866. Keine Passagierliste oder Auswanderer-Beleg aufgefunden — siehe <a href="immigration/index.html">Auswanderungsreise</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Ein Passagierlisteneintrag oder ein Auswanderer-Beleg (HStAM Marburg), der das Jahr unabhängig von Charles' eigener Aussage bezeugt — würde auf <em>Bestätigt</em> höherstufen. Bislang ist keiner aufgetaucht.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Bürgerkriegsdienst: <strong>Battery B, 2nd Missouri Light Artillery (Union)</strong>, 2. Dez. 1862 – 20. Dez. 1865; höchster Rang Sergeant (am 15. März 1865 zum Private herabgestuft).
+        <small>Die stärkste einzelne Aktenkette auf amerikanischer Seite: Musterung, Musterungsrollen, Compiled Service Record und Pensionsakte bezeugen alle dasselbe Regiment und dieselben Daten.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill confirmed">Bestätigt</span></td>
+      <td data-label="Primärquelle" class="cd-source"><a href="bibliography.html#military">Compiled Service Record G11-422819443E</a>; Pensionsakte F41-523680269E; Fold3-Musterungsrollen. Siehe <a href="index.html#civilwar">Reiter Bürgerkrieg</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Kein realistisches Szenario; die Dokumentenkette ist mehrquellig und in sich stimmig.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Heirat mit <strong>Auguste Kreichelt</strong> in der St. Marcus German Evangelical Church, St. Louis, am <strong>7. Januar 1866</strong>.
+        <small>Sieben Kinder, zwei fortbestehende Nachkommenlinien.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill confirmed">Bestätigt</span></td>
+      <td data-label="Primärquelle" class="cd-source">Eintrag im St. Marcus-Heiratsregister (1866); abgebildet in <a href="../evidence/card-3-marriage-register.html">Karte 3 · Schlüsselbelege</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Kein realistisches Szenario.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Gestorben am <strong>16. Dezember 1903</strong>, St. Louis · Magenkrebs · Alter 68.
+        <small>Das kirchliche Begräbnisregister (Dok N) ist die kanonische Quelle; die Sterbeurkunde (Dok A) nennt den 17. Dezember — eine bekannte eintägige Diskrepanz, in den Errata vermerkt.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source">St. Marcus-Begräbnisregister Nr. 3393. Siehe <a href="index.html#doc-crosswalk">Querverweis Dok A–O</a> für die eintägige Quellenabweichung.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Entweder eine erneute Lesung von Dok A oder neue Belege, die den 17. Dez. bevorzugen. Die eintägige Abweichung ist vermerkt, nicht aufgelöst. Siehe <a href="../errata.html#er-2026-05-17-death-burial">Errata · Tod/Begräbnis 17. Mai 2026</a>.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Kein dokumentierter Blutsverwandter von Charles' Seite erscheint unter den Taufpaten seiner Kinder oder den Trauzeugen seiner Hochzeit von 1866 — was bestätigt, dass er allein auswanderte.
+        <small>Taufpatenschaft war eine verwandtschaftliche Standardkonvention; über 24 Paten-/Zeugenplätze hinweg (die sieben Taufen 1866–1881 zuzüglich der Heirat von 1866 — aufgeschlüsselt im <a href="../sponsor-reconciliation.html">Paten-Abgleich</a>) lässt sich jeder identifizierte Verwandte auf Augustes Seite zurückführen. AncestryProGenealogists (2020) eröffneten diesen Faden; das Audit von 2026 führte ihn aus.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source">St. Marcus-Tauf- &amp; Heiratsregister; jeder Pate/Zeuge ist Augustes Verwandtschaft oder dem Kreis St. Louis / Battery B zugeordnet. <strong>Hohe</strong> Sicherheit, dass keiner ein Blutsverwandter von Charles ist; die Folgerung „allein ausgewandert“ ist In Arbeit. Siehe <a href="../sponsor-reconciliation.html">Paten-Abgleich</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Die Identifizierung eines Paten oder Zeugen als Blutsverwandter von Charles' Seite oder eine deutsche Taufe / Passagierliste, die Verwandte aufdeckt, die ihm nach Amerika folgten.</td>
+    </tr>
+
+    <tr class="cd-section-head"><td colspan="4">Namensbelege — die Namensspur</td></tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Die Tauf-Schreibweise &ldquo;Konsen&rdquo; von 1875 (Pastor Hoffmann) bewahrt die heimatübliche Form mit K + Suffix -en.
+        <small>Eine von zwei -en-bewahrenden Formen (die andere ist Augustes Sterberegister von 1890 &ldquo;Konzen&rdquo;); zusammen umklammern sie die Zeitspanne, in der Charles als Informant auftrat.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill confirmed">Bestätigt</span></td>
+      <td data-label="Primärquelle" class="cd-source">St. Marcus-Taufregister, Erwin Carl Konsen, 27. August 1875; abgebildet im Profil <a href="../children/erwin-carl-konsen.html">Erwin Carl Konsen</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Kein realistisches Szenario; der Eintrag ist eindeutig und abgebildet.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Der Mitzeuge der Pensionserklärung von 1890 &ldquo;John Heitzenberger&rdquo; ist ein Angehöriger der Hitzelberger-Familie aus Pennsylvania–Maryland; die konkrete Einzelidentität bleibt offen.
+        <small>Die Lesart des Schreibers &ldquo;Heitzenberger&rdquo; ist eine Fehllesung des Familiennamens Hitzelberger (Ersetzung L → N). Zwei konkurrierende Lesarten bleiben für die konkrete Person: A. J. Hitzelberger selbst oder ein Bruder / Schwager.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source">Pensionsakte F41-523680269E · ausführliche Erklärung von 1890; die Zuordnung zur Familie des Familiennamens ist durch drei Volkszählungen verankert (1860 CA, 1900 MO, 1880 CA). Siehe <a href="../people/john-heitzenberger.html">Personen · John Heitzenberger</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Ein Sterbeeintrag für A. J. Hitzelberger in Kalifornien in den 1860er–70er Jahren würde die Zuordnung hin zu einem Bruder / Schwager als dem tatsächlichen Zeugen von 1890 verschieben.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Der Erstgeborene &ldquo;Friedrich Wilhelm&rdquo; (20. Juni 1866) trägt eine vielsagende Übereinstimmung mit dem abgesetzten Kurfürsten von Hessen, Friedrich Wilhelm I. — hier als Kontext gelesen, nicht als Herkunftsbeweis.
+        <small>Die sparsamste Erklärung steht in der Akte: das Kind wurde nach seinem Paten <a href="../people/frederick-pillmann.html">Friedrich Wilhelm Pillmann</a> benannt, gemäß üblicher lutherischer Namenskonvention. Dass der Name auch dem des Kurfürsten entsprach — eben in dem Jahr, in dem Hessen-Kassel an Preußen fiel — ist ein wahrhaft suggestiver Zufall und möglicherweise eine bewusste Geste, lässt sich aber aus der Akte nicht klären. Siehe die zwei konkurrierenden Lesarten im Profil des Kindes.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill interpretive">Deutend</span></td>
+      <td data-label="Primärquelle" class="cd-source">St. Marcus-Taufregister 1866 (Pate Friedrich Wilhelm Pillmann); Analyse des Zeitkontexts. Siehe das Profil <a href="../children/friedrich-wilhelm.html">Friedrich Wilhelm</a> für die Lesarten A und B.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Nichts stuft eine Deutung von Motiven zu einer Tatsache hoch. Eine unmittelbare Aussage von Charles darüber, <em>warum</em> er den Namen wählte, würde es klären; in deren Ermangelung stellt die Seite beide Lesarten dar und bevorzugt die sparsamste.</td>
+    </tr>
+
+    <tr class="cd-section-head"><td colspan="4">Methodik — Entflechtungen und Rahmenentscheidungen</td></tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Die fünf (vermutlich sechs) Männer namens Andreas Kon(t)ze in den Pfarreiakten von Trendelburg und Deisel 1718&ndash;1830 sind trennbare Identitäten; keiner ist Charles' Vater.
+        <small>Der Erzählabschnitt der zweiten Runde arbeitet die Altersangaben des Begräbnisregisters, die Ehegattennamen der Heiratseinträge und die Großvaterzuschreibung bei der Taufe durch, die jeden Andreas unterscheiden. Der Rahmen wurde im Juni 2026 gegen den gemeinsamen FamilySearch-Stammbaum abgeglichen. Von den Konze-Männern aus Charles' Generation hinterlässt nur noch <strong>Justus Ernst</strong> (geb. 14. Nov. 1829, Sohn des Andreas 1795 × Hofeditz) keinen nachweisbaren deutschen Tod oder keine Auswanderung — der Cousin, der den Hinweis kurzzeitig teilte, Carl Wilhelm Konze (geb. 1831), wurde ausgeschlossen (gest. 1869 Trendelburg). Als Kandidat <strong>geringer Wahrscheinlichkeit</strong> markiert — er ist ~5–6 Jahre älter als Charles' angegebene Geburt 1835 (außerhalb des Fensters) und es wurde kein Auswanderungseintrag für ihn gefunden — nicht höhergestuft.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill confirmed">Bestätigt</span></td>
+      <td data-label="Primärquelle" class="cd-source">Peter Schräders Korrektur vom 3.&ndash;5. April 2026; Archion 220096 / 220114 / 220120 / 218842 Begräbnis- &amp; Heiratsregister. Durchgearbeitet unter <a href="index.html#andreas-disentanglement">Deutschland-und-Herkunft · Andreas-Konze-Entflechtung</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Ein bislang nicht gelesener Pfarreieintrag, der einen sechsten Andreas im selben Zeitraum benennt, oder ein Taufeintrag, der in Charles' Geburtsfenster Januar 1835 in einen der dokumentierten Haushalte dieser fünf Andreas passt.</td>
+    </tr>
+
+    <tr>
+      <td data-label="These" class="cd-claim">Die Neurahmung des Mitzeugen der Pensionserklärung von 1890 &ldquo;John Heitzenberger&rdquo; / Hitzelberger ist eine vorläufige Zuordnung zur Familie des Familiennamens, keine bestätigte Einzelidentität.
+        <small>Der Eintrag im Prüfpfad, der die Neurahmung festhält, fehlte bis zum 27. Mai 2026; der neue Errata-Eintrag schließt die Lücke zwischen der aktiven These und der Höherstufungsgeschichte.</small></td>
+      <td data-label="Zuverlässigkeit"><span class="cd-pill working">In Arbeit</span></td>
+      <td data-label="Primärquelle" class="cd-source">Pensionsakte F41-523680269E + Volkszählungen 1860 / 1880 / 1900. Höherstufung vermerkt unter <a href="../errata.html#er-2026-05-03-heitzenberger-surname-family">Errata · 3. Mai 2026</a>.</td>
+      <td data-label="Was sie ändern würde" class="cd-changes">Ein dokumentierter kalifornischer Sterbeeintrag für A.&nbsp;J. Hitzelberger in den 1860er&ndash;1870er Jahren würde die Zuordnung hin zu einem Bruder / Schwager als dem tatsächlichen Zeugen von 1890 in St.&nbsp;Louis verschieben.</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<div class="cd-footnote">
+  <strong>Anmerkungen.</strong> &nbsp;Diese Seite ist die Ein-Bildschirm-Zusammenfassung der Thesen, die einzeln und ausführlicher an anderer Stelle auf der Website dokumentiert sind. Jede Zelle &ldquo;Was sie ändern würde&rdquo; benennt ein konkretes Dokument oder einen Suchraum — Höherstufungen und Rücknahmen werden in den <a href="../errata.html">Errata</a> nachgehalten, und der pfarrei-für-pfarrei dokumentierte Ausschlussgrund für die offene Konze-Taufthese steht in den <a href="../negative-results.html">Negativergebnissen</a>.
+  <br><br>
+  <strong>Konventionen.</strong> &nbsp;Datumsformat TT. MMM JJJJ. Quellen werden verankert, wo mehrere Akten vorliegen; Schreiberunstimmigkeiten werden gekennzeichnet, statt sie stillschweigend zu überschreiben (siehe <a href="../methodology.html#confidence">Methodik &rsaquo; Zuverlässigkeitstaxonomie</a>).
+  <br><br>
+  <strong>Betreuer.</strong> &nbsp;Zusammengestellt von <a href="about.html">Jed Johnson</a> mit Peter Schräder. Seite erstmals veröffentlicht am 27. Mai 2026; zuletzt am 21. Juni 2026 gegen die kanonischen Seiten geprüft.
+</div>
+
+<h2 id="provenance">Wie diese Seite ehrlich gehalten wird</h2>
+<p>Die Übersicht ist keine eigenständige Quelle. Der Thesentext jeder Zeile entspricht der kanonischen Formulierung auf ihrer Beleg-Seite; wird eine These neu kalibriert, ist der Errata-Eintrag der maßgebliche Nachweis des Vorher / Nachher, und diese Seite wird entsprechend angepasst. Das Pre-Commit-grep-Gerüst (<a href="https://github.com/jedjohnson/charles-konzen-research">scripts/check_canon.sh</a>) prüft die am häufigsten geteilten Flächen — Meta-Beschreibungen, Open-Graph-Karten, JSON-LD, Alternativtexte, SVG-<code>&lt;text&gt;</code> — um die kanonische Formulierung über die Website hinweg abzugleichen. Der Primärquellenapparat wird auf dieselbe Weise geprüft: ein vollständiges Archion-Zitataudit am 21. Juni 2026 öffnete jedes zitierte Register erneut im Viewer und bestätigte jeden Seiten-/Bildverweis gegen die originale Handschriftseite — alle 19 Register mit einem überprüfbaren Anker validiert, null echte Zitatfehler.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</p>
+  <p><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../de/index.html">Startseite</a></li>
+        <li><a href="../de/stories.html">Geschichten</a></li>
+        <li><a href="../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../methodology.html">Methodik</a></li>
+        <li><a href="../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../de/glossary.html">Glossar</a></li>
+        <li><a href="../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../de/about.html">Über</a></li>
+        <li><a href="../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>
+</content>
+</invoke>

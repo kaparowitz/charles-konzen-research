@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/towns/index.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/towns/index.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/towns/index.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Towns of the Hofgeismar Kirchenkreis — Charles Research</title>
+<link rel="canonical" href="https://charles-research.netlify.app/towns/">
+<link rel="stylesheet" href="../../towns/_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../../assets/dark-mode.css?v=20260530c">
+<script defer src="../../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../../assets/de-pages.js?v=20260628"></script>
+<script defer src="../../assets/lang-toggle.js?v=20260628"></script>
+<script defer src="../../assets/site-search.js?v=20260529-mobilesearch"></script>
+<!-- Leaflet 1.9.4 from unpkg CDN (no API key required) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<style>
+  /* Leaflet map container */
+  #towns-map { height: 60vh; min-height: 420px; border: 2px solid #d8b366; border-radius: 6px; box-shadow: 0 4px 14px rgba(74, 58, 34, 0.18); margin: 1.2rem 0 0.6rem; }
+  .leaflet-popup-content-wrapper { background:#fffaf0; border-radius:4px; box-shadow:0 4px 16px rgba(0,0,0,0.18); }
+  .leaflet-popup-content { font-family:var(--font-serif); color:#3a2f1e; font-size:0.92rem; line-height:1.45; margin:0.7rem 0.9rem; max-width:280px; }
+  .leaflet-popup-content h4 { color:#8a6420; font-size:1rem; margin-bottom:0.25rem; padding-bottom:0.2rem; border-bottom:1px solid #d8c8a8; }
+  .leaflet-popup-content .status { font-family:'SF Mono', Menlo, Consolas, monospace; font-size: 0.78rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; display:inline-block; margin-bottom:0.35rem; }
+  .leaflet-popup-content .body { font-size:0.86rem; color:#3a2f1e; }
+  .leaflet-popup-content a.openmap { display:inline-block; margin-top:0.45rem; font-size:0.82rem; color:#8a6420; border-bottom:1px dashed #d8b366; }
+  .leaflet-popup-content a.detail { display:inline-block; margin-top:0.35rem; margin-right:0.6rem; font-size:0.82rem; color:#8a6420; border-bottom:1px dotted #d8c8a8; }
+  .leaflet-popup-tip { background:#fffaf0; }
+
+  /* Map legend */
+  .towns-legend { background:#fffaf0; border:1px solid #d8c8a8; border-radius:4px; padding:0.8rem 1rem; margin:0.4rem 0 1.2rem; font-size:0.85rem; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.4rem 1.2rem; }
+  .towns-legend .legend-row { display:flex; align-items:center; gap:0.5rem; }
+  .towns-legend .swatch { flex:0 0 16px; width:16px; height:16px; border-radius:50%; border:2px solid #fffaf0; box-shadow:0 0 0 1px #5a4a32; display:inline-block; }
+  .towns-legend .swatch.primary  { background:#4a8a4a; }
+  .towns-legend .swatch.contested{ background:#c8581a; }
+  .towns-legend .swatch.seat     { background:#8a6420; }
+  .towns-legend .swatch.searched { background:#7a6a52; }
+  .towns-legend .swatch.partial  { background:#5a7aa8; }
+  .towns-legend .swatch.undig    { background:#8a4a4a; }
+  .towns-legend .swatch.reference{ background:#a8a08a; }
+  .towns-legend .swatch.capital  { background:#5a4a8a; }
+  .towns-legend .legend-label { color:#3a2f1e; }
+
+  /* Research-context cards (moved from former germany/geographic-core.html) */
+  .grid-2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:0.8rem; }
+  .card { background:#fffaf0; border:1px solid #d8c8a8; border-left:4px solid #5a8a4a; border-radius:4px; padding:0.9rem 1.1rem; margin-bottom:0.8rem; }
+  .card h3, .card h4 { color:#3a2f1e; margin-top:0; margin-bottom:0.4rem; padding:0; border:none; }
+  .card.confirmed { border-left-color:#5a8a4a; }
+  .card.hypothesis { border-left-color:#d8b366; background:#fffaee; }
+  .card.accent { background:linear-gradient(140deg, #fffaf0, #f4f9ee); border:1px solid #5a8a4a; border-left:4px solid #5a8a4a; }
+  .badge { display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:3px 10px; border-radius:3px; }
+  .badge.confirmed { background:#5a8a4a; color:#fff; }
+  .badge.hypothesis { background:#d8b366; color:#1f1a14; }
+  .pl-list-tight { padding-left:1.4rem; }
+  .pl-list-tight li { margin-bottom:0.3rem; font-size:0.92rem; line-height:1.5; }
+  .mt-tight { margin-top:0.4rem; }
+</style>
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Charles Research">
+  <meta property="og:title" content="Towns of the Hofgeismar Kirchenkreis — Charles Research">
+  <meta property="og:description" content="The geographic core of the German-side investigation — ten villages and parishes in northern Kurhessen">
+  <meta property="og:url" content="https://charles-research.netlify.app/de/towns/index.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/towns.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/towns.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Towns of the Hofgeismar Kirchenkreis — Charles Research">
+  <meta name="twitter:description" content="The geographic core of the German-side investigation — ten villages and parishes in northern Kurhessen">
+  <meta name="description" content="The geographic core of the German-side investigation — ten villages and parishes in northern Kurhessen">
+<script defer src="../../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../../assets/site-nav.css?v=20260629sticky">
+<script defer src="../../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+
+<!-- BEGIN-MAP-OVERLAY-LEGEND -->
+<style>
+  .map-wrap { position: relative; }
+  .map-wrap > .ge-map-legend,
+  .map-wrap > .ca-map-legend,
+  .map-wrap > .cw-map-legend,
+  .map-wrap > .im-map-legend,
+  .map-wrap > .map-legend,
+  .map-wrap > .towns-legend,
+  .map-wrap > aside.legend {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 500;
+    max-width: 280px;
+    background: rgba(255, 250, 240, 0.96) !important;
+    border: 1px solid var(--border-medium, #a88a4a) !important;
+    border-radius: 4px;
+    padding: 0.65rem 0.85rem !important;
+    font-size: 0.82rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.20);
+    margin: 0 !important;
+    color: var(--text-strong, #1f1a14);
+  }
+  :root.theme-dark .map-wrap > .ge-map-legend,
+  :root.theme-dark .map-wrap > .ca-map-legend,
+  :root.theme-dark .map-wrap > .cw-map-legend,
+  :root.theme-dark .map-wrap > .im-map-legend,
+  :root.theme-dark .map-wrap > .map-legend,
+  :root.theme-dark .map-wrap > .towns-legend,
+  :root.theme-dark .map-wrap > aside.legend,
+  :root:not(.theme-light) .map-wrap > .ge-map-legend,
+  :root:not(.theme-light) .map-wrap > .ca-map-legend,
+  :root:not(.theme-light) .map-wrap > .cw-map-legend,
+  :root:not(.theme-light) .map-wrap > .im-map-legend,
+  :root:not(.theme-light) .map-wrap > .map-legend,
+  :root:not(.theme-light) .map-wrap > .towns-legend,
+  :root:not(.theme-light) .map-wrap > aside.legend {
+    background: rgba(28, 22, 16, 0.92) !important;
+    border-color: var(--border-medium, #6a5a40) !important;
+    color: var(--text-body, #e8dfc8);
+  }
+  @media (max-width: 700px) {
+    .map-wrap > .ge-map-legend,
+    .map-wrap > .ca-map-legend,
+    .map-wrap > .cw-map-legend,
+    .map-wrap > .im-map-legend,
+    .map-wrap > .map-legend,
+    .map-wrap > .towns-legend,
+    .map-wrap > aside.legend {
+      position: static;
+      max-width: none;
+      margin: 0.6rem 0 0 !important;
+    }
+  }
+</style>
+<!-- END-MAP-OVERLAY-LEGEND -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/towns/index.html#article",
+  "headline": "Towns of the Hofgeismar Kirchenkreis",
+  "url": "https://charles-research.netlify.app/de/towns/index.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-06-07",
+  "description": "Gazetteer of the German-side investigation — ten villages and parishes in northern Kurhessen"
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../../de/index.html" role="menuitem">Überblick</a>
+      <a href="../../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../methodology.html" role="menuitem">Methodik</a>
+      <a href="../../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="town-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html">← Charles Research</a> &nbsp;/&nbsp; Towns of the Hofgeismar Kirchenkreis</div>
+  <h1>Towns of the Hofgeismar Kirchenkreis</h1>
+  <div class="sub">A gazetteer of the ten places in the German-side investigation &mdash; northern Kurhessen</div>
+  <div class="meta-row">
+    <span class="pill primary">10 TOWNS · KURHESSEN · NORTH OF KASSEL</span>
+  </div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<style>
+  /* ============ BADGE STYLE (legacy; kept for map popups) ============
+     Search-status taxonomy removed 7 June 2026 — this page is now a pure
+     gazetteer; all search status lives on germany/parish-map.html. */
+  .status {
+    display:inline-block;
+    font-family: var(--font-ui, Inter, sans-serif);
+    font-size: 0.76rem;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:0.18rem 0.55rem;
+    border-radius:3px;
+    background: var(--bg-card-tint, #f6ebd2);
+    color: var(--text-meta, #6a5a42);
+  }
+  .status.open       { background: rgba(200, 88, 26, 0.18);  color:#a3441f; }
+  .status.documented { background: rgba(74, 138, 74, 0.18);  color:#3a6a2a; }
+  .status.contested  { background: rgba(232, 160, 80, 0.20); color:#a85820; }
+  .status.eliminated { background: rgba(122, 106, 82, 0.18); color:#5a4a32; }
+  .status.reference  { background: rgba(168, 160, 138, 0.18); color:#5a4a32; }
+  :root.theme-dark .status { background: rgba(216, 179, 102, 0.18); color:#fadea0; }
+  :root.theme-dark .status.open       { background: rgba(200, 88, 26, 0.28);  color:#f4a098; }
+  :root.theme-dark .status.documented { background: rgba(108, 176, 96, 0.22); color:#b8e0a4; }
+  :root.theme-dark .status.contested  { background: rgba(232, 160, 80, 0.22); color:#f4b890; }
+  :root.theme-dark .status.eliminated { background: rgba(168, 160, 138, 0.18); color:#c8b896; }
+  :root.theme-dark .status.reference  { background: rgba(168, 160, 138, 0.18); color:#c8b896; }
+
+  /* ============ GAZETTEER GRID ============ */
+  .reference-grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap:0.6rem;
+    margin: 0.5rem 0 1.2rem;
+  }
+  .reference-tile {
+    background: var(--bg-card, #fffaf0);
+    border: 1px solid var(--border-light, #d8c8a8);
+    border-left: 3px solid #a8a08a;
+    border-radius:4px;
+    padding: 0.6rem 0.8rem;
+    text-decoration:none;
+    color:inherit;
+    transition: background 0.15s;
+  }
+  .reference-tile:hover { background: var(--bg-elevated, #fffdf6); border-left-color: #8a6420; }
+  .reference-tile h4 { margin:0 0 0.2rem; font-size:0.95rem; color: var(--text-heading, #8a6420); font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif); font-weight:600; }
+  .reference-tile p { margin:0; font-size:0.82rem; color: var(--text-body, #3a2f1e); line-height:1.45; }
+  :root.theme-dark .reference-tile { background: var(--bg-card, #24201a); border-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .reference-tile:hover { background: var(--bg-elevated, #2a2519); }
+  :root.theme-dark .reference-tile h4 { color: var(--text-heading, #f1cf85); }
+  :root.theme-dark .reference-tile p { color: var(--text-body, #e8dfc8); }
+
+  /* ============ SURNAME VARIANTS CALLOUT ============ */
+  .surname-callout {
+    background: var(--bg-card-tint, #f6ebd2);
+    border: 1px solid var(--border-medium, #a88a4a);
+    border-left: 4px solid var(--brand-dark, #d8b366);
+    border-radius:4px;
+    padding: 0.85rem 1.05rem;
+    margin: 0 0 1.4rem;
+  }
+  .surname-callout h3 {
+    margin:0 0 0.4rem;
+    font-size:1.05rem;
+    color: var(--text-heading, #8a6420);
+    font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+    font-weight:600;
+  }
+  .surname-callout .variants {
+    font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+    font-size:1.15rem;
+    text-align:center;
+    color: var(--text-strong, #3a2f1e);
+    margin: 0.45rem 0 0.3rem;
+    letter-spacing:0.02em;
+  }
+  .surname-callout .variants strong { color: var(--brand-dark, #8a6420); }
+  :root.theme-dark .surname-callout { background: var(--bg-elevated, #2a2519); border-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .surname-callout h3 { color: var(--text-heading, #f1cf85); }
+  :root.theme-dark .surname-callout .variants { color: var(--text-strong, #f4ead0); }
+  :root.theme-dark .surname-callout .variants strong { color: var(--brand-light, #fadea0); }
+
+  /* ============ SESSION-NOTES PER-TOWN GRID ============ */
+  .session-notes-grouped { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:0.7rem; margin-top:0.5rem; }
+  .session-town-block {
+    background: var(--bg-card, #fffaf0);
+    border:1px solid var(--border-light, #d8c8a8);
+    border-radius:4px;
+    padding:0.65rem 0.85rem;
+  }
+  .session-town-block h4 {
+    margin:0 0 0.35rem;
+    font-size:0.92rem;
+    color: var(--text-heading, #8a6420);
+    font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+    font-weight:600;
+    border-bottom:1px solid var(--border-light, #d8c8a8);
+    padding-bottom:0.25rem;
+  }
+  .session-town-block ul { margin:0; padding-left:1.2rem; font-size:0.84rem; }
+  .session-town-block li { margin-bottom:0.2rem; }
+  :root.theme-dark .session-town-block { background: var(--bg-card, #24201a); border-color: var(--border-medium, #6a5a40); }
+  :root.theme-dark .session-town-block h4 { color: var(--text-heading, #f1cf85); border-bottom-color: var(--border-medium, #6a5a40); }
+
+  /* ============ CARD ↔ MAP-PIN LINKING ============ */
+  .town-card-active { box-shadow: 0 0 0 3px rgba(216, 179, 102, 0.55); }
+  .town-pin-active { z-index: 1000 !important; }
+</style>
+
+<aside class="callout" role="note">
+  <strong>Looking for where the search stands?</strong> This page is a geographic reference &mdash; what each place is, where it sits, and the per-town index of research notes. All search status &mdash; candidate rankings, open gaps, and eliminated parishes &mdash; lives on the <a href="../germany/parish-map.html">Hessian Parish Map</a>, which tracks all 29 investigated parishes and is kept current.
+</aside>
+
+<!-- =============================== THE SETTING + MAP =============================== -->
+<section class="section" id="setting-map">
+  <h2>The setting &mdash; the Hofgeismar Kirchenkreis</h2>
+  <p>The investigation has concentrated on a small cluster of villages and parishes in the <strong>Hofgeismar Kirchenkreis</strong> &mdash; the Lutheran ecclesiastical district covering the northwestern corner of former Kurhessen, just north of Kassel. Click any pin for detail and a town-page link; <strong>hover any town card below to highlight its pin on the map</strong>.</p>
+
+  <!-- BEGIN-MAP-WRAP -->
+<div class="map-wrap">
+<div id="towns-map" role="img" aria-label="Map of the ten towns of the Hofgeismar Kirchenkreis with pins for each town"></div>
+
+  <div class="towns-legend" aria-label="Map legend">
+    <div class="legend-row"><span class="swatch primary"></span><span class="legend-label"><strong>Konze family documented</strong> &mdash; Trendelburg · Friedrichsfeld</span></div>
+    <div class="legend-row"><span class="swatch contested"></span><span class="legend-label"><strong>Charles's stated origin</strong> &mdash; Deisel</span></div>
+    <div class="legend-row"><span class="swatch undig"></span><span class="legend-label"><strong>Registers partly undigitised</strong> &mdash; Heisebeck (post-1831 baptisms)</span></div>
+    <div class="legend-row"><span class="swatch partial"></span><span class="legend-label"><strong>Registers partly undigitised</strong> &mdash; Schöneberg (pre-1822)</span></div>
+    <div class="legend-row"><span class="swatch searched"></span><span class="legend-label"><strong>Other parishes</strong> &mdash; Helmarshausen · Hümme</span></div>
+    <div class="legend-row"><span class="swatch seat"></span><span class="legend-label"><strong>Kirchenkreis seat</strong> &mdash; Hofgeismar</span></div>
+    <div class="legend-row"><span class="swatch reference"></span><span class="legend-label"><strong>Reference</strong> &mdash; Sielen</span></div>
+    <div class="legend-row"><span class="swatch capital"></span><span class="legend-label"><strong>Capital · archive</strong> &mdash; Kassel</span></div>
+</div>
+</div>
+<!-- END-MAP-WRAP -->
+
+  <script>
+  /* Wrapped in DOMContentLoaded — Leaflet CDN <script> is defer'd (16 May 2026). */
+  document.addEventListener('DOMContentLoaded', function () {
+    var pins = [
+      { ll:[51.5839, 9.4203], cls:"primary",   town:"trendelburg",    title:"Trendelburg",     status:"PARISH CHURCH FOR DEISEL · KONTZE FAMILY DOCUMENTED", body:"Hilltop castle town on the Diemel. The parish church for Deisel and several surrounding villages, and home of the documented Kontze family paper trail (1773–1830s) — multiple generations served as <em>Rathsverwandte</em> (town councillors).", href:"trendelburg.html",    gmaps:"https://www.google.com/maps/search/?api=1&query=Trendelburg+Hessen+Germany" },
+      { ll:[51.5681, 9.4178], cls:"contested", town:"deisel",         title:"Deisel",          status:"STATED ORIGIN — \"DEISSE\" (DECODED)",              body:"The village Charles named at his 1866 marriage register entry (<em>\"aus Deisse, Kreis Cassel, Churhessen\"</em> — Deisse decoded phonetically to Deisel). Three \"geb. Konzen\" mothers attested 1828–1829 and one Konze male baptism in January 1835 (Entry 194; the neighbouring Entry 195 was re-read in 2026 as a Köster child and eliminated). Churched from Trendelburg.", href:"deisel.html",         gmaps:"https://www.google.com/maps/search/?api=1&query=Deisel+Trendelburg+Germany" },
+      { ll:[51.5868, 9.6565], cls:"undig",     town:"heisebeck",      title:"Heisebeck",       status:"PARISH · POST-1831 BAPTISMS UNDIGITISED", body:"Parish at the northeastern edge of the search ring. Its marriages 1808–1921 are digitized on Archion (KB 219169 / 219190); its baptisms after 1831 — the volume that would cover a January 1835 birth — are not, and are held at the Landeskirchliches Archiv Kassel.", href:"heisebeck.html",        gmaps:"https://www.google.com/maps/search/?api=1&query=Heisebeck+Wesertal+Germany" },
+      { ll:[51.5168, 9.4176], cls:"partial",   town:"schoeneberg",    title:"Schöneberg",      status:"PARISH · PRE-1822 REGISTERS UNDIGITISED", body:"A parish near Hofgeismar, in the Hofgeismar Kirchenkreis. Post-1822 volumes are digitized on Archion; the pre-1822 registers are held at the Landeskirchliches Archiv Kassel (located on-site April 2026).", href:"schoeneberg.html",  gmaps:"https://www.google.com/maps/search/?api=1&query=Sch%C3%B6neberg+Hofgeismar+Germany" },
+      { ll:[51.4961, 9.3933], cls:"seat",      town:"hofgeismar",     title:"Hofgeismar",      status:"KIRCHENKREIS SEAT",                    body:"Seat of the Kirchenkreis and the district's administrative centre, with two parishes — Altstadt and Neustadt.", href:"hofgeismar.html",     gmaps:"https://www.google.com/maps/search/?api=1&query=Hofgeismar+Germany" },
+      { ll:[51.5864, 9.3694], cls:"primary",   town:"friedrichsfeld", title:"Friedrichsfeld",  status:"COLONIST VILLAGE · KONTZE BRANCH DOCUMENTED", body:"Small colonist village just west of Trendelburg. Home of the documented Andreas Kontze line (b. 1795 Trendelburg) and source of one of the Quentin candidates from the LAGIS emigration register.", href:"friedrichsfeld.html", gmaps:"https://www.google.com/maps/search/?api=1&query=Friedrichsfeld+Trendelburg+Germany" },
+      { ll:[51.6053, 9.4906], cls:"searched",  town:"helmarshausen",  title:"Helmarshausen",   status:"PARISH · DIEMEL VALLEY",               body:"Former monastery town northeast of Deisel, on the Diemel just above Bad Karlshafen. Marriage register 1820–1860 fully indexed.", href:"helmarshausen.html",  gmaps:"https://www.google.com/maps/search/?api=1&query=Helmarshausen+Bad+Karlshafen+Germany" },
+      { ll:[51.5436, 9.4066], cls:"searched",  town:"huemme",         title:"Hümme",           status:"PARISH · DIEMEL VALLEY",               body:"Parish village south of Trendelburg, between Deisel and Hofgeismar.", href:"huemme.html",          gmaps:"https://www.google.com/maps/search/?api=1&query=H%C3%BCmme+Hofgeismar+Germany" },
+      { ll:[51.6219, 9.4647], cls:"reference", town:"sielen",         title:"Sielen",          status:"VILLAGE",                              body:"Small village northeast of Trendelburg. Mentioned in several Konze-related register entries.", href:"sielen.html",         gmaps:"https://www.google.com/maps/search/?api=1&query=Sielen+Trendelburg+Germany" },
+      { ll:[51.3127, 9.4797], cls:"capital",   town:"kassel",         title:"Kassel",          status:"CAPITAL · ARCHIVE",                    body:"The Kurhessen capital. Site of the Landeskirchliches Archiv (church archive) and the Kassel city archive; the Hessian state archive HStAM, holding the Kurhessen records, is in Marburg.", href:"kassel.html",         gmaps:"https://www.google.com/maps/search/?api=1&query=Kassel+Germany" }
+    ];
+
+    var COLORS = { primary:"#4a8a4a", contested:"#c8581a", seat:"#8a6420", searched:"#7a6a52", partial:"#5a7aa8", undig:"#8a4a4a", reference:"#a8a08a", capital:"#5a4a8a" };
+
+    function makeIcon(color) {
+      var html = '<div style="background:' + color + '; width:18px; height:18px; border-radius:50%; ' +
+                 'border:2px solid #fffaf0; box-shadow:0 0 0 1px #5a4a32, 0 2px 5px rgba(0,0,0,0.35);"></div>';
+      return L.divIcon({ html:html, className:"towns-pin", iconSize:[22,22], iconAnchor:[11,11], popupAnchor:[0,-8] });
+    }
+
+    var map = L.map('towns-map', { scrollWheelZoom:false }).setView([51.52, 9.43], 10);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+      maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+    }).addTo(map);
+    // Per-town label directions so the Trendelburg/Deisel/Hümme/Schöneberg cluster doesn't overlap.
+    // The Trendelburg/Deisel/Hümme/Schöneberg towns stack almost vertically at this zoom,
+    // so labels are pushed sideways (alternating left/right) — never up/down into a neighbour —
+    // and offsets clear the 22px pins so no label sits over a dot.
+    var TOWN_LABEL_DIR = {
+      trendelburg:['right',[17,0]], deisel:['left',[-17,0]], huemme:['right',[17,0]],
+      schoeneberg:['left',[-17,0]], hofgeismar:['bottom',[0,17]], sielen:['top',[0,-17]],
+      helmarshausen:['right',[17,0]], friedrichsfeld:['left',[-17,0]], heisebeck:['left',[-17,0]], kassel:['bottom',[0,17]]
+    };
+
+    // Track marker by town slug for card↔pin wiring
+    var markersByTown = {};
+    var bounds = L.latLngBounds([]);
+    pins.forEach(function(p) {
+      var color = COLORS[p.cls] || "#8a6420";
+      var marker = L.marker(p.ll, { icon: makeIcon(color), title: p.title }).addTo(map);
+      var tld = TOWN_LABEL_DIR[p.town] || ['top',[0,-11]];
+      marker.bindTooltip(p.title, { permanent: true, direction: tld[0], offset: tld[1], className: 'town-label' });
+      marker.bindPopup(
+        '<h4>' + p.title + '</h4>' +
+        '<div class="status" style="color:' + color + ';">' + p.status + '</div>' +
+        '<div class="body">' + p.body + '</div>' +
+        '<a class="detail" href="../../towns/' + p.href + '">Town page →</a>' +
+        '<a class="openmap" href="../../towns/' + p.gmaps + '" target="_blank" rel="noopener noreferrer">✦ Open in Google Maps</a>',
+        { maxWidth: 320 }
+      );
+      markersByTown[p.town] = marker;
+      // Click-pin → scroll to matching town card
+      marker.on('click', function() {
+        var card = document.querySelector('[data-town="' + p.town + '"]');
+        if (card) {
+          // pulse the card briefly for visual feedback
+          card.classList.add('town-card-active');
+          setTimeout(function(){ card.classList.remove('town-card-active'); }, 1800);
+        }
+      });
+      bounds.extend(p.ll);
+    });
+    if (bounds.isValid()) map.fitBounds(bounds, { padding:[40,40], maxZoom:11 });
+
+    // Hover any [data-town] card → highlight matching pin only.
+    // (17 May 2026: removed m.openPopup() — cards live throughout a long
+    // page, so opening popups on hover meant popups appeared on the map
+    // even when the map was scrolled out of view, feeling "random".
+    // Click — handled below — is the explicit opener.)
+    document.addEventListener('mouseover', function(ev) {
+      var el = ev.target.closest('[data-town]');
+      if (!el) return;
+      var town = el.getAttribute('data-town');
+      var m = markersByTown[town];
+      if (m) {
+        var icon = m.getElement();
+        if (icon) icon.classList.add('town-pin-active');
+      }
+    });
+    document.addEventListener('mouseout', function(ev) {
+      var el = ev.target.closest('[data-town]');
+      if (!el) return;
+      var town = el.getAttribute('data-town');
+      var m = markersByTown[town];
+      if (m) {
+        var icon = m.getElement();
+        if (icon) icon.classList.remove('town-pin-active');
+      }
+    });
+    // Click any [data-town] card → scroll the map into view if it's off-screen,
+    // then open the marker's popup. Without the scroll step, clicking a card
+    // far below the map opened a popup invisibly above the viewport.
+    // (17 May 2026 fix.)
+    var mapEl = document.getElementById('towns-map');
+    function isOffscreen(el) {
+      if (!el) return false;
+      var r = el.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      // Off-screen if more than half the element is above or below the viewport
+      return (r.bottom < vh * 0.25) || (r.top > vh * 0.75);
+    }
+    document.addEventListener('click', function(ev) {
+      var el = ev.target.closest('[data-town]');
+      if (!el) return;
+      // if click was on an inner <a>, let the link work
+      if (ev.target.closest('a')) return;
+      var town = el.getAttribute('data-town');
+      var m = markersByTown[town];
+      if (!m) return;
+      if (isOffscreen(mapEl)) {
+        mapEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Wait for the smooth-scroll to land before opening the popup
+        setTimeout(function() { m.openPopup(); }, 450);
+      } else {
+        m.openPopup();
+      }
+    });
+  });
+  </script>
+</section>
+
+<!-- =============================== GAZETTEER — THE TEN PLACES =============================== -->
+<section class="section" id="gazetteer">
+  <h2>The core places</h2>
+  <p>These ten are the central places of the investigation — each has a full page with geography, parish history, register holdings, and visiting links. Hover a tile to highlight its pin on the map above. The <a href="#wider-ring">wider search ring</a> below lists every other parish on the map. For the current research status of any parish, see the <a href="../germany/parish-map.html">Hessian Parish Map</a>.</p>
+
+  <div class="reference-grid">
+    <a class="reference-tile" href="trendelburg.html" data-town="trendelburg">
+      <h4>Trendelburg</h4>
+      <p>Hilltop castle town on the Diemel; the parish church for Deisel and surrounding villages. Documented Kontze residence 1773&ndash;1830s &mdash; multiple generations of <em>Rathsverwandte</em>.</p>
+    </a>
+    <a class="reference-tile" href="deisel.html" data-town="deisel">
+      <h4>Deisel</h4>
+      <p>The village Charles named at his 1866 St. Louis marriage (<em>"aus Deisse, Kreis Cassel, Churhessen"</em> — "Deisse" decoded phonetically to Deisel). Three "geb. Konzen" mothers attested 1828&ndash;1829; churched from Trendelburg.</p>
+    </a>
+    <a class="reference-tile" href="friedrichsfeld.html" data-town="friedrichsfeld">
+      <h4>Friedrichsfeld</h4>
+      <p>Small colonist village just west of Trendelburg. Home of the documented Andreas Kontze line (b. 1795 Trendelburg).</p>
+    </a>
+    <a class="reference-tile" href="helmarshausen.html" data-town="helmarshausen">
+      <h4>Helmarshausen</h4>
+      <p>Former monastery town northeast of Deisel, on the Diemel just above Bad Karlshafen. Famed medieval scriptorium.</p>
+    </a>
+    <a class="reference-tile" href="huemme.html" data-town="huemme">
+      <h4>Hümme</h4>
+      <p>Parish village south of Trendelburg, between Deisel and Hofgeismar.</p>
+    </a>
+    <a class="reference-tile" href="hofgeismar.html" data-town="hofgeismar">
+      <h4>Hofgeismar</h4>
+      <p>Seat of the Kirchenkreis and the district's administrative centre, with two parishes &mdash; Altstadt and Neustadt.</p>
+    </a>
+    <a class="reference-tile" href="schoeneberg.html" data-town="schoeneberg">
+      <h4>Schöneberg</h4>
+      <p>Parish near Hofgeismar. Post-1822 volumes digitized on Archion; pre-1822 registers held at the Landeskirchliches Archiv Kassel.</p>
+    </a>
+    <a class="reference-tile" href="heisebeck.html" data-town="heisebeck">
+      <h4>Heisebeck</h4>
+      <p>Parish at the northeastern edge of the search ring. Marriages 1808&ndash;1921 digitized on Archion; baptisms after 1831 undigitised, held at the Landeskirchliches Archiv Kassel.</p>
+    </a>
+    <a class="reference-tile" href="sielen.html" data-town="sielen">
+      <h4>Sielen</h4>
+      <p>Small village northeast of Trendelburg, mentioned in several Konze-related register entries.</p>
+    </a>
+    <a class="reference-tile" href="kassel.html" data-town="kassel">
+      <h4>Kassel</h4>
+      <p>The Kurhessen capital. Site of the Landeskirchliches Archiv and the city archive; the state archive HStAM is in Marburg.</p>
+    </a>
+  </div>
+</section>
+
+<!-- =============================== WIDER SEARCH RING — REMAINING PARISHES =============================== -->
+<section class="section" id="wider-ring">
+  <h2>The wider search ring — every other parish on the map</h2>
+  <p>Beyond the ten core places, the investigation searched a wider ring of adjacent Kreis-Hofgeismar parishes, the cross-border Catholic parishes of Prussian Westphalia, and a set of far-south place-name alternatives. Each now has its own page with a research summary and a per-parish research log. Status reflects the <a href="../germany/parish-map.html">Hessian Parish Map</a>.</p>
+
+  <h3>Diemel valley &amp; adjacent Kreis Hofgeismar</h3>
+  <div class="reference-grid">
+    <a class="reference-tile" href="stammen.html" data-town="stammen"><h4>Stammen</h4><p>~2 km east. A <em>distinct</em> Stammen Kontze branch documented; 1835 entry a stillborn male — not Charles. The burial register (220072) is a key open offline test.</p></a>
+    <a class="reference-tile" href="gottsbueren.html" data-town="gottsbueren"><h4>Gottsbüren</h4><p>~4 km SE. A claimed but unconfirmed Kontze tie — the village’s own books are entirely Kontze-free. 1835 negative.</p></a>
+    <a class="reference-tile" href="haueda.html" data-town="haueda"><h4>Haueda</h4><p>~6 km WNW. Filial with its own Taufbuch from 1830; 1835 males all legitimate. Eliminated.</p></a>
+    <a class="reference-tile" href="lamerden.html" data-town="lamerden"><h4>Lamerden</h4><p>~5 km NW. Jan–Feb 1835 baptisms read by eye — negative. Eliminated.</p></a>
+    <a class="reference-tile" href="eberschuetz.html" data-town="eberschuetz"><h4>Eberschütz</h4><p>~5 km NNE. One illegitimate male verified not a match. Eliminated.</p></a>
+    <a class="reference-tile" href="hombressen.html" data-town="hombressen"><h4>Hombressen</h4><p>~7 km SW. Legitimate males only; the one illegitimate birth female. Eliminated.</p></a>
+    <a class="reference-tile" href="gieselwerder.html" data-town="gieselwerder"><h4>Oberweser / Gieselwerder</h4><p>~7 km east. Oberweser records held under Gieselwerder; 1835 negative. Eliminated.</p></a>
+    <a class="reference-tile" href="ostheim.html" data-town="ostheim"><h4>Ostheim</h4><p>~9 km WSW. One stillborn male (not a candidate); otherwise negative. Eliminated.</p></a>
+    <a class="reference-tile" href="karlshafen.html" data-town="karlshafen"><h4>Bad Karlshafen</h4><p>~9 km north. Both confessions searched; one illegitimate male legitimized 1838 — not Charles. Eliminated.</p></a>
+    <a class="reference-tile" href="niedermeiser.html" data-town="niedermeiser"><h4>Niedermeiser</h4><p>~10 km SW. No male baptism in the 1835 window at all. Eliminated.</p></a>
+    <a class="reference-tile" href="kelze.html" data-town="kelze"><h4>Hofgeismar-Kelze</h4><p>~11 km SW. Huguenot colony parish; only window baptism female. Eliminated.</p></a>
+    <a class="reference-tile" href="gewissenruh.html" data-town="gewissenruh"><h4>Gewissenruh</h4><p>~12 km NE. Tiny Huguenot parish; no January 1835 baptism at all. Eliminated.</p></a>
+    <a class="reference-tile" href="liebenau.html" data-town="liebenau"><h4>Liebenau (+ Grimelsheim)</h4><p>~13 km SW. <strong>Open</strong> — Archion holds only to 1777; the 1835 books are not digitised anywhere.</p></a>
+    <a class="reference-tile" href="grebenstein.html" data-town="grebenstein"><h4>Grebenstein</h4><p>~14 km south. One illegitimate January birth, female; no Konze-pool male. Eliminated.</p></a>
+    <a class="reference-tile" href="veckerhagen.html" data-town="veckerhagen"><h4>Veckerhagen</h4><p>~15 km SE. One out-of-window illegitimate male, unrelated. Eliminated.</p></a>
+    <a class="reference-tile" href="immenhausen.html" data-town="immenhausen"><h4>Immenhausen</h4><p>~16 km south. All 1835 males legitimate. Eliminated.</p></a>
+    <a class="reference-tile" href="marzhausen.html" data-town="marzhausen"><h4>Marzhausen</h4><p>~40 km SE (Kirchenkreis Witzenhausen). Checked for completeness — negative. Eliminated.</p></a>
+  </div>
+
+  <h3>Cross-border Catholic parishes (Prussian Westphalia)</h3>
+  <div class="reference-grid">
+    <a class="reference-tile" href="herstelle.html" data-town="herstelle"><h4>Herstelle / Würgassen</h4><p>~8 km NNW. First cross-border parish (Erzbistum Paderborn), searched via Matricula — all <em>ehelich</em>. Eliminated.</p></a>
+    <a class="reference-tile" href="dalhausen.html" data-town="dalhausen"><h4>Dalhausen</h4><p>~10 km NW. A striking 26 Jan 1835 near-miss (F. W. Sievers) — legitimate, died in Germany 1908. Eliminated.</p></a>
+    <a class="reference-tile" href="beverungen.html" data-town="beverungen"><h4>Beverungen</h4><p>~11 km north. Five window males, all <em>ehelich</em>, each accounted for in Germany. Eliminated.</p></a>
+  </div>
+
+  <h3>Tier-3 “Deissen” &amp; far-south toponym checks</h3>
+  <div class="reference-grid">
+    <a class="reference-tile" href="gudensberg.html" data-town="gudensberg"><h4>Gudensberg</h4><p>~42 km S, near Kassel. Tier-3 “Deissen” place-name candidate; 1850 confirmation class read — negative.</p></a>
+    <a class="reference-tile" href="dissen.html" data-town="dissen"><h4>Dissen</h4><p>~40 km S. Tier-3 “Deissen” place-name candidate; searched — negative.</p></a>
+    <a class="reference-tile" href="grifte.html" data-town="grifte"><h4>Grifte</h4><p>~37 km S (Edermünde). Tier-3 “Deissen” place-name candidate; searched — negative.</p></a>
+    <a class="reference-tile" href="diez.html" data-town="diez"><h4>Diez</h4><p>~135 km S (Lahn). Hessen-Nassau toponym alternative for “Deisse”; negative.</p></a>
+    <a class="reference-tile" href="dies.html" data-town="dies"><h4>Dies</h4><p>~135 km S (Rhein-Lahn). Hessen-Nassau toponym alternative; negative.</p></a>
+    <a class="reference-tile" href="schierstein.html" data-town="schierstein"><h4>Schierstein</h4><p>~170 km S (Wiesbaden). Tested the “Freudenberg / Schierstein” Rhine reading; negative.</p></a>
+    <a class="reference-tile" href="mainz.html" data-town="mainz"><h4>Mainz</h4><p>~175 km S. Where Andreas Kontze died 1854 — the family’s southern settlement, not a birth parish. Eliminated.</p></a>
+  </div>
+</section>
+
+<!-- =============================== SURNAME VARIANTS =============================== -->
+<section class="section">
+  <h2>Surname variants in the Trendelburg parish</h2>
+  <div class="surname-callout">
+    <h3>The same family appears under multiple spellings</h3>
+    <p style="font-size:0.92rem; margin:0;">Archion's surname index for the K-section explicitly cross-references all of the variants below as one family:</p>
+    <p class="variants"><strong>Konze · Kontze · Kontzen · Contze · Konzen</strong> &mdash; the five Hesse-attested forms, with parish cross-reference also adding <em>Cortze · Cordes · Contz</em>. The American records add <strong>Konsen</strong> (1875 baptism, closest phonetic capture but not itself Hesse-attested) and a direct attestation of the full Hessian z-form <strong>Konzen</strong> on the 1890 daughter's death record.</p>
+    <p style="font-size:0.85rem; color:var(--text-meta, #6a5a42); margin:0; text-align:center;">(plus the distinct <em>Jungkontze</em> "junior" Hausname branch)</p>
+  </div>
+</section>
+
+<!-- =============================== SESSION NOTES PER TOWN =============================== -->
+<section class="section">
+  <h2>Session notes &mdash; grouped by town</h2>
+  <p>Every parish search has a corresponding session note with what was searched, what was found, and the conclusion. Grouped by town so the per-parish history is findable in one spot.</p>
+
+  <div class="session-notes-grouped">
+    <div class="session-town-block" data-town="trendelburg">
+      <h4>Trendelburg</h4>
+      <ul>
+        <li><span>10 Apr &middot; KB 1819–1831 search</span></li>
+        <li><span>S17 &middot; KB 218842 catalogue</span></li>
+        <li><span>S18 &middot; KB 220108 Konze father confirmed</span></li>
+        <li><span>S62 &middot; KB 220099 marriage search</span></li>
+      </ul>
+    </div>
+    <div class="session-town-block" data-town="friedrichsfeld">
+      <h4>Friedrichsfeld</h4>
+      <ul>
+        <li><span>6 Apr &middot; KB 218959 baptism search</span></li>
+        <li><span>9 Apr &middot; complete 1830–1836 baptism search</span></li>
+        <li><span>S22 &middot; Kontze colonist</span></li>
+      </ul>
+    </div>
+    <div class="session-town-block" data-town="helmarshausen">
+      <h4>Helmarshausen</h4>
+      <ul>
+        <li><span>10 Apr &middot; complete index 1820–1860</span></li>
+        <li><span>S63 &middot; Hofgeismar + Helmarshausen</span></li>
+      </ul>
+    </div>
+    <div class="session-town-block" data-town="huemme">
+      <h4>Hümme</h4>
+      <ul>
+        <li><span>S61 &middot; marriage register · Kurrent-verified</span></li>
+        <li><span>S65 &middot; Schöneberg + Hümme</span></li>
+      </ul>
+    </div>
+    <div class="session-town-block" data-town="hofgeismar">
+      <h4>Hofgeismar</h4>
+      <ul>
+        <li><span>S63 &middot; Hofgeismar Neustadt</span></li>
+        <li><span>S64 &middot; Hofgeismar Altstadt</span></li>
+      </ul>
+    </div>
+    <div class="session-town-block" data-town="schoeneberg">
+      <h4>Schöneberg</h4>
+      <ul>
+        <li><span>S65 &middot; Schöneberg + Hümme</span></li>
+        <li><span>S66 &middot; pre-1822 registers found</span></li>
+        <li><span>S67 &middot; post-1822 negative</span></li>
+      </ul>
+    </div>
+    <div class="session-town-block" data-town="heisebeck">
+      <h4>Heisebeck</h4>
+      <ul>
+        <li><span>S66 &middot; digitization status</span></li>
+        <li><span>S67 &middot; marriages 1808&ndash;1835 searched</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =============================== TOOLS USED ACROSS ALL PARISHES — COMPACT FOOTER =============================== -->
+<section class="section">
+  <h2>Tools used across all parish searches</h2>
+  <p class="small">The same handful of databases and archives are queried for every village. Each individual <a href="trendelburg.html">town page</a> lists town-specific links inline; this is the consolidated reference list.</p>
+
+  <div class="resource-grid">
+    <div class="resource-card archion">
+      <span class="source-label archion">Parish records</span>
+      <h4>Archion</h4>
+      <p>The German Evangelical Church's parish-register portal. Subscription-based; covers most digitized Hesse-Nassau parishes.</p>
+      <a href="https://www.archion.de/" target="_blank" rel="noopener noreferrer">archion.de ↗</a>
+    </div>
+    <div class="resource-card immigration">
+      <span class="source-label immigration">Emigration register</span>
+      <h4>LAGIS Hessen Auswanderer</h4>
+      <p>The Hessian state's online catalogue of documented emigrants from Kurhessen and Hessen-Darmstadt (~1830–1900).</p>
+      <a href="https://www.lagis-hessen.de/de/subjects/index/sn/auswanderer" target="_blank" rel="noopener noreferrer">LAGIS Auswanderer ↗</a>
+    </div>
+    <div class="resource-card civil">
+      <span class="source-label civil">State archive</span>
+      <h4>Arcinsys Hessen</h4>
+      <p>The Hessian state archives' online finding aid. Holdings include HStAM Marburg (Kurhessen records) and HHStAW Wiesbaden.</p>
+      <a href="https://arcinsys.hessen.de/" target="_blank" rel="noopener noreferrer">arcinsys.hessen.de ↗</a>
+    </div>
+    <div class="resource-card civil">
+      <span class="source-label civil">Civil registers</span>
+      <h4>Standesämter (post-1874)</h4>
+      <p>Imperial Germany introduced civil registration on 1 January 1875 (Prussian Personenstandsgesetz of 9 March 1874). Birth/marriage/death records from 1874+ are in local Standesamt offices, with copies in regional state archives.</p>
+      <a href="https://www.familysearch.org/en/wiki/Germany_Civil_Registration" target="_blank" rel="noopener noreferrer">FamilySearch wiki ↗</a>
+    </div>
+    <div class="resource-card census">
+      <span class="source-label census">Population schedules</span>
+      <h4>Kurhessen Volkszählung</h4>
+      <p>Kurhessen conducted population counts in 1846, 1855, 1858, 1861, and 1864. Most pre-1871 schedules are at HStAM Marburg.</p>
+      <a href="https://arcinsys.hessen.de/" target="_blank" rel="noopener noreferrer">HStAM Marburg ↗</a>
+    </div>
+    <div class="resource-card newspaper">
+      <span class="source-label newspaper">German newspapers</span>
+      <h4>Casseler Zeitung</h4>
+      <p>Cassel/Kassel-based papers from the 1820s onward carried death notices, emigration announcements, and police reports of "auswandering ohne Genehmigung."</p>
+      <a href="https://orka.bibliothek.uni-kassel.de/viewer/!collections/" target="_blank" rel="noopener noreferrer">Universität Kassel digitized newspapers ↗</a>
+    </div>
+    <div class="resource-card cemetery">
+      <span class="source-label cemetery">Cemeteries</span>
+      <h4>BillionGraves &amp; Find a Grave</h4>
+      <p>Most surviving 19th-century Hessian-Lutheran burials were eventually cleared as cemetery rotations advanced; surviving stones are spotty.</p>
+      <a href="https://www.findagrave.com/cemetery/search?cemeterySearchType=country&country=Germany" target="_blank" rel="noopener noreferrer">Find a Grave ↗</a>
+      <a href="https://billiongraves.com/" target="_blank" rel="noopener noreferrer">BillionGraves ↗</a>
+    </div>
+    <div class="resource-card immigration">
+      <span class="source-label immigration">Bremen passenger lists</span>
+      <h4>Bremen Passenger Lists Database</h4>
+      <p>Almost all original Bremen passenger lists were destroyed during WWII. Pre-1920 manifests survive only via U.S. arrival records.</p>
+      <a href="https://www.passengerlists.de/" target="_blank" rel="noopener noreferrer">passengerlists.de ↗</a>
+    </div>
+    <div class="resource-card archion">
+      <span class="source-label archion">Family search wiki</span>
+      <h4>FamilySearch · Hesse Genealogy Guide</h4>
+      <p>FamilySearch's Hesse research wiki — covers parish records, civil registers, emigration, gazetteers.</p>
+      <a href="https://www.familysearch.org/en/wiki/Hesse,_German_Empire_Genealogy" target="_blank" rel="noopener noreferrer">FamilySearch · Hesse wiki ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer class="back-nav">
+  <a href="../index.html#germany">← Germany &amp; Origins tab</a>
+  <a href="../index.html">Site home</a>
+</footer>
+
+</main>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../../de/index.html">Startseite</a></li>
+        <li><a href="../../de/stories.html">Geschichten</a></li>
+        <li><a href="../../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../../methodology.html">Methodik</a></li>
+        <li><a href="../../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../../de/glossary.html">Glossar</a></li>
+        <li><a href="../../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../../de/about.html">Über</a></li>
+        <li><a href="../../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

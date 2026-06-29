@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="x-translated-from" content="start.html">
+<meta name="x-translated-source-sha" content="3f5a25a806dd2c90e0765ec57a104548dd2f0c1e6c1ab094e43a5ca1e6188b46">
+<meta name="x-translated-date" content="2026-06-28">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Hier beginnen — Für Forschende — Charles-Forschung</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/de/start.html">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/start.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/start.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/start.html">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
+<meta name="description" content="Die Eingangstür für Forschende zum Charles-Konzen-Projekt: das Arbeitsergebnis und sein Status, die zentralen Belegseiten, was bereits durchsucht wurde und die offenen Stränge — jeweils verlinkt und nach Zweck gruppiert.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Charles-Forschung">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Hier beginnen — Für Forschende — Charles-Forschung">
+<meta property="og:description" content="Direkt zu den Kernstücken: das Ergebnis, die Belege, was durchsucht wurde und was noch offen ist.">
+<meta property="og:url" content="https://charles-research.netlify.app/de/start.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.bd-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.bd-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.bd-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.bd-hero h1 { color: var(--text-on-dark); font-size: 2.2rem; letter-spacing: 0.02em; max-width: 880px; }
+  header.bd-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 820px; }
+
+  main { max-width: 1080px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  h2 { font-size: 1.4rem; color: var(--text-primary); margin: 2.4rem 0 0.3rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  h2 .kicker { display:block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--brand-dark); border:none; margin-bottom:0.15rem; }
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.07rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.2rem; }
+
+  /* Status banner — the one-paragraph "where things stand" */
+  .status {
+    background: var(--bg-card); border: 1px solid var(--border-light); border-left: 4px solid var(--brand);
+    border-radius: 4px; padding: 1rem 1.2rem; margin: 1.2rem 0 1.6rem;
+  }
+  .status .ttl { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.4rem; }
+  .status p { margin: 0; font-size: 0.96rem; }
+  .status .chips { margin-top: 0.7rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .chip { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em; padding: 2px 8px; border-radius: 3px; background: var(--bg-card-tint); border: 1px solid var(--border-light); color: var(--text-meta); }
+  .chip.work { background: #b07d1a; color: #fff; border-color: transparent; }
+  .chip.open { background: #6d6256; color: #fff; border-color: transparent; }
+
+  /* Compact key-search-terms slip */
+  .searchline { border: 1px solid var(--brand); border-radius: 6px; background: linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); padding: 0.85rem 1.1rem; margin: 0 0 1.6rem; }
+  .searchline .ttl { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.5rem; }
+  .searchline .row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; align-items: baseline; }
+  .searchline .term { font-size: 0.92rem; }
+  .searchline .term b { color: var(--text-strong); }
+  .searchline .term .k { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-meta); display: block; }
+  .searchline .term code { font-family: var(--font-mono); color: var(--brand-dark); }
+  .searchline .more { margin-top: 0.55rem; font-size: 0.84rem; color: var(--text-meta); }
+  html.theme-dark .searchline .ttl, html.theme-dark .searchline .term code { color: #e8cd8a; }
+
+  /* "If you read three things" quick-start */
+  .quick { margin: 0.6rem 0 0.4rem; }
+  ol.three { list-style: none; counter-reset: q; padding: 0; margin: 0.4rem 0 0; display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 0.8rem; }
+  ol.three > li { counter-increment: q; position: relative; background: linear-gradient(140deg, var(--bg-card), var(--bg-card-tint)); border: 1px solid var(--border-light); border-radius: 5px; padding: 0.9rem 1rem 0.9rem 2.7rem; }
+  ol.three > li::before { content: counter(q); position:absolute; left:0.8rem; top:0.85rem; font-family: var(--font-mono); font-weight:700; font-size:1.15rem; color: var(--brand-dark); }
+  ol.three a.t { display:block; font-weight:700; color: var(--text-strong); border:none; font-size:1.02rem; }
+  ol.three a.t:hover { color: var(--brand); }
+  ol.three p { margin:0.2rem 0 0; font-size:0.86rem; color: var(--text-meta); }
+
+  /* Card grid for each intent group */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.8rem; margin: 0.9rem 0 0.4rem; }
+  .card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 5px; padding: 0.85rem 1rem; transition: border-color 0.15s ease, transform 0.15s ease; }
+  .card:hover { border-color: var(--brand); transform: translateY(-1px); }
+  .card a.t { display:block; font-weight: 700; color: var(--text-strong); border: none; font-size: 0.98rem; }
+  .card a.t:hover { color: var(--brand); }
+  .card .star { color: var(--brand-dark); font-weight: 700; }
+  .card p { margin: 0.25rem 0 0; font-size: 0.85rem; color: var(--text-meta); }
+
+  html.theme-dark h2 .kicker,
+  html.theme-dark .status .ttl,
+  html.theme-dark ol.three > li::before,
+  html.theme-dark .card .star { color: #e8cd8a; }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.bd-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.bd-hero h1, header.bd-hero .sub, header.bd-hero .crumbs, header.bd-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+    .card, .status, ol.three > li { break-inside: avoid; }
+  }
+</style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://charles-research.netlify.app/de/start.html#page",
+  "name": "Hier beginnen — Für Forschende",
+  "description": "Die Eingangstür für Forschende: das Arbeitsergebnis, die zentralen Belege, was durchsucht wurde und die offenen Stränge.",
+  "url": "https://charles-research.netlify.app/de/start.html",
+  "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+  "about": { "@id": "https://charles-research.netlify.app/#charles" },
+  "inLanguage": "de-DE",
+  "translationOfWork": "https://charles-research.netlify.app/start.html"
+}
+</script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../de/index.html" role="menuitem">Überblick</a>
+      <a href="../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodik</a>
+      <a href="../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="bd-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html">← Charles-Forschung</a> &nbsp;/&nbsp; Hier beginnen</div>
+  <h1>Hier beginnen — Für Forschende</h1>
+  <div class="sub">Eine Eingangstür für mitarbeitende Genealoginnen und Genealogen. Das Arbeitsergebnis und sein Stand, die zentralen Belege, was bereits durchsucht wurde und die noch offenen Stränge — jeweils verlinkt und nach Zweck gruppiert.</div>
+</header>
+
+<!-- BEGIN-INJECTED-SKIP-ANCHOR --><a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a><!-- END-INJECTED-SKIP-ANCHOR -->
+<main>
+
+<p class="lede">Wenn Sie dieses Projekt aufgreifen, um die Belege zu prüfen oder die Suche weiterzuführen, beginnen Sie hier. Die wenigen Seiten unten sind die tragenden; alles Übrige auf der Website stützt sie.</p>
+
+<div class="status">
+  <div class="ttl">Wie der Stand ist</div>
+  <p><strong>Charles</strong> (~26. Januar 1835 &ndash; 16. Dezember 1903). Sein deutscher Familienname erscheint in vierzehn US-Akten, 1862&ndash;1896, in <strong>neun Schreibweisen</strong> &mdash; <em>Gannsen</em> (die Form, mit der er selbst unterschrieb), <em>Gonnson</em>, <em>Gansen</em>, <em>Gonsen</em>, <em>Gonson</em>, <em>Conson</em>, <em>Jansen</em>, <em>Konsen</em> und <em>Konzen</em> &mdash; bevor sich die Familie auf die angenommene Anglisierung <strong>Johnson</strong> festlegte (siehe <a href="../surname-records.html">Familiennamen-Akten</a>). Seine Geburt wird auf <em>Arbeitsbasis</em> mit <strong>~26. Januar 1835 in Kurhessen</strong> angesetzt &mdash; das Datum beruht auf einem einzigen nachträglichen Begräbniseintrag der Pfarrei, und <strong>eine deutsche Taufe wurde bislang nicht gefunden.</strong> Die Herkunft ist ein <em>Arbeitsergebnis</em>, das auf die Gegend <strong>Trendelburg / Deisel</strong> im Kirchenkreis Hofgeismar weist; das meistgesuchte Dokument bleibt Charles' Taufregister.</p>
+  <div class="chips">
+    <span class="chip work">★ Geburtsdatum: 26. Jan. 1835 — Arbeitsstand</span>
+    <span class="chip work">★ Familienname: 9 US-Schreibweisen → Johnson</span>
+    <span class="chip work">★ Herkunft: Trendelburg/Deisel — Arbeitsstand</span>
+    <span class="chip open">Deutsche Taufe — noch nicht gefunden</span>
+  </div>
+</div>
+
+<div class="searchline">
+  <div class="ttl">Zentrale Suchbegriffe &mdash; die deutsche Taufe / Konfirmation</div>
+  <div class="row">
+    <span class="term"><span class="k">Vorname</span><b>Carl / Karl</b> &mdash; oder ein beliebiger / unbenannter <span style="color:var(--text-meta)">(die männliche Jahrgangsgruppe nach Datum durchgehen)</span></span>
+    <span class="term"><span class="k">Familienname</span><b>offen</b> &mdash; insb. <a href="../surname-records.html"><code>*n-s-n / *n-z-n</code></a> (Gansen, Gonson, Konsen, Konzen&hellip;)</span>
+    <span class="term"><span class="k">Geburtszeitraum</span><b>1833&ndash;1841</b> <span style="color:var(--text-meta)">(Anker 26. Jan. 1835)</span></span>
+    <span class="term"><span class="k">Ehelichkeit</span><b>beides</b> &mdash; einschl. <a href="../methodology.html#illegitimacy-scope">unehelich</a> (unter dem Familiennamen der <em>Mutter</em> eingetragen &mdash; eine mütterliche Konze-Linie zählt)</span>
+    <span class="term"><span class="k">Konfession</span><b>lutherisch &amp; reformiert</b></span>
+  </div>
+  <div class="more">Achten Sie bei unehelichen Einträgen auf &bdquo;unehel.&ldquo;-Vermerke und zunächst <b>unbenannte (&bdquo;n.n.&ldquo;)</b> Geburten &mdash; eine strenge Vornamenssuche überspringt sie, gehen Sie daher die männliche Jahrgangsgruppe nach Geburtsdatum durch. Tritt in den <b>Konfirmationsjahrgängen 1847&ndash;1855</b> der Pfarreien des Kreises Hofgeismar zutage &mdash; vollständige Aufschlüsselung und Abdeckung auf <a href="../search-coverage.html">Abdeckung der Pfarrei-Suche</a>.</div>
+</div>
+
+<div class="quick">
+  <h2 id="three"><span class="kicker">Wenn Sie nur drei Dinge lesen</span>Die schnellste Orientierung</h2>
+  <ol class="three">
+    <li>
+      <a class="t" href="../de/abstract.html">★ Zusammenfassung</a>
+      <p>Die formelle einseitige Kurzfassung, wer Charles war, was die Belege sind und wie die Arbeitsergebnisse lauten. Siehe auch <a href="../why-charles-resists.html">warum er sich der Identifizierung entzieht</a> — das GPS-Beweisargument hinter der fehlenden Taufe.</p>
+    </li>
+    <li>
+      <a class="t" href="../claims-dashboard.html">★ Claims Dashboard</a>
+      <p>Jede sachliche Behauptung im Projekt mit ihrem Konfidenzstatus (Bestätigt / Arbeitsstand) und den dahinterstehenden Belegen.</p>
+    </li>
+    <li>
+      <a class="t" href="../search-coverage.html">★ Abdeckung der Pfarrei-Suche</a>
+      <p>Was in den deutschen Registern bereits durchsucht wurde und was nicht — damit Sie keine Wege doppelt gehen oder eine Lücke übersehen.</p>
+    </li>
+  </ol>
+</div>
+
+<h2 id="conclusion"><span class="kicker">1 · Das Ergebnis</span>Was das Projekt vertritt, und wie sicher</h2>
+<div class="cards">
+  <div class="card"><a class="t" href="../why-charles-resists.html"><span class="star">★</span> Warum Charles sich der Identifizierung entzieht — ein GPS-Beweisargument</a><p>Die begründete Verteidigung des zentralen Negativbefunds: die sieben Mechanismen, die eine echte Taufe verbergen könnten, jeweils gepaart mit einer Suche, die ihn aushebeln soll, und warum der fehlende Beleg ein <em>eingegrenztes</em> Ergebnis ist und keine Lücke im Aufwand. Aufgebaut nach den fünf Komponenten des Genealogical Proof Standard.</p></div>
+  <div class="card"><a class="t" href="../birthdate-records.html">Geburtsdatum quer durch die Akten</a><p>Die zehn widersprüchlichen US-Geburtsangaben (1833–1841), belegt und nach genealogischer Konfidenz geordnet.</p></div>
+  <div class="card"><a class="t" href="../surname-records.html">Familienname quer durch die Akten</a><p>Jede US-Schreibweise des Familiennamens nach Datum — belegt, verlinkt und klassifiziert. Die deutschstämmigen Formen gruppieren sich als <em>*n-s-n / *n-z-n</em>.</p></div>
+  <div class="card"><a class="t" href="../origin-records.html">Herkunft quer durch die Akten</a><p>Woher Charles eigenen Angaben zufolge stammte — die zwei Aussagen auf Ortsebene (Freundburg, Deisse) und die konkurrierenden Deutungen, geordnet.</p></div>
+  <div class="card"><a class="t" href="../index.html#charles">Charles in Amerika</a><p>Das erzählerische Rückgrat — Auswanderung, Dienst im Bürgerkrieg, Familie und Tod in St. Louis.</p></div>
+  <div class="card"><a class="t" href="../sponsor-reconciliation.html">Taufpaten &amp; Trauzeugen</a><p>Jeder Taufpate und die Trauzeugen von 1866 — typischerweise Verwandte — geprüft; keiner ist ein dokumentierter Verwandter von Charles' Seite (seine waren Augustes Sippe &amp; Kameraden der Battery B). <strong>Hohe</strong> Konfidenz, dass sie nicht seine Blutsverwandten sind.</p></div>
+  <div class="card"><a class="t" href="../interactive-name-trail.html">Familiennamen- &amp; Geburtsdatum-Explorer</a><p>Eine interaktive Ansicht jeder verzeichneten Schreibweise des Familiennamens und der widersprüchlichen US-Geburtsangaben quer durch die Akten — aufgetragen, belegt und filterbar.</p></div>
+  <div class="card"><a class="t" href="../germany/konze-pronunciation-research-log.html">Konze im Munde — Dialekt &amp; Aussprache <span class="star">★</span></a><p>Warum ein gesprochener Name neun Schreibweisen hervorbringt: eine phonetisch fundierte Rekonstruktion, wie die nordhessische Mundart von Deisel das <em>K</em>&nbsp;→&nbsp;<em>G</em> erweicht und die <em>z</em>-Affrikate zum <em>s</em> zusammenfallen lässt — mit 🔊 anklickbarem Ton für jeden Laut.</p></div>
+</div>
+
+<h2 id="evidence"><span class="kicker">2 · Die Belege</span>Prüfen Sie es selbst</h2>
+<div class="cards">
+  <div class="card"><a class="t" href="../index.html#evidence">Zentrale Belege</a><p>Die maßgeblichen Dokumente, die die Schlussfolgerungen verankern.</p></div>
+  <div class="card"><a class="t" href="../evidence/index.html">Belegkarten</a><p>Eine Karte je Quelle: was sie ist, was sie beweist und wie sie klassifiziert ist.</p></div>
+  <div class="card"><a class="t" href="../sources/index.html">Primärquellen-Viewer</a><p>Die Dokumentbilder selbst — Pensionsakte, Militärakte, Volkszählung, Begräbnisregister, Sterbeurkunde.</p></div>
+  <div class="card"><a class="t" href="../occupation-records.html">Beruf quer durch die Akten</a><p>Jede Akte, die einen Beruf nennt, 1862–1903 — Landwirt, Eisenbahnschaffner und -führer, Baumwollpressen-Arbeiter, Nachtwächter — belegt und geordnet, mit der gekennzeichneten &bdquo;Saloon-Wirt&ldquo;-Anomalie der Pensionsakte.</p></div>
+  <div class="card"><a class="t" href="../charles_america/st-louis-residences.html">Adress-Chronologie <span class="star">★</span></a><p>Jeder dokumentierte Wohnsitz 1865–1903 der Reihe nach, jeweils mit einem externen Link zur Überprüfung — einschließlich der Adressbuch-Strecke &bdquo;718 Gate&ldquo; von 1871–76 (Johnson / Konsen / Gonson) mit direkten FamilySearch-Record-Links und einem Hinweis darauf, welche Adressen nur auf Erinnerung beruhen.</p></div>
+  <div class="card"><a class="t" href="../methodology.html">Methodik</a><p>Wie die Konfidenz bewertet wird — der GPS und das Modell aus Quelle / Information / Beleg, dazu die farbcodierte Taxonomie.</p></div>
+  <div class="card"><a class="t" href="../bibliography.html">Bibliographie</a><p>Jede zitierte Quelle, mit Archiv- und Zitierangaben.</p></div>
+  <div class="card"><a class="t" href="../dna.html">DNA-Belege</a><p>Was die genetischen Belege belegen und was nicht.</p></div>
+</div>
+
+<h2 id="searched"><span class="kicker">3 · Was bereits getan wurde</span>Damit Sie keine Wege doppelt gehen</h2>
+<div class="cards">
+  <div class="card"><a class="t" href="../search-coverage.html"><span class="star">★</span> Abdeckung der Pfarrei-Suche</a><p>Eine Zeile je Pfarrei: durchsuchtes Register, Geburtszeitraum, Methode und Ergebnis für den Durchgang durch die Konfirmationsregister 2026.</p></div>
+  <div class="card"><a class="t" href="../negative-results.html#coverage-glance"><span class="star">★</span> Abgeschlossene Forschung auf einen Blick</a><p>Ein überschaubares Feld — bereits durchsuchte Familiennamen, Orte und Familien — über dem vollständigen Audit der Negativbefunde, damit Sie kein bereits abgedecktes Terrain erneut begehen.</p></div>
+  <div class="card"><a class="t" href="../sponsor-reconciliation.html">Taufpaten-Abgleich</a><p>Die Analyse der Taufpaten zur Prüfung familiärer Verbindungen.</p></div>
+  <div class="card"><a class="t" href="../errata.html">Errata &amp; Revisionen</a><p>Korrekturen, die gegen frühere Versionen protokolliert wurden — was sich geändert hat und warum.</p></div>
+</div>
+
+<h2 id="origin"><span class="kicker">4 · Das zentrale Rätsel</span>Das Problem der deutschen Herkunft</h2>
+<div class="cards">
+  <div class="card"><a class="t" href="../germany/konzen-puzzle.html">Das Konzen-Rätsel</a><p>Warum Familienname und Herkunft ungeklärt sind und welche konkurrierenden Lesarten der Belege es gibt.</p></div>
+  <div class="card"><a class="t" href="../germany/parish-map.html">Hessische Pfarreienkarte</a><p>Die Pfarreien im Suchradius, kartiert rund um Trendelburg und Deisel.</p></div>
+  <div class="card"><a class="t" href="../germany/konze-family-by-town.html">Konze-Familie nach Ort</a><p>Die in Frage kommenden Konze-Haushalte, nach Pfarrei geordnet.</p></div>
+  <div class="card"><a class="t" href="../index.html#immigration">Auswanderungsreise</a><p>Die Überfahrt und die Ankunft in St. Louis, die die deutschen Akten einklammern.</p></div>
+</div>
+
+<h2 id="open"><span class="kicker">5 · Greifen Sie einen Strang auf</span>Was noch offen ist</h2>
+<div class="cards">
+  <div class="card"><a class="t" href="../open-questions.html"><span class="star">★</span> Offene Fragen</a><p>Die laufenden Forschungsfragen, jeweils mit einem Hinweis &bdquo;was dies lösen würde&ldquo; — einschließlich der meistgesuchten Taufe und der noch nicht digitalisierten Register für einen Vor-Ort-Besuch.</p></div>
+  <div class="card"><a class="t" href="../search-coverage.html#open">Lücken in der Suche</a><p>Anstehende Transkriptionen, ungelesene Jahrgänge und die undigitalisierte Vor-Ort-Stufe (Heisebeck, Liebenau, Schöneberg vor 1822; Dissen, Gudensberg).</p></div>
+  <div class="card"><a class="t" href="../contribute.html">Beiträge / Korrekturen</a><p>Wie Sie eine Korrektur, einen Hinweis oder eine Akte senden — und welche Art von Hilfe am meisten bewirkt.</p></div>
+  <div class="card"><a class="t" href="../about.html#how-to-cite">Über das Projekt &amp; Zitierweise</a><p>Herkunft des Projekts, Autorschaft, Lizenzierung und Hinweise zum Zitieren.</p></div>
+</div>
+
+<p style="margin-top:1.6rem; padding:0.8rem 1rem; background:var(--bg-card-tint); border-left:4px solid var(--brand); border-radius:3px; font-size:0.92rem; color:var(--text-meta);">Neu hier und keine Genealogin / kein Genealoge? Die <a href="../index.html">Startseite</a> erzählt Charles' Geschichte narrativ, und die <a href="../stories.html">Stories</a> sind neun kurze erzählerische Momente. Diese Seite ist der fachliche Einstieg; das vollständige Menü befindet sich in der Leiste oben.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles-Forschung</strong> · Eine genealogische Untersuchung von Jed Johnson mit Peter Schräder und James Gunnis · <a href="../de/abstract.html">Zusammenfassung</a> · <a href="../claims-dashboard.html">Claims Dashboard</a> · <a href="../search-coverage.html">Abdeckung der Suche</a> · <a href="../open-questions.html">Offene Fragen</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../de/index.html">Startseite</a></li>
+        <li><a href="../de/stories.html">Geschichten</a></li>
+        <li><a href="../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../methodology.html">Methodik</a></li>
+        <li><a href="../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../de/glossary.html">Glossar</a></li>
+        <li><a href="../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../de/about.html">Über</a></li>
+        <li><a href="../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

@@ -106,8 +106,21 @@ September archive trip, per the standing method note.
 
 ## Archion permalinks minted (force-redraw verified)
 
+The original 22 Jun sweep minted permalinks only for the window-edge leaves
+(735–737, where the Carls appear). On **28 Jun 2026** the earlier candidate-window
+leaves (729–734, the 1846–1851 classes — including the anchor-core 1848/1849/1850
+classes) were re-opened live in the viewer, each Seite/Jahr header re-confirmed
+against the table above, and per-image permalinks minted. Every class in the
+1846–1854 candidate window now has a citable link.
+
 | Permalink | Image | Seite | Content |
 |-----------|------:|------:|---------|
+| https://www.archion.de/p/23e492013b/ | 729 | 34 / 35 | 1846 (am 31 Mai) / 1847 (am 23 Mai) — no Carl |
+| https://www.archion.de/p/37bf8ec0d1/ | 730 | 36 / 37 | 1847 summary / 1848 (am 11 Juni) — no Carl |
+| https://www.archion.de/p/fdcca8212c/ | 731 | 38 / 39 | 1848 — no Carl |
+| https://www.archion.de/p/8951455284/ | 732 | 40 / 41 | 1849 (am 27 Mai) — no Carl |
+| https://www.archion.de/p/69740b182e/ | 733 | 42 / 43 | 1850 (am 19 Mai) / 1851 (am 8 Juni) — no Carl |
+| https://www.archion.de/p/bd48148c76/ | 734 | 44 / 45 | 1851 — no Carl |
 | https://www.archion.de/p/6436dc9d8d/ | 735 | 46 / 47 | 1852 class — no Carl |
 | https://www.archion.de/p/edc4e8bcbe/ | 736 | 48 / 49 | 1852 tail / **1853 — Carl Ludwig Bößler (entry 5, S.49)** |
 | https://www.archion.de/p/00ce7acdf9/ | 737 | 50 / 51 | 1853 tail / **1854 — Heinrich Carl Storch (1), Carl Ludwig [Stein] (2)** |

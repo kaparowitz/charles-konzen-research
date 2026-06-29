@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/methodology.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/methodology.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/methodology.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Methodik — Charles-Forschung</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/de/methodology.html">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
+<meta name="description" content="Die Forschungsstandards, die Quellenbewertungstaxonomie, die Transkriptionskonventionen, der Zitierstil und die bekannten Grenzen des Projekts Charles-Forschung.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Methodik — Charles-Forschung">
+<meta property="og:description" content="Wie diese Website entscheidet, was als Beleg gilt: Quellenbewertungstaxonomie, Transkriptionskonventionen, Namenskonventionen, Zitierstil und eingeräumte Lücken.">
+<meta property="og:url" content="https://charles-research.netlify.app/de/methodology.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/methodology.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.method-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.method-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.method-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.method-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; letter-spacing: 0.02em; }
+  header.method-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  nav.toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 4px;
+    padding: 1rem 1.2rem;
+    margin: 0 0 2rem;
+    font-size: 0.92rem;
+  }
+  nav.toc h4 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brand-dark);
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  nav.toc ol { padding-left: 1.2rem; color: var(--text-meta); }
+  nav.toc li { margin: 0.18rem 0; }
+  nav.toc a { color: var(--text-strong); border-bottom: 1px dotted var(--border-medium); }
+  nav.toc a:hover { color: var(--brand-dark); }
+
+  h2 {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin: 2.4rem 0 0.8rem;
+    border-bottom: 1px solid var(--border-medium);
+    padding-bottom: 0.3rem;
+  }
+  h3 {
+    font-size: 1.18rem;
+    color: var(--text-strong);
+    margin: 1.6rem 0 0.5rem;
+  }
+  h4 { font-size: 1rem; color: var(--text-meta); margin: 1rem 0 0.3rem; }
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  ul, ol { margin: 0.4rem 0 1rem 1.6rem; }
+  li { margin-bottom: 0.4rem; line-height: 1.55; }
+  code { font-family: var(--font-mono); font-size: 0.86em; background: var(--bg-card-tint); padding: 1px 5px; border-radius: 2px; color: var(--brand-dark); }
+
+  .lede {
+    font-size: 1.06rem;
+    color: var(--text-meta);
+    font-style: italic;
+    margin-bottom: 1.6rem;
+    line-height: 1.6;
+  }
+
+  .conf-table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.4rem; font-size: 0.92rem; }
+  .conf-table th, .conf-table td { padding: 0.6rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); }
+  .conf-table th { background: var(--bg-card-tint); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); }
+  .conf-pill { display: inline-block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; color: #fff; white-space: nowrap; }
+  .conf-pill.confirmed  { background: var(--status-confirmed); }
+  .conf-pill.working    { background: var(--brand); color: var(--text-primary); }
+  .conf-pill.open       { background: var(--status-open); }
+  .conf-pill.eliminated { background: var(--status-eliminated); }
+  .conf-pill.interpretive { background: #5a6a8a; }
+
+  .convention {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 4px;
+    padding: 0.9rem 1.1rem;
+    margin: 0.6rem 0 1rem;
+  }
+  .convention .label { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.3rem; }
+  .convention code.ex { display: inline-block; margin: 0.1rem 0.3rem 0.1rem 0; padding: 0.1rem 0.4rem; background: var(--bg-page); }
+
+  .citation-block {
+    background: var(--bg-card-tint);
+    border-radius: 4px;
+    padding: 0.7rem 0.9rem;
+    margin: 0.4rem 0 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: var(--text-strong);
+  }
+
+  footer.site-foot {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    @page { size: A4; margin: 18mm 18mm 22mm; }
+    html, body { background: #fff !important; color: #000 !important; font-size: 10.5pt; line-height: 1.42; }
+    header.method-hero { background: none !important; color: #000; border-bottom: 1.5pt solid #444; padding: 0 0 6pt; margin-bottom: 8pt; }
+    header.method-hero .crumbs { display: none; }
+    header.method-hero h1, header.method-hero .sub { color: #000 !important; }
+    header.method-hero h1 { font-size: 18pt; }
+    nav.toc { display: none; }
+    main { max-width: none; padding: 0; }
+    a { color: #000; border-bottom: none; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 7.5pt; color: #555; }
+    .convention, .citation-block { border-left-width: 1.5pt; background: none !important; padding: 4pt 8pt; }
+    h2 { font-size: 11pt; margin-top: 10pt; margin-bottom: 4pt; page-break-after: avoid; }
+    h3 { font-size: 10.5pt; page-break-after: avoid; }
+    p, li { orphans: 3; widows: 3; }
+    nav.site-nav-shared, footer.site-foot-shared, .site-foot-shared, .cite-widget,
+    nav.tabs, .skip-link, .search-fab, footer.site-foot { display: none !important; }
+  }
+</style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/methodology.html#article",
+  "headline": "Methodik — Charles-Forschung",
+  "description": "Forschungsstandards, Quellenbewertungstaxonomie, Transkriptionskonventionen, Zitierstil und bekannte Grenzen.",
+  "datePublished": "2026-03-29",
+  "dateModified": "2026-05-12",
+  "url": "https://charles-research.netlify.app/de/methodology.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Methodology"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../de/index.html" role="menuitem">Überblick</a>
+      <a href="../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodik</a>
+      <a href="../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="method-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles-Forschung</a> &nbsp;/&nbsp; Methodik</div>
+  <h1>Methodik</h1>
+  <div class="sub">Wie diese Website entscheidet, was als Beleg gilt — die Quellenbewertungstaxonomie, die Transkriptionskonventionen, die Namenskonventionen, der Zitierstil und die eingeräumten Lücken, die diese Arbeit bestimmen.</div>
+  <div class="method-actions" style="margin-top:0.8rem; display:flex; flex-wrap:wrap; gap:0.5rem; font-size:0.86rem;">
+    <a href="../methodology.pdf" style="display:inline-block; padding:5px 12px; background:var(--brand); color:var(--text-strong); border:1px solid var(--brand-dark); border-radius:3px; font-weight:700; letter-spacing:0.04em; border-bottom:none; text-decoration:none;">⤓ PDF herunterladen</a>
+    <a href="abstract.html" style="display:inline-block; padding:5px 12px; background:transparent; color:var(--text-on-dark); border:1px solid var(--brand); border-radius:3px; font-weight:600; letter-spacing:0.04em; border-bottom:none; text-decoration:none;">← Zusammenfassung</a>
+  </div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">Diese Seite ist der Forschungsstandard des Projekts. Jedes Zuverlässigkeits-Abzeichen auf der Website, jede Transkription, jede Schreibweisenentscheidung und jede Quellenangabe lässt sich auf die nachstehenden Regeln zurückführen. Ziel ist es, dass eine andere Genealogin oder ein anderer Familienforscher jede Schlussfolgerung auf dieser Website überprüfen und sie auf derselben faktischen Grundlage entweder nachvollziehen oder anfechten kann.</p>
+
+<nav class="toc" aria-label="Table of contents">
+  <h4>Auf dieser Seite</h4>
+  <ol>
+    <li><a href="#scope">Umfang des Projekts</a></li>
+    <li><a href="#proof-standard">Der Beweisstandard</a></li>
+    <li><a href="#confidence">Quellenbewertungstaxonomie</a></li>
+    <li><a href="#sources">Verwendete Quellen</a></li>
+    <li><a href="#transcription">Transkriptionskonventionen</a></li>
+    <li><a href="#naming">Namenskonventionen</a></li>
+    <li><a href="#citation">Zitierstil</a></li>
+    <li><a href="#privacy">Datenschutz und was nicht auf der Website steht</a></li>
+    <li><a href="#how-to-cite">Wie diese Website zu zitieren ist</a></li>
+    <li><a href="#corrections">Korrekturen und Beiträge</a></li>
+  </ol>
+</nav>
+
+<h2 id="scope">1 · Umfang des Projekts</h2>
+
+<p>Die Untersuchung begann mit einer Frage: <em>Wer war Charles Gannsen von Battery B, 2nd Missouri Light Artillery in Hessen, und welche Familie ließ er 1859 zurück?</em> Im Laufe von über 78 dokumentierten Forschungssitzungen weitete sich die Frage zu einer vollständigen transatlantischen Biografie aus: Charles' wahrscheinliche deutsche Herkunft aus dem Familiennamen-Bestand Konze / Kontzen / Contzen in <a class="glossary-link" href="glossary.html#g-churhessen" title="Glossary: Churhessen">Churhessen</a>; seine Auswanderung 1859 (laut der Volkszählung von 1900; die Passagierliste ist noch nicht aufgefunden); sein Dienst im Bürgerkrieg in den Garnisonsforts von St. Louis und bei New Madrid, Missouri; seine Heirat mit Auguste Kreichelt und die sieben Kinder, die in der St. Marcus German Evangelical Church getauft wurden; sein Pensionsantrag und sein Begräbnis 1903 auf dem Old Saint Marcus Cemetery.</p>
+
+<p>Das Projekt ist kein Stammbaum-Aufbau für einen gesamten Familiennamen. Es ist eine eng abgegrenzte Prosopografie eines Mannes, seiner engsten Familie in drei Ländern (Deutschland, die USA und die Korrespondenten der Familie im heutigen Hessen) sowie der Aufzeichnungen, die sie dokumentieren.</p>
+
+<p id="illegitimacy-scope"><strong>Warum die Familiennamensuche offen bleibt &mdash; uneheliche Geburten und mütterliche Linien.</strong> Da bislang keine Aufzeichnung Charles' Eltern nennt, halten die Geburtssuchen den Familiennamen bewusst <em>offen</em> und behandeln <strong>sowohl eheliche als auch uneheliche</strong> Taufen als im Umfang enthalten. Dies ist wichtig für die Frage, wie eine Pfarrei ausgeschlossen wird: Ein Befund, dass ein Familienname Konze &ldquo;nur durch Heirat in eine Pfarrei gelangte&rdquo;, schließt eine ortsansässige <em>männliche</em> Konze-Linie aus, nicht aber eine durch eine <strong>Frau</strong> getragene Konze-Verbindung &mdash; ein uneheliches Kind wurde normalerweise unter dem Familiennamen der <em>Mutter</em> getauft, sodass eine unverheiratete Konze-Tochter im gebärfähigen Alter (etwa geb. 1805&ndash;1820, fruchtbar ~1833&ndash;41) für sich genommen ein gangbarer Weg ist. Dementsprechend werden weibliche Konze-Linien nicht mit dem Kürzel „Familienname-durch-Heirat" verworfen; eine Pfarrei gilt erst dann als geklärt, wenn ein <strong>vollständiges Durchlesen aller Taufen oder ein vollständiges alphabetisches Register</strong> für 1833&ndash;41 keinen passenden Carl unter irgendeinem Familiennamen, ehelich oder nicht, ergeben hat. Dieselbe Vorsicht gilt für die umfassendere Rekonstruktion: Sollte Charles' Konze-Abstammung mütterlich sein, könnte ihn die alleinige Verfolgung männlicher Konze-Haushalte verfehlen.</p>
+
+<h2 id="proof-standard">2 · Der Beweisstandard</h2>
+
+<p>Die Schlussfolgerungen auf dieser Website sind so verfasst, dass sie dem <strong><a class="glossary-link" href="glossary.html#g-genealogical-proof-standard" title="Glossary: Genealogical Proof Standard">Genealogical Proof Standard</a></strong> des Board for Certification of Genealogists entsprechen: angemessen erschöpfende Forschung, vollständige und genaue Quellenangaben, Analyse und Korrelation der gesammelten Informationen, Auflösung widersprüchlicher Belege sowie eine fundiert begründete und kohärent formulierte Schlussfolgerung. Wo die Belege diesen Standard noch nicht erfüllen — und in diesem Projekt erfüllt ihn die deutsche Taufe für Charles selbst nicht —, wird die Schlussfolgerung im nachstehend beschriebenen Zustand <em>Arbeitshypothese</em> belassen, statt auf <em>Bestätigt</em> heraufgestuft zu werden.</p>
+
+<p>Die Website übernimmt außerdem zwei spezifische Gewohnheiten aus Elizabeth Shown Mills' <em>Evidence Explained</em>: die Unterscheidung zwischen <strong>direkten</strong> Belegen (eine Aufzeichnung, die die Frage unmittelbar beantwortet) und <strong>indirekten</strong> Belegen (Aufzeichnungen, deren Einzelteile zusammengenommen eine Schlussfolgerung erzwingen); und die Disziplin, Quellen nach <strong>Originalität</strong> (Originalaufzeichnung vs. abgeleitete Abschrift) und <strong>Informantennähe</strong> (Augenzeuge aus erster Hand vs. jemand, der wiedergibt, was ihm berichtet wurde) zu bewerten.</p>
+
+<p id="conflict"><strong>Wie Widersprüche aufgelöst werden.</strong> Der Genealogical Proof Standard verlangt, dass widersprüchliche Belege <em>aufgelöst</em> und nicht nur vermerkt werden. Wenn zwei Aufzeichnungen sich widersprechen, ordnet das Projekt sie nach denselben Evidence-Explained-Kriterien ein — Originalität, Informantennähe und Genauigkeit der Aufzeichnung — und übernimmt die besser belegte Lesart als seinen <em>Arbeitsanker</em>, wobei der Grund schriftlich angegeben wird. Das durchgearbeitete Beispiel ist die <a href="birthdate-records.html">Geburtsdatumsanalyse</a>, die zehn Aufzeichnungen einordnet und erklärt, warum dem Tag aus dem Begräbnisregister der Vorzug gegeben wird. Wo das Projekt einen Arbeitsanker gewählt hat, aber noch keine vollständig begründete Auflösung geben kann — wie bei der Eintagesdiskrepanz beim Sterbedatum zwischen dem Begräbnisregister und der Sterbeurkunde —, wird der Widerspruch als <em>vermerkt, noch nicht aufgelöst</em> gekennzeichnet, statt als erledigt dargestellt zu werden, und die offene Abweichung wird im <a href="index.html#doc-crosswalk">Dok.&nbsp;A–O-Querverweis</a> mitgeführt.</p>
+
+<p id="proof"><strong>Drei Formen des Beweises.</strong> Gemäß den BCG-Standards unterscheidet das Projekt eine <strong>Beweisaussage</strong> (eine Schlussfolgerung, die ein einzelner direkter Beleg klärt — z. B. das Datum in einem Taufeintrag), eine <strong>Beweiszusammenfassung</strong> (eine kurze Liste von Belegen, die eine Frage gemeinsam und widerspruchsfrei klären) und ein <strong>Beweisargument</strong> (eine schriftliche Darstellung, die erforderlich ist, wenn die Schlussfolgerung auf <em>indirekten</em> oder widersprüchlichen Belegen beruht und hergeleitet werden muss). Charles' deutsche Herkunft gehört zur letzten Art: Keine Aufzeichnung nennt seine Pfarrei, daher wird die Schlussfolgerung als <a href="abstract.html#consolidated-proof-argument">konsolidiertes Beweisargument</a> in der Zusammenfassung geführt, das die Namensspur, die zwei unabhängigen Ortsnamen-Entschlüsselungen, die Konzentration im Familiennamen-Bestand, die negativen Suchen und die DNA zu einer Kette zusammenfügt — und die Zufallsalternative ausdrücklich abwägt. Bis die eine direkte Aufzeichnung, die sie abschließen würde (Charles' Taufe), aufgefunden wird, stützt dieses Argument eine <em>Arbeitshypothese</em>, keine <em>bestätigte</em> Schlussfolgerung. Ein begleitendes Beweisargument, <a href="../why-charles-resists.html">Warum sich Charles der Identifizierung entzieht</a>, wendet dieselben fünf GPS-Komponenten auf das <em>Negativ</em> selbst an — es zählt die Mechanismen auf, durch die eine echte Taufe der Entdeckung entgehen könnte, sowie die Suche, die darauf ausgelegt ist, jeden einzelnen zu überwinden, sodass die fehlende Aufzeichnung als <em>begrenztes</em> Ergebnis und nicht als Lücke im Bemühen zu lesen ist.</p>
+
+<h3 id="dna">Genetische Belege — Tests durchgeführt, noch keine bestätigende Übereinstimmung</h3>
+
+<p>Die Schlussfolgerungen des Projekts beruhen in erster Linie auf dokumentarischen Belegen, doch wurden zwei DNA-Tests an Charles' direkter Nachkommenlinie durchgeführt und werden hier in voller Transparenz berichtet, einschließlich dessen, was sie noch <em>nicht</em> zeigen:</p>
+
+<ul>
+  <li><strong>Y-DNA (väterliche Linie) — FamilyTreeDNA Big Y-700.</strong> Charles' Patrilinie führt zur terminalen Subklade <strong>I-Y38863</strong>, innerhalb der <strong>Haplogruppe I2 (dem Zweig I-M223:</strong> I-M170 › I-M223 › … › I-Y6406 › I-Y11261 › I-Y50708 › I-Y38863). Die übergeordnete Haplogruppe I-M223 als Ganzes ist eine tief verwurzelte europäische Linie, die in Nordwest- und Mitteleuropa (Deutschland, die Niederlande, Großbritannien, Skandinavien) konzentriert ist, doch Charles' <em>spezifische</em> terminale Subklade I-Y38863 folgt dieser übergeordneten Verteilung <em>nicht</em>: Ihre wenigen Mitglieder häufen sich in Ostmitteleuropa (Polen, Litauen, Russland) und lesen sich als aschkenasisch-jüdische Linien, nicht als eine spezifisch hessische oder deutsch-christliche. (Dies stimmt mit der ausführlicheren Lesart auf der <a href="dna.html#ydna">DNA-Seite</a> überein; die Geografie tiefer Kladen ist auf der genealogischen Ebene ohnehin ein schwacher Beleg.) Der Zweig trägt derzeit nur <strong>zwei Big-Y-Übereinstimmungen, und keine davon trägt einen Familiennamen Konze / Kontzen / Contze.</strong> Die Discover-Altersschätzungen von FamilyTreeDNA datieren die Entstehung des Zweigs I-Y38863 auf ~1400 n. Chr. und den gemeinsamen Vorfahren seiner Mitglieder auf ~1450 n. Chr. — jung genug, dass eine Konze-Übereinstimmung tatsächlich echtes genealogisches Gewicht hätte. Ihr Fehlen unter nur drei getesteten Mitgliedern (früheste bekannte Herkünfte: Deutschland, Polen, Russische Föderation) ist kein Beleg gegen die Schlussfolgerung; es lässt sich am einfachsten dadurch erklären, dass kein Konze-Nachkomme der männlichen Linie einen Big-Y-Test hat machen lassen. Eine künftige Y-Übereinstimmung mit einer dokumentierten Konze-Patrilinie wäre eine starke Bestätigung der Familiennamen-Schlussfolgerung. <strong>Ein gesondertes und bedeutsames Muster in der Übereinstimmungsliste:</strong> Charles' engste Y-Übereinstimmungen der väterlichen Linie — beide Männer teilen seine terminale Subklade sowie die engste Übereinstimmung der übergeordneten Klade, drei unabhängige Linien, die ~1400&ndash;1450 n. Chr. zusammenlaufen — sind aschkenasisch-jüdisch — eine Lesart, die unabhängig durch YFulls Baum bestätigt wird, der die Linie auf dieselbe Subklade I-Y38863 (gemeinsamer Vorfahr ~1300 n. Chr.) unter Proben einordnet, die er als aschkenasisch kennzeichnet — und deutet auf eine mögliche aschkenasisch-jüdische Herkunft in der tiefen männlichen Linie hin. Angesichts von nur zwei bis drei getesteten Mitgliedern wird dies als <em>laufende Untersuchungslinie, nicht als Schlussfolgerung</em> behandelt; es betrifft eine tiefe Abstammung, die unterhalb der dokumentierten hessisch-evangelischen Familie liegen würde — und ihr nicht widerspricht — und wird vollständig auf der <a href="dna.html#match-cluster">DNA-Belegseite</a> behandelt und als <a href="open-questions.html#paternal-origin">offene Frage</a> protokolliert.</li>
+  <li><strong>Autosomale DNA — AncestryDNA und MyHeritage (Nachkommentest).</strong> Die Schätzung für den getesteten Nachkommen ergibt eine große germanische Komponente — Südgermanisches Europa (33 %), Nordwestdeutschland (16 %) und die Niederlande (5 %) bei AncestryDNA, zusammen etwa die Hälfte des Genoms — neben einer erheblichen britisch-irischen Abstammung aus anderen Linien. MyHeritages unabhängiges Panel (Ethnicity Estimate v2.5) stimmt überein: Germanisch (36,4 %) plus Niederländisch (12,0 %) ≈ 48 %, mit Englisch, Schottisch und Walisisch, Irisch und Bretonisch ≈ 40 %. Dies stimmt mit Charles' dokumentierter deutscher Herkunft überein, doch gelten zwei Einschränkungen. Erstens mittelt eine autosomale Schätzung, die von einem mehrere Generationen entfernten Nachkommen genommen wird, <em>alle</em> Ahnenlinien und kann Charles' Linie nicht isolieren; bis die Linie den Testenden erreicht, trägt Charles nur einen Bruchteil zum Genom bei. Zweitens sind Ancestrys Regionen „Südgermanisches Europa" und „Nordwestdeutschland" — sowie MyHeritages einzelne Region „Germanisch" — weit gefasst: Sie umfassen Hessen, lösen sich aber nicht auf Hessen auf. Keine autosomale <em>Übereinstimmung</em> in der etwa 14.300 Übereinstimmungen umfassenden Family-Finder-Liste konnte bislang mit einem dokumentierten Nachkommen der in Betracht kommenden Konze-Familien aus Trendelburg–Deisel oder mit den parallelen Linien Kreichelt / Grandjot / Herwig verknüpft werden. Die Liste enthält jedoch mehrere kleine (9–12 cM) Übereinstimmungen mit Personen aschkenasischer Familiennamen — ein schwaches autosomales Echo des Befundes der Y-Linie, für sich genommen angesichts der aschkenasischen Endogamie schwach, aber damit vereinbar.</li>
+</ul>
+
+<p>Die genetischen Belege sind also bis heute <em>vereinbar mit</em> der Hessen-Konze-Hypothese, <em>bestätigen</em> sie aber noch nicht. Die Schlussfolgerungen zu Herkunft und Familiennamen bleiben daher auf dokumentarischer Grundlage <em>Arbeitshypothese</em>, statt aufgrund der DNA heraufgestuft zu werden. Die spezifischen genetischen Belege, die sie heraufstufen würden, werden in den <a href="open-questions.html#dna">Offenen Fragen</a> verfolgt: eine Y-DNA-Übereinstimmung mit einer dokumentierten Konze-Patrilinie oder eine autosomale Übereinstimmung mit einem dokumentierten Nachkommen der Konze-Familie. Kit-Kennungen können seriösen Forschenden auf Anfrage zur Verfügung gestellt werden; im Einklang mit der <a href="#privacy">Richtlinie zu lebenden Verwandten</a> werden lebende DNA-Übereinstimmungen auf der öffentlichen Website nicht namentlich genannt.</p>
+
+<h2 id="confidence">3 · Quellenbewertungstaxonomie</h2>
+
+<p>Jede Behauptung auf der Website, die eine unabhängige Leserin oder ein unabhängiger Leser überprüfen könnte, ist mit einem Zuverlässigkeits-Abzeichen versehen. Die vier Zustände und die Schwelle für den Wechsel zwischen ihnen sind hier festgelegt.</p>
+
+<table class="conf-table">
+  <thead>
+    <tr><th style="width:120px;">Abzeichen</th><th>Bedeutung</th><th>Schwelle</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="conf-pill confirmed">✓ Bestätigt</span></td>
+      <td>Die Behauptung wird durch eine Original- oder eine originalgetreue abgeleitete Aufzeichnung gestützt, die Aufzeichnung ist auf der Website verlinkt oder abgebildet, und es liegt derzeit kein widersprechender Beleg vor.</td>
+      <td>Mindestens eine Primärquelle beigefügt. Mehrere unabhängige Quellen für jede auf einem einzigen Anker beruhende Behauptung über Identität, Datum oder Ort.</td>
+    </tr>
+    <tr>
+      <td><span class="conf-pill working">★ Arbeitshypothese</span></td>
+      <td>Die derzeit führende Hypothese. Konvergierende indirekte Belege stützen die Behauptung, doch fehlt eine einzelne entscheidende direkte Aufzeichnung, oder widersprüchliche Lesarten bleiben ungelöst.</td>
+      <td>In der Darstellung als Hypothese ausgewiesen. Der Beleg, der sie auf Bestätigt heraufstufen (oder ausschließen) würde, ist in der Zeile „Was dies klären würde" der Seite benannt.</td>
+    </tr>
+    <tr>
+      <td><span class="conf-pill open">? Offen</span></td>
+      <td>Ein aktiver Kandidat, der noch nicht ein- oder ausgeschlossen wurde. Der Vollständigkeit halber aufgeführt; noch nicht tragend.</td>
+      <td>Lediglich das Fehlen widersprechender Belege. Die Seite führt auf, was durchsucht wurde und warum der Kandidat nicht ausgeschlossen wurde.</td>
+    </tr>
+    <tr>
+      <td><span class="conf-pill eliminated">✕ Ausgeschlossen</span></td>
+      <td>Der Kandidat wurde durch direkte Belege ausgeschlossen. Auf der Website dokumentiert, um eine erneute Untersuchung durch künftige Forschende zu verhindern.</td>
+      <td>Eine bestimmte widersprechende Aufzeichnung wird benannt (z. B. falsches Geburtsjahr, falsche Eltern, falscher Ort zur falschen Zeit).</td>
+    </tr>
+    <tr>
+      <td><span class="conf-pill interpretive">◆ Deutend</span></td>
+      <td>Eine Lesart von <em>Beweggrund, Absicht, Namenswahl oder historischem Kontext</em>, die mit den Belegen vereinbar ist, aber keine Tatsachenbehauptung über eine Identität, ein Datum oder einen Ort darstellt. Auf einer gesonderten Schiene geführt, sodass das obige Zuverlässigkeitsvokabular nur für falsifizierbare Tatsachenbehauptungen gilt.</td>
+      <td>Nicht durch eine einzelne Aufzeichnung heraufstufbar, da es eine Frage der Bedeutung und nicht der Tatsache ist. Die Seite nennt die sparsamere alternative Lesart und kennzeichnet die Deutung als Kontext, nicht als Beweis.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Eine Anmerkung zur deutenden Schiene.</strong> Die ersten vier Zustände bilden eine einzige Beweisleiter (eine Behauptung steigt auf ihr auf oder ab, je nachdem, welche Aufzeichnungen eintreffen). <em>Deutend</em> steht neben dieser Leiter, nicht auf ihr: Eine Namenswahl oder eine Aussage über einen Beweggrund kann reichlich <em>vereinbar mit</em> der dokumentarischen Überlieferung sein und doch nicht von der Art, die ein Taufeintrag jemals bestätigen oder ausschließen könnte. Diese gesondert zu kennzeichnen verhindert, dass eine eindrucksvolle Lesart sich die Autorität eines Datums oder eines Ortes ausleiht, das tatsächlich auf Bestätigt heraufgestuft werden könnte.</p>
+
+<p>Heraufstufungen und Herabstufungen zwischen Zuständen werden <em>protokolliert</em>, nicht stillschweigend vorgenommen. Wenn eine Arbeitshypothese auf Bestätigt heraufgestuft wird, nennt die betreffende Schlüsselbeleg-Karte das Datum der Heraufstufung und den neuen Beleg, der sie ausgelöst hat. Wenn einer bestätigten Behauptung später eine stärkere Quelle widerspricht, wird sie in der Darstellung mit ausdrücklich gekennzeichneter Korrektur neu formuliert, nicht stillschweigend überschrieben — siehe <a href="errata.html">Errata &amp; Revisionen</a> für das vollständige Verzeichnis und den <a href="index.html#doc-crosswalk">Dok. A–O-Querverweis</a> für die Quellenbewertungsbegründung von Dok. A (Sterbeurkunde) gegenüber Dok. N (Begräbnisregister der Pfarrei), die veranschaulicht, wie konkurrierende Primärlesarten vor einer Heraufstufung abgewogen werden.</p>
+
+<h3>Beleggrad-Chips (Originalität / Informantennähe)</h3>
+
+<p>Nach Elizabeth Shown Mills' <em>Evidence Explained</em> unterscheiden zwei orthogonale Dimensionen Quellen innerhalb desselben Zuverlässigkeitszustands: <strong>Originalität</strong> (Originalaufzeichnung vs. abgeleitete Abschrift) und <strong>Informantennähe</strong> (Augenzeuge aus erster Hand vs. jemand, der wiedergibt, was ihm berichtet wurde). Auf dieser Website tragen die am häufigsten zitierten wörtlichen Zitate einen kleinen Inline-Grad-Chip, sodass eine Leserin oder ein Leser auf einen Blick erkennen kann, ob sie eine Originalquelle aus erster Hand oder eine abgeleitete Quelle aus zweiter Hand vor sich haben.</p>
+
+<table class="conf-table">
+  <thead>
+    <tr><th style="width:200px;">Grad-Chip</th><th>Quellenklasse</th><th>Beispiele auf dieser Website</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span style="display:inline-block; font-size: 0.72rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:2px 7px; border-radius:3px; background:#3a6a3a; color:#fff;">★ Orig · erste Hand</span></td>
+      <td><strong>Originalaufzeichnung, Informant aus erster Hand.</strong> Der Schreiber war beim Ereignis anwesend und zeichnete es zeitgenössisch auf.</td>
+      <td>St. Marcus Heiratsregistereintrag Nr. 676 (Pastor Wall, bei der Trauung 1866 anwesend); die sieben St. Marcus Taufeinträge 1866–1881; Pfarrregistereinträge aus <a class="glossary-link" href="glossary.html#g-trendelburg" title="Glossary: Trendelburg">Trendelburg</a>.</td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block; font-size: 0.72rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:2px 7px; border-radius:3px; background:#5a8a4a; color:#fff;">Orig · zweite Hand</span></td>
+      <td><strong>Originalaufzeichnung, Informant aus zweiter Hand.</strong> Der Schreiber war zeitgenössisch, doch die Information ging durch einen Vermittler.</td>
+      <td>US-Bundesvolkszählung 1900 (der Zähler des Haushalts Peter Kuhn könnte jedes Haushaltsmitglied befragt haben); das Sterberegister der Ehefrau 1896 bei St. Marcus, bei dem Charles der überlebende Informant für Augustes Personenstandsdaten ist.</td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block; font-size: 0.72rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:2px 7px; border-radius:3px; background:#b48a3a; color:#2c2620;">Abgeleitet</span></td>
+      <td><strong>Abgeleitet.</strong> Eine spätere Transkription, Abschrift oder ein Auszug einer Primärquelle.</td>
+      <td>Fold3s M405-Transkriptionsschicht (kanonisches Original = <a class="glossary-link" href="glossary.html#g-nara" title="Glossary: NARA">NARA</a>-Versandpaket); der <a href="index.html#doc-crosswalk">Dok. A–O-Anhang</a> der ProGenealogists-Zeitschrift von 2020; von FamilySearch indexierte Aufzeichnungen.</td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block; font-size: 0.72rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:2px 7px; border-radius:3px; background:#8a6420; color:#fff;">Zusammengestellt / verfasst</span></td>
+      <td><strong>Zusammengestellte oder verfasste Quelle.</strong> Die Auslegung einer Forscherin oder eines Forschers, eine Stammbaum-Zusammenstellung oder eine Forschungsnotiz. Nützlich als Findhilfe; selbst keine primäre Bezeugung.</td>
+      <td>Peter Schräders <a class="glossary-link" href="glossary.html#g-stammtafel" title="Glossary: Stammtafel">Stammtafel</a>-Diagramme (vom Mitarbeiter verfasst); die kuratierte Annotation der Zeitschrift von 2020; die eigenen Darstellungsseiten dieses Projekts.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Wo bei einem wörtlichen Zitat ein Chip fehlt, ist die Voreinstellung <em>Orig · erste Hand</em> für Einträge aus Pfarrregistern und Zivilstandsaufzeichnungen, <em>Abgeleitet</em> für von FamilySearch und Ancestry indexierte Aufzeichnungen und <em>Zusammengestellt / verfasst</em> für Querverweise auf andere Seiten dieser Website.</p>
+
+<h3 id="evidence-colour-key">Farbschlüssel &mdash; Begriffe der Belegananlyse</h3>
+<p>Aus Gründen der Einheitlichkeit über die gesamte Website trägt jeder Begriff der Belegananlyse überall, wo er erscheint, eine feste Farbe (etwa auf der <a href="birthdate-records.html">Geburtsdatums-Referenzseite</a>). Die Begriffe folgen Elizabeth Shown Mills, <em>Evidence Explained</em> (3. Aufl., 2017), und den BCG <em>Genealogy Standards</em> (2. Aufl., 2021), gruppiert nach den drei analytischen Achsen:</p>
+<ul>
+  <li><span class="ev-swatch ev-original"></span><strong>Quelle &mdash;</strong> <span class="ev-original">Original</span> (beim Ereignis erstellt oder ein zeitgenössisches Register) &nbsp;vs&nbsp; <span class="ev-swatch ev-derivative"></span><span class="ev-derivative">Abgeleitet</span> (eine spätere Abschrift, ein Auszug oder eine zusammengestellte Aufzeichnung).</li>
+  <li><span class="ev-swatch ev-primary"></span><strong>Information &mdash;</strong> <span class="ev-primary">Primär</span> (von jemandem mit Kenntnis des Ereignisses aus erster Hand) &nbsp;vs&nbsp; <span class="ev-swatch ev-secondary"></span><span class="ev-secondary">Sekundär</span> (aus zweiter Hand berichtet).</li>
+  <li><span class="ev-swatch ev-direct"></span><strong>Beleg &mdash;</strong> <span class="ev-direct">Direkt</span> (beantwortet die Frage von sich aus), <span class="ev-swatch ev-indirect"></span><span class="ev-indirect">Indirekt</span> (muss erschlossen oder korreliert werden) und <span class="ev-swatch ev-negative"></span><span class="ev-negative">Negativ</span> (das bedeutungsvolle Fehlen einer erwarteten Aufzeichnung).</li>
+</ul>
+<p class="small">Die Farben sind einmal im Stylesheet der Website definiert (Klassen <code>.ev-original</code>, <code>.ev-derivative</code>, <code>.ev-primary</code>, <code>.ev-secondary</code>, <code>.ev-direct</code>, <code>.ev-indirect</code>, <code>.ev-negative</code>) und passen sich automatisch dem hellen und dunklen Modus an.</p>
+
+<h2 id="sources">4 · Verwendete Quellen</h2>
+
+<p>Die Untersuchung stützt sich auf die folgenden primären und originalgetreuen abgeleiteten Bestände. Jeder einzelne wird auf der Seite zitiert, auf der er verwendet wird; diese Liste ist der Index.</p>
+
+<h3>US-Militär- und Pensionsakten</h3>
+<ul>
+  <li><strong>NARA, Washington D.C.</strong> — <a class="glossary-link" href="glossary.html#g-compiled-service-record" title="Glossary: Compiled Service Record">Compiled Service Record</a> (G11-422819443E) und Pensionsakte (F41-523680269E), als Versandpakete bezogen. Das 25-seitige CSR und die vollständige Pensionsakte sind auf der Website unter <a href="../sources/nara-service-record-packet.html">Quellen › NARA</a> und <a href="../sources/pension-file.html">Quellen › Pensionsakte</a> abgebildet; der vollständige Zitierblock steht in <a href="bibliography.html#military">Bibliografie §1 (US-Militär- und Pensionsakten)</a>.</li>
+  <li><strong>Fold3</strong> — Missouri Volunteer Union Service Records, verwendet als Arbeits-Transkriptionsschicht. Wo Fold3-Lesarten von den NARA-Originalen abweichen, ist die NARA-Lesart kanonisch und die Fold3-Abweichung wird auf der betreffenden Seite protokolliert.</li>
+  <li><strong>FamilySearch.org</strong> — verwendet für US-Volkszählung, Personenstandsurkunden und den bearbeitbaren Stammbaum des Projekts. FamilySearch-Personen-IDs (z. B. <code>LZXC-6GB</code>) sind inline verlinkt.</li>
+</ul>
+
+<h3>Deutsche Pfarr- und Auswanderungsaufzeichnungen</h3>
+<ul>
+  <li><strong>Archion.de</strong> — digitalisierte <a class="glossary-link" href="glossary.html#kirchenbuch" title="Glossary: Kirchenbücher">Kirchenbücher</a> für Trendelburg, <a class="glossary-link" href="glossary.html#g-deisel" title="Glossary: Deisel">Deisel</a>, Friedrichsfeld, Helmarshausen, Hofgeismar und die umliegenden Pfarreien in Churhessen. Bestimmte Register-IDs (z. B. <code>220093</code>, <code>220108</code>, <code>218842</code>, <code>218824</code>) werden bei jeder Lesart zitiert; vollständige Zitate je Band stehen in <a href="bibliography.html#parish">Bibliografie §2 (deutsche Pfarrregister)</a>, und das erschöpfende Suchprotokoll Pfarrei für Pfarrei findet sich unter <a href="../negative-results.html#parishes">Audit der negativen Ergebnisse · durchsuchte hessische Pfarrregister</a>. <strong>Zitierungsaudit (21. Juni 2026):</strong> Jeder Archion-Fundort auf der Website — 236 Register-/<em>Seite</em>-/Bildverweise über 22 Register hinweg — wurde in einem Durchgang geprüft; alle 19 Register mit einem überprüfbaren <em>Seite</em>↔Bild-Anker (~25 Ankerlesungen über Tauf-, Heirats- und Begräbnisabschnitte hinweg) wurden im Archion-Viewer erneut geöffnet und gegen die originale Manuskriptseite bestätigt, mit <strong>null echten Zitierungsfehlern</strong> (jede vom automatisierten Scan erhobene Markierung erwies sich als Tabellenzellen-Artefakt mit mehreren Einträgen oder als rollenweise Bildnummerierung). Die sechs zentralen Kontze/Contze-Einträge der Karte 1 tragen zusätzlich Ein-Klick-Archion-Bild-Permalinks. Protokolliert in <a href="errata.html#er-2026-06-21-archion-citation-audit">Errata · 21. Juni 2026 · Zitierungsaudit</a>.</li>
+  <li><strong>Hessisches Staatsarchiv Marburg</strong> — <a class="glossary-link" href="glossary.html#g-auswanderer-beleg" title="Glossary: Auswanderer-Belege">Auswanderer-Belege</a> (Auswanderungsgenehmigungen) und <a class="glossary-link" href="glossary.html#g-stammrolle" title="Glossary: Stammrollen">Stammrollen</a> (Militärregister), abgerufen über <strong>Arcinsys</strong> und <strong><a class="glossary-link" href="glossary.html#g-lagis" title="Glossary: LAGIS">LAGIS</a></strong>.</li>
+  <li><strong>Peter Schräder</strong>, deutscher Genealoge (Trendelburg) — Lesarten aus Originalquellen und Stammtafel-Konstruktion. Peters Korrespondenz und Befunde werden im Reiter <a href="index.html#schrader">Schräder-Korrespondenz</a> zitiert und inline namentlich ausgewiesen.</li>
+</ul>
+
+<h3>US-Auswanderung und Reise</h3>
+<ul>
+  <li><strong>Ancestry.com</strong> — New York Arriving Passenger and Crew Lists; Massachusetts Vital Records; US-Bundesvolkszählung 1850 / 1860 / 1870 / 1880 / 1900.</li>
+  <li><strong>Rekonstruktionen Bremer Passagierlisten</strong> — als Ergänzung verwendet, wo die Hamburger/Bremer Originale verloren sind; siehe <a href="../immigration/bremen-reconstruction.html">Auswanderung › Bremen-Rekonstruktion</a> für die spezifisch auf diese Aufzeichnungsklasse zugeschnittene Methodik.</li>
+</ul>
+
+<h3>Materialien in Familienbesitz</h3>
+<ul>
+  <li>Fotografien und Inschriften im Besitz von Nachkommen (insbesondere das im September 2025 von Maximilian J. wiedergefundene Porträt von Charles sen.) werden mit Genehmigung wiedergegeben und unter Angabe des Besitzers, des Ateliers (sofern bekannt) und des Datumsbereichs der Fotografie zitiert.</li>
+</ul>
+
+<h2 id="transcription">5 · Transkriptionskonventionen</h2>
+
+<p>Die deutschen Pfarraufzeichnungen in diesem Projekt sind in der <em>Kurrentschrift</em> des 19. Jahrhunderts und in manchen Zeiträumen in <em><a class="glossary-link" href="glossary.html#g-kurrent" title="Glossary: Sütterlin">Sütterlin</a></em> verfasst. Die Transkriptionen auf der Website folgen diesen Regeln.</p>
+
+<div class="convention">
+  <span class="label">Wörtliche Zitate</span>
+  Wörtliche Zitate aus einem Pfarrregister oder einer Pensions-eidesstattlichen Erklärung werden <em>kursiv</em> und in Anführungszeichen wiedergegeben: <code class="ex"><em>"Konzen, Johann Friedrich Wilhelm — 243"</em></code>. Die umgebende analytische Prosa steht in normaler Schrift, sodass sich Wörtliches und Redaktionelles visuell unterscheiden.
+</div>
+
+<div class="convention">
+  <span class="label">Redaktionelle Einschübe</span>
+  Redaktionelle Einschübe — Auflösungen von Abkürzungen, Modernisierungen von Ortsnamen, Identifizierungen eines ungenannten Subjekts — stehen in <strong>eckigen Klammern</strong>: <code class="ex">"<em>geb[oren]</em>"</code> für „geboren", <code class="ex">"[Helmarshausen]"</code> für eine ungenannte, aus externem Kontext ergänzte Pfarrei.
+</div>
+
+<div class="convention">
+  <span class="label">Unleserliche und unsichere Lesarten</span>
+  Ein unleserliches Wort wird als <code class="ex">[unleserlich]</code> wiedergegeben. Eine Lesart, die der Transkribierende für wahrscheinlich, aber nicht sicher hält, wird von <code class="ex">[?]</code> gefolgt: <code class="ex">"Cont<em>z</em>en[?]"</code>. Ein gekürztes Zitat verwendet <code class="ex">[…]</code>.
+</div>
+
+<div class="convention">
+  <span class="label">Langes s und Ligaturen</span>
+  Das lange s (ſ) des 19. Jahrhunderts wird stillschweigend als <em>s</em> wiedergegeben. <em>ß</em> bleibt erhalten. Ligaturen (<em>æ, œ</em>) bleiben erhalten, wo sie im Original vorkommen.
+</div>
+
+<div class="convention">
+  <span class="label">Daten und Orte</span>
+  Daten werden in der Darstellung als <strong>Tag-Monat-Jahr</strong> geschrieben („26. Januar 1835"). Orte werden bei der ersten Erwähnung so wiedergegeben, wie sie in der Quelle erscheinen, danach in ihrer modernen Form: <em>"Churhessen"</em> auf dem Heiratsregister von 1866, <em><a class="glossary-link" href="glossary.html#g-kurhessen" title="Glossary: Kurhessen">Kurhessen</a></em> in der modernen Bezugnahme; <em>Cassel</em> in Aufzeichnungen des 19. Jahrhunderts, <em>Kassel</em> heute.
+</div>
+
+<h3>Herkunft der Transkriptionshand</h3>
+
+<p>Damit eine Prüferin oder ein Prüfer jede bestimmte Lesart bis zu der Person zurückverfolgen kann, die sie erstellt hat, ordnet das Projekt jeden wörtlichen Transkriptionsblock auf der Website einer von drei Händen zu. Wo ein einzelner Block von mehr als einer Hand erstellt wurde (z. B. eine Autorentranskription, die gegen Peters Lesart abgeglichen wurde), wird die übergeordnete Hand zuerst genannt.</p>
+
+<table class="conf-table">
+  <thead>
+    <tr><th style="width:170px;">Hand</th><th>Aufzeichnungen (kanonisch)</th><th>Notation auf der Seite</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Peter Schräder</strong> (Trendelburg)</td>
+      <td>Pfarrregistereinträge aus Trendelburg / Deisel / Friedrichsfeld / Helmarshausen; Stammtafel-Konstruktion; der K-Abschnitt des Trendelburger Begräbnisindex 1773–1818; <a class="glossary-link" href="glossary.html#g-htr" title="Glossary: HTR">HTR</a>-Transkription von Eintrag 195 (Deisel KB 218842). Der übergeordnete Leser für Kurrentschrift / Sütterlin des 19. Jahrhunderts in diesem Projekt.</td>
+      <td>— <em>transkribiert von Peter Schräder</em>, ggf. mit Datum</td>
+    </tr>
+    <tr>
+      <td><strong>Autor</strong> (Jed Johnson)</td>
+      <td>Aufzeichnungen der US-Seite (NARA Compiled Service Record, vollständige Pensionsakte, St. Marcus Pfarrregistereinträge 1866–1903, US-Volkszählungsfelder, Einbürgerungspapiere). Einträge der deutschen Seite, bei denen der Autor Peters Lesart gegen ein Archion-Bild oder einen HTR-Durchgang abgeglichen hat.</td>
+      <td>— <em>Autorentranskription</em> (oder — <em>Autorenabgleich</em>, wo Peter der übergeordnete Leser war)</td>
+    </tr>
+    <tr>
+      <td><strong>HTR</strong> (Archion-Handschrifterkennung)</td>
+      <td>Die maschinelle Transkriptionsausgabe von Archion. Verwendet als erster Durchgang mit geringer Zuverlässigkeit; niemals die primäre Bezeugung für eine tragende Behauptung. Wo HTR die einzige verfügbare Lesart ist, trägt der Eintrag gemäß den obigen Konventionen den Unsicherheitsmarker [?].</td>
+      <td>— <em>Archion HTR</em>, mit [?] gekennzeichnet, wo unsicher</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Die Handnotation folgt, wo vorhanden, dem wörtlichen Block. Wo ein wörtlicher Block auf dieser Website <em>nicht</em> mit einer Hand gekennzeichnet ist, gilt die Voreinstellung: Aufzeichnungen der US-Seite → Autor; deutsche Pfarrregister → Peter Schräder; alles Übrige → Autorentranskription, abgeglichen gegen die abgebildete Quelle auf der betreffenden Seite des <a href="sources/index.html">Primärquellen-Viewers</a>.</p>
+
+<h2 id="naming">6 · Namenskonventionen</h2>
+
+<p>Charles' Familienname wurde zwischen 1866 und 1896 von mindestens fünf verschiedenen Schreibern in <strong>neun verschiedenen US-Schreibweisen</strong> festgehalten (Gonnson, Gansen, Gonsen, Konsen, Gonson, Jansen, Konzen, Gannsen, Conson), dazu die schließliche Anglisierung zu Johnson. <strong>Eine Anmerkung zu „Gannsen":</strong> Die Titelschreibweise des Projekts, <em>Gannsen</em>, ist auch Charles' eigene Handschrift auf seiner Bürgerkriegs-Musterung von 1862 — früher als die Familienaufzeichnungsspur von 1866–1896 — und kehrt innerhalb der Spur im Gould's St. Louis Adressbuch von 1895 wieder („Gannsen Charles, watchmaker, r. rear 2407 DeKalb"), der hier gezählten Bezeugung. Sie ist somit sowohl die Kennungsschreibweise des Projekts als auch das neunte Glied der Namensspur von 1866–1896. Die Namensspur-Analyse des Projekts (siehe <a href="index.html#evidence">Schlüsselbeleg-Karte 1</a>) kam im Mai 2026 zu dem Schluss, dass der Familienname auf der deutschen Seite höchstwahrscheinlich <strong>Konzen</strong> lautet (die hessische Form, die im Trendelburger Pfarrkomplex von Churhessen dokumentiert ist); das Sterberegister der Tochter Auguste von 1890 — mit der Lesart „Auguste Somers geb Konzen" — ist die einzige amerikanische Aufzeichnung, die diese vollständige hessische z-Form unmittelbar trägt (dieser Liste im spätabendlichen Strengedurchgang vom 17. Mai 2026 wieder hinzugefügt, nachdem eine erneute Prüfung der Aufzeichnung von 1890 die vorherige Lesart Konzen→Konsen vom 5. Mai 2026 umgekehrt hatte; die umfassendere Quellenbewertungsbegründung von 2020, die zur Abwägung dieser konkurrierenden Lesarten herangezogen wurde, ist im <a href="index.html#doc-crosswalk">Dok. A–O-Querverweis</a> dargelegt). Um Verwirrung zu vermeiden, verwendet die Website durchgängig die folgenden Konventionen.</p>
+
+<ul>
+  <li><strong>„Charles Konzen"</strong> — verwendet für die Identität auf der deutschen Seite, für Zeiträume bis einschließlich der Auswanderung 1859 und für rekonstruierte Familienbeziehungen in Hessen.</li>
+  <li><strong>„Charles Gannsen" oder „Charles Gannsen / Johnson"</strong> — verwendet für Bezugnahmen auf das US-Leben zwischen 1859 und 1903, wo die US-Aufzeichnungen eine der phonetischen amerikanischen Schreibweisen der Familie verwenden. „Gannsen" ist konkret die Schreibweise auf seiner Musterung von 1862 in Battery B, 2nd Missouri Light Artillery — die Titelschreibweise des Projekts und eine neunte amerikanische Form, die sich von den acht Namensspur-Schreibweisen von 1866–1896 unterscheidet (siehe die obige Anmerkung).</li>
+  <li><strong>„Charles Johnson Sr."</strong> — verwendet für Bezugnahmen im späteren Leben und posthum, nachdem die Familie die Johnson-Form angenommen hatte (die Generation der Kinder verwendete Johnson; das Sterberegister der Ehefrau von 1896 lautet „Auguste Conson"; das Begräbnis von 1903 erfolgt unter Charles Johnson).</li>
+</ul>
+
+<p>Ortsnamenkonventionen: <em>Churhessen</em> wird für das historische Kurfürstentum Hessen-Kassel verwendet, wie es in Aufzeichnungen des 19. Jahrhunderts erscheint; <em>Kurhessen</em> für die moderne Bezugnahme. <em>Cassel</em> wird innerhalb wörtlicher Zitate des 19. Jahrhunderts verwendet; <em>Kassel</em> in moderner Prosa. Dorfnamen (<em>Deisel</em>, <em>Trendelburg</em>, <em>Friedrichsfeld</em>, <em>Helmarshausen</em>, <em>Schöneberg</em>) werden so geschrieben, wie sie heute erscheinen.</p>
+
+<h2 id="citation">7 · Zitierstil</h2>
+
+<p>Der Zitierstil der Website ist eine Mischung aus der Kurzform von <a class="glossary-link" href="glossary.html#g-ngsq" title="Glossary: NGSQ">NGSQ</a> und Inline-Verlinkung, optimiert für eine digitale Leserschaft, die eine Behauptung mit einem Klick überprüfen möchte. Jede zitierbare Behauptung auf der Website verlinkt unmittelbar entweder auf eine abgebildete Quelle auf dieser Website oder auf die kanonische externe Quelle (FamilySearch-Profil, Archion-Register, Fold3-Bild, NARA-M-Rolle). Beim ersten Auftreten einer Quelle auf einer Seite wird das Zitat in Langform angegeben; spätere Bezugnahmen verwenden die Kurzform.</p>
+
+<h4>Langform (erste Bezugnahme auf einer Seite)</h4>
+<div class="citation-block">
+  Compiled Service Record of Charles Gannsen, Pvt./Sgt., Battery B, 2nd Missouri Light Artillery (Union); record group 94, M405, file G11-422819443E; National Archives and Records Administration, Washington, D.C.; pages 06–08, mail-order packet received 4 May 2026.
+</div>
+
+<h4>Kurzform (spätere Bezugnahmen)</h4>
+<div class="citation-block">
+  NARA CSR pp. 06–08 · M405 · G11-422819443E
+</div>
+
+<h4>Pfarrregister-Zitat</h4>
+<div class="citation-block">
+  Trendelburg ev. <a class="glossary-link" href="glossary.html#g-pfarramt" title="Glossary: Pfarramt">Pfarramt</a>, <a class="glossary-link" href="glossary.html#g-taufe" title="Glossary: Taufen">Taufen</a> 1830–1863, Register 220108 (Archion.de), Seite 243 (<a href="https://www.archion.de/p/f01b45954d/" target="_blank" rel="noopener noreferrer">Bild 1623</a>), Eintrag "Konze, Johann Friedrich Wilhelm" — abgerufen am 17. April 2026.
+</div>
+
+<p>Die <a href="bibliography.html">Bibliografie</a> führt jede Primärquelle, jedes Archiv und jedes Nachschlagewerk, das im Verlauf der Untersuchung zitiert wird, auf einer einzigen zitatformatierten Seite zusammen. Der Reiter <a href="index.html#archive">Quellenarchiv</a> präsentiert dasselbe Material als abgebildete Dokumentaufzeichnungen mit vollständiger Herkunft; die beiden Seiten verweisen wechselseitig aufeinander, und jede in der Darstellung angeführte Quelle ist mit ihrem Archiveintrag verlinkt.</p>
+
+<p>Zwei Begleitseiten verwandeln die beiden am häufigsten zitierten strukturellen Argumente des Projekts in überprüfbare Artefakte: Die Seite <a href="../sponsor-reconciliation.html">Patenabgleich</a> tabelliert jeden namentlich genannten Paten über die sieben Gannsen-Taufen (1866–1881) hinweg mit der dokumentierten verwandtschaftlichen Verbindung jedes Paten zu Auguste und dem ausdrücklichen Fehlen eines Blutsverwandten auf Charles' Seite — das strukturelle Argument „allein eingewandert" als eine einzige überprüfbare Tabelle. Die Seite <a href="../negative-results.html">Audit der negativen Ergebnisse</a> listet jedes durchsuchte hessische Pfarrregister und jede ausgeschlossene Kandidatenfamilie auf, mit Datum, Umfang und dem konkreten Beleg, der jede Spur schloss — das überprüfbare Rückgrat der Behauptung „angemessen erschöpfende Forschung" gemäß dem obigen GPS-Standard.</p>
+
+<h2 id="privacy">8 · Datenschutz und was nicht auf der Website steht</h2>
+
+<p>Dies ist eine Forschungswebsite über einen Mann, der 1903 starb. Drei Kategorien von Material werden bewusst ausgeschlossen.</p>
+
+<ul>
+  <li><strong>Lebende Verwandte.</strong> Auf der Website werden keine identifizierenden Informationen über Personen veröffentlicht, von denen bekannt ist oder angenommen wird, dass sie leben, selbst wenn sie in Quellenaufzeichnungen erscheinen. Dazu gehören gegenwärtige Kontaktinformationen von Nachkommen, die dem Projekt Materialien überlassen haben. Wo der Name eines Nachkommen im Zusammenhang mit einer beigetragenen Fotografie oder einem Dokument erscheint, wird er nur mit der ausdrücklichen Genehmigung dieses Nachkommen veröffentlicht.</li>
+  <li><strong>Gesperrte Primärquellen.</strong> Einige von Peter Schräder und anderen Korrespondenten überlassene Materialien werden auf der Website zusammengefasst zitiert, doch das vollständige Dokument wird nicht abgebildet, entweder weil der Besitzer keine Wiederveröffentlichungsrechte erteilt hat oder weil das Dokument Teil eines aktiven archivalischen Forschungsstrangs ist, der noch nicht veröffentlicht wurde.</li>
+  <li><strong>Korrespondenz mit Mitarbeitern.</strong> Die Forschungskorrespondenz des Projekts — vorrangig die E-Mails und Diagramme von Peter Schräder — ist die private Arbeit ihrer Verfasser. Ihre <em>Substanz</em> (Befunde, Lesarten und Begründungen) wird hier mit Quellenangabe berichtet, doch die eigenen Worte der Korrespondenten werden <strong>paraphrasiert statt wörtlich zitiert</strong>, sofern der Verfasser nicht ausdrücklich die Genehmigung zur Veröffentlichung des Wortlauts erteilt hat. Jeder Beitragende kann verlangen, dass sein zugeschriebenes Material überarbeitet oder entfernt wird. Eine ausdrückliche Veröffentlichungsgenehmigung der namentlich genannten Korrespondenten wird derzeit bestätigt.</li>
+  <li><strong>Sensible persönliche Angaben.</strong> Wo eine Aufzeichnung des 19. Jahrhunderts Material enthält, das normalerweise nicht auf einer modernen, für Nachkommen lesbaren Website veröffentlicht würde (Vermerke über uneheliche Geburten, Selbstmordaufzeichnungen, Anstaltseinweisungen), bewahrt das Projekt die wörtliche Lesart der Aufzeichnung auf der Website nur dann, wenn das Subjekt mehr als zwei Generationen von jedem gegenwärtig lebenden Nachkommen entfernt ist; andernfalls wird die Existenz der Aufzeichnung zusammengefasst und die wörtliche Lesart offline gehalten.</li>
+  <li><strong>DNA-Testteilnehmer und Übereinstimmungen.</strong> Die hier erörterte DNA stammt von einem getesteten Nachkommen von Charles und einigen nahen Verwandten — allesamt die engste Familie des Verfassers —, deren Kits dabei helfen, Übereinstimmungen einer väterlichen oder mütterlichen Seite zuzuordnen; ihre Ergebnisse werden auf der öffentlichen Website nur in anonymisierter, zusammengefasster Form verwendet. Lebende DNA-Übereinstimmungen werden niemals namentlich genannt: Cluster werden nur nach Region, genetischer Distanz und gemeinsamen Centimorgan beschrieben, und die Ahnen-Familiennamen der eigenen Familienlinien lebender Übereinstimmungen werden zurückgehalten (Kit-Kennungen und weitere Einzelheiten werden nur seriösen Forschenden herausgegeben). Jeder Testteilnehmer kann jederzeit verlangen, dass seine Daten weiter anonymisiert oder entfernt werden. Das Projekt folgt den Standards des Board for Certification of Genealogists für den Schutz der Privatsphäre lebender Testteilnehmer und bestätigt derzeit eine ausdrückliche informierte Einwilligung für die Verwendung der Ergebnisse jeder lebenden Person.</li>
+</ul>
+
+<p>Eine ausdrückliche, seitenbezogene Bestandsaufnahme dessen, wonach das Projekt gesucht und was es noch nicht gefunden hat, findet sich unter <a href="open-questions.html">Offene Fragen</a>.</p>
+
+<h2 id="how-to-cite">9 · Wie diese Website zu zitieren ist</h2>
+
+<p>Wenn Sie einen Befund von dieser Website in Ihrer eigenen Genealogie oder in einer wissenschaftlichen Arbeit zitieren, lautet die empfohlene Zitierweise:</p>
+
+<div class="citation-block">
+  Johnson, Jed, mit Peter Schräder und James Gunnis. <em>Charles Research — A Genealogical Investigation of Charles Konzen / Gannsen / Johnson (1835–1903)</em>. https://charles-research.netlify.app/ , abgerufen am [Datum]. Konkreter Befund zitiert von Seite [URL oder Reitername], aktualisiert am [Datum der letzten Aktualisierung auf der Seite].
+</div>
+
+<p>Die meisten Seiten zeigen in ihrer Kopfzeile ein Datum „Zuletzt aktualisiert"; bitte verwenden Sie beim Zitieren dieses Datum als Versionsanker, da die Website aktualisiert wird, sobald neue Belege eintreffen.</p>
+
+<h2 id="corrections">10 · Korrekturen und Beiträge</h2>
+
+<p>Das Projekt begrüßt Korrekturen, widersprechende Belege und Beiträge von Nachkommen, Pfarrhistorikern und Genealogen, die an sich überschneidenden Familien arbeiten. Wenn Sie verfügen über:</p>
+
+<ul>
+  <li>eine Korrektur zu einer Transkription, eine Fehlidentifizierung oder ein Datum,</li>
+  <li>eine Fotografie, ein Dokument oder eine Familienerinnerung, die die Familie Konzen / Gannsen / Johnson betrifft,</li>
+  <li>oder Forschung zu einer parallelen Familie (Kreichelt, Grandjot, Herwig, Konze aus Trendelburg usw.), die sich mit dieser Arbeit überschneidet,</li>
+</ul>
+
+<p>so ist der Betreuer des Projekts Jed Johnson, der über die Kontaktinformationen im Reiter <a href="index.html#schrader">Schräder-Korrespondenz</a> erreichbar ist. Inhaltliche Korrekturen und Beiträge werden inline auf der betreffenden Seite namentlich ausgewiesen.</p>
+
+<p style="margin-top:2rem; font-style:italic; color: var(--text-muted); font-size: 0.92rem;">Diese Methodik-Seite selbst ist im Changelog der Website versioniert. Die aktuelle Version datiert vom <time datetime="2026-05-17">17. Mai 2026</time> (hinzugefügt: Unterabschnitt zur Herkunft der Transkriptionshand, Verweise auf die Begleitseiten Patenabgleich und Audit der negativen Ergebnisse, belegte Aufzählung „neun verschiedene US-Schreibweisen" (acht bei der Konzen-Neulesung des Sterberegisters von 1890 am 17. Mai 2026; die neunte, das Gannsen aus dem Gould's-Adressbuch von 1895, hinzugefügt am 21. Juni 2026)).</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles-Forschung</strong> · Eine genealogische Untersuchung von Jed Johnson mit Peter Schräder und James Gunnis · <a href="index.html">Startseite</a> · <a href="methodology.html">Methodik</a> · <a href="open-questions.html">Offene Fragen</a> · <a href="changelog.html">Changelog</a> · <a href="../styleguide.html">Stilrichtlinie</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../de/index.html">Startseite</a></li>
+        <li><a href="../de/stories.html">Geschichten</a></li>
+        <li><a href="../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../methodology.html">Methodik</a></li>
+        <li><a href="../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../de/glossary.html">Glossar</a></li>
+        <li><a href="../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../de/about.html">Über</a></li>
+        <li><a href="../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

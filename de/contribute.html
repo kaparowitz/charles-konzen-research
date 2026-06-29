@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="x-translated-from" content="contribute.html">
+<meta name="x-translated-source-sha" content="c5e1b66e5468e65938c65310d6aee598a9430ed023cb6b733416bfeebcfe925f">
+<meta name="x-translated-date" content="2026-06-28">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Beitragen oder korrigieren — Charles-Forschung</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/de/contribute.html">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/contribute.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/contribute.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/contribute.html">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
+<meta name="description" content="Wie Nachfahren und Forschende Erkenntnisse, Korrekturen, Hinweise auf Primärquellen oder Ergänzungen zum Stammbaum zum Projekt Charles-Forschung beitragen können.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles-Forschung">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Beitragen oder korrigieren — Charles-Forschung">
+<meta property="og:description" content="Wie Sie zur Forschung beitragen, einen Fehler korrigieren oder einen Hinweis auf eine Primärquelle einreichen können.">
+<meta property="og:url" content="https://charles-research.netlify.app/de/contribute.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/contribute.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beitragen oder korrigieren — Charles-Forschung">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/contribute.png">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.65; }
+
+  header.contrib-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.4rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.contrib-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.contrib-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.contrib-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; }
+  header.contrib-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  h2 {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brand-dark);
+    margin: 2rem 0 0.7rem;
+    border-bottom: 1px solid var(--border-medium);
+    padding-bottom: 0.3rem;
+  }
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  .lede { font-size: 1.06rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.6rem; }
+
+  .pathway {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 5px;
+    padding: 1rem 1.2rem;
+    margin: 0.6rem 0 1rem;
+  }
+  .pathway h3 { font-size: 1.05rem; color: var(--text-primary); margin-bottom: 0.3rem; border: none; padding: 0; }
+  .pathway .who { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.5rem; }
+  .pathway p { font-size: 0.93rem; margin-bottom: 0.5rem; }
+  .pathway ul { padding-left: 1.4rem; margin: 0.4rem 0; }
+  .pathway li { margin-bottom: 0.25rem; font-size: 0.92rem; }
+
+  .pathway.descendant { border-left-color: #5a8a4a; }
+  .pathway.researcher { border-left-color: #4a76c8; }
+  .pathway.correction { border-left-color: #c87a30; }
+  .pathway.archive    { border-left-color: #8a6420; }
+
+  .email-card {
+    background: var(--bg-deep);
+    color: var(--text-on-dark);
+    border-radius: 5px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+  .email-card a { color: var(--brand); font-weight: 600; font-size: 1.1rem; border-bottom: 1px solid var(--brand); }
+  .email-card a:hover { color: #f6f1e7; }
+  .email-card .small { font-size: 0.82rem; color: var(--text-on-dark-d); margin-top: 0.4rem; font-style: italic; }
+
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/contribute.html#article",
+  "headline": "Beitragen oder korrigieren — Charles-Forschung",
+  "description": "Wie Nachfahren, Forschende und Archivare zur Untersuchung beitragen können.",
+  "datePublished": "2026-05-08",
+  "dateModified": "2026-05-12",
+  "inLanguage": "de-DE",
+  "translationOfWork": "https://charles-research.netlify.app/contribute.html",
+  "url": "https://charles-research.netlify.app/de/contribute.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Contribute"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700;" onfocus="this.style.left=&#39;8px&#39;;this.style.top=&#39;8px&#39;;" onblur="this.style.left=&#39;-999px&#39;;">Zum Hauptinhalt springen</a>
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../de/index.html" role="menuitem">Überblick</a>
+      <a href="../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodik</a>
+      <a href="../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="contrib-hero cinema-section-hero">
+  <div class="crumbs"><a href="../de/index.html">← Charles-Forschung</a> &nbsp;/&nbsp; Beitragen</div>
+  <h1>Beitragen oder korrigieren</h1>
+  <div class="sub">Wenn Sie etwas ergänzen, korrigieren oder widerlegen können &mdash; so bringen Sie es in die Forschung ein.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">Diese Seite ist ein Arbeitsdokument. Nachfahren, Forschende, Archivare und neugierige Leserinnen und Leser sind alle ausdrücklich eingeladen, Widerspruch einzulegen. Jede Schlussfolgerung auf dieser Seite wird in einem ausdrücklichen Zustand &mdash; Bestätigt / In Arbeit / Offen / Ausgeschlossen &mdash; geführt, eben damit neue Belege Dinge zwischen diesen Zuständen verschieben können, ohne die umgebende Beweisführung neu schreiben zu müssen.</p>
+
+<div class="email-card">
+  <div>Senden Sie alles an:</div>
+  <a href="mailto:jedsjohnson@gmail.com?subject=Charles%20Konzen%20Research%20%E2%80%94%20">jedsjohnson@gmail.com</a>
+  <div class="small">Antworten auf Englisch oder Deutsch sind beide willkommen. Bitte setzen Sie &bdquo;Charles Research &mdash;&ldquo; an den Anfang Ihrer Betreffzeile.</div>
+</div>
+
+<h2 id="pathways">Vier Wege, beizutragen</h2>
+
+<div class="pathway descendant">
+  <div class="who">Wenn Sie ein Nachfahre oder Familienmitglied sind</div>
+  <h3>Ergänzen oder korrigieren Sie Ihren Familienzweig</h3>
+  <p>Der Reiter <a href="../index.html#tree">Stammbaum</a> und der <a href="../who/index.html">Gesamtindex aller Personen</a> verzeichnen rund 80 namentlich genannte Personen aus dem Kreis von Charles&rsquo; Nachfahren und seinem sozialen Netzwerk in St.&nbsp;Marcus / Kreichelt. Sollte Ihre Linie nicht vertreten sein oder ein Datum / Name / Verwandtschaftsverhältnis falsch sein, senden Sie uns bitte:</p>
+  <ul>
+    <li>Ihr Verwandtschaftsverhältnis zu Charles (z.&nbsp;B. &bdquo;Ururenkelin über Erwin Carl Konsen / Charles Johnson Jr.&ldquo;).</li>
+    <li>Namen, Daten, Orte &mdash; wenn möglich mit Quellen. Eine FamilySearch-Profil-ID (z.&nbsp;B. <em>LZXC-6GB</em>) ist ideal, aber nicht erforderlich.</li>
+    <li>Fotografien, Dokumente oder Familienüberlieferungen, die Sie teilen möchten. Die Entdeckung des Porträts von Charles Sr. im September 2025 ist das nach wie vor gültige Beispiel dafür, wie sehr eine einzige Fotografie aus dem Familienbesitz das Projekt verändern kann.</li>
+  </ul>
+</div>
+
+<div class="pathway researcher">
+  <div class="who">Wenn Sie Genealoge oder Lokalhistoriker sind</div>
+  <h3>Reichen Sie einen Hinweis auf eine Primärquelle oder einen Ausschluss einer Kandidatenfamilie ein</h3>
+  <p>Die Seite <a href="../open-questions.html">Offene Fragen</a> listet die vier noch nicht aufgefundenen Primärquellen auf (Charles&rsquo; deutscher Taufeintrag, seine transatlantische Passagierliste von 1859, der hessische <a class="glossary-link" href="../de/glossary.html#g-auswanderer-beleg" title="Glossar: Auswanderer-Beleg">Auswanderer-Beleg</a> und der Stammrollen-Eintrag von 1855 (<a class="glossary-link" href="../de/glossary.html#g-stammrolle" title="Glossar: Stammrolle">Stammrolle</a>)). Die <a href="../germany/parish-map.html">Pfarreienkarte</a> zeigt jede hessische Pfarrei, die durchsucht wurde, samt Ergebnis. Nützliche Beiträge:</p>
+  <ul>
+    <li>Hinweise auf eine Pfarrei, ein Register oder eine archivalische Serie, die wir noch nicht durchsucht haben.</li>
+    <li>Eine Lesung eines <a class="glossary-link" href="../de/glossary.html#g-kurrent" title="Glossar: Kurrent">Kurrent</a>- oder Sütterlin-Eintrags auf einer Registerseite, die wir als unleserlich markiert haben.</li>
+    <li>Ein Gegenargument zu einem der Ausschlüsse &mdash; wenn Sie meinen, dass wir eine Pfarrei oder Familie ausgeschlossen haben, die weiterhin in Betracht kommen sollte, zeigen Sie uns bitte, warum.</li>
+    <li>Ein Hinweis auf eine Privatsammlung (Stammbuch, Familienbibel, Fotografien aus dem Familienbesitz) außerhalb der digitalisierten öffentlichen Archive.</li>
+  </ul>
+</div>
+
+<div class="pathway correction">
+  <div class="who">Wenn Sie einen Fehler entdeckt haben</div>
+  <h3>Korrekturen, große wie kleine</h3>
+  <p>Sachliche Fehler, Datums-, Namens- oder Transkriptionsfehler, Fehler im Zitationsformat, defekte Links oder fragwürdige wissenschaftliche Einschätzungen &mdash; alles ist willkommen. Bitte geben Sie die Seiten-URL an und idealerweise die genaue Formulierung, wie sie erscheint, damit wir die Stelle schnell finden. Substanzielle Korrekturen werden im <a href="../changelog.html">Changelog</a> und, wo angebracht, im Notizenbereich der betreffenden Belegkarte verdankt.</p>
+</div>
+
+<div class="pathway archive">
+  <div class="who">Wenn Sie Archivar sind</div>
+  <h3>Kontakt für aufbewahrende Archive</h3>
+  <p>Wenn Sie ein Archiv vertreten, dessen Bestände auf dieser Seite zitiert werden (Archion / Landeskirchliches Archiv Kassel, Hessisches Staatsarchiv Marburg, NARA, FamilySearch, St.&nbsp;Marcus usw.), und Sie wünschen, dass eine Quellenangabe korrigiert, ein Bild durch einen höherwertigen Scan ersetzt oder ein Objekt aus rechtlichen Gründen entfernt wird, wenden Sie sich bitte an uns &mdash; wir setzen Ihre Anfrage zügig um. Wo möglich ersetzen wir das Bild durch einen Link zu Ihrem Katalog, statt die Quellenangabe ganz zu entfernen.</p>
+</div>
+
+<h2 id="response">Was Sie erwartet, wenn Sie schreiben</h2>
+
+<p>Dies ist kein institutioneller Posteingang, der rund um die Uhr besetzt ist. Rechnen Sie mit einer Antwort innerhalb einer Woche. Sollte Ihr Beitrag bedeutend genug sein, um die Seite zu aktualisieren, werden Sie gefragt, ob Sie namentlich in der betreffenden Karte genannt werden möchten oder einfach im Changelog als &bdquo;Beitrag eines Nachfahren&ldquo; / &bdquo;Hinweis eines Forschers&ldquo; aufgeführt werden sollen.</p>
+
+<p>Mit dem Einreichen von Material bestätigen Sie, dass Sie das Recht haben, es zu teilen, und dass es mit angemessener Quellenangabe in der Forschung verwendet werden darf. Fotografien und Bilder von Primärquellen, die Sie einreichen, werden auf dieser Seite unter derselben Lizenz <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> gehostet, die auch für den Projekttext gilt, sofern Sie es nicht ausdrücklich anders wünschen.</p>
+
+<h2 id="other">Weitere Einstiegspunkte</h2>
+
+<p>Für die formelle Zusammenfassung der Untersuchung siehe die <a href="../de/abstract.html">Zusammenfassung</a>. Für Forschungsstandards und die Quellenbewertungs-Taxonomie siehe <a href="../methodology.html">Methodik</a>. Für die Autoren des Projekts, offengelegte Interessen und Zitierhinweise siehe <a href="../de/about.html">Über dieses Projekt</a>.</p>
+
+</main>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../de/index.html">Startseite</a></li>
+        <li><a href="../de/stories.html">Geschichten</a></li>
+        <li><a href="../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../methodology.html">Methodik</a></li>
+        <li><a href="../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../de/glossary.html">Glossar</a></li>
+        <li><a href="../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../de/about.html">Über</a></li>
+        <li><a href="../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

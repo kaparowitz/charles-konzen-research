@@ -132,6 +132,29 @@ not be cleanly isolated this pass. The KB 1832–1852 Ort column should also be 
 all years for "Bursfelde/Glashütte" + Gans. Best route to the **dated** Gans-family records =
 Kunze's printed *OSB Bursfelde und Glashütte* (fams 110/113/125/136). Wahmbeck not started.
 
+## 2ter. Wahmbeck on Archion — effectively NEGATIVE
+
+Wahmbeck (small Weser hamlet, Lkr. Northeim) is **its own parish** on Archion (Niedersachsen →
+Landeskirche Hannovers → **Kirchenkreis Uslar → Wahmbeck**, 8 books; **no Namensregister**). It
+has **no Kunze OSB** and was never flagged for the Konze/Gans pool. The 1835 baptisms are in
+**Kirchenbuch 1790–1845 (reg. 359497)** — a combined volume, sectioned by rite, with a tabular
+*Geburts-Register* that includes a clean **"Familien-Namen" column**.
+
+Calibration: Taufen section ≈ 2 images/year; 1833 = Bild 93, 1835 = Bild 94–95, 1836 = Bild 96.
+The volume is **bound out of order / has an Erst- + Zweitschrift** (Bild 94-right reads 1836
+while 95-left reads 1835), so the exact **Jan–Aug 1835 leaf (Nro 1–21) could not be isolated**.
+
+**Read:** 1835 Nro 22–29 (Sept–Dec) + much of 1834 and 1836. The **entire local surname pool**
+came through the Familien-Namen column and it is tight and local — **no Gans, no Konze/Kontze
+anywhere**: Arnstmeier, Rammenstein, Niemeyer, Friese, Elend, Förtner, Morgenstern, Grote,
+König, Meister, Bremer, Brockhaus, Pape, Hesse, Grobe, Hauck, Krautmann, Schröder, Vömer,
+Wagner. The only **"Carl"** rufnamen in the window are **Carl Heinrich Wilhelm Morgenstern**
+(b. 7 Dec 1835) and **Carl … Brockhaus** (b. 25 Feb 1836) — both local surnames, neither 26 Jan
+1835, neither Gans/Konze. ⇒ **Wahmbeck effectively NEGATIVE** for the pool and for Charles.
+(Caveat: the displaced Jan–Aug 1835 leaf was not read line-by-line; the surname pool is decisive,
+but a residual remains until that leaf is located — likely a Zweitschrift leaf elsewhere in the
+264-image volume.)
+
 ## 3. Net result / where this leaves the neighbour ring
 
 | Lippoldsberg neighbour | Kunze pool | Archion status |
@@ -141,15 +164,49 @@ Kunze's printed *OSB Bursfelde und Glashütte* (fams 110/113/125/136). Wahmbeck 
 | Vernawahlshausen | Gans only | searched, neg. (baptism index + confirmations) |
 | **Bodenfelde** | **Gans ×15 + Contze 178** | **1835 Taufen NEG (re-verified); Kartei G = no Gans card; Gans pool large but historical, not active 1835** |
 | **Bursfelde + Glashütte** | **Gans ×4 (110,113,125,136)** | **parish = Fürstenhagen (Kr. Uslar); 1835 Taufen read = no Bursfelde Carl-Gans b.26 Jan; Gans fams historical. Full Gans-timing (Namensregister 359381 / printed OSB) outstanding** |
-| Wahmbeck | (no Kunze book) | **Archion NOT yet swept** |
+| Wahmbeck | (no Kunze book) | **Effectively NEGATIVE** — KB 1790-1845 (reg 359497); 1835-36 surname pool all local (Arnstmeier, Rammenstein, Niemeyer, Friese, Elend, König, Grote, Morgenstern…), no Gans/Konze; Carls (Morgenstern Dec 1835, Brockhaus Feb 1836) non-pool. Jan-Aug 1835 leaf displaced/not isolated |
 
-**Bottom line:** the open-web Kunze part is done for the new neighbours. Bodenfelde — the
-cross-river neighbour — turns out to carry the **largest Gans population of the ring (15
-families) plus a Contze (178)**, yet its **1835 baptisms are clean negative for Charles and
-for the Gans/Contze surname** (re-verified). That mirrors the Oedelsheim pattern (a real Weser
-Gans population whose 1835 cohort yields no Carl Gans) and keeps alive the corridor-wide
-"Gans → Gannsen, emigrated ~1850s rather than an 1835 baptism" reading. **Bursfelde (4 Gans
-families) and Wahmbeck remain to be swept on Archion.**
+**Bottom line:** all three new cross-Weser neighbours are now searched (Kunze + Archion).
+Bodenfelde carries the **largest Gans population of the ring (15 families) + a Contze (178)**,
+Bursfelde 4 Gans families, Wahmbeck none — yet **none yields a Carl on a pool surname in the
+target window.** This mirrors Oedelsheim and keeps alive the corridor-wide "Gans → Gannsen,
+emigrated ~1850s rather than an 1835 German baptism" reading.
+
+### Working elimination criterion — widened to the 1833–1841 birth window (27 Jun 2026, per Jed)
+The search is no longer pinned to the exact "26 Jan 1835" date but to the project's standard
+**1833–1841 birth window** (the same window used for the confirmation-class sweeps, since
+Charles's exact date is US-derived). Restated test: *is there any Carl/Karl on a pool surname
+(Gans / Konze / Kontze / Contze) born 1833–1841 in the Lippoldsberg neighbour ring?* Status:
+**Grind executed 27 Jun 2026 (per Jed "grind through it"):**
+- **Wahmbeck — VERIFIED NEGATIVE.** The parish surname pool contains **no Gans/Konze/Contze at
+  all** (1834–36 read in full; never a pool locality), so no Carl-on-pool-surname can exist
+  1833–41.
+- **Bursfelde (Fürstenhagen reg. 359377) — VERIFIED NEGATIVE for the FULL window.** The whole
+  1833–1841 *Taufen* run was scanned (clean tabular register with Ort + Eltern + Pathen +
+  Familien-Namen columns) — images **5–10 (1833–35) read sequentially, then 14, 20, 24, 27
+  sampled (1836–41), + 30 = 1842 boundary**. **The Gans surname appears NOWHERE** — not as a
+  parent, not as a godparent, not on any "Bursfelder Glashütte" entry. The Bursfelde/Glashütte
+  residents baptising in the window are a fixed non-Gans set (Grünewald, Pflug, Thön, Hesse,
+  Engelke, Köhler, Wittler, Bödecker, Grote, Otte…). Every "Carl" in the window sits on a local
+  surname (e.g. Georg Carl Christoph **Hoff**; Heinrich Carl **Thön**, Bursfeld 1833; Georg
+  Friedrich Carl **Otte**, 1842). ⇒ **the 4 Kunze Gans families (110/113/125/136) produced no
+  baptism here 1833–41 → no Carl Gans born in the window.** (They are pre-1833 / post-1841 /
+  emigrated.) Bursfelde upgraded from inferred to **verified negative**.
+- **Bodenfelde (reg. 359334) — 1835 VERIFIED NEGATIVE; off-years (1833–34, 1836–41) BLOCKED by
+  the book.** This Taufen volume is an **Erstschrift + Zweitschrift** (divider "Neues Bodenfelder
+  Kirchenbuch Anno 1794" at Bild 316), the Kurrent **year-headers are ambiguous (1795 vs 1835
+  unreadable)**, and the entries are **dense prose with faint left-margin name columns** — so
+  reliable year-navigation + surname-scanning across the off-years was **not achievable in the
+  viewer** (unlike Bursfelde's clean table). What IS solid for Bodenfelde: the **1835 baptisms
+  read twice = no Gans/Contze**; the **men's card index (359346) G-section = Gante/Gautier, no
+  Gans card.** **Residual:** the dated 1833–41 baptisms of the 15 Gans families + Contze (178) —
+  cleanest via **Kunze's printed OSB Bodenfelde** (family pages, book-only), or a Kurrent
+  specialist on reg. 359334 / the 359342 + Taufen-Konf-1837-52 indexes.
+
+⇒ **No documented Carl on a pool surname born 1833–1841 has been found anywhere in the
+Lippoldsberg neighbour ring.** Wahmbeck + **Bursfelde now firmly (full-window scan)**; Bodenfelde
+firm for 1835 with a named OSB-family residual for its off-years. Consistent with Charles having
+**no recoverable German baptism** (supports born-after-emigration).
 
 ---
 

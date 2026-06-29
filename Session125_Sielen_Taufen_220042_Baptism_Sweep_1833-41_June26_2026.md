@@ -82,8 +82,8 @@ Bößler, Rode, Heuermann, Hallfas, Blum, Jordan, Nägeler, Otto, Zwiste, Oderwa
 |---|---|---|---|---|
 | **Karl Wilhelm Hofeditz** | b. 2 Nov 1838 | Hofeditz; father Johann Christoph Hofeditz | 1863 / S.35 (Nro 161) | archion.de/p/85edffbfa4 |
 | **Carl/Karl Ludwig Bößler** | b. 19 Mar 1839, bapt. 29 Mar 1839 | Bößler; father Friedr. Wilhelm Bößler, *Leineweber* | 1866 / S.38 (Nro 175) | archion.de/p/f7d0dfe887 |
-| **Karl Wilhelm** (illegitimate) | b. 26 Oct 1839 | mother Dorothee Wilhelmine Wassermeier; acknowledged father Johann Konrad Baumann, *Leineweber* | 1869 / S.41 (Nro 188) | — |
-| **Karl Ludwig Thöne** | bapt. 9 Aug 1840 | Thöne | 1874 / S.46 (Nro 206) | — |
+| **Karl Wilhelm** (illegitimate) | b. 26 Oct 1839 | mother Dorothee Wilhelmine Wassermeier; acknowledged father Johann Konrad Baumann, *Leineweber* | 1869 / S.41 (Nro 188) | archion.de/p/f3ed2a359a |
+| **Karl Ludwig Thöne** | bapt. 9 Aug 1840 | Thöne | 1874 / S.46 (Nro 206) | archion.de/p/d5d12f0cf6 |
 
 None born 1835; none on a Konze-type surname → none is Charles.
 
@@ -119,7 +119,62 @@ Session 112), and the early combined-KB burials (220033, Session 10) — and sta
 Ludwig Bößler (b. 19 Mar 1839)**, cross-confirming the Session-112 confirmand and
 correcting the AI "Köhler" misread to **Bößler**.
 
-## Permalinks minted this session (register 220042)
-- **https://www.archion.de/p/700c4c0c76/** — Bild 1844 / Seite 16 — 1835 Jan–early Mar (no Carl; stillborn boy Nro 79 b.18 Jan 1835; girls + Friedrich Blum)
-- **https://www.archion.de/p/85edffbfa4/** — Bild 1863 / Seite 35 — Karl Wilhelm Hofeditz, b. 2 Nov 1838
-- **https://www.archion.de/p/f7d0dfe887/** — Bild 1866 / Seite 38 — Carl Ludwig Bößler, b. 19 Mar 1839
+## Permalinks minted — full window (register 220042)
+
+The 26 Jun sweep minted only three permalinks (the 1835 birth-core leaf and the
+two named-Carl leaves with permalinks). On **28 Jun 2026** the **entire candidate
+window was permalinked leaf-by-leaf** (Bild 1837–1880 = Seite 9–52, covering
+births 1833–1841), so every page swept now has a citable Archion link. Each
+image↔Seite pair was re-confirmed live against the calibration (image = Seite +
+1828) before minting; the three prior links are retained and marked.
+
+| Bild | Seite | Year | Permalink | Note |
+|-----:|------:|------|-----------|------|
+| 1837 | 9  | 1833 | https://www.archion.de/p/eef04725ac/ | |
+| 1838 | 10 | 1833 | https://www.archion.de/p/060b6e1dc3/ | |
+| 1839 | 11 | 1833 | https://www.archion.de/p/d21aecaaac/ | |
+| 1840 | 12 | 1833–34 | https://www.archion.de/p/97d5f8c107/ | |
+| 1841 | 13 | 1834 | https://www.archion.de/p/6ac9d051da/ | |
+| 1842 | 14 | 1834 | https://www.archion.de/p/9d43a801cb/ | |
+| 1843 | 15 | 1834 | https://www.archion.de/p/d2daa3d341/ | |
+| **1844** | **16** | **1835** | https://www.archion.de/p/700c4c0c76/ | **birth-core leaf** (prior); stillborn boy Nro 79 b.18 Jan 1835; girls + Friedrich Blum |
+| 1845 | 17 | 1835 | https://www.archion.de/p/b008d99547/ | |
+| 1846 | 18 | 1835 | https://www.archion.de/p/1927d24bd7/ | |
+| 1847 | 19 | 1835 | https://www.archion.de/p/d56c2cae4f/ | |
+| 1848 | 20 | 1835 | https://www.archion.de/p/f8f103f8d7/ | |
+| 1849 | 21 | 1836 | https://www.archion.de/p/944f642b8f/ | |
+| 1850 | 22 | 1836 | https://www.archion.de/p/4549b979e7/ | |
+| 1851 | 23 | 1836 | https://www.archion.de/p/028001fa5a/ | |
+| 1852 | 24 | 1836 | https://www.archion.de/p/9e8c19ce53/ | |
+| 1853 | 25 | 1837 | https://www.archion.de/p/a78c9b94a0/ | |
+| 1854 | 26 | 1837 | https://www.archion.de/p/ac599bcde0/ | |
+| 1855 | 27 | 1837 | https://www.archion.de/p/2e41aaa868/ | |
+| 1856 | 28 | 1837 | https://www.archion.de/p/4d4da79abe/ | |
+| 1857 | 29 | 1837 | https://www.archion.de/p/918db26b5a/ | |
+| 1858 | 30 | 1838 | https://www.archion.de/p/50f86b5843/ | |
+| 1859 | 31 | 1838 | https://www.archion.de/p/d717682fb1/ | |
+| 1860 | 32 | 1838 | https://www.archion.de/p/0b1a20e82d/ | |
+| 1861 | 33 | 1838 | https://www.archion.de/p/1ed1492184/ | |
+| 1862 | 34 | 1838 | https://www.archion.de/p/1f7d85c2db/ | |
+| **1863** | **35** | **1838** | https://www.archion.de/p/85edffbfa4/ | **Karl Wilhelm Hofeditz** b. 2 Nov 1838 (prior) |
+| 1864 | 36 | 1838–39 | https://www.archion.de/p/71707113bb/ | |
+| 1865 | 37 | 1839 | https://www.archion.de/p/682bd327d5/ | |
+| **1866** | **38** | **1839** | https://www.archion.de/p/f7d0dfe887/ | **Carl Ludwig Bößler** b. 19 Mar 1839 (prior) |
+| 1867 | 39 | 1839 | https://www.archion.de/p/df037d8d1f/ | |
+| 1868 | 40 | 1839 | https://www.archion.de/p/8d36a37c8c/ | |
+| **1869** | **41** | **1839** | https://www.archion.de/p/f3ed2a359a/ | **Karl Wilhelm** (illegitimate) b. 26 Oct 1839, Nro 188 |
+| 1870 | 42 | 1840 | https://www.archion.de/p/06e15d59c1/ | |
+| 1871 | 43 | 1840 | https://www.archion.de/p/9bc6c22e78/ | |
+| 1872 | 44 | 1840 | https://www.archion.de/p/805e97c438/ | |
+| 1873 | 45 | 1840 | https://www.archion.de/p/11ec15cb79/ | |
+| **1874** | **46** | **1840** | https://www.archion.de/p/d5d12f0cf6/ | **Karl Ludwig Thöne** bapt. 9 Aug 1840, Nro 206 |
+| 1875 | 47 | 1840 | https://www.archion.de/p/d9d1c02dd2/ | |
+| 1876 | 48 | 1840 | https://www.archion.de/p/b44b85407a/ | |
+| 1877 | 49 | 1841 | https://www.archion.de/p/e028a998f8/ | |
+| 1878 | 50 | 1841 | https://www.archion.de/p/5d7921bfb7/ | |
+| 1879 | 51 | 1841 | https://www.archion.de/p/c0d18e79d5/ | |
+| 1880 | 52 | 1841 | https://www.archion.de/p/117ccfe753/ | year tally "Geboren im Jahr 1841: 21 Personen" |
+
+Register: Archion churchRegister **220042**, Sielen Taufen 1830–1876,
+Landeskirchliches Archiv der Ev. Kirche von Kurhessen-Waldeck, Kirchenkreis
+Hofgeismar. All 44 leaves of the 1833–1841 window (Seite 9–52) are now linked.

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="x-translated-from" content="dna.html">
+<meta name="x-translated-source-sha" content="864075d25a45827a163cede317689b1d53fe30e92d27c46ce2f25aebf327ac78">
+<meta name="x-translated-date" content="2026-06-28">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/dna.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/dna.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/dna.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>DNA-Belege — Charles-Forschung</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/de/dna.html">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
+<meta name="description" content="Die genetischen Belege des Projekts in vollem Umfang: ein FamilyTreeDNA-Big-Y-700-Ergebnis (Haplogruppe I2-M223, terminale Subklade I-Y38863) sowie autosomale Schätzungen von AncestryDNA und MyHeritage — was jeder Test über Charles Konzens hessische Herkunft und Familiennamen aussagt und was nicht.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles-Forschung">
+<meta property="og:title" content="DNA-Belege — Charles-Forschung">
+<meta property="og:description" content="Big Y-700 (I2-M223 → I-Y38863) sowie autosomale Ergebnisse von AncestryDNA / MyHeritage — sie untermauern eine germanische Herkunft, bestätigen aber den Familiennamen Konze oder konkret Hessen noch nicht.">
+<meta property="og:url" content="https://charles-research.netlify.app/de/dna.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/figures/og-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DNA-Belege — Charles-Forschung">
+<meta name="twitter:description" content="Big Y-700 (I2-M223 → I-Y38863) sowie autosomale Ergebnisse von AncestryDNA / MyHeritage, mit den Vorbehalten, die die Schlüsse zu Herkunft und Familienname auf „Arbeitsstand“ halten.">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.dna-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.dna-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.dna-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.dna-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; letter-spacing: 0.02em; }
+  header.dna-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 820px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+  h2 { font-size: 1.55rem; color: var(--text-primary); margin: 2.4rem 0 0.8rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.15rem; color: var(--text-strong); margin: 1.5rem 0 0.5rem; }
+  p { margin-bottom: 0.9rem; }
+  ul, ol { margin: 0.4rem 0 1rem 1.6rem; }
+  li { margin-bottom: 0.45rem; line-height: 1.55; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+  code { font-family: var(--font-mono); font-size: 0.85em; background: var(--bg-card-tint); padding: 1px 5px; border-radius: 2px; color: var(--brand-dark); }
+  .lede { font-size: 1.06rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.6rem; max-width: 820px; }
+
+  .dna-bottomline {
+    background: var(--bg-card-tint);
+    border: 1px solid var(--border-medium);
+    border-left: 5px solid var(--brand);
+    border-radius: 0 4px 4px 0;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0 2rem;
+    font-size: 0.97rem;
+  }
+  .dna-bottomline strong { color: var(--text-strong); }
+
+  .dna-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 6px; padding: 1.1rem 1.3rem; margin: 1rem 0 1.4rem; }
+  .dna-card .tag { display:inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; background: #5a6a8a; color: #fff; margin-bottom: 0.5rem; }
+
+  .haplo-path { font-family: var(--font-mono); font-size: 0.82rem; line-height: 1.9; background: var(--bg-card-tint); border: 1px solid var(--border-light); border-radius: 4px; padding: 0.7rem 0.9rem; margin: 0.5rem 0 1rem; word-spacing: 0.1em; }
+  .haplo-path .term { font-weight: 700; color: var(--brand-dark); }
+
+  table.dna-table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.2rem; font-size: 0.92rem; }
+  table.dna-table th, table.dna-table td { padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); }
+  table.dna-table th { background: var(--bg-card-tint); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); }
+  table.dna-table td.pct { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; color: var(--text-strong); }
+  table.dna-table tfoot td, table.dna-table tr.sum td { font-weight: 700; border-top: 2px solid var(--border-medium); }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.dna-hero { background: none; color: #000; border-bottom: 2px solid #888; }
+    header.dna-hero h1, header.dna-hero .sub, header.dna-hero .crumbs, header.dna-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 1rem; }
+    a { color: #000; border-bottom: none; }
+  }
+</style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/dna.html#article",
+  "headline": "DNA-Belege — Charles-Forschung",
+  "description": "FamilyTreeDNA Big Y-700 (Haplogruppe I2-M223, terminale Subklade I-Y38863) sowie autosomale Ergebnisse von AncestryDNA / MyHeritage, mit den Vorbehalten, die die Schlüsse zu Herkunft und Familienname auf „Arbeitsstand“ halten — und die die aschkenasische Lesart der tiefen väterlichen Linie als Arbeitshypothese auf nur zwei bis drei Getesteten behandeln.",
+  "datePublished": "2026-05-30",
+  "dateModified": "2026-06-07",
+  "url": "https://charles-research.netlify.app/de/dna.html",
+  "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+  "author": [
+    { "@type": "Person", "name": "Jed Johnson" },
+    { "@type": "Person", "name": "Peter Schräder" }
+  ],
+  "publisher": { "@type": "Person", "name": "Jed Johnson", "url": "https://charles-research.netlify.app/about.html" },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://charles-research.netlify.app/" },
+    { "@type": "ListItem", "position": 2, "name": "DNA-Belege" }
+  ]
+}
+</script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../de/index.html" role="menuitem">Überblick</a>
+      <a href="../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodik</a>
+      <a href="../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="dna-hero">
+  <div class="crumbs"><a href="index.html">Charles-Forschung</a> &nbsp;/&nbsp; DNA-Belege</div>
+  <h1>DNA-Belege</h1>
+  <p class="sub">Was genetische Tests einer aktenbasierten Untersuchung hinzufügen — ein FamilyTreeDNA Big Y-700 auf Charles' direkter väterlicher Linie sowie autosomale Schätzungen zweier Anbieter (AncestryDNA und MyHeritage) an einem Nachkommen — und, ebenso wichtig, die Grenzen dessen, was jeder Test zeigen kann.</p>
+</header>
+
+<main id="main">
+
+<p class="lede">Genealogie und Genetik beantworten verschiedene Fragen. Die Akten rekonstruieren, wer Charles war; die DNA prüft, ob die biologische Linie damit übereinstimmt. Diese Seite berichtet beide Tests in vollem Umfang, einschließlich der Übereinstimmungen, die sie <em>nicht</em> erbracht haben, sodass Leserinnen und Leser die genetischen Belege gegen die aktenbasierten Schlüsse auf der <a href="../claims-dashboard.html">Thesen-Übersicht</a> abwägen können.</p>
+
+<div class="dna-bottomline">
+  <strong>Fazit.</strong> Die bisherige DNA ist <strong>vereinbar mit</strong> Charles' belegter deutscher Herkunft, bestätigt aber <strong>weder</strong> die Pfarrei (Hessen / Trendelburg) noch den Familiennamen (Konzen). Die Y-DNA verortet seine strikte väterliche Linie in einer jungen Subklade (~1450 n. Chr.), deren nächste Verwandte — bislang ausnahmslos — <strong>aschkenasisch-jüdische Linien</strong> sind — was auf eine mögliche aschkenasisch-jüdische Herkunft in der tiefen männlichen Linie hinweist. Auf der Grundlage von nur zwei bis drei getesteten Mitgliedern gilt dies als <em>Untersuchungsansatz, nicht als Schlussfolgerung</em>; es betrifft eine tiefe Abstammung, die <em>unterhalb</em> der belegten hessisch-evangelischen Familie liegt und ihr nicht widerspricht. Die autosomalen Schätzungen — von zwei unabhängigen Anbietern, AncestryDNA und MyHeritage, in Übereinstimmung — sind stark germanisch geprägt, mitteln aber, da von einem Nachkommen genommen, sämtliche Ahnenlinien und können Charles' eigene nicht herausgreifen. Bislang verbindet keine Übereinstimmung die Linie mit einer belegten Konze-Familie, obwohl ein <a href="#myheritage-matches">in Deutschland ansässiges väterliches Cluster</a> in Cousin-3.-Grades-Tiefe (MyHeritage, Juni 2026) in aktiver Korrespondenz steht — noch nicht zwischen Charles' Linie und derjenigen von Auguste Kreichelt zugeordnet. Die Schlüsse zu Herkunft und Familienname bleiben daher <em>Arbeitsstand</em> — siehe die <a href="../methodology.html#confidence">Konfidenz-Taxonomie</a> — und der einzelne ertragreichste nächste Schritt ist, einen belegten Konze-Mann aus dem Raum Trendelburg–Deisel für einen Y-Test zu gewinnen.
+</div>
+
+<h2 id="ydna">Y-DNA — die direkte väterliche Linie</h2>
+
+<div class="dna-card">
+  <span class="tag">FamilyTreeDNA · Big Y-700</span>
+  <p style="margin-bottom:0.4rem;"><strong>Terminale Subklade:</strong> <code>I-Y38863</code> &nbsp;·&nbsp; <strong>Haplogruppe:</strong> I2, der I-M223-Zweig.</p>
+  <div class="haplo-path">I-M170 › I-M223 › I-P78 › I-S9302 › … › I-Y6401 › I-Y6406 › I-Y11261 › I-Y50708 › <span class="term">I-Y38863</span></div>
+  <p style="margin-bottom:0;">Das Y-Chromosom wird im Wesentlichen unverändert vom Vater an den Sohn weitergegeben und verfolgt so eine einzige Linie — Charles' Patrilinie — über die Jahrhunderte zurück, unabhängig von jedem anderen Vorfahren. Ein Big Y-700 liest diese Linie hochauflösend aus und verortet sie über ihren terminalen SNP im menschlichen väterlichen Stammbaum.</p>
+</div>
+
+<div class="dna-card">
+  <span class="tag">YFull · unabhängige Analyse · Probe YF147577</span>
+  <p style="margin-bottom:0.4rem;">Dieselben Big-Y-Daten wurden unabhängig von <strong>YFull</strong> (Probe <code>YF147577</code>) ausgewertet, das die Linie auf der identischen terminalen Subklade <code>I-Y38863</code> verortet (YTree v14.03, gebildet vor ~750 Jahren, TMRCA vor ~700 Jahren ≈ 1300 n. Chr.). Bei YFull hat diese Subklade genau <strong>drei Mitglieder</strong>: <code>YF147577</code> (Charles' getesteter Nachkomme), <code>YF078713</code> — markiert mit <strong>Polen [PL-14]</strong> und YFulls aschkenasischem Herkunfts-Tag <em>„yid“</em> — sowie <code>YF002081</code>. Die beiden Männer, die Charles' genauen YFull-Zweig teilen, sind also ein aschkenasischer Pole und eine weitere Probe — dasselbe Polen-/osteuropäische Signal, das FamilyTreeDNA zeigt, hier auf einem separaten Stammbaum erreicht. Das vollständige Y-STR-Panel (~780 Marker, durchgesehen am 6. Juni 2026) ist ein unauffälliger I2-M223-Modalhaplotyp (DYS393=13, DYS390=22, DYS19=16, DYS391=10, DYS385=16-17) ohne seltene oder Null-Marker — vereinbar mit der Einordnung und ohne widersprüchliches Signal.</p>
+</div>
+
+<h3>Was er zeigt</h3>
+<p><strong>I-M223</strong> ist eine alte, weithin europäische väterliche Haplogruppe. Das maßgebliche Signal ist jedoch Charles' <em>spezifische</em> terminale Subklade, <strong>I-Y38863</strong>, die sowohl auf dem FamilyTreeDNA- als auch auf dem YFull-Stammbaum innerhalb eines <strong>aschkenasisch-jüdischen, ostmitteleuropäischen Clusters</strong> liegt (Polen, Ukraine, Belarus, Rumänien, Russland, mit etwas deutscher Präsenz) — nicht in der nordwesteuropäischen Verteilung der übergeordneten Haplogruppe insgesamt. Während die tiefe Haplogruppe also unauffällig europäisch ist, weist die Subklade, die Charles' männliche Linie tatsächlich definiert, auf eine <em>mögliche</em> aschkenasische Herkunft hin — auf der vorliegenden Evidenz von zwei bis drei Getesteten (in den folgenden Abschnitten ausgeführt).</p>
+
+<h3>Wie jung ist der gemeinsame Vorfahr?</h3>
+<p>Das ist der Teil, der die Y-DNA genealogisch nützlich macht statt bloß tiefenhistorisch, und <strong>zwei Labore, die dieselbe einzelne Big-Y-Datei analysierten, stimmen auf ein mittelalterliches Zeitfenster überein</strong> (eine unabhängige Neuinterpretation eines Kits, keine zweite Probe). Die Discover-Schätzungen von FamilyTreeDNA setzen die Bildung des <strong>I-Y38863</strong>-Zweigs nahe <strong>1400 n. Chr.</strong> und seinen gemeinsamen Vorfahren nahe <strong>1450 n. Chr.</strong> an; <strong>YFulls</strong> unabhängiger Stammbaum (v14.03) datiert die Bildung der Subklade auf vor ~750 Jahre und ihren jüngsten gemeinsamen Vorfahren auf vor ~700 Jahre — grob <strong>1300 n. Chr.</strong> So oder so ist der gemeinsame Vorfahr mittelalterlich — einige Jahrhunderte vor Charles' Geburt 1835 — sodass I-Y38863 eine vergleichsweise <em>junge</em> Subklade ist: Ein Konze-Mann, dessen Test in sie fiele, teilte mit Charles einen väterlichen Vorfahren innerhalb eines genealogisch bedeutsamen Zeitfensters — ein weit aussagekräftigerer Test als eine Übereinstimmung auf tiefer Haplogruppen-Ebene.</p>
+<p>Auf <em>beiden</em> Stammbäumen häufen sich die Mitglieder des Zweigs in <strong>Ostmitteleuropa</strong> — Polen, Ukraine, Belarus, Rumänien, Russland und Deutschland — dem aschkenasischen Kerngebiet, nicht in einer spezifisch hessischen oder deutsch-christlichen Verteilung. Mehrere der YFull-Proben auf und unmittelbar über diesem Zweig tragen YFulls Herkunfts-Tag <em>„yid“</em> (sein Kennzeichen für aschkenasisch-jüdische Einsender), was die Lesart des nächsten Abschnitts unabhängig von FamilyTreeDNA macht.</p>
+
+<h3>Was er nicht zeigt</h3>
+<ul>
+  <li><strong>Keine Konze-Familiennamen-Übereinstimmung.</strong> Weder unter den beiden engen Big-Y-Übereinstimmungen noch im weiteren Satz der Y-STR-Übereinstimmungen (111 Marker) trägt eine den Familiennamen Konze / Kontzen / Contze. Im Einklang mit der <a href="../methodology.html#privacy">Richtlinie zu lebenden Verwandten</a> des Projekts werden lebende Getestete auf dieser Seite nicht namentlich genannt. Was die Übereinstimmungsliste <em>sehr wohl</em> offenlegt, wird im nächsten Abschnitt behandelt.</li>
+  <li><strong>Die Geographie der Subklade schließt Hessen ein, lokalisiert es aber nicht.</strong> Die deutsch-/polnisch-/russische Streuung des Zweigs ist mit einer deutschen Herkunft vereinbar, aber ein Drei-Getesteten-Zweig mit einem gemeinsamen Vorfahren um ~1450 n. Chr. lässt sich nicht auf eine Region innerhalb Deutschlands auflösen, geschweige denn auf eine Pfarrei.</li>
+  <li><strong>Ein einigermaßen junger gemeinsamer Vorfahr schneidet in beide Richtungen — und ist dennoch kein Beleg gegen Konzen.</strong> Da der Vorfahr des Zweigs nahe 1450 n. Chr. liegt, <em>hätte</em> eine Konze-Übereinstimmung echtes genealogisches Gewicht. Doch das Fehlen einer solchen unter nur drei Getesteten — deren Familiennamen nicht Konze lauten und deren Linien Familiennamen zu unterschiedlichen Zeiten innerhalb dieser Spanne festlegten — erklärt sich am einfachsten dadurch, dass noch kein Konze-Nachkomme der männlichen Linie einen Big-Y-Test gemacht hat, und nicht dadurch, dass Charles' Linie nicht-Konze wäre.</li>
+</ul>
+
+<h2 id="match-cluster">Das Übereinstimmungs-Cluster — eine unerwartete aschkenasische väterliche Linie</h2>
+
+<p>Das auffälligste Ergebnis liegt nicht im Haplostammbaum selbst, sondern darin, <em>wer sonst noch</em> auf ihm sitzt. Liest man die Y-STR-Übereinstimmungsliste (acht Übereinstimmungen, getestet auf 111 Marker oder Big Y) nach ihrer Position auf dem Stammbaum, zeigt sich ein klares Muster: Charles' engste Übereinstimmungen der väterlichen Linie sind <strong>überwiegend aschkenasisch-jüdische Linien</strong> aus dem aschkenasischen Kerngebiet Ostmitteleuropas.</p>
+
+<table class="dna-table">
+  <thead><tr><th>Position relativ zu Charles' Linie</th><th>Väterliche Herkunft</th><th>Charakter der Übereinstimmung(en)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Dieselbe terminale Subklade</strong> (I-Y38863) — zwei Big-Y-Übereinstimmungen</td><td>Polen, Russland</td><td>Beide aschkenasisch — die beiden nächsten Übereinstimmungen nach Klade; ihre frühest bekannten väterlichen Vorfahren (geb. ~1840 und 1866) sind belegte aschkenasische Familien.</td></tr>
+    <tr><td><strong>Übergeordnete Klade</strong> (I-BY2640) — eine Big-Y-Übereinstimmung</td><td>Litauen</td><td>Aschkenasisch — der frühest bekannte Vorfahr (geb. 1856) trägt einen hebräischen Vornamen; der Familienname wurde später anglisiert.</td></tr>
+    <tr><td><strong>Benachbarte Zweige</strong> (I-S23612, I-M223) — fünf Y-STR-Übereinstimmungen</td><td>Österreich, Deutschland, Schweden, + ohne nähere Angabe</td><td>Überwiegend erkennbar aschkenasische Familiennamen (ein frühest bekannter Vorfahr geb. ~1640); eine einzelne schwedische Linie ist die wahrscheinliche Ausnahme.</td></tr>
+  </tbody>
+</table>
+<p class="meta" style="font-size:0.85rem; color:var(--text-muted);">Die Spalte „Väterliche Herkunft“ gibt die vom Anbieter aufgeführten Herkunftsländer der frühest bekannten Vorfahren der Übereinstimmungen wieder; die Einstufung „aschkenasisch“ in der rechten Spalte ist die <em>Schlussfolgerung</em> des Projekts aus diesen belegten Vorfahren, ihren Familien- und Vornamen — kein von FamilyTreeDNA vergebenes Ethnizitätskennzeichen.</p>
+
+<p>FamilyTreeDNAs <em>Match Time Tree</em> zeigt dieselbe Struktur: <em>beide</em> Männer, die Charles' genaue terminale Subklade teilen (I-Y38863), <em>und</em> die nächste Übereinstimmung einen Zweig höher (I-BY2640) sind aschkenasisch-jüdisch — drei unabhängige Linien mit belegten frühest bekannten Vorfahren, die Mitte des 19. Jahrhunderts in Polen und Russland geboren wurden und alle um <strong>1400–1450 n. Chr.</strong> auf Charles' Linie zusammenlaufen. Dies ist das auffälligste Muster in den genetischen Belegen, beruht jedoch auf nur drei Getesteten.</p>
+
+<h3>Was es am wahrscheinlichsten bedeutet</h3>
+<p>Charles' <strong>strikte väterliche Linie</strong> — sein Vatersvatersvater und so fort — stammt von einer Linie ab, die nach derzeitiger Befundlage <strong>aschkenasisch-jüdischen Ursprungs</strong> ist. Drei unabhängige aschkenasische Linien, die um 1400–1450 n. Chr. mit Charles' Linie zusammenfließen, lesen sich am einfachsten als ein gemeinsamer väterlicher Vorfahr jener Zeit, der selbst Teil dieser jüdischen Linie war — wobei dies bei nur zwei bis drei Getesteten eine Arbeitshypothese ist, keine bewiesene Tatsache. Diese Lesart der <em>tiefen</em> männlichen Linie beruht zumindest nicht auf der Analyse eines einzigen Unternehmens: <strong>YFulls unabhängiger Stammbaum kommt zum selben Ergebnis</strong> und verortet die Linie in derselben I-Y38863-Subklade, mit demselben mittelalterlichen Zusammenfluss, unter Proben, die es als aschkenasisch kennzeichnet — wobei es sich um eine unabhängige Neuanalyse <em>derselben</em> Big-Y-Datei handelt, nicht um eine zweite getestete Probe. Wirklich offen bleibt, <strong>wann und wie diese Linie in das christliche, hessische, mit dem Familiennamen Konze versehene Milieu eintrat</strong>, in das Charles hineingeboren und getauft wurde — durch eine frühe Assimilation Jahrhunderte vor seiner Geburt oder durch ein späteres undokumentiertes Vaterschaftsereignis näher an ihr.</p>
+
+<h3>Was es <em>nicht</em> bedeutet</h3>
+<ul>
+  <li><strong>Es macht weder Charles noch seine belegte Familie zu Juden.</strong> Die Konze-Familie erscheint in hessischen <em>evangelischen</em> Kirchenbüchern; Charles heiratete in einer deutsch-evangelischen Kirche, und seine Kinder wurden dort getauft. Die Y-DNA liegt <em>unterhalb</em> dieser belegten christlichen Identität — sie spricht zur ahnenmäßigen Herkunft, nicht zur Religion, die die Familie im 19. Jahrhundert praktizierte.</li>
+  <li><strong>Es datiert den jüdischen Vorfahren nicht.</strong> Das Signal könnte einen Vorfahren viele Generationen vor Charles widerspiegeln. Weder die Ethnizitätsschätzung von AncestryDNA noch die von MyHeritage weist eine europäisch-jüdische Region aus, doch die FamilyTreeDNA-Liste führt mehrere kleine autosomale Übereinstimmungen mit Personen aschkenasischen Familiennamens (siehe <a href="#autosomal">die Übereinstimmungsliste weiter unten</a>) — die zusammen auf einen jüdischen Beitrag hinweisen, der real, aber begrenzt und/oder tief ist und über die Generationen bis zum getesteten Nachkommen verdünnt wurde.</li>
+  <li><strong>Die Übereinstimmungen sind keine nahen Cousins.</strong> Die genetischen Abstände sind mäßig (GD 7–10 bei 111 Markern; 8–10 abweichende Big-Y-STRs) und entsprechen eher der Schätzung eines gemeinsamen Vorfahren um ~1450 n. Chr. als einem kürzlich geteilten Großvater.</li>
+</ul>
+
+<h3>Warum es für diese Untersuchung wichtig ist</h3>
+<p>Der Befund kreuzt zwei ungelöste Stränge und ist als neuer Untersuchungsansatz unter <a href="open-questions.html#paternal-origin">Offene Fragen</a> vermerkt:</p>
+<ul>
+  <li><strong>Die nie gefundene Konze-Taufe.</strong> Eine Erklärung für jahrelange ergebnislose Pfarreisuchen ist, dass Charles' biologische väterliche Linie in Wahrheit nicht die belegte Konze-Familie ist — also ein undokumentiertes Vaterschaftsereignis irgendwo weiter oben in der Linie. Die aschkenasische Y-Signatur ist mit einem solchen Szenario vereinbar (beweist es aber nicht).</li>
+  <li><strong>Die Unehelichkeits-Hypothese vom Januar 1835.</strong> Das Projekt zieht seit Langem die Möglichkeit in Betracht, dass Charles unehelich geboren wurde (die Grundlage der mehrere Pfarreien umfassenden Unehelichkeits-Durchsichten von 1835). Ein unbekannter biologischer Vater würde welche väterliche Linie auch immer tragen — und könnte die Quelle dieses Y-Ergebnisses sein.</li>
+</ul>
+<p>Beide bleiben <em>Hypothesen</em>. Die Y-DNA bestätigt sie weder noch widerlegt sie sie; sie fügt eine konkrete, unabhängige Randbedingung hinzu, an der sich künftige Aktenarbeit prüfen lässt.</p>
+
+<p><strong>Dies ist keine neue Richtung für das Projekt — die Y-DNA <em>stützt</em> unabhängig eine alte.</strong> Ab August 2025 verfolgte die Untersuchung mit Peter Schräder eine <a href="../family_pages/fam-other-jewish.html">hessisch-jüdische Herkunftsuntersuchung der väterlichen Linie</a>, ausgehend von belegten örtlichen jüdischen Familien: den Trendelburger „Schutzjuden“ von 1740 (Seligmann Ganß und Nachbarn), der Meimbresser <a href="../family_pages/fam-gans-jewish.html">Gans-/Segelbaum</a>-Familie, den christlichen <a href="../family_pages/fam-gans-lipp.html">Gans aus Lippoldsberg</a> und der <a href="../family_pages/fam-stern.html">Stern-/Kleeburg</a>-Linie aus Hofgeismar. Diese Untersuchung wurde <em>im Mai 2026 zurückgestellt</em>, weil ihre Grundlage ein schwaches Namensähnlichkeitsargument war (Gans → Gannsen) und weil die konkreten Kandidaten ausgeschlossen oder nie durch eine Akte mit Charles verbunden wurden. Das Y-DNA-Ergebnis erreicht dasselbe Ziel auf einem völlig anderen Weg — über die Biologie statt über die Namensähnlichkeit — und <em>stützt damit die Richtung unabhängig</em>, während jene konkreten Ausschlüsse bestehen bleiben. Es belebt die Gans-Namenstheorie nicht wieder; es macht aber die belegte jüdische Präsenz in Charles' eigener Umgebung eines erneuten, belegorientierten Blicks würdig. Der reaktivierte Strang wird unter <a href="open-questions.html#paternal-origin">Offene Fragen · tiefe väterliche Herkunft</a> verfolgt.</p>
+
+<p><strong>Erneut geprüft am 7. Juni 2026 (öffentliche FTDNA-Discover-Daten):</strong> Die Mitgliederliste der Subklade ist unverändert — weiterhin drei getestete Männer (frühest bekannte väterliche Herkünfte Deutschland, Polen, Russische Föderation; TMRCA ~1450 n. Chr., 95-%-KI 1102–1673). Ihre öffentlichen Gruppenprojekt-Mitgliedschaften liefern eine stille Bestätigung: Von den dreien gehören zwei dem <em>Avotaynu Jewish Census</em>-Projekt an, mit Einzelmitgliedschaften in den Projekten German-Jewish (GerSIG), Sephardi-Ashkenazi-Connections, JewishGen-Scandinavia und Jewish-DNA, einer in einem jüdischen Familiennamen-Projekt und je einer in den geographischen Projekten Germany und Poland — d. h. die anderen Mitglieder der Subklade erforschen ihre Linien öffentlich <em>als aschkenasische Linien</em>.</p>
+
+<p style="font-style:italic; color:var(--text-meta); font-size:0.92rem;">Übereinstimmende Personen werden hier gemäß der <a href="../methodology.html#privacy">Richtlinie zu lebenden Verwandten</a> des Projekts nicht namentlich genannt; das Muster wird anhand von Familiennamen, erfassten frühest bekannten Vorfahren und väterlichen Herkunftsländern in der FamilyTreeDNA-Übereinstimmungsliste beschrieben (abgerufen am 30. Mai 2026; Discover erneut geprüft am 7. Juni 2026). Kit-Kennungen können seriösen Forschenden auf Anfrage mitgeteilt werden.</p>
+
+<h2 id="autosomal">Autosomale DNA — die Schätzung der Gesamtabstammung</h2>
+
+<div class="dna-card">
+  <span class="tag">AncestryDNA &amp; MyHeritage · Nachkommen-Test</span>
+  <p style="margin-bottom:0;">Autosomale DNA rekombiniert sich in jeder Generation und spiegelt die <em>gesamte</em> Abstammung einer Person wider, nicht eine einzelne Linie. Der hier vorliegende Test stammt von einem Nachkommen von Charles, sodass Charles nur einer von vielen Vorfahren ist, die zur Schätzung beitragen — und mit jeder Generation Abstand ein kleinerer Anteil. Das Kit wurde durch zwei unabhängige Referenzpanels der Anbieter — AncestryDNA und MyHeritage — laufen lassen, die Europa unterschiedlich gliedern, im Wesentlichen aber übereinstimmen.</p>
+</div>
+
+<h3>Der germanische Anteil (AncestryDNA)</h3>
+<p>Unter den fünfzehn ausgewiesenen Regionen des Nachkommen dominiert das germanische Cluster den westeuropäischen Anteil:</p>
+
+<table class="dna-table">
+  <thead><tr><th>Region</th><th style="text-align:right;">Anteil</th></tr></thead>
+  <tbody>
+    <tr><td>Südgermanisches Europa</td><td class="pct">33%</td></tr>
+    <tr><td>Nordwestdeutschland</td><td class="pct">16%</td></tr>
+    <tr><td>Niederlande</td><td class="pct">5%</td></tr>
+    <tr class="sum"><td>Germanischer / westeuropäischer Zwischensumme</td><td class="pct">~54%</td></tr>
+  </tbody>
+</table>
+
+<p>Der Rest ist größtenteils britisch-insulare und keltische Abstammung (Nordwales &amp; NW-England, Mittelschottland &amp; Nordirland, die Hebriden, Connacht, Donegal, Isle of Man, Leinster und Südostengland), die aus <em>anderen</em> Linien des Stammbaums eingeht, sowie mehrere kleinere Regionen.</p>
+
+<h3>Dasselbe Kit durch ein zweites Panel (MyHeritage v2.5)</h3>
+<p>MyHeritages unabhängiges Referenzpanel (Ethnicity Estimate v2.5, abgerufen am 7. Juni 2026) liefert für denselben Nachkommen zehn Regionen — allesamt europäisch:</p>
+
+<table class="dna-table">
+  <thead><tr><th>Region</th><th style="text-align:right;">Anteil</th></tr></thead>
+  <tbody>
+    <tr><td>Germanisch</td><td class="pct">36.4%</td></tr>
+    <tr><td>Englisch</td><td class="pct">18.5%</td></tr>
+    <tr><td>Schottisch und Walisisch</td><td class="pct">17.0%</td></tr>
+    <tr><td>Niederländisch</td><td class="pct">12.0%</td></tr>
+    <tr><td>Irisch</td><td class="pct">3.8%</td></tr>
+    <tr><td>Französisch</td><td class="pct">3.7%</td></tr>
+    <tr><td>Dänisch</td><td class="pct">3.4%</td></tr>
+    <tr><td>Osteuropäisch</td><td class="pct">2.9%</td></tr>
+    <tr><td>Norditalienisch</td><td class="pct">1.2%</td></tr>
+    <tr><td>Bretonisch</td><td class="pct">1.1%</td></tr>
+    <tr class="sum"><td>Germanischer / niederländischer Zwischensumme</td><td class="pct">~48.4%</td></tr>
+  </tbody>
+</table>
+
+<p>Die beiden Anbieter ziehen ihre Regionsgrenzen unterschiedlich — MyHeritages einzelne Region „Germanisch“ umfasst grob das, was Ancestry in „Südgermanisches Europa“ und „Nordwestdeutschland“ aufteilt — sie laufen aber auf dasselbe Bild zusammen: ein dominanter germanischer / niederländischer Block von etwa der Hälfte des Genoms (~48 % MyHeritage, ~54 % Ancestry), ein großer britisch-insularer / keltischer Rest (Englisch, Schottisch und Walisisch, Irisch und Bretonisch ergeben bei MyHeritage zusammen ≈40 %) sowie kleine Spurenregionen. Bemerkenswert: <em>Keiner</em> der Anbieter weist eine europäisch-jüdische Region aus — dasselbe unterhalb der Schwelle liegende Schweigen, das unter der Übereinstimmungsliste weiter unten erörtert wird. Die Übereinstimmung zwischen zwei unabhängig erstellten Referenzpanels stärkt das Vertrauen in das grobe Admixture-Bild, lockert aber keine der beiden nachstehenden Einschränkungen.</p>
+
+<h3>Was sie zeigt — und ihre zwei Grenzen</h3>
+<p>Ein germanischer Block von etwa der Hälfte des Genoms — von beiden Anbietern berichtet — ist vereinbar mit Charles' belegter deutscher Herkunft und mit der weiteren Familienrekonstruktion. Doch zwei Grenzen verhindern, dass er etwas Spezifisches bestätigt:</p>
+<ul>
+  <li><strong>Es ist die Admixture eines Nachkommen.</strong> Bis die Linie den Getesteten erreicht, steuert Charles nur einen Bruchteil des Genoms bei; das 54-%-germanische Signal aggregiert Charles' Linie mit jedem anderen deutschen Vorfahren und kann seine nicht isolieren.</li>
+  <li><strong>Die Regionen sind grob.</strong> Ancestrys „Südgermanisches Europa“ und „Nordwestdeutschland“ — und MyHeritages einzelne Region „Germanisch“ noch mehr — umspannen jeweils große Gebiete. Hessen liegt darin, wird aber nicht durch sie aufgelöst — die Schätzungen können einen hessischen Vorfahren nicht von einem bayerischen, rheinländischen oder sächsischen unterscheiden.</li>
+</ul>
+<h3>Die FTDNA-Übereinstimmungsliste — was ~14.300 autosomale Übereinstimmungen beitragen</h3>
+<p>Über die Ethnizitätsschätzung hinaus liefert FamilyTreeDNAs Family Finder etwa <strong>14.300 autosomale Übereinstimmungen</strong> für den getesteten Nachkommen. Ihre Struktur ist selbst aufschlussreich:</p>
+<ul>
+  <li><strong>Eine Übereinstimmung aus der engeren Familie</strong> — ein naher Verwandter, der ebenfalls getestet wurde und in dessen Stammbaum die Familiennamen Gannsen / Konze geführt werden. Sie bestätigt, dass das Kit dort in der Familie sitzt, wo erwartet, fügt aber keinen unabhängigen Beleg hinzu.</li>
+  <li><strong>Keine nahen Cousins auf der deutschen Seite.</strong> Über jenen Verwandten hinaus teilt die nächste Übereinstimmung nur ~119 cM (ein Bereich von Cousin 2. bis 4. Grades), und die Übereinstimmungen im mittleren Bereich tragen überwiegend britisch-insulare / amerikanische Familiennamen — das autosomale Signal wird von den <em>anderen</em> Linien des Getesteten dominiert, nicht von Charles'.</li>
+  <li><strong>Keine Übereinstimmung mit den belegten hessischen Familien.</strong> Die Durchsuchung der Familiennamen- und Ahnennamenlisten jeder Übereinstimmung ergibt bei aussagekräftiger Segmentgröße keine Verbindung zu Konze / Kontzen, Kreichelt, Grandjot oder Herwig. Die <a href="index.html#people">hessische Rekonstruktion</a> bleibt autosomal unbestätigt — dieselbe Lücke wie auf der Pfarrei-Seite.</li>
+  <li><strong>Ein schwaches aschkenasisches Echo der Y-Linie.</strong> Die Liste enthält durchaus mehrere <em>kleine</em> Übereinstimmungen (≈9–12 cM, Einzelsegmente) mit Personen, deren Ahnennamenlisten ausgeprägt aschkenasisch sind — darunter bemerkenswerterweise derselbe väterliche Familienname, der Charles' nächste Y-Subkladen-Übereinstimmung anführt (eine andere Person). Für sich genommen sind diese schwach: einzelne kleine Segmente sind genau das, was aschkenasische Endogamie reichlich hervorbringt, und können zufällig sein. Doch da sie zusammen mit dem Y-DNA-Ergebnis auftreten, sind sie <em>vereinbar mit</em> echter aschkenasischer Abstammung in der väterlichen Linie. Sie sind allerdings keine <em>unabhängige</em> Bestätigung der Y-Lesart: Dieselbe Endogamie, die die Y-Subklade aschkenasisch geclustert macht, streut auch diese kleinen Segmente, sodass die beiden weitgehend ein zweimal gesehenes Signal sind und nicht zwei. Sie datieren es nicht.</li>
+  <li><strong>Das Echo lokalisiert sich auf einem bestimmten Segment (7. Juni 2026).</strong> Ein vollständiger Segmentexport (15.610 Segmente) zeigt, dass die Übereinstimmungen mit aschkenasischen Familiennamen nicht gestreut sind: <strong>35 Übereinstimmungen tragen ≥5-cM-Segmente, die einen Block auf Chromosom 17 (≈54–64 Mb) überlappen</strong>, viele mit nahezu identischen Bruchpunkten — was eher auf einen gemeinsamen Gründerhaplotyp als auf zufälliges Rauschen hindeutet (und sich von der bekannten Chr-17-Pile-up-Region bei 43–45 Mb unterscheidet). Dies ist <em>derselbe Block</em>, auf dem der Getestete, sein Vater und das <a href="#myheritage-matches">MyHeritage-deutsche väterliche Cluster</a> triangulieren. Sitzen diese Segmente auf der väterlichen Kopie von Chromosom 17, würden das deutsche Cluster und die aschkenasische Signatur der Y-Linie auf einem einzigen vererbten Segment zusammenlaufen — eine prüfbare Behauptung: FTDNAs väterliche/mütterliche Zuordnung (noch ausstehend bis zu einem Konto-Verknüpfungsschritt) wird sie endgültig zuweisen. Bis dahin ist dies eine unbestätigte, aber auffällige Übereinstimmung.</li>
+  <li><strong>X-DNA: strukturell nicht aussagekräftig.</strong> Das X-Chromosom wird nie vom Vater an den Sohn weitergegeben, und Charles sitzt auf der strikten väterlichen Linie des Getesteten — daher kann X-Matching aus dem Kit eines Nachkommen der männlichen Linie die Charles-Frage nie berühren. Dieser Weg ist durch die Vererbungslogik verschlossen, nicht durch fehlende Daten.</li>
+  <li><strong>mtDNA: nicht verfolgt (und für Charles' Linie nicht aussagekräftig).</strong> Es wurde kein mitochondrialer Test durchgeführt. mtDNA verfolgt die strikte <em>mütterliche</em> Linie, die vom getesteten Nachkommen aus gänzlich von Charles wegführt, sodass sie zu seiner Herkunfts- oder Familiennamen-Frage nichts sagen könnte. Sie wäre jedoch das richtige Werkzeug für einen anderen offenen Strang — die Prüfung der mütterlichen Seite der unten aufgeworfenen Hypothese einer ledigen Mutter / Unehelichkeit — und wird hier der Vollständigkeit des Testplans halber vermerkt, nicht als Lücke in der Charles-Untersuchung.</li>
+</ul>
+<p style="margin-bottom:0;">Die scheinbare Spannung mit den Ethnizitätsschätzungen — von denen keine eine europäisch-jüdische Region auswies — ist kein wirklicher Widerspruch: Kleine aschkenasische Segmente können unter die Meldeschwelle einer Schätzung fallen, besonders wenn sie über die Generationen bis zu einem Nachkommen verdünnt sind. Zusammen gelesen, deuten die beiden auf einen aschkenasischen väterlichen Beitrag hin, der real, aber begrenzt und/oder tief ist.</p>
+
+<h3 id="myheritage-matches">Die MyHeritage-Übereinstimmungsliste — ein in Deutschland ansässiges väterliches Cluster (Juni 2026)</h3>
+<p>Das Kit desselben Nachkommen liefert bei MyHeritage <strong>6.896 Übereinstimmungen</strong>, dessen Getesteten-Basis weit stärker kontinentaleuropäisch ist als die von FTDNA oder Ancestry. Entscheidend: <strong>auch beide Eltern des Getesteten und ein Geschwister haben dort getestet</strong>, sodass jede Übereinstimmung durch Triangulation gemeinsamer Übereinstimmungen der väterlichen oder mütterlichen Seite zugeordnet werden kann — eine Trennschärfe, die der FTDNA-Liste fehlt. Durchgesehen am 7. Juni 2026:</p>
+<ul>
+  <li><strong>Die Lücke bei den belegten Familiennamen besteht fort.</strong> Die Durchsuchung der Namen und Ahnennamenlisten aller Übereinstimmungen ergibt kein Konze / Kontzen, Gannsen, Kreichelt, Grandjot oder Herwig — dasselbe Negativergebnis wie bei FTDNA, in einer zweiten Datenbank.</li>
+  <li><strong>327 Übereinstimmungen wohnen in Deutschland.</strong> Die größten (≈50–80 cM) lösen sich auf die <em>mütterliche</em> Seite auf und tragen schwäbische / württembergische Familiennamen — eine Erinnerung daran, dass nicht jedes deutsche Signal zu Charles gehört.</li>
+  <li><strong>Ein väterliches deutsches Cluster — die vielversprechendste autosomale Spur bislang.</strong> Zwei in Deutschland ansässige Getestete und in den USA wohnende Kinder eines von ihnen stimmen mit dem Getesteten zu ≈52–60 cM überein, stimmen mit dem <em>Vater</em> des Getesteten und nicht mit der Mutter überein und teilen ≈52 cM <em>miteinander</em> — ein Ahnenpaar verbindet das Cluster plausibel mit der deutschen Abstammung des Vaters. Die Schätzung des Anbieters setzt beide deutschen Getesteten auf <strong>Cousin-3.-Grades-Tiefe zum Vater</strong> an: ein Paar als jüngste gemeinsame Vorfahren, geboren etwa <strong>1800–1840 — Charles' eigene Generation oder eine darüber</strong>. Die (flachen) Stammbäume des Clusters tragen Ahnennamen, die auf zwei Regionen weisen — Niedersachsen / Hannover auf der einen, Westfalen auf der anderen Seite (die konkreten Familiennamen gehören zu den Familienlinien lebender Übereinstimmungen und werden hier gemäß der <a href="../methodology.html#privacy">Datenschutzrichtlinie</a> zurückgehalten; seriösen Forschenden auf Anfrage zugänglich).</li>
+  <li><strong>Das Cluster ist noch keiner Linie zugeordnet.</strong> Der Vater stammt zu gleichen Teilen von Charles und von <a href="../people/auguste-kreichelt.html">Auguste Kreichelt</a> ab, deren Familie hannöversch war (Clausthal, Oberharz; ausgewandert 1853). Das Cluster könnte daher von einem in Deutschland verbliebenen Geschwister von Charles abstammen (→ der lang gesuchte deutsche Anker für den Konze-Schluss) <em>oder</em> von Augustes Seitenverwandtschaft (→ die erste autosomale Bestätigung der Kreichelt-Rekonstruktion) — die Familiennamen der Region Hannover passen zur Kreichelt-Geographie mindestens ebenso gut wie zur hessischen. Beide Auflösungen bringen das Projekt voran. <strong>Die Korrespondenz mit Mitgliedern des Clusters wurde im Juni 2026 aufgenommen</strong>; ein Mitglied hatte das Projekt Jahre zuvor eigenständig kontaktiert und eine dieser Ahnenlinien benannt. Die entscheidende Frage — Oberharz oder Landkreis Hofgeismar — liegt nun bei ihnen.</li>
+  <li><strong>Das Cluster trianguliert.</strong> Ein One-to-many-Lauf im Chromosome-Browser (Getesteter × die Familie des deutschen Getesteten × der Vater des Getesteten) bestätigt <strong>ein trianguliertes Segment auf Chromosom 17 (≈54,2–64,3 Mb, 12,4 cM, 4.608 SNPs)</strong>, das alle vier Kits teilen — ein echtes identical-by-descent-Segment von einem einzigen gemeinsamen Vorfahren, vererbt über den Vater. Bei einem Clustermitglied ist die Segmentansicht deaktiviert, sodass offen bleibt, ob dessen 55,1-cM-Segment auf demselben Block sitzt, bis es antwortet.</li>
+  <li><strong>Das AutoClustering isoliert dieselbe Gruppe — und nichts sonst.</strong> MyHeritages AutoClusters-Analyse (durchgeführt am 7. Juni 2026; 100 Übereinstimmungen ≥~30 cM in 17 Clustern) ordnet die drei Clustermitglieder <strong>einem Cluster von genau drei zu, dem einzigen in Deutschland ansässigen väterlichen Cluster in der gesamten Übereinstimmungsliste</strong>. Das Clustering nach gemeinsamen Übereinstimmungen, die ≈52-cM-Überlappung der Mitglieder untereinander und die Chr-17-Triangulation stimmen nun unabhängig überein: ein Ahnenpaar steht wahrscheinlich hinter der Gruppe. Derselbe Lauf löste auch die übrigen großen deutschen Übereinstimmungen in zwei <em>mütterliche</em> Cluster auf (den schwäbischen Block und eine zweite Familiengruppe) und nahm sie damit von der Kandidatenliste der Konzen-Seite.</li>
+  <li><strong>Das schwache aschkenasische Echo wiederholt sich.</strong> Kleine Übereinstimmungen (≈9–20 cM) mit Personen ausgeprägt aschkenasischer Ahnennamen treten innerhalb der Listen gemeinsamer Übereinstimmungen des väterlichen Clusters wiederholt auf, und nur vier Übereinstimmungen wohnen in Israel, alle ≤20 cM — dasselbe schwache, aber konsistente Muster wie bei der FTDNA-Liste, nun in einer zweiten Datenbank sichtbar und weiterhin undatiert.</li>
+</ul>
+<p style="margin-bottom:0;">Das Kit wurde am 7. Juni 2026 mit dem Familienstammbaum des Projekts auf MyHeritage verknüpft, wodurch der automatische Stammbaumabgleich aktiviert wurde (Smart Matches™ sofort verfügbar; Theories of Family Relativity™ ausstehend bis zur nächsten Neuberechnung). Detaillierte Ausarbeitungen — Seitenzuordnungen, Segmentwerte, die Familiennamen-Durchsichtstabelle und die AutoClusters-Auswertung — finden sich im Sitzungsprotokoll (Session 96, 7. Juni 2026); lebende Übereinstimmungen werden hier gemäß der <a href="../methodology.html#privacy">Datenschutzrichtlinie</a> nicht namentlich genannt.</p>
+
+<h3 id="myheritage-update-jun28" style="margin-top:1.5em;">Update — 28. Juni 2026 · erneute Prüfung bei Ancestry &amp; MyHeritage</h3>
+<p>Ein plattformübergreifender Durchgang, um zu prüfen, ob die Stammbäume oder die autosomalen Übereinstimmungen Charles' Eltern benennen können — sie können es noch immer nicht, aber das deutsche väterliche Cluster wurde etwas geschärft.</p>
+<ul>
+  <li><strong>Das Cluster ist weiterhin nicht zugeordnet, und die entscheidende Antwort steht weiterhin aus.</strong> Die am 7. Juni aufgenommene Korrespondenz mit den beiden in Deutschland ansässigen Getesteten bleibt <em>unbeantwortet</em>; <strong>Theories of Family Relativity™ liefert für sie weiterhin keine</strong> — erwartbar, weil das Paar der jüngsten gemeinsamen Vorfahren eine Stufe <em>über</em> Charles sitzt, genau in jener unbelegten Zone, die das ganze Projekt zu füllen versucht.</li>
+  <li><strong>Eine neue Triangulationsbeobachtung spricht schwach gegen die Kreichelt-Lesart.</strong> Live durchgesehen, löst sich das Cluster zu einem <strong>Paar der jüngsten gemeinsamen Vorfahren auf Ururgroßeltern-Ebene des Vaters des Getesteten</strong> auf (geboren ~1780–1820) — also den Eltern von Charles, von Auguste Kreichelt oder einer der beiden anderen deutschen Linien in dieser Tiefe. Entscheidend: Über die (flachen) Stammbäume der Clustermitglieder <em>und</em> die 57 DNA-Übereinstimmungen, die sie mit dem Getesteten teilen, <strong>erscheint kein Familienname Kreichelt / Kreigelt / Christoph und kein Ort Clausthal-Zellerfeld</strong> — obwohl die Kreichelt-Linie des Getesteten im selben Stammbaum bis nach Clausthal belegt ist — und der tiefste verzeichnete Ahnenort eines Getesteten liegt in <strong>Osthessen (dem Werratal)</strong>, nicht im Harz. Das klärt die Linie nicht, sitzt aber mindestens ebenso bequem bei einer hessischen (Konze-)Herkunft wie bei Augustes Oberharzer; das gemeinsame Paar kann weiterhin nicht benannt werden.</li>
+  <li><strong>AncestryDNA bestätigt, dass die Stammbäume keine Antwort enthalten.</strong> Am selben Tag schlug ThruLines® für Charles <strong>keinen Elternteil über ihm</strong> vor — die einzigen fünf DNA-Übereinstimmungen, die über Charles laufen, stammen alle über seinen Sohn (Charles&nbsp;Jr.) ab, also bekannte Cousins der belegten Linie. Eine Durchsuchung aller 21.853 AncestryDNA-Übereinstimmungen nach dem Familiennamen <em>Konze</em> (und Ähnlichem) ergab nur Verwandte, die bereits mit dem eigenen Familienstammbaum des Projekts verknüpft sind — <strong>keine Übereinstimmung trägt eine unabhängig belegte Konze-Linie</strong> — und eine Suche in öffentlichen Mitglieder-Stammbäumen fand nur den eigenen Stammbaum des Projekts (und Kopien davon), keiner mit Eltern für Charles.</li>
+</ul>
+<p style="margin-bottom:0;">Fazit: Stand 28. Juni 2026 benennen die dokumentarischen Stammbäume und die autosomalen Übereinstimmungslisten weiterhin nicht Charles' Eltern oder Geschwister; das MyHeritage-deutsche väterliche Cluster bleibt die einzige beste lebende Spur, neigt nun geringfügig eher zu einer hessischen als zu einer Oberharzer Herkunft und hängt an der Antwort der Mitglieder oder am Y-Test eines belegten Konze-Mannes aus Trendelburg–Deisel. Ausarbeitungen: Session&nbsp;137 (28. Juni 2026).</p>
+
+<h2 id="effect">Was die DNA ändert — und was nicht</h2>
+<p>Nichts in den genetischen Ergebnissen befördert eine These zu <em>Bestätigt</em>, und nichts widerlegt eine. Die Y-DNA und die autosomalen Belege <em>untermauern beide eine deutsche / germanische Herkunft im Allgemeinen</em>, schweigen aber zu den zwei Fragen, die das Projekt am meisten beantwortet sehen möchte: <strong>War die Pfarrei Hessen / Trendelburg, und lautete der Familienname Konzen?</strong> Diese Schlüsse ruhen weiterhin auf dem dokumentarischen Befund (der Namensspur und den Herkunfts-Entschlüsselungen „Freundburg“ / „Deisse“) und gelten entsprechend als <em>Arbeitsstand</em>. Siehe die <a href="../claims-dashboard.html">Thesen-Übersicht</a> dazu, wie dies in die tragenden Thesen einfließt, den Abschnitt <a href="../methodology.html#dna">Methodik · genetische Belege</a> zur Behandlung der Quellenbewertung und <a href="open-questions.html#dna">Offene Fragen · DNA</a> für den aktiven Strang.</p>
+
+<h2 id="next">Der ertragreichste nächste Schritt</h2>
+<p>Da die Y-DNA-Linie das einzige Beweisstück ist, das den Schluss zum Familiennamen <em>direkt</em> prüfen könnte, ist die wertvollste einzelne Handlung eine gezielte Anwerbung:</p>
+<ul>
+  <li><strong>Einen belegten Konze-/Kontzen-Mann Y-testen</strong> aus dem Raum Trendelburg–Deisel (idealerweise Big Y-700). Landet seine Linie auf oder nahe <code>I-Y38863</code>, ist der Schluss zum Familiennamen stark bestätigt; landet sie anderswo auf dem Stammbaum, wird der Schluss infrage gestellt. Beides ist auf eine Weise entscheidend, wie es die Dokumente allein nicht sind.</li>
+  <li><strong>Das autosomale Netz erweitern</strong>, indem bekannte Nachkommen der hessischen Kandidatenfamilien zum Testen oder zum Teilen ihrer Kits eingeladen werden und vorhandene Kits, wo zulässig, in zusätzliche Abgleichdatenbanken hochgeladen werden.</li>
+  <li><strong>Nach autosomalen Übereinstimmungen fischen</strong> gegen die belegten Kreichelt-, Grandjot- und Herwig-Nachkommen, um die US-seitige Rekonstruktion auf ihrem eigenen genetischen Fundament zu bestätigen.</li>
+  <li><strong>Das MyHeritage-väterliche Cluster auflösen</strong> (<a href="#myheritage-matches">oben</a>): Mit seinen deutschen Mitgliedern besteht Korrespondenz; ihre Antwort auf die Frage Oberharz vs. Hofgeismar weist das Cluster der Kreichelt- oder der Konze-Linie zu. Das Kit mit einem Familienstammbaum auf MyHeritage zu verknüpfen (um den automatischen Stammbaumabgleich gegen das Cluster freizuschalten) ist die wirkungsvollste kostenlose Handlung.</li>
+  <li><strong>FTDNA Family Matching aktivieren</strong>: Mit dem als Elternteil verknüpften Kit des Vaters ordnet FTDNA alle ~14.300 Übereinstimmungen väterlich/mütterlich zu — was unmittelbar prüft, ob der aschkenasische Gründerblock auf Chromosom 17 auf der väterlichen Kopie sitzt (die obige Konvergenz-Behauptung), und der FTDNA-Liste dieselbe Seitenauflösung verschafft, die die MyHeritage-Analyse bereits genießt.</li>
+</ul>
+<p>Wenn Sie von der Konze-/Kontzen-Familie aus Trendelburg–Deisel oder von einer dieser Linien abstammen, würde sich das Projekt über eine Kontaktaufnahme freuen — siehe <a href="contribute.html">Mitmachen</a>.</p>
+
+<p style="margin-top:2rem; font-style:italic; color: var(--text-muted); font-size: 0.92rem;">Auf dieser Seite zusammengefasste genetische Ergebnisse: FamilyTreeDNA Big Y-700 (Haplogruppe I2-M223; terminale Subklade I-Y38863), autosomale Schätzungen von AncestryDNA und MyHeritage (Ethnicity Estimate v2.5), die Übereinstimmungslisten von FTDNA (abgerufen am 30. Mai 2026) und MyHeritage (abgerufen am 7. Juni 2026) sowie der FTDNA-Gesamtsegment-Export (7. Juni 2026). Seite erstmals veröffentlicht am <time datetime="2026-05-30">30. Mai 2026</time>. Lebende DNA-Übereinstimmungen werden auf der öffentlichen Website gemäß der <a href="../methodology.html#privacy">Datenschutzrichtlinie</a> nicht namentlich genannt; Kit-Kennungen können seriösen Forschenden auf Anfrage mitgeteilt werden.</p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles-Forschung</strong> · Eine genealogische Untersuchung von Jed Johnson mit Peter Schräder und James Gunnis · <a href="index.html">Startseite</a> · <a href="../methodology.html">Methodik</a> · <a href="open-questions.html">Offene Fragen</a> · <a href="../claims-dashboard.html">Thesen-Übersicht</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../de/index.html">Startseite</a></li>
+        <li><a href="../de/stories.html">Geschichten</a></li>
+        <li><a href="../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../methodology.html">Methodik</a></li>
+        <li><a href="../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../de/glossary.html">Glossar</a></li>
+        <li><a href="../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../de/about.html">Über</a></li>
+        <li><a href="../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders ({{ROOT}}) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="{{ROOT}}index.html" role="menuitem">Überblick</a>
+      <a href="{{ROOT}}stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="{{ROOT}}cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="{{ROOT}}germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="{{ROOT}}germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="{{ROOT}}germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="{{ROOT}}towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="{{ROOT}}index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="{{ROOT}}index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="{{ROOT}}children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="{{ROOT}}who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="{{ROOT}}sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="{{ROOT}}sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="{{ROOT}}dna.html" role="menuitem">DNA-Belege</a>
+      <a href="{{ROOT}}correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}methodology.html" role="menuitem">Methodik</a>
+      <a href="{{ROOT}}bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="{{ROOT}}errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="{{ROOT}}glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="{{ROOT}}about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="{{ROOT}}contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="{{ROOT}}faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="{{ROOT}}changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>

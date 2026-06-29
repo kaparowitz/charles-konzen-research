@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<meta name="x-translated-from" content="cast.html">
+<meta name="x-translated-source-sha" content="ef4076849f545e8483bf76a9cb5af5226498644df1b2c9965870644bae573e94">
+<meta name="x-translated-date" content="2026-06-29">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/cast.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/cast.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/cast.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Personenverzeichnis — Charles-Forschung</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/de/cast.html">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
+<meta name="description" content="Das Personenverzeichnis der Charles-Konzen-Untersuchung — Hauptfiguren, Verwandte, Schreiber und Figuren im Hintergrund, die in den neun Geschichten auftreten.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Personenverzeichnis — Charles-Forschung">
+<meta property="og:description" content="Die Personen, die in den neun Geschichten auftreten — Hauptfiguren, Verwandte, Schreiber und Figuren im Hintergrund.">
+<meta property="og:url" content="https://charles-research.netlify.app/de/cast.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/cast.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/cast.png">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { box-sizing: border-box; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.cast-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.4rem 1.5rem 1.8rem;
+    border-bottom: 4px double var(--brand);
+    text-align: center;
+  }
+  header.cast-hero .crumbs {
+    font-size: 0.84rem; color: var(--text-on-dark-d);
+    margin-bottom: 0.5rem; text-align: left;
+    max-width: 880px; margin-left: auto; margin-right: auto;
+  }
+  header.cast-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.cast-hero h1 {
+    color: var(--text-on-dark);
+    font-size: 2.6rem; letter-spacing: 0.02em;
+  }
+  header.cast-hero .sub {
+    color: var(--text-on-dark-d); font-style: italic;
+    margin-top: 0.4rem; max-width: 660px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 1.6rem 1.4rem 4rem; }
+
+  .lede {
+    font-size: 1.05rem; color: var(--text-meta);
+    font-style: italic; margin-bottom: 2rem;
+    text-align: center; max-width: 640px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  section.cast-group {
+    margin: 2.2rem 0 0;
+    padding-top: 1.4rem;
+    border-top: 1px dashed var(--border-medium);
+  }
+  section.cast-group:first-of-type { border-top: none; padding-top: 0; }
+
+  section.cast-group .group-head {
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px dotted var(--border-light);
+  }
+  section.cast-group h2 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    margin-bottom: 0.2rem;
+  }
+  section.cast-group .group-blurb {
+    font-size: 0.92rem;
+    color: var(--text-meta);
+    font-style: italic;
+    line-height: 1.45;
+  }
+
+  .cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.9rem;
+    align-items: start;
+  }
+  .cast-grid > * { min-width: 0; }
+  .cast-entry,
+  body.cine-typography main a.cast-entry {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-light);
+    border-right: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    border-left: 4px solid var(--brand);
+    border-radius: 4px;
+    padding: 0.85rem 1rem 0.95rem;
+    text-decoration: none;
+    color: var(--text-body);
+    transition: background 0.15s, border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  .cast-entry > * {
+    min-width: 0;
+    max-width: 100%;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .cast-entry.has-profile:hover,
+  body.cine-typography main .cast-entry.has-profile:hover {
+    background: var(--brand-tint);
+    border-top-color: var(--border-medium);
+    border-right-color: var(--border-medium);
+    border-bottom-color: var(--border-medium);
+    border-left-color: var(--brand-dark);
+    color: var(--text-body);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(20, 17, 12, 0.08);
+  }
+  .cast-entry .ce-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.25;
+    margin-bottom: 0.18rem;
+  }
+  .cast-entry.has-profile:hover .ce-name { color: var(--brand-dark); }
+  .cast-entry .ce-meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--brand-dark);
+    letter-spacing: 0.03em;
+    margin-bottom: 0.35rem;
+  }
+  .cast-entry .ce-role {
+    font-size: 0.84rem;
+    color: var(--text-meta);
+    font-style: italic;
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+  .cast-entry .ce-bio {
+    font-size: 0.86rem;
+    color: var(--text-strong);
+    line-height: 1.5;
+  }
+  .cast-entry .ce-stories {
+    margin-top: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    word-spacing: 0.1rem;
+  }
+  .cast-entry .ce-stories .story-num {
+    color: var(--brand-dark);
+    padding: 0 0.12rem;
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  /* Theme accents for cast-entry borders */
+  .cast-entry.theme-family { border-left-color: var(--section-germany); }
+  .cast-entry.theme-discovery { border-left-color: var(--section-charles); }
+  .cast-entry.theme-scribal { border-left-color: var(--section-immigration); }
+  .cast-entry.theme-civilwar { border-left-color: var(--section-civilwar); }
+  .cast-entry.theme-offstage { border-left-color: var(--border-medium); border-left-style: dashed; }
+
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+
+  footer.site-foot {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    header.cast-hero { background: none; color: #000; border-bottom: 2px solid #888; padding: 0 0 8pt; text-align: left; }
+    header.cast-hero h1, header.cast-hero .sub, header.cast-hero .crumbs, header.cast-hero .crumbs a { color: #000 !important; }
+    main { max-width: none; padding: 0; }
+    a { color: #000; border-bottom: none; }
+    .cast-entry { box-shadow: none; page-break-inside: avoid; }
+    .cast-grid { grid-template-columns: 1fr 1fr; }
+  }
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ---- monogram avatars + relationship tags (added 31 May 2026) ---- */
+  .cast-entry .ce-head { display:flex; gap:0.6rem; align-items:flex-start; margin-bottom:0.35rem; }
+  .cast-entry .ce-headtext { min-width:0; flex:1 1 auto; }
+  .cast-entry .ce-head .ce-name,
+  .cast-entry .ce-head .ce-meta { margin-bottom:0.1rem; }
+  .ce-avatar {
+    flex:0 0 auto; width:40px; height:40px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-weight:700; font-size:0.82rem;
+    letter-spacing:0.01em; color:#fff; background:var(--brand-dark);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+  }
+  .avatar-protagonist { background:var(--brand-dark); }
+  .avatar-family      { background:var(--section-germany); }
+  .avatar-discovery   { background:var(--section-charles); }
+  .avatar-scribal     { background:var(--section-immigration); }
+  .avatar-civilwar    { background:var(--section-civilwar); }
+  .avatar-offstage    { background:var(--border-medium); color:var(--text-strong); }
+  .ce-rel {
+    display:inline-block; margin-top:0.25rem;
+    font-family:var(--font-mono); font-size:0.68rem; font-weight:700;
+    letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--brand-dark); background:var(--brand-tint);
+    border:1px solid var(--border-light); border-radius:999px;
+    padding:0.08rem 0.5rem; line-height:1.5;
+  }
+  a.story-num { border-bottom:none; }
+  a.story-num:hover { color:var(--brand); text-decoration:underline; }
+
+
+  /* ---- cover-link card pattern (fix nested anchors, 31 May 2026) ---- */
+  .cast-entry { position: relative; }
+  .cast-entry.has-profile { cursor: pointer; }
+  .ce-cover {
+    position: absolute; inset: 0; z-index: 1;
+    border-bottom: none; border-radius: 4px; text-indent: -9999px;
+  }
+  .ce-cover:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+  /* content sits above the cover; non-link content lets clicks fall through */
+  .cast-entry .ce-head,
+  .cast-entry .ce-role,
+  .cast-entry .ce-bio,
+  .cast-entry .ce-stories { position: relative; z-index: 2; }
+  .cast-entry.has-profile .ce-head,
+  .cast-entry.has-profile .ce-role,
+  .cast-entry.has-profile .ce-bio,
+  .cast-entry.has-profile .ce-stories { pointer-events: none; }
+  .cast-entry .ce-stories a.story-num,
+  .cast-entry .ce-head a { pointer-events: auto; }
+
+  </style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/cast.html#article",
+  "headline": "Personenverzeichnis — Charles-Forschung",
+  "description": "Die Personen in den Geschichten — ein einheitliches Verzeichnis der genannten Individuen über die gesamte Untersuchung hinweg.",
+  "datePublished": "2026-04-15",
+  "dateModified": "2026-05-12",
+  "url": "https://charles-research.netlify.app/de/cast.html",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://charles-research.netlify.app/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cast"
+    }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../de/index.html" role="menuitem">Überblick</a>
+      <a href="../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodik</a>
+      <a href="../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="cast-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles-Forschung</a> &nbsp;/&nbsp; <a href="../stories.html">Geschichten</a> &nbsp;/&nbsp; Personenverzeichnis</div>
+  <h1>Personenverzeichnis</h1>
+  <div class="sub">Das Personenverzeichnis der neun Geschichten — Hauptfiguren, Verwandte, Schreiber und historische Figuren im Hintergrund.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">Ein kleines Ensemble bewegt sich durch die sechs <a href="../stories.html">Geschichten</a>. Es lässt sich in eine Handvoll natürlicher Gruppen einteilen. Jeder Eintrag unten nennt die Rolle der Person, die Daten, soweit bekannt, eine einzeilige Biographie, die Geschichten, in denen sie auftritt, und einen Link zu einem ausführlicheren Profil, sofern vorhanden.</p>
+
+
+<!-- ============================================================ -->
+<section class="cast-group">
+  <div class="group-head">
+    <h2>Die Hauptfiguren</h2>
+    <div class="group-blurb">Die beiden Personen, um die sich die gesamte Untersuchung dreht.</div>
+  </div>
+  <div class="cast-grid">
+
+    <div class="cast-entry">
+      <div class="ce-head"><span class="ce-avatar avatar-protagonist" aria-hidden="true">CK</span><div class="ce-headtext"><div class="ce-name">Charles Konzen</div><div class="ce-meta">1835 – 1903</div><div class="ce-rel">Der Gegenstand</div></div></div>
+      <div class="ce-role">Der Gegenstand der Untersuchung</div>
+      <div class="ce-bio">In Hessen geborener Einwanderer. Wanderte vermutlich 1859 allein aus. Veteran der Battery B. Arbeiter in St. Louis. Heiratete im Januar 1866 Auguste Kreichelt; zeugte sieben Kinder; starb im Dezember 1903.</div>
+      <div class="ce-stories">In den Geschichten <a class="story-num" data-story="portrait" href="../stories/1-portrait.html" title="Geschichte 01 — Eine Fotografie in einem Umzugskarton">01</a> · <a class="story-num" data-story="recruiter" href="../stories/2-recruiter.html" title="Geschichte 02 — Der Werber und der Rekrut">02</a> · <a class="story-num" data-story="kreichelt" href="../stories/3-kreichelt.html" title="Geschichte 03 — Der Bruder in derselben Batterie">03</a> · <a class="story-num" data-story="elector" href="../stories/4-elector.html" title="Geschichte 04 — Der Erstgeborene und der abgesetzte Kurfürst">04</a> · <a class="story-num" data-story="pillmann" href="../stories/5-pillmann.html" title="Geschichte 05 — Der Mann, der zweimal Pate stand">05</a> · <a class="story-num" data-story="braschler" href="../stories/6-braschler.html" title="Geschichte 06 — Der Pfarrer, der zwei verschiedene Vokale schrieb">06</a> · <a class="story-num" data-story="konsen" href="../stories/7-konsen.html" title="Geschichte 07 — Der Familienname zweimal geschrieben, fünfzehn Jahre auseinander">07</a> · <a class="story-num" data-story="spraul" href="../stories/8-spraul.html" title="Geschichte 08 — Der Taufpate aus dem Brauereigewerbe">08</a> · <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/auguste-kreichelt.html" aria-label="Auguste Kreichelt — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-protagonist" aria-hidden="true">AK</span><div class="ce-headtext"><div class="ce-name">Auguste Kreichelt</div><div class="ce-meta">1847 – 1896</div><div class="ce-rel">Wife</div></div></div>
+      <div class="ce-role">Charles's wife · mother of all seven children</div>
+      <div class="ce-bio">Born Clausthal, Hannover; emigrated 1853 with the family; married Charles 7 January 1866 St. Marcus; mother of Friedrich Wilhelm, Maria Josephine, Katherine Carolina, Auguste, Louise, Erwin Carl, Bertha; died 1896 St. Louis.</div>
+      <div class="ce-stories">In den Geschichten <a class="story-num" data-story="portrait" href="../stories/1-portrait.html" title="Geschichte 01 — Eine Fotografie in einem Umzugskarton">01</a> · <a class="story-num" data-story="recruiter" href="../stories/2-recruiter.html" title="Geschichte 02 — Der Werber und der Rekrut">02</a> · <a class="story-num" data-story="kreichelt" href="../stories/3-kreichelt.html" title="Geschichte 03 — Der Bruder in derselben Batterie">03</a> · <a class="story-num" data-story="elector" href="../stories/4-elector.html" title="Geschichte 04 — Der Erstgeborene und der abgesetzte Kurfürst">04</a> · <a class="story-num" data-story="pillmann" href="../stories/5-pillmann.html" title="Geschichte 05 — Der Mann, der zweimal Pate stand">05</a> · <a class="story-num" data-story="braschler" href="../stories/6-braschler.html" title="Geschichte 06 — Der Pfarrer, der zwei verschiedene Vokale schrieb">06</a> · <a class="story-num" data-story="konsen" href="../stories/7-konsen.html" title="Geschichte 07 — Der Familienname zweimal geschrieben, fünfzehn Jahre auseinander">07</a> · <a class="story-num" data-story="spraul" href="../stories/8-spraul.html" title="Geschichte 08 — Der Taufpate aus dem Brauereigewerbe">08</a> · <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="cast-group">
+  <div class="group-head">
+    <h2>Ihre Kinder</h2>
+    <div class="group-blurb">Die sieben Konzen-Kreichelt-Kinder, deren Tauf- und Sterberegister die Geschichten zur Namensspur und zum Familienmuster verankern.</div>
+  </div>
+  <div class="cast-grid">
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../children/friedrich-wilhelm.html" aria-label="Friedrich Wilhelm — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">FW</span><div class="ce-headtext"><div class="ce-name">Friedrich Wilhelm</div><div class="ce-meta">geb. 20. Juni 1866</div><div class="ce-rel">Sohn · 1. Kind</div></div></div>
+      <div class="ce-role">Erstgeborener · der Namensvetter des Kurfürsten</div>
+      <div class="ce-bio">Geboren drei Tage, nachdem der Kurfürst von Hessen-Kassel abgesetzt worden war. Getauft am 2. September 1866 mit denselben Vornamen. Die politische Welt, die Charles verlassen hatte, hörte in jenem Sommer auf zu existieren.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="elector" href="../stories/4-elector.html" title="Geschichte 04 — Der Erstgeborene und der abgesetzte Kurfürst">04</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-scribal"><a class="ce-cover" href="../children/katherine-carolina.html" aria-label="Katherine Carolina — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">KC</span><div class="ce-headtext"><div class="ce-name">Katherine Carolina</div><div class="ce-meta">geb. 1870</div><div class="ce-rel">Tochter · 3. Kind</div></div></div>
+      <div class="ce-role">Tochter · die <em>Gansen</em>-Taufe</div>
+      <div class="ce-bio">Taufe am 22. Mai 1870 in St. Marcus — Pastor Braschlers Hand verzeichnete den Familiennamen als <em>Gansen</em>. Zwei Jahre später schrieb dieselbe Hand ihn anders. Pillmann tritt bei dieser Taufe erneut als Pate auf.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="pillmann" href="../stories/5-pillmann.html" title="Geschichte 05 — Der Mann, der zweimal Pate stand">05</a> · <a class="story-num" data-story="braschler" href="../stories/6-braschler.html" title="Geschichte 06 — Der Pfarrer, der zwei verschiedene Vokale schrieb">06</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-scribal"><a class="ce-cover" href="../children/auguste.html" aria-label="Auguste (daughter) — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">AG</span><div class="ce-headtext"><div class="ce-name">Auguste (Tochter)</div><div class="ce-meta">1872 – 1890</div><div class="ce-rel">Tochter · 4. Kind</div></div></div>
+      <div class="ce-role">Tochter · die <em>Gonsen</em>-Taufe · der <em>Konzen</em>-Sterbefall von 1890 (einziger amerikanischer Beleg der hessischen z-Form)</div>
+      <div class="ce-bio">Taufe am 23. Juni 1872 (Pastor Braschler schrieb <em>Gonsen</em>). Starb 1890 im Alter von 18 Jahren — ihr Sterbeeintrag lautet <em>"Auguste Somers geb Konzen"</em>, das einzige amerikanische Dokument mit der vollständigen hessischen z-Form, die seit 1773 in der Trendelburger Pfarrei belegt ist.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="braschler" href="../stories/6-braschler.html" title="Geschichte 06 — Der Pfarrer, der zwei verschiedene Vokale schrieb">06</a> · <a class="story-num" data-story="konsen" href="../stories/7-konsen.html" title="Geschichte 07 — Der Familienname zweimal geschrieben, fünfzehn Jahre auseinander">07</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-scribal"><a class="ce-cover" href="../children/erwin-carl-konsen.html" aria-label="Erwin Carl Konsen — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">EK</span><div class="ce-headtext"><div class="ce-name">Erwin Carl Konsen</div><div class="ce-meta">geb. 1875</div><div class="ce-rel">Sohn · 6. Kind</div></div></div>
+      <div class="ce-role">Sechstes Kind · die einzige Konsen-Taufe</div>
+      <div class="ce-bio">Getauft am 3. Oktober 1875 in St. Marcus — die einzige Gannsen-Taufe, welche die hessische Schreibweise des Familiennamens <em>Konsen</em> bewahrt. Einziger Pate: Erwin Spraul, sein Namensvetter.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="konsen" href="../stories/7-konsen.html" title="Geschichte 07 — Der Familienname zweimal geschrieben, fünfzehn Jahre auseinander">07</a> · <a class="story-num" data-story="spraul" href="../stories/8-spraul.html" title="Geschichte 08 — Der Taufpate aus dem Brauereigewerbe">08</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="cast-group">
+  <div class="group-head">
+    <h2>Der Kamerad</h2>
+    <div class="group-blurb">Der eine hessische Sergeant, dessen vierjährige Überschneidung mit Charles in St. Louis das dichteste schriftliche Zeugnis einer männlichen Bindung im Projekt darstellt.</div>
+  </div>
+  <div class="cast-grid">
+
+    <div class="cast-entry has-profile theme-civilwar"><a class="ce-cover" href="../people/adam-herweck.html" aria-label="Adam Herweck — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-civilwar" aria-hidden="true">AH</span><div class="ce-headtext"><div class="ce-name">Adam Herweck</div><div class="ce-meta">1831 – 1897</div><div class="ce-rel">Kamerad · Battery B</div></div></div>
+      <div class="ce-role">Sergeant der Battery B · der Werber · erster Trauzeuge</div>
+      <div class="ce-bio">Geboren in Lampertheim, Hessen. Der Brief des Hauptmanns vom 9. Dezember 1862 verortet ihn im Anwerbedienst in St. Louis in der Woche, in der Charles sich anwerben ließ. Dieselbe Laufbahn vom Gefreiten zum Sergeanten. Erstgenannter Zeuge im Heiratsregister von 1866.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="recruiter" href="../stories/2-recruiter.html" title="Geschichte 02 — Der Werber und der Rekrut">02</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="cast-group">
+  <div class="group-head">
+    <h2>Die hessische und hannoversche Verwandtschaft</h2>
+    <div class="group-blurb">Auguste's Familie. Jeder namentlich genannte Pate bei jeder Gannsen-Taufe lässt sich auf ihre Seite zurückführen — niemals auf die von Charles.</div>
+  </div>
+  <div class="cast-grid">
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/georg-kreichelt.html" aria-label="Georg Kreichelt — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">GK</span><div class="ce-headtext"><div class="ce-name">Georg Kreichelt</div><div class="ce-meta">1819 – 1883</div><div class="ce-rel">Schwiegervater</div></div></div>
+      <div class="ce-role">Auguste's Vater · Veteran der Battery B</div>
+      <div class="ce-bio">Geboren in Clausthal, Hannover. Wanderte im September 1853 aus. Ließ sich 1861 in Missouri in derselben Battery B wie Charles anwerben. Führte Auguste bei der Hochzeit 1866 zum Altar. Pate bei drei Gannsen-Taufen.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="kreichelt" href="../stories/3-kreichelt.html" title="Geschichte 03 — Der Bruder in derselben Batterie">03</a> · <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/henriette-kreichelt.html" aria-label="Henriette Kreichelt — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">HK</span><div class="ce-headtext"><div class="ce-name">Henriette Kreichelt</div><div class="ce-meta">1820 – 1894</div><div class="ce-rel">Schwiegermutter</div></div></div>
+      <div class="ce-role">Auguste's Mutter</div>
+      <div class="ce-bio">Geboren in Clausthal als Louise Friederike Henriette Weiss. Mutter der Braut bei der Hochzeit 1866 in St. Marcus. Patin bei zwei Gannsen-Taufen (Erstgeborener 1866 + Louise 1873 — die Enkelin, die unmittelbar nach ihr benannt wurde).</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="kreichelt" href="../stories/3-kreichelt.html" title="Geschichte 03 — Der Bruder in derselben Batterie">03</a> · <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-civilwar"><a class="ce-cover" href="../people/august-kreichelt.html" aria-label="August Kreichelt — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-civilwar" aria-hidden="true">AU</span><div class="ce-headtext"><div class="ce-name">August Kreichelt</div><div class="ce-meta">1844 – 1877</div><div class="ce-rel">Schwager</div></div></div>
+      <div class="ce-role">Auguste's ältester Bruder · Kamerad von Charles in der Battery B</div>
+      <div class="ce-bio">Geboren in Clausthal, Hannover. Veteran der Battery B an Charles' Seite 1862–1865 — höchstwahrscheinlich der Weg, über den Charles Auguste kennenlernte. Pate bei der Taufe seiner gleichnamigen Nichte 1872. Starb jung im Alter von 32 Jahren.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="kreichelt" href="../stories/3-kreichelt.html" title="Geschichte 03 — Der Bruder in derselben Batterie">03</a> · <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/carl-kreichelt.html" aria-label="Carl Kreichelt — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">Ca</span><div class="ce-headtext"><div class="ce-name">Carl Kreichelt</div><div class="ce-meta">1846 – 1926</div><div class="ce-rel">Schwager</div></div></div>
+      <div class="ce-role">Auguste's jüngerer Bruder</div>
+      <div class="ce-bio">Gastwirt in St. Louis, später Immobilieninvestor. Ließ zehn Kinder 1871–1887 in St. Marcus taufen — die Konvention der Verwandtschaft als Standardpaten wurde durchweg streng eingehalten, im Gegensatz zur fehlenden Verwandtschaft von Charles.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/bertha-barbara-kreichelt.html" aria-label="Bertha Barbara Kreichelt — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">BK</span><div class="ce-headtext"><div class="ce-name">Bertha Barbara Kreichelt</div><div class="ce-meta">1859 – 1892</div><div class="ce-rel">Schwägerin</div></div></div>
+      <div class="ce-role">Auguste's jüngste Schwester</div>
+      <div class="ce-bio">Erste in Amerika geborene Kreichelt. Patin bei zwei Gannsen-Taufen (Louise 1873 + Bertha 1880 — die gleichnamige Nichte). Starb mit 32 Jahren in St. James, Phelps County, Missouri.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="cast-group">
+  <div class="group-head">
+    <h2>Der Pfarrkreis von St. Marcus</h2>
+    <div class="group-blurb">Die Paten aus dem deutsch-evangelischen Pfarrkreis von Soulard bei den sieben Gannsen-Taufen — Pillmann, Ebeling, Reck und Münke treten in der Geschichte zum Familienmuster wiederholt auf.</div>
+  </div>
+  <div class="cast-grid">
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/frederick-pillmann.html" aria-label="Frederick Pillmann — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">FP</span><div class="ce-headtext"><div class="ce-name">Frederick Pillmann</div><div class="ce-meta">1846 – 1917</div><div class="ce-rel">Taufpate</div></div></div>
+      <div class="ce-role">Metzger in Soulard · zweimaliger Pate</div>
+      <div class="ce-bio">Die einzige Person, die bei mehr als einer Gannsen-Taufe Pate stand — Erstgeborener 1866 + Katherine Carolina 1870. Heiratete 1870 Fredericka Albrecht und wurde so durch Heirat mit den Kreichelt verwandt.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="elector" href="../stories/4-elector.html" title="Geschichte 04 — Der Erstgeborene und der abgesetzte Kurfürst">04</a> · <a class="story-num" data-story="pillmann" href="../stories/5-pillmann.html" title="Geschichte 05 — Der Mann, der zweimal Pate stand">05</a> · <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/wilhelmina-ebeling.html" aria-label="Wilhelmina Ebeling — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">WE</span><div class="ce-headtext"><div class="ce-name">Wilhelmina Ebeling</div><div class="ce-meta">1810 – 1872</div><div class="ce-rel">Taufpatin</div></div></div>
+      <div class="ce-role">Nachbarin im Pfarrkreis von Soulard · Patin 1866</div>
+      <div class="ce-bio">Wilhelmine Ebeling Leue. Ältere Nachbarin des Pfarrkreises an der NW Ann + Elizabeth, in Gehweite vom Wohnsitz von Charles &amp; Auguste in der South 7th Street. Trägt die als Paar passende weibliche Form des Namens des Kurfürsten.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="elector" href="../stories/4-elector.html" title="Geschichte 04 — Der Erstgeborene und der abgesetzte Kurfürst">04</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/amalia-muenke.html" aria-label="Amalia Münke — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">AM</span><div class="ce-headtext"><div class="ce-name">Amalia Münke</div><div class="ce-meta">1844 – 1905</div><div class="ce-rel">Schwägerin (durch Heirat)</div></div></div>
+      <div class="ce-role">Schwägerin · Patin 1870 · Namensgeberin</div>
+      <div class="ce-bio">Maria Emma Mincke. Ehefrau von August Kreichelt (Auguste's Bruder und Veteran der Battery B). Der zweite Vorname <em>Amalia</em> des 1870 geborenen Kindes geht unmittelbar auf sie zurück.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/catharina-albrecht.html" aria-label="Catharina Albrecht — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">CA</span><div class="ce-headtext"><div class="ce-name">Catharina Albrecht</div><div class="ce-meta">1850 – 1913</div><div class="ce-rel">Schwägerin (durch Heirat)</div></div></div>
+      <div class="ce-role">Schwägerin über Carl Kreichelt</div>
+      <div class="ce-bio">Heiratete 1871 Carl Kreichelt. Schwester von Fredericka Albrecht (die Frederick Pillmann heiratete). Patin bei der Taufe von Katherine Carolina 1870 — der zweite Vorname des Kindes geht auf sie zurück.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="pillmann" href="../stories/5-pillmann.html" title="Geschichte 05 — Der Mann, der zweimal Pate stand">05</a> · <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+    <div class="cast-entry has-profile theme-family"><a class="ce-cover" href="../people/erwin-spraul.html" aria-label="Erwin Spraul — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-family" aria-hidden="true">ES</span><div class="ce-headtext"><div class="ce-name">Erwin Spraul</div><div class="ce-meta">~1848 – 1889</div><div class="ce-rel">Taufpate</div></div></div>
+      <div class="ce-role">Superintendent bei Anheuser-Busch · alleiniger Pate 1875 · Namensgeber</div>
+      <div class="ce-bio">Geboren ~1848 in Baden. Bis 1880 Superintendent bei Anheuser-Busch. Der einzige Pate bei einer Konzen-Taufe, der nicht von der Kreichelt-Seite stammte — Charles' Wahl eines erfolgreichen Mitauswanderers.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="spraul" href="../stories/8-spraul.html" title="Geschichte 08 — Der Taufpate aus dem Brauereigewerbe">08</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="cast-group">
+  <div class="group-head">
+    <h2>Der Mitarbeiter und der Entdecker</h2>
+    <div class="group-blurb">Zwei lebende Personen, deren Arbeit mehrere dieser Geschichten erst möglich machte.</div>
+  </div>
+  <div class="cast-grid">
+
+    <div class="cast-entry has-profile theme-discovery"><a class="ce-cover" href="../correspondence/peter-schrader-timeline.html" aria-label="Peter Schräder — full profile"></a>
+      <div class="ce-head"><span class="ce-avatar avatar-discovery" aria-hidden="true">PS</span><div class="ce-headtext"><div class="ce-name">Peter Schräder</div><div class="ce-meta">Mitarbeiter seit Ende 2025</div><div class="ce-rel">Forscher · lebend</div></div></div>
+      <div class="ce-role">Deutscher Genealoge · Trendelburg</div>
+      <div class="ce-bio">Ein gebürtiger Trendelburger mit tiefgreifender Kenntnis der örtlichen Archive. Stellte im Dezember 2025 die Hypothese der illegalen Auswanderung zur Umgehung der Wehrpflicht auf — die Arbeitshypothese dafür, warum bei keiner Taufe Verwandte von Charles' Seite auftreten.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="alone" href="../stories/9-alone.html" title="Geschichte 09 — Sieben Taufen ohne jemanden von seiner Seite">09</a></div>
+    </div>
+
+    <div class="cast-entry theme-discovery">
+      <div class="ce-head"><span class="ce-avatar avatar-discovery" aria-hidden="true">MJ</span><div class="ce-headtext"><div class="ce-name">Maximilian J.</div><div class="ce-meta">kontaktiert im September 2025</div><div class="ce-rel">Nachkomme · lebend</div></div></div>
+      <div class="ce-role">Nachkomme, der das Porträt fand</div>
+      <div class="ce-bio">Ein Konzen-Nachkomme in Independence, Missouri. Fand das einzige bekannte Porträt von Charles in einem Umzugskarton, den er gerade auspackte; schrieb Jed am 18. September 2025 eine E-Mail. Das erste Gesicht des Projekts nach hundert Jahren.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="portrait" href="../stories/1-portrait.html" title="Geschichte 01 — Eine Fotografie in einem Umzugskarton">01</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="cast-group">
+  <div class="group-head">
+    <h2>Die Schreiber</h2>
+    <div class="group-blurb">Anonyme Figuren, deren Hände festhalten, was sie hörten — und deren Abweichungen den Beleg bilden.</div>
+  </div>
+  <div class="cast-grid">
+
+    <div class="cast-entry theme-scribal">
+      <div class="ce-head"><span class="ce-avatar avatar-scribal" aria-hidden="true">PB</span><div class="ce-headtext"><div class="ce-name">Pastor Braschler</div><div class="ce-meta">tätig 1870 – 1872</div><div class="ce-rel">Pfarrschreiber</div></div></div>
+      <div class="ce-role">Pastor von St. Marcus</div>
+      <div class="ce-bio">Verzeichnete die Taufe von Katherine Carolina 1870 (<em>Gansen</em>) und die Taufe von Auguste 1872 (<em>Gonsen</em>). Die Abweichung um zwei Vokale in seiner Hand ist der stärkste einzelne Beleg des Projekts für die Erfassung von Gehörtem gegenüber Geschriebenem.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="braschler" href="../stories/6-braschler.html" title="Geschichte 06 — Der Pfarrer, der zwei verschiedene Vokale schrieb">06</a></div>
+    </div>
+
+    <div class="cast-entry theme-scribal">
+      <div class="ce-head"><span class="ce-avatar avatar-scribal" aria-hidden="true">PH</span><div class="ce-headtext"><div class="ce-name">Pastor Hoffmann</div><div class="ce-meta">tätig 1875</div><div class="ce-rel">Pfarrschreiber</div></div></div>
+      <div class="ce-role">Pastor von St. Marcus (1875)</div>
+      <div class="ce-bio">Verzeichnete die Taufe von Erwin Carl 1875 — die einzige Gannsen-Taufe, welche die Schreibweise <em>Konsen</em> bewahrt. Eine andere Hand als die Braschlers, die dieselbe hessische <em>-en</em>-Form fünfzehn Jahre vor dem Sterbeeintrag von 1890 festhielt.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="konsen" href="../stories/7-konsen.html" title="Geschichte 07 — Der Familienname zweimal geschrieben, fünfzehn Jahre auseinander">07</a></div>
+    </div>
+
+    <div class="cast-entry theme-scribal">
+      <div class="ce-head"><span class="ce-avatar avatar-scribal" aria-hidden="true">LR</span><div class="ce-headtext"><div class="ce-name">Louis Roth</div><div class="ce-meta">Atelier tätig 1890 – 1907</div><div class="ce-rel">Porträtfotograf</div></div></div>
+      <div class="ce-role">Porträtfotograf in St. Louis</div>
+      <div class="ce-bio">Betrieb sein Atelier in der 2006 South Broadway, 0,7 Meilen vom Wohnhaus von Charles in der DeKalb Street entfernt. Fertigte das einzige bekannte Porträt von Charles an, das sich anhand der Betriebszeiten des Ateliers auf die Zeit zwischen dem Tod seiner Frau 1896 und seinem eigenen 1903 datieren lässt.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="portrait" href="../stories/1-portrait.html" title="Geschichte 01 — Eine Fotografie in einem Umzugskarton">01</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<section class="cast-group">
+  <div class="group-head">
+    <h2>Im Hintergrund und historisch</h2>
+    <div class="group-blurb">Figuren, welche die Geschichten prägen, ohne unmittelbar in ihnen aufzutreten.</div>
+  </div>
+  <div class="cast-grid">
+
+    <div class="cast-entry theme-offstage">
+      <div class="ce-head"><span class="ce-avatar avatar-offstage" aria-hidden="true">F1</span><div class="ce-headtext"><div class="ce-name">Friedrich Wilhelm I</div><div class="ce-meta">1802 – 1875</div><div class="ce-rel">Historisch · der Kurfürst</div></div></div>
+      <div class="ce-role">Abgesetzter Kurfürst von Hessen-Kassel</div>
+      <div class="ce-bio">Der letzte regierende Kurfürst von Hessen-Kassel — der deutsche Staat, in dem Charles geboren wurde. Am 23. Juni 1866 von preußischen Truppen abgesetzt und nach Stettin überführt. Charles' Erstgeborener trägt seine Vornamen.</div>
+      <div class="ce-stories">In Geschichte <a class="story-num" data-story="elector" href="../stories/4-elector.html" title="Geschichte 04 — Der Erstgeborene und der abgesetzte Kurfürst">04</a></div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles-Forschung</strong> · Eine genealogische Untersuchung von Jed Johnson mit Peter Schräder und James Gunnis · <a href="index.html">Startseite</a> · <a href="../stories.html">Geschichten</a> · <a href="cast.html">Personenverzeichnis</a> · <a href="abstract.html">Zusammenfassung</a> · <a href="../methodology.html">Methodik</a> · <a href="../bibliography.html">Bibliographie</a> · <a href="../people/index.html">Personen, die Charles kannten</a> · <a href="open-questions.html">Offene Fragen</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../de/index.html">Startseite</a></li>
+        <li><a href="../de/stories.html">Geschichten</a></li>
+        <li><a href="../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../methodology.html">Methodik</a></li>
+        <li><a href="../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../de/glossary.html">Glossar</a></li>
+        <li><a href="../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../de/about.html">Über</a></li>
+        <li><a href="../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

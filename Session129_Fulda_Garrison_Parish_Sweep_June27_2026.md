@@ -69,9 +69,35 @@ Feb 1838 Fulda, father Michael, Feldwebel; reg. 168326 Bild 852).
   entries 757-~1005; index shuffled+duplicated ~1005-1024 (G=1006-1007, H=1008/1012,
   J=1009, K=1010-1011, A=1014, N=1015, M=1017-1018, O=1019, P=1013/1020, L=1022).
 
+## ADDENDUM — Kassel garrison BAPTISM indexes fully swept (G + K), per Jed
+Jed: "do a sweep of the kassel garrison baptism indexes" + "also look for Konze, konzen, etc."
+All three Taufen volumes' name-indexes read leaf-by-leaf, checking BOTH the G section
+(Gastmann/Gans) AND the K section (Konze/Konzen/Kontze/Konsen — core project pool, directly
+relevant to Charles). Indexes are shuffled + DUPLICATED + X-card-separated (slow but doable).
+- **Taufen 1833-1842 (174005)** — Charles's birth-year volume. **G leaf=Bild 2060** (one entry,
+  "Gi[ss]ert/…Wagenmann" S.163 — NOT Gastmann/Gans). **K leaf=Bild 2064-65** = Kuhl, Köhler,
+  Knoche, Klobes, Kahm, Knapp, Kümmel, Korngiebel, Krall, Katzenstein, Kaufmann, Klane, Kleinhans,
+  Kodding, Kirchner, Koch, Korb, Käseberg, Karz, Klippert, Küchmann, Kersting, Kerstan, Knäppel.
+  (Index map: G=2060, I/J=2063, K=2064-65, W=2070/2085, V=2082-83, Z=2088.) ⇒ **NO Konze, NO Gastmann.**
+- **Taufen 1843-1851 (174008)** — **G=Bild 2251 (+2257 cont.)** = Glaese, Gerland, Gerstner,
+  Gerngroß, Glaesemann, George, Greis, Grimmel, Gerung, Geiler, Greßmann, Geis, Geyer, Götzemann,
+  Glaß. **K=Bild 2256** = Köster, Kramer, Kraus, Kreuter, Kühl, Kerstan(g), Kühlewein, Krug,
+  Kaufmann, Kreutewig, Kraft, Köhler, Krapp, König, Klipp, Klein. **I/J=2255** (Jäger, Jünger,
+  Jacob, Jost, Jüngst, Jüngermann — no Jungkonze). **C=2249** (Cantz, Cantzmann, Crell, Conrad,
+  Clobes — no Contze/Conze). (Map: C=2249, D=2246, G=2251/2257, H=2247/2250/2252, I/J=2255, K=2256,
+  N=2254, R=2253, U=2271, W=2262/2274, Z=2272.) ⇒ **NO Konze, NO Gastmann.**
+- **Taufen 1852-1865 (174011, own film 234)** — garrison winding down pre-1866 → few baptisms,
+  SPARSE index ~Bild 227-234 (B=227, H=233/234, W=231; struck M/N/H at 228/229; blank X/Y/Z=230;
+  X-card=232). **NO G leaf and NO K leaf present** → no Gastmann/Gans, no Konze among the few
+  1852-65 families. H leaf = genuine Hartmanns. (100%-certain clearance would need a direct read of
+  the ~70 entries, but the index shows no G/K target.)
+- **NET:** the Kassel Garnisongemeinde baptisms 1833-1865 contain **NO Konze/Konzen/Kontze/Konsen
+  and NO Gastmann/Gans.** Combined with the negative marriage index, the Kassel garrison is clean
+  on Taufen + Trauungen for both the Gastmann near-miss and the Charles Konze pool.
+
 ## Outputs
-- `germany/fulda-research-log.html` — new "Garrison-parish sweep (27 June 2026)"
-  section + Sources-checked rows + updated follow-up.
+- `germany/fulda-research-log.html` — "Garrison-parish sweep" section + Sources-checked rows
+  updated with the 3-volume baptism-index sweep (G + K, incl. the Konze checks).
 - Working tracker: `gastmann_garrison_sweep_tracker.md` (scratch).
 
 ## Next steps (low priority; Gastmann near-miss only, not Charles)

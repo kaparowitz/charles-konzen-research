@@ -40,7 +40,7 @@
   .panel-intro{font-size:1rem;color:var(--ink-soft);margin:.2rem 0 1rem;max-width:70ch}
   .chartcard{background:var(--parch2);border:1px solid var(--line);border-radius:8px;padding:.6rem .4rem;
     box-shadow:0 1px 4px rgba(0,0,0,.05);overflow-x:auto}
-  svg{display:block;width:100%;height:auto;min-width:660px}
+  .chartcard svg{display:block;width:100%;height:auto;min-width:660px}
   .legend{display:flex;gap:.4rem .9rem;flex-wrap:wrap;margin:.9rem .2rem 0;
     font-family:'Inter',system-ui,sans-serif;font-size:.8rem}
   .lg{display:inline-flex;align-items:center;gap:.35rem;cursor:pointer;color:var(--meta);
@@ -72,13 +72,15 @@
   .star{font-size:.9rem}
 </style>
 <!-- BEGIN-INJECTED-NAV-ASSETS -->
-<link rel="stylesheet" href="assets/site-nav.css">
-<script defer src="assets/site-nav.js"></script>
-<link rel="stylesheet" href="assets/cite-widget.css?v=20260530-citecontrast">
-<script defer src="assets/cite-widget.js"></script>
-<link rel="stylesheet" href="assets/deep-zoom.css">
-<script defer src="assets/deep-zoom.js"></script>
+<link rel="stylesheet" href="assets/site-nav.css?v=20260629sticky">
+<script defer src="assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=4952ce8911">
+<script defer src="assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="assets/deep-zoom.js?v=6e7b08c2f2"></script>
 <!-- END-INJECTED-NAV-ASSETS -->
+<script defer src="assets/de-pages.js?v=20260628"></script>
+<script defer src="assets/lang-toggle.js?v=20260628"></script>
 </head>
 <body>
 <!-- BEGIN-INJECTED-NAV -->
@@ -181,7 +183,7 @@
 
   <!-- ================= SURNAME VIEW ================= -->
   <section class="view active" id="view-surname">
-    <p class="panel-intro">Each dot is one dated record, 1862–1903. Vertical position groups records by <strong>who supplied the name</strong>; colour groups the spelling family. The form Charles signed himself (<em>Gannsen</em>) stays remarkably stable, while the spellings clerks captured by ear drift wildly — and the single closest match to the candidate German surname, <em>Konzen</em>, appears only once, on his daughter's 1890 death record.</p>
+    <p class="panel-intro">Each dot is one dated record, 1862–1903. Vertical position groups records by <strong>who supplied the name</strong>; colour groups the spelling family. The surname fixed in his <em>official record</em> (<em>Gannsen</em>) — first written by a military clerk at enlistment, then carried into his naturalization and pension because the legal paperwork had to match — stays remarkably stable, while the spellings church and census clerks captured by ear drift wildly. The single closest match to the candidate German surname, <em>Konzen</em>, appears only once, on his daughter's 1890 death record.</p>
     <div class="chartcard"><svg id="svg-surname" viewBox="0 0 920 430" role="img" aria-label="Timeline of surname spellings 1862 to 1903"></svg></div>
     <div class="legend" id="legend-surname"></div>
     <div class="detail" id="detail-surname"><div class="placeholder">Tap a marker above to read the record.</div></div>
@@ -190,32 +192,32 @@
   <!-- ================= BIRTH VIEW ================= -->
   <section class="view" id="view-birth">
     <p class="panel-intro">Every record that states Charles's age implies a different birth year — spanning <strong>~1825 to ~1841</strong>, a 16-year spread. Only one source gives an exact date: the St. Marcus burial register, <strong>26 January 1835</strong>, the project's working birth date (shown as the gold star).</p>
-    <div class="chartcard"><svg id="svg-birth" viewBox="0 0 920 360" role="img" aria-label="Implied birth years across records"></svg></div>
+    <div class="chartcard"><svg id="svg-birth" viewBox="0 0 920 400" role="img" aria-label="Implied birth years across records"></svg></div>
     <div class="detail" id="detail-birth"><div class="placeholder">Tap a marker above to read the record.</div></div>
   </section>
 
   <p class="note">
-    Data transcribed from the project's own <strong>Surname across the records</strong> and <strong>Birth date across the records</strong> pages. Spelling families are a presentation aid, not a source claim; confidence labels and the “who supplied it” grouping follow the site's evidence ratings. <em>Gannsen</em> is the form Charles signed himself; <em>Johnson</em> is the adopted American name carried from 1871. This explorer is a reading aid — the underlying records and their images remain the authority.
+    Data transcribed from the project's own <strong>Surname across the records</strong> and <strong>Birth date across the records</strong> pages. Spelling families are a presentation aid, not a source claim; confidence labels and the “who supplied it” grouping follow the site's evidence ratings. <em>Gannsen</em> is the surname fixed in his official record — first written by a military clerk at enlistment and kept through naturalization and pension; <em>Johnson</em> is the adopted American name carried from 1871. This explorer is a reading aid — the underlying records and their images remain the authority.
   </p>
 </div>
 
 <script>
 /* ---------- DATA (transcribed from surname-records.html / birthdate-records.html) ---------- */
 // fam: g / k / j / self / johnson  → colour. lane index 0..4 by supplier.
-const LANES = ["Charles himself","At a child's font","City directory","U.S. census","Death / burial record"];
+const LANES = ["Official / state records","At a child's font","City directory","U.S. census","Death / burial record"];
 const FAMS = {
-  self:   {c:"var(--self)",    label:"Gannsen — self-signed"},
+  self:   {c:"var(--self)",    label:"Gannsen — official / state-record form"},
   g:      {c:"var(--g)",       label:"G-forms (Gonnson · Gansen · Gonsen · Gonson)"},
   k:      {c:"var(--k)",       label:"K-forms (Konsen · Konzen)"},
   j:      {c:"var(--j)",       label:"J-forms (Jansen)"},
   johnson:{c:"var(--johnson)", label:"Johnson — adopted name"}
 };
 const SUR = [
-  {d:"2 Dec 1862", x:1862.9, name:"Gannsen", fam:"self", lane:0, rec:"Civil War enlistment / Compiled Service Record (NARA M405, Battery B, 2nd Missouri Light Artillery).", who:"Charles himself — his own signature.", conf:"High · self-attested"},
+  {d:"2 Dec 1862", x:1862.9, name:"Gannsen", fam:"self", lane:0, rec:"Civil War enlistment / Compiled Service Record (NARA M405, Battery B, 2nd Missouri Light Artillery).", who:"Signed by Charles — but the surname was first set by the enlisting clerk, and his own later renderings vary, so the signature reads as following the clerk's spelling rather than asserting a fixed name.", conf:"Original · signed, clerk's spelling"},
   {d:"Jan 1866",   x:1866.0, name:"Gonnson", fam:"g", lane:1, rec:"St. Marcus marriage register (to Auguste Kreichelt); scribe Pastor G. W. Wall.", who:"Charles as groom — the principal speaking.", conf:"Strong · 1° informant"},
   {d:"1866",       x:1866.5, name:"Gonnson", fam:"g", lane:1, rec:"Son Friedrich Wilhelm's baptism, St. Marcus (b. 20 Jun 1866).", who:"A parent at the child's font.", conf:"Strong · 1° informant"},
   {d:"1 Jun 1868", x:1868.4, name:"Gonnson", fam:"g", lane:1, rec:"Daughter Maria Josephine's baptism, St. Marcus (p. 224, entry 5857).", who:"A parent at the child's font.", conf:"Strong · 1° informant"},
-  {d:"21 Oct 1868",x:1868.8, name:"Gannsen", fam:"self", lane:0, rec:"U.S. naturalization, St. Louis — renounces 'the King of Prussia'.", who:"Charles's own petition; kept the Civil-War clerk's spelling.", conf:"High · self-attested"},
+  {d:"21 Oct 1868",x:1868.8, name:"Gannsen", fam:"self", lane:0, rec:"U.S. naturalization, St. Louis — renounces 'the King of Prussia'.", who:"Charles's naturalization petition — bound to the Civil-War clerk's spelling for legal continuity.", conf:"Official · matches service record"},
   {d:"22 May 1870",x:1870.4, name:"Gansen", fam:"g", lane:1, rec:"Daughter Katherine's baptism, St. Marcus; scribe Pastor Heinrich Braschler (Swiss).", who:"A parent at the child's font.", conf:"Strong · 1° informant"},
   {d:"1871",       x:1871.3, name:"Johnson", fam:"johnson", lane:2, rec:"Edwards' Directory p. 352 — 'Johnson, Charles, conductor, St. Louis R.R., r. 718 Gate.'", who:"Directory canvasser — first appearance of the adopted American name.", conf:"Original · directory"},
   {d:"23 Jun 1872",x:1872.5, name:"Gonsen", fam:"g", lane:1, rec:"Daughter Auguste's baptism, St. Marcus; scribe Pastor Braschler again.", who:"A parent at the font — same hand as 1870, different vowel.", conf:"Strong · 1° informant"},
@@ -226,8 +228,8 @@ const SUR = [
   {d:"1880",       x:1880.0, name:"Gonson", fam:"g", lane:3, rec:"U.S. Federal Census, 1534 Jackson St., St. Louis ('Charles Gonson').", who:"Informant unrecorded — any adult in the household could have answered.", conf:"Original · 2° info"},
   {d:"4 Sep 1881", x:1881.7, name:"Jansen", fam:"j", lane:1, rec:"Daughter Bertha's baptism, St. Marcus; scribe Pastor Johannes Nollau.", who:"A parent at the font — the J-form again.", conf:"Moderate · 1° informant"},
   {d:"1890",       x:1890.0, name:"Konzen", fam:"k", lane:4, rec:"Daughter Auguste's death record, St. Marcus — 'geb. Konzen'.", who:"A family informant — the single American attestation of the candidate German z-form.", conf:"Strong · maiden-name datum"},
-  {d:"1890–91",    x:1890.6, name:"Gannsen", fam:"self", lane:0, rec:"U.S. pension file — sworn invalid-pension declarations (cert. 14498, file F41-523680269E).", who:"Charles himself, under oath.", conf:"High · self-attested"},
-  {d:"1895",       x:1895.0, name:"Gannsen", fam:"self", lane:2, rec:"Gould's Directory — 'Gannsen Charles, watch, r. rear 2407 DeKalb' (son Charles Jr. below).", who:"Directory canvasser, recording his self-used form.", conf:"Original · directory"},
+  {d:"1890–91",    x:1890.6, name:"Gannsen", fam:"self", lane:0, rec:"U.S. pension file — sworn invalid-pension declarations (cert. 14498, file F41-523680269E).", who:"Sworn pension declarations — filed under the enlistment surname required to claim his service.", conf:"Official · matches service record"},
+  {d:"1895",       x:1895.0, name:"Gannsen", fam:"self", lane:2, rec:"Gould's Directory — 'Gannsen Charles, watch, r. rear 2407 DeKalb' (son Charles Jr. below).", who:"Directory canvasser, recording his official-record surname.", conf:"Original · directory"},
   {d:"1896",       x:1896.0, name:"Conson", fam:"g", lane:4, rec:"Wife Auguste's death record, St. Marcus; scribe Pastor Eilt Heeren Eilts.", who:"Charles as surviving spouse — the principal, again.", conf:"Strong · 1° informant"},
   {d:"17 Dec 1903",x:1903.0, name:"Johnson", fam:"johnson", lane:4, rec:"City of St. Louis death certificate no. 10619 ('Charles L. Johnson').", who:"Supplied by a survivor, post-mortem.", conf:"Original · 2° info"}
 ];
@@ -268,13 +270,41 @@ function drawSurname(){
     const t=el("text",{x:xPos(y),y:laneY(LANES.length-1)+28,"text-anchor":"middle"});t.textContent=y;ax.appendChild(t);
   });
   svgS.appendChild(ax);
+  // ---- label placement: avoid overlaps within each lane ----
+  // Records close together in time (esp. the "At a child's font" lane) would
+  // otherwise stack their labels on top of one another. We sort each lane by
+  // date and greedily assign each label to the nearest free "level":
+  // 0 = just above the dot, 1 = just below, 2 = higher above, 3 = lower below…
+  const CHARW=6.0, GAP=2;            // approx px per char @10px, + breathing room
+  const visible=SUR.map((r,idx)=>({r,idx})).filter(o=>!off.has(o.r.fam));
+  const level={};                    // idx -> chosen level
+  const byLane={};
+  visible.forEach(o=>{(byLane[o.r.lane]=byLane[o.r.lane]||[]).push(o);});
+  Object.values(byLane).forEach(arr=>{
+    arr.sort((a,b)=>a.r.x-b.r.x);
+    const rightEdge={};              // level -> right edge of last label placed
+    arr.forEach(o=>{
+      const cx=xPos(o.r.x), half=o.r.name.length*CHARW/2+4;
+      let lv=0;
+      while(rightEdge[lv]!==undefined && cx-half <= rightEdge[lv]+GAP) lv++;
+      rightEdge[lv]=cx+half;
+      level[o.idx]=lv;
+    });
+  });
   // nodes
-  SUR.forEach((r,idx)=>{
-    if(off.has(r.fam))return;
+  visible.forEach(o=>{
+    const r=o.r, idx=o.idx;
     const g=el("g",{class:"node",tabindex:0,"data-i":idx});
     const cx=xPos(r.x),cy=laneY(r.lane);
+    const lv=level[idx]||0, above=(lv%2===0), tier=Math.floor(lv/2);
+    const dy=above ? -(14+tier*12) : (18+tier*12);
+    // leader line when the label is pushed to a far tier
+    if(tier>0){
+      const y1=above?cy-9:cy+9, y2=cy+dy+(above?4:-9);
+      g.appendChild(el("line",{x1:cx,y1,x2:cx,y2,stroke:"var(--line)","stroke-width":1}));
+    }
     g.appendChild(el("circle",{cx,cy,r:9,fill:FAMS[r.fam].c,"fill-opacity":.9,stroke:"#fff","stroke-width":2}));
-    const t=el("text",{x:cx,y:cy-14,"text-anchor":"middle",style:"font-family:Inter,sans-serif;font-size:10px;font-weight:600;fill:var(--ink)"});
+    const t=el("text",{x:cx,y:cy+dy,"text-anchor":"middle",style:"font-family:Inter,sans-serif;font-size:10px;font-weight:600;fill:var(--ink)"});
     t.textContent=r.name;g.appendChild(t);
     g.addEventListener("click",()=>selSur(idx,g));
     g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();selSur(idx,g);}});
@@ -303,7 +333,7 @@ Object.keys(FAMS).forEach(f=>{
 
 /* ---------- BIRTH CHART ---------- */
 const svgB=document.getElementById("svg-birth");
-const BX0=70,BX1=890,BY=150,Y_MIN=1823,Y_MAX=1843;
+const BX0=70,BX1=890,BY=210,Y_MIN=1823,Y_MAX=1843;
 function bx(yr){return BX0+(yr-Y_MIN)/(Y_MAX-Y_MIN)*(BX1-BX0);}
 function drawBirth(){
   svgB.innerHTML="";
@@ -317,24 +347,47 @@ function drawBirth(){
   }
   svgB.appendChild(ax);
   // canonical band at 1835
-  svgB.appendChild(el("line",{x1:bx(1835),y1:30,x2:bx(1835),y2:BY,stroke:"var(--gold-bright)","stroke-width":2,"stroke-dasharray":"3 3"}));
-  const ct=el("text",{x:bx(1835),y:24,"text-anchor":"middle",style:"font-family:Inter,sans-serif;font-size:11px;font-weight:700;fill:var(--gold)"});
+  svgB.appendChild(el("line",{x1:bx(1835),y1:34,x2:bx(1835),y2:BY,stroke:"var(--gold-bright)","stroke-width":2,"stroke-dasharray":"3 3"}));
+  const ct=el("text",{x:bx(1835),y:26,"text-anchor":"middle",style:"font-family:Inter,sans-serif;font-size:11px;font-weight:700;fill:var(--gold)"});
   ct.textContent="26 Jan 1835 · working date";svgB.appendChild(ct);
-  // markers: stagger above/below to avoid overlap
+  // ---- label placement: avoid overlaps ----
+  // Several records imply birth years within a year or two of each other
+  // (four cluster around 1834-1835), so a simple up/down alternation still
+  // collides. Instead, sort by year and greedily assign each marker to the
+  // nearest free slot: up0, down0, up1, down1 … so labels never overlap.
+  const labelText=r=>r.stated.replace(/"/g,'');
+  const CHARW=5.6, GAP=6;
   const sorted=[...BIRTH].map((r,i)=>({r,i})).sort((a,b)=>a.r.yr-b.r.yr);
-  sorted.forEach((o,k)=>{
-    const r=o.r, up=(k%2===0);
-    const cx=bx(r.yr), cy=BY+(up?-46:46)-(up?0:0);
-    const stem=BY;
-    svgB.appendChild(el("line",{x1:cx,y1:stem,x2:cx,y2:cy,stroke:r.canon?"var(--gold)":"var(--meta)","stroke-width":r.canon?2:1}));
+  const placed=[];                   // {side,tier,x0,x1}
+  // Place every non-canonical marker greedily; the working-date star is
+  // pinned to the top afterwards so it always sits above the others.
+  sorted.filter(o=>!o.r.canon).forEach(o=>{
+    const cx=bx(o.r.yr), half=labelText(o.r).length*CHARW/2+GAP;
+    let slot=0;
+    while(true){
+      const side=(slot%2===0)?"up":"down", tier=Math.floor(slot/2);
+      const clash=placed.some(p=>p.side===side&&p.tier===tier&&!(cx+half<p.x0-GAP||cx-half>p.x1+GAP));
+      if(!clash){o.side=side;o.tier=tier;placed.push({side,tier,x0:cx-half,x1:cx+half});break;}
+      slot++;
+    }
+  });
+  // pin the canonical (working-date) marker to a tier above every up marker
+  const maxUpTier=placed.filter(p=>p.side==="up").reduce((m,p)=>Math.max(m,p.tier),-1);
+  sorted.filter(o=>o.r.canon).forEach(o=>{o.side="up";o.tier=maxUpTier+1;});
+  // ---- draw ----
+  const MOFF=46, TGAP=42;
+  sorted.forEach(o=>{
+    const r=o.r, up=(o.side==="up");
+    const cx=bx(r.yr), cy=up?BY-(MOFF+o.tier*TGAP):BY+(MOFF+o.tier*TGAP);
+    svgB.appendChild(el("line",{x1:cx,y1:BY,x2:cx,y2:cy,stroke:r.canon?"var(--gold)":"var(--meta)","stroke-width":r.canon?2:1}));
     const g=el("g",{class:"node",tabindex:0});
     if(r.canon){
-      g.appendChild(el("path",{class:"star",d:starPath(cx,cy,11,5),fill:"var(--gold-bright)",stroke:"var(--gold)","stroke-width":1.5}));
+      g.appendChild(el("path",{class:"star",d:starPath(cx,cy,16,6.5),fill:"var(--gold-bright)",stroke:"var(--gold)","stroke-width":1.5}));
     }else{
       g.appendChild(el("circle",{cx,cy,r:8,fill:"#fff",stroke:"var(--k)","stroke-width":2.5}));
     }
-    const t=el("text",{x:cx,y:up?cy-15:cy+22,"text-anchor":"middle",style:"font-family:Inter,sans-serif;font-size:10px;font-weight:600;fill:var(--ink)"});
-    t.textContent=r.stated.replace(/"/g,'');g.appendChild(t);
+    const t=el("text",{x:cx,y:up?cy-(r.canon?22:15):cy+22,"text-anchor":"middle",style:"font-family:Inter,sans-serif;font-size:10px;font-weight:600;fill:var(--ink)"});
+    t.textContent=labelText(r);g.appendChild(t);
     g.addEventListener("click",()=>selBirth(o.i,g));
     g.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();selBirth(o.i,g);}});
     svgB.appendChild(g);

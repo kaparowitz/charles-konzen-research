@@ -269,7 +269,90 @@ deep-dive landing pages like `civilwar/places-served.html`,
   **"Carl August," b. 7 Jan 1833, ILLEGITIMATE (mother Mangold / father Rost), Nro16/S5/img110** — non-Konze surname, 1833 not
   1835, illegitimate → NOT Charles (near-miss like Liebenau's Carl August Büster). No Konze surname anywhere in 1830-1841.
   Full 1830-1841 window now read & cited; Dissen stays ELIMINATED.
+- 244439 (Gudensberg TOWN Taufen 1830-1844, Kirchenkreis Fritzlar; 531 imgs; "komplett transkribiert"; **baptism
+  name-INDEX swept 27 Jun 2026, Session 135**): closes the old "Gudensberg own Taufen not surname-scanned" caveat.
+  Baptism body = ONE opening per Seite at **Seite = Bild − 248** (Bild 250 = Seite 2 / 1830 Aug; **Bild 267 = Seite 19 /
+  1831 Aug-Sept**); register runs ~Seite 1-254 (1830-1844), Nro continuous (~4/Seite). ⚠️ Despite the "komplett
+  transkribiert" tag, the **alphabetical name-index leaves are NOT served with usable AI/OCR text** (get_page_text +
+  the txt overlay return nothing on the index) → index read BY EYE; stale-canvas after every page-number jump (force a
+  redraw with a zoom +/−, OR step with the next/prev arrows). The **A-Z name-index sits at the END of the reel,
+  Bild ~508-525**, columns Männlich|Seite|Weiblich|Seite, entries ordered BY SEITE within each letter (NOT
+  sub-alphabetical), and common letters span TWO leaves. Letter→Bild map (verified live): **A|B = 508; B·C|D = 510**
+  (p/85f21c743c); **D|E = 509; E = 511; F|G = 513** (p/f41ff41983, G first page); **G(cont) = 514; H|I·J = 515**
+  (p/0cae314e05); **I|K = 516** (p/d78fbe9f62); **K|L = 517** (p/a9b6fa22cf). (Leaves 509/510 are bound slightly out
+  of image order; no separate C page — B² overflow + C share one leaf.) ⭐ **RESULT = clean NEGATIVE for the ENTIRE
+  Konze/Gans pool.** • **K (516R+517L):** König, Korf, Köhler, Köhe, Knoll, Knauß, Kißmann, Kißler, Knoch, Kell,
+  Käufer, Krieg, Kolbe, Kußmann, Kümpel, Kümpfer, Kurz, Kaufhünger, Kirchmann, Koch, Klugfelder + one illeg. compound
+  "Kor[n]zügel" line — NO Konze/Kontze/Konsen/Konzen. • **I·J (515R):** Jungermann, Jungkurt/Jungcurt, Jacob — NO
+  Jungkonze/Jungkontze. • **G (513R+514):** Groß, Göppel, Gümbel, Göddel, Günther, Goestmann, Gerhard(t), Goebel,
+  Güth, Gridel, Gleisner, Gippert — NO Gans/Ganß/Ganson. • **C (510L, combined B·C leaf):** a single B-overflow entry
+  only ("Beier/Bäse…248") — NO Conson/Contze/Conze. ⚠️ **CORRECTION-IN-THE-ACT (rigor note):** the FIRST G entry,
+  "…Carl…, Seite 19", read as "Ganß" at low zoom, was VERIFIED at the baptism page (**Bild 267 = Seite 19**,
+  p/9ac4dd7943) to be **"Groß — Ferdinand Carl Hermann"**, male, bapt. **11 Sept 1831**, father the local Amts-Schäfer
+  Groß × Caroline geb. Finckel/Vinckel, godfather Ferdinand Borchmann zu Oberkirchen → **Groß, NOT Ganß** = NOT a pool
+  surname (lesson: Kurrent Ganß/Groß confusion — always verify a "G…ß" index hit at the entry). Only other G-Carl =
+  "Karl Goebel" S239 (~1844). So **NO Gans whatsoever in Gudensberg town** (unlike Oedelsheim/Heisebeck/Bodenfelde).
+  ⇒ Gudensberg TOWN now negative on the BAPTISM track too (was already neg on Konf. 244437 + filials Dissen 253403 /
+  Grifte 253444); **stays ELIMINATED.** Detail: Session135 log + germany/gudensberg-research-log.html.
+  **MARRIAGE + BURIAL indexes ALSO swept (28 Jun 2026, per Jed "scan the surnames") = NEGATIVE:**
+  • **Trauungen 1830-1863 = reg 244449** (shared reel 2438 imgs; Trau-section title "Trau- und Register" = Bild 2243;
+    alphabetical index at END of section, Bild ~2417-2424): **C empty (2417L); G = 2420-2421L** (Graewer, Gummerwald,
+    Geiser, Gröde, Groß, Gleisner, Glaser, Gippert, Gümbel, Griesel, Güth, Gold, Goebel, Grunewald, Gerhard; **p/ca1b922804**);
+    **I·J = 2422R** (Jungermann, Jacob, Fehler, Fulberger); **K = 2424** (Krug, Kurz, Krause, Kubnert, Kolbe, Kieser,
+    Küchmann, Kalb, Keim, Kaiser, Klöffler, Kneppor, Kauffunger, Kruse, Kroll, Kranz, Korb, Knorbe; **p/39dcd061fc**) →
+    NO Konze/Kontze/Jungkonze/Gans/Ganß/Conson.
+  • **Beerdigungen 1830-1851 = reg 244444** (shared reel 1121 imgs; burial-section title "Tod- und Register" = Bild 836;
+    entries Seite = Bild − 839 [Seite1=840, Seite248/1851=1087], end ~1091 + "blank pages NOT filmed" card 1095 + X-divider
+    1096; ⚠️ **the alphabetical index is filmed at the very END of the reel AFTER the X-card, Bild ~1097-1106**, NOT at the
+    section front/back): **C ~1100 (only a B-straggler "Beier 251"); G = 1103-1104** (Gleisner, Grantler, Gippert, Girt,
+    Grunewald, Groß, Gawer, Germeroth, Goebel, Gründer, Runte; **p/cee74ad45c**); **I·J = 1105R + empty "I" 1106L**
+    (Jungermann, Jacob, Jungkurt, Imberger); **K = 1106R** (Knoll, Krieg, Kußmann, Krug, Kolbe, Kaufunger, Kaiser,
+    Knödding, Kroll, Kranz, Korf, Kurz; **p/62a07114c5**) → NO Konze/Kontze/Jungkonze/Gans/Ganß/Conson.
+  NB the **"Jungkurt/Jungcurt"** surname (Jung+Kurt, a real local family — NOT Jungkonze) recurs in all THREE Gudensberg
+  indexes; do not mistake it for the Jungkonze pool surname. ⇒ ALL THREE Gudensberg vital registers (Taufen 244439,
+  Trauungen 244449, Beerdigungen 244444) now swept = NO Konze/Gans pool surname anywhere; Gudensberg comprehensively
+  ELIMINATED. (Trauungen reach to 1863 and burials to 1851, so the pool's absence is established well beyond the 1833-41
+  birth window.)
+- 168326 (Fulda Stadt ev. Taufen 1830-1863, Kirchenkreis Fulda; 1091 imgs; **baptism INDEX swept 27 Jun 2026,
+  Session 130**): section title card = Bild 785; baptism body ~Bild 789-1069. **⚠️ The body reel is DUPLICATED/
+  DISORDERED — Bild does NOT map linearly to Seite.** Live anchors: Bild 851=Seite63 (Dec1837); 852=Seite64
+  (1838, Gastmann Nro298, p/bf75a813e2); 888=Seite66 (Apr1838); 925=Seite137 (1849); 1060=Seite272 (1863).
+  (851→888 = +37 img for only +3 Seiten, but 888→925 = +37 img for +71 Seiten ⇒ heavy duplication.) **Read the
+  printed "Seite N / Jahr 18XX" header, never extrapolate from Bild.** This reel HAS the AI "Erkannter Text"
+  panel for most index leaves — **refresh it after a page jump by CLOSING (✕) and REOPENING (doc icon) the panel,
+  then `get_page_text` returns the current leaf** (otherwise it shows the previous leaf). ALPHABETICAL baptism
+  index: main A-Z **Bild 1071(A)→1082(W,Z)**, then "Fortsetzung"/overflow **1083-1088**, then end-of-reel TEST
+  CARDS 1089-1091 (alphabet + mm-scale — NOT a 2nd index). Letter→Bild (main run): A=1071, B/C=1072, D/E=1073,
+  F/G=1074, H/J=1075, K/L=1076, M/N=1077, O–V=1078-1081, W/Z=1082. Overflow: K-cont & S-cont=1083, H/W/B/S=1084,
+  G/R/S/L=1085 (dup 1086), S=1088. **RESULT (Charles surname-pool sweep, 1833-41 window): NEGATIVE** — every pool
+  letter read in BOTH main run + continuation: **C** (Claus, Clemann, Conradi, Clausius, Christiani, Chors,
+  Cornelius — no Conson); **G** (Göppel, Göbel, Groß, Gilbert, Gieseler, Gerlach, Gasche, Gilsa, Günther, Gümpel,
+  Giebel, Grünewald, Goller, Gutheil, Goßmann, Gud, Giet, Gies, Gauslandt, Gartlandt, Grau, Götze, Gutberlet — no
+  Gansen/Gonsen/Gonson/Gannsen/Gans; Gastmann is here, already excluded); **I/J** (Juffland, Just, Jahn, Jüngling,
+  Jahr, Immel, Jacobi, Jungermann, Jahre — no Jansen/Jungkonze); **K** (Klages, Kehl, Kietzell, Klostermann,
+  Kersten, Kuhn, Kraus, Koch, Köhler, Kayser, Knoll, Kunst, Kraut, Kapp, Knoch, Klüppel, Katzung, Kersting,
+  Kornemann, Kraft, Kurz, Kunze — no Konze/Kontze/Konsen/Konzen). Two near-tokens cleared: OCR stray "Komse 63"
+  → Seite 63 = Dec1837, no such surname (artifact, military families Giebel/Lange); "Kunze, Wilhelmine… Seite 100"
+  = female, ≈1843-44 (out of window). ⇒ NO Konze-pool baptism anywhere in Fulda EV 1830-1863. **Fulda EV stays
+  ELIMINATED** on the baptism track (corroborates Session 127's Gastmann verdict + garrison sweep). Detail:
+  Session130 log + germany/fulda-research-log.html.
 
+- 219154 (Haueda Taufen 1830-1928, Kirchenkreis Hofgeismar; 495 imgs; **baptism window calibrated + permalink minted
+  28 June 2026**): the Haueda Taufbuch section opens late in the reel — **section title card = Bild 258**, inner "Tauf
+  Buch" title = Bild 259, entries open Bild 260. WELL-ORDERED, one written Seite per image at **Seite = Bild − 260**
+  (verified live: Bild 264 = Seite 4 / 1831 Jan-März; Bild 272 = Seite 12 / 1834 Jan-Juni; Bild 273 = S13 / 1834
+  Juni-Okt; Bild 274 = S14 / 1834 Okt-Dez; **Bild 275 = Seite 15 / 1835 Januar Februar und März**). Filial book =
+  small parish, ~2-3 images/year. VIEWER QUIRKS: stale-canvas after a page-number jump (shows previous leaf until a
+  zoom +/− forces a redraw) — navigate single steps with the prev/next ARROWS (top ~58/216,140), which redraw cleanly
+  and preserve zoom; read the printed "Gemeinde Haueda · Jahr 18XX · Monat …" header, don't extrapolate from Bild.
+  ⭐ **Jan–Feb 1835 baptism window = ONE leaf, Bild 275 (Seite 15)**, which carries all of Jan/Feb/März 1835. Read by
+  eye = NEGATIVE: 1835 baptisms all legitimate on local surnames (Pille, Cramme, Pelte, Götte); no Konze/*n·s·n
+  surname, no boy b.26 Jan 1835. **Permalink minted: Bild 275 = https://www.archion.de/p/0c535638ad/** (verified to
+  resolve to pageId 19416172 / Bild 275). Minting flow on this viewer = chain icon (toolbar ~1123,140) → panel
+  "Permalink erstellen" → click "Erstellen"; the FIRST click is swallowed by a DE→EN panel re-render (button becomes
+  "Create"), so click again → wait ~3s → the p/<hash> URL renders with a "Permalink kopieren" button. (Leave the
+  "Zoomstufe & Bildbereich einschließen" box UNCHECKED for a clean page-level permalink.) Haueda stays ELIMINATED on
+  both tracks (baptism reg.219154 + confirmation reg.219151). Detail: germany/haueda-research-log.html.
 - 219013 (Gieselwerder/Oberweser Konfirmationen 1830-1957; 2145 imgs; swept 24 June 2026): conf. section
   title page = img 1958; inner "Konfirmations-Buch … Gemeinde Gieselwerder … 1. Juli 1830" = img 1959; first
   class (1830) = img 1960. ⭐ **CLEANLY ORDERED** (NOT shuffled/duplicated like the other Hofgeismar reels
@@ -280,8 +363,14 @@ deep-dive landing pages like `civilwar/places-served.html`,
   class→image map: 1847 img1981-82 (S49-50); 1848 img1982-83 (S50-52); **1849 img1983-84 (S52-55, 22=14M/8F,
   PRIME births Jan1835)**; **1850 img1984-85 (S55-57, 16=4M/12F, PRIME)**; 1851 img1985-87; 1852 img1987-88;
   1853 img1988-89; 1854 img1989-90; 1855 img1990. Permalink minting: chain icon (top toolbar ~1123,140) →
-  "Create"/"Erstellen"; FIRST click triggers DE→EN re-render so click again → p/<hash>. Anchor permalink
-  **Bild 1984 (1849 Summa + 1850 prime boys, births 1835) = p/b4d6bfe1ba** (verified). RESULT (1847-1855
+  "Create"/"Erstellen"; FIRST click triggers DE→EN re-render so click again → p/<hash>. (Minting gotcha, verified
+  28 Jun 2026: a Create click in the SAME browser_batch right after a page-jump gets swallowed by the panel
+  re-render — navigate in one call, then click Create in a SEPARATE call; and a 2nd Create click RESETS the
+  panel to the form, so click Create exactly ONCE per leaf.) ⭐ **PER-YEAR CONFIRMATION PERMALINKS minted live +
+  each verified to resolve (28 Jun 2026):** 1847=Bild1981 p/a36d2f7fa0; 1848=Bild1982 p/9c413c25d3;
+  **1849=Bild1983 p/0927f9755b (PRIME)**; **1850=Bild1984 p/5f2809a6dc (PRIME; older p/b4d6bfe1ba also valid)**;
+  1851=Bild1985 p/2190a077fd; 1852=Bild1987 p/5216ede6f9; 1853=Bild1988 p/5dc83c310e; 1854=Bild1989 p/e513052fe9;
+  1855=Bild1990 p/7e468e0689. RESULT (1847-1855
   sweep, ~140+ entries): **NEGATIVE** — NO Konze/Kontze/Gansen/Gonsen/*n-s-n surname anywhere; surname pool is
   the local Oberweser families (Marunde, Roll, Reuß, Nickel, Hennur, Vella, Schölla, Grafmann, Grovenmann,
   Lindner, Otto, Daus, Reitz, Müller, Masserschmidt…). Exactly ONE Carl in the window = Carl Friedrich Wilhelm
@@ -440,6 +529,27 @@ deep-dive landing pages like `civilwar/places-served.html`,
   therefore fall OUTSIDE this Taufen book (pre-1830 or in marriage/burial registers). Helmarshausen stays ELIMINATED on
   baptism (index + 1835 leaf), confirmation (219208), and OSB tracks. Detail in germany/helmarshausen-research-log.html +
   Session124 log.
+
+- 219106 / 220213 / 219586 (**Grebenstein / Veckerhagen / Immenhausen baptism INDEXES swept full-window 27 Jun 2026,
+  Session 133**): all three are "mit Register" Taufbücher whose **alphabetical name-index sits at the END of the Taufen
+  section** (one or two letters per spread; for a given letter the dense column is on the page bearing its header, with a
+  sparse "tail" on the next leaf). Calibrations: **Grebenstein 219106** (Taufen **1830-1839**, 1183 imgs; title card Bild 900):
+  index Bild ~1160-1170 — **C** Bild 1161L (BLANK), **G** Bild 1164R, **I/J** Bild 1166R, **K** Bild 1167R+1168L; I|K leaf
+  permalink **p/db1cc999b5** (verified). **Veckerhagen 220213** (Taufen **1830-1851**, 1068 imgs; title card Bild 777):
+  index Bild ~1044-1051 — **C** Bild 1044R, **G** Bild 1048R, **I/J** Bild 1050R (one entry), **K** Bild 1051R; permalink
+  **p/2ae59285f6**. **Immenhausen 219586** (Taufen **1830-1845**, 909 imgs; title card Bild 629): compact index Bild ~884-896 —
+  **C** Bild 884R, **G** Bild 888R(+889L), **I/J** Bild 890R(+891L), **K** Bild 891R+892L; permalink **p/b762726f0f**.
+  RESULT = **NEGATIVE in all three** for the entire Konze pool (Konze/Kontze/Konsen/Konzen · Conson/Contze · Gans/Gansen/
+  Gonson/Gannsen · Jansen/Jungkonze). Surname pools are tight local Hofgeismar families: Grebenstein K=Knollführer/Klinger/
+  Köster/Krum/Krieger/Kampfing/Knull/Korn/König/Kraus/Konrad, G=Groß/Gude/Gellner/Gerland/Gerlach; Veckerhagen K=König/Koß/
+  Köhler/Köster/Knollführer, G=Graf/Gerlach/Günther/Gunkel, C=Cellmann/Söhre; Immenhausen K=Kobe/Köster/Kroll/Kraft/Kaufholz/
+  Knierim/Krollshof/Koch/Krohne/Knauf/Kempf/Kayser/Kohl/Kurth, G=Gemmecke/Glänzer/Gläser/Gerlach/Goedecke/Geske, C="Carl"
+  family only (the surname behind Immenhausen's 1849 confirmand "Friedrich Carl"), I/J=Iserloh/Jacob/Jäger/Junker. These
+  upgrade the three from 1835-window-only to FULL-INDEX coverage; all stay ELIMINATED. ⚠️ Same viewer quirks as 219214:
+  the on-screen `zoom`-region tool **drifts up-and-right** (DPR mismatch — shift the requested region DOWN, or use the
+  in-viewer "+" then a plain screenshot); the page-number input is stale-canvas-prone and occasionally MIS-navigates in
+  full-screen — the **thumbnail-strip click is the most reliable jump**, prev/next arrows redraw cleanly. Detail in
+  Session133 log + the three germany/<parish>-research-log.html files.
 
 - 220042 (Sielen Taufen 1830-1876, Kirchenkreis Hofgeismar; reel of 2112 imgs; **swept 1833-1841 on 26 Jun 2026,
   Session 125**): WELL-ORDERED, **one written Seite per image ⇒ image = Seite + 1828**. Title page = Bild 1826;
@@ -746,6 +856,31 @@ browser; `web_fetch` shows only a shell):
   cohort. STILL TO DO: Namensregister 359381 G-section (every Gans + years) / printed OSB for the
   Gans-family timing + emigration gap. NB this viewer's page-field concatenates digits — clear
   with triple-click; jumps misfire, so verify the on-image year header.
+- **Wahmbeck** (Lkr. Northeim; own parish **Kirchenkreis Uslar**, 8 books, NO Namensregister, NO
+  Kunze OSB, never flagged for the pool): ARCHION 1835 baptisms = **KB 1790-1845 reg 359497**
+  (combined, sectioned by rite; tabular Geburts-Register with clean "Familien-Namen" column;
+  ~2 img/yr in Taufen: 1833=Bild93, 1835=Bild94-95, 1836=Bild96; **bound out of order / Erst+
+  Zweitschrift** — 94r=1836 while 95l=1835, so the Jan-Aug 1835 leaf Nro1-21 was NOT isolated).
+  1835 Nro22-29 (Sept-Dec)+1834/1836 read = **EFFECTIVELY NEGATIVE: no Gans/Konze/Kontze**; whole
+  local pool = Arnstmeier, Rammenstein, Niemeyer, Friese, Elend, Förtner, Morgenstern, Grote,
+  König, Meister, Bremer, Brockhaus, Pape, Hesse, Grobe, Hauck, Krautmann, Schröder, Vömer.
+  Only Carls = Carl H.W. Morgenstern (b.7 Dec 1835) + Carl …Brockhaus (b.25 Feb 1836), non-pool.
+  **CONFIRMATION WINDOW + BAPTISM INDEX swept (28 Jun 2026, Session 136):** (1) **No baptism
+  name-index exists** — reg 359497 opens straight into the chronological "Natorum Catalogus"
+  (Bild 3); the marginal "Familien-Namen" column is the only finding aid (confirms the "NO
+  Namensregister" note). (2) Confirmations: reg 359497's Confirmanden-Register is at the **end**
+  and ENDS **1845** (Bild ~260-263; 1845 class read = local pool, no Konze/Gans), so the 1833-41
+  birth window (conf ~1847-1855) is in **KB 1846-1852 = reg 359498** (89 img), whose confirmation
+  section runs ~1846→~1864. ⚠️ reg 359498 confirmations are **SHUFFLED + DUPLICATED** (Bild 60=62,
+  61=64), **no OCR** — identify leaves by entries, read in Vollbild + drag-pan to the confirmand
+  column. Window classes read (~conf 1848-1851 in full, adjacent spot-read): boys/girls all
+  **local Solling pool** — Brackhahn, Henne, Koenig, Husshebeck, Korps, Lücke, Otte, Engelhard,
+  Eckhardt, Rammenstein, Wienecke, Burgendahl, Garbe, Marktler, Fricke, Drewmann, Bähre,
+  Strackmann, Willich, Neuhaus, Pogge (+1845 class: Niemeier, Marlow, Arnstmann, Schrade,
+  Mecklenburg, Sprenger, Schmidt, Roße, Claus). **NO Konze/Kontze/Gans confirmand anywhere.**
+  ⇒ Wahmbeck NEGATIVE for Charles on BOTH tracks; stays ELIMINATED. Residual (minor): full
+  per-year de-dup of the shuffled 359498 reel (births 1839-41 spot-read only) = Kurrent second
+  eye. Detail: `Session136_Wahmbeck_Confirmation_Window_BaptismIndex_June28_2026.md`.
 - **Bodenfelde** (`bf/register-osb-bodenfelde.htm`; Lkr. Northeim, Kirchenkreis Uslar): the OSB
   **IS published/online** (the `bodenfelde.htm` "in Arbeit nicht vor 2012" page is stale).
   **Gans = 15 fams: 13,95,118,141,155,170,171,196,197,229,256,453,456,480,538** (+Gansberg 170,
@@ -767,11 +902,84 @@ browser; `web_fetch` shows only a shell):
   img19=F), G/Contze leaf not cleanly isolated — follow-up.
 - ⇒ Bodenfelde mirrors **Oedelsheim**: a real Weser Gans population whose **1835 cohort yields no
   Carl Gans** → keeps the corridor "Gans→Gannsen emigrated ~1850s, not an 1835 baptism" reading.
-- **STILL TO DO (full sweep, one-at-a-time per Jed):** **Wahmbeck on Archion (not started)**;
+- **STILL TO DO (full sweep, one-at-a-time per Jed):** Wahmbeck DONE (effectively neg, above);
   finish **Bursfelde** Gans-timing (Fürstenhagen Namensregister 359381 G-section / printed OSB);
+  optional: locate Wahmbeck's displaced Jan-Aug 1835 leaf to fully close the 26-Jan check;
   Bodenfelde Familienbuch/Kartei Gans + Contze-178 generations + Konf books. Niedersachsen
   emigration DB (not LAGIS-Hessen) for any Weser Gans leaving ~1850s. Detail:
   `Session130_Lippoldsberg_Neighbors_Bodenfelde_Bursfelde_June27_2026.md`.
+- **⭐ ELIMINATION CRITERION WIDENED to the 1833-1841 birth window (27 Jun 2026, per Jed):** the
+  neighbour test is now "ANY Carl/Karl on a pool surname (Gans/Konze/Kontze/Contze) born 1833-41",
+  not just b.26 Jan 1835. **GRIND EXECUTED (27 Jun, per Jed "grind through it"):**
+  • **Wahmbeck = VERIFIED NEG** (no pool surname in the parish at all).
+  • **Bursfelde (Fürstenhagen reg 359377) = VERIFIED NEG for the FULL window.** Scanned 1833-41
+    Taufen (clean tabular reg; Ort+Eltern+Pathen+Familien-Namen cols): Bild 5-10 sequential
+    (1833-35) + 14/20/24/27 sampled (1836-41) + 30=1842 boundary. **Gans appears NOWHERE** (no
+    parent, no godparent, no Bursfelder-Glashütte entry). Bursfelde/Glashütte baptising families =
+    fixed non-Gans set (Grünewald, Pflug, Thön, Hesse, Engelke, Köhler, Wittler, Bödecker, Grote,
+    Otte…); every Carl is local (Georg Carl Christoph Hoff; Heinrich Carl Thön Bursfeld 1833; Georg
+    Friedr. Carl Otte 1842). ⇒ the 4 Kunze Gans fams produced no baptism 1833-41 → no Carl Gans.
+  • **Bodenfelde (reg 359334) = 1835 VERIFIED NEG; off-years BLOCKED by the book.** Taufen vol is
+    **Erstschrift+Zweitschrift** (divider "Neues Bodenfelder Kirchenbuch Anno 1794" at Bild 316),
+    Kurrent year-headers ambiguous (1795 vs 1835 unreadable), entries dense prose w/ faint margin
+    names → reliable year-nav + surname-scan of the off-years NOT achievable in the viewer. Solid:
+    1835 read ×2 = no Gans/Contze; men's index 359346 G = Gante/Gautier, no Gans card. RESIDUAL =
+    dated 1833-41 baptisms of the 15 Gans fams + Contze 178 → **Kunze's printed OSB Bodenfelde**
+    (book-only) or a Kurrent specialist on 359334 / indexes 359342 + Taufen-Konf-1837-52.
+  Net: **no documented Carl on a pool surname b.1833-41 found anywhere in the neighbour ring**
+  (Wahmbeck+Bursfelde firm; Bodenfelde firm for 1835 + named OSB-family residual) → consistent
+  with Charles having no recoverable German baptism (born-after-emigration).
+
+## Gieselwerder / Kelze / Gewissenruh baptism-index + window sweep (Session 134, 27 Jun 2026)
+Jed: "sweep the full baptism index window for gieselwerder, hofgeismar kelze and gewissenruh."
+All three were previously baptism-searched ONLY at the Jan–Feb 1835 leaf; this swept the full
+1833–1841 window (index where it exists, else leaf-by-leaf). Live Archion, Jed logged in.
+- ⭐⭐ **GIESELWERDER REOPENED — reg 219016 Taufen 1830–1881 is "mit Register" and the index is
+  NOT clean of the Konze pool.** Title card Bild 1244; **Seite = Bild − 1246** (Bild1263=S17=1834;
+  1280=S34=1835; 1282=S36=1837; 1373=S127=1854; year-rate non-linear, read each Seite's year).
+  ⭐ **BAPTISM-ANCHOR PERMALINKS minted live + each verified to resolve (28 Jun 2026):**
+  Bild1263 (S17/1834, Kuntze×Warnecke stillborn — the lead) = p/9e4fae9479; Bild1280 (S34/1835 window)
+  = p/73de5a3e1f; Bild1282 (S36/1837, Joh. Georg Wilhelm Kuntze×Reitz) = p/82fe471d11; K-index Bild1514
+  = p/ca95e3d098 (re-verified resolves to K-index leaf).
+  Index at reel end: C(primary,**empty**)=Bild1507R; C/B-overflow=1508L; E|F=1510; F|G=1511;
+  G|H=1512; H|I·J=1513; **I·J|K=1514** (K-index permalink p/ca95e3d098 — ⚠️ stale canvas at mint,
+  trust Bild 1514). FINDINGS: **C** empty (NO Contze/Conze — the living family spells with K);
+  **G** = large Gans pop. (males S25,62,68,82,86,95) but **NO male Carl Gans**; **I·J** = 2 entries,
+  **NO Jungkonze**; **K** = ⭐ **Kontze ×2 male — todtgeboren S17 (1834) + Johann Georg Wilhelm S36
+  (1837)** + Kontze fem. Wilhelmine Friederike S256(late); a large **Kunze** clan (male S67–252,
+  fem S7–245) whose ONLY Carl = **Kunze Carl Heinr. Albert S127 = 1854 (out of window)**.
+  ⭐ **LEAD (image-verified): Heinrich Ernst Kuntze** ×(1) **Sophie Dorothea geb. Warnecke** →
+  stillborn male März 1834 (S17/Bild1263); ×(2?) **Sophie Elisabeth geb. Reitz** → **Johann Georg
+  Wilhelm Kuntze, b./bapt. Feb 1837** (S36/Bild1282) — apparent remarriage ⇒ child-GAP ~early 1835.
+  No Kontze baptism between S17 and S36, i.e. no recorded 1835 Kuntze child → fits Charles (b.26 Jan
+  1835, no German baptism) IF a son was born ~1835 and not baptised here. **No direct Carl-on-pool
+  b.1833-41, so no proven match, BUT upgrade Gieselwerder from "eliminated" → ACTIVE Konze-pool
+  locus.** Follow-ups: reconstruct the Heinrich Ernst Kuntze household (confirm Warnecke→Reitz, hunt
+  a son b.~1835) + the Kunze clan; Gieselwerder marriages/burials; Kunze printed OSB (os_gi); 1846
+  LAGIS Gieselwerder Gans emigrant cluster vs the G-index Gans households.
+- **KELZE — reg 219634 combined KB; baptism window NEGATIVE; stays ELIMINATED.** Title card Bild
+  364: "*(1830-1970) S.2-166 … Register jeweils nach den Amtshandlungen." Taufen **Seite = Bild −
+  367** (Bild369=S2=1830; 375=S9=1833; 381=S15=1835; 390=S23=1837; 395=S28=1839; 401=S34=1841/42).
+  ⚠️ **Taufen alphabetical index NOT online** — image numbering jumps **488→(gap 489–532)→533
+  X-divider** (last Taufen leaf 488≈1909 then section card); index lost in the gap → did full-window
+  leaf read. Window 1833–1841 (Bild 374–401) = uniformly **French-Huguenot-colony** pool (Bonnet/
+  Benoit, Morell, Monard, Morin, Croll, Briede, Homburg, Weidemann, Saeger, Schöning, Müller,
+  Stalknecht, Ehle, Rudolph, Fischer, Don, Martin, Paschal, Waldeck) — **NO Konze/Kontze/Gans**.
+  Window Carls all non-pool: **Carl Wilhelm Homburg b.Dez 1835** (= the confirmation-sweep window
+  Carl), Carl Croll (~Dez1835/Jan1836), Carl Heinrich Weidemann (illegit. Jan 1836), + fathers Carl
+  Morell. Corroborates the existing confirmation+1835 elimination.
+- **GEWISSENRUH — reg 219001 combined KB; full window read NEGATIVE; stays ELIMINATED.** Title card
+  Bild 1844: "*(1830-1920) S.3-96 … Register jeweils nach den Amtshandlungen." Taufen **Seite = Bild
+  − 1845** (Bild1848=S3=1830/31; 1850=S5=1832/33; 1852=S7=1835/36; 1857=S12=1840/41; 1858=S13=
+  1841/42; 1937=S92=1914). ⚠️ **Taufen index NOT online** (same gap pattern: last Taufen leaf
+  Bild1937=S92=1914; X-divider 1942; gap 1943–1955; Konf section 1956+/title 1957). Tiny Huguenot
+  colony (1840=4, 1841=6 baptisms). Window 1833–1841 (Seiten 5–13, Bild 1850–1858, EVERY entry
+  Nro~12–48) leaf-by-leaf = pool Heriot/Heritier, Jouquenal, Welle, Seguin, Frebel, Fischer, Martin,
+  Götze, Lotz, Spieß, Vogt, Geist, Thöl, Och, Reumhof — **NO Konze/Kontze/Gans**, **NO Jan-1835
+  birth**. Window Carls all non-pool: Carl Spieß (1833), Johann Carl Jouquenal (b.1 Aug 1834),
+  Carl Och (~Dez 1835), Carl Philipp Frebel (b.6 Feb 1840). Corroborates the existing elimination.
+- Detail: `Session134_Gieselwerder_Kelze_Gewissenruh_Baptism_Index_Window_Sweep_June27_2026.md` +
+  the three parish research logs.
 
 ## Fulda / Gastmann garrison-parish sweep (Session 129, 27 Jun 2026)
 Followed up the Fulda "Dassen" near-miss (Karl Friedrich **Gastmann**, b.26 Feb 1838 Fulda,
@@ -786,14 +994,124 @@ father Michael, Feldwebel 2.Inf-Rgt 1.Comp). Lead stays ELIMINATED as Charles; c
   Hanau have NO separate garrison congregation.
 - **RESULT:** **Kassel Garn. Trauungen 1833-65 = NO Gastmann marriage** (complete A-Z thumb-tabbed
   index; G leaf Bild 568 blank; H leaf has a real "Hartmann Conrad", not our man). **Hanau
-  Marienkirche (ref.) Taufen 1837-42 = NO Gastmann** (full G index Bild 1006-07). Kassel Garn.
-  Taufen 1833-42/1843-51 indexes sparse/broken — no Gastmann surfaced, Karl was at Fulda anyway.
+  Marienkirche (ref.) Taufen 1837-42 = NO Gastmann** (full G index Bild 1006-07).
   ⇒ Michael Gastmann did NOT marry/baptise-Karl at the Kassel garrison; the family tracked the
   company's station, not Kassel.
+- **⭐ KASSEL GARN. BAPTISM INDEXES — ALL 3 SWEPT, G + K (Session 129 cont., per Jed "also look for
+  Konze, Konzen"):** indexes shuffled+duplicated+X-card-separated. **Taufen 1833-42 (reg 174005):**
+  G leaf=Bild 2060 (one non-match "Gi[ss]ert"); K leaf=Bild 2064-65 (Kuhl, Köhler, Knoche, Klobes,
+  Kümmel, Korngiebel, Kaufmann, Köster…). **Taufen 1843-51 (reg 174008):** G=Bild 2251/2257
+  (Glaese/Gerland/Greis/Geis…); K=Bild 2256 (Köster, Krämer, Kühl, Kerstan, Kraft, Köhler, König,
+  Klein…); I/J=2255 (no Jungkonze); C=2249 (Cantz/Crell/Conrad, no Contze/Conze). **Taufen 1852-65
+  (reg 174011, own film 234):** garrison winding down, sparse index — only B/H/W leaves populated,
+  NO G or K leaf at all. **RESULT = NEGATIVE all three: no Gastmann/Gans (G) and NO Konze/Konzen/
+  Kontze/Konsen (K) in the Kassel garrison baptisms 1833-1865.** (1833-42 is Charles's birth-year
+  volume → clean for the Konze pool too.) H leaves carry genuine Hartmanns (not OCR-Gastmann).
 - NEXT (low priority): localise the 1.Comp's station via Kurhessen military rolls (Hof-/Staats-
   Handbuch, Ranglisten, Stammrollen — ORKA Uni-Kassel, some OCR-searchable), then read only that
   town. Detail: `Session129_Fulda_Garrison_Parish_Sweep_June27_2026.md` +
   `germany/fulda-research-log.html`.
+
+## Baptism-window sweep: Marzhausen · Bad Karlshafen (both) · Hombressen (Session 131, 27 Jun 2026)
+Jed: "sweep the full baptism index window for marzhausen bad karlshafen, hombressen." Extended each
+from the old "Jan–Feb 1835 only" read to the full **1833–1841** window. Detail:
+`Session131_Marzhausen_Karlshafen_Hombressen_Baptism_Window_Sweep_June27_2026.md`.
+- **181898 Marzhausen Taufen (Kr. Witzenhausen; reel 1786 imgs) — FULL 1833-41 ENTRY SWEEP = NEGATIVE.**
+  Calibration: Taufbuch Band 1 title page = **Bild 1631; Seite = Bild − 1631** (S1/Nro1/Aug1830 = Bild1632).
+  One Seite per opening; **Nro continuous** (Nro1 S1/1830 → Nro106 S15/1841). Entries fill Bild 1632-1786
+  (to ~1910). NOT AI-transcribed; **no usable alphabetical Register leaf in the reel** despite "mit Register"
+  → swept at entry level. Window = **Seiten 4-15 = Bild 1635-1646**, read leaf-by-leaf fully rendered
+  (⚠️ stale-canvas clips dense leaves — use 3 s waits + read the written Jahr/Seite header each leaf).
+  NO Konze/Kontze/Jungkonze/Gans/Ganß/Ganson. Tight local pool (Hahn, Kipp, Albrecht, Günther, Schmidt,
+  Lambach, Apel, Becker, Grimm/Grün/Görtz, Grabbe, Dieterich, Uttermöhlen, Reineke, Schäfer, Kulp, Volland,
+  Weideman, Mohr, Welcke, Thees, Hartung, von Drach, Löher…). Window rufname-Carls: **Carl Heinrich Wilhelm
+  Grün** (1837, Heinrich Grün × geb. Görtz — local) + the **"+"-added Carl Heinrich August Wilhelm**
+  (b. Jan, local Schäfer "Christoph Wilhelm" × geb. Albrecht, **†19 Oct 1842**) — neither pool, neither a
+  26-Jan-1835 survivor; plus middle-name Carls (Günther 1834, Hahn 1834, Kulp 1838 illeg, Grabbe 1840).
+  Permalink 1835 leaf Bild1638 = **p/827d1228f9**. Upgrades the "1835-only" elimination to the full window.
+- **218677 Bad Karlshafen LUTHERAN Taufen (1830-1895; reel 799) — FULL NAME-INDEX swept = NEGATIVE.**
+  Alphabetical "mit Register" index at reel END **Bild ~776-798** (X-divider card Bild 799); ~2 letters/opening,
+  entries listed by Seite within each letter (window = low Seiten, present). **K** Bild782/784 = Köster/Kirchhain/
+  Klingender/Klein/Kuhlmann/Kopp/Kümmel — no Konze; **G** Bild780 = Graff/Georges/Gebel/Grabe/Großmann/Gott/
+  Gnatz(distinct, -tz)/Günther/Gerlach/Geyer/Gerland — no Gans; **I·J** Bild782 = Jacob/Jost/**Jansen**/Israel
+  — no Jungkonze (local Jansen family, distinct); **C** Bild776-777 = **Crede** only (+misfiled Brandes) — no
+  Conze/Consens. Permalink B/C leaf Bild776 = **p/c71ba16968**.
+- **218713 Bad Karlshafen REFORMED Taufen (1830-1857; reel 653) — FULL NAME-INDEX swept = NEGATIVE.**
+  Index at reel END **Bild ~629-649** (X-divider Bild653); populated letters on right pages. **K** Bild636 =
+  Knote/Koch/Klebe/Köhler/Kuhn/Kasting/**Köth**(dom)/Klipper/Knöbel/Kirchmeyer/Köppel/Kaiser/Kropp/Klepper/
+  Klipp/Kraft/Krieger/Klugkist/Knöthe — no Konze ("Knote, Georg Carl S1" = Knote, not Kontze); **G** Bild634 =
+  only Günther/Göbel/Görmann — no Gans; **I·J** Bild635 = **Issartel**/Jagstetter/Tomski — no Jungkonze;
+  **C** Bild629 = **Costabel**(dom)/Caletzhof/Casselmann/Clauß/Brücker — no Conze/Consens. Permalink C leaf
+  Bild629 = **p/713ddbcefb**.
+  ⭐ **OSB CROSS-CHECK:** Kunze Karlshafen OSB lists Konze 37/61/68/285/287/342, Kontze 287, Conze 99,
+  Consens 181, Jungkonze 308, Gans 8 fam — **NONE appear in EITHER baptism register 1830-95/1830-57** ⇒
+  those OSB Konze/Gans families are pre-1830 or in marriage/burial records, not 1830s-50s baptisms.
+- **219487 Hombressen Taufen — FULL NAME-INDEX swept = NEGATIVE.** Reel 1764; **TWO** title cards
+  "Hombressen 1830-1850 mit Register" (Bild 1479 + 1496; likely Erst+Zweitschrift). Register MUCH bigger than
+  its label — verbose entries (~1 Seite/baptism) run Bild ~1481→1700 to Seite150+. **⭐ The alphabetical
+  Register is at the REEL TAIL, Bild ~1742-1763** (after ALL entries; closing X-card Bild 1764), with **A-Z
+  letter tabs on the right edge**; covers the whole register so the window is included. **C** = Bild1742
+  **BLANK** (Hombressen has no C surname at all → no Conze/Consens/Conson/Contze). **G** = Bild1745-1746 =
+  Gilbert, **Görmann**(dom), Greite/Grebe, Gärtner, Gerland, Geiger, Klinge — **no Gans/Ganß/Ganson**.
+  **I·J** = Bild1749 left = blank/sparse — **no Jungkonze**. **K** = Bild1749-1751 (large; covers Seiten
+  ~5-258) = Kracking(dom), Köster, Köhler, Kraft, Kollmann, Klinge, Kanngießer, Kammel, Kipper, Naumann,
+  Kühlborn — **no Konze/Kontze**. Permalink I·J/K index leaf Bild1749 = **p/480b8e031d**. Hombressen now
+  ELIMINATED on the full window (prior Jan-Feb 1835 entry read also stands). Anchors for any future entry
+  work: Bild1490=1831/S9; 1535=1834/S54.
+- **⭐ ARCHION PERMALINKS minted (Session 131, baptism sweeps)** — full table in the parish research logs.
+  **Marzhausen Taufen 181898** (per year — FULL window now minted, 28 Jun 2026): 1833=Bild1635=p/5e8ba53dae;
+  1834=Bild1637=p/26d6862541; 1835=Bild1638=p/827d1228f9; 1836=Bild1639=p/fc7030960a; 1837=Bild1641=p/46415dcaa4;
+  1838=Bild1642=p/7799fc56ed; 1839=Bild1643=p/1716e4fd6e; 1840=Bild1644=p/02ed36628d; 1841=Bild1645=p/0ee30cbb1b.
+  (Note Bild1636 = a Taufbuch Band title page, so 1834 entries sit at Bild1637.)
+  **Lippoldsberg Taufen 219778** (per year — FULL window 1831–1841, each year-verified from its written
+  "Jahr 18.." header, 28 Jun 2026): 1831=Bild1416=p/2715c68e0d; 1832=Bild1420=p/1d9947f43e;
+  1833=Bild1425=p/cf614a3da4; 1834=Bild1429=p/388fed7852; **1835=Bild1435=p/22b146a0af** (★ Charles
+  anchor, resolution re-verified to load Bild1435); 1836=Bild1443=p/e4c4cf4766; 1837=Bild1450=p/c014fbca98;
+  1838=Bild1457=p/b7c25bc88b; 1839=Bild1464=p/9f378a58d5; 1840=Bild1469=p/bb0324ac19;
+  1841=Bild1474=p/68c5c87b06. ⭐ **The reel is LINEAR — Seite = Bild − 1411 throughout 1830–1841** (NOT
+  shuffled; the old log "displaced/interleaved tail" + its anchors 1838=1474/1841=1484 were year-misreads;
+  1424 is END-of-1832 not start-1833, real 1833=1425). Full table in `germany/lippoldsberg-research-log.html`.
+  **Karlshafen Luth 218677**: C/B Bild776=p/c71ba16968; G Bild780=p/cb1104170c; I·J+K Bild782=p/5e21b5dc99.
+  **Karlshafen Ref 218713**: C Bild629=p/713ddbcefb; G Bild634=p/937561eb36; I·J Bild635=p/457f24fb3f; K
+  Bild636=p/098d4e8781. **Hombressen 219487**: C Bild1742=p/5da8b932e9; G Bild1745=p/084e5f883c; I·J+K
+  Bild1749=p/480b8e031d. **Confirmation prime-class permalinks** (per-year-leaf image numbers in logs;
+  **Marzh.Konf 181895 — now FULL per class leaf, all year-verified (28 Jun 2026):**
+  1846/47=Bild1887=p/c30c9a4cd1; 1848/49=Bild1897=p/dbb3c41e3d; 1850/51=Bild1898=p/06af58910f;
+  1851/52=Bild1899=p/d1bd38401c; 1853/54=Bild1900=p/854e558d36; 1855/56=Bild1901=p/068fb09ea7.
+  ⚠️ This Band is bound OUT OF CHRONOLOGICAL ORDER and interleaves a duplicate-copy "Konfirmations-Buch" title
+  page at Bild1896 (NOT a class leaf); 1846/47 sits at Bild1887 (just after section title 1886), and Bild1895
+  is actually 1857/58. Always year-verify a confirmation leaf from its written "Jahr 18.. Pfingsten" header or the
+  birth-year+age columns before trusting a Bild→year guess.
+  **Karlsh.Luth.Konf 218674 — now per-year for the whole 1847–1855 window (28 Jun 2026):**
+  1847=Bild992=p/d4a8e232d9; 1848=Bild993=p/d8e4545182; 1849prime=Bild994=p/61b7bc6da8; 1849/50=Bild995=p/32d29a66fa;
+  1851=Bild996=p/c0b0875ad1; 1853/54=Bild997=p/287763d93b; 1854/55=Bild998=p/23c365e665.
+  **Karlsh.Ref.Konf 218707 — now year-verified across the window (28 Jun 2026):**
+  1847=Bild980=p/820497f9b7; 1848=Bild981=p/493f798b17; 1849prime=Bild984=p/01cad7ff94; 1850=Bild988=p/362a887b61;
+  1851=Bild991=p/d4ae7f6912; 1852=Bild994=p/35f039c203; 1854=Bild996=p/8698b183a8; 1855=Bild998=p/61f57334ba.
+  ⚠️ **1853 is a binding gap** — Seiten 90–93 absent between Bild994 (Seite88/89=1852) and Bild995 (Seite94=1854);
+  likely a no-confirmation year or filming gap. The 1854 class spans Bild995–997. Verify each leaf from its written
+  "Jahr 18.. Pfingsten/Ostern" header (legible only at ~2× viewer zoom — click the + button twice first).
+  **Hombressen Konf 219481 (Konfirmationen 1831–1901) — prime cohorts year-verified (28 Jun 2026):**
+  section title Bild1143; window classes 1846–1856 run from Bild1188, ~2 leaves/class, each with a clear written
+  "Jahr 18.. Pfingsten" header. Minted: 1846=Bild1188=p/909330e2a9; 1848=Bild1194=p/7158fa195f;
+  **1849prime=Bild1196=p/62e42244b2** (births 1834–35); 1850=Bild1198=p/3cae1c05a4 (right page; left closes 1849).
+  Prime 1849/1850 cohorts = local Hofgeismar surnames only, no Konze/Gans. Remaining tail (1847≈Bild1190–1191,
+  1851–1856≈Bild1200–1210) still image-only, p/-links pending — locatable by the same "Jahr 18.." headers.
+  **Lippoldsberg Konf 219775 — prime-class per year, each year-verified from its "Jahr 18.. — 1ter Pfingsttag"
+  header (28 Jun 2026):** 1846=Bild152=p/35f65129a1; 1847=Bild153=p/b85ba8e925; 1848=Bild154=p/76be9ce0d0;
+  **1849prime=Bild155=p/3b15604236** (★ the decisive Gans-in-window cohort — #5 Friedrich Wilhelm Gans b.24 Jun 1835;
+  "21 Kinder,13 Söhne,8 Töchter" Summa; class spans Bild155–157L; resolution re-verified to load Bild155);
+  1850=Bild157R=p/c25e35735a; 1851=Bild159=p/d20091302a; 1852=Bild161=p/399dcfda73; 1853=Bild163=p/35bd3e8c76;
+  1854=Bild164=p/e9ec86f00b; 1855=Bild166=p/194db66826. ⭐ **FULL 1846–1855 window now minted (28 Jun 2026).**
+  Reel is **in order, NO displaced leaf** — Session 19's "1849=Bild163" was a plain misread: **Bild 163 is genuinely
+  1853** (Pfingsten 15 Mai 1853; resolution re-verified). NO Carl Gans confirmand in any class 1846–1855.
+  Full table in `germany/lippoldsberg-research-log.html`.
+  ⚠️ **Archion throttles after a long run of rapid permalink mints** — the viewer stopped reaching
+  document_idle (all screenshots failed) after ~12 mints; finish the "pending" p/-links in a later session.
+  Also: the permalink panel opens in DE or EN inconsistently — if it shows "Erstellen", click it (re-renders to
+  "Create") then click "Create"; if it shows "Create", click once. Give the panel ~1.5s to render before the
+  Create click or it misses. The page-number field sometimes ignores a typed Bild and reverts to the section-title
+  Bild — verify the field value (zoom it) after navigating and re-type if needed.
 
 ## Downloaded sources log
 - **13 Jun 2026 — Rabus baptism (FS KZFV-DRQ).** Johann Wolfgang Martin Rabus, bapt. **12 July 1778**,
@@ -805,3 +1123,30 @@ father Michael, Feldwebel 2.Inf-Rgt 1.Comp). Lead stays ELIMINATED as Charles; c
   downloaded via the in-viewer Download button → lands in the browser Downloads folder; needs to be
   moved into the project folder manually. Source note:
   `Archion_Nuernberg_StSebald_Rabus_KZFV-DRQ_Baptism_June13_2026.md`.
+
+---
+
+## No-index baptism reads — Niedermeiser & Bad Karlshafen ×2 (Session 136, 28 Jun 2026)
+
+Calibrations for the continuous (no-name-index) registers, page-read across the
+decisive 1834–1836 sibling band. All NEGATIVE for the Konze pool.
+
+- **Niedermeiser 219877** (Taufen 1830–1877): continuous, one baptism per 2-page
+  spread, continuous Nro. **1834 begins ~Bild 1857**; band = Bild 1857–1875
+  (Nro 87–175). Year-end tallies: 1834 closes Nro 117, 1835 Nro 145.
+- **Bad Karlshafen Lutheran 218677** (Taufen 1830–1895): clean monotonic, ~5–6
+  baptisms/spread. Band 1 (1830) title = Bild 530. **1834 = Bild 526–529
+  (Seite 11–14), 1835 = Bild 529–533 (Seite 14–18), 1836 = Bild 533–534
+  (Seite 18–19); 1838 = Bild 538.** Page-input jumps are stale-canvas prone —
+  force a redraw with a thumbnail-strip click + a zoom +/- nudge.
+- **Bad Karlshafen Reformed 218713** (Taufen 1830–1857): ⚠️ **pathological film —
+  two irregularly interleaved copies** (identical Seiten recur at offset Bilder,
+  e.g. 400≡403, 406≡410, 414≡419) AND **non-monotonic** (Seite jumps against Bild
+  order; months filmed out of sequence; matches the old note "1857 at Bild 522,
+  1843 at Bild 535"). **Navigate by the printed YEAR-HEADER per spread, not by
+  Bild/Seite arithmetic.** Decisive-band anchors found: 1834 mid = Seite 29
+  (Bild 397); 1834 Oct–Dec = Seite 31 (Bild 399); 1835 = Bild 405/410/416/418/
+  419; 1836 = Bild 412/413/417/420. An exhaustive entry pass is impractical
+  without reading all ~250 baptism images; band sampled by header instead.
+- **Reading zoom regions (full-screen):** top banner = year/Monat/Seite header;
+  child+father name columns ≈ [700,300,910,650]; godparents column to the right.

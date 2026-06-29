@@ -13,13 +13,9 @@
 <link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
 <link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
 <script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
 <script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
-<link rel="stylesheet" href="../assets/site-nav.css">
-<script defer src="../assets/site-nav.js"></script>
-<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
-<script defer src="../assets/cite-widget.js"></script>
-<link rel="stylesheet" href="../assets/deep-zoom.css">
-<script defer src="../assets/deep-zoom.js"></script>
 <style>
   .crumbs{font-size:0.84rem;color:var(--text-muted);margin-bottom:0.6rem}
   .pl-meta{font-family:var(--font-mono,monospace);font-size:0.82rem;color:var(--text-muted);margin:0.1rem 0 0.7rem}
@@ -44,15 +40,101 @@
   footer.back-nav{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border-light,#e6dcc4);font-size:0.9rem}
 </style>
 <!-- BEGIN-INJECTED-NAV-ASSETS -->
-<link rel="stylesheet" href="../assets/site-nav.css">
-<script defer src="../assets/site-nav.js"></script>
-<link rel="stylesheet" href="../assets/cite-widget.css?v=20260530-citecontrast">
-<script defer src="../assets/cite-widget.js"></script>
-<link rel="stylesheet" href="../assets/deep-zoom.css">
-<script defer src="../assets/deep-zoom.js"></script>
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
 <!-- END-INJECTED-NAV-ASSETS -->
 </head>
 <body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (Jun 2026): story pages (Overview, Stories, Cast) live under
+  "Start here"; the standalone visualisation pages were retired.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../start.html" role="menuitem">★ For researchers — start here</a>
+      <a href="../index.html" role="menuitem">Overview</a>
+      <a href="../stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="../cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="../germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="../towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="../index.html#charles" role="menuitem">Charles in America</a>
+      <a href="../index.html#civilwar" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">People in the story</a>
+      <a href="../children/index.html" role="menuitem">The seven children</a>
+      <a href="../who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="../sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="../sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="../dna.html" role="menuitem">DNA evidence</a>
+      <a href="../correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodology</a>
+      <a href="../bibliography.html" role="menuitem">Bibliography</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="../glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../about.html" role="menuitem">About this project</a>
+      <a href="../contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="../faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
 <a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
 <nav class="site-nav-shared" role="navigation" aria-label="Site sections">
   <div class="tab-group" data-group="start">
@@ -173,20 +255,30 @@
 </tbody></table>
 <table class="src"><thead><tr><th>Register read</th><th>Index / method</th><th>Result for Gastmann</th></tr></thead><tbody>
 <tr><td><strong>Kassel (Garnisongemeinde) Trauungen 1833&ndash;1865</strong> &mdash; Archion reg. <a href="https://www.archion.de/de/viewer/churchRegister/174029" target="_blank" rel="noopener noreferrer"><code>174029</code> &#x2197;</a></td><td>Alphabetical name-index complete and thumb-tabbed A&ndash;Z (Bild ~565&ndash;585). The <strong>G leaf (Bild 568, &ldquo;G&nbsp;H&rdquo; tab) is blank</strong> &mdash; no G-surname grooms at all 1833&ndash;1865.</td><td>✅ <strong>NEGATIVE.</strong> <strong>Michael Gastmann did not marry in the Kassel garrison church.</strong> The adjacent H leaf carries a genuine &ldquo;Hartmann Conrad&rdquo; (a real H groom &mdash; not the OCR-confused Gastmann).</td></tr>
-<tr><td>Kassel (Garnisongemeinde) Taufen 1833&ndash;1842 (<code>174005</code>) &amp; 1843&ndash;1851 (<code>174008</code>)</td><td>Indexes present but <strong>sparse and broken up by X-separator cards</strong> (only scattered letters, e.g. W and Z, populated). Karl Friedrich was baptised at <em>Fulda</em>, not Kassel.</td><td>No Gastmann surfaced; the baptism indexes are too fragmentary to certify a clean clearance &mdash; a direct entry-read remains as a low-value option.</td></tr>
+<tr><td>Kassel (Garnisongemeinde) Taufen 1833&ndash;1842 (<code>174005</code>), 1843&ndash;1851 (<code>174008</code>) &amp; 1852&ndash;1865 (<code>174011</code>)</td><td><strong>All three baptism indexes swept leaf-by-leaf (G and K sections), 27 June.</strong> Indexes shuffled + duplicated + X-card-separated; G and K leaves located in 1833&ndash;42 (Bild 2060 / 2064&ndash;65) and 1843&ndash;51 (Bild 2251 / 2256); 1852&ndash;65 index sparse (only B/H/W populated).</td><td>✅ <strong>NEGATIVE.</strong> No Gastmann/Gans and <strong>no Konze/Konzen/Kontze</strong> in any volume. (Checked K specifically: surnames were Kuhl, K&ouml;hler, Knoche, Kr&auml;mer, K&ouml;ster, Kerstan, K&uuml;hlewein, Kraft, K&ouml;nig, Klein&hellip; &mdash; no Konze-pool name.) Karl was baptised at Fulda, not Kassel.</td></tr>
 <tr><td>Hanau (Marienkirche, reformiert) Taufen 1837&ndash;1842 &mdash; reg. <code>285709</code></td><td>Full G index read (Bild 1006&ndash;1007, shuffled+duplicated index): Geyer, Ge&szlig;ner, Ge&szlig;ler, Gr&auml;f, G&auml;rtner, Gro&szlig;eklang, G&ouml;tschel, G&ouml;bel, Gro&szlig; &hellip; H leaf also read (no Hartmann).</td><td>✅ <strong>NEGATIVE</strong> &mdash; no Gastmann.</td></tr>
 </tbody></table>
 <p class="note">Net: the single most diagnostic garrison register &mdash; the Kassel <em>Garnisongemeinde</em> marriage book, the only military register covering the window &mdash; shows <strong>no Gastmann marriage</strong>, and Hanau&rsquo;s reformed town church holds no Gastmann baptism in 1837&ndash;1842. With Karl baptised at Fulda (1.&nbsp;Compagnie, 1838) and no Gastmann marriage at the Kassel garrison, the family was attached to whichever company-station the regiment occupied rather than to the Kassel garrison congregation. The remaining EV garrison-era records for Marburg / Hersfeld are post-1866; for Hanau / Ziegenhain they sit in the civilian town parishes, whose shuffled, search-less indexes make a complete leaf-by-leaf read disproportionate for a lead already excluded as Charles. The most efficient way to localise the family further would be the Kurhessen military personnel records (Hof- u. Staats-Handbuch / Ranglisten / Stammrollen), which would name the company&rsquo;s station year-by-year. <em>This bears on the Gastmann near-miss only, not on Charles.</em></p>
 
+<h2 class="sec">Baptism-index sweep — the Konze surname pool (27 June 2026)</h2>
+<p style="font-size:0.92rem;">The Session-127 work was keyed to James&rsquo;s single flagged Gastmann entry. This pass reads the Fulda EV <strong>baptism index itself</strong> &mdash; the complete alphabetical Namensregister of reg. <code>168326</code> &mdash; for the whole Charles surname pool, to test whether <em>any</em> Konze / Gansen-type child was baptised at the Fulda town church across 1830&ndash;1863, not merely whether the Gastmann boy is Charles. <strong>Result: negative.</strong> No pool surname appears anywhere in the index, so none in the 1833&ndash;41 birth window.</p>
+<p style="font-size:0.92rem;">Method: the index leaves (Bild 1071&ndash;1088) were read via the reel&rsquo;s AI &ldquo;Erkannter Text&rdquo; panel. The body reel is heavily <strong>duplicated/disordered</strong> (Bild does not map linearly to Seite &mdash; e.g. Bild 851 = Seite 63 / Dec 1837, 852 = Seite 64 / 1838, 888 = Seite 66 / Apr 1838, 925 = Seite 137 / 1849, 1060 = Seite 272 / 1863), so the printed &ldquo;Seite / Jahr&rdquo; header governs, not arithmetic. The index runs main A&ndash;Z (Bild 1071&ndash;1082) then a &ldquo;Fortsetzung&rdquo; overflow (1083&ndash;1088) then end-of-reel test cards (1089&ndash;1091); every pool letter was read in <strong>both</strong> the main run and its continuation.</p>
+<table class="src"><thead><tr><th>Letter (Bild)</th><th>Surnames present in the index</th><th>Pool result</th></tr></thead><tbody>
+<tr><td><strong>C</strong> (1072)</td><td>Claus, Clemann, Conradi, Clausius, Christiani, Chors, Cornelius</td><td>✅ <strong>no Conson / Conze</strong></td></tr>
+<tr><td><strong>G</strong> (1074 + cont. 1085/86)</td><td>Göppel, Göbel, Groß, Gilbert, Gieseler, Gerlach, Gasche, Gilsa, Günther, Gümpel, Giebel, Grünewald, Goller, Geisel, Gutheil, Goßmann, Gud, Giet, Griesheim, Gies, Geise, Gauslandt, Gartlandt, Grau, Götze, Gering, Gutberlet</td><td>✅ <strong>no Gansen / Gonsen / Gonson / Gannsen / Gans</strong> (Gastmann is here &mdash; the 1838 garrison entry, already excluded)</td></tr>
+<tr><td><strong>I / J</strong> (1075)</td><td>Juffland, Just, Jahn, Jüngling, Jahr, Immel, Jacobi, Jungermann, Jahre</td><td>✅ <strong>no Jansen, no Jungkonze / Jungkontze</strong></td></tr>
+<tr><td><strong>K</strong> (1076 + cont. 1083)</td><td>Klages, Kehl, Kroschell, Klippert, Knauf, Kietzell, Klostermann, Kimmel, Kersten, Kirchner, Kuhnau, Kuhn, Kraus/Krause, Koch, Köhler, Kayser, Keßler, Knoll, Kunst, Kraut, Kapp, Knoch, Klüppel, Kreusse, Knad, Katzung, Kersting, Kornemann, Kraft, Krieg, Kagis, Kurz, <strong>Kunze</strong></td><td>✅ <strong>no Konze / Kontze / Konsen / Konzen</strong></td></tr>
+</tbody></table>
+<p class="note">Two near-tokens were chased to the original images and cleared: <strong>(a)</strong> the OCR stray &ldquo;Komse 63&rdquo; (dropped into the H block) &rarr; Seite 63 (Bild 851) is Oct&ndash;Dec 1837 (Frieß/Schmidt, Sergeant Giebel, Henninghausen, Lange) with <strong>no such surname</strong> &mdash; a pure OCR artifact; <strong>(b)</strong> <em>&ldquo;Kunze, Wilhelmine Ernestine Friederike Josephina, Seite 100&rdquo;</em> &mdash; the single closest K-name to the pool, but <strong>female</strong> and Seite 100 falls <strong>&asymp;1843&ndash;44</strong> (bracketed by Seite 66 = 1838 and Seite 137 = 1849), so outside the 1833&ndash;41 window and the wrong sex for Charles. &ldquo;Kunze&rdquo; is not the Konze/Kontze pool spelling. Net: the Fulda EV baptisms hold <strong>no Konze-pool child at all</strong> &mdash; the elimination now rests on the whole register, not just the one flagged entry.</p>
+
 <h2 class="sec">Sources checked</h2>
-<table class="src"><thead><tr><th>Source</th><th>What was checked</th></tr></thead><tbody>
-<tr><td>Archion reg. <code>168326</code> &mdash; Fulda (Stadt) Taufen 1830&ndash;1863</td><td>Bild 852 (1838, Seite 64) read at high zoom; Eintrag 298 = Karl Friedrich Gastmann verified (father Michael Gastmann, Feldwebel, 2. Inf.-Rgt.). Image permalink minted (<code>p/bf75a813e2</code>).</td></tr>
-<tr><td>Archion reg. <code>168320</code> &mdash; Fulda (Stadt) Konfirmationen 1831&ndash;1910</td><td>1852 class (Bild 37 L) and 1853 class (Bild 37 R &rarr; 38) read confirmand-by-confirmand. No Gastmann. No machine OCR available for this reel.</td></tr>
-<tr><td>Fulda parish &mdash; Archion holdings</td><td>Stadt Fulda EV holds Taufen 1830&ndash;1863, Konfirmationen 1831&ndash;1910, Trauungen 1830&ndash;1873 / 1830&ndash;1875, Beerdigungen 1830&ndash;1871 &mdash; all digitised (Kirchenkreis Fulda).</td></tr>
-<tr><td>Archion reg. <code>174029</code> &mdash; Kassel (Garnisongemeinde) Trauungen 1833&ndash;1865</td><td>Alphabetical A&ndash;Z thumb-tabbed name-index read; G leaf (Bild 568) blank &rarr; no Gastmann marriage in the Kassel garrison congregation 1833&ndash;1865. (Only pre-1866 dedicated garrison register in Kurhessen-Waldeck.)</td></tr>
-<tr><td>Archion regs. <code>174005</code> / <code>174008</code> &mdash; Kassel (Garnisongemeinde) Taufen 1833&ndash;1842 / 1843&ndash;1851</td><td>Indexes sparse/fragmentary (X-card separators; scattered letters); no Gastmann surfaced. Karl baptised at Fulda, not Kassel.</td></tr>
-<tr><td>Archion reg. <code>285709</code> &mdash; Hanau (Marienkirche, ref.) Taufen 1837&ndash;1842</td><td>Full G index read (Bild 1006&ndash;1007) &mdash; no Gastmann.</td></tr>
-<tr><td>Garrison-congregation coverage</td><td>Confirmed only Kassel (Garnisongemeinde) covers the pre-1866 window; Marburg (Garnisons-/Soldaten) and Bad Hersfeld (Militärgemeinde) registers start 1896 / 1866; Ziegenhain &amp; Hanau have no separate garrison register.</td></tr>
+<table class="src"><thead><tr><th>Register</th><th>Image</th><th>Archion permalink</th><th>Record at this image</th></tr></thead><tbody>
+<tr><td>Fulda (Stadt) Taufen 1830–1863 <span style="color:var(--text-meta)">(168326)</span></td><td class="img">852</td><td><a href="https://www.archion.de/p/bf75a813e2/" target="_blank" rel="noopener">https://www.archion.de/p/bf75a813e2/</a></td><td>Bild 852 (1838, Seite 64) Eintrag 298 = Karl Friedrich Gastmann verified (father Michael Gastmann, Feldwebel, 2. Inf.-Rgt.). The complete alphabetical baptism index (Bild 1071–1088) was also swept for the Konze pool via the AI "Erkannter Text" — C / G / I-J / K all <strong>NEGATIVE</strong> (no Konze/Kontze/Gans/Conson/Jungkonze)</td></tr>
+<tr><td>Fulda (Stadt) Konfirmationen 1831–1910 <span style="color:var(--text-meta)">(168320)</span></td><td class="img">37–38</td><td><a href="https://www.archion.de/de/viewer/churchRegister/168320" target="_blank" rel="noopener">register 168320 (no permalink minted)</a></td><td>1852 class (Bild 37 L) and 1853 class (Bild 37 R → 38) read confirmand-by-confirmand — <strong>no Gastmann</strong> (no machine OCR for this reel)</td></tr>
+<tr><td>Kassel (Garnisongemeinde) Trauungen 1833–1865 <span style="color:var(--text-meta)">(174029)</span></td><td class="img">568</td><td><a href="https://www.archion.de/de/viewer/churchRegister/174029" target="_blank" rel="noopener">register 174029 (no permalink minted)</a></td><td>A–Z thumb-tabbed name-index read; <strong>G leaf (Bild 568) blank → no Gastmann marriage</strong> in the Kassel garrison congregation 1833–1865 (the only pre-1866 dedicated garrison register in Kurhessen-Waldeck)</td></tr>
+<tr><td>Kassel (Garnisongemeinde) Taufen 1833–42 / 1843–51 / 1852–65 <span style="color:var(--text-meta)">(174005 · 174008 · 174011)</span></td><td class="img">2060 · 2256 · …</td><td><a href="https://www.archion.de/de/viewer/churchRegister/174005" target="_blank" rel="noopener">registers 174005 / 174008 / 174011 (no permalink minted)</a></td><td>All three baptism name-indexes swept G + K (27 Jun 2026): 1833–42 G = Bild 2060, K = 2064–65; 1843–51 G = 2251/2257, K = 2256; 1852–65 sparse (no G or K leaf). <strong>No Gastmann/Gans in G, no Konze/Konzen/Kontze in K</strong> in any volume</td></tr>
+<tr><td>Hanau (Marienkirche, ref.) Taufen 1837–1842 <span style="color:var(--text-meta)">(285709)</span></td><td class="img">1006–1007</td><td><a href="https://www.archion.de/de/viewer/churchRegister/285709" target="_blank" rel="noopener">register 285709 (no permalink minted)</a></td><td>Full G index read — <strong>no Gastmann</strong></td></tr>
+<tr><td>Fulda Stadt EV + garrison coverage <span style="color:var(--text-meta)">(holdings)</span></td><td class="img">—</td><td><a href="https://www.archion.de/de/viewer/churchRegister/168326" target="_blank" rel="noopener">holdings confirmed</a></td><td>Stadt Fulda EV (Taufen 168326, Konf 168320, Trauungen, Beerdigungen) all digitised; only Kassel (Garnisongemeinde) covers the pre-1866 garrison window — Marburg / Bad Hersfeld registers start 1896 / 1866; Ziegenhain &amp; Hanau have no separate garrison register</td></tr>
 </tbody></table>
 
 <h2 class="sec">Remaining follow-ups</h2>
@@ -244,5 +336,97 @@
     <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
   </div>
 </footer>
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders (../) are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="../about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="../errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="../about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../stories.html">Stories</a></li>
+        <li><a href="../visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="../claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="../abstract.html">Abstract</a></li>
+        <li><a href="../methodology.html">Methodology</a></li>
+        <li><a href="../faq.html">FAQ</a></li>
+        <li><a href="../glossary.html">Glossary</a></li>
+        <li><a href="../bibliography.html">Bibliography</a></li>
+        <li><a href="../open-questions.html">Open Questions</a></li>
+        <li><a href="../dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../contribute.html">Contribute</a></li>
+        <li><a href="../changelog.html">Changelog</a></li>
+        <li><a href="../errata.html">Errata &amp; revisions</a></li>
+        <li><a href="../feed.xml">RSS / Atom feed</a></li>
+        <li><a href="../index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="../de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
 </body>
 </html>

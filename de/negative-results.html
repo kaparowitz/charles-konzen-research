@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/negative-results.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/negative-results.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/negative-results.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>Audit der negativen Ergebnisse — Charles-Forschung</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="canonical" href="https://charles-research.netlify.app/de/negative-results.html">
+<link rel="stylesheet" href="../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../assets/dark-mode.css?v=20260530c">
+<script defer src="../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../assets/de-pages.js?v=20260628"></script>
+<script defer src="../assets/lang-toggle.js?v=20260628"></script>
+<meta name="description" content="Jedes durchsuchte Pfarrregister und jede ausgeschlossene Kandidatenfamilie — mit Datum, Umfang und dem konkreten Beleg, der die Spur schloss. Das überprüfbare Rückgrat der Behauptung des Projekts, „angemessen erschöpfende Forschung" geleistet zu haben.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="Audit der negativen Ergebnisse — Charles-Forschung">
+<meta property="og:description" content="Jedes durchsuchte Pfarrregister und jede ausgeschlossene Kandidatenfamilie — mit Datum, Umfang und dem konkreten Beleg, der die Spur schloss.">
+<meta property="og:url" content="https://charles-research.netlify.app/de/negative-results.html">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/methodology.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-serif); background: var(--bg-page); color: var(--text-body); line-height: 1.6; }
+
+  header.nr-hero {
+    background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-deep-grad) 100%);
+    color: var(--text-on-dark);
+    padding: 2.2rem 1.5rem 1.6rem;
+    border-bottom: 4px double var(--brand);
+  }
+  header.nr-hero .crumbs { font-size: 0.84rem; color: var(--text-on-dark-d); margin-bottom: 0.5rem; }
+  header.nr-hero .crumbs a { color: var(--brand); border-bottom: none; }
+  header.nr-hero h1 { color: var(--text-on-dark); font-size: 2.3rem; letter-spacing: 0.02em; }
+  header.nr-hero .sub { color: var(--text-on-dark-d); font-style: italic; margin-top: 0.4rem; max-width: 760px; }
+
+  main { max-width: 1100px; margin: 0 auto; padding: 2rem 1.4rem 4rem; }
+
+  p { margin-bottom: 0.9rem; }
+  a { color: var(--brand-dark); border-bottom: 1px dotted var(--border-medium); text-decoration: none; }
+  a:hover { color: var(--brand); }
+
+  h2 { font-size: 1.55rem; color: var(--text-primary); margin: 2.4rem 0 0.8rem; border-bottom: 1px solid var(--border-medium); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.14rem; color: var(--text-strong); margin: 1.6rem 0 0.5rem; }
+
+  .lede { font-size: 1.04rem; color: var(--text-meta); font-style: italic; margin-bottom: 1.6rem; line-height: 1.6; }
+
+  nav.toc { background: var(--bg-card); border: 1px solid var(--border-light); border-left: 4px solid var(--brand); border-radius: 4px; padding: 0.9rem 1.1rem; margin: 0 0 2rem; font-size: 0.92rem; }
+  nav.toc h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.4rem; }
+  nav.toc ol { padding-left: 1.2rem; color: var(--text-meta); }
+  nav.toc li { margin: 0.18rem 0; }
+  nav.toc a { color: var(--text-strong); border-bottom: 1px dotted var(--border-medium); }
+
+  .nr-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.6rem; margin: 0.6rem 0 1.4rem; }
+  .nr-stat { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 4px; padding: 0.7rem 0.9rem; text-align: center; }
+  .nr-stat .num { font-size: 1.6rem; font-weight: 700; color: var(--brand-dark); font-family: var(--font-serif); display: block; }
+  .nr-stat .lbl { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); display: block; margin-top: 0.2rem; }
+
+  table.nr-table { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.4rem; font-size: 0.88rem; }
+  table.nr-table th, table.nr-table td { padding: 0.55rem 0.7rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-light); }
+  table.nr-table th { background: var(--bg-card-tint); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-meta); }
+  table.nr-table tr:nth-child(odd) td { background: var(--bg-card); }
+  table.nr-table .nm { font-weight: 700; color: var(--text-strong); white-space: nowrap; }
+  table.nr-table .archion { font-family: var(--font-mono); font-size: 0.8em; color: var(--text-meta); white-space: nowrap; }
+
+  .status-pill { display: inline-block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+  .status-pill.neg { background: #c84a4a; color: #fff; }
+  .status-pill.elim { background: #8a3030; color: #fff; }
+  .status-pill.open { background: #b48a3a; color: #2c2620; }
+  .status-pill.partial { background: #6a8a4a; color: #fff; }
+
+  .callout { background: var(--bg-card-tint); border: 1px solid var(--border-light); border-left: 4px solid var(--brand); border-radius: 4px; padding: 0.9rem 1.1rem; margin: 1rem 0 1.4rem; }
+  .callout .lbl { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--brand-dark); font-weight: 700; margin-bottom: 0.3rem; }
+
+  footer.site-foot { margin-top: 3rem; padding: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); color: var(--text-muted); font-size: 0.85rem; }
+  footer.site-foot a { color: var(--brand-dark); }
+
+  @media print {
+    @page { size: A4; margin: 18mm 18mm 22mm; }
+    html, body { background: #fff !important; color: #000 !important; font-size: 9.5pt; line-height: 1.38; }
+    header.nr-hero { background: none !important; color: #000; border-bottom: 1.5pt solid #444; padding: 0 0 6pt; margin-bottom: 8pt; }
+    header.nr-hero .crumbs { display: none; }
+    header.nr-hero h1, header.nr-hero .sub { color: #000 !important; }
+    nav.toc { display: none; }
+    main { max-width: none; padding: 0; }
+    a { color: #000; border-bottom: none; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 7pt; color: #555; }
+    table.nr-table { font-size: 8pt; }
+    table.nr-table th { background: none !important; border-bottom: 1pt solid #444; }
+    .status-pill { background: none !important; border: 0.5pt solid #444; color: #000 !important; }
+    h2 { font-size: 11pt; margin-top: 10pt; margin-bottom: 4pt; page-break-after: avoid; }
+    p, li, tr { orphans: 3; widows: 3; }
+    nav.site-nav-shared, footer.site-foot-shared, .site-foot-shared, .cite-widget,
+    nav.tabs, .skip-link, .search-fab, footer.site-foot { display: none !important; }
+  }
+</style>
+<script defer src="../assets/site-search.js?v=20260529-mobilesearch"></script>
+<script defer src="../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../assets/site-nav.css?v=20260629sticky">
+<script defer src="../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+<!-- BEGIN-INJECTED-JSONLD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/de/negative-results.html#article",
+  "headline": "Audit der negativen Ergebnisse — Charles-Forschung",
+  "description": "Jedes durchsuchte Pfarrregister und jede ausgeschlossene Kandidatenfamilie, mit Datum, Umfang und dem konkreten Beleg, der jede Spur schloss.",
+  "datePublished": "2026-05-17",
+  "dateModified": "2026-05-25",
+  "url": "https://charles-research.netlify.app/de/negative-results.html",
+  "isPartOf": { "@id": "https://charles-research.netlify.app/#website" },
+  "author": [{ "@type": "Person", "name": "Jed Johnson" }, { "@type": "Person", "name": "Peter Schräder" }],
+  "publisher": { "@type": "Person", "name": "Jed Johnson", "url": "https://charles-research.netlify.app/about.html" },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+}
+</script>
+<!-- END-INJECTED-JSONLD -->
+<!-- BEGIN-INJECTED-BREADCRUMB -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://charles-research.netlify.app/" },
+    { "@type": "ListItem", "position": 2, "name": "Audit der negativen Ergebnisse" }
+  ]
+}
+</script>
+<!-- END-INJECTED-BREADCRUMB -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../de/index.html" role="menuitem">Überblick</a>
+      <a href="../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../methodology.html" role="menuitem">Methodik</a>
+      <a href="../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="nr-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="index.html">← Charles-Forschung</a> &nbsp;/&nbsp; Audit der negativen Ergebnisse</div>
+  <h1>Audit der negativen Ergebnisse</h1>
+  <div class="sub">Jedes hessische Pfarrregister, das das Projekt durchsucht hat, und jede Kandidatenfamilie, die das Projekt ausgeschlossen hat — mit Suchdatum, Umfang, dem Gesuchten und dem konkreten Beleg, der die Spur schloss. Das überprüfbare Rückgrat der Behauptung „angemessen erschöpfende Forschung" des Genealogical Proof Standard.</div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<p class="lede">Ein Befund ist nur so stark wie die Suchen, die ihn nicht hervorgebracht haben. Diese Seite listet jedes negative Ergebnis auf, das das Projekt protokolliert hat: welche Pfarrei oder Kandidatenfamilie untersucht wurde, wann, welcher Umfang abgedeckt wurde, wonach gesucht wurde und welcher Beleg den Kandidaten ausschloss. Wo ein Ergebnis partiell ist (einige Bände durchsucht, andere noch ausstehend), wird die Lücke benannt. Wo ein Ergebnis offen ist, wird es bei den <a href="open-questions.html">Offenen Fragen</a> mit einem Verweis „Was dies klären würde" protokolliert.</p>
+
+<section id="coverage-glance" aria-label="Abdeckung auf einen Blick" style="margin:0 0 1.6rem; border:1px solid var(--brand,#b8902f); border-radius:6px; background:linear-gradient(140deg,var(--bg-card,#fff),var(--bg-card-tint,#f6ebd2)); padding:1rem 1.2rem;">
+  <div style="font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--brand-dark,#7a5c12); font-weight:700; margin-bottom:0.7rem;">Abgeschlossene Forschung auf einen Blick &mdash; damit Sie bereits durchsuchten Boden nicht erneut begehen</div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(235px,1fr)); gap:0.9rem 1.4rem;">
+    <div>
+      <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-meta); font-weight:700; margin-bottom:0.2rem;">Durchsuchte Familiennamen</div>
+      <p style="margin:0; font-size:0.9rem;">Vorname <strong>Carl / Karl</strong>; Familiennamen des <strong>*n&#8209;s&#8209;n-Clusters</strong> (Gansen, Ganssen, Gonsen, Gonson, Konzen, Konsen, Jansen&hellip;) <em>und</em> die anglisierten Formen <strong>Gonnson / Johnson</strong> &mdash; über Taufen &amp; Konfirmationen hinweg, Zeitfenster <strong>1833&ndash;1841</strong> (AncestryPro verwendete 1834&ndash;1841). <a href="../surname-records.html">Namensspur &rarr;</a></p>
+    </div>
+    <div>
+      <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-meta); font-weight:700; margin-bottom:0.2rem;">Durchsuchte Pfarreien / Orte</div>
+      <p style="margin:0; font-size:0.9rem;"><strong>39 bearbeitet</strong> &mdash; fast alle <span class="status-pill neg">negativ</span>; Oedelsheim, Gudensberg &amp; Wahmbeck <span class="status-pill partial">partiell</span>, Bursfelde <span class="status-pill open">offen</span>. 6 Cluster des Konze-Bestands + 24 Konfirmations-/Taufdurchgang im Kreis Hofgeismar (einschl. 3 Tier-3-„Deissen": Gudensberg, Dissen, Grifte) + 6 im weiteren Ring Kreis Kassel / Weser (Lippoldsberg, Oedelsheim, Vernawahlshausen + jenseits der Weser Wahmbeck, Bodenfelde, Bursfelde) + 3 katholische Grenze Westfalen. Die 4 entfernten Toponym- / Familienspur-Tests (Freudenberg, Diez, Dies, Mainz) sind gesondert aufgeführt. <a href="#parishes">Zur Tabelle &rarr;</a></p>
+    </div>
+    <div>
+      <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-meta); font-weight:700; margin-bottom:0.2rem;">Ausgeschlossene Kandidatenfamilien</div>
+      <p style="margin:0; font-size:0.9rem;"><strong>16</strong> &mdash; Konze, Quentin, Herwig, Grandjot, Branson/Frisse, Person, Gans, Stern&hellip; zuzüglich <a href="#peter-db">Peter Schr&auml;ders Datenbankabfragen</a>. <a href="#families">Zur Tabelle &rarr;</a></p>
+    </div>
+    <div>
+      <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--text-meta); font-weight:700; margin-bottom:0.2rem;">Noch offen</div>
+      <p style="margin:0; font-size:0.9rem;"><strong>Aktive Spuren:</strong> anstehende Transkriptionen Deisel/Trendelburg; Gudensberger Jahrgänge 1848&ndash;55; Tauf-Scans Dissen &amp; Grifte (1834&ndash;1841). Heisebeck Taufen 1830&ndash;1887 (219175) und Liebenau Taufen 1830&ndash;1890 (219745) wurden auf Archion gefunden und live gelesen (21. Juni 2026) &mdash; Heisebeck ergibt einen unehelichen „Carl"-Kandidaten, Liebenau ausgeschlossen. <strong>Verbleibende nicht digitalisierte Lücke:</strong> Sch&ouml;neberg vor 1822 (Vor-Ort-Stufe). <a href="open-questions.html">Offene Fragen &rarr;</a></p>
+    </div>
+  </div>
+  <div style="margin-top:0.8rem; padding-top:0.6rem; border-top:1px solid var(--border-light,#d8c8a8); font-size:0.84rem; color:var(--text-meta);">Begleitansicht: Der Durchgang durch die deutschen Konfirmationsregister, mit den Suchbegriffen auf einen Blick, findet sich unter <a href="../search-coverage.html">Pfarrsuch-Abdeckung</a>. Vollständige Zahlen unten.</div>
+</section>
+
+<aside style="margin:0 0 1.6rem; padding:0.95rem 1.2rem; background:var(--bg-card-tint,#f6ebd2); border:1px solid var(--border-medium,#d8c8a8); border-left:5px solid var(--status-open,#a3441f); border-radius:0 4px 4px 0; font-size:0.95rem;">
+  <strong>Grundsätzliche Erklärung zum Beweisstandard.</strong> Die zentrale Abstammungsfrage — <em>wer waren Charles' Eltern, und wo genau wurde er getauft?</em> — <strong>erfüllt den <a href="methodology.html#proof-standard">Genealogical Proof Standard</a> noch nicht.</strong> Die nachstehende Forschung ist umfangreich, aber noch nicht erschöpfend: Hauptregister bleiben undurchsucht (die unten mit <span class="status-pill open">offen</span> markierten Zeilen — z. B. Schöneberg vor 1822, noch nicht digitalisiert — sind <em>undurchsuchter Boden</em>, keine Ausschlüsse; die Heisebecker Taufen nach 1831 wurden inzwischen digitalisiert und gelesen und brachten einen unbestätigten Kandidaten zum Vorschein), die Marburger Auswanderungs- und Aushebungsakten wurden nicht angefordert, und die <a href="methodology.html#dna">DNA-Tests</a> — obwohl abgeschlossen (Y-DNA und autosomal) — haben noch keine bestätigende Übereinstimmung mit einer dokumentierten Konze-Linie ergeben. Die Schlussfolgerungen zur Pfarrherkunft und zum Familiennamen werden daher als <em>Arbeitshypothese</em> und die Taufe selbst als <em>Offen</em> geführt, statt als Bestätigt. Eine <span class="status-pill neg">negativ</span>-Zeile bedeutet, dass ein Register durchsucht wurde und Charles nicht darin war; eine <span class="status-pill partial">partiell</span>-Zeile bedeutet, dass einige Bände abgedeckt wurden und andere verbleiben; eine <span class="status-pill open">offen</span>-Zeile bedeutet, dass das Register bislang überhaupt nicht zugänglich war.
+</aside>
+
+<nav class="toc" aria-label="Table of contents">
+  <h4>Auf dieser Seite</h4>
+  <ol>
+    <li><a href="#summary">Zusammenfassende Statistik</a></li>
+    <li><a href="#parishes">Durchsuchte hessische Pfarrregister</a></li>
+    <li><a href="#families">Ausgeschlossene Kandidatenfamilien</a></li>
+    <li><a href="#us-records">Negative Suchen auf der US-Seite</a></li>
+    <li><a href="#emigration">Suchen in Auswanderungsaufzeichnungen</a></li>
+    <li><a href="#methodology">Wie „negativ" festgestellt wird</a></li>
+  </ol>
+</nav>
+
+<h2 id="summary">Zusammenfassende Statistik</h2>
+
+<div class="nr-stats">
+  <div class="nr-stat"><span class="num">39</span><span class="lbl">Bearbeitete Pfarreien (6 Cluster des Konze-Bestands + 24 Konfirmations-/Taufdurchgang im Kreis Hofgeismar einschl. 3 Tier-3-„Deissen": Gudensberg, Dissen, Grifte + 6 im weiteren Ring Kreis Kassel / Weser einschl. jenseits der Weser Wahmbeck, Bodenfelde &amp; Bursfelde + 3 katholische Grenze Westfalen; die 4 Toponym- / Familienspur-Tests gesondert gezählt)</span></div>
+  <div class="nr-stat"><span class="num">16</span><span class="lbl">Ausgeschlossene Kandidatenfamilien</span></div>
+  <div class="nr-stat"><span class="num">3</span><span class="lbl">Verbleibende aktive Spuren</span></div>
+  <div class="nr-stat"><span class="num">4</span><span class="lbl">Nicht wiedererlangte Primärquellenlücken</span></div>
+  <div class="nr-stat"><span class="num">130+</span><span class="lbl">Protokollierte Forschungssitzungen</span></div>
+  <div class="nr-stat"><span class="num">6</span><span class="lbl">Große Archive (Archion, <a class="glossary-link" href="glossary.html#g-lagis" title="Glossary: LAGIS">LAGIS</a>, HStAM, NARA, FamilySearch, Matricula)</span></div>
+</div>
+
+<h3 id="record-classes" style="font-size:1rem; margin-top:1.4rem;">Aufzeichnungsklassen jenseits der Pfarrregister — durchsucht, nicht durchsucht oder nicht anwendbar</h3>
+<p style="font-size:0.92rem; color:#5a4d3a;">Der Vollständigkeit halber die Aufzeichnungsklassen, die eine Prüferin oder ein Prüfer <em>zusätzlich</em> zu den obigen Kirchenregistern erwarten könnte, mit ihrem Status in diesem Projekt:</p>
+<table class="nr-table">
+  <thead><tr><th>Aufzeichnungsklasse</th><th>Status</th><th>Grund / Anmerkung</th></tr></thead>
+  <tbody>
+    <tr><td class="nm">Hessisches Zivilstandsregister (<em>Standesamt</em> / <em>Zivilstandsregister</em>)</td><td><span class="status-pill" style="background:#888;color:#fff;">nicht anwendbar</span></td><td>Die obligatorische Zivilstandsführung begann in dieser Region erst mit dem preußischen Gesetz von 1874, nach der Annexion von 1866. Für eine Geburt <strong>1835</strong> in Kurhessen <em>ist</em> das Kirchenregister die Personenstandsurkunde — es gibt keinen gesonderten zivilen Geburtseintrag zu durchsuchen.</td></tr>
+    <tr><td class="nm">Kirchenbuch-Zweitschriften</td><td><span class="status-pill open">teilweise offen</span></td><td>Die meisten Zielregister sind im Original auf Archion erhalten, sodass Zweitschriften nicht benötigt wurden. Für die <strong>noch nicht digitalisierte Lückenpfarrei</strong> (Schöneberg vor 1822) sind erhaltene Zweitschriften im Hessischen Staatsarchiv Marburg (HStAM) eine <strong>noch nicht geprüfte</strong> Kandidatenquelle — aufgeführt bei den <a href="open-questions.html">Offenen Fragen</a>.</td></tr>
+    <tr><td class="nm">Hessische Auswanderungsakten (<em><a class="glossary-link" href="glossary.html#g-auswanderer-beleg" title="Glossary: Auswanderer-Beleg">Auswanderer-Beleg</a></em> / Stammrolle)</td><td><span class="status-pill open">offen</span></td><td>Beim HStAM Marburg / Arcinsys angefragt; der Beleg und die Stammrolle des Jahrgangs 1855 bleiben nicht wiedererlangte Primärquellenlücken (siehe Offene Fragen).</td></tr>
+    <tr><td class="nm">St. Louis Adressbücher, 1859–1862 (US-Seite)</td><td><span class="status-pill open">noch nicht durchsucht</span></td><td>Ein Kandidat, um die Lücke zwischen Ankunft 1859 und Musterung 1862 zu schließen (die fehlende Volkszählung 1860); noch nicht systematisch bearbeitet.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="parishes">Durchsuchte hessische Pfarrregister</h2>
+
+<p>Pfarreien im und um den <a class="glossary-link" href="glossary.html#g-kirchenkreis" title="Glossary: Kirchenkreis">Kirchenkreis</a> Hofgeismar wurden nach einem männlichen Kind aus dem Familiennamen-Bestand Konze / Kontze / Contzen / Konzen durchsucht, das ungefähr am 26. Januar 1835 geboren wurde. Der Suchradius erstreckt sich etwa 10 Meilen um Trendelburg, die Pfarrei, die durch die phonetische Entschlüsselung „Freundburg, <a class="glossary-link" href="glossary.html#g-kurhessen" title="Glossary: Kurhessen">Kurhessen</a>" aus der Musterung von 1862 und durch „Deisse, Kreis Cassel, <a class="glossary-link" href="glossary.html#g-churhessen" title="Glossary: Churhessen">Churhessen</a>" aus dem Heiratsregister von 1866 ermittelt wurde. Im Juni 2026 wurde der Durchgang auf die <strong>elf benachbarten Pfarreien ausgeweitet, die nie geöffnet worden waren</strong> (am Fuß der Tabelle aufgeführt) — die Suche wurde erweitert, um auch jede <em>uneheliche</em> männliche Geburt einzuschließen, da das Y-DNA-Ergebnis ein Szenario mit unverheirateter Mutter offenhält. Alle elf waren negativ; keine Pfarrei irgendwo enthält eine männliche Geburt am oder nahe dem 26. Januar 1835 unter dem Familiennamen-Bestand.</p>
+
+<table class="nr-table">
+  <thead>
+    <tr>
+      <th>Pfarrei</th>
+      <th>Archion-Register</th>
+      <th>Durchsuchter Umfang</th>
+      <th>Ergebnis</th>
+      <th>Geschlossen durch</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="nm"><a href="../towns/trendelburg.html">Trendelburg</a></td>
+      <td class="archion">220093 · 220096 · 220108</td>
+      <td>Taufen 1830–1863 (vollständig); Begräbnisse 1773–1818 (K-Abschnittsindex); Heiraten 1830er Jahre (mehrere Sitzungen)</td>
+      <td>Familiennamen-Bestand Konze dokumentiert (Zweige Kontze, Contze, Konzen); keine Taufe Charles / Carl im Zeitfenster Jan. 1835 ± unter irgendeinem Familiennamen des Konze-Bestands</td>
+      <td>Mehrsitzungsdurchgang April 2026 (Sitzungen 11–25); Urteil Peter Schräder 12. April 2026</td>
+      <td><span class="status-pill partial">partiell</span></td>
+    </tr>
+    <tr>
+      <td class="nm"><a href="../towns/deisel.html">Deisel</a></td>
+      <td class="archion">218842 · 218824</td>
+      <td>Taufen im vollständigen Zeitfenster; drei „geb. Konzen"-Mütter bezeugt 1828–1829 (Maria Elisabeth, Wilhelmina, Carlotta); vollständige Liste der Konze-Väter geprüft</td>
+      <td>Kein Kandidat Konze, männlich, geb. 1835 in dieser Pfarrei</td>
+      <td>Sitzungen April 2026; abgeglichen gegen Peters Auswandererliste „Deisel.xlsx"</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm"><a href="../towns/deisel.html">Deisel</a> <span style="font-weight:400;color:var(--text-meta);font-size:0.85em;">(Familiennamen-Durchgang 2020)</span></td>
+      <td class="archion">Ev. Kirche Deisel · Taufen 1830–1861</td>
+      <td>Taufen <strong>~1834–1841</strong> nach den Familiennamen der US-Aufzeichnungen <strong>Gonnson / Johnson / ähnliche Varianten</strong> durchsucht &mdash; die anglisierten und Cluster-Formen, nicht nur der Konze-Bestand</td>
+      <td>Kein Familienname Gonnson / Johnson / ähnlich in der Pfarrei <em>überhaupt</em> vorhanden &mdash; Konze am nächsten. Zwei Konze-Kandidaten tauchten auf (Ludwig Konze geb. 26. Okt. 1836; Karl Konze geb. 1839) und beide wurden ausgeschlossen (Ludwig heir. Frankfurt 1864; keine Heirat/kein Tod für den Karl von 1839)</td>
+      <td>AncestryProGenealogists Research Journal, Feb.–Juni 2020 (P. A. Schmidt &amp; B. A. Podoll)</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Schierstein <span style="font-weight:400;color:var(--text-meta);font-size:0.85em;">(Rhein — Lesart „Freudenberg")</span></td>
+      <td class="archion">Pfarrtaufindex</td>
+      <td>Taufindex der 1830er Jahre unter der alternativen Lesart „Freundburg → Freudenberg" durchsucht (~160 Meilen SW von Deisel)</td>
+      <td>Kein zu Charles passender Kandidat; die Lesart Freudenberg / Schierstein verworfen</td>
+      <td>AncestryProGenealogists Research Journal, 2020</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Dies <span style="font-weight:400;color:var(--text-meta);font-size:0.85em;">(Hessen-Nassau)</span></td>
+      <td class="archion">Lutherische Pfarrei Holzappel (Unterlahnkreis)</td>
+      <td>Toponym-Alternative für „Deisse" geprüft (Hansen, <em>Map Guide</em>: Hessen-Nassau&nbsp;I)</td>
+      <td>Kein Kandidat; zugunsten von Deisel ausgeschlossen</td>
+      <td>AncestryProGenealogists Research Journal, 2020</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Diez <span style="font-weight:400;color:var(--text-meta);font-size:0.85em;">(Hessen-Nassau)</span></td>
+      <td class="archion">Lutherische Pfarrei Freiendiez (Unterlahnkreis)</td>
+      <td>Toponym-Alternative für „Deisse" geprüft (Hansen, <em>Map Guide</em>: Hessen-Nassau&nbsp;I)</td>
+      <td>Kein Kandidat; zugunsten von Deisel ausgeschlossen</td>
+      <td>AncestryProGenealogists Research Journal, 2020</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm"><a href="../towns/friedrichsfeld.html">Friedrichsfeld</a></td>
+      <td class="archion">218959</td>
+      <td>Taufen 1830–1836 (vollständig); Andreas-Kontze-Linie dokumentiert (Eintrag 195 = Justus Ernst Konze, 14. Nov. 1829)</td>
+      <td>Andreas-Kontze-Linie bestätigt, doch Charles nicht vorhanden; Kontze-Kolonisten-Nebenlinie ebenfalls durchsucht</td>
+      <td>Sitzungen 22, 70; <a class="glossary-link" href="glossary.html#g-htr" title="Glossary: HTR">HTR</a>-Transkription von Peter Schräder</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Helmarshausen</td>
+      <td class="archion">mehrere</td>
+      <td>Vollständige alphabetische Indexsuche nach dem Familiennamen-Bestand Konze</td>
+      <td>Kein Mann aus dem Konze-Bestand, geb. ~1835</td>
+      <td>Helmarshausen KB Vollständige Indexsuche, 10. April 2026</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Hofgeismar (Altstadt)</td>
+      <td class="archion">mehrere</td>
+      <td>Beide Hofgeismarer Pfarreien bearbeitet: Taufindizes Altstadt und Neustadt der 1830er Jahre</td>
+      <td>Kein Mann aus dem Konze-Bestand, geb. ~1835, in keiner der Pfarreien</td>
+      <td>Sitzungen 63, 64; April 2026</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Sielen</td>
+      <td class="archion">220033 u. a.</td>
+      <td>Tauf-/Begräbnisindex der 1830er Jahre; Begräbnis-Scan Sitzung 10</td>
+      <td>Kein Mann aus dem Konze-Bestand, geb. ~1835</td>
+      <td>April 2026; Register_220033_Sielen_Burial_Scan_Session10</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Hümme</td>
+      <td class="archion">nach 1822 digitalisiert</td>
+      <td>Vollständige Konze-Bestand-Suche Taufen der 1830er Jahre; Kurrentschrift bestätigt</td>
+      <td>Kein Mann aus dem Konze-Bestand, geb. ~1835</td>
+      <td>Sitzung 61, April 2026</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Schöneberg (nach 1822)</td>
+      <td class="archion">nach 1822 digitalisiert</td>
+      <td>Konze-Bestand-Suche über das digitalisierte Zeitfenster</td>
+      <td>Kein Mann aus dem Konze-Bestand, geb. ~1835, im digitalisierten Zeitfenster</td>
+      <td>Sitzungen 65, 67; April 2026</td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Heisebeck (Taufen 1830&ndash;1887)</td>
+      <td class="archion">219175</td>
+      <td>Band jetzt auf Archion (datiert nach den April-/Juni-Durchgängen); Jan. 1835 live gelesen 21. Juni 2026</td>
+      <td><strong>Kandidat:</strong> unehelicher Mann „Carl Friedrich August", geb. 29. Jan. 1835 (Mutter Wehmann, unverheiratet); leere Bemerkungsspalte &mdash; nicht bestätigt (geb. 29. statt 26. Jan.; Familienname Wehmann)</td>
+      <td>Sitzung 108, 21. Juni 2026; <a href="https://www.archion.de/p/34e1ddfe6e/">Bild 1256</a></td>
+      <td><span class="status-pill partial">Kandidat</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Liebenau (Taufen 1830&ndash;1890, + Grimelsheim)</td>
+      <td class="archion">219745</td>
+      <td>Band jetzt auf Archion; Jan.&ndash;März 1835 live gelesen 21. Juni 2026</td>
+      <td>Alle Männer von 1835 ehelich (Kl&uuml;te, Winnefeld, Ackermann, Taubel); kein Konze-Bestand, kein unehelicher Mann, keine Geburt am 26. Jan.</td>
+      <td>Sitzung 108, 21. Juni 2026; <a href="https://www.archion.de/p/b3bae9fefa/">Bild 1462</a></td>
+      <td><span class="status-pill neg">negativ</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Schöneberg (vor 1822)</td>
+      <td class="archion">nicht digitalisiert</td>
+      <td>Noch nicht zugänglich; vor Ort im Landeskirchlichen Archiv Kassel verwahrt</td>
+      <td>—</td>
+      <td>Bei den Offenen Fragen protokolliert; wartet auf einen Vor-Ort-Besuch in Kassel</td>
+      <td><span class="status-pill open">offen</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Mainz (Andreas Konze)</td>
+      <td class="archion">Katholische Stadtregister</td>
+      <td>Suche nach dem Mainzer Andreas Konze und etwaigen dort registrierten Konze-Kindern</td>
+      <td>Der Mainzer Andreas Konze ist eine andere Person als der Andreas aus der Trendelburger Gegend; Linie ausgeschlossen</td>
+      <td>Mainzer Aufzeichnungssuche April 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr><td colspan="6" style="background:var(--bg-elevated,#f3efe7); font-weight:700; font-size:0.85rem;">Juni 2026 — Durchgang der Nachbarpfarreien (11 Pfarreien, Archion live gelesen, Taufen 1835; Mann aus Konze-Bestand <em>oder</em> unehelich)</td></tr>
+    <tr><td class="nm">Gottsbüren</td><td class="archion">219049</td><td>Taufen Jan.–Feb. 1835</td><td>Kein Mann aus Konze-Bestand; kein unehelicher Mann im Zeitfenster</td><td>4. Juni 2026 (Sitzung 85)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Lamerden</td><td class="archion">219676</td><td>Taufen Jan.–Feb. 1835 (mit dem Auge gelesen)</td><td>Kein Mann aus Konze-Bestand / unehelicher Mann im Zeitfenster</td><td>4. Juni 2026 (Sitzung 85)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Gewissenruh</td><td class="archion">219001</td><td>Taufen Jan.–Feb. 1835</td><td>Überhaupt keine Januar-Geburt; Eintrag im Zeitfenster weiblich</td><td>4. Juni 2026 (Sitzung 85)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Eberschütz</td><td class="archion">218887</td><td>Taufen Jan.–Feb. 1835</td><td>Ein unehelicher Mann (H. W. <em>Albore</em>, geb. 22. Jan. 1835) — Familienname/Name/Ort ohne Bezug zu Charles; keine Übereinstimmung</td><td>4. Juni 2026 (Sitzung 85, bei voller Vergrößerung überprüft)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Stammen</td><td class="archion">220069</td><td>Taufen Jan.–März 1835</td><td>Eintrag aus dem Konze-Bestand: ein <strong>totgeborener Mann Kontze</strong>, geb. 14. März 1835, Kind von Christian Ludwig Kontze × Anne Gertrud Temme (ein <em>eigenständiger</em> Stammer Zweig; zuerst gelesen „Rudolph, 20. März" — bei voller Vergrößerung korrigiert) — totgeboren; nicht Charles</td><td>4. Juni 2026 (Sitzung 85)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Marzhausen <strong>(&#9888; nicht benachbart)</strong></td><td class="archion">181898</td><td>Taufen Jan.–Feb. 1835</td><td>Kein Mann aus Konze-Bestand / unehelicher Mann im Zeitfenster. <strong>Geografie-Hinweis (Sitzung 135):</strong> Reg. 181898 ist Marzhausen im <em>Kirchenkreis Witzenhausen</em> (Werra-Mei&szlig;er, ~40&nbsp;km von Trendelburg/Deisel) &mdash; das einzige Marzhausen auf Archion und <strong>nicht tatsächlich benachbart</strong> zum Konze-Cluster; eine Fehlidentifizierung in der ursprünglichen Warteliste der Nachbarpfarreien.</td><td>4. Juni 2026 (Sitzung 85) · markiert 28. Juni (Sitzung 135)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Grebenstein</td><td class="archion">219106</td><td>Vollständiger Taufnamensindex 1830&ndash;1839 (+ Jan.&ndash;Feb. 1835)</td><td>Indexdurchgang über das gesamte Zeitfenster (Blätter C/G/I-J/K, Bild ~1160&ndash;1170): kein Konze/Kontze/Konsen/Konzen, Gans/Gansen/Gonson, Jansen/Jungkonze oder Conson/Contze. Zudem war die uneheliche Geburt von 1835 weiblich.</td><td>27. Juni 2026 (Sitzung 133)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Immenhausen</td><td class="archion">219586</td><td>Vollständiger Taufnamensindex 1830&ndash;1845 (+ 1835)</td><td>Indexdurchgang über das gesamte Zeitfenster (Blätter C/G/I-J/K, Bild ~884&ndash;896): kein Familienname aus dem Konze-Bestand (C = nur Familie „Carl"); Männer von 1835 alle ehelich.</td><td>27. Juni 2026 (Sitzung 133)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Veckerhagen</td><td class="archion">220213</td><td>Vollständiger Taufnamensindex 1830&ndash;1851 (+ Jan.&ndash;März 1835)</td><td>Indexdurchgang über das gesamte Zeitfenster (Blätter C/G/I-J/K, Bild ~1044&ndash;1051): kein Familienname aus dem Konze-Bestand. Der einzige uneheliche Mann W. <em>Walter</em> (~März 1835) wird unter W geführt, keine Übereinstimmung.</td><td>27. Juni 2026 (Sitzung 133)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Oberweser / Gieselwerder</td><td class="archion">219016</td><td>Taufen Jan.–Feb. 1835</td><td>Männer von 1835 alle ehelich; kein Mann aus Konze-Bestand / unehelicher Mann</td><td>4. Juni 2026 (Sitzung 85)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Hofgeismar-Kelze</td><td class="archion">219634</td><td>Taufen Jan.–Feb. 1835</td><td>Einzige Taufe im Zeitfenster weiblich; kein Mann aus Konze-Bestand / unehelicher Mann im Zeitfenster</td><td>4. Juni 2026 (Sitzung 85)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td colspan="6" style="background:var(--bg-elevated,#f3efe7); font-weight:700; font-size:0.85rem;">6. Juni 2026 — Durchgang an der West-/Nordgrenze (Kurhessen West + Nord; erste grenzüberschreitende katholische Pfarreien über Matricula)</td></tr>
+    <tr><td class="nm">Bad Karlshafen (lutherisch)</td><td class="archion">218677</td><td><strong>Vollständige Taufen 1834&ndash;1836 Eintrag für Eintrag gelesen</strong> (kein Namensindex; Nro 62&ndash;104, Bild 526&ndash;534)</td><td>Jeder Vater eine ortsansässige Karlshafener Hugenotten-/Bürgerfamilie (Marre, M&uuml;ller, Schmidt, Freund, Fleckstein, Hartmann, B&ouml;hme, K&ouml;nig, Seider, Bergers, Alberny, Eyssel, Gro&szlig;, Rapp, Petz, Schette, Pfaff, K&ouml;hler, Vogel, Ender, Eisenberg, P&ouml;lith, He&szlig;e, Rettig, Breitenbach, Berger, Habein, Bauermeister, Sch&auml;fer, Weisser, Kn&ouml;chel, B&ouml;deker, Berlepsch). <strong>Kein Kinder-Familienname aus dem Konze-Bestand.</strong></td><td>28. Juni 2026 (Sitzung 136); Zeitfenster 6. Juni (S87)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Bad Karlshafen (reformiert — französische + deutsche Gemeinden)</td><td class="archion">218713</td><td><strong>Band 1834&ndash;1836 nach Jahresüberschrift gelesen</strong> (kein Namensindex; ~17 einzelne Doppelseiten / ~48 Taufen). <em>Vorbehalt:</em> Film besteht aus zwei ineinander verschachtelten Abschriften, nicht monoton &mdash; einige verstreute Monatslücken nicht lokalisiert.</td><td>Jede Taufe eine ortsansässige reformierte Hugenotten-/Bürgerfamilie (Wiegand, Meier, Wicke, Stange, Malich, Giese, Eisentr&auml;ger, Sacher, Marx, Strauch, Weber, Bachmann, B&ouml;decker, Sch&auml;fer, Costabel, Lantelme, G&uuml;nther, Drahna, Fiege, Schwalm, Hartung, Clau&szlig;, Kuhn, Bornemann, Sibert, Maurmann, Sprenger, Sandmann, Abrod, Hamel, May, M&ouml;nkel, R&uuml;diger, Koch, Meyer). <strong>Kein Kinder-Familienname aus dem Konze-Bestand.</strong> (Ein randständiges „<em>geborne Ganse</em>" als Mädchenname einer Mutter/Patin &mdash; kein getauftes Kind; nur protokolliert.) Früheres Zeitfenster 1835: ein unehelicher Mann <em>Thielemann</em> (geb. 8. Feb. 1835), 1838 legitimiert, örtlich verzeichnet &mdash; nicht Charles.</td><td>28. Juni 2026 (Sitzung 136); Zeitfenster 6. Juni (S87)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Hombressen</td><td class="archion">219487</td><td>Vollständiger Taufnamensindex 1830&ndash;1850 (+ Zeitfenster 1835)</td><td>Indexdurchgang über das gesamte Zeitfenster (Blätter C/G/I-J/K, Bild ~1740&ndash;1750): C=Cornelius/Challiot, G=Glinger/Gula/Gammerde/Gautier, I-J=Jacob, K=Kersting/Krug/K&ouml;ster/K&uuml;llmann/Klings &mdash; <strong>kein Konze/Kontze/Konsen/Konzen, Gans/Gansen/Gonson, Jansen/Jungkonze, Conson/Contze</strong>. Zeitfenster 1835 ebenfalls negativ.</td><td>27. Juni 2026 (Sitzung 135)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Haueda</td><td class="archion">219154</td><td><strong>Taufen 1834&ndash;1836 Eintrag für Eintrag gelesen</strong> (kein Namensindex; fortlaufendes Register)</td><td>Alle Einträge ortsansässige Familien; kein Familienname aus dem Bestand, keine uneheliche Übereinstimmung. (Vollband gelesen Sitzung 135; Zeitfenster 1835 Sitzung 87.)</td><td>28. Juni 2026 (Sitzung 135); Zeitfenster 6. Juni (S87)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Ostheim (Kirchenkreis Hofgeismar)</td><td class="archion">219970</td><td>Vollständiger Taufnamensindex 1830&ndash;1914 (+ Zeitfenster 1835)</td><td>Indexdurchgang über das gesamte Register (Bild ~1279&ndash;1299): C=leer, G=G&uuml;nther/Gerlach/Gerland/Gei&szlig;ler/Gr&uuml;nder, I-J=J&uuml;llinghaus/Jordan, K=Koch/Koppel/Knippel/Knaust/Kothel &mdash; <strong>kein Familienname aus dem Konze-Bestand</strong>. Totgeburt 1835 (ungetauft) kein Kandidat.</td><td>27. Juni 2026 (Sitzung 135)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Niedermeiser</td><td class="archion">219877</td><td><strong>Vollständige Taufen 1834&ndash;1836 Eintrag für Eintrag gelesen</strong> (kein Namensindex; Nro 87&ndash;175, Bild 1857&ndash;1875; Jahresendsummen bestätigen vollständige Jahre)</td><td>Jeder Eintrag eine streng ortsansässige Niedermeiser Familie (Th&ouml;ne, Jordan, Lindemann, R&uuml;ddenklau, Neutze, Heuser, Bolle, Otto, Sch&auml;fer, Bergmann, Rath, Engelbrecht, Wagner, Finis, Albrecht, Reinhard, Giebeler, Wiede, Werner, Neurath, Zuschlag, Emde, Glaenzer, Becher, Brasse, M&uuml;ller, Schwede, Fritze, Gro&szlig;, K&ouml;nig). <strong>Kein Familienname aus dem Konze-Bestand</strong> („Neutze" ist ein eigenständiger N-Familienname, keine Kontze-Variante).</td><td>28. Juni 2026 (Sitzung 136); Zeitfenster 6. Juni (S87)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Herstelle / Würgassen (katholisch, Westfalen)</td><td class="archion">Matricula DE_EBAP_10608</td><td>Taufen Jan.–Feb. 1835 (das Herstelle-Register deckt Würgassen ab)</td><td>Alle Einträge als <em>ehelich</em> gekennzeichnet; kein bestandsähnlicher Familienname, kein unehelicher Mann</td><td>6. Juni 2026 (Sitzung 87)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Beverungen (katholisch, Westfalen)</td><td class="archion">Matricula DE_EBAP_10601</td><td>Taufen Jan.–Feb. 1835 (Taufen 1803–1835, Bild T_0108)</td><td>Fünf Männer im Zeitfenster, alle <em>ehelich</em>, keiner im Bestand — jeder mit einer späteren Randnotiz, die ihn in Deutschland verstorben oder verheiratet verortet (alle unabhängig ausgeschlossen)</td><td>6. Juni 2026 (Sitzung 87)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Dalhausen (katholisch, Westfalen)</td><td class="archion">Matricula DE_EBAP_10605</td><td>Namensindex Taufen 1822–1838 + Seiten Jan.–Feb. 1835</td><td>Index enthält für die gesamte Spanne 1822–38 keinen Familiennamen aus dem Bestand; alle Männer im Zeitfenster <em>ehelich</em>. Der genau am <strong>26. Jan. 1835</strong> geborene Junge (F. W. Sievers) ist ehelich und starb 1908 in Deutschland — positiv ausgeschlossen</td><td>6. Juni 2026 (Sitzung 87)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td colspan="6" style="background:var(--bg-elevated,#f3efe7); font-weight:700; font-size:0.85rem;">20. Juni 2026 — Tier-3-„Deissen"-Pfarreien (Kirchenkreis Fritzlar, nahe Kassel; James Gunnis' Lesart von „Deisse" → Dissen / Grifte / Gudensberg). Konfirmationsregister gelesen, <em>jeder Carl</em> 1833–1841.</td></tr>
+    <tr><td class="nm">Gudensberg</td><td class="archion">244437 (Konf. 1831–1873)</td><td>Jahrgänge 1848–1854 Junge für Junge gelesen (Geburten ~1833–1840 — vollständiges realistisches Zeitfenster + Rand)</td><td>Vorname Carl tritt wiederholt auf — <strong>Carl Schäfer (1849), Carl Wilhelm Tiltner (1850), Carl Werner Jungeut (1852)</strong>, dazu Carls als Zweitname — aber <strong>niemals bei einem <em>*n-s-n</em> / Konze-Familiennamen, und kein Carl vom 26. Jan. 1835.</strong> Als Mutterkirche („Amt Gudensberg") deckt es auch Geburten in Dissen &amp; Grifte 1833–1840 ab. Nur 1855 (Geburten 1840–41) verbleibt — für einen Kurrent-Leser.</td><td>20. Juni 2026 (Sitzung 5)</td><td><span class="status-pill partial">partiell</span></td></tr>
+    <tr><td class="nm">Dissen</td><td class="archion">Taufen 1830–1924 (253403)</td><td>Taufen Jan.–Feb. 1835 gelesen (kein Konf.-Buch für das Zeitfenster — Filial von Gudensberg)</td><td>Geburten im Zeitfenster (die Kohorte um den 26. Jan. 1835): ♂ Jacob Lange, Heinrich Langermann, Johannes Götting, Martin Jung, Joh. Heinrich Momberg — <strong>kein männlicher Carl.</strong> Register überschrieben „Abt. Gudensberg." Taufen 1834 + 1836–41 noch zu scannen.</td><td>20. Juni 2026 (Sitzung 5)</td><td><span class="status-pill partial">partiell</span></td></tr>
+    <tr><td class="nm">Grifte</td><td class="archion">Taufen 1830–1883 (253444)</td><td>Taufen spätes 1834 + 1835 gelesen (kein Konf.-Buch für das Zeitfenster — Filial von Gudensberg)</td><td>Kein männlicher Carl im späten 1834 oder 1835; und <strong>Grifte verzeichnet überhaupt keine Taufe im Januar 1835</strong> (die erste Geburt des Jahres ist der 12. Feb. 1835), also kein Kind vom 26. Jan. 1835. Register überschrieben „Amt Gudensberg." 1836–41 noch zu scannen.</td><td>20. Juni 2026 (Sitzung 5)</td><td><span class="status-pill partial">partiell</span></td></tr>
+    <tr><td colspan="6" style="background:var(--bg-elevated,#f3efe7); font-weight:700; font-size:0.85rem;">26.&ndash;27. Juni 2026 &mdash; weiterer Ring Kreis Kassel / Weser + Hannoveraner Nachbarn jenseits der Weser (der Konze/Gans-Bestand aus Klaus Kunzes Ortssippenb&uuml;chern, flussabwärts von Gieselwerder).</td></tr>
+    <tr><td class="nm">Lippoldsberg</td><td class="archion">219778 (Taufen) · 219775 (Konf.)</td><td>Taufindex „mit Register" 1830&ndash;1870 + Konfirmationen 1847&ndash;55</td><td>Nirgends ein Kontze; die Gans-Familie der Pfarrei beginnt erst ab 1846 zu taufen (Carl-Gans-Jungen 1854/1856). Drei Gans-Konfirmanden (Heinrich Wilhelm geb. 1831, Konrad geb. 1832, Friedrich Wilhelm geb. 1835) &mdash; keiner ein Carl, keiner geb. 26. Jan. 1835. <strong>Gans-Sippe von Interesse, keine Übereinstimmung mit Charles.</strong></td><td>26. Juni 2026 (Sitzungen 19/20/126)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Oedelsheim</td><td class="archion">219946 (Taufen) · 219943 (Konf.)</td><td>Konfirmationen 1847&ndash;55 (vollständig negativ) + Taufen 1834&ndash;36 vollständig durchgegangen; alphabetisches K(ontze)-Indexblatt verblasst, Rolle durcheinander</td><td><strong>Aktive Gans-Familie</strong> (Drechsler Georg Friedrich Gans, Gastwirt Andreas Gans + Sohn Carl August Gans). Nächster Beinahe-Treffer <strong>Andreas August Gans, geb. 25. Feb. 1835</strong> &mdash; falscher Vorname, 30 Tage daneben. Kein Carl Gans geb. 26. Jan. 1835. Verblasster K-Index = nicht sauber abgeschlossen; vollständiger Blattdurchgang im Zeitfenster / Kurrent-Lesung ausstehend.</td><td>26.&ndash;27. Juni 2026 (Sitzungen 19/127/128)</td><td><span class="status-pill partial">partiell</span></td></tr>
+    <tr><td class="nm">Vernawahlshausen</td><td class="archion">220261 (Taufen) · 220258 (Konf.)</td><td>Taufindex „mit Register" 1830&ndash;1869 (vollständig gelesen) + Konfirmationen 1847&ndash;56</td><td>Das im OSB bezeugte „Gans" erscheint im Taufindex <strong>überhaupt nicht</strong>; die Konfirmationen tragen keinen Familiennamen aus dem Bestand. <strong>Negativ auf beiden Schienen &mdash; ausgeschlossen.</strong></td><td>26. Juni 2026 (Sitzungen 126/127)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Bodenfelde (jenseits der Weser; Lkr. Northeim, Landeskirche Hannovers)</td><td class="archion">359334 (Taufen) · 359346 (Kartei Männer)</td><td>Taufen 1835 vollständig gelesen &amp; unabhängig erneut überprüft; G-Abschnitt der Kartei M&auml;nner; Kunze-OSB-Familiennamenregister ausgewertet</td><td>Kein Gans-/Contze-Kind im Zeitfenster; „Carl" allgegenwärtig bei ortsansässigen Familiennamen (nächster Carl August <em>Braune</em>, geb. 29. Jan. 1835). Das OSB führt <strong>Gans ×15 Familien + ein echtes Contze (Fam. 178)</strong> &mdash; beide Hälften des Bestands historisch vorhanden, aber 1835 nicht taufend. <strong>Keine Übereinstimmung mit Charles.</strong></td><td>26.&ndash;27. Juni 2026 (Sitzungen 123/130)</td><td><span class="status-pill neg">negativ</span></td></tr>
+    <tr><td class="nm">Bursfelde + Glashütte (Ostufer; Lkr. Göttingen / Hann.-Münden-Hemeln)</td><td class="archion">Kunze-OSB-Register; <strong>für das Zeitfenster nicht auf Archion digitalisiert</strong></td><td>Kunze-OSB-Familiennamenregister ausgewertet; das einzige Bursfelde-Buch online ist das von 1639&ndash;1746 (unter Fürstenhagen, Kr. Uslar) — vor dem Zeitfenster</td><td>Ortsansässige <strong>Gans</strong>-Bevölkerung (OSB-Familien 110, 113, 125, 136; + Ganz 136, Gaus 130), aber <strong>kein Konze / Kontze / Contze</strong>. Das Register 1833&ndash;41 läge, falls digitalisiert, unter Hann.-Münden/Hemeln (noch nicht gefunden) — andernfalls nur vor Ort / im OSB.</td><td>27. Juni 2026 (Sitzungen 130&ndash;131)</td><td><span class="status-pill open">offen</span></td></tr>
+    <tr><td class="nm">Wahmbeck (Wesertal, Kirchenkreis Uslar)</td><td class="archion">359497 (KB 1790&ndash;1845) + 359498 (KB 1846&ndash;1852)</td><td>Taufkopf Jan. 1835 mit dem Auge gelesen; <strong>Konfirmationszeitfenster durchgegangen</strong> (Konf. ~1847&ndash;55 = Jahrgänge Reg. 359498); für die Taufen <strong>bestätigt, dass kein Namensindex existiert</strong> (nur chronologischer Natorum Catalogus)</td><td>Familiennamen-Bestand auf jedem Tauf- und Konfirmationsblatt <strong>vollständig ortsansässig</strong> (Otte, Henne, Koenig, Eckhardt, Brackhahn, Strackmann, Rammenstein, Burgendahl, König, Friese, Brand, Niemeyer…) — <strong>kein Konze/Kontze; das einzige Gans = ein uneheliches Mädchen (8. Feb. 1835, gest. 1836)</strong>; die vorhandenen Carls sind alle ortsansässig. Kein Kunze-OSB. NEGATIV für Charles auf beiden Schienen. <em>Restposten (geringfügig):</em> Reg. 359498 ist eine durcheinandergebrachte/duplizierte Rolle ohne OCR — Zeitfenster gründlich beprobt, vollständige Entdoppelung je Jahr steht aus, bis ein zweites Kurrent-Auge sie liest.</td><td>28. Juni 2026 (Sitzung 136)</td><td><span class="status-pill neg">negativ</span></td></tr>
+  </tbody>
+</table>
+
+<p><strong>Register-übergreifender Unehelichkeits-Scan Januar 1835</strong> — ein koordinierter negativer Durchgang wurde über die Pfarreien Trendelburg, Friedrichsfeld, Helmarshausen und Hofgeismar nach einem unehelichen männlichen Kind durchgeführt, das Ende Januar 1835 geboren wurde. Sitzungen 17, 20, 21, 24 (April 2026). <strong>Kein Kandidatenkind kam zum Vorschein.</strong></p>
+
+<h2 id="families">Ausgeschlossene Kandidatenfamilien</h2>
+
+<p>Sechzehn hessische Kandidatenfamilien wurden anhand der zentralen Frage untersucht: <em>Wanderte ein junger Mann, geb. ~26. Januar 1835, aus dem Familiennamen-Bestand Konze / Konsen, aus dieser Familie, um ~1859 nach St. Louis aus?</em> Jede wurde auf dokumentierter Grundlage ausgeschlossen.</p>
+
+<table class="nr-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Familienakte</th>
+      <th>Ausschlussgrund</th>
+      <th>Urteilsdatum</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td class="nm"><a href="../family_pages/fam-konze.html">Konze / Kontze (Joh. Friedrich)</a></td>
+      <td>Peter Schräder glich seine Konze-Datenbank gegen die Deisler Auswanderungslisten ab (12. April 2026); nur ein Konze erscheint in der betreffenden Auswanderungsliste, und das ist nicht Charles. Eine biologische Abstammung von dieser konkreten Familie Joh. Friedrich Konze ist daher ausgeschlossen. Der weiter gefasste Familiennamen-Bestand Konze aus Trendelburg / Friedrichsfeld bleibt die Arbeits-Familiennameninferenz des Projekts — die Belege der Namensspur (z. B. die Konsen-Taufe von 1875) weisen auf diesen Bestand hin, doch keine konkrete Konze-Familie wurde als die von Charles bestätigt.</td>
+      <td>12. April 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td class="nm"><a href="../family_pages/fam-hofeditz.html">Hofeditz × Andreas Konze</a></td>
+      <td>Stammt von einem anderen Andreas Konze ab als der Kandidat von Eintrag 195; beibehalten als Begleitbeleg für den Wohnsitz der Konze-Familie in Deisel/Trendelburg</td>
+      <td>April 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td class="nm"><a href="../family_pages/fam-koster.html">Köster (über Konze-Töchter)</a></td>
+      <td>Konze-Töchter heirateten in die Familien Köster / Schildknecht ein; Kinder zu früh oder anderweitig erfasst</td>
+      <td>April 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td class="nm"><a href="../family_pages/fam-quentin.html">Quentin (Friedrichsfeld 1853)</a></td>
+      <td>Zehn Durchgänge der US-seitigen Forschung (30. April – 1. Mai 2026) verorteten jeden namentlich genannten Quentin-Auswanderer in Cincinnati, Milwaukee oder zurück in Deutschland — nie in St. Louis. Fünf unabhängige Gründe, einschließlich Berufs-Diskrepanz (Bäcker gegenüber Charles' Arbeiterprofil).</td>
+      <td>1. Mai 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td class="nm"><a href="../family_pages/fam-herwig.html">Herwig (Carl Ludwig aus Trendelburg)</a></td>
+      <td>Das dokumentierte Reiseziel der Familie war Massachusetts, nicht Missouri; die Heirat von Lewes Herweg × Catherine Sharda am 6. Oktober 1855 in Plymouth, MA schloss die Spur. Kein Herwig in St. Louis führt zur Trendelburger Familie zurück.</td>
+      <td>3. Mai 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td class="nm"><a href="../family_pages/fam-grandjot.html">Grandjot (Schöneberg)</a></td>
+      <td>Johannes Grandjots Ankunft in NYC 1855 und seine US-seitige Spur verfolgt; nicht Charles. Eine Überprüfung am 4. Mai 2026 schloss die Linie.</td>
+      <td>4. Mai 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td class="nm"><a href="../family_pages/fam-hund.html">Hund</a></td>
+      <td>Szenario einer unehelichen Geburt in der Kohorte unehelicher Taufen der Trendelburger Gegend geprüft; ausgeschlossen</td>
+      <td>31. März 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td class="nm"><a href="../family_pages/fam-lucas.html">Lucas</a></td>
+      <td>Szenario einer unehelichen Geburt in derselben Kohorte geprüft; ausgeschlossen</td>
+      <td>13. April 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td class="nm"><a href="../family_pages/fam-janson.html">Janson (Hofgeismar)</a></td>
+      <td>Die Janson-Familie in Hofgeismar (Pfarrei benachbart zu Deisel) umfasste Maria Janson, ausgewandert 1861 über Bremen — falsches Jahr und falsche Person; ausgeschlossen</td>
+      <td>3. Dezember 2025</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td class="nm"><a href="../family_pages/fam-steitz.html">Steitz</a></td>
+      <td>Auf dokumentarischer Grundlage ausgeschlossen</td>
+      <td>1. November 2025</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td class="nm"><a href="../family_pages/fam-bonhagen.html">Bonhagen / Bodenhausen</a></td>
+      <td>Henry Bonhagen tauchte in Virginia (Heirat 1858), dann in Baltimore auf — nie in St. Louis; der verwandte Phillip Koester ging nach South Carolina</td>
+      <td>November 2025</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td class="nm"><a href="../family_pages/fam-branson.html">Branson / Brahsuhn / Frisse / Bauer</a></td>
+      <td>Konfessionelle Diskrepanz: alle Bransuhns / Frisses waren katholisch; Charles war lutherisch/evangelisch (laut St. Marcus); überlebende Kinder anderweitig erfasst</td>
+      <td>2025–2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td class="nm"><a href="../family_pages/fam-person.html">Person × Graf Jouffroy Gonsons</a></td>
+      <td>Ein französischer Graf aus Paris mit einem 1863 in Hessen-Nauheim eröffneten Testament ist sozial und geografisch falsch für einen armen deutschen Einwanderer in St. Louis; als erschöpfende Archivprüfung behandelt</td>
+      <td>2025–2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td class="nm">Gans (Meimbressen) &mdash; jüdisch</td>
+      <td>Die einzige jüdische Familie namens Gans im Kreis Hofgeismar, die in die USA auswanderte (1853/54); verfolgt, weil „Gansen" die führende Familiennamen-Lesart ist und die Y-DNA auf eine jüdische väterliche Abstammung hindeutet. Keine Übereinstimmung Charles / Carl (Salomon Gans &rarr; „Charles" ebenfalls geprüft, nicht der Mann)</td>
+      <td>März 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td class="nm">Gans&ndash;Haake (Deisel / Lippolsberg)</td>
+      <td>Johann Daniel Gans (geb. Lippolsberg 1787) heiratete Karoline Haake; Kinder geb. Deisel 1831 &amp; 1833 &mdash; die eine Gans-Linie, die tatsächlich in Deisel wohnhaft war. Der uneheliche Karl Gans (geb. Lippolsberg 1844, ausgewandert 1846) ebenfalls geprüft. Keiner ergibt Charles (zu früh / zu jung)</td>
+      <td>Okt. 2025 &ndash; 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td class="nm">Stern / Kleeberg (Hofgeismar) &mdash; Y-DNA jüdische Linie</td>
+      <td>Geprüft, nachdem die Y-DNA auf eine jüdische väterliche Linie und eine Stern-Übereinstimmung hinwies: die jüdische Stern-Familie des Bezirks Hofgeismar (Minna Kleeberg geb. Stern; die jüdischen Friedhöfe von Hofgeismar &amp; Trendelburg) geprüft &mdash; kein Stern auf dem Hofgeismarer Friedhof und keine Verbindung zu Charles</td>
+      <td>März 2026</td>
+      <td><span class="status-pill elim">ausgeschlossen</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<aside id="peter-db" style="margin:1.4rem 0; padding:0.95rem 1.2rem; background:var(--bg-card-tint,#f6ebd2); border:1px solid var(--border-medium,#d8c8a8); border-left:5px solid var(--brand,#b8902f); border-radius:0 4px 4px 0; font-size:0.92rem;">
+  <strong>Peter Schr&auml;der's database &amp; resource queries (German side).</strong> Beyond the registers above, Peter repeatedly queried his own <strong>Northern-Kassel / Deisel&ndash;Trendelburg genealogical database</strong> across many contexts (Nov 2025 &ndash; 2026) &mdash; e.g. <em>Gon&#42;</em> surnames across ~100,000 death entries (none); every male born in Deisel in the 1830s with no later marriage or death noted; a first-name <em>Karl</em> filter on the same cohort &mdash; all negative. Also worked: the published <em>Deisel emigrants book</em> (1990s; &ldquo;not a single Gonnson&rdquo;), the Deisel/Trendelburg <strong>tax registers</strong> (1739, 1750 &mdash; every citizen, incl. non-Christians), the Jewish registers and cemeteries of the county (Grebenstein &mdash; Gans &rarr; Segelbaum; Trendelburg; Ebersch&uuml;tz; Hofgeismar), and the <strong>Deutsche Auswanderer-Datenbank</strong> (its one &ldquo;Gansen, Carl&rdquo; was a physician, not Charles). All negative.
+</aside>
+
+<h3>Active leads still open</h3>
+
+<table class="nr-table">
+  <thead>
+    <tr><th>Family / line</th><th>Why still open</th><th>What would close it</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="nm"><a href="../towns/heisebeck.html">Heisebeck parish (Taufen 1830&ndash;1887)</a></td>
+      <td><strong>Now digitised &amp; searched (21 Jun 2026).</strong> Jan 1835 yielded an illegitimate male &ldquo;Carl Friedrich August,&rdquo; b. 29 Jan 1835 (mother Wehmann) &mdash; a candidate, not a confirmed identity (b. 29 vs Charles&rsquo;s 26 Jan; surname Wehmann). See the <a href="../germany/heisebeck-research-log.html">Heisebeck research log</a>.</td>
+      <td>Trace the candidate forward: Heisebeck confirmations (Archion 219172) and a US record for a Carl/Charles ~1835; reconcile with the Konze Y-DNA</td>
+    </tr>
+    <tr>
+      <td class="nm"><a href="../towns/schoeneberg.html">Schöneberg parish (pre-1822)</a></td>
+      <td>The pre-1822 Lutheran registers are not digitised; the post-1822 volume has been searched (negative)</td>
+      <td>On-site research at the Landeskirchliches Archiv Kassel, or digitisation of the pre-1822 volumes</td>
+    </tr>
+    <tr>
+      <td class="nm">Liebenau parish, 1835 (+ filial Grimelsheim)</td>
+      <td><strong>Resolved 21 June 2026 &mdash; eliminated.</strong> Archion now carries Liebenau Taufen 1830&ndash;1890 (219745); the 1835 baptisms are all legitimate, with no Konze pool, no illegitimate male, and no 26-Jan birth (filial Grimelsheim falls within the same book). See the <a href="../germany/liebenau-research-log.html">Liebenau research log</a>.</td>
+      <td>Closed &mdash; searched against the original image</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="nr-note" style="margin-top:0.7rem;font-size:0.92rem;color:#6a5a42;">Beverungen and Dalhausen, briefly listed here as open Matricula targets on 6 June 2026, were <strong>completed the same day — both negative</strong>; they now appear in the parish table above.</p>
+
+<p class="nr-note" style="margin-top:0.7rem;font-size:0.92rem;color:#6a5a42;">The Hildebrand line, formerly listed here as an open lead, has been withdrawn: it rested entirely on the Entry 195 HTR reading retracted on 4 May 2026 (see the <a href="../family_pages/fam-hildebrand.html">Hildebrand family page</a>).</p>
+
+<p class="nr-note" style="margin-top:0.7rem;font-size:0.92rem;color:#6a5a42;">A Jewish-paternal-line line of inquiry — the Stern / Hofgeismar family and the 1740 Trendelburg &ldquo;Protected Jews&rdquo; register — was explored in spring 2026 and has been <strong>set aside</strong> (May 2026). It was never tied to Charles by a documentary record, and the project's surname conclusion rests on documentary evidence. The research record is retained for transparency on the <a href="../family_pages/fam-stern.html">Stern / Kleeburg</a> and <a href="../family_pages/fam-other-jewish.html">Trendelburg Protected Jews 1740</a> family pages; see also <a href="errata.html">Errata</a>.</p>
+
+<h2 id="us-records">U.S.-side negative searches</h2>
+
+<table class="nr-table">
+  <thead>
+    <tr><th>Record class</th><th>Scope searched</th><th>Result</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="nm">FamilySearch full-text (AI) index — U.S. records</td>
+      <td>4 June 2026 systematic sweep of the full surname pool across U.S. records (naturalization, court, probate, land, directories)</td>
+      <td>The "Gannsen" cluster confirms the soldier and adds a Co. B service card reading "Gunnsen, Chas. <strong>L.</strong> or Gannsen, Chas." (ties the middle initial to Charles); <strong>no naturalization / declaration of intention naming a German birthplace exists under any spelling</strong></td>
+      <td><span class="status-pill neg">negative</span></td>
+    </tr>
+    <tr>
+      <td class="nm">FamilySearch full-text (AI) index — German records</td>
+      <td>4 June 2026 sweep of the surname pool × Hofgeismar/Cassel/Deisel/Trendelburg place terms</td>
+      <td>No authentic Hesse match; the "Konzen/Kontzen" hits are unrelated Rhineland/Brazilian families. The index holds deep Kreis-Hofgeismar material yet attaches no Konze family to the district — a coverage-backed negative</td>
+      <td><span class="status-pill neg">negative</span></td>
+    </tr>
+    <tr>
+      <td class="nm">1860 U.S. Census (St. Louis)</td>
+      <td>Phonetic-variant search across all seven surname forms; image-by-image walk of relevant wards underway</td>
+      <td>No matching household located; image-by-image scrolling of relevant St. Louis wards is the next step</td>
+      <td><span class="status-pill open">open</span></td>
+    </tr>
+    <tr>
+      <td class="nm">1870 U.S. Census (Charles &amp; Auguste)</td>
+      <td>4 May 2026 evening three-pass sweep around the Kreichelt household (Georg Kreichelt located mistranscribed as "Reichel," St. Louis Ward 03); ~80 households checked</td>
+      <td>Charles &amp; Auguste's own household not located; the address change between 1518 South 7th (1865–1869) and 718 Gates (1871) is the leading explanation — likely missed during the move</td>
+      <td><span class="status-pill open">open</span></td>
+    </tr>
+    <tr>
+      <td class="nm">NY / New Orleans / Baltimore passenger arrivals 1858–1860</td>
+      <td>Standard search-engine fidelity across all seven surname forms (Konze, Kontze, Contze, Konzen, Kontzen, Konsen, Gansen, Gonsen, Gonnson, Jansen)</td>
+      <td>No Charles match; Bremen-side originals largely lost in 1875 fire; ISTG reconstruction corpus searched (see <a href="../immigration/bremen-reconstruction.html">Bremen reconstruction</a>)</td>
+      <td><span class="status-pill open">open</span></td>
+    </tr>
+    <tr>
+      <td class="nm">NPS Civil War Soldiers and Sailors Database</td>
+      <td>Negative searches on wedding-witness names ("Philipp Weber," "John Heitzenberger") to confirm civilian vs veteran status</td>
+      <td>Confirmed civilian status of named witnesses; cross-walked the pension affiant cohort to documented Battery B / 9th Illinois service</td>
+      <td><span class="status-pill neg">negative as designed</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="emigration">Emigration-record searches (Hessian state side)</h2>
+
+<table class="nr-table">
+  <thead>
+    <tr><th>Record class</th><th>Scope searched</th><th>Result</th><th>Status</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="nm">Hessian <a class="glossary-link" href="glossary.html#g-auswanderer-beleg" title="Glossary: Auswanderer-Belege">Auswanderer-Belege</a> (emigration permits)</td>
+      <td>LAGIS / HESAUS database (222,782 records) re-searched 25 May 2026 under all surname variants; Arcinsys finding aids reviewed; a query for HStAM Best. 180 Hofgeismar / Best. 17b sent to Marburg 25 May 2026</td>
+      <td>No Beleg for a Charles / Carl matching the profile under any spelling; the single Konze emigrant indexed (Ludwig Konze, Deisel, 1864) moved to Frankfurt/Main, not America</td>
+      <td><span class="status-pill open">open</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Hessian <a class="glossary-link" href="glossary.html#g-stammrolle" title="Glossary: Stammrolle">Stammrolle</a> (1855 conscription class)</td>
+      <td>HETRINA database (Universität Kassel); some volumes for the relevant district at HStAM Marburg Bestand 4h remain undigitised</td>
+      <td>No Konze-pool male b. 26 January 1835 located; on-site research at Marburg the highest-leverage next step</td>
+      <td><span class="status-pill open">open</span></td>
+    </tr>
+    <tr>
+      <td class="nm">LAGIS Hesse military / officer lists</td>
+      <td>Indexed pages searched under all surname variants</td>
+      <td>No Charles match</td>
+      <td><span class="status-pill neg">negative</span></td>
+    </tr>
+    <tr>
+      <td class="nm">Periodische Übersichten der Auswanderungen (HStAM Best. 16)</td>
+      <td>Full series identified via Arcinsys 25 May 2026 — Bd. 1 Nr. 3237 (1850–53) · Bd. 2 Nr. 3238 (1854–55) · Bd. 3 Nr. 3239 (1856–58) · Bd. 4 Nr. 3243 (1858–61). Band 4 covers Charles's window; it is digitised, and its names are indexed in the HESAUS database searched above</td>
+      <td>Charles absent from the official Kurhessen registered-emigrant overview for 1858–61 — consistent with an unregistered / unauthorised departure</td>
+      <td><span class="status-pill neg">negative</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="methodology">How "negative" is established</h2>
+
+<p>A negative result on this site does not mean "we couldn't find it" — it means the project completed a documented, scoped search and the candidate was not present. Per the project's <a href="methodology.html#confidence">source-rating taxonomy</a>, each negative is recorded with:</p>
+
+<ul style="margin: 0.4rem 0 1rem 1.6rem;">
+  <li><strong>Date of search</strong> — anchors the result to the state of the source at that time (digitisation status changes; archive holdings expand)</li>
+  <li><strong>Scope</strong> — exactly which volumes, years, surname spellings, and records were checked</li>
+  <li><strong>Tools used</strong> — index search, image-by-image walk, HTR, <a class="glossary-link" href="glossary.html#g-kurrent" title="Glossary: Kurrent">Kurrent</a> transcription, Peter Schräder's catalogue, etc.</li>
+  <li><strong>Closing evidence</strong> — for an elimination, the specific record that contradicts the candidate (wrong birth year, wrong parents, wrong destination); for a negative, the absence of any match across the scoped corpus</li>
+  <li><strong>What would reopen it</strong> — newly digitised material, a new candidate surfacing, an HTR re-read that changes a previous reading</li>
+</ul>
+
+<p>Where a negative is partial (some volumes covered, others outstanding), the gap is named explicitly so a future researcher knows what work remains. The four primary-source gaps still open at the time of writing — Charles's German baptismal entry, the 1859 trans-Atlantic passenger manifest, the Hessian Auswanderer-Beleg, the 1855 Stammrolle entry — are catalogued on <a href="open-questions.html">Open Questions</a> with priority rankings.</p>
+
+<div class="callout">
+  <span class="lbl">If you can help</span>
+  The project is bottlenecked on archives that aren't online. If you have access to the <strong>Landeskirchliches Archiv Kassel</strong> (Schöneberg pre-1822 parish books), can visit <strong>Hessisches Staatsarchiv Marburg</strong> (Stammrolle / Auswanderer-Beleg, Bestand 4h), or know the Konze / Kontzen / Contze families of the Hofgeismar Kirchenkreis — please <a href="contribute.html">get in touch</a>. Even a photographed page is gold; substantive contributions are credited inline.
+</div>
+
+<p><em>Last updated <time datetime="2026-05-25">25 May 2026</time>. This page is versioned in the site's <a href="changelog.html">changelog</a>.</em></p>
+
+</main>
+
+<footer class="site-foot">
+  <p><strong>Charles Research</strong> · A genealogical investigation by Jed Johnson with Peter Schräder and James Gunnis · <a href="index.html">Home</a> · <a href="methodology.html">Methodology</a> · <a href="open-questions.html">Open Questions</a> · <a href="changelog.html">Changelog</a></p>
+</footer>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../de/index.html">Startseite</a></li>
+        <li><a href="../de/stories.html">Geschichten</a></li>
+        <li><a href="../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../methodology.html">Methodik</a></li>
+        <li><a href="../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../de/glossary.html">Glossar</a></li>
+        <li><a href="../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../de/about.html">Über</a></li>
+        <li><a href="../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

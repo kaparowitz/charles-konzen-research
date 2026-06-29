@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why Charles Gannsen Resists Identification — A GPS-Structured Proof Argument</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --soft:#444; --faint:#6b6b6b; --rule:#d8d2c4;
+    --accent:#6b4f2a; --bg:#fbf9f4; --panel:#f3eee2; --link:#7a4a12;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    line-height:1.62; font-size:18px;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:46px 30px 90px;}
+  /* Toolbar */
+  .toolbar{
+    position:sticky; top:0; z-index:10; display:flex; gap:10px; flex-wrap:wrap;
+    align-items:center; justify-content:flex-end;
+    background:rgba(251,249,244,.92); backdrop-filter:blur(4px);
+    border-bottom:1px solid var(--rule); padding:10px 30px;
+  }
+  .toolbar .label{margin-right:auto; font-size:13px; letter-spacing:.04em; color:var(--faint); text-transform:uppercase;}
+  button.tb{
+    font:inherit; font-size:14px; cursor:pointer; border:1px solid var(--accent);
+    background:#fff; color:var(--accent); border-radius:6px; padding:8px 14px;
+    transition:.15s; display:inline-flex; gap:7px; align-items:center;
+  }
+  button.tb:hover{background:var(--accent); color:#fff;}
+  /* Headings */
+  h1{font-size:30px; line-height:1.2; margin:14px 0 6px; letter-spacing:-.01em;}
+  .subtitle{font-size:19px; color:var(--soft); font-style:italic; margin:0 0 4px;}
+  .meta{font-size:14px; color:var(--faint); margin:0 0 26px; letter-spacing:.02em;}
+  h2{font-size:15px; letter-spacing:.07em; text-transform:uppercase; color:var(--accent);
+     margin:42px 0 4px; padding-bottom:6px; border-bottom:2px solid var(--rule);}
+  h2 .gps{font-size:12px; color:var(--faint); display:block; text-transform:none; letter-spacing:.02em; font-weight:normal; margin-top:3px; font-style:italic;}
+  h3{font-size:19px; margin:28px 0 4px; color:#2a2a2a;}
+  h4{font-size:16px; margin:18px 0 2px; color:var(--accent); font-variant:small-caps; letter-spacing:.03em;}
+  p{margin:10px 0;}
+  em{color:#2f2a22;}
+  a{color:var(--link);}
+  .lead{font-size:19px;}
+  /* Abstract panel */
+  .abstract{background:var(--panel); border:1px solid var(--rule); border-left:4px solid var(--accent);
+    padding:20px 24px; border-radius:6px; margin:6px 0 10px;}
+  .abstract h2{margin-top:0; border:none; padding:0;}
+  /* Thesis pull */
+  .thesis{background:#fff; border:1px solid var(--accent); border-radius:8px;
+    padding:20px 24px; margin:26px 0; font-size:19px; line-height:1.55;}
+  .thesis strong{color:var(--accent);}
+  /* status tags */
+  .status{display:inline-block; font-size:12.5px; letter-spacing:.04em; text-transform:uppercase;
+    border-radius:4px; padding:1px 7px; vertical-align:middle; font-family:system-ui,sans-serif;}
+  .bounded{background:#e7efe2; color:#3c5a30; border:1px solid #b9cfa9;}
+  .open{background:#f6ecdc; color:#8a5a1c; border:1px solid #e0c79c;}
+  .mech{margin:22px 0 8px; padding:2px 0 2px 16px; border-left:3px solid var(--rule);}
+  .field{font-family:system-ui,sans-serif; font-size:13px; letter-spacing:.05em; text-transform:uppercase; color:var(--faint);}
+  ul{margin:10px 0; padding-left:22px;}
+  li{margin:7px 0;}
+  table{border-collapse:collapse; width:100%; margin:16px 0; font-size:16px;}
+  th,td{border:1px solid var(--rule); padding:8px 10px; text-align:left; vertical-align:top;}
+  th{background:var(--panel); font-family:system-ui,sans-serif; font-size:13px; letter-spacing:.03em; text-transform:uppercase; color:var(--soft);}
+  .sources{font-size:14.5px; color:var(--soft); border-top:1px solid var(--rule); margin-top:40px; padding-top:16px;}
+  hr.div{border:none; border-top:1px solid var(--rule); margin:34px 0;}
+  /* Print */
+  @media print{
+    .toolbar{display:none;}
+    body{background:#fff; color:#000; font-size:11.5pt;}
+    .wrap{max-width:none; padding:0;}
+    a{color:#000; text-decoration:none;}
+    .abstract,.thesis{background:#fff; break-inside:avoid;}
+    h2{break-after:avoid;} h3,h4{break-after:avoid;}
+    table,.mech{break-inside:avoid;}
+    @page{margin:22mm 20mm;}
+  }
+</style>
+<script defer src="assets/de-pages.js?v=20260628"></script>
+<script defer src="assets/lang-toggle.js?v=20260628"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="assets/site-nav.css?v=20260629sticky">
+<script defer src="assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="assets/cite-widget.css?v=4952ce8911">
+<script defer src="assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+</head>
+<body>
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment — Charles Research
+  Inserted at the top of every standalone page (after <body>).
+  Path placeholders () are rewritten per page by
+  scripts/inject-site-nav.py based on the page's depth.
+
+  IA (Jun 2026): story pages (Overview, Stories, Cast) live under
+  "Start here"; the standalone visualisation pages were retired.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Skip to main content</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Site sections">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Start here</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="start.html" role="menuitem">★ For researchers — start here</a>
+      <a href="index.html" role="menuitem">Overview</a>
+      <a href="stories.html" role="menuitem">Stories — nine narrative moments</a>
+      <a href="cast.html" role="menuitem">Cast — the people in the stories</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hesse &amp; origins</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="germany/index.html" role="menuitem">Germany &amp; origins — overview</a>
+      <a href="germany/parish-map.html" role="menuitem">Hessian parish map</a>
+      <a href="germany/konzen-puzzle.html" role="menuitem">The Konzen puzzle</a>
+      <a href="germany/konze-family-by-town.html" role="menuitem">Konze family by town</a>
+      <a href="towns/index.html" role="menuitem">Towns of Hesse</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">America &amp; immigration</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="immigration/index.html" role="menuitem">Immigration journey</a>
+      <a href="index.html#charles" role="menuitem">Charles in America</a>
+      <a href="index.html#civilwar" role="menuitem">Civil War — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">People &amp; tree</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="people/index.html" role="menuitem">People in the story</a>
+      <a href="children/index.html" role="menuitem">The seven children</a>
+      <a href="who/index.html" role="menuitem">All people index</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Evidence &amp; sources</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="evidence/index.html" role="menuitem">Evidence cards</a>
+      <a href="sources/index.html" role="menuitem">Primary sources viewer</a>
+      <a href="sponsor-reconciliation.html" role="menuitem">Sponsor reconciliation</a>
+      <a href="dna.html" role="menuitem">DNA evidence</a>
+      <a href="correspondence/index.html" role="menuitem">Schräder correspondence</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Reference &amp; method</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="methodology.html" role="menuitem">Methodology</a>
+      <a href="bibliography.html" role="menuitem">Bibliography</a>
+      <a href="errata.html" role="menuitem">Errata &amp; revisions</a>
+      <a href="glossary.html" role="menuitem">Glossary</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">About</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="about.html" role="menuitem">About this project</a>
+      <a href="contribute.html" role="menuitem">Contribute / corrections</a>
+      <a href="faq.html" role="menuitem">FAQ</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="changelog.html" role="menuitem">Changelog</a>
+    </div>
+  </div>
+</nav>
+
+<!-- END-INJECTED-NAV -->
+
+
+<div class="toolbar">
+  <span class="label">Charles Gannsen · Proof Argument</span>
+  <button class="tb" onclick="exportWord()" title="Download an editable Word (.doc) copy formatted for printing">⬇ Download as Word (.doc)</button>
+  <button class="tb" onclick="window.print()" title="Print, or save as PDF">🖨 Print / Save as PDF</button>
+</div>
+
+<div class="wrap">
+<article id="doc">
+
+  <h1>Why Charles Gannsen Resists Identification</h1>
+  <p class="subtitle">A taxonomy of record-obscuring mechanisms and the search designed to defeat them</p>
+  <p class="meta">Genealogical proof argument, structured to the five components of the Genealogical Proof Standard · 28 June 2026 · v02</p>
+
+  <div class="abstract">
+    <h2>Abstract</h2>
+    <p>Charles Gannsen (b. 26 January 1835, of German origin; enlisted St. Louis,
+    2 December 1862, Battery B, 2nd Regiment Missouri Light Artillery; married St. Louis,
+    1866) has no confirmed birth or baptismal record despite a multi-year, parish-by-parish
+    search of the Kurhessen church books most likely to contain it. This argument reframes
+    that absence. The failure to locate his origin record is not evidence of insufficient
+    searching but the predictable consequence of a small, enumerable set of mechanisms by
+    which a mid-nineteenth-century Hessian birth record can evade a modern index search — and
+    each such mechanism admits a specific, testable counter-strategy. Seven families of
+    obscuring mechanism are identified: surname instability across at least nine attested
+    American spellings and a parallel German variant-pool; given-name displacement, since
+    &ldquo;Charles&rdquo; anglicizes a baptismal Carl/Karl that may sit as a secondary forename or be
+    Latinized; birthplace error, the U.S.-stated origin being potentially a port, region, or
+    later residence rather than a true birthplace; birth-date error inherent to U.S.-derived
+    ages; non-survival or non-existence of the record, through emergency baptism, confessional
+    mismatch, register gaps, or loss; family mobility, including the documented possibility —
+    first raised by James Gunnis — that the family was military and therefore scattered across
+    garrison parishes; and access and indexing limits that hide even a surviving,
+    correctly-located record. For each mechanism the compensating tactic actually deployed is
+    specified, negatives that are <em>bounded</em> are distinguished from territory that remains
+    <em>genuinely unsearched</em>, and the residual open branches are named. The result is a
+    reproducible search architecture in which the absence of a baptism becomes a bounded
+    finding rather than an open question.</p>
+  </div>
+
+  <p style="font-size:15px; color:var(--faint); font-style:italic; margin-top:18px;">
+  Note on standard. This document is organized around the five components of the Genealogical
+  Proof Standard (GPS): (I)&nbsp;reasonably exhaustive research; (II)&nbsp;complete and accurate
+  source citations; (III)&nbsp;analysis and correlation of the evidence; (IV)&nbsp;resolution of
+  conflicting evidence; and (V)&nbsp;a soundly reasoned, coherently written conclusion. Because
+  the conclusion at issue is presently a <em>negative</em> — no identified baptism — the argument
+  is framed to show that the negative is sustained by exhaustive, bounded research rather than
+  asserted by default.</p>
+
+  <hr class="div">
+
+  <h2>I. Reasonably Exhaustive Research<span class="gps">GPS component 1 — the search scope is defined by enumerating every way a true record could escape discovery, and a counter-tactic is deployed for each.</span></h2>
+
+  <h3>The identification problem</h3>
+  <p>Every fact held about Charles Gannsen originates on the American side of his life: a Civil
+  War enlistment, a pension file, a marriage, censuses, a burial. These give a birth date
+  (26&nbsp;January&nbsp;1835), a German origin (rendered in 1866 as &ldquo;Deisse, Kreis Cassel,
+  Churhessen&rdquo;), and a surname recorded in at least nine distinct spellings. None of them is a
+  German record. The baptism that would anchor him to a family and parish has not been found,
+  and the surname as Americans wrote it (&ldquo;Gannsen&rdquo;) corresponds to no single German
+  parish-book spelling.</p>
+  <p>A naive strategy — take the stated name, place, and date and look them up — fails here for
+  structural reasons, and it fails <em>silently</em>: it returns nothing whether or not the record
+  exists. The exhaustiveness required by the GPS is therefore defined not by how many lookups
+  were run but by whether <em>every mechanism that could hide a true record</em> has been identified
+  and addressed. The seven subsections below each state a failure mode, why it defeats a naive
+  search, the compensating tactic deployed, and the current evidentiary status.</p>
+
+  <h3>The taxonomy of obscuring mechanisms</h3>
+
+  <div class="mech">
+    <h4>2.1 &nbsp;Surname instability</h4>
+    <p><span class="field">Failure mode.</span> The name is unstable on both sides of the
+    Atlantic. In the United States it appears across nine attested spellings — Gonnson, Gansen,
+    Gonsen, Konsen, Gonson, Jansen, Konzen, Gannsen, Conson. In the German books the confirmed
+    root forms are Konze, Kontze, Konsen, and Konzen, plus the compound surname Jungkonze and
+    the C-filed variants Conson/Contze; the broad phonetic field extends to Gans/Ganß. A clerk
+    recording an unfamiliar name by ear is the single likeliest reason an entry indexes under
+    none of the spellings a searcher would try first.</p>
+    <p><span class="field">Compensation.</span> The search is run against the entire surname
+    <em>pool</em>, not one string, and the pool is held data-driven from confirmed attestations
+    rather than from any American spelling that may itself be corrupt. Alphabetical name-indexes
+    are read for the whole pool, and every candidate hit is verified against the original entry
+    image.</p>
+    <p><span class="field">Status.</span> <span class="status bounded">bounded — productive</span>
+    This tactic produced the project's positive anchors: three &ldquo;geb. Konzen&rdquo; mothers at
+    Deisel (1828&ndash;29); the first father-surname Konze baptisms at Trendelburg; and the Hümme
+    Kontze cluster — a non-extinct population of at least five father-households and ten indexed
+    baptisms (1830&ndash;1863). It also drove the elimination of sixteen candidate families where
+    the pool was searched and found absent.</p>
+  </div>
+
+  <div class="mech">
+    <h4>2.2 &nbsp;Given-name displacement</h4>
+    <p><span class="field">Failure mode.</span> &ldquo;Charles&rdquo; almost certainly anglicizes a
+    baptismal Carl/Karl, but a German entry may record it as a <em>secondary</em> given name
+    (&ldquo;Johann Carl …&rdquo;, &ldquo;Carl Friedrich Wilhelm …&rdquo;) and index it under the first name; it
+    may be Latinized to <em>Carolus</em>; or &ldquo;Charles&rdquo; may have been adopted in America over a
+    different German rufname.</p>
+    <p><span class="field">Compensation.</span> Candidate leaves are swept by <em>birth-date and
+    the male cohort</em>, not by forename. Any boy born near 26&nbsp;January&nbsp;1835 is a
+    candidate regardless of given name, and every Johann/Carl/Karl/Carolus permutation is
+    flagged — converting a forename search into a date-and-sex search the displacement cannot
+    defeat.</p>
+    <p><span class="field">Status.</span> <span class="status bounded">bounded</span> Applied in
+    every leaf-by-leaf sweep; it is what surfaced the near-miss Carls (Dissen's illegitimate
+    &ldquo;Carl August,&rdquo; 1833; Gottsbüren's &ldquo;Johann Carl,&rdquo; 15&nbsp;Feb&nbsp;1835), each examined and
+    excluded rather than passed over.</p>
+  </div>
+
+  <div class="mech">
+    <h4>2.3 &nbsp;Birthplace error</h4>
+    <p><span class="field">Failure mode.</span> The U.S.-stated origin may be a port of
+    departure, a regional label, a later residence, or simply wrong. &ldquo;German&rdquo; can denote
+    German-<em>speaking</em> origin outside Kurhessen — Hesse-Darmstadt, Hannover, Westphalia, the
+    Rhineland, or beyond the modern border (Alsace, Luxembourg, Switzerland, Austria, Bohemia).
+    &ldquo;Deisse, Kreis Cassel&rdquo; is itself a phonetic toponym open to several readings.</p>
+    <p><span class="field">Compensation.</span> The parish search is anchored to the surname
+    <em>clusters</em> actually confirmed in the books (Deisel, Trendelburg, Hümme) rather than to a
+    single stated town, and toponym readings are deliberately stretched — the &ldquo;Deissen&rdquo;
+    reading opened the Dissen/Grifte/Gudensberg cluster, and &ldquo;Dassen → Fulda Evangelical town
+    church&rdquo; opened the Fulda lead. An explicit out-of-region branch is kept open so a negative
+    core sweep does not foreclose the project.</p>
+    <p><span class="field">Status.</span> <span class="status bounded">bounded</span>
+    <span class="status open">open branch</span> Multiple toponym expansions searched to
+    negative, bounding the core Kurhessen reading; the outside-Kurhessen branch remains a
+    documented open lane.</p>
+  </div>
+
+  <div class="mech">
+    <h4>2.4 &nbsp;Birth-date error</h4>
+    <p><span class="field">Failure mode.</span> 26&nbsp;January&nbsp;1835 is U.S.-derived (census,
+    military, pension, gravestone). Such ages are routinely off by one to several years and are
+    frequently rounded; a point search on a single day fails even when the record exists.</p>
+    <p><span class="field">Compensation.</span> Sweeps cover a <em>widened</em> window (births
+    c.&nbsp;1833&ndash;1841 on the confirmation track, not January 1835 alone), and the date is
+    triangulated against independent age statements — confirmation age (~14), marriage age — so
+    the search does not rest on one American figure.</p>
+    <p><span class="field">Status.</span> <span class="status bounded">bounded</span> The widened
+    window is standard in every sweep and is what keeps the 1833 and 1838 near-misses inside
+    scope for explicit adjudication rather than silent exclusion.</p>
+  </div>
+
+  <div class="mech">
+    <h4>2.5 &nbsp;Record non-survival or non-existence</h4>
+    <p><span class="field">Failure mode.</span> The record may never have entered the surviving
+    parish book: an emergency or home baptism (<em>Nottaufe</em>) sometimes went unrecorded; the
+    child may have been baptized in a <em>different confession</em> than searched — Kurhessen held
+    Evangelical, Reformed, and Catholic populations (the Fulda lead turned on a Catholic district
+    whose Protestants used the Evangelical town church), plus Jewish communities with separate
+    registers; the entry may fall in a register <em>gap</em> (vacancy, missing years, unfilmed
+    leaves, war or fire loss); or an illegitimate child may appear only as &ldquo;n.n.&rdquo; / unnamed.</p>
+    <p><span class="field">Compensation.</span> The project does not rely on baptisms alone. The
+    same parishes are cross-checked on the <em>confirmation, marriage, and burial</em> registers, so
+    a missing baptism can still surface when the person confirms, marries, or is buried.
+    Confessional alternatives are pursued where geography invites them. Every sweep documents
+    <em>which</em> registers and confessions remain unsearched or non-surviving, so a negative is
+    explicitly bounded rather than assumed total.</p>
+    <p><span class="field">Status.</span> <span class="status bounded">bounded — multi-track</span>
+    Several parishes are now negative on two or three independent register tracks (Gudensberg on
+    baptisms, marriages, and burials; Eberschütz and Gieselwerder on baptism and confirmation),
+    materially strengthening those eliminations beyond a single-book negative.</p>
+  </div>
+
+  <div class="mech">
+    <h4>2.6 &nbsp;Family mobility — including the military hypothesis (Gunnis)</h4>
+    <p><span class="field">Failure mode.</span> The confirmed Kontze households are weavers
+    (<em>Leineweber</em>), day-labourers (<em>Tagelöhner</em>), and a building-overseer
+    (<em>Bauaufseher</em>) — itinerant trades that move between parishes between children. A sharper
+    variant, first raised by James Gunnis, is that the family was <em>military</em>: a soldier father
+    follows his regiment between garrison towns, and military families' baptisms were frequently
+    entered in <em>separate garrison or military church books</em> (Militärkirchenbücher) kept apart
+    from the civil register. A complete, correctly-located sweep of a <em>town</em> parish can
+    therefore miss the child entirely, and the surname-cluster logic misleads, because a
+    soldier's child need not be born where the family is rooted.</p>
+    <p><span class="field">Compensation — and what has actually been tested.</span> The hypothesis
+    was tested two ways:</p>
+    <ul>
+      <li><em>As a demonstrated mechanism.</em> The Gunnis &ldquo;Dassen → Fulda&rdquo; lead produced a
+      verified military baptism — Karl Friedrich Gastmann (Fulda Evangelical Taufen,
+      3&nbsp;March&nbsp;1838), son of <em>Feldwebel</em> Michael Gastmann of the 1st Company,
+      2.&nbsp;Infanterie-Regiment. The Fulda confirmation classes of 1851&ndash;53 contain <em>no</em>
+      Gastmann — exactly what a garrison family predicts: the regiment, and the family with it,
+      had moved on. The 2.&nbsp;Infanterie-Regiment is documented to have rotated its companies
+      through Kassel, Hanau, Marburg, Hersfeld, Ziegenhain, and Fulda. This case is not Charles
+      (surname, Kreis, and year all fail), but it <em>empirically establishes</em> the scattering
+      mechanism and shows why a single-parish negative cannot exclude a military family.</li>
+      <li><em>As a direct lane for Charles.</em> A parallel search pursues whether Charles left a
+      pre-emigration Kurhessen conscription trace. Catalogue research corrected the target fonds
+      to the Hessisches Staatsarchiv Marburg — recruitment muster rolls under Best.&nbsp;331
+      <em>[Amt]</em>, the central Kriegsministerium Best.&nbsp;12 (1813&ndash;1867), and Best.&nbsp;180
+      Hofgeismar (the Kreis's emigration and Militärersatz files); an inquiry to Marburg
+      targeting the 1855 conscription class for Kreis Hofgeismar is outstanding.</li>
+    </ul>
+    <p><span class="field">Status — bounded vs. unsearched.</span>
+    <span class="status bounded">bounded (records lost)</span>
+    <span class="status open">open branch (garrison parishes)</span>
+    A catalogue survey (filtering &ldquo;Rekrutierungsstammrolle&rdquo; to 1850&ndash;1860 across all of
+    Hessen) returned only 21 holdings, just two at HStAM, <em>none</em> for
+    Hofgeismar/Trendelburg/Deisel; surviving Best.&nbsp;331 series are largely post-1867. The
+    1855 local recruitment roll for Charles's Amt therefore <em>probably does not survive</em> at
+    HStAM — a bounded finding that redirects the lane to the central Best.&nbsp;12 and to
+    Best.&nbsp;180 Hofgeismar. The garrison <em>parish</em> registers (Kassel, Hanau, Marburg,
+    Hersfeld, Ziegenhain) are largely un-indexed on Archion and <em>have not been hand-read</em> —
+    the principal genuinely-unsearched territory this hypothesis opens, logged as such.</p>
+  </div>
+
+  <div class="mech">
+    <h4>2.7 &nbsp;Identity error in the source data</h4>
+    <p><span class="field">Failure mode.</span> The American &ldquo;Charles Gannsen&rdquo; on whom the
+    search keys may be a <em>conflation</em> of two men; the surname may be fully adopted in America
+    with no German antecedent; or he may have been a stepchild or foster child raised under a
+    name that is not his birth name.</p>
+    <p><span class="field">Compensation.</span> Before any single American fact is trusted as a
+    search key, the U.S. Charles is pinned to <em>one</em> documented, internally-consistent
+    individual — birth date, origin statement, unit, marriage, and pension correlated to the same
+    man — so the German search is not chasing an artefact of two merged records. The surname pool
+    is anchored to German attestations rather than an American spelling that could be invented.</p>
+    <p><span class="field">Status.</span> <span class="status bounded">constrained</span> The
+    American identity is comparatively well-correlated (enlistment, unit records, pension,
+    marriage, burial), which constrains — though does not eliminate — the conflation and
+    full-adoption possibilities.</p>
+  </div>
+
+  <div class="mech">
+    <h4>2.8 &nbsp;Access and indexing limits — a cross-cutting amplifier</h4>
+    <p><span class="field">Failure mode.</span> Even a surviving, correctly-located,
+    correctly-named record can be missed because it is behind a subscription login; undigitized
+    or on-site-only; digitized but unindexed (must be read leaf-by-leaf); shuffled or duplicated
+    within the digital reel; or defeats machine OCR because it is written in Kurrent. This
+    mechanism amplifies every mechanism above by adding a second layer between a true record and
+    its discovery.</p>
+    <p><span class="field">Compensation.</span> Alphabetical indexes are read by eye where OCR
+    fails; each register's image-to-page calibration is worked out and documented before reading;
+    reels known to be shuffled or duplicated are de-duplicated by the printed page header rather
+    than trusted by image number; and every candidate is verified against the original image to
+    the same evidentiary standard regardless of how it was found.</p>
+    <p><span class="field">Status.</span> <span class="status bounded">bounded</span> This
+    protocol is why the parish negatives are trustworthy — they reflect leaves actually read and
+    calibrated, not index queries that may have silently failed. The OCR correction in the
+    Gastmann case (machine read &ldquo;Hartmann&rdquo;; the hand reads &ldquo;Gastmann&rdquo;) is a documented
+    instance of why image verification is non-optional.</p>
+  </div>
+
+  <h3>The search architecture as a single net</h3>
+  <p>The seven counter-tactics are not independent patches; they compose into one net in which
+  each mechanism's escape route is covered by at least one other tactic:</p>
+  <ul>
+    <li><strong>Full-window, cohort-based leaf reading</strong> defeats given-name displacement
+    (2.2) and birth-date error (2.4) at once.</li>
+    <li><strong>Pool-wide index reading with image verification</strong> defeats surname
+    instability (2.1) and the OCR/Kurrent layer of the access problem (2.8).</li>
+    <li><strong>Cross-register triangulation</strong> (baptism ↔ confirmation ↔ marriage ↔
+    burial) defeats baptismal non-survival (2.5) and lets a person be placed by parents'
+    identities even when his own entry is missing.</li>
+    <li><strong>Godparent and witness networks</strong>, plus &ldquo;geb. Konze(n)&rdquo; maternal
+    entries, provide a back-door to records filed under the wrong surname (2.1) or the mother's
+    name (illegitimacy, 2.5), and help locate the home parish of a mobile family (2.6).</li>
+    <li><strong>Toponym stretching and an open out-of-region branch</strong> guard against
+    birthplace error (2.3).</li>
+    <li><strong>The archival / military lane</strong> (HStAM Best.&nbsp;331, 12, 180; garrison
+    parish registers) addresses the military variant of mobility (2.6) and a possible
+    conscription-evasion trace tied to emigration.</li>
+    <li><strong>Emigrant tracking</strong> — Konze-pool passengers on Hamburg/Bremen lists —
+    anchors the family from the American side, cross-checking identity error (2.7) and birthplace
+    error (2.3).</li>
+  </ul>
+
+  <h2>II. Complete and Accurate Source Citations<span class="gps">GPS component 2 — every information item is tied to a source, and every candidate is cited to the original register image.</span></h2>
+  <p>The project's citation practice has three rules. First, <em>provenance is always marked</em>:
+  American-side facts (birth date, origin statement, surname spellings) are labelled as
+  U.S.-derived and therefore secondary to German vital records for questions of origin. Second,
+  <em>every candidate entry is cited to the original image</em>, not to an index or a transcription —
+  recorded as register number, image (Bild) and page (Seite), entry number, and, where minted,
+  a stable Archion permalink. Third, <em>archival material is cited to fonds</em> (Bestand and
+  Amt/locality) so that a non-digitized record can be requested unambiguously.</p>
+  <p>Representative citations in this argument:</p>
+  <ul>
+    <li>Gastmann baptism — Archion reg.&nbsp;168326, Fulda (Stadt) Taufen 1830&ndash;1863, Bild 852 /
+    Seite 64 / Eintrag 298; permalink <a href="https://www.archion.de/p/bf75a813e2/">archion.de/p/bf75a813e2</a>.</li>
+    <li>Fulda confirmation scan — Archion reg.&nbsp;168320, classes of 1851&ndash;53, read by eye
+    (no usable OCR), calibrated against the 1862/63 and 1852 classes.</li>
+    <li>Military fonds for Charles — HStAM Best.&nbsp;331 <em>[Amt]</em> (Rekrutierungsstammrollen);
+    Best.&nbsp;12 (Kurhessisches Kriegsministerium, 1813&ndash;1867); Best.&nbsp;180 Hofgeismar
+    (emigration / Militärersatz).</li>
+    <li>Confirmed German anchors and per-parish negatives — documented in the project's parish
+    research logs under <em>germany/</em>, each with register calibration and permalinks.</li>
+  </ul>
+
+  <h2>III. Analysis and Correlation of the Evidence<span class="gps">GPS component 3 — sources, information, and evidence are tested rather than accepted at face value.</span></h2>
+  <p>Four analytic procedures convert raw entries into tested evidence. <strong>Cohort
+  correlation:</strong> a candidate boy is evaluated not on his forename but on the correlation of
+  birth-date, sex, legitimacy, surname-pool membership, and parents' identities against the
+  American profile. <strong>Cross-register correlation:</strong> baptism, confirmation, marriage,
+  and burial entries for a parish are read together, so that the absence of a person in a
+  predicted confirmation class (as with Gastmann) is itself treated as positive evidence of
+  mobility rather than as a null. <strong>Network correlation:</strong> godparents, witnesses, and
+  &ldquo;geb. Konze(n)&rdquo; mothers are used to link entries across parishes and to locate the home
+  parish of itinerant families. <strong>Source-reliability testing:</strong> machine OCR is treated
+  as a lead, never as evidence — every reading is confirmed against the Kurrent hand on the
+  original image, a step that reversed the OCR's &ldquo;Hartmann&rdquo; to the correct &ldquo;Gastmann.&rdquo;</p>
+
+  <h2>IV. Resolution of Conflicting Evidence<span class="gps">GPS component 4 — apparent matches and contradictions are adjudicated explicitly, not left hanging.</span></h2>
+  <p>The argument resolves three classes of conflict. <strong>Near-miss candidates</strong> — entries
+  that match on one or two axes but fail on others — are adjudicated individually rather than
+  silently dropped:</p>
+  <table>
+    <thead><tr><th>Candidate</th><th>Matches on</th><th>Fails on</th><th>Resolution</th></tr></thead>
+    <tbody>
+      <tr><td>Karl Friedrich Gastmann (Fulda, 1838)</td><td>birth-day &ldquo;the 26th&rdquo;; Kurhessen region; military-family fit</td><td>surname (Gastmann); Kreis (Fulda, not Cassel); year (1838)</td><td>Eliminated; retained as proof-of-mechanism for military mobility.</td></tr>
+      <tr><td>&ldquo;Carl August&rdquo; (Dissen, 1833)</td><td>forename Carl; region; illegitimacy plausible</td><td>year (1833); non-pool surname</td><td>Eliminated as Charles; logged near-miss.</td></tr>
+      <tr><td>&ldquo;Johann Carl&rdquo; (Gottsbüren, 15 Feb 1835)</td><td>forename Carl; year 1835; illegitimate</td><td>birth-day (15 Feb ≠ 26 Jan); common local mother-surname; no Konze link</td><td>Eliminated as Charles; logged near-miss.</td></tr>
+      <tr><td>&ldquo;Carl August Büster&rdquo; (Liebenau)</td><td>forename Carl; region</td><td>surname; birth-date</td><td>Eliminated as Charles.</td></tr>
+    </tbody>
+  </table>
+  <p><strong>The birth-date conflict</strong> (a single U.S.-stated 26&nbsp;January&nbsp;1835 versus the
+  known unreliability of American ages) is resolved by treating the date as a centre point with a
+  documented tolerance (c.&nbsp;1833&ndash;1841) rather than as a hard constraint. <strong>The surname
+  conflict</strong> (American &ldquo;Gannsen&rdquo; versus the German Konze/Kontze pool) is resolved by
+  treating the American spelling as a phonetic echo of a German original, not as the search key
+  itself. Most importantly, the <strong>negative result is itself resolved into two non-equivalent
+  forms</strong>, never conflated — see the conclusion.</p>
+
+  <h2>V. Soundly Reasoned, Coherently Written Conclusion<span class="gps">GPS component 5 — the negative is stated as a bounded, reproducible finding with named open branches.</span></h2>
+  <p>A negative result is recorded in one of two forms:</p>
+  <ul>
+    <li><strong>Bounded negative</strong> — the relevant register and surname pool were read and
+    calibrated, so a true record <em>would have surfaced</em> had it existed in that corpus. The
+    parish is eliminated, and the elimination is as strong as the number of independent register
+    tracks it rests on.</li>
+    <li><strong>Open territory</strong> — the record could exist in a corpus not yet searched
+    (un-indexed garrison parishes, a different confession, an out-of-region parish, an archival
+    fonds awaiting a reply). This is logged as an active branch, not as evidence of absence.</li>
+  </ul>
+  <p>Under this discipline the project's current state is not &ldquo;Charles cannot be found&rdquo; but a
+  precise map: a large and growing set of <em>bounded</em> negatives across the Kurhessen parish
+  books; a set of confirmed Konze/Kontze anchor populations (Deisel, Trendelburg, Hümme) to which
+  the true record most plausibly attaches; and a small, named set of <em>open</em> branches —
+  chiefly the un-read garrison parish registers and the central Kurhessen military fonds
+  (Best.&nbsp;12, Best.&nbsp;180) — where the record, if it survives, most likely waits. The next
+  research steps follow directly from the map: hand-read the garrison parishes of the
+  2.&nbsp;Infanterie-Regiment; press the Marburg inquiry toward Best.&nbsp;12 and Best.&nbsp;180;
+  and continue the emigrant-passenger and out-of-region branches.</p>
+
+  <div class="thesis">
+    <strong>Thesis.</strong> The absence of a confirmed baptism for Charles Gannsen is not
+    evidence of failed searching but a bounded result: each mechanism by which the record could
+    evade discovery has been identified and paired with a search designed to defeat it, and the
+    territory not yet covered is named rather than assumed empty.
+  </div>
+
+  <div class="sources">
+    <strong>Sources (internal project record).</strong> <em>_MEMORY_Session_Conventions.md</em>
+    (surname canon; Konze/Kontze cluster findings; register calibrations);
+    <em>Session127_Fulda_Gastmann_Candidate_Verify_June26_2026.md</em> (Gastmann military
+    near-miss; 2.&nbsp;Infanterie-Regiment garrison rotation; HStAM Best.&nbsp;331 / 12 / 180
+    conscription-fonds research and survival bound); <em>Tier1_Search_Log_June2026.md</em> (Gunnis
+    &ldquo;Deissen&rdquo; toponym pivot; Dissen / Grifte / Gudensberg cluster); per-parish research logs
+    under <em>germany/</em>. Key external anchor: Archion permalink
+    <a href="https://www.archion.de/p/bf75a813e2/">archion.de/p/bf75a813e2</a> (Gastmann baptism,
+    Fulda EV, Bild 852). Genealogical Proof Standard components per the Board for Certification of
+    Genealogists.
+  </div>
+
+</article>
+</div>
+
+<script>
+function exportWord(){
+  var head = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "
+    + "xmlns:w='urn:schemas-microsoft-com:office:word' "
+    + "xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'>"
+    + "<title>Charles Gannsen — GPS Proof Argument</title>"
+    + "<!--[if gte mso 9]><xml><w:WordDocument><w:View>Print</w:View>"
+    + "<w:Zoom>100</w:Zoom><w:DoNotOptimizeForBrowser/></w:WordDocument></xml><![endif]-->"
+    + "<style>"
+    + "@page{size:A4;margin:22mm 20mm;}"
+    + "body{font-family:'Palatino Linotype',Palatino,Georgia,serif;font-size:11.5pt;line-height:1.5;color:#000;}"
+    + "h1{font-size:20pt;margin:0 0 4pt;} .subtitle{font-style:italic;font-size:13pt;color:#333;}"
+    + ".meta{font-size:9pt;color:#555;margin-bottom:14pt;}"
+    + "h2{font-size:12pt;text-transform:uppercase;letter-spacing:1px;color:#5a4220;border-bottom:1.5pt solid #999;padding-bottom:3pt;margin-top:20pt;}"
+    + "h2 .gps{display:block;font-size:8.5pt;font-style:italic;text-transform:none;letter-spacing:0;color:#666;font-weight:normal;margin-top:2pt;}"
+    + "h3{font-size:13pt;margin:14pt 0 3pt;} h4{font-size:11.5pt;color:#5a4220;margin:10pt 0 1pt;font-variant:small-caps;}"
+    + ".abstract{border:0.75pt solid #bbb;border-left:3pt solid #6b4f2a;padding:10pt 14pt;background:#f7f4ee;}"
+    + ".thesis{border:1pt solid #6b4f2a;padding:10pt 14pt;margin:14pt 0;}"
+    + ".field{font-size:8.5pt;letter-spacing:1px;text-transform:uppercase;color:#666;}"
+    + ".status{font-size:8pt;border:0.5pt solid #999;padding:0 4pt;text-transform:uppercase;}"
+    + ".mech{border-left:2pt solid #ccc;padding-left:8pt;margin:10pt 0;}"
+    + "table{border-collapse:collapse;width:100%;font-size:9.5pt;} th,td{border:0.5pt solid #999;padding:4pt 6pt;text-align:left;vertical-align:top;} th{background:#eee;}"
+    + ".sources{font-size:9pt;color:#333;border-top:0.5pt solid #999;margin-top:18pt;padding-top:8pt;}"
+    + ".toolbar{display:none;} a{color:#000;}"
+    + "</style></head><body>";
+  var foot = "<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer — Charles Research
+  Inserted at the bottom of every standalone page.
+  Path placeholders () are rewritten per page by the
+  injection script.
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Cite this page</strong>
+      <span class="cite-hint">&mdash; auto-generated Chicago, NGSQ, and MLA citations</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (notes &amp; bibliography)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogy journal style)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Copy</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Copy</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (when minted)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Copy</button>
+      </div>
+      <p class="cite-foot">
+        Last revised: <time class="cite-modified" datetime="">&mdash;</time>.
+        See <a href="about.html#how-to-cite">About &rarr; How to cite</a> for the full citation guidance, or <a href="errata.html">errata</a> for prior revisions.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles Research</strong> — a multi-month transatlantic genealogical investigation into Charles Konzen (recorded in U.S. records as Gannsen / Johnson; 1835&ndash;1903), Hessian-born Civil War sergeant of Battery B, 2nd Missouri Light Artillery, and his probable Trendelburg / Deisel origins in Churhessen (a working conclusion &mdash; the German baptism remains unrecovered).</p>
+      <p style="margin-top:0.6rem;">Compiled by <a href="about.html">Jed Johnson with Peter Schr&auml;der and James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Story</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stories.html">Stories</a></li>
+        <li><a href="visualize.html">Visualize</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Reference</p>
+      <ul>
+        <li><a href="claims-dashboard.html">★ Claims dashboard</a></li>
+        <li><a href="abstract.html">Abstract</a></li>
+        <li><a href="methodology.html">Methodology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="bibliography.html">Bibliography</a></li>
+        <li><a href="open-questions.html">Open Questions</a></li>
+        <li><a href="dna.html">DNA evidence</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Project</p>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contribute.html">Contribute</a></li>
+        <li><a href="changelog.html">Changelog</a></li>
+        <li><a href="errata.html">Errata &amp; revisions</a></li>
+        <li><a href="feed.xml">RSS / Atom feed</a></li>
+        <li><a href="index.html#cite">How to cite</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Language</p>
+      <ul aria-label="Site language" class="lang-toggle">
+        <li><a href="index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="de/abstract.html" hreflang="de" lang="de">Deutsch &mdash; Zusammenfassung</a></li>
+        <li><a href="de/glossary.html" hreflang="de" lang="de">Deutsch &mdash; Glossar</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text and analysis licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Primary-source images per the rights of the holding archive.</span>
+    <span><a href="sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+
+<!-- END-INJECTED-FOOTER -->
+</body></html>";
+  var html = head + document.getElementById('doc').innerHTML + foot;
+  var blob = new Blob(['﻿', html], {type:'application/msword'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'Charles_Gannsen_GPS_Proof_Argument_v02_June2026.doc';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script id="theme-toggle-init">(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"?"theme-light":"theme-dark");}catch(e){document.documentElement.classList.add("theme-dark");}})();</script>
+<meta charset="UTF-8">
+<link rel="alternate" hreflang="en" href="https://charles-research.netlify.app/people/index.html">
+<link rel="alternate" hreflang="de" href="https://charles-research.netlify.app/de/people/index.html">
+<link rel="alternate" hreflang="x-default" href="https://charles-research.netlify.app/people/index.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1F1A14">
+<title>People who knew Charles — Charles Research</title>
+<meta name="description" content="Index of every named individual in the Charles Konzen investigation — kin, witnesses, pastors, Battery B fellow soldiers, claim agents, descendants — with primary-source citation for each identification.">
+<link rel="canonical" href="https://charles-research.netlify.app/people/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charles Research">
+<meta property="og:title" content="People in the Story — Charles Research">
+<meta property="og:description" content="Index of every named individual in the Charles Konzen investigation — kin, witnesses, pastors, Battery B fellow soldiers, claim agents, descendants.">
+<meta property="og:url" content="https://charles-research.netlify.app/people/">
+<meta property="og:image" content="https://charles-research.netlify.app/assets/og/people.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="People in the Story — Charles Research">
+<meta name="twitter:image" content="https://charles-research.netlify.app/assets/og/people.png">
+<link rel="stylesheet" href="../../people/_shared.css?v=20260517-darkfix">
+<link rel="stylesheet" href="../../assets/theme.css?v=20260530c">
+<link rel="stylesheet" href="../../assets/cinematic.css?v=20260530c">
+<link rel="stylesheet" href="../../assets/dark-mode.css?v=20260530c">
+<script defer src="../../assets/theme-toggle.js?v=20260509-2330"></script>
+<script defer src="../../assets/de-pages.js?v=20260628"></script>
+<script defer src="../../assets/lang-toggle.js?v=20260628"></script>
+<script defer src="../../assets/site-search.js?v=20260529-mobilesearch"></script>
+<style>
+  main { max-width:1100px; margin:0 auto; padding:1.6rem 1.4rem 4rem; }
+
+  /* ------------------------------------------------------------------
+     People-index tile cards.
+     Rewritten June 2026: the markup uses the shared .tile primitive
+     (theme.css), so the inner role / title / summary / meta elements
+     are styled here. All colours come from design tokens so the cards
+     render correctly in both light and dark mode. The old rules were
+     scoped to .person-card (a class this page no longer uses) and so
+     never applied — leaving the chips and meta lines unstyled.
+     ------------------------------------------------------------------ */
+  .person-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    gap:1.1rem;
+    margin-top:1.1rem;
+    align-items:stretch;
+  }
+  .person-grid .tile { height:100%; padding:1.1rem 1.2rem; gap:0; }
+
+  /* Confidence chip line sits flush at the top */
+  .person-grid .tile .conf-line { margin:0 0 0.55rem; }
+
+  /* Role — small uppercase eyebrow chip */
+  .person-grid .tile .role {
+    display:inline-block;
+    align-self:flex-start;
+    max-width:100%;
+    font-family:var(--font-serif);
+    font-size:0.74rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.07em;
+    line-height:1.35;
+    color:var(--brand-dark);
+    background:rgba(216,179,102,0.16);
+    padding:0.2rem 0.5rem;
+    border-radius:3px;
+    margin:0 0 0.55rem;
+  }
+  .person-grid .tile .role.battery,
+  .person-grid .tile.battery .role {
+    color:var(--section-civilwar-d);
+    background:rgba(160,64,48,0.14);
+  }
+  .person-grid .tile .role.open-id,
+  .person-grid .tile.open-id .role {
+    color:var(--status-open);
+    background:rgba(200,122,48,0.16);
+  }
+
+  /* Name / title */
+  .person-grid .tile h3 {
+    font-family:var(--font-serif);
+    font-size:1.12rem;
+    font-weight:700;
+    line-height:1.28;
+    color:var(--text-primary);
+    margin:0 0 0.5rem;
+  }
+  .person-grid .tile:hover h3 { color:var(--brand-dark); }
+
+  /* Summary body — fills the card so meta lines bottom-align */
+  .person-grid .tile .summary {
+    flex:1 1 auto;
+    font-size:0.9rem;
+    line-height:1.5;
+    color:var(--text-body);
+    margin:0 0 0.65rem;
+  }
+  .person-grid .tile .summary strong { color:var(--text-primary); }
+
+  /* Meta footer — small italic, divider above */
+  .person-grid .tile .meta {
+    margin-top:auto;
+    padding-top:0.55rem;
+    border-top:1px solid var(--border-light);
+    font-size:0.78rem;
+    font-style:italic;
+    color:var(--text-muted);
+    line-height:1.4;
+  }
+
+  /* Section accents for the two non-standard tile families */
+  .person-grid .tile.battery { border-left-color:var(--section-civilwar); }
+  .person-grid .tile.battery:hover { border-left-color:var(--section-civilwar-d); }
+  .person-grid .tile.open-id { border-left-color:var(--status-open); }
+
+  @media (max-width:640px) {
+    .person-grid { grid-template-columns:1fr; gap:0.9rem; }
+  }
+  /* Respect prefers-reduced-motion (audit-fix pass, 8 May 2026). */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  </style>
+  <meta property="og:site_name" content="Charles Research">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:description" content="Witnesses, comrades, and neighbors documented in the Civil War pension file F41-523680269E">
+  <script defer src="../../assets/cinematic.js"></script>
+<!-- BEGIN-INJECTED-NAV-ASSETS -->
+<link rel="stylesheet" href="../../assets/site-nav.css?v=20260629sticky">
+<script defer src="../../assets/site-nav.js?v=15ebfe4ee8"></script>
+<link rel="stylesheet" href="../../assets/cite-widget.css?v=4952ce8911">
+<script defer src="../../assets/cite-widget.js?v=e9d082c3fd"></script>
+<link rel="stylesheet" href="../../assets/deep-zoom.css?v=29c025c4ac">
+<script defer src="../../assets/deep-zoom.js?v=6e7b08c2f2"></script>
+<!-- END-INJECTED-NAV-ASSETS -->
+  <!-- BEGIN-INJECTED-ANALYTICS -->
+<!-- Plausible privacy-first analytics (no cookies, GDPR-clean).
+     Sign up at https://plausible.io, add the site, then run
+     `python3 scripts/inject-analytics.py --enable` to activate.
+<script defer data-domain="charles-research.netlify.app" src="https://plausible.io/js/script.js"></script>
+-->
+<!-- END-INJECTED-ANALYTICS -->
+<!-- BEGIN-INJECTED-ARTICLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://charles-research.netlify.app/people/#article",
+  "headline": "People who knew Charles",
+  "url": "https://charles-research.netlify.app/people/",
+  "isPartOf": {
+    "@id": "https://charles-research.netlify.app/#website"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jed Johnson"
+    },
+    {
+      "@type": "Person",
+      "name": "Peter Schräder"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Jed Johnson",
+    "url": "https://charles-research.netlify.app/about.html"
+  },
+  "inLanguage": "de-DE",
+  "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "dateModified": "2026-05-17",
+  "description": "Index of every named individual in the Charles Konzen investigation — kin, witnesses, pastors, Battery B fellow soldiers, claim agents, descendants — with primary-source citation for each identification."
+}
+</script>
+<!-- END-INJECTED-ARTICLE -->
+</head>
+<body class="cine-typography">
+<!-- BEGIN-INJECTED-NAV -->
+<!--
+  Shared site nav fragment (GERMAN) — Charles Research
+  Inserted at the top of every standalone /de/ page (after <body>).
+  Path placeholders (../../) are rewritten per page by
+  scripts/inject-site-nav-de.py based on the page's depth, which
+  ALSO rewrites links to the /de/ version of any page that has one.
+-->
+<a class="skip-link" href="#main" style="position:absolute; left:-999px; top:0; padding:0.5rem 0.8rem; background:#1f1a14; color:#d8b366; z-index:2000; font-weight:700; text-decoration:none; border-radius:3px;" onfocus="this.style.left='8px';this.style.top='8px';" onblur="this.style.left='-999px';">Zum Hauptinhalt springen</a>
+<nav class="site-nav-shared" role="navigation" aria-label="Seitenbereiche">
+  <div class="tab-group" data-group="start">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">★ Hier starten</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/start.html" role="menuitem">★ Für Forscher — hier starten</a>
+      <a href="../../de/index.html" role="menuitem">Überblick</a>
+      <a href="../../de/stories.html" role="menuitem">Geschichten — neun Momente</a>
+      <a href="../../de/cast.html" role="menuitem">Personen — die Beteiligten</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="hesse">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Hessen &amp; Herkunft</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/germany/index.html" role="menuitem">Deutschland &amp; Herkunft — Überblick</a>
+      <a href="../../germany/parish-map.html" role="menuitem">Hessische Pfarrkarte</a>
+      <a href="../../germany/konzen-puzzle.html" role="menuitem">Das Konzen-Rätsel</a>
+      <a href="../../de/germany/konze-family-by-town.html" role="menuitem">Konze-Familie nach Orten</a>
+      <a href="../../towns/index.html" role="menuitem">Orte in Hessen</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="america">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Amerika &amp; Auswanderung</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/immigration/index.html" role="menuitem">Die Auswanderung</a>
+      <a href="../../index.html#charles" role="menuitem">Charles in Amerika</a>
+      <a href="../../index.html#civilwar" role="menuitem">Bürgerkrieg — Battery B, 2nd Missouri</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="people">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Personen &amp; Stammbaum</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../people/index.html" role="menuitem">Personen der Geschichte</a>
+      <a href="../../de/children/index.html" role="menuitem">Die sieben Kinder</a>
+      <a href="../../who/index.html" role="menuitem">Personenregister</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="evidence">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Belege &amp; Quellen</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/evidence/index.html" role="menuitem">Beleg-Karten</a>
+      <a href="../../de/sources/index.html" role="menuitem">Primärquellen-Viewer</a>
+      <a href="../../de/sponsor-reconciliation.html" role="menuitem">Paten-Abgleich</a>
+      <a href="../../de/dna.html" role="menuitem">DNA-Belege</a>
+      <a href="../../de/correspondence/index.html" role="menuitem">Schräder-Korrespondenz</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="reference">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Referenz &amp; Methode</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../methodology.html" role="menuitem">Methodik</a>
+      <a href="../../de/bibliography.html" role="menuitem">Bibliografie</a>
+      <a href="../../errata.html" role="menuitem">Errata &amp; Korrekturen</a>
+      <a href="../../de/glossary.html" role="menuitem">Glossar</a>
+    </div>
+  </div>
+
+  <div class="tab-group" data-group="about">
+    <button class="group-btn" type="button" aria-haspopup="true" aria-expanded="false">Über</button>
+    <div class="group-menu" role="menu" hidden>
+      <a href="../../de/about.html" role="menuitem">Über dieses Projekt</a>
+      <a href="../../de/contribute.html" role="menuitem">Mitmachen / Korrekturen</a>
+      <a href="../../de/faq.html" role="menuitem">Häufige Fragen</a>
+      <div class="menu-divider" role="separator" aria-hidden="true"></div>
+      <a href="../../changelog.html" role="menuitem">Änderungsprotokoll</a>
+    </div>
+  </div>
+</nav>
+<!-- END-INJECTED-NAV -->
+
+
+<header class="src-hero cinema-section-hero" data-tone="default">
+  <div class="crumbs"><a href="../index.html">← Charles Research</a> &nbsp;/&nbsp; People who knew Charles</div>
+  <h1>People who knew Charles</h1>
+  <div class="sub">Witnesses, comrades, and neighbors documented in the Civil War pension file F41-523680269E</div>
+  <div class="meta-row">
+    <span class="pill primary">11 people · 7 personally acquainted civilians + 3 Battery B comrades + 1 wedding witness (Battery B)</span>
+  </div>
+</header>
+
+<a id="main" tabindex="-1" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);"></a>
+<main>
+
+<section class="section">
+  <h2>Charles's documented social circle, 1862–1898</h2>
+  <p>Every person who swore an affidavit, witnessed a signature, or stood as wedding sponsor for Charles Gannsen between his Civil War enlistment in 1862 and the Pension Bureau's 1898 family-roster reply is catalogued here. The list is taken from the 40-page <a href="../../sources/pension-file.html">Civil War Pension File</a> and the St. Marcus Marriage Register entry of 7 January 1866. Each profile collects what we know about the person — their age, their St. Louis address, when they first met Charles, what they swore to, and whatever later civic record (city directory, census, FamilySearch tree) we have been able to pin down.</p>
+  <p class="small">Click any name to open its profile.</p>
+
+  <div class="conf-legend" style="margin:0.4rem 0 0.6rem; padding:0.7rem 1rem; background:var(--status-open-t); border:1px solid var(--border-light); border-left:4px solid var(--brand); border-radius:4px; font-size:0.88rem;">
+    <strong style="display:block; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--brand-dark); margin-bottom:0.2rem;">Identification confidence</strong>
+    How securely each tile is tied to a <em>specific historical individual</em> &mdash; separate from the person's role. <span class="conf-pill confirmed">&#10003; ID Confirmed</span> direct record or family-tree ID, no contradiction outstanding. <span class="conf-pill working">&#9733; ID Working</span> leading identification, but a dispositive link is still missing. <span class="conf-pill open">? ID Open</span> the specific individual is not yet established. <a href="../methodology.html#confidence">Full source-rating taxonomy &rarr;</a></div>
+</section>
+
+<section class="section">
+  <h2>Battery B comrades</h2>
+  <p>Three men of <a href="https://en.wikipedia.org/wiki/Battery_B,_2nd_Missouri_Light_Artillery" target="_blank" rel="noopener noreferrer">Battery B, 2nd Missouri Light Artillery</a> — Charles's company. All three independently confirmed by the U.S. National Park Service's <a href="https://www.nps.gov/civilwar/search-soldiers.htm" target="_blank" rel="noopener noreferrer">Soldiers and Sailors System</a> and the War Department's records check inside the pension file.</p>
+  <div class="person-grid">
+    <a class="tile battery" data-section="charles" href="../../people/adam-herweck.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role battery">Battery B · Sergeant · wedding witness</div>
+      <h3>Adam Herweck ⚜</h3>
+      <div class="summary">Senior groomsman at Charles's 1866 wedding. Same rank trajectory as Charles (Pvt → Sgt). Born 16 July 1831 Lampertheim, Hessen. Married Marguerite Wamsganz 21 July 1868 St. Louis; relocated to Edwardsville Illinois between 1873 and 1880; died 11 May 1897 there. Two earlier children of Adam &amp; Margaretha (Emma 1870, Margaretha 1873) traced at St. Marcus — sponsors were Wamsgans-side relatives, NOT Charles Gannsen. Third child Charles C Herweck (b. 1874) was likely baptized in Edwardsville; the namesake-Charles-Gannsen hypothesis is now weakly disfavored.</div>
+      <div class="meta">FamilySearch K4DW-PXM · Wedding register: 7 Jan 1866</div>
+    </a>
+    <a class="tile battery" data-section="charles" href="../../people/august-derr.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role battery">Battery B · 1st Sergeant</div>
+      <h3>August Derr</h3>
+      <div class="summary">Charles's direct NCO during the 1863 New Madrid station — the most senior soldier-witness available. Two affidavits in 1891 corroborating the rupture, hearing loss, and rheumatism. Resided 1857 South 14th Street, St. Louis.</div>
+      <div class="meta">Pension file: Pages 24, 26 · Age 56 in 1891</div>
+    </a>
+    <a class="tile battery" data-section="charles" href="../../people/christian-meyer.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role battery">Battery B · Private</div>
+      <h3>Christian Meyer</h3>
+      <div class="summary">Battery B comrade who reconnected with Charles around 1888 and provided the May 1891 affidavit about cannonading and exposure at New Madrid in fall 1863. Resided 1803 Allen Avenue, St. Louis.</div>
+      <div class="meta">Pension file: Page 22 · Age 48 in 1891</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Baptism sponsors — Friedrich Wilhelm Gonnson (1866 firstborn)</h2>
+  <p>Four named sponsors at the 1866 St. Marcus baptism of Charles &amp; Auguste's firstborn child. The default Lutheran-Evangelical structure: both maternal grandparents (Georg and Henriette Kreichelt) plus a male and female parish-circle sponsor (Friedrich Pillmann and Wilhelmine Ebeling Leue, both now identified to FamilySearch tree persons). <a href="../../children/friedrich-wilhelm.html">→ See the baptism page</a>.</p>
+  <div class="person-grid">
+    <a class="tile" data-section="charles" href="../../people/georg-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sponsor · Auguste's father · Battery B</div>
+      <h3>Georg Andreas Kreigelt</h3>
+      <div class="summary">Charles's father-in-law and Battery B comrade. Born 17 January 1819 Clausthal, Hannover; christened 14 February 1819. Hannoverian miner. Emigrated September 1853 (Bremen → New Orleans → St. Louis). Enlisted Missouri 1861 in the same Battery B as Charles. Walked Auguste down the aisle at the 7 January 1866 wedding. Civil War pension awarded 24 March 1883; died six months later 20 September 1883. Buried Old Picker's Cemetery, St. Louis. Sponsor at TWO Gannsen baptisms (1866 firstborn + 1872 Auguste).</div>
+      <div class="meta">FamilySearch LZXC-NH9 · 1819–1883 · Clausthal-born</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/henriette-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sponsor · Auguste's mother</div>
+      <h3>Louise Friederike "Henriette" Weiss</h3>
+      <div class="summary">Charles's mother-in-law. Born 18 February 1820 Clausthal; christened 5 March 1820 as Louise Friederike Henriette Weiss. Married Georg Kreigelt 8 April 1844 Clausthal. Mother of Auguste. Sponsor at TWO Gannsen baptisms (1866 firstborn + 1873 Louise — the granddaughter named directly for her). Outlived Georg by eleven years; died 15 August 1894 St. Louis City; buried Old Picker's Cemetery alongside Georg.</div>
+      <div class="meta">FamilySearch LZXC-NG7 · 1820–1894 · Clausthal-born</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/frederick-pillmann.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sponsor · 1866 + 1870 · the recurring outsider</div>
+      <h3>Frederick Wilhelm Pillmann</h3>
+      <div class="summary">The only non-Kreichelt sponsor at the 1866 firstborn baptism. At the time he was unmarried and not yet kin to the Kreichelts; he would marry Fredericka Albrecht (Catharina's sister) on 5 April 1870 — making him formally kin to Carl Kreichelt, who married Catharina in 1871. Sponsor again at the 1870 Katherine Carolina baptism. The only person to sponsor TWO Gannsen baptisms. Born 1846 Germany; St. Louis butcher; d. 1917; buried Bellefontaine Cemetery. Carries the live "illegal Kassel emigration" lead per Peter Schräder's database.</div>
+      <div class="meta">FamilySearch L17N-8Q6 · sponsor 1866 + 1870</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/wilhelmina-ebeling.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sponsor · Soulard German neighbor</div>
+      <h3>Dorothea Wilhelmine Ebeling Leue</h3>
+      <div class="summary">Fourth sponsor at the 1866 firstborn baptism. Identified May 2026 as Wilhelmine Ebeling Leue (1810-1872), wife of Heinrich Andraes Daniel Leue. Born Fallersleben, Germany; emigrated to St. Louis; lived NW corner of Ann Avenue + Elizabeth Street (south-side Soulard German immigrant district, walking distance from the Gannsens' 1518 South 7th Street residence). Died 19 December 1872, Webster Groves, St. Louis. The only non-Kreichelt-side sponsor at the firstborn baptism — a senior parish-circle neighbor, not a relative. Identification confirmed via exact death-date match + matched daughter-death-years cross-check.</div>
+      <div class="meta">FamilySearch M6G9-FJR · 1810–1872 · Fallersleben-born</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Baptism sponsors — Josephine Maria (1868)</h2>
+  <p>Three named sponsor names at the 1 June 1868 St. Marcus baptism — counting Jacob &amp; Josephine as a couple, four people. Georg Kreichelt and Jacob Reck are fully identified; Jacob's first wife Josephine and Maria Agnes Götz remain individual-ID open. <a href="../../children/josephine-maria.html">→ See the baptism page</a>.</p>
+  <div class="person-grid">
+    <a class="tile" data-section="charles" href="../../people/jacob-reck.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Baptism sponsor · 1868 · husband</div>
+      <h3>Jacob Reck</h3>
+      <div class="summary">b. 28 Jan 1837 <strong>Freinsheim, Pfalz, Bavaria</strong>; baptized Evangelisch-Reformierte (Calvinist). Immigrated 20 Nov 1865 New York. Three marriages: Josephine von Delien ~1866 (his co-sponsor here) · Emma Weingardt 1869 (4 children) · Frances Bertke Stanze 1893. Died 29 May 1898 at 4329 California Ave; <strong>buried Old St. Marcus alongside Charles</strong>. The only non-Kreichelt-side sponsor at the 1868 baptism.</div>
+      <div class="meta">FS KLPB-52X · 1837–1898 · Freinsheim Pfalz · Old St. Marcus</div>
+    </a>
+    <a class="tile open-id" data-section="charles" href="../../people/josephine-von-delian.html">
+      <div class="conf-line"><span class="conf-pill open">? ID Open</span></div>
+      <div class="role open-id">⚠ Individual ID open · surname confirmed</div>
+      <h3>Josephine née von Delien</h3>
+      <div class="summary">Jacob Reck's first wife · co-sponsor at the 1868 baptism. <strong>Surname confirmed Delien / Delian</strong> via three independent sources: 2020 AncestryProGenealogists Doc&nbsp;G + 2 May 2026 high-res image reread + StLGS Concordia Cemetery Delien-surname cross-reference. The infant Maria Josephine is named directly after her. Likely died June 1868 → mid-1869, no surviving children; Jacob remarried Emma Weingardt 27 Jul 1869.</div>
+      <div class="meta">surname Delien / Delian confirmed · individual ID open · presumed Concordia Cemetery</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/maria-agnes-goetz.html">
+      <div class="conf-line"><span class="conf-pill working">&#9733; ID Working</span></div>
+      <div class="role">Baptism sponsor · 1868 · ★ identified May 2026</div>
+      <h3>Anna Maria Agnes Goetz</h3>
+      <div class="summary">Wife of <strong>Andreas Goetz</strong> (FS <span class="fsn pid" role="link" tabindex="0" style="cursor:pointer;" onclick="event.stopPropagation();window.open('https://www.familysearch.org/tree/person/details/979T-53X','_blank','noopener,noreferrer');" onkeydown="if(event.key==='Enter'){event.stopPropagation();window.open('https://www.familysearch.org/tree/person/details/979T-53X','_blank','noopener,noreferrer');}">979T-53X</span>) · husband's 1880 occupation: <strong>Porter at Turner Hall</strong> (St. Louis Turnverein, central German cultural building). Plausibly the same person as the 1866 wedding-witness "Anna Goetz" (the triple-name "Anna Maria Agnes" was common in 1820s Pfälzer / Hessen-Darmstadt records). Charles ↔ Goetz bond is most plausibly via Turner Hall ecosystem.</div>
+      <div class="meta">FS 979T-53X (husband) · Turner Hall ecosystem</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/georg-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Baptism sponsor · 1866 + 1868 + 1872 · Auguste's father</div>
+      <h3>Georg Andreas Kreichelt</h3>
+      <div class="summary">Auguste's father; Charles's father-in-law and Battery B comrade. b. 17 January 1819 Clausthal, Hannover; emigrated September 1853; d. 1883 St. Louis. Sponsor at three Gannsen baptisms (1866 + 1868 + 1872). His third Gannsen-baptism appearance is here, sponsoring solo without Henriette.</div>
+      <div class="meta">FS LZXC-NH9 · 1819–1883 · Clausthal-born</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Baptism sponsors — Katherine Carolina (1870)</h2>
+  <p>The four named sponsors at the 22 May 1870 St. Marcus baptism of Charles &amp; Auguste's third child Friedrike Catharina Caroline Amalia Gansen (Katherine Carolina). All four resolve to a single tightly-intermarried Kreichelt ⟷ Albrecht ⟷ Pillmann ⟷ Mincke kin network on Auguste's side. The child's full baptismal name mirrors the four sponsors directly. <a href="../../children/katherine-carolina.html">→ See the baptism page</a>.</p>
+  <div class="person-grid">
+    <a class="tile" data-section="charles" href="../../people/frederick-pillmann.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Baptism sponsor · 1866 + 1870</div>
+      <h3>Frederick Wilhelm Pillmann</h3>
+      <div class="summary">Recorded as "Friedrich Billmann" in 1870 — corrected to <strong>Pillmann</strong> from the FamilySearch tree. Husband of Fredericka Albrecht (Catharina's sister), m. 5 April 1870 just seven weeks before the baptism. Born 1846 Germany; St. Louis butcher; d. 1917. The only person to sponsor MORE than one Gannsen baptism — also at the 1866 firstborn. Carries the live "illegal Kassel emigration" lead per Peter Schräder's database.</div>
+      <div class="meta">FamilySearch L17N-8Q6 · Bellefontaine Cemetery</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/catharina-albrecht.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Baptism sponsor · 1870 · namesake</div>
+      <h3>Katherine "Catharina" Albrecht</h3>
+      <div class="summary">St. Louis-born (1850) daughter of Martin Albrecht × Catharine Wilhelmine Lieber, m. Holy Ghost Church 1849. Fiancée of Carl Kreichelt at the 1870 baptism; married him 5 March 1871. Sister of Fredericka Albrecht (m. Friedrich Pillmann). The child's middle name <em>Catharina</em> is her direct namesake.</div>
+      <div class="meta">FamilySearch L5FV-3Z1 · 1850–1913 · Saint Paul's Cemetery</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/carl-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Baptism sponsor · 1870 · brother-in-law</div>
+      <h3>Charles "Carl" Heinrich Kreichelt</h3>
+      <div class="summary">Auguste's brother. Born 13 January 1846 in Clausthal, Hannover; christened 8 February 1846 (full name "Carl" Heinrich August Wilhelm Kreigelt). Family emigrated 1853. St. Louis saloonist and later real-estate investor. The child's middle name <em>Caroline</em> is the female form of his namesake. Survived to age 80 (d. 1926).</div>
+      <div class="meta">FamilySearch L5FW-5LD · Clausthal-born · New St. Paul's Cemetery</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/amalia-muenke.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Baptism sponsor · 1870 · sister-in-law</div>
+      <h3>Maria Emma Mincke <em>("Amalia Münke")</em></h3>
+      <div class="summary">Recorded in the 1870 register as "Amalia Münke" — Jed × Peter Schräder (Dec 2025) reconciled this to FamilySearch tree person Maria Emma Mincke L52N-1PL. Born St. Louis 1844 to a deep-rooted Mincke family (parents m. 1839 St. Louis). Wife of August Kreichelt (Auguste's other brother and a Battery B veteran). The child's middle name <em>Amalia</em> is her direct namesake. Widowed 1877 (August's early death age ~33); remarried George Henry Zuver. d. 1905.</div>
+      <div class="meta">FamilySearch L52N-1PL · 1844–1905 · Saint Matthew Cemetery</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Baptism sponsors — Auguste (1872)</h2>
+  <p>The 23 June 1872 St. Marcus baptism of Charles &amp; Auguste's fourth child <strong>Auguste Gonsen</strong>. The all-Kreichelt baptism — three sponsors, all immediate Kreichelt family. The most "in-family" of the seven Gannsen baptisms. The child <em>Auguste</em> is a triple-namesake (mother + uncle + likely the maternal-aunt-line Juliane Auguste Henriette Kreigelt, Georg's elder sister). <a href="../../children/auguste.html">→ See the baptism page</a>.</p>
+  <div class="person-grid">
+    <a class="tile" data-section="charles" href="../../people/georg-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sponsor 1872 · Auguste's father · Battery B</div>
+      <h3>Georg Andreas Kreigelt</h3>
+      <div class="summary">Charles's father-in-law and Battery B comrade. Born 17 January 1819 Clausthal, Hannover; christened 14 February 1819. Hannoverian miner who emigrated September 1853 with the family (Bremen → New Orleans → St. Louis). Enlisted Missouri 1861/Battery B; Civil War pension awarded 24 March 1883; died six months later 20 September 1883 (age 53 at this baptism). Second appearance as Gannsen sponsor (after the 1866 firstborn).</div>
+      <div class="meta">FamilySearch LZXC-NH9 · 1819–1883 · Clausthal-born</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/henriette-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sponsor 1872 · Auguste's mother · "Louise" entry</div>
+      <h3>Louise Friederike "Henriette" Weiss</h3>
+      <div class="summary">Charles's mother-in-law. Born 18 February 1820 Clausthal as Louise Friederike Henriette Weiss; m. Georg 8 April 1844. The 1872 parish clerk recorded her under her formal first name "Louise" (as "Louise Kreichelt") rather than her family call name "Henriette". She was 52 at this baptism. Sponsor at THREE Gannsen baptisms (1866 + 1872 + 1873); died 15 August 1894 St. Louis. Buried Old Picker's Cemetery alongside Georg.</div>
+      <div class="meta">FamilySearch LZXC-NG7 · 1820–1894 · Clausthal-born</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/august-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sponsor 1872 · Auguste's brother · Battery B</div>
+      <h3>August Kreichelt</h3>
+      <div class="summary">Auguste's eldest brother. Born 8 December 1844 Clausthal Hannover; christened 8 April 1845 as <em>Carl Friedrich "August" Kreigelt</em>. Battery B veteran of the 2nd Missouri Light Artillery — served alongside Charles. Husband of <strong>Maria Emma Mincke</strong> ("Amalia Münke") with four children. The 1872 niece <strong>Auguste Gonsen</strong> is named after both her mother and this uncle. Died young at <strong>32 on 24 November 1877</strong>; buried Holy Ghost Cemetery, St. Louis. His death is the turning point in the contraction of the Kreichelt-Battery-B social network around Charles.</div>
+      <div class="meta">FamilySearch L5FW-572 · 1844–1877 · Clausthal-born</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Baptism sponsors — Louise (1873)</h2>
+  <p>The 22 February 1874 St. Marcus baptism of Charles &amp; Auguste's fifth child <strong>Louise Jansen</strong> (b. 26 December 1873). Two sponsors — Auguste's mother and Auguste's youngest sister. The child <em>Louise</em> is named directly after her grandmother. <a href="../../children/louise.html">→ See the baptism page</a>.</p>
+  <div class="person-grid">
+    <a class="tile" data-section="charles" href="../../people/henriette-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sponsor 1873 · Auguste's mother · namesake</div>
+      <h3>Louise Henriette Kreichelt née Weis</h3>
+      <div class="summary">Auguste's mother. Recorded at the 1873 baptism with her full formal name <em>Louise Henriette Kreichelt née Weis</em> — the same person as "Henriette Kreichelt" (1866) and "Louise Kreichelt" (1872). The child <strong>Louise Gansen</strong> is named directly after her grandmother — the "Louise" component of the full baptismal name <em>Louise Friederike Henriette Weiss</em>. She was 53 at this baptism. Two recurring Gannsen sponsorship roles (1866 firstborn + 1873 Louise).</div>
+      <div class="meta">FamilySearch LZXC-NG7 · 1820–1894 · Clausthal-born</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/bertha-barbara-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sponsor 1873 · "Barbara" · age 13</div>
+      <h3>"Barbara" / Bertha Barbara Kreichelt</h3>
+      <div class="summary">Auguste's youngest sister, then age 13 — a junior co-sponsor with her mother Henriette. Recorded by the 1873 parish clerk simply as "Barbara Kreichelt"; canonical FamilySearch name is Bertha Barbara Kreichelt with documented Alternate Name <em>Babette</em>. Earlier transcriptions on this site mislabeled her as "sister-in-law" — corrected May 2026 to "blood sister." She would sponsor again in 1880 (recorded then as "Babette") at Bertha Johnson's baptism, the namesake niece. Born 28 November 1859 St. Louis (first Kreichelt born in America); died at age 32 in St. James, Phelps County, Missouri (1892); buried Holy Ghost Cemetery alongside her brother August.</div>
+      <div class="meta">FamilySearch L5FH-BRP · 1859–1892 · sponsor 1873 + 1880</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Baptism sponsors — Erwin Carl Konsen (1875)</h2>
+  <p>The 3 October 1875 St. Marcus baptism of Charles &amp; Auguste's sixth child <strong>Erwin Carl Konsen</strong> (later "Charles Johnson Jr."). The only Gannsen baptism with no Kreichelt sponsor at all and the only one preserving the Hesse-style surname spelling <em>Konsen</em>. Sole named sponsor: Erwin Spraul (with Charles Sr. listed by the parish clerk as a co-sponsor — an unusual breach of standard Lutheran practice). The child is named directly after his godfather. <a href="../../children/erwin-carl-konsen.html">→ See the baptism page</a>.</p>
+  <div class="person-grid">
+    <a class="tile" data-section="charles" href="../../people/erwin-spraul.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sole sponsor 1875 · namesake · Anheuser-Busch Superintendent</div>
+      <h3>Erwin Spraul</h3>
+      <div class="summary">Sole named sponsor at the 1875 Erwin Carl Konsen baptism — the direct namesake of Charles &amp; Auguste's sixth child. Born ~1848 Baden, Germany (per the June 1889 obituary; FS tree currently records 1841). Married Anna Maria Grassner 12 November 1868 St. Louis (one son Frank b. 1869). <strong>Superintendent of the Anheuser-Busch Brewing Association</strong> at his death — the most senior trade title at one of St. Louis's largest German-immigrant employers. Lived at 1340 S 9th Street in Soulard / Frenchtown, walking distance from the brewery and ~2 miles from the Gannsen residences. Died 19 June 1889 St. Louis aged 41 of post-operative complications from a left-shoulder abscess (Dr. Mudd performed surgery). Predeceased Charles by 14 years. Per Jed (Dec 2025): Charles chose Spraul "because he was a successful fellow immigrant" — now sharpened by the obituary to "successful at the very top of the brewing trade." Erwin's biological line ended in 1894 with son Frank's death; godson Erwin Carl Konsen carries the name forward. <strong>Two-generation Anheuser-Busch employment bridge:</strong> Charles's grandson <strong>Frederick Charles Johnson</strong> (Charles Jr.'s son, b. 1905, FamilySearch KLBX-VR1) later worked as a Bottler at Anheuser-Busch.</div>
+      <div class="meta">FamilySearch KLP1-N62 · ~1848–1889 · Anheuser-Busch Supt.</div>
+    </a>
+    <a class="tile battery" data-section="charles" href="../index.html#charles">
+      <div class="role battery">Co-sponsor 1875 · "the father of the child"</div>
+      <h3>Charles Gannsen (himself)</h3>
+      <div class="summary">The 1875 St. Marcus baptism register lists "the father of the child" — i.e. Charles Gannsen himself — as a co-sponsor alongside Erwin Spraul. This is unusual: the father is not normally also the godfather of his own child. Two competing readings: (a) parish-clerk shorthand for "no second sponsor present," or (b) a deliberate choice by Charles to mark the child as the carrier of his Hessian surname identity — the only Gannsen baptism with the spelling <strong>Konsen</strong>. Either way, this is the <strong>only</strong> Gannsen baptism with no maternal-Kreichelt-side sponsor. The strongest direct surname link between Charles in St. Louis and the Konze line in Hesse. <strong>→ See the Charles in America tab</strong> on the main site for the full life-of-Charles overview.</div>
+      <div class="meta">FamilySearch LZXC-6GB · 1835–1903 · subject of the entire investigation</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Baptism sponsors — Bertha (1880)</h2>
+  <p>The 4 September 1881 St. Marcus baptism of Charles &amp; Auguste's seventh and youngest child <strong>Bertha Jansen</strong> (b. 25 December 1880). The only Gannsen baptism with a <em>single</em> named sponsor. The child is named directly after her aunt — the third Gannsen baptism with a named-after-sponsor namesake (after Katherine Carolina ← Catharina Albrecht in 1870, and Erwin Carl Konsen ← Erwin Spraul in 1875). <a href="../../children/bertha.html">→ See the baptism page</a>.</p>
+  <div class="person-grid">
+    <a class="tile" data-section="charles" href="../../people/bertha-barbara-kreichelt.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Sole sponsor 1880 · "Babette" · namesake aunt</div>
+      <h3>"Babette" / Bertha Barbara Kreichelt</h3>
+      <div class="summary">Auguste's youngest sister, then age 20. Recorded by the 1880 parish clerk as "Babette Kreichelt" — the German diminutive form of Barbara, also documented as her family-circle Alternate Name on FamilySearch. Same person as the "Barbara Kreichelt" who appeared at the 1873 Louise baptism (then age 13, junior co-sponsor with her mother). The 1880 child <strong>Bertha Johnson</strong> is her direct namesake — Bertha Barbara → Bertha. Died at age 32 in St. James, Phelps County, Missouri (1892); buried Holy Ghost Cemetery alongside her brother August. The simplification from three or four sponsors (1860s and early 1870s baptisms) down to one sponsor in 1880 reflects the contraction of the Kreichelt-Battery-B network: brother August had died in 1877 (age 32), father Georg's health was declining (he would die three years later), and the broader family social orbit was shifting away from St. Marcus.</div>
+      <div class="meta">FamilySearch L5FH-BRP · 1859–1892 · sponsor 1873 + 1880</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Civilian witnesses — long-term St. Louis acquaintances</h2>
+  <p>Seven St. Louis-resident men who swore corroborating affidavits or witnessed Charles's signed declarations to the Pension Bureau between 1890 and 1891.</p>
+  <div class="person-grid">
+    <a class="tile" data-section="charles" href="../../people/henry-niemeier.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Pension witness · neighbor</div>
+      <h3>Henry Niemeier</h3>
+      <div class="summary">26 years' acquaintance with Charles (since 1865 — immediately post-discharge). Affidavit October 1891 attests Charles's deafness and rheumatism worsening year by year.</div>
+      <div class="meta">Pension file: Page 20 · 1300 N. 9th Street · Age 53 in 1891</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/henry-stoll.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Pension witness · 24-year acquaintance</div>
+      <h3>Henry Stoll</h3>
+      <div class="summary">Knew Charles since 1867. Affidavit 29 September 1890 testifies to ongoing right-side rupture pain, two-month rheumatism flare-ups, and partial deafness.</div>
+      <div class="meta">Pension file: Page 16 · 1232 S. 3rd Street · Age 50 in 1890</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/michael-nolan.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Pension witness · co-worker</div>
+      <h3>Michael Nolan</h3>
+      <div class="summary">Worked alongside Charles since 1867. October affidavit says Charles "lost considerable time" to rheumatism flare-ups, suffered continuously from rupture, and grew steadily harder of hearing.</div>
+      <div class="meta">Pension file: Page 18 · Age 49 in 189[?]</div>
+    </a>
+    <a class="tile battery" data-section="charles" href="../../people/theodore-gottlob.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role battery">★ Jed's 2nd great-grandfather (or step) · 1890 witness</div>
+      <h3>Theodore Gottlob Sr. ⚜</h3>
+      <div class="summary">Charles's next-door neighbor (2409 DeKalb), 1890 pension declaration witness — and <strong>Jed Johnson's direct ancestor</strong> per the FamilySearch tree (KG17-D3H). Born 1842 Essentho, Westphalia, Prussia; immigrated 1853 New Orleans; died 1900 St. Louis. <em>Two ancestral lines (Charles + Theodore) converged on the same DeKalb Street block in 1890.</em></div>
+      <div class="meta">Pension file: Pages 14–15 · FamilySearch KG17-D3H (Sr.) / KG17-DFW (Jr.)</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/john-heitzenberger.html">
+      <div class="conf-line"><span class="conf-pill working">&#9733; ID Working</span></div>
+      <div class="role">Declaration witness</div>
+      <h3>John Heitzenberger</h3>
+      <div class="summary">Co-witness with Theodore Gottlob on the 1890 detailed declaration. Lived at 2412 Arsenal Street.</div>
+      <div class="meta">Pension file: Page 14, 15 · 2412 Arsenal Street</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/john-hebbeler.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Declaration witness · 20-year acquaintance</div>
+      <h3>John Hebbeler</h3>
+      <div class="summary">Witness on the 9 February 1891 Declaration for Invalid Pension. Knew Charles approximately twenty years (since c. 1871).</div>
+      <div class="meta">Pension file: Page 11, 12 · 916 N. 6th Street</div>
+    </a>
+    <a class="tile" data-section="charles" href="../../people/john-thurbecker.html">
+      <div class="conf-line"><span class="conf-pill confirmed">&#10003; ID Confirmed</span></div>
+      <div class="role">Declaration witness</div>
+      <h3>John P. Thurbecker</h3>
+      <div class="summary">Co-witness with John Hebbeler on the 9 February 1891 Declaration. Resided at 638 North 7th Street.</div>
+      <div class="meta">Pension file: Page 11, 12 · 638 N. 7th Street</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Treating physicians named in Charles's letter</h2>
+  <p>Charles's c. 1898 handwritten letter to the Commissioner of Pensions (<a href="../../sources/pension-file.html#p29">Page 29</a>) names the physicians who treated him post-discharge.</p>
+  <div class="person-grid">
+    <a class="tile" data-section="charles" href="../../people/dr-charles-hess.html">
+      <div class="conf-line"><span class="conf-pill open">? ID Open</span></div>
+      <div class="role">Treating physician (1st)</div>
+      <h3>Dr. Charles Hess</h3>
+      <div class="summary">Charles's first post-war treating physician. Treated him for the rupture and rheumatism after the 1865 discharge.</div>
+      <div class="meta">Pension file: Page 29</div>
+    </a>
+  </div>
+</section>
+
+<footer class="back-nav">
+  <a href="../../sources/pension-file.html">← Back to the pension file viewer</a>
+  <a href="../index.html#civilwar">→ Civil War tab on the main site</a>
+  <a href="../index.html">Site home</a>
+</footer>
+
+</main>
+
+<!-- BEGIN-INJECTED-FOOTER -->
+<!--
+  Shared site footer (GERMAN) — Charles Research
+  Inserted at the bottom of every standalone /de/ page.
+  Path placeholders (../../) are rewritten per page by
+  scripts/inject-site-nav-de.py (which also routes links to the
+  /de/ version of any page that has a translation).
+-->
+<footer class="site-foot-shared" role="contentinfo">
+  <details class="cite-widget" id="cite-this-page">
+    <summary>
+      <span class="cite-icon" aria-hidden="true">&#x1F4DC;</span>
+      <strong>Diese Seite zitieren</strong>
+      <span class="cite-hint">&mdash; automatisch erzeugte Zitate (Chicago, NGSQ und MLA)</span>
+    </summary>
+    <div class="cite-body">
+      <div class="cite-row">
+        <div class="cite-lbl">Chicago (Anmerkungen &amp; Bibliografie)</div>
+        <pre class="cite-out" data-style="chicago"></pre>
+        <button type="button" class="cite-copy" data-target="chicago">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">NGSQ (genealogischer Zeitschriftenstil)</div>
+        <pre class="cite-out" data-style="ngsq"></pre>
+        <button type="button" class="cite-copy" data-target="ngsq">Kopieren</button>
+      </div>
+      <div class="cite-row">
+        <div class="cite-lbl">MLA</div>
+        <pre class="cite-out" data-style="mla"></pre>
+        <button type="button" class="cite-copy" data-target="mla">Kopieren</button>
+      </div>
+      <div class="cite-row" id="cite-doi-row" hidden>
+        <div class="cite-lbl">DOI (sobald vergeben)</div>
+        <pre class="cite-out" data-style="doi"></pre>
+        <button type="button" class="cite-copy" data-target="doi">Kopieren</button>
+      </div>
+      <p class="cite-foot">
+        Zuletzt überarbeitet: <time class="cite-modified" datetime="">&mdash;</time>.
+        Siehe <a href="../../about.html#how-to-cite">Über &rarr; Zitierhinweise</a> für die vollständige Anleitung, oder <a href="../../errata.html">Errata</a> für frühere Fassungen.
+      </p>
+    </div>
+  </details>
+  <div class="foot-inner">
+    <div>
+      <p class="foot-blurb"><strong>Charles-Forschung</strong> — eine mehrmonatige transatlantische genealogische Untersuchung zu Charles Konzen (in US-Quellen als Gannsen / Johnson verzeichnet; 1835&ndash;1903), hessischer Auswanderer und Sergeant der Battery B, 2nd Missouri Light Artillery, und zu seiner wahrscheinlichen Herkunft aus dem Raum Trendelburg / Deisel in Churhessen (ein Arbeitsstand &mdash; die deutsche Taufe ist bislang nicht aufgefunden).</p>
+      <p style="margin-top:0.6rem;">Zusammengestellt von <a href="../../de/about.html">Jed Johnson mit Peter Schr&auml;der und James Gunnis</a>.</p>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Geschichte</p>
+      <ul>
+        <li><a href="../../de/index.html">Startseite</a></li>
+        <li><a href="../../de/stories.html">Geschichten</a></li>
+        <li><a href="../../visualize.html">Visualisierung</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Referenz</p>
+      <ul>
+        <li><a href="../../de/claims-dashboard.html">★ Thesen-Übersicht</a></li>
+        <li><a href="../../de/abstract.html">Zusammenfassung</a></li>
+        <li><a href="../../methodology.html">Methodik</a></li>
+        <li><a href="../../de/faq.html">Häufige Fragen</a></li>
+        <li><a href="../../de/glossary.html">Glossar</a></li>
+        <li><a href="../../de/bibliography.html">Bibliografie</a></li>
+        <li><a href="../../de/open-questions.html">Offene Fragen</a></li>
+        <li><a href="../../de/dna.html">DNA-Belege</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="foot-group-label" role="heading" aria-level="2">Projekt</p>
+      <ul>
+        <li><a href="../../de/about.html">Über</a></li>
+        <li><a href="../../de/contribute.html">Mitmachen</a></li>
+        <li><a href="../../changelog.html">Änderungsprotokoll</a></li>
+        <li><a href="../../errata.html">Errata &amp; Korrekturen</a></li>
+        <li><a href="../../feed.xml">RSS-/Atom-Feed</a></li>
+        <li><a href="../../index.html#cite">Zitierhinweise</a></li>
+      </ul>
+      <p class="foot-group-label" role="heading" aria-level="2" style="margin-top:1rem;">Sprache</p>
+      <ul aria-label="Seitensprache" class="lang-toggle">
+        <li><a href="../../index.html" hreflang="en" lang="en">English</a></li>
+        <li><a href="../../de/index.html" hreflang="de" lang="de">Deutsch &mdash; Startseite</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-meta">
+    <span>&copy; 2026 Jed Johnson. Text und Analyse lizenziert unter <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>. Bilder von Primärquellen gemäß den Rechten des verwahrenden Archivs.</span>
+    <span><a href="../../sitemap.xml">Sitemap</a> &middot; <a href="https://charles-research.netlify.app/">charles-research.netlify.app</a></span>
+  </div>
+</footer>
+<!-- END-INJECTED-FOOTER -->
+</body>
+</html>

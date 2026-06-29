@@ -80,6 +80,40 @@ Detail: `germany/oedelsheim-research-log.html`.
 
 ---
 
+## 4. Logged-in Ancestry/FamilySearch pass — Oedelsheim "born-in-US" branch CLOSED
+With Jed logged into Ancestry + FamilySearch, the US side was finally checkable.
+
+**Reframing from Jed's own FamilySearch profile (LZXC-6GB, "Charles Johnson Sr."):**
+- Charles **immigrated 1859** (1900 census) and **emigrated alone** (pension file: only
+  comrades/friends vouch, no relatives). So he was **German-born ~1835**, not US-born.
+- Leading origin (project working conclusion): **Konzen of Deisel**, Kreis Hofgeismar,
+  Kurhessen — son's 1875 St. Marcus baptism "Erwin Carl **Konzen**"; daughter's 1890 death
+  "geb. Konzen"; 1866 marriage "aus **Deisse** [=Deisel]"; 1862 enlistment "Freundburg"
+  (decoded Trendelburg). The Konze surname is hyper-local to a 5-parish Diemel cluster
+  (Trendelburg, Deisel, Friedrichsfeld, Stammen, Huemme).
+- Profile note **"Deisel Village Hausname 'Gans'"**: Deisel residents historically carried
+  the informal Hausname **"Gans"** — which neatly reconciles the American "Gannsen/Gansen"
+  with a legal surname Konzen. (Hausname Gans ≠ a separate hereditary Gans family.)
+
+**Closing the Oedelsheim/Weser-Gans-emigration branch (the task Jed picked):**
+- The Ancestry "1834" hit for **Georg Friedrich Gans** is **not** a US arrival manifest —
+  it is Kurt Günther, *Hessian Emigrants to America* (Filby coll. 7486, p. 375; same
+  emigration event as LAGIS). It records the family leaving as **"Wife & 3 children"** in
+  1834 — a complete unit, no room for a not-yet-born Charles.
+- Charles **arrived 1859, alone** → he is not one of the 3 children who left in 1834, and the
+  "born in the US ~1835" variant is impossible.
+- **No Carl/Charles Gans b. ~1835 (Germany)** appears in U.S./Missouri census records.
+- The on-site pension file names **no German birthplace or parents**, so it can't revive the lead.
+
+**Net:** the Weser-valley Gans-emigration theory is **ruled out**. Effort should return to the
+project's standing leading hypothesis — **Konzen of Deisel** — and the genuinely missing records:
+Charles's **1859 arrival manifest** (likely New Orleans → up the Mississippi) and his **German
+baptism** in the Deisel/Trendelburg cluster or the *undigitised* Landeskirchliches Archiv Kassel
+registers (pre-1845 Heisebeck, pre-1822 Schoeneberg). Optional completeness: order HStAM Best. 16
+Nr. 3216 S. 199 (Marburg) to name the four 1834 emigrants.
+
+---
+
 ## Coverage-table updates (search-coverage.html)
 - Vernawahlshausen note condensed (ELIMINATED, no task left).
 - Lippoldsberg note updated → full 1831–1836 Gans baptism reconstruction (no Carl Gans).
